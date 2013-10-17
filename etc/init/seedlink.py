@@ -77,7 +77,7 @@ def _loadStationDescriptions(inv):
                     end = None
                 #print "Found in inventory:", net, sta, end, s.description()
     return d
-                        
+
 class TemplateModule(seiscomp3.Kernel.Module):
     def __init__(self, env):
         seiscomp3.Kernel.Module.__init__(self, env, env.moduleName(__file__))
@@ -164,12 +164,12 @@ class TemplateModule(seiscomp3.Kernel.Module):
 
             except KeyError:
                 pass
+        else:
+            try:
+                return self.global_params[name]
 
-        try:
-            return self.global_params[name]
-
-        except KeyError:
-            pass
+            except KeyError:
+                pass
 
         if print_warning:
             if station_scope:
@@ -213,7 +213,7 @@ class Module(TemplateModule):
 
             lim = resource.getrlimit(resource.RLIMIT_NOFILE)
             print "maximum number of open files set to", lim[0]
- 
+
         except Exception, e:
             print "failed to raise the maximum number open files:", str(e)
 
@@ -262,6 +262,18 @@ class Module(TemplateModule):
             ini += '             proc = "%s"\n' % self._get('seedlink.station.sproc')
         if self._get('seedlink.station.access'):
             ini += '             access = "%s"\n' % self._get('seedlink.station.access').replace(',',' ')
+        if self._get('seedlink.station.blanks'):
+            ini += '             blanks = "%s"\n' % self._get('seedlink.station.blanks')
+        if self._get('seedlink.station.encoding'):
+            ini += '             encoding = "%s"\n' % self._get('seedlink.station.encoding')
+        if self._get('seedlink.station.buffers'):
+            ini += '             buffers = "%s"\n' % self._get('seedlink.station.buffers')
+        if self._get('seedlink.station.segments'):
+            ini += '             segments = "%s"\n' % self._get('seedlink.station.segments')
+        if self._get('seedlink.station.segsize'):
+            ini += '             segsize = "%s"\n' % self._get('seedlink.station.segsize')
+        if self._get('seedlink.station.backfill_buffer'):
+            ini += '             backfill_buffer = "%s"\n' % self._get('seedlink.station.backfill_buffer')
         ini += '\n'
         return ini
 
@@ -288,6 +300,12 @@ class Module(TemplateModule):
         self._set('seedlink.station.network', self.net)
         self._set('seedlink.station.access', self._get('access'))
         self._set('seedlink.station.sproc', self._get('proc'))
+        self._set('seedlink.station.blanks', self._get('blanks'))
+        self._set('seedlink.station.encoding', self._get('encoding'))
+        self._set('seedlink.station.buffers', self._get('buffers'))
+        self._set('seedlink.station.segments', self._get('segments'))
+        self._set('seedlink.station.segsize', self._get('segsize'))
+        self._set('seedlink.station.backfill_buffer', self._get('backfill_buffer'))
 
         # Supply station description:
         # 1. try getting station description from a database
@@ -412,18 +430,19 @@ class Module(TemplateModule):
             self._set('seedlink.source.type', source_type)
             self._set('seedlink.source.id', source_id)
             source_dict[source_key] = (source_type, source_id, self.global_params.copy(), self.station_params.copy())
-                
-            # Create procs for this type for streams.xml
-            sproc_name = self._get('sources.%s.proc' % (source_type)) or self._get('proc')
-            if sproc_name:
-                self.sproc_used = True
-                sproc = self._process_template("streams_%s.tpl" % sproc_name, source_type)
-                if sproc:
-                    station_sproc.add(sproc_name)
-                    self.sproc[sproc_name] = sproc
 
-                else:
-                    print "WARNING: cannot find streams_%s.tpl" % sproc_name
+            # Create procs for this type for streams.xml
+            sproc_names = self._get('sources.%s.proc' % (source_type)) or self._get('proc')
+            if sproc_names:
+                sproc_names = [x.strip() for x in sproc_names.split(",")]
+                for sproc_name in sproc_names:
+                    self.sproc_used = True
+                    sproc = self._process_template("streams_%s.tpl" % sproc_name, source_type)
+                    if sproc:
+                        station_sproc.add(sproc_name)
+                        self.sproc[sproc_name] = sproc
+                    else:
+                        print "WARNING: cannot find streams_%s.tpl" % sproc_name
 
             # Read plugins.ini template for this source and store content
             # under the provided key for this binding
@@ -490,7 +509,7 @@ class Module(TemplateModule):
 
         for f in files:
             try:
-                (path, net, sta) = f.split('_')
+                (path, net, sta) = f.split('_')[-3:]
                 if not path.endswith("station"):
                     print "invalid path", f
 
@@ -526,7 +545,7 @@ class Module(TemplateModule):
             fd.close()
 
     def _set_default(self, name, value, station_scope = True):
-        try: self.param(name)
+        try: self.param(name, station_scope)
         except: self._set(name, value, station_scope)
 
     def supportsAliases(self):
@@ -538,7 +557,7 @@ class Module(TemplateModule):
         except: pass
 
         self._set_default("lockfile", os.path.join("@ROOTDIR@", self.env.lockFile(self.name)), False)
-        self._set_default("filebase", os.path.join("@ROOTDIR@", "var", "lib", self.name, "buffers"), False)
+        self._set_default("filebase", os.path.join("@ROOTDIR@", "var", "lib", self.name, "buffer"), False)
         self._set_default("port", "18000", False)
         self._set_default("encoding", "steim2", False)
         self._set_default("trusted", "127.0.0.0/8", False)
@@ -559,6 +578,7 @@ class Module(TemplateModule):
         self._set_default("proc_gap_warn", "10", False)
         self._set_default("proc_gap_flush", "100000", False)
         self._set_default("proc_gap_reset", "1000000", False)
+        self._set_default("backfill_buffer", "0", False)
         self._set_default("seq_gap_limit", "100000", False)
         self._set_default("connections", "500", False)
         self._set_default("connections_per_ip", "20", False)
@@ -566,9 +586,9 @@ class Module(TemplateModule):
 
         ## Expand the @Variables@
         e = seiscomp3.System.Environment.Instance()
-        self.setParam("filebase", e.absolutePath(self.param("filebase")), False)
-        self.setParam("lockfile", e.absolutePath(self.param("lockfile")), False)
-        
+        self.setParam("filebase", e.absolutePath(self.param("filebase", False)), False)
+        self.setParam("lockfile", e.absolutePath(self.param("lockfile", False)), False)
+
         if self._get("msrtsimul", False).lower() == "true":
           self.msrtsimul = True
         else:
