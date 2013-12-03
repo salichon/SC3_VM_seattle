@@ -1,2 +1,1275 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<seiscomp xmlns="http://geofon.gfz-potsdam.de/ns/seiscomp3-schema/0.7" version="0.7"><Inventory><sensor publicID="Sensor#20131203060355.675368.71" name="OTVZ.2004.323.HE10" response="ResponsePAZ#20131203060355.676117.72"><description>L4C-3D</description><model>L4C-3D</model><unit>M/S</unit><calibration serialNumber="yyyy" channel="2"><start>2004-11-18T04:00:00.0000Z</start><end>2005-08-30T00:00:00.0000Z</end><gain>177.8</gain><gainFrequency>15</gainFrequency></calibration></sensor><sensor publicID="Sensor#20131203060355.67778.75" name="OTVZ.2005.242.HE10" response="ResponsePAZ#20131203060355.678371.76"><description>L4C-3D</description><model>L4C-3D</model><unit>M/S</unit><calibration serialNumber="yyyy" channel="2"><start>2005-08-30T00:00:01.0000Z</start><end>2006-06-08T06:00:00.0000Z</end><gain>177.8</gain><gainFrequency>15</gainFrequency></calibration></sensor><sensor publicID="Sensor#20131203060355.679861.79" name="OTVZ.2006.160.HE10" response="ResponsePAZ#20131203060355.680463.80"><description>L4C-3D</description><model>L4C-3D</model><unit>M/S</unit><calibration serialNumber="yyyy" channel="2"><start>2006-06-09T00:00:01.0000Z</start><end>2007-03-20T00:00:00.0000Z</end><gain>177.8</gain><gainFrequency>15</gainFrequency></calibration></sensor><sensor publicID="Sensor#20131203060355.681318.83" name="OTVZ.2007.079.HE10" response="ResponsePAZ#20131203060355.681479.84"><description>L4C-3D</description><model>L4C-3D</model><unit>M/S</unit><calibration serialNumber="yyyy" channel="2"><start>2007-03-20T00:00:01.0000Z</start><end>2010-04-20T09:00:00.0000Z</end><gain>177.8</gain><gainFrequency>15</gainFrequency></calibration></sensor><sensor publicID="Sensor#20131203060355.682304.87" name="OTVZ.2010.111.HE10" response="ResponsePAZ#20131203060355.682481.88"><description>L4C-3D</description><model>L4C-3D</model><unit>M/S</unit><calibration serialNumber="yyyy" channel="2"><start>2010-04-21T00:00:02.0000Z</start><end>2011-11-10T23:50:00.0000Z</end><gain>177.8</gain><gainFrequency>15</gainFrequency></calibration></sensor><sensor publicID="Sensor#20131203060355.683231.90" name="OTVZ.2004.323.HN10" response="ResponsePAZ#20131203060355.683441.91"><description>L4C-3D</description><model>L4C-3D</model><unit>M/S</unit><calibration serialNumber="yyyy" channel="1"><start>2004-11-18T04:00:00.0000Z</start><end>2005-08-30T00:00:00.0000Z</end><gain>177.8</gain><gainFrequency>15</gainFrequency></calibration></sensor><sensor publicID="Sensor#20131203060355.684168.93" name="OTVZ.2005.242.HN10" response="ResponsePAZ#20131203060355.684335.94"><description>L4C-3D</description><model>L4C-3D</model><unit>M/S</unit><calibration serialNumber="yyyy" channel="1"><start>2005-08-30T00:00:01.0000Z</start><end>2006-06-08T06:00:00.0000Z</end><gain>177.8</gain><gainFrequency>15</gainFrequency></calibration></sensor><sensor publicID="Sensor#20131203060355.688238.96" name="OTVZ.2006.160.HN10" response="ResponsePAZ#20131203060355.688888.97"><description>L4C-3D</description><model>L4C-3D</model><unit>M/S</unit><calibration serialNumber="yyyy" channel="1"><start>2006-06-09T00:00:01.0000Z</start><end>2007-03-20T00:00:00.0000Z</end><gain>177.8</gain><gainFrequency>15</gainFrequency></calibration></sensor><sensor publicID="Sensor#20131203060355.690634.99" name="OTVZ.2007.079.HN10" response="ResponsePAZ#20131203060355.691234.100"><description>L4C-3D</description><model>L4C-3D</model><unit>M/S</unit><calibration serialNumber="yyyy" channel="1"><start>2007-03-20T00:00:01.0000Z</start><end>2010-04-20T09:00:00.0000Z</end><gain>177.8</gain><gainFrequency>15</gainFrequency></calibration></sensor><sensor publicID="Sensor#20131203060355.692699.102" name="OTVZ.2010.111.HN10" response="ResponsePAZ#20131203060355.692887.103"><description>L4C-3D</description><model>L4C-3D</model><unit>M/S</unit><calibration serialNumber="yyyy" channel="1"><start>2010-04-21T00:00:02.0000Z</start><end>2011-11-10T23:50:00.0000Z</end><gain>177.8</gain><gainFrequency>15</gainFrequency></calibration></sensor><sensor publicID="Sensor#20131203060355.693591.105" name="OTVZ.2004.323.HZ10" response="ResponsePAZ#20131203060355.693773.106"><description>L4C-3D</description><model>L4C-3D</model><unit>M/S</unit><calibration serialNumber="yyyy" channel="0"><start>2004-11-18T04:00:00.0000Z</start><end>2005-08-30T00:00:00.0000Z</end><gain>177.8</gain><gainFrequency>15</gainFrequency></calibration></sensor><sensor publicID="Sensor#20131203060355.694786.108" name="OTVZ.2005.242.HZ10" response="ResponsePAZ#20131203060355.694984.109"><description>L4C-3D</description><model>L4C-3D</model><unit>M/S</unit><calibration serialNumber="yyyy" channel="0"><start>2005-08-30T00:00:01.0000Z</start><end>2006-06-08T06:00:00.0000Z</end><gain>177.8</gain><gainFrequency>15</gainFrequency></calibration></sensor><sensor publicID="Sensor#20131203060355.695886.111" name="OTVZ.2006.160.HZ10" response="ResponsePAZ#20131203060355.69607.112"><description>L4C-3D</description><model>L4C-3D</model><unit>M/S</unit><calibration serialNumber="yyyy" channel="0"><start>2006-06-09T00:00:01.0000Z</start><end>2007-03-20T00:00:00.0000Z</end><gain>177.8</gain><gainFrequency>15</gainFrequency></calibration></sensor><sensor publicID="Sensor#20131203060355.696838.114" name="OTVZ.2007.079.HZ10" response="ResponsePAZ#20131203060355.697011.115"><description>L4C-3D</description><model>L4C-3D</model><unit>M/S</unit><calibration serialNumber="yyyy" channel="0"><start>2007-03-20T00:00:01.0000Z</start><end>2010-04-20T09:00:00.0000Z</end><gain>177.8</gain><gainFrequency>15</gainFrequency></calibration></sensor><sensor publicID="Sensor#20131203060355.697965.117" name="OTVZ.2010.111.HZ10" response="ResponsePAZ#20131203060355.698142.118"><description>L4C-3D</description><model>L4C-3D</model><unit>M/S</unit><calibration serialNumber="yyyy" channel="0"><start>2010-04-21T00:00:02.0000Z</start><end>2011-11-10T23:50:00.0000Z</end><gain>177.8</gain><gainFrequency>15</gainFrequency></calibration></sensor><sensor publicID="Sensor#20131203060355.698995.121" name="OTVZ.2011.315.HE10" response="ResponsePAZ#20131203060355.699182.122"><description>CMG-3ESPC</description><model>CMG-3ESPC</model><unit>M/S</unit><calibration serialNumber="yyyy" channel="2"><start>2011-11-11T02:00:00.0000Z</start><end>2013-10-01T22:00:00.0000Z</end><gain>2000</gain><gainFrequency>1</gainFrequency></calibration></sensor><sensor publicID="Sensor#20131203060355.700238.125" name="OTVZ.2013.274.HE10" response="ResponsePAZ#20131203060355.70048.126"><description>CMG-3ESPC</description><model>CMG-3ESPC</model><unit>M/S</unit><calibration serialNumber="yyyy" channel="2"><start>2013-10-01T22:00:01.0000Z</start><gain>2000</gain><gainFrequency>1</gainFrequency></calibration></sensor><sensor publicID="Sensor#20131203060355.701291.128" name="OTVZ.2011.315.HN10" response="ResponsePAZ#20131203060355.701453.129"><description>CMG-3ESPC</description><model>CMG-3ESPC</model><unit>M/S</unit><calibration serialNumber="yyyy" channel="1"><start>2011-11-11T02:00:00.0000Z</start><end>2013-10-01T22:00:00.0000Z</end><gain>2000</gain><gainFrequency>1</gainFrequency></calibration></sensor><sensor publicID="Sensor#20131203060355.72344.131" name="OTVZ.2013.274.HN10" response="ResponsePAZ#20131203060355.72369.132"><description>CMG-3ESPC</description><model>CMG-3ESPC</model><unit>M/S</unit><calibration serialNumber="yyyy" channel="1"><start>2013-10-01T22:00:01.0000Z</start><gain>2000</gain><gainFrequency>1</gainFrequency></calibration></sensor><sensor publicID="Sensor#20131203060355.725527.134" name="OTVZ.2011.315.HZ10" response="ResponsePAZ#20131203060355.725728.135"><description>CMG-3ESPC</description><model>CMG-3ESPC</model><unit>M/S</unit><calibration serialNumber="yyyy" channel="0"><start>2011-11-11T02:00:00.0000Z</start><end>2013-10-01T22:00:00.0000Z</end><gain>2000</gain><gainFrequency>1</gainFrequency></calibration></sensor><sensor publicID="Sensor#20131203060355.726579.137" name="OTVZ.2013.274.HZ10" response="ResponsePAZ#20131203060355.726759.138"><description>CMG-3ESPC</description><model>CMG-3ESPC</model><unit>M/S</unit><calibration serialNumber="yyyy" channel="0"><start>2013-10-01T22:00:01.0000Z</start><gain>2000</gain><gainFrequency>1</gainFrequency></calibration></sensor><datalogger publicID="Datalogger#20131203060355.673938.69" name="OTVZ.2004.323.H10"><description>OTVZ.2004.323.H10</description><gain>419430</gain><maxClockDrift>0.01</maxClockDrift><calibration serialNumber="xxxx" channel="2"><start>2004-11-18T04:00:00.0000Z</start><end>2005-08-30T00:00:00.0000Z</end><gain>419430</gain><gainFrequency>15</gainFrequency></calibration><calibration serialNumber="xxxx" channel="1"><start>2004-11-18T04:00:00.0000Z</start><end>2005-08-30T00:00:00.0000Z</end><gain>419430</gain><gainFrequency>15</gainFrequency></calibration><calibration serialNumber="xxxx" channel="0"><start>2004-11-18T04:00:00.0000Z</start><end>2005-08-30T00:00:00.0000Z</end><gain>419430</gain><gainFrequency>15</gainFrequency></calibration><decimation sampleRateNumerator="100" sampleRateDenominator="1"><digitalFilterChain>ResponseFIR#20131203060355.693306.104</digitalFilterChain></decimation></datalogger><datalogger publicID="Datalogger#20131203060355.676764.73" name="OTVZ.2005.242.H10"><description>OTVZ.2005.242.H10</description><gain>419430</gain><maxClockDrift>0.01</maxClockDrift><calibration serialNumber="xxxx" channel="2"><start>2005-08-30T00:00:01.0000Z</start><end>2006-06-08T06:00:00.0000Z</end><gain>419430</gain><gainFrequency>15</gainFrequency></calibration><calibration serialNumber="xxxx" channel="1"><start>2005-08-30T00:00:01.0000Z</start><end>2006-06-08T06:00:00.0000Z</end><gain>419430</gain><gainFrequency>15</gainFrequency></calibration><calibration serialNumber="xxxx" channel="0"><start>2005-08-30T00:00:01.0000Z</start><end>2006-06-08T06:00:00.0000Z</end><gain>419430</gain><gainFrequency>15</gainFrequency></calibration><decimation sampleRateNumerator="100" sampleRateDenominator="1"><digitalFilterChain>ResponseFIR#20131203060355.694352.107</digitalFilterChain></decimation></datalogger><datalogger publicID="Datalogger#20131203060355.678891.77" name="OTVZ.2006.160.H10"><description>OTVZ.2006.160.H10</description><gain>419430</gain><maxClockDrift>0.01</maxClockDrift><calibration serialNumber="xxxx" channel="2"><start>2006-06-09T00:00:01.0000Z</start><end>2007-03-20T00:00:00.0000Z</end><gain>419430</gain><gainFrequency>15</gainFrequency></calibration><calibration serialNumber="xxxx" channel="1"><start>2006-06-09T00:00:01.0000Z</start><end>2007-03-20T00:00:00.0000Z</end><gain>419430</gain><gainFrequency>15</gainFrequency></calibration><calibration serialNumber="xxxx" channel="0"><start>2006-06-09T00:00:01.0000Z</start><end>2007-03-20T00:00:00.0000Z</end><gain>419430</gain><gainFrequency>15</gainFrequency></calibration><decimation sampleRateNumerator="100" sampleRateDenominator="1"><digitalFilterChain>ResponseFIR#20131203060355.695517.110</digitalFilterChain></decimation></datalogger><datalogger publicID="Datalogger#20131203060355.680909.81" name="OTVZ.2007.079.H10"><description>OTVZ.2007.079.H10</description><gain>419430</gain><maxClockDrift>0.01</maxClockDrift><calibration serialNumber="xxxx" channel="2"><start>2007-03-20T00:00:01.0000Z</start><end>2010-04-20T09:00:00.0000Z</end><gain>419430</gain><gainFrequency>15</gainFrequency></calibration><calibration serialNumber="xxxx" channel="1"><start>2007-03-20T00:00:01.0000Z</start><end>2010-04-20T09:00:00.0000Z</end><gain>419430</gain><gainFrequency>15</gainFrequency></calibration><calibration serialNumber="xxxx" channel="0"><start>2007-03-20T00:00:01.0000Z</start><end>2010-04-20T09:00:00.0000Z</end><gain>419430</gain><gainFrequency>15</gainFrequency></calibration><decimation sampleRateNumerator="100" sampleRateDenominator="1"><digitalFilterChain>ResponseFIR#20131203060355.696538.113</digitalFilterChain></decimation></datalogger><datalogger publicID="Datalogger#20131203060355.681784.85" name="OTVZ.2010.111.H10"><description>OTVZ.2010.111.H10</description><gain>419430</gain><maxClockDrift>0.01</maxClockDrift><calibration serialNumber="xxxx" channel="2"><start>2010-04-21T00:00:02.0000Z</start><end>2011-11-10T23:50:00.0000Z</end><gain>419430</gain><gainFrequency>15</gainFrequency></calibration><calibration serialNumber="xxxx" channel="1"><start>2010-04-21T00:00:02.0000Z</start><end>2011-11-10T23:50:00.0000Z</end><gain>419430</gain><gainFrequency>15</gainFrequency></calibration><calibration serialNumber="xxxx" channel="0"><start>2010-04-21T00:00:02.0000Z</start><end>2011-11-10T23:50:00.0000Z</end><gain>419430</gain><gainFrequency>15</gainFrequency></calibration><decimation sampleRateNumerator="100" sampleRateDenominator="1"><digitalFilterChain>ResponseFIR#20131203060355.697624.116</digitalFilterChain></decimation></datalogger><datalogger publicID="Datalogger#20131203060355.698511.119" name="OTVZ.2011.315.H10"><description>OTVZ.2011.315.H10</description><gain>419430</gain><maxClockDrift>0.01</maxClockDrift><calibration serialNumber="xxxx" channel="2"><start>2011-11-11T02:00:00.0000Z</start><end>2013-10-01T22:00:00.0000Z</end><gain>419430</gain><gainFrequency>1</gainFrequency></calibration><calibration serialNumber="xxxx" channel="1"><start>2011-11-11T02:00:00.0000Z</start><end>2013-10-01T22:00:00.0000Z</end><gain>419430</gain><gainFrequency>1</gainFrequency></calibration><calibration serialNumber="xxxx" channel="0"><start>2011-11-11T02:00:00.0000Z</start><end>2013-10-01T22:00:00.0000Z</end><gain>419430</gain><gainFrequency>1</gainFrequency></calibration><decimation sampleRateNumerator="100" sampleRateDenominator="1"><digitalFilterChain>ResponseFIR#20131203060355.72504.133</digitalFilterChain></decimation></datalogger><datalogger publicID="Datalogger#20131203060355.699577.123" name="OTVZ.2013.274.H10"><description>OTVZ.2013.274.H10</description><gain>419430</gain><maxClockDrift>0.01</maxClockDrift><calibration serialNumber="xxxx" channel="2"><start>2013-10-01T22:00:01.0000Z</start><gain>419430</gain><gainFrequency>1</gainFrequency></calibration><calibration serialNumber="xxxx" channel="1"><start>2013-10-01T22:00:01.0000Z</start><gain>419430</gain><gainFrequency>1</gainFrequency></calibration><calibration serialNumber="xxxx" channel="0"><start>2013-10-01T22:00:01.0000Z</start><gain>419430</gain><gainFrequency>1</gainFrequency></calibration><decimation sampleRateNumerator="100" sampleRateDenominator="1"><digitalFilterChain>ResponseFIR#20131203060355.726266.136</digitalFilterChain></decimation></datalogger><responsePAZ publicID="ResponsePAZ#20131203060355.676117.72" name="OTVZ.2004.323.HE10"><type>A</type><gain>177.8</gain><gainFrequency>15</gainFrequency><normalizationFactor>0.999556</normalizationFactor><normalizationFrequency>15</normalizationFrequency><numberOfZeros>2</numberOfZeros><numberOfPoles>2</numberOfPoles><zeros>(0,0) (0,0)</zeros><poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles></responsePAZ><responsePAZ publicID="ResponsePAZ#20131203060355.678371.76" name="OTVZ.2005.242.HE10"><type>A</type><gain>177.8</gain><gainFrequency>15</gainFrequency><normalizationFactor>0.999556</normalizationFactor><normalizationFrequency>15</normalizationFrequency><numberOfZeros>2</numberOfZeros><numberOfPoles>2</numberOfPoles><zeros>(0,0) (0,0)</zeros><poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles></responsePAZ><responsePAZ publicID="ResponsePAZ#20131203060355.680463.80" name="OTVZ.2006.160.HE10"><type>A</type><gain>177.8</gain><gainFrequency>15</gainFrequency><normalizationFactor>0.999556</normalizationFactor><normalizationFrequency>15</normalizationFrequency><numberOfZeros>2</numberOfZeros><numberOfPoles>2</numberOfPoles><zeros>(0,0) (0,0)</zeros><poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles></responsePAZ><responsePAZ publicID="ResponsePAZ#20131203060355.681479.84" name="OTVZ.2007.079.HE10"><type>A</type><gain>177.8</gain><gainFrequency>15</gainFrequency><normalizationFactor>0.999556</normalizationFactor><normalizationFrequency>15</normalizationFrequency><numberOfZeros>2</numberOfZeros><numberOfPoles>2</numberOfPoles><zeros>(0,0) (0,0)</zeros><poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles></responsePAZ><responsePAZ publicID="ResponsePAZ#20131203060355.682481.88" name="OTVZ.2010.111.HE10"><type>A</type><gain>177.8</gain><gainFrequency>15</gainFrequency><normalizationFactor>0.999556</normalizationFactor><normalizationFrequency>15</normalizationFrequency><numberOfZeros>2</numberOfZeros><numberOfPoles>2</numberOfPoles><zeros>(0,0) (0,0)</zeros><poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles></responsePAZ><responsePAZ publicID="ResponsePAZ#20131203060355.683441.91" name="OTVZ.2004.323.HN10"><type>A</type><gain>177.8</gain><gainFrequency>15</gainFrequency><normalizationFactor>0.999556</normalizationFactor><normalizationFrequency>15</normalizationFrequency><numberOfZeros>2</numberOfZeros><numberOfPoles>2</numberOfPoles><zeros>(0,0) (0,0)</zeros><poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles></responsePAZ><responsePAZ publicID="ResponsePAZ#20131203060355.684335.94" name="OTVZ.2005.242.HN10"><type>A</type><gain>177.8</gain><gainFrequency>15</gainFrequency><normalizationFactor>0.999556</normalizationFactor><normalizationFrequency>15</normalizationFrequency><numberOfZeros>2</numberOfZeros><numberOfPoles>2</numberOfPoles><zeros>(0,0) (0,0)</zeros><poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles></responsePAZ><responsePAZ publicID="ResponsePAZ#20131203060355.688888.97" name="OTVZ.2006.160.HN10"><type>A</type><gain>177.8</gain><gainFrequency>15</gainFrequency><normalizationFactor>0.999556</normalizationFactor><normalizationFrequency>15</normalizationFrequency><numberOfZeros>2</numberOfZeros><numberOfPoles>2</numberOfPoles><zeros>(0,0) (0,0)</zeros><poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles></responsePAZ><responsePAZ publicID="ResponsePAZ#20131203060355.691234.100" name="OTVZ.2007.079.HN10"><type>A</type><gain>177.8</gain><gainFrequency>15</gainFrequency><normalizationFactor>0.999556</normalizationFactor><normalizationFrequency>15</normalizationFrequency><numberOfZeros>2</numberOfZeros><numberOfPoles>2</numberOfPoles><zeros>(0,0) (0,0)</zeros><poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles></responsePAZ><responsePAZ publicID="ResponsePAZ#20131203060355.692887.103" name="OTVZ.2010.111.HN10"><type>A</type><gain>177.8</gain><gainFrequency>15</gainFrequency><normalizationFactor>0.999556</normalizationFactor><normalizationFrequency>15</normalizationFrequency><numberOfZeros>2</numberOfZeros><numberOfPoles>2</numberOfPoles><zeros>(0,0) (0,0)</zeros><poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles></responsePAZ><responsePAZ publicID="ResponsePAZ#20131203060355.693773.106" name="OTVZ.2004.323.HZ10"><type>A</type><gain>177.8</gain><gainFrequency>15</gainFrequency><normalizationFactor>0.999556</normalizationFactor><normalizationFrequency>15</normalizationFrequency><numberOfZeros>2</numberOfZeros><numberOfPoles>2</numberOfPoles><zeros>(0,0) (0,0)</zeros><poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles></responsePAZ><responsePAZ publicID="ResponsePAZ#20131203060355.694984.109" name="OTVZ.2005.242.HZ10"><type>A</type><gain>177.8</gain><gainFrequency>15</gainFrequency><normalizationFactor>0.999556</normalizationFactor><normalizationFrequency>15</normalizationFrequency><numberOfZeros>2</numberOfZeros><numberOfPoles>2</numberOfPoles><zeros>(0,0) (0,0)</zeros><poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles></responsePAZ><responsePAZ publicID="ResponsePAZ#20131203060355.69607.112" name="OTVZ.2006.160.HZ10"><type>A</type><gain>177.8</gain><gainFrequency>15</gainFrequency><normalizationFactor>0.999556</normalizationFactor><normalizationFrequency>15</normalizationFrequency><numberOfZeros>2</numberOfZeros><numberOfPoles>2</numberOfPoles><zeros>(0,0) (0,0)</zeros><poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles></responsePAZ><responsePAZ publicID="ResponsePAZ#20131203060355.697011.115" name="OTVZ.2007.079.HZ10"><type>A</type><gain>177.8</gain><gainFrequency>15</gainFrequency><normalizationFactor>0.999556</normalizationFactor><normalizationFrequency>15</normalizationFrequency><numberOfZeros>2</numberOfZeros><numberOfPoles>2</numberOfPoles><zeros>(0,0) (0,0)</zeros><poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles></responsePAZ><responsePAZ publicID="ResponsePAZ#20131203060355.698142.118" name="OTVZ.2010.111.HZ10"><type>A</type><gain>177.8</gain><gainFrequency>15</gainFrequency><normalizationFactor>0.999556</normalizationFactor><normalizationFrequency>15</normalizationFrequency><numberOfZeros>2</numberOfZeros><numberOfPoles>2</numberOfPoles><zeros>(0,0) (0,0)</zeros><poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles></responsePAZ><responsePAZ publicID="ResponsePAZ#20131203060355.699182.122" name="OTVZ.2011.315.HE10"><type>B</type><gain>2000</gain><gainFrequency>1</gainFrequency><normalizationFactor>2304260</normalizationFactor><normalizationFrequency>1</normalizationFrequency><numberOfZeros>2</numberOfZeros><numberOfPoles>5</numberOfPoles><zeros>(0,0) (0,0)</zeros><poles>(-0.01178,0.01178) (-0.01178,-0.01178) (-180,0) (-160,0) (-80,0)</poles></responsePAZ><responsePAZ publicID="ResponsePAZ#20131203060355.70048.126" name="OTVZ.2013.274.HE10"><type>B</type><gain>2000</gain><gainFrequency>1</gainFrequency><normalizationFactor>2304260</normalizationFactor><normalizationFrequency>1</normalizationFrequency><numberOfZeros>2</numberOfZeros><numberOfPoles>5</numberOfPoles><zeros>(0,0) (0,0)</zeros><poles>(-0.01178,0.01178) (-0.01178,-0.01178) (-180,0) (-160,0) (-80,0)</poles></responsePAZ><responsePAZ publicID="ResponsePAZ#20131203060355.701453.129" name="OTVZ.2011.315.HN10"><type>B</type><gain>2000</gain><gainFrequency>1</gainFrequency><normalizationFactor>2304260</normalizationFactor><normalizationFrequency>1</normalizationFrequency><numberOfZeros>2</numberOfZeros><numberOfPoles>5</numberOfPoles><zeros>(0,0) (0,0)</zeros><poles>(-0.01178,0.01178) (-0.01178,-0.01178) (-180,0) (-160,0) (-80,0)</poles></responsePAZ><responsePAZ publicID="ResponsePAZ#20131203060355.72369.132" name="OTVZ.2013.274.HN10"><type>B</type><gain>2000</gain><gainFrequency>1</gainFrequency><normalizationFactor>2304260</normalizationFactor><normalizationFrequency>1</normalizationFrequency><numberOfZeros>2</numberOfZeros><numberOfPoles>5</numberOfPoles><zeros>(0,0) (0,0)</zeros><poles>(-0.01178,0.01178) (-0.01178,-0.01178) (-180,0) (-160,0) (-80,0)</poles></responsePAZ><responsePAZ publicID="ResponsePAZ#20131203060355.725728.135" name="OTVZ.2011.315.HZ10"><type>B</type><gain>2000</gain><gainFrequency>1</gainFrequency><normalizationFactor>2304260</normalizationFactor><normalizationFrequency>1</normalizationFrequency><numberOfZeros>2</numberOfZeros><numberOfPoles>5</numberOfPoles><zeros>(0,0) (0,0)</zeros><poles>(-0.01178,0.01178) (-0.01178,-0.01178) (-180,0) (-160,0) (-80,0)</poles></responsePAZ><responsePAZ publicID="ResponsePAZ#20131203060355.726759.138" name="OTVZ.2013.274.HZ10"><type>B</type><gain>2000</gain><gainFrequency>1</gainFrequency><normalizationFactor>2304260</normalizationFactor><normalizationFrequency>1</normalizationFrequency><numberOfZeros>2</numberOfZeros><numberOfPoles>5</numberOfPoles><zeros>(0,0) (0,0)</zeros><poles>(-0.01178,0.01178) (-0.01178,-0.01178) (-180,0) (-160,0) (-80,0)</poles></responsePAZ><responseFIR publicID="ResponseFIR#20131203060355.674636.70" name="OTVZ.10.EHE.2004.323.stage_3"><gain>1</gain><decimationFactor>1</decimationFactor><delay>4.167</delay><correction>4.167</correction><numberOfCoefficients>65</numberOfCoefficients><symmetry>A</symmetry><coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients></responseFIR><responseFIR publicID="ResponseFIR#20131203060355.677315.74" name="OTVZ.10.EHE.2005.242.stage_3"><gain>1</gain><decimationFactor>1</decimationFactor><delay>4.167</delay><correction>4.167</correction><numberOfCoefficients>65</numberOfCoefficients><symmetry>A</symmetry><coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients></responseFIR><responseFIR publicID="ResponseFIR#20131203060355.679345.78" name="OTVZ.10.EHE.2006.160.stage_3"><gain>1</gain><decimationFactor>1</decimationFactor><delay>4.167</delay><correction>4.167</correction><numberOfCoefficients>65</numberOfCoefficients><symmetry>A</symmetry><coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients></responseFIR><responseFIR publicID="ResponseFIR#20131203060355.681043.82" name="OTVZ.10.EHE.2007.079.stage_3"><gain>1</gain><decimationFactor>1</decimationFactor><delay>4.167</delay><correction>4.167</correction><numberOfCoefficients>65</numberOfCoefficients><symmetry>A</symmetry><coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients></responseFIR><responseFIR publicID="ResponseFIR#20131203060355.681918.86" name="OTVZ.10.EHE.2010.111.stage_3"><gain>1</gain><decimationFactor>1</decimationFactor><delay>4.167</delay><correction>4.167</correction><numberOfCoefficients>65</numberOfCoefficients><symmetry>A</symmetry><coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients></responseFIR><responseFIR publicID="ResponseFIR#20131203060355.682952.89" name="OTVZ.10.EHN.2004.323.stage_3"><gain>1</gain><decimationFactor>1</decimationFactor><delay>4.167</delay><correction>4.167</correction><numberOfCoefficients>65</numberOfCoefficients><symmetry>A</symmetry><coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients></responseFIR><responseFIR publicID="ResponseFIR#20131203060355.683882.92" name="OTVZ.10.EHN.2005.242.stage_3"><gain>1</gain><decimationFactor>1</decimationFactor><delay>4.167</delay><correction>4.167</correction><numberOfCoefficients>65</numberOfCoefficients><symmetry>A</symmetry><coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients></responseFIR><responseFIR publicID="ResponseFIR#20131203060355.687576.95" name="OTVZ.10.EHN.2006.160.stage_3"><gain>1</gain><decimationFactor>1</decimationFactor><delay>4.167</delay><correction>4.167</correction><numberOfCoefficients>65</numberOfCoefficients><symmetry>A</symmetry><coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients></responseFIR><responseFIR publicID="ResponseFIR#20131203060355.690145.98" name="OTVZ.10.EHN.2007.079.stage_3"><gain>1</gain><decimationFactor>1</decimationFactor><delay>4.167</delay><correction>4.167</correction><numberOfCoefficients>65</numberOfCoefficients><symmetry>A</symmetry><coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients></responseFIR><responseFIR publicID="ResponseFIR#20131203060355.692272.101" name="OTVZ.10.EHN.2010.111.stage_3"><gain>1</gain><decimationFactor>1</decimationFactor><delay>4.167</delay><correction>4.167</correction><numberOfCoefficients>65</numberOfCoefficients><symmetry>A</symmetry><coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients></responseFIR><responseFIR publicID="ResponseFIR#20131203060355.693306.104" name="OTVZ.10.EHZ.2004.323.stage_3"><gain>1</gain><decimationFactor>1</decimationFactor><delay>4.167</delay><correction>4.167</correction><numberOfCoefficients>65</numberOfCoefficients><symmetry>A</symmetry><coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients></responseFIR><responseFIR publicID="ResponseFIR#20131203060355.694352.107" name="OTVZ.10.EHZ.2005.242.stage_3"><gain>1</gain><decimationFactor>1</decimationFactor><delay>4.167</delay><correction>4.167</correction><numberOfCoefficients>65</numberOfCoefficients><symmetry>A</symmetry><coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients></responseFIR><responseFIR publicID="ResponseFIR#20131203060355.695517.110" name="OTVZ.10.EHZ.2006.160.stage_3"><gain>1</gain><decimationFactor>1</decimationFactor><delay>4.167</delay><correction>4.167</correction><numberOfCoefficients>65</numberOfCoefficients><symmetry>A</symmetry><coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients></responseFIR><responseFIR publicID="ResponseFIR#20131203060355.696538.113" name="OTVZ.10.EHZ.2007.079.stage_3"><gain>1</gain><decimationFactor>1</decimationFactor><delay>4.167</delay><correction>4.167</correction><numberOfCoefficients>65</numberOfCoefficients><symmetry>A</symmetry><coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients></responseFIR><responseFIR publicID="ResponseFIR#20131203060355.697624.116" name="OTVZ.10.EHZ.2010.111.stage_3"><gain>1</gain><decimationFactor>1</decimationFactor><delay>4.167</delay><correction>4.167</correction><numberOfCoefficients>65</numberOfCoefficients><symmetry>A</symmetry><coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients></responseFIR><responseFIR publicID="ResponseFIR#20131203060355.698671.120" name="OTVZ.10.HHE.2011.315.stage_3"><gain>1</gain><decimationFactor>1</decimationFactor><delay>4.167</delay><correction>4.167</correction><numberOfCoefficients>65</numberOfCoefficients><symmetry>A</symmetry><coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients></responseFIR><responseFIR publicID="ResponseFIR#20131203060355.699871.124" name="OTVZ.10.HHE.2013.274.stage_3"><gain>1</gain><decimationFactor>1</decimationFactor><delay>4.167</delay><correction>4.167</correction><numberOfCoefficients>71</numberOfCoefficients><symmetry>A</symmetry><coefficients>-9.9507e-15 -1.70236e-13 -9.90439e-13 2.17637e-11 5.49924e-11 -4.02219e-12 -4.7825e-10 -7.89445e-10 7.52368e-10 4.50304e-09 -1.19163e-09 -4.53371e-09 -8.00017e-09 6.82038e-11 6.27105e-08 -1.38519e-07 1.69669e-07 2.8784e-08 -4.7879e-07 -5.39609e-07 6.0835e-06 -1.90476e-05 4.2078e-05 -7.07905e-05 9.0795e-05 -7.30962e-05 -2.26985e-05 0.000236698 -0.000584649 0.00102524 -0.00142785 0.00155774 -0.00109833 -0.000261751 0.00266829 -0.00590073 0.00914406 -0.0108775 0.0090517 -0.00201974 -0.00880971 0.0205158 -0.0318696 0.0350196 -0.0276292 0.00733085 0.0224854 -0.0540381 0.0755232 -0.0748276 0.04432 0.0136602 -0.082974 0.133998 -0.131788 0.0570094 0.0808518 -0.211189 0.213595 0.00960486 -0.343399 0.261754 0.609444 0.313162 0.0623035 0.00440098 7.71668e-05 1.52515e-06 5.5255e-08 2.19269e-10 4.93305e-17</coefficients></responseFIR><responseFIR publicID="ResponseFIR#20131203060355.701011.127" name="OTVZ.10.HHN.2011.315.stage_3"><gain>1</gain><decimationFactor>1</decimationFactor><delay>4.167</delay><correction>4.167</correction><numberOfCoefficients>65</numberOfCoefficients><symmetry>A</symmetry><coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients></responseFIR><responseFIR publicID="ResponseFIR#20131203060355.722919.130" name="OTVZ.10.HHN.2013.274.stage_3"><gain>1</gain><decimationFactor>1</decimationFactor><delay>4.167</delay><correction>4.167</correction><numberOfCoefficients>71</numberOfCoefficients><symmetry>A</symmetry><coefficients>-9.9507e-15 -1.70236e-13 -9.90439e-13 2.17637e-11 5.49924e-11 -4.02219e-12 -4.7825e-10 -7.89445e-10 7.52368e-10 4.50304e-09 -1.19163e-09 -4.53371e-09 -8.00017e-09 6.82038e-11 6.27105e-08 -1.38519e-07 1.69669e-07 2.8784e-08 -4.7879e-07 -5.39609e-07 6.0835e-06 -1.90476e-05 4.2078e-05 -7.07905e-05 9.0795e-05 -7.30962e-05 -2.26985e-05 0.000236698 -0.000584649 0.00102524 -0.00142785 0.00155774 -0.00109833 -0.000261751 0.00266829 -0.00590073 0.00914406 -0.0108775 0.0090517 -0.00201974 -0.00880971 0.0205158 -0.0318696 0.0350196 -0.0276292 0.00733085 0.0224854 -0.0540381 0.0755232 -0.0748276 0.04432 0.0136602 -0.082974 0.133998 -0.131788 0.0570094 0.0808518 -0.211189 0.213595 0.00960486 -0.343399 0.261754 0.609444 0.313162 0.0623035 0.00440098 7.71668e-05 1.52515e-06 5.5255e-08 2.19269e-10 4.93305e-17</coefficients></responseFIR><responseFIR publicID="ResponseFIR#20131203060355.72504.133" name="OTVZ.10.HHZ.2011.315.stage_3"><gain>1</gain><decimationFactor>1</decimationFactor><delay>4.167</delay><correction>4.167</correction><numberOfCoefficients>65</numberOfCoefficients><symmetry>A</symmetry><coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients></responseFIR><responseFIR publicID="ResponseFIR#20131203060355.726266.136" name="OTVZ.10.HHZ.2013.274.stage_3"><gain>1</gain><decimationFactor>1</decimationFactor><delay>4.167</delay><correction>4.167</correction><numberOfCoefficients>71</numberOfCoefficients><symmetry>A</symmetry><coefficients>-9.9507e-15 -1.70236e-13 -9.90439e-13 2.17637e-11 5.49924e-11 -4.02219e-12 -4.7825e-10 -7.89445e-10 7.52368e-10 4.50304e-09 -1.19163e-09 -4.53371e-09 -8.00017e-09 6.82038e-11 6.27105e-08 -1.38519e-07 1.69669e-07 2.8784e-08 -4.7879e-07 -5.39609e-07 6.0835e-06 -1.90476e-05 4.2078e-05 -7.07905e-05 9.0795e-05 -7.30962e-05 -2.26985e-05 0.000236698 -0.000584649 0.00102524 -0.00142785 0.00155774 -0.00109833 -0.000261751 0.00266829 -0.00590073 0.00914406 -0.0108775 0.0090517 -0.00201974 -0.00880971 0.0205158 -0.0318696 0.0350196 -0.0276292 0.00733085 0.0224854 -0.0540381 0.0755232 -0.0748276 0.04432 0.0136602 -0.082974 0.133998 -0.131788 0.0570094 0.0808518 -0.211189 0.213595 0.00960486 -0.343399 0.261754 0.609444 0.313162 0.0623035 0.00440098 7.71668e-05 1.52515e-06 5.5255e-08 2.19269e-10 4.93305e-17</coefficients></responseFIR><network publicID="Network#20131203060355.667049.2" code="NZ"><start>1980-01-01T00:00:00.0000Z</start><description> </description><netClass>p</netClass><archive> </archive><restricted>false</restricted><shared>true</shared><station publicID="Station#20131203060355.667366.3" code="OTVZ"><start>2004-11-18T00:00:00.0000Z</start><description>Oturere</description><latitude>-39.163114</latitude><longitude>175.665074</longitude><elevation>1506</elevation><place>Oturere</place><affiliation>Tongariro National Park volcano seismic network</affiliation><archive> </archive><restricted>false</restricted><shared>true</shared><sensorLocation publicID="SensorLocation#20131203060355.673436.68" code="10"><start>2004-11-18T04:00:00.0000Z</start><latitude>-39.163114</latitude><longitude>175.665074</longitude><elevation>1506</elevation><stream code="EHE" datalogger="Datalogger#20131203060355.673938.69" sensor="Sensor#20131203060355.675368.71"><start>2004-11-18T04:00:00.0000Z</start><end>2005-08-30T00:00:00.0000Z</end><dataloggerSerialNumber>xxxx</dataloggerSerialNumber><dataloggerChannel>2</dataloggerChannel><sensorSerialNumber>yyyy</sensorSerialNumber><sensorChannel>2</sensorChannel><sampleRateNumerator>100</sampleRateNumerator><sampleRateDenominator>1</sampleRateDenominator><depth>0</depth><azimuth>90</azimuth><dip>0</dip><gain>74574700</gain><gainFrequency>15</gainFrequency><gainUnit>M/S</gainUnit><format>Steim2</format><flags>CG</flags><restricted>false</restricted><shared>true</shared></stream><stream code="EHE" datalogger="Datalogger#20131203060355.676764.73" sensor="Sensor#20131203060355.67778.75"><start>2005-08-30T00:00:01.0000Z</start><end>2006-06-08T06:00:00.0000Z</end><dataloggerSerialNumber>xxxx</dataloggerSerialNumber><dataloggerChannel>2</dataloggerChannel><sensorSerialNumber>yyyy</sensorSerialNumber><sensorChannel>2</sensorChannel><sampleRateNumerator>100</sampleRateNumerator><sampleRateDenominator>1</sampleRateDenominator><depth>0</depth><azimuth>90</azimuth><dip>0</dip><gain>74574700</gain><gainFrequency>15</gainFrequency><gainUnit>M/S</gainUnit><format>Steim2</format><flags>CG</flags><restricted>false</restricted><shared>true</shared></stream><stream code="EHE" datalogger="Datalogger#20131203060355.678891.77" sensor="Sensor#20131203060355.679861.79"><start>2006-06-09T00:00:01.0000Z</start><end>2007-03-20T00:00:00.0000Z</end><dataloggerSerialNumber>xxxx</dataloggerSerialNumber><dataloggerChannel>2</dataloggerChannel><sensorSerialNumber>yyyy</sensorSerialNumber><sensorChannel>2</sensorChannel><sampleRateNumerator>100</sampleRateNumerator><sampleRateDenominator>1</sampleRateDenominator><depth>0</depth><azimuth>90</azimuth><dip>0</dip><gain>74574700</gain><gainFrequency>15</gainFrequency><gainUnit>M/S</gainUnit><format>Steim2</format><flags>CG</flags><restricted>false</restricted><shared>true</shared></stream><stream code="EHE" datalogger="Datalogger#20131203060355.680909.81" sensor="Sensor#20131203060355.681318.83"><start>2007-03-20T00:00:01.0000Z</start><end>2010-04-20T09:00:00.0000Z</end><dataloggerSerialNumber>xxxx</dataloggerSerialNumber><dataloggerChannel>2</dataloggerChannel><sensorSerialNumber>yyyy</sensorSerialNumber><sensorChannel>2</sensorChannel><sampleRateNumerator>100</sampleRateNumerator><sampleRateDenominator>1</sampleRateDenominator><depth>0</depth><azimuth>90</azimuth><dip>0</dip><gain>74574700</gain><gainFrequency>15</gainFrequency><gainUnit>M/S</gainUnit><format>Steim2</format><flags>CG</flags><restricted>false</restricted><shared>true</shared></stream><stream code="EHE" datalogger="Datalogger#20131203060355.681784.85" sensor="Sensor#20131203060355.682304.87"><start>2010-04-21T00:00:02.0000Z</start><end>2011-11-10T23:50:00.0000Z</end><dataloggerSerialNumber>xxxx</dataloggerSerialNumber><dataloggerChannel>2</dataloggerChannel><sensorSerialNumber>yyyy</sensorSerialNumber><sensorChannel>2</sensorChannel><sampleRateNumerator>100</sampleRateNumerator><sampleRateDenominator>1</sampleRateDenominator><depth>0</depth><azimuth>90</azimuth><dip>0</dip><gain>74574700</gain><gainFrequency>15</gainFrequency><gainUnit>M/S</gainUnit><format>Steim2</format><flags>CG</flags><restricted>false</restricted><shared>true</shared></stream><stream code="EHN" datalogger="Datalogger#20131203060355.673938.69" sensor="Sensor#20131203060355.683231.90"><start>2004-11-18T04:00:00.0000Z</start><end>2005-08-30T00:00:00.0000Z</end><dataloggerSerialNumber>xxxx</dataloggerSerialNumber><dataloggerChannel>1</dataloggerChannel><sensorSerialNumber>yyyy</sensorSerialNumber><sensorChannel>1</sensorChannel><sampleRateNumerator>100</sampleRateNumerator><sampleRateDenominator>1</sampleRateDenominator><depth>0</depth><azimuth>0</azimuth><dip>0</dip><gain>74574700</gain><gainFrequency>15</gainFrequency><gainUnit>M/S</gainUnit><format>Steim2</format><flags>CG</flags><restricted>false</restricted><shared>true</shared></stream><stream code="EHN" datalogger="Datalogger#20131203060355.676764.73" sensor="Sensor#20131203060355.684168.93"><start>2005-08-30T00:00:01.0000Z</start><end>2006-06-08T06:00:00.0000Z</end><dataloggerSerialNumber>xxxx</dataloggerSerialNumber><dataloggerChannel>1</dataloggerChannel><sensorSerialNumber>yyyy</sensorSerialNumber><sensorChannel>1</sensorChannel><sampleRateNumerator>100</sampleRateNumerator><sampleRateDenominator>1</sampleRateDenominator><depth>0</depth><azimuth>0</azimuth><dip>0</dip><gain>74574700</gain><gainFrequency>15</gainFrequency><gainUnit>M/S</gainUnit><format>Steim2</format><flags>CG</flags><restricted>false</restricted><shared>true</shared></stream><stream code="EHN" datalogger="Datalogger#20131203060355.678891.77" sensor="Sensor#20131203060355.688238.96"><start>2006-06-09T00:00:01.0000Z</start><end>2007-03-20T00:00:00.0000Z</end><dataloggerSerialNumber>xxxx</dataloggerSerialNumber><dataloggerChannel>1</dataloggerChannel><sensorSerialNumber>yyyy</sensorSerialNumber><sensorChannel>1</sensorChannel><sampleRateNumerator>100</sampleRateNumerator><sampleRateDenominator>1</sampleRateDenominator><depth>0</depth><azimuth>0</azimuth><dip>0</dip><gain>74574700</gain><gainFrequency>15</gainFrequency><gainUnit>M/S</gainUnit><format>Steim2</format><flags>CG</flags><restricted>false</restricted><shared>true</shared></stream><stream code="EHN" datalogger="Datalogger#20131203060355.680909.81" sensor="Sensor#20131203060355.690634.99"><start>2007-03-20T00:00:01.0000Z</start><end>2010-04-20T09:00:00.0000Z</end><dataloggerSerialNumber>xxxx</dataloggerSerialNumber><dataloggerChannel>1</dataloggerChannel><sensorSerialNumber>yyyy</sensorSerialNumber><sensorChannel>1</sensorChannel><sampleRateNumerator>100</sampleRateNumerator><sampleRateDenominator>1</sampleRateDenominator><depth>0</depth><azimuth>0</azimuth><dip>0</dip><gain>74574700</gain><gainFrequency>15</gainFrequency><gainUnit>M/S</gainUnit><format>Steim2</format><flags>CG</flags><restricted>false</restricted><shared>true</shared></stream><stream code="EHN" datalogger="Datalogger#20131203060355.681784.85" sensor="Sensor#20131203060355.692699.102"><start>2010-04-21T00:00:02.0000Z</start><end>2011-11-10T23:50:00.0000Z</end><dataloggerSerialNumber>xxxx</dataloggerSerialNumber><dataloggerChannel>1</dataloggerChannel><sensorSerialNumber>yyyy</sensorSerialNumber><sensorChannel>1</sensorChannel><sampleRateNumerator>100</sampleRateNumerator><sampleRateDenominator>1</sampleRateDenominator><depth>0</depth><azimuth>0</azimuth><dip>0</dip><gain>74574700</gain><gainFrequency>15</gainFrequency><gainUnit>M/S</gainUnit><format>Steim2</format><flags>CG</flags><restricted>false</restricted><shared>true</shared></stream><stream code="EHZ" datalogger="Datalogger#20131203060355.673938.69" sensor="Sensor#20131203060355.693591.105"><start>2004-11-18T04:00:00.0000Z</start><end>2005-08-30T00:00:00.0000Z</end><dataloggerSerialNumber>xxxx</dataloggerSerialNumber><dataloggerChannel>0</dataloggerChannel><sensorSerialNumber>yyyy</sensorSerialNumber><sensorChannel>0</sensorChannel><sampleRateNumerator>100</sampleRateNumerator><sampleRateDenominator>1</sampleRateDenominator><depth>0</depth><azimuth>0</azimuth><dip>-90</dip><gain>74574700</gain><gainFrequency>15</gainFrequency><gainUnit>M/S</gainUnit><format>Steim2</format><flags>CG</flags><restricted>false</restricted><shared>true</shared></stream><stream code="EHZ" datalogger="Datalogger#20131203060355.676764.73" sensor="Sensor#20131203060355.694786.108"><start>2005-08-30T00:00:01.0000Z</start><end>2006-06-08T06:00:00.0000Z</end><dataloggerSerialNumber>xxxx</dataloggerSerialNumber><dataloggerChannel>0</dataloggerChannel><sensorSerialNumber>yyyy</sensorSerialNumber><sensorChannel>0</sensorChannel><sampleRateNumerator>100</sampleRateNumerator><sampleRateDenominator>1</sampleRateDenominator><depth>0</depth><azimuth>0</azimuth><dip>-90</dip><gain>74574700</gain><gainFrequency>15</gainFrequency><gainUnit>M/S</gainUnit><format>Steim2</format><flags>CG</flags><restricted>false</restricted><shared>true</shared></stream><stream code="EHZ" datalogger="Datalogger#20131203060355.678891.77" sensor="Sensor#20131203060355.695886.111"><start>2006-06-09T00:00:01.0000Z</start><end>2007-03-20T00:00:00.0000Z</end><dataloggerSerialNumber>xxxx</dataloggerSerialNumber><dataloggerChannel>0</dataloggerChannel><sensorSerialNumber>yyyy</sensorSerialNumber><sensorChannel>0</sensorChannel><sampleRateNumerator>100</sampleRateNumerator><sampleRateDenominator>1</sampleRateDenominator><depth>0</depth><azimuth>0</azimuth><dip>-90</dip><gain>74574700</gain><gainFrequency>15</gainFrequency><gainUnit>M/S</gainUnit><format>Steim2</format><flags>CG</flags><restricted>false</restricted><shared>true</shared></stream><stream code="EHZ" datalogger="Datalogger#20131203060355.680909.81" sensor="Sensor#20131203060355.696838.114"><start>2007-03-20T00:00:01.0000Z</start><end>2010-04-20T09:00:00.0000Z</end><dataloggerSerialNumber>xxxx</dataloggerSerialNumber><dataloggerChannel>0</dataloggerChannel><sensorSerialNumber>yyyy</sensorSerialNumber><sensorChannel>0</sensorChannel><sampleRateNumerator>100</sampleRateNumerator><sampleRateDenominator>1</sampleRateDenominator><depth>0</depth><azimuth>0</azimuth><dip>-90</dip><gain>74574700</gain><gainFrequency>15</gainFrequency><gainUnit>M/S</gainUnit><format>Steim2</format><flags>CG</flags><restricted>false</restricted><shared>true</shared></stream><stream code="EHZ" datalogger="Datalogger#20131203060355.681784.85" sensor="Sensor#20131203060355.697965.117"><start>2010-04-21T00:00:02.0000Z</start><end>2011-11-10T23:50:00.0000Z</end><dataloggerSerialNumber>xxxx</dataloggerSerialNumber><dataloggerChannel>0</dataloggerChannel><sensorSerialNumber>yyyy</sensorSerialNumber><sensorChannel>0</sensorChannel><sampleRateNumerator>100</sampleRateNumerator><sampleRateDenominator>1</sampleRateDenominator><depth>0</depth><azimuth>0</azimuth><dip>-90</dip><gain>74574700</gain><gainFrequency>15</gainFrequency><gainUnit>M/S</gainUnit><format>Steim2</format><flags>CG</flags><restricted>false</restricted><shared>true</shared></stream><stream code="HHE" datalogger="Datalogger#20131203060355.698511.119" sensor="Sensor#20131203060355.698995.121"><start>2011-11-11T02:00:00.0000Z</start><end>2013-10-01T22:00:00.0000Z</end><dataloggerSerialNumber>xxxx</dataloggerSerialNumber><dataloggerChannel>2</dataloggerChannel><sensorSerialNumber>yyyy</sensorSerialNumber><sensorChannel>2</sensorChannel><sampleRateNumerator>100</sampleRateNumerator><sampleRateDenominator>1</sampleRateDenominator><depth>0</depth><azimuth>90</azimuth><dip>0</dip><gain>838861000</gain><gainFrequency>1</gainFrequency><gainUnit>M/S</gainUnit><format>Steim2</format><flags>CG</flags><restricted>false</restricted><shared>true</shared></stream><stream code="HHE" datalogger="Datalogger#20131203060355.699577.123" sensor="Sensor#20131203060355.700238.125"><start>2013-10-01T22:00:01.0000Z</start><dataloggerSerialNumber>xxxx</dataloggerSerialNumber><dataloggerChannel>2</dataloggerChannel><sensorSerialNumber>yyyy</sensorSerialNumber><sensorChannel>2</sensorChannel><sampleRateNumerator>100</sampleRateNumerator><sampleRateDenominator>1</sampleRateDenominator><depth>0</depth><azimuth>90</azimuth><dip>0</dip><gain>838861000</gain><gainFrequency>1</gainFrequency><gainUnit>M/S</gainUnit><format>Steim2</format><flags>CG</flags><restricted>false</restricted><shared>true</shared></stream><stream code="HHN" datalogger="Datalogger#20131203060355.698511.119" sensor="Sensor#20131203060355.701291.128"><start>2011-11-11T02:00:00.0000Z</start><end>2013-10-01T22:00:00.0000Z</end><dataloggerSerialNumber>xxxx</dataloggerSerialNumber><dataloggerChannel>1</dataloggerChannel><sensorSerialNumber>yyyy</sensorSerialNumber><sensorChannel>1</sensorChannel><sampleRateNumerator>100</sampleRateNumerator><sampleRateDenominator>1</sampleRateDenominator><depth>0</depth><azimuth>0</azimuth><dip>0</dip><gain>838861000</gain><gainFrequency>1</gainFrequency><gainUnit>M/S</gainUnit><format>Steim2</format><flags>CG</flags><restricted>false</restricted><shared>true</shared></stream><stream code="HHN" datalogger="Datalogger#20131203060355.699577.123" sensor="Sensor#20131203060355.72344.131"><start>2013-10-01T22:00:01.0000Z</start><dataloggerSerialNumber>xxxx</dataloggerSerialNumber><dataloggerChannel>1</dataloggerChannel><sensorSerialNumber>yyyy</sensorSerialNumber><sensorChannel>1</sensorChannel><sampleRateNumerator>100</sampleRateNumerator><sampleRateDenominator>1</sampleRateDenominator><depth>0</depth><azimuth>0</azimuth><dip>0</dip><gain>838861000</gain><gainFrequency>1</gainFrequency><gainUnit>M/S</gainUnit><format>Steim2</format><flags>CG</flags><restricted>false</restricted><shared>true</shared></stream><stream code="HHZ" datalogger="Datalogger#20131203060355.698511.119" sensor="Sensor#20131203060355.725527.134"><start>2011-11-11T02:00:00.0000Z</start><end>2013-10-01T22:00:00.0000Z</end><dataloggerSerialNumber>xxxx</dataloggerSerialNumber><dataloggerChannel>0</dataloggerChannel><sensorSerialNumber>yyyy</sensorSerialNumber><sensorChannel>0</sensorChannel><sampleRateNumerator>100</sampleRateNumerator><sampleRateDenominator>1</sampleRateDenominator><depth>0</depth><azimuth>0</azimuth><dip>-90</dip><gain>838861000</gain><gainFrequency>1</gainFrequency><gainUnit>M/S</gainUnit><format>Steim2</format><flags>CG</flags><restricted>false</restricted><shared>true</shared></stream><stream code="HHZ" datalogger="Datalogger#20131203060355.699577.123" sensor="Sensor#20131203060355.726579.137"><start>2013-10-01T22:00:01.0000Z</start><dataloggerSerialNumber>xxxx</dataloggerSerialNumber><dataloggerChannel>0</dataloggerChannel><sensorSerialNumber>yyyy</sensorSerialNumber><sensorChannel>0</sensorChannel><sampleRateNumerator>100</sampleRateNumerator><sampleRateDenominator>1</sampleRateDenominator><depth>0</depth><azimuth>0</azimuth><dip>-90</dip><gain>838861000</gain><gainFrequency>1</gainFrequency><gainUnit>M/S</gainUnit><format>Steim2</format><flags>CG</flags><restricted>false</restricted><shared>true</shared></stream></sensorLocation></station></network></Inventory></seiscomp>
+<seiscomp xmlns="http://geofon.gfz-potsdam.de/ns/seiscomp3-schema/0.7" version="0.7">
+  <Inventory>
+    <sensor publicID="Sensor#20131203214041.159992.71" name="OTVZ.2004.323.HE10" response="ResponsePAZ#20131203214041.16015.72">
+      <description>L4C-3D</description>
+      <model>L4C-3D</model>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="2">
+        <start>2004-11-18T04:00:00.0000Z</start>
+        <end>2005-08-30T00:00:00.0000Z</end>
+        <gain>177.8</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20131203214041.16097.75" name="OTVZ.2005.242.HE10" response="ResponsePAZ#20131203214041.161016.76">
+      <description>L4C-3D</description>
+      <model>L4C-3D</model>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="2">
+        <start>2005-08-30T00:00:01.0000Z</start>
+        <end>2006-06-08T06:00:00.0000Z</end>
+        <gain>177.8</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20131203214041.161528.79" name="OTVZ.2006.160.HE10" response="ResponsePAZ#20131203214041.161565.80">
+      <description>L4C-3D</description>
+      <model>L4C-3D</model>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="2">
+        <start>2006-06-09T00:00:01.0000Z</start>
+        <end>2007-03-20T00:00:00.0000Z</end>
+        <gain>177.8</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20131203214041.162039.83" name="OTVZ.2007.079.HE10" response="ResponsePAZ#20131203214041.162072.84">
+      <description>L4C-3D</description>
+      <model>L4C-3D</model>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="2">
+        <start>2007-03-20T00:00:01.0000Z</start>
+        <end>2010-04-20T09:00:00.0000Z</end>
+        <gain>177.8</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20131203214041.162549.87" name="OTVZ.2010.111.HE10" response="ResponsePAZ#20131203214041.162586.88">
+      <description>L4C-3D</description>
+      <model>L4C-3D</model>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="2">
+        <start>2010-04-21T00:00:02.0000Z</start>
+        <end>2011-11-10T23:50:00.0000Z</end>
+        <gain>177.8</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20131203214041.163066.90" name="OTVZ.2004.323.HN10" response="ResponsePAZ#20131203214041.1631.91">
+      <description>L4C-3D</description>
+      <model>L4C-3D</model>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="1">
+        <start>2004-11-18T04:00:00.0000Z</start>
+        <end>2005-08-30T00:00:00.0000Z</end>
+        <gain>177.8</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20131203214041.16369.93" name="OTVZ.2005.242.HN10" response="ResponsePAZ#20131203214041.163724.94">
+      <description>L4C-3D</description>
+      <model>L4C-3D</model>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="1">
+        <start>2005-08-30T00:00:01.0000Z</start>
+        <end>2006-06-08T06:00:00.0000Z</end>
+        <gain>177.8</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20131203214041.164173.96" name="OTVZ.2006.160.HN10" response="ResponsePAZ#20131203214041.164207.97">
+      <description>L4C-3D</description>
+      <model>L4C-3D</model>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="1">
+        <start>2006-06-09T00:00:01.0000Z</start>
+        <end>2007-03-20T00:00:00.0000Z</end>
+        <gain>177.8</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20131203214041.16466.99" name="OTVZ.2007.079.HN10" response="ResponsePAZ#20131203214041.164696.100">
+      <description>L4C-3D</description>
+      <model>L4C-3D</model>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="1">
+        <start>2007-03-20T00:00:01.0000Z</start>
+        <end>2010-04-20T09:00:00.0000Z</end>
+        <gain>177.8</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20131203214041.16513.102" name="OTVZ.2010.111.HN10" response="ResponsePAZ#20131203214041.165162.103">
+      <description>L4C-3D</description>
+      <model>L4C-3D</model>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="1">
+        <start>2010-04-21T00:00:02.0000Z</start>
+        <end>2011-11-10T23:50:00.0000Z</end>
+        <gain>177.8</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20131203214041.165584.105" name="OTVZ.2004.323.HZ10" response="ResponsePAZ#20131203214041.165616.106">
+      <description>L4C-3D</description>
+      <model>L4C-3D</model>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="0">
+        <start>2004-11-18T04:00:00.0000Z</start>
+        <end>2005-08-30T00:00:00.0000Z</end>
+        <gain>177.8</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20131203214041.166099.108" name="OTVZ.2005.242.HZ10" response="ResponsePAZ#20131203214041.166132.109">
+      <description>L4C-3D</description>
+      <model>L4C-3D</model>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="0">
+        <start>2005-08-30T00:00:01.0000Z</start>
+        <end>2006-06-08T06:00:00.0000Z</end>
+        <gain>177.8</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20131203214041.166557.111" name="OTVZ.2006.160.HZ10" response="ResponsePAZ#20131203214041.166589.112">
+      <description>L4C-3D</description>
+      <model>L4C-3D</model>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="0">
+        <start>2006-06-09T00:00:01.0000Z</start>
+        <end>2007-03-20T00:00:00.0000Z</end>
+        <gain>177.8</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20131203214041.167013.114" name="OTVZ.2007.079.HZ10" response="ResponsePAZ#20131203214041.167045.115">
+      <description>L4C-3D</description>
+      <model>L4C-3D</model>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="0">
+        <start>2007-03-20T00:00:01.0000Z</start>
+        <end>2010-04-20T09:00:00.0000Z</end>
+        <gain>177.8</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20131203214041.167469.117" name="OTVZ.2010.111.HZ10" response="ResponsePAZ#20131203214041.167501.118">
+      <description>L4C-3D</description>
+      <model>L4C-3D</model>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="0">
+        <start>2010-04-21T00:00:02.0000Z</start>
+        <end>2011-11-10T23:50:00.0000Z</end>
+        <gain>177.8</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20131203214041.167955.121" name="OTVZ.2011.315.HE10" response="ResponsePAZ#20131203214041.167988.122">
+      <description>CMG-3ESPC</description>
+      <model>CMG-3ESPC</model>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="2">
+        <start>2011-11-11T02:00:00.0000Z</start>
+        <end>2013-10-01T22:00:00.0000Z</end>
+        <gain>2000</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20131203214041.168551.125" name="OTVZ.2013.274.HE10" response="ResponsePAZ#20131203214041.1686.126">
+      <description>CMG-3ESPC</description>
+      <model>CMG-3ESPC</model>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="2">
+        <start>2013-10-01T22:00:01.0000Z</start>
+        <gain>2000</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20131203214041.169056.128" name="OTVZ.2011.315.HN10" response="ResponsePAZ#20131203214041.169088.129">
+      <description>CMG-3ESPC</description>
+      <model>CMG-3ESPC</model>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="1">
+        <start>2011-11-11T02:00:00.0000Z</start>
+        <end>2013-10-01T22:00:00.0000Z</end>
+        <gain>2000</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20131203214041.169541.131" name="OTVZ.2013.274.HN10" response="ResponsePAZ#20131203214041.169579.132">
+      <description>CMG-3ESPC</description>
+      <model>CMG-3ESPC</model>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="1">
+        <start>2013-10-01T22:00:01.0000Z</start>
+        <gain>2000</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20131203214041.170016.134" name="OTVZ.2011.315.HZ10" response="ResponsePAZ#20131203214041.170048.135">
+      <description>CMG-3ESPC</description>
+      <model>CMG-3ESPC</model>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="0">
+        <start>2011-11-11T02:00:00.0000Z</start>
+        <end>2013-10-01T22:00:00.0000Z</end>
+        <gain>2000</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20131203214041.170496.137" name="OTVZ.2013.274.HZ10" response="ResponsePAZ#20131203214041.170534.138">
+      <description>CMG-3ESPC</description>
+      <model>CMG-3ESPC</model>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="0">
+        <start>2013-10-01T22:00:01.0000Z</start>
+        <gain>2000</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+    </sensor>
+    <datalogger publicID="Datalogger#20131203214041.159343.69" name="OTVZ.2004.323.H10">
+      <description>OTVZ.2004.323.H10</description>
+      <gain>419430</gain>
+      <maxClockDrift>0.01</maxClockDrift>
+      <calibration serialNumber="xxxx" channel="2">
+        <start>2004-11-18T04:00:00.0000Z</start>
+        <end>2005-08-30T00:00:00.0000Z</end>
+        <gain>419430</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="1">
+        <start>2004-11-18T04:00:00.0000Z</start>
+        <end>2005-08-30T00:00:00.0000Z</end>
+        <gain>419430</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="0">
+        <start>2004-11-18T04:00:00.0000Z</start>
+        <end>2005-08-30T00:00:00.0000Z</end>
+        <gain>419430</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+      <decimation sampleRateNumerator="100" sampleRateDenominator="1">
+        <digitalFilterChain>ResponseFIR#20131203214041.165381.104</digitalFilterChain>
+      </decimation>
+    </datalogger>
+    <datalogger publicID="Datalogger#20131203214041.160514.73" name="OTVZ.2005.242.H10">
+      <description>OTVZ.2005.242.H10</description>
+      <gain>419430</gain>
+      <maxClockDrift>0.01</maxClockDrift>
+      <calibration serialNumber="xxxx" channel="2">
+        <start>2005-08-30T00:00:01.0000Z</start>
+        <end>2006-06-08T06:00:00.0000Z</end>
+        <gain>419430</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="1">
+        <start>2005-08-30T00:00:01.0000Z</start>
+        <end>2006-06-08T06:00:00.0000Z</end>
+        <gain>419430</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="0">
+        <start>2005-08-30T00:00:01.0000Z</start>
+        <end>2006-06-08T06:00:00.0000Z</end>
+        <gain>419430</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+      <decimation sampleRateNumerator="100" sampleRateDenominator="1">
+        <digitalFilterChain>ResponseFIR#20131203214041.165892.107</digitalFilterChain>
+      </decimation>
+    </datalogger>
+    <datalogger publicID="Datalogger#20131203214041.16127.77" name="OTVZ.2006.160.H10">
+      <description>OTVZ.2006.160.H10</description>
+      <gain>419430</gain>
+      <maxClockDrift>0.01</maxClockDrift>
+      <calibration serialNumber="xxxx" channel="2">
+        <start>2006-06-09T00:00:01.0000Z</start>
+        <end>2007-03-20T00:00:00.0000Z</end>
+        <gain>419430</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="1">
+        <start>2006-06-09T00:00:01.0000Z</start>
+        <end>2007-03-20T00:00:00.0000Z</end>
+        <gain>419430</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="0">
+        <start>2006-06-09T00:00:01.0000Z</start>
+        <end>2007-03-20T00:00:00.0000Z</end>
+        <gain>419430</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+      <decimation sampleRateNumerator="100" sampleRateDenominator="1">
+        <digitalFilterChain>ResponseFIR#20131203214041.166354.110</digitalFilterChain>
+      </decimation>
+    </datalogger>
+    <datalogger publicID="Datalogger#20131203214041.161789.81" name="OTVZ.2007.079.H10">
+      <description>OTVZ.2007.079.H10</description>
+      <gain>419430</gain>
+      <maxClockDrift>0.01</maxClockDrift>
+      <calibration serialNumber="xxxx" channel="2">
+        <start>2007-03-20T00:00:01.0000Z</start>
+        <end>2010-04-20T09:00:00.0000Z</end>
+        <gain>419430</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="1">
+        <start>2007-03-20T00:00:01.0000Z</start>
+        <end>2010-04-20T09:00:00.0000Z</end>
+        <gain>419430</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="0">
+        <start>2007-03-20T00:00:01.0000Z</start>
+        <end>2010-04-20T09:00:00.0000Z</end>
+        <gain>419430</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+      <decimation sampleRateNumerator="100" sampleRateDenominator="1">
+        <digitalFilterChain>ResponseFIR#20131203214041.166811.113</digitalFilterChain>
+      </decimation>
+    </datalogger>
+    <datalogger publicID="Datalogger#20131203214041.162296.85" name="OTVZ.2010.111.H10">
+      <description>OTVZ.2010.111.H10</description>
+      <gain>419430</gain>
+      <maxClockDrift>0.01</maxClockDrift>
+      <calibration serialNumber="xxxx" channel="2">
+        <start>2010-04-21T00:00:02.0000Z</start>
+        <end>2011-11-10T23:50:00.0000Z</end>
+        <gain>419430</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="1">
+        <start>2010-04-21T00:00:02.0000Z</start>
+        <end>2011-11-10T23:50:00.0000Z</end>
+        <gain>419430</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="0">
+        <start>2010-04-21T00:00:02.0000Z</start>
+        <end>2011-11-10T23:50:00.0000Z</end>
+        <gain>419430</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+      <decimation sampleRateNumerator="100" sampleRateDenominator="1">
+        <digitalFilterChain>ResponseFIR#20131203214041.16727.116</digitalFilterChain>
+      </decimation>
+    </datalogger>
+    <datalogger publicID="Datalogger#20131203214041.167709.119" name="OTVZ.2011.315.H10">
+      <description>OTVZ.2011.315.H10</description>
+      <gain>419430</gain>
+      <maxClockDrift>0.01</maxClockDrift>
+      <calibration serialNumber="xxxx" channel="2">
+        <start>2011-11-11T02:00:00.0000Z</start>
+        <end>2013-10-01T22:00:00.0000Z</end>
+        <gain>419430</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="1">
+        <start>2011-11-11T02:00:00.0000Z</start>
+        <end>2013-10-01T22:00:00.0000Z</end>
+        <gain>419430</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="0">
+        <start>2011-11-11T02:00:00.0000Z</start>
+        <end>2013-10-01T22:00:00.0000Z</end>
+        <gain>419430</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <decimation sampleRateNumerator="100" sampleRateDenominator="1">
+        <digitalFilterChain>ResponseFIR#20131203214041.169813.133</digitalFilterChain>
+      </decimation>
+    </datalogger>
+    <datalogger publicID="Datalogger#20131203214041.168206.123" name="OTVZ.2013.274.H10">
+      <description>OTVZ.2013.274.H10</description>
+      <gain>419430</gain>
+      <maxClockDrift>0.01</maxClockDrift>
+      <calibration serialNumber="xxxx" channel="2">
+        <start>2013-10-01T22:00:01.0000Z</start>
+        <gain>419430</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="1">
+        <start>2013-10-01T22:00:01.0000Z</start>
+        <gain>419430</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="0">
+        <start>2013-10-01T22:00:01.0000Z</start>
+        <gain>419430</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <decimation sampleRateNumerator="100" sampleRateDenominator="1">
+        <digitalFilterChain>ResponseFIR#20131203214041.170281.136</digitalFilterChain>
+      </decimation>
+    </datalogger>
+    <responsePAZ publicID="ResponsePAZ#20131203214041.16015.72" name="OTVZ.2004.323.HE10">
+      <type>A</type>
+      <gain>177.8</gain>
+      <gainFrequency>15</gainFrequency>
+      <normalizationFactor>0.999556</normalizationFactor>
+      <normalizationFrequency>15</normalizationFrequency>
+      <numberOfZeros>2</numberOfZeros>
+      <numberOfPoles>2</numberOfPoles>
+      <zeros>(0,0) (0,0)</zeros>
+      <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20131203214041.161016.76" name="OTVZ.2005.242.HE10">
+      <type>A</type>
+      <gain>177.8</gain>
+      <gainFrequency>15</gainFrequency>
+      <normalizationFactor>0.999556</normalizationFactor>
+      <normalizationFrequency>15</normalizationFrequency>
+      <numberOfZeros>2</numberOfZeros>
+      <numberOfPoles>2</numberOfPoles>
+      <zeros>(0,0) (0,0)</zeros>
+      <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20131203214041.161565.80" name="OTVZ.2006.160.HE10">
+      <type>A</type>
+      <gain>177.8</gain>
+      <gainFrequency>15</gainFrequency>
+      <normalizationFactor>0.999556</normalizationFactor>
+      <normalizationFrequency>15</normalizationFrequency>
+      <numberOfZeros>2</numberOfZeros>
+      <numberOfPoles>2</numberOfPoles>
+      <zeros>(0,0) (0,0)</zeros>
+      <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20131203214041.162072.84" name="OTVZ.2007.079.HE10">
+      <type>A</type>
+      <gain>177.8</gain>
+      <gainFrequency>15</gainFrequency>
+      <normalizationFactor>0.999556</normalizationFactor>
+      <normalizationFrequency>15</normalizationFrequency>
+      <numberOfZeros>2</numberOfZeros>
+      <numberOfPoles>2</numberOfPoles>
+      <zeros>(0,0) (0,0)</zeros>
+      <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20131203214041.162586.88" name="OTVZ.2010.111.HE10">
+      <type>A</type>
+      <gain>177.8</gain>
+      <gainFrequency>15</gainFrequency>
+      <normalizationFactor>0.999556</normalizationFactor>
+      <normalizationFrequency>15</normalizationFrequency>
+      <numberOfZeros>2</numberOfZeros>
+      <numberOfPoles>2</numberOfPoles>
+      <zeros>(0,0) (0,0)</zeros>
+      <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20131203214041.1631.91" name="OTVZ.2004.323.HN10">
+      <type>A</type>
+      <gain>177.8</gain>
+      <gainFrequency>15</gainFrequency>
+      <normalizationFactor>0.999556</normalizationFactor>
+      <normalizationFrequency>15</normalizationFrequency>
+      <numberOfZeros>2</numberOfZeros>
+      <numberOfPoles>2</numberOfPoles>
+      <zeros>(0,0) (0,0)</zeros>
+      <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20131203214041.163724.94" name="OTVZ.2005.242.HN10">
+      <type>A</type>
+      <gain>177.8</gain>
+      <gainFrequency>15</gainFrequency>
+      <normalizationFactor>0.999556</normalizationFactor>
+      <normalizationFrequency>15</normalizationFrequency>
+      <numberOfZeros>2</numberOfZeros>
+      <numberOfPoles>2</numberOfPoles>
+      <zeros>(0,0) (0,0)</zeros>
+      <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20131203214041.164207.97" name="OTVZ.2006.160.HN10">
+      <type>A</type>
+      <gain>177.8</gain>
+      <gainFrequency>15</gainFrequency>
+      <normalizationFactor>0.999556</normalizationFactor>
+      <normalizationFrequency>15</normalizationFrequency>
+      <numberOfZeros>2</numberOfZeros>
+      <numberOfPoles>2</numberOfPoles>
+      <zeros>(0,0) (0,0)</zeros>
+      <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20131203214041.164696.100" name="OTVZ.2007.079.HN10">
+      <type>A</type>
+      <gain>177.8</gain>
+      <gainFrequency>15</gainFrequency>
+      <normalizationFactor>0.999556</normalizationFactor>
+      <normalizationFrequency>15</normalizationFrequency>
+      <numberOfZeros>2</numberOfZeros>
+      <numberOfPoles>2</numberOfPoles>
+      <zeros>(0,0) (0,0)</zeros>
+      <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20131203214041.165162.103" name="OTVZ.2010.111.HN10">
+      <type>A</type>
+      <gain>177.8</gain>
+      <gainFrequency>15</gainFrequency>
+      <normalizationFactor>0.999556</normalizationFactor>
+      <normalizationFrequency>15</normalizationFrequency>
+      <numberOfZeros>2</numberOfZeros>
+      <numberOfPoles>2</numberOfPoles>
+      <zeros>(0,0) (0,0)</zeros>
+      <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20131203214041.165616.106" name="OTVZ.2004.323.HZ10">
+      <type>A</type>
+      <gain>177.8</gain>
+      <gainFrequency>15</gainFrequency>
+      <normalizationFactor>0.999556</normalizationFactor>
+      <normalizationFrequency>15</normalizationFrequency>
+      <numberOfZeros>2</numberOfZeros>
+      <numberOfPoles>2</numberOfPoles>
+      <zeros>(0,0) (0,0)</zeros>
+      <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20131203214041.166132.109" name="OTVZ.2005.242.HZ10">
+      <type>A</type>
+      <gain>177.8</gain>
+      <gainFrequency>15</gainFrequency>
+      <normalizationFactor>0.999556</normalizationFactor>
+      <normalizationFrequency>15</normalizationFrequency>
+      <numberOfZeros>2</numberOfZeros>
+      <numberOfPoles>2</numberOfPoles>
+      <zeros>(0,0) (0,0)</zeros>
+      <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20131203214041.166589.112" name="OTVZ.2006.160.HZ10">
+      <type>A</type>
+      <gain>177.8</gain>
+      <gainFrequency>15</gainFrequency>
+      <normalizationFactor>0.999556</normalizationFactor>
+      <normalizationFrequency>15</normalizationFrequency>
+      <numberOfZeros>2</numberOfZeros>
+      <numberOfPoles>2</numberOfPoles>
+      <zeros>(0,0) (0,0)</zeros>
+      <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20131203214041.167045.115" name="OTVZ.2007.079.HZ10">
+      <type>A</type>
+      <gain>177.8</gain>
+      <gainFrequency>15</gainFrequency>
+      <normalizationFactor>0.999556</normalizationFactor>
+      <normalizationFrequency>15</normalizationFrequency>
+      <numberOfZeros>2</numberOfZeros>
+      <numberOfPoles>2</numberOfPoles>
+      <zeros>(0,0) (0,0)</zeros>
+      <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20131203214041.167501.118" name="OTVZ.2010.111.HZ10">
+      <type>A</type>
+      <gain>177.8</gain>
+      <gainFrequency>15</gainFrequency>
+      <normalizationFactor>0.999556</normalizationFactor>
+      <normalizationFrequency>15</normalizationFrequency>
+      <numberOfZeros>2</numberOfZeros>
+      <numberOfPoles>2</numberOfPoles>
+      <zeros>(0,0) (0,0)</zeros>
+      <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20131203214041.167988.122" name="OTVZ.2011.315.HE10">
+      <type>B</type>
+      <gain>2000</gain>
+      <gainFrequency>1</gainFrequency>
+      <normalizationFactor>2304260</normalizationFactor>
+      <normalizationFrequency>1</normalizationFrequency>
+      <numberOfZeros>2</numberOfZeros>
+      <numberOfPoles>5</numberOfPoles>
+      <zeros>(0,0) (0,0)</zeros>
+      <poles>(-0.01178,0.01178) (-0.01178,-0.01178) (-180,0) (-160,0) (-80,0)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20131203214041.1686.126" name="OTVZ.2013.274.HE10">
+      <type>B</type>
+      <gain>2000</gain>
+      <gainFrequency>1</gainFrequency>
+      <normalizationFactor>2304260</normalizationFactor>
+      <normalizationFrequency>1</normalizationFrequency>
+      <numberOfZeros>2</numberOfZeros>
+      <numberOfPoles>5</numberOfPoles>
+      <zeros>(0,0) (0,0)</zeros>
+      <poles>(-0.01178,0.01178) (-0.01178,-0.01178) (-180,0) (-160,0) (-80,0)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20131203214041.169088.129" name="OTVZ.2011.315.HN10">
+      <type>B</type>
+      <gain>2000</gain>
+      <gainFrequency>1</gainFrequency>
+      <normalizationFactor>2304260</normalizationFactor>
+      <normalizationFrequency>1</normalizationFrequency>
+      <numberOfZeros>2</numberOfZeros>
+      <numberOfPoles>5</numberOfPoles>
+      <zeros>(0,0) (0,0)</zeros>
+      <poles>(-0.01178,0.01178) (-0.01178,-0.01178) (-180,0) (-160,0) (-80,0)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20131203214041.169579.132" name="OTVZ.2013.274.HN10">
+      <type>B</type>
+      <gain>2000</gain>
+      <gainFrequency>1</gainFrequency>
+      <normalizationFactor>2304260</normalizationFactor>
+      <normalizationFrequency>1</normalizationFrequency>
+      <numberOfZeros>2</numberOfZeros>
+      <numberOfPoles>5</numberOfPoles>
+      <zeros>(0,0) (0,0)</zeros>
+      <poles>(-0.01178,0.01178) (-0.01178,-0.01178) (-180,0) (-160,0) (-80,0)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20131203214041.170048.135" name="OTVZ.2011.315.HZ10">
+      <type>B</type>
+      <gain>2000</gain>
+      <gainFrequency>1</gainFrequency>
+      <normalizationFactor>2304260</normalizationFactor>
+      <normalizationFrequency>1</normalizationFrequency>
+      <numberOfZeros>2</numberOfZeros>
+      <numberOfPoles>5</numberOfPoles>
+      <zeros>(0,0) (0,0)</zeros>
+      <poles>(-0.01178,0.01178) (-0.01178,-0.01178) (-180,0) (-160,0) (-80,0)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20131203214041.170534.138" name="OTVZ.2013.274.HZ10">
+      <type>B</type>
+      <gain>2000</gain>
+      <gainFrequency>1</gainFrequency>
+      <normalizationFactor>2304260</normalizationFactor>
+      <normalizationFrequency>1</normalizationFrequency>
+      <numberOfZeros>2</numberOfZeros>
+      <numberOfPoles>5</numberOfPoles>
+      <zeros>(0,0) (0,0)</zeros>
+      <poles>(-0.01178,0.01178) (-0.01178,-0.01178) (-180,0) (-160,0) (-80,0)</poles>
+    </responsePAZ>
+    <responseFIR publicID="ResponseFIR#20131203214041.159525.70" name="OTVZ.10.EHE.2004.323.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>4.167</delay>
+      <correction>4.167</correction>
+      <numberOfCoefficients>65</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20131203214041.16062.74" name="OTVZ.10.EHE.2005.242.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>4.167</delay>
+      <correction>4.167</correction>
+      <numberOfCoefficients>65</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20131203214041.161309.78" name="OTVZ.10.EHE.2006.160.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>4.167</delay>
+      <correction>4.167</correction>
+      <numberOfCoefficients>65</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20131203214041.161824.82" name="OTVZ.10.EHE.2007.079.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>4.167</delay>
+      <correction>4.167</correction>
+      <numberOfCoefficients>65</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20131203214041.162332.86" name="OTVZ.10.EHE.2010.111.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>4.167</delay>
+      <correction>4.167</correction>
+      <numberOfCoefficients>65</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20131203214041.162848.89" name="OTVZ.10.EHN.2004.323.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>4.167</delay>
+      <correction>4.167</correction>
+      <numberOfCoefficients>65</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20131203214041.16347.92" name="OTVZ.10.EHN.2005.242.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>4.167</delay>
+      <correction>4.167</correction>
+      <numberOfCoefficients>65</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20131203214041.163958.95" name="OTVZ.10.EHN.2006.160.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>4.167</delay>
+      <correction>4.167</correction>
+      <numberOfCoefficients>65</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20131203214041.164443.98" name="OTVZ.10.EHN.2007.079.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>4.167</delay>
+      <correction>4.167</correction>
+      <numberOfCoefficients>65</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20131203214041.164932.101" name="OTVZ.10.EHN.2010.111.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>4.167</delay>
+      <correction>4.167</correction>
+      <numberOfCoefficients>65</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20131203214041.165381.104" name="OTVZ.10.EHZ.2004.323.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>4.167</delay>
+      <correction>4.167</correction>
+      <numberOfCoefficients>65</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20131203214041.165892.107" name="OTVZ.10.EHZ.2005.242.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>4.167</delay>
+      <correction>4.167</correction>
+      <numberOfCoefficients>65</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20131203214041.166354.110" name="OTVZ.10.EHZ.2006.160.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>4.167</delay>
+      <correction>4.167</correction>
+      <numberOfCoefficients>65</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20131203214041.166811.113" name="OTVZ.10.EHZ.2007.079.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>4.167</delay>
+      <correction>4.167</correction>
+      <numberOfCoefficients>65</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20131203214041.16727.116" name="OTVZ.10.EHZ.2010.111.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>4.167</delay>
+      <correction>4.167</correction>
+      <numberOfCoefficients>65</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20131203214041.167743.120" name="OTVZ.10.HHE.2011.315.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>4.167</delay>
+      <correction>4.167</correction>
+      <numberOfCoefficients>65</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20131203214041.168254.124" name="OTVZ.10.HHE.2013.274.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>4.167</delay>
+      <correction>4.167</correction>
+      <numberOfCoefficients>71</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>-9.9507e-15 -1.70236e-13 -9.90439e-13 2.17637e-11 5.49924e-11 -4.02219e-12 -4.7825e-10 -7.89445e-10 7.52368e-10 4.50304e-09 -1.19163e-09 -4.53371e-09 -8.00017e-09 6.82038e-11 6.27105e-08 -1.38519e-07 1.69669e-07 2.8784e-08 -4.7879e-07 -5.39609e-07 6.0835e-06 -1.90476e-05 4.2078e-05 -7.07905e-05 9.0795e-05 -7.30962e-05 -2.26985e-05 0.000236698 -0.000584649 0.00102524 -0.00142785 0.00155774 -0.00109833 -0.000261751 0.00266829 -0.00590073 0.00914406 -0.0108775 0.0090517 -0.00201974 -0.00880971 0.0205158 -0.0318696 0.0350196 -0.0276292 0.00733085 0.0224854 -0.0540381 0.0755232 -0.0748276 0.04432 0.0136602 -0.082974 0.133998 -0.131788 0.0570094 0.0808518 -0.211189 0.213595 0.00960486 -0.343399 0.261754 0.609444 0.313162 0.0623035 0.00440098 7.71668e-05 1.52515e-06 5.5255e-08 2.19269e-10 4.93305e-17</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20131203214041.168851.127" name="OTVZ.10.HHN.2011.315.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>4.167</delay>
+      <correction>4.167</correction>
+      <numberOfCoefficients>65</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20131203214041.169321.130" name="OTVZ.10.HHN.2013.274.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>4.167</delay>
+      <correction>4.167</correction>
+      <numberOfCoefficients>71</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>-9.9507e-15 -1.70236e-13 -9.90439e-13 2.17637e-11 5.49924e-11 -4.02219e-12 -4.7825e-10 -7.89445e-10 7.52368e-10 4.50304e-09 -1.19163e-09 -4.53371e-09 -8.00017e-09 6.82038e-11 6.27105e-08 -1.38519e-07 1.69669e-07 2.8784e-08 -4.7879e-07 -5.39609e-07 6.0835e-06 -1.90476e-05 4.2078e-05 -7.07905e-05 9.0795e-05 -7.30962e-05 -2.26985e-05 0.000236698 -0.000584649 0.00102524 -0.00142785 0.00155774 -0.00109833 -0.000261751 0.00266829 -0.00590073 0.00914406 -0.0108775 0.0090517 -0.00201974 -0.00880971 0.0205158 -0.0318696 0.0350196 -0.0276292 0.00733085 0.0224854 -0.0540381 0.0755232 -0.0748276 0.04432 0.0136602 -0.082974 0.133998 -0.131788 0.0570094 0.0808518 -0.211189 0.213595 0.00960486 -0.343399 0.261754 0.609444 0.313162 0.0623035 0.00440098 7.71668e-05 1.52515e-06 5.5255e-08 2.19269e-10 4.93305e-17</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20131203214041.169813.133" name="OTVZ.10.HHZ.2011.315.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>4.167</delay>
+      <correction>4.167</correction>
+      <numberOfCoefficients>65</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20131203214041.170281.136" name="OTVZ.10.HHZ.2013.274.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>4.167</delay>
+      <correction>4.167</correction>
+      <numberOfCoefficients>71</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>-9.9507e-15 -1.70236e-13 -9.90439e-13 2.17637e-11 5.49924e-11 -4.02219e-12 -4.7825e-10 -7.89445e-10 7.52368e-10 4.50304e-09 -1.19163e-09 -4.53371e-09 -8.00017e-09 6.82038e-11 6.27105e-08 -1.38519e-07 1.69669e-07 2.8784e-08 -4.7879e-07 -5.39609e-07 6.0835e-06 -1.90476e-05 4.2078e-05 -7.07905e-05 9.0795e-05 -7.30962e-05 -2.26985e-05 0.000236698 -0.000584649 0.00102524 -0.00142785 0.00155774 -0.00109833 -0.000261751 0.00266829 -0.00590073 0.00914406 -0.0108775 0.0090517 -0.00201974 -0.00880971 0.0205158 -0.0318696 0.0350196 -0.0276292 0.00733085 0.0224854 -0.0540381 0.0755232 -0.0748276 0.04432 0.0136602 -0.082974 0.133998 -0.131788 0.0570094 0.0808518 -0.211189 0.213595 0.00960486 -0.343399 0.261754 0.609444 0.313162 0.0623035 0.00440098 7.71668e-05 1.52515e-06 5.5255e-08 2.19269e-10 4.93305e-17</coefficients>
+    </responseFIR>
+    <network publicID="Network#20131203214041.155522.2" code="NZ">
+      <start>1980-01-01T00:00:00.0000Z</start>
+      <description> </description>
+      <netClass>p</netClass>
+      <archive> </archive>
+      <restricted>false</restricted>
+      <shared>true</shared>
+      <station publicID="Station#20131203214041.155697.3" code="OTVZ">
+        <start>2004-11-18T00:00:00.0000Z</start>
+        <description>Oturere</description>
+        <latitude>-39.163114</latitude>
+        <longitude>175.665074</longitude>
+        <elevation>1506</elevation>
+        <place>Oturere</place>
+        <affiliation>Tongariro National Park volcano seismic network</affiliation>
+        <archive> </archive>
+        <restricted>false</restricted>
+        <shared>true</shared>
+        <sensorLocation publicID="SensorLocation#20131203214041.159133.68" code="10">
+          <start>2004-11-18T04:00:00.0000Z</start>
+          <latitude>-39.163114</latitude>
+          <longitude>175.665074</longitude>
+          <elevation>1506</elevation>
+          <stream code="EHE" datalogger="Datalogger#20131203214041.159343.69" sensor="Sensor#20131203214041.159992.71">
+            <start>2004-11-18T04:00:00.0000Z</start>
+            <end>2005-08-30T00:00:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>2</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>2</sensorChannel>
+            <sampleRateNumerator>100</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>90</azimuth>
+            <dip>0</dip>
+            <gain>74574700</gain>
+            <gainFrequency>15</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="EHE" datalogger="Datalogger#20131203214041.160514.73" sensor="Sensor#20131203214041.16097.75">
+            <start>2005-08-30T00:00:01.0000Z</start>
+            <end>2006-06-08T06:00:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>2</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>2</sensorChannel>
+            <sampleRateNumerator>100</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>90</azimuth>
+            <dip>0</dip>
+            <gain>74574700</gain>
+            <gainFrequency>15</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="EHE" datalogger="Datalogger#20131203214041.16127.77" sensor="Sensor#20131203214041.161528.79">
+            <start>2006-06-09T00:00:01.0000Z</start>
+            <end>2007-03-20T00:00:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>2</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>2</sensorChannel>
+            <sampleRateNumerator>100</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>90</azimuth>
+            <dip>0</dip>
+            <gain>74574700</gain>
+            <gainFrequency>15</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="EHE" datalogger="Datalogger#20131203214041.161789.81" sensor="Sensor#20131203214041.162039.83">
+            <start>2007-03-20T00:00:01.0000Z</start>
+            <end>2010-04-20T09:00:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>2</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>2</sensorChannel>
+            <sampleRateNumerator>100</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>90</azimuth>
+            <dip>0</dip>
+            <gain>74574700</gain>
+            <gainFrequency>15</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="EHE" datalogger="Datalogger#20131203214041.162296.85" sensor="Sensor#20131203214041.162549.87">
+            <start>2010-04-21T00:00:02.0000Z</start>
+            <end>2011-11-10T23:50:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>2</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>2</sensorChannel>
+            <sampleRateNumerator>100</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>90</azimuth>
+            <dip>0</dip>
+            <gain>74574700</gain>
+            <gainFrequency>15</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="EHN" datalogger="Datalogger#20131203214041.159343.69" sensor="Sensor#20131203214041.163066.90">
+            <start>2004-11-18T04:00:00.0000Z</start>
+            <end>2005-08-30T00:00:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>1</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>1</sensorChannel>
+            <sampleRateNumerator>100</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>0</azimuth>
+            <dip>0</dip>
+            <gain>74574700</gain>
+            <gainFrequency>15</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="EHN" datalogger="Datalogger#20131203214041.160514.73" sensor="Sensor#20131203214041.16369.93">
+            <start>2005-08-30T00:00:01.0000Z</start>
+            <end>2006-06-08T06:00:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>1</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>1</sensorChannel>
+            <sampleRateNumerator>100</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>0</azimuth>
+            <dip>0</dip>
+            <gain>74574700</gain>
+            <gainFrequency>15</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="EHN" datalogger="Datalogger#20131203214041.16127.77" sensor="Sensor#20131203214041.164173.96">
+            <start>2006-06-09T00:00:01.0000Z</start>
+            <end>2007-03-20T00:00:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>1</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>1</sensorChannel>
+            <sampleRateNumerator>100</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>0</azimuth>
+            <dip>0</dip>
+            <gain>74574700</gain>
+            <gainFrequency>15</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="EHN" datalogger="Datalogger#20131203214041.161789.81" sensor="Sensor#20131203214041.16466.99">
+            <start>2007-03-20T00:00:01.0000Z</start>
+            <end>2010-04-20T09:00:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>1</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>1</sensorChannel>
+            <sampleRateNumerator>100</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>0</azimuth>
+            <dip>0</dip>
+            <gain>74574700</gain>
+            <gainFrequency>15</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="EHN" datalogger="Datalogger#20131203214041.162296.85" sensor="Sensor#20131203214041.16513.102">
+            <start>2010-04-21T00:00:02.0000Z</start>
+            <end>2011-11-10T23:50:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>1</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>1</sensorChannel>
+            <sampleRateNumerator>100</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>0</azimuth>
+            <dip>0</dip>
+            <gain>74574700</gain>
+            <gainFrequency>15</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="EHZ" datalogger="Datalogger#20131203214041.159343.69" sensor="Sensor#20131203214041.165584.105">
+            <start>2004-11-18T04:00:00.0000Z</start>
+            <end>2005-08-30T00:00:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>0</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>0</sensorChannel>
+            <sampleRateNumerator>100</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>0</azimuth>
+            <dip>-90</dip>
+            <gain>74574700</gain>
+            <gainFrequency>15</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="EHZ" datalogger="Datalogger#20131203214041.160514.73" sensor="Sensor#20131203214041.166099.108">
+            <start>2005-08-30T00:00:01.0000Z</start>
+            <end>2006-06-08T06:00:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>0</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>0</sensorChannel>
+            <sampleRateNumerator>100</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>0</azimuth>
+            <dip>-90</dip>
+            <gain>74574700</gain>
+            <gainFrequency>15</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="EHZ" datalogger="Datalogger#20131203214041.16127.77" sensor="Sensor#20131203214041.166557.111">
+            <start>2006-06-09T00:00:01.0000Z</start>
+            <end>2007-03-20T00:00:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>0</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>0</sensorChannel>
+            <sampleRateNumerator>100</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>0</azimuth>
+            <dip>-90</dip>
+            <gain>74574700</gain>
+            <gainFrequency>15</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="EHZ" datalogger="Datalogger#20131203214041.161789.81" sensor="Sensor#20131203214041.167013.114">
+            <start>2007-03-20T00:00:01.0000Z</start>
+            <end>2010-04-20T09:00:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>0</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>0</sensorChannel>
+            <sampleRateNumerator>100</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>0</azimuth>
+            <dip>-90</dip>
+            <gain>74574700</gain>
+            <gainFrequency>15</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="EHZ" datalogger="Datalogger#20131203214041.162296.85" sensor="Sensor#20131203214041.167469.117">
+            <start>2010-04-21T00:00:02.0000Z</start>
+            <end>2011-11-10T23:50:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>0</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>0</sensorChannel>
+            <sampleRateNumerator>100</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>0</azimuth>
+            <dip>-90</dip>
+            <gain>74574700</gain>
+            <gainFrequency>15</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HHE" datalogger="Datalogger#20131203214041.167709.119" sensor="Sensor#20131203214041.167955.121">
+            <start>2011-11-11T02:00:00.0000Z</start>
+            <end>2013-10-01T22:00:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>2</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>2</sensorChannel>
+            <sampleRateNumerator>100</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>90</azimuth>
+            <dip>0</dip>
+            <gain>838861000</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HHE" datalogger="Datalogger#20131203214041.168206.123" sensor="Sensor#20131203214041.168551.125">
+            <start>2013-10-01T22:00:01.0000Z</start>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>2</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>2</sensorChannel>
+            <sampleRateNumerator>100</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>90</azimuth>
+            <dip>0</dip>
+            <gain>838861000</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HHN" datalogger="Datalogger#20131203214041.167709.119" sensor="Sensor#20131203214041.169056.128">
+            <start>2011-11-11T02:00:00.0000Z</start>
+            <end>2013-10-01T22:00:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>1</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>1</sensorChannel>
+            <sampleRateNumerator>100</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>0</azimuth>
+            <dip>0</dip>
+            <gain>838861000</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HHN" datalogger="Datalogger#20131203214041.168206.123" sensor="Sensor#20131203214041.169541.131">
+            <start>2013-10-01T22:00:01.0000Z</start>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>1</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>1</sensorChannel>
+            <sampleRateNumerator>100</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>0</azimuth>
+            <dip>0</dip>
+            <gain>838861000</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HHZ" datalogger="Datalogger#20131203214041.167709.119" sensor="Sensor#20131203214041.170016.134">
+            <start>2011-11-11T02:00:00.0000Z</start>
+            <end>2013-10-01T22:00:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>0</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>0</sensorChannel>
+            <sampleRateNumerator>100</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>0</azimuth>
+            <dip>-90</dip>
+            <gain>838861000</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HHZ" datalogger="Datalogger#20131203214041.168206.123" sensor="Sensor#20131203214041.170496.137">
+            <start>2013-10-01T22:00:01.0000Z</start>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>0</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>0</sensorChannel>
+            <sampleRateNumerator>100</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>0</azimuth>
+            <dip>-90</dip>
+            <gain>838861000</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+        </sensorLocation>
+      </station>
+    </network>
+  </Inventory>
+</seiscomp>

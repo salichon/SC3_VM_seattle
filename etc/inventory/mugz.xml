@@ -1,2 +1,201 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<seiscomp xmlns="http://geofon.gfz-potsdam.de/ns/seiscomp3-schema/0.7" version="0.7"><Inventory><sensor publicID="Sensor#20131203060343.500183.17" name="MUGZ.2011.088.HE10" response="ResponsePAZ#20131203060343.500646.18"><description>LE-3DliteMkII</description><model>LE-3DliteMkII</model><unit>M/S</unit><calibration serialNumber="yyyy" channel="2"><start>2011-03-29T00:01:00.0000Z</start><gain>400</gain><gainFrequency>15</gainFrequency></calibration></sensor><sensor publicID="Sensor#20131203060343.501685.20" name="MUGZ.2011.088.HN10" response="ResponsePAZ#20131203060343.502008.21"><description>LE-3DliteMkII</description><model>LE-3DliteMkII</model><unit>M/S</unit><calibration serialNumber="yyyy" channel="1"><start>2011-03-29T00:01:00.0000Z</start><gain>400</gain><gainFrequency>15</gainFrequency></calibration></sensor><sensor publicID="Sensor#20131203060343.502885.23" name="MUGZ.2011.088.HZ10" response="ResponsePAZ#20131203060343.503092.24"><description>LE-3DliteMkII</description><model>LE-3DliteMkII</model><unit>M/S</unit><calibration serialNumber="yyyy" channel="0"><start>2011-03-29T00:01:00.0000Z</start><gain>400</gain><gainFrequency>15</gainFrequency></calibration></sensor><datalogger publicID="Datalogger#20131203060343.499255.15" name="MUGZ.2011.088.H10"><description>MUGZ.2011.088.H10</description><gain>419430</gain><maxClockDrift>0.01</maxClockDrift><calibration serialNumber="xxxx" channel="2"><start>2011-03-29T00:01:00.0000Z</start><gain>419430</gain><gainFrequency>15</gainFrequency></calibration><calibration serialNumber="xxxx" channel="1"><start>2011-03-29T00:01:00.0000Z</start><gain>419430</gain><gainFrequency>15</gainFrequency></calibration><calibration serialNumber="xxxx" channel="0"><start>2011-03-29T00:01:00.0000Z</start><gain>419430</gain><gainFrequency>15</gainFrequency></calibration><decimation sampleRateNumerator="100" sampleRateDenominator="1"><digitalFilterChain>ResponseFIR#20131203060343.502609.22</digitalFilterChain></decimation></datalogger><responsePAZ publicID="ResponsePAZ#20131203060343.500646.18" name="MUGZ.2011.088.HE10"><type>A</type><gain>400</gain><gainFrequency>15</gainFrequency><normalizationFactor>1.00008</normalizationFactor><normalizationFrequency>15</normalizationFrequency><numberOfZeros>3</numberOfZeros><numberOfPoles>3</numberOfPoles><zeros>(0,0) (0,0) (0,0)</zeros><poles>(-4.444,4.444) (-4.444,-4.444) (-1.083,0)</poles></responsePAZ><responsePAZ publicID="ResponsePAZ#20131203060343.502008.21" name="MUGZ.2011.088.HN10"><type>A</type><gain>400</gain><gainFrequency>15</gainFrequency><normalizationFactor>1.00008</normalizationFactor><normalizationFrequency>15</normalizationFrequency><numberOfZeros>3</numberOfZeros><numberOfPoles>3</numberOfPoles><zeros>(0,0) (0,0) (0,0)</zeros><poles>(-4.444,4.444) (-4.444,-4.444) (-1.083,0)</poles></responsePAZ><responsePAZ publicID="ResponsePAZ#20131203060343.503092.24" name="MUGZ.2011.088.HZ10"><type>A</type><gain>400</gain><gainFrequency>15</gainFrequency><normalizationFactor>1.00008</normalizationFactor><normalizationFrequency>15</normalizationFrequency><numberOfZeros>3</numberOfZeros><numberOfPoles>3</numberOfPoles><zeros>(0,0) (0,0) (0,0)</zeros><poles>(-4.444,4.444) (-4.444,-4.444) (-1.083,0)</poles></responsePAZ><responseFIR publicID="ResponseFIR#20131203060343.499686.16" name="MUGZ.10.EHE.2011.088.stage_3"><gain>1</gain><decimationFactor>1</decimationFactor><delay>4.167</delay><correction>4.167</correction><numberOfCoefficients>65</numberOfCoefficients><symmetry>A</symmetry><coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients></responseFIR><responseFIR publicID="ResponseFIR#20131203060343.501349.19" name="MUGZ.10.EHN.2011.088.stage_3"><gain>1</gain><decimationFactor>1</decimationFactor><delay>4.167</delay><correction>4.167</correction><numberOfCoefficients>65</numberOfCoefficients><symmetry>A</symmetry><coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients></responseFIR><responseFIR publicID="ResponseFIR#20131203060343.502609.22" name="MUGZ.10.EHZ.2011.088.stage_3"><gain>1</gain><decimationFactor>1</decimationFactor><delay>4.167</delay><correction>4.167</correction><numberOfCoefficients>65</numberOfCoefficients><symmetry>A</symmetry><coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients></responseFIR><network publicID="Network#20131203060343.497881.2" code="NZ"><start>1980-01-01T00:00:00.0000Z</start><description> </description><netClass>p</netClass><archive> </archive><restricted>false</restricted><shared>true</shared><station publicID="Station#20131203060343.498094.3" code="MUGZ"><start>2011-03-29T00:00:00.0000Z</start><description>Murupara</description><latitude>-38.4771</latitude><longitude>176.7705</longitude><elevation>337</elevation><place>Murupara</place><affiliation>East Cape regional seismic network</affiliation><archive> </archive><restricted>false</restricted><shared>true</shared><sensorLocation publicID="SensorLocation#20131203060343.498937.14" code="10"><start>2011-03-29T00:01:00.0000Z</start><latitude>-38.4771</latitude><longitude>176.7703</longitude><elevation>337</elevation><stream code="EHE" datalogger="Datalogger#20131203060343.499255.15" sensor="Sensor#20131203060343.500183.17"><start>2011-03-29T00:01:00.0000Z</start><dataloggerSerialNumber>xxxx</dataloggerSerialNumber><dataloggerChannel>2</dataloggerChannel><sensorSerialNumber>yyyy</sensorSerialNumber><sensorChannel>2</sensorChannel><sampleRateNumerator>100</sampleRateNumerator><sampleRateDenominator>1</sampleRateDenominator><depth>3</depth><azimuth>90</azimuth><dip>0</dip><gain>167772000</gain><gainFrequency>15</gainFrequency><gainUnit>M/S</gainUnit><format>Steim2</format><flags>CG</flags><restricted>false</restricted><shared>true</shared></stream><stream code="EHN" datalogger="Datalogger#20131203060343.499255.15" sensor="Sensor#20131203060343.501685.20"><start>2011-03-29T00:01:00.0000Z</start><dataloggerSerialNumber>xxxx</dataloggerSerialNumber><dataloggerChannel>1</dataloggerChannel><sensorSerialNumber>yyyy</sensorSerialNumber><sensorChannel>1</sensorChannel><sampleRateNumerator>100</sampleRateNumerator><sampleRateDenominator>1</sampleRateDenominator><depth>3</depth><azimuth>0</azimuth><dip>0</dip><gain>167772000</gain><gainFrequency>15</gainFrequency><gainUnit>M/S</gainUnit><format>Steim2</format><flags>CG</flags><restricted>false</restricted><shared>true</shared></stream><stream code="EHZ" datalogger="Datalogger#20131203060343.499255.15" sensor="Sensor#20131203060343.502885.23"><start>2011-03-29T00:01:00.0000Z</start><dataloggerSerialNumber>xxxx</dataloggerSerialNumber><dataloggerChannel>0</dataloggerChannel><sensorSerialNumber>yyyy</sensorSerialNumber><sensorChannel>0</sensorChannel><sampleRateNumerator>100</sampleRateNumerator><sampleRateDenominator>1</sampleRateDenominator><depth>3</depth><azimuth>0</azimuth><dip>-90</dip><gain>167772000</gain><gainFrequency>15</gainFrequency><gainUnit>M/S</gainUnit><format>Steim2</format><flags>CG</flags><restricted>false</restricted><shared>true</shared></stream></sensorLocation></station></network></Inventory></seiscomp>
+<seiscomp xmlns="http://geofon.gfz-potsdam.de/ns/seiscomp3-schema/0.7" version="0.7">
+  <Inventory>
+    <sensor publicID="Sensor#20131203214029.99112.17" name="MUGZ.2011.088.HE10" response="ResponsePAZ#20131203214029.991276.18">
+      <description>LE-3DliteMkII</description>
+      <model>LE-3DliteMkII</model>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="2">
+        <start>2011-03-29T00:01:00.0000Z</start>
+        <gain>400</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20131203214029.991851.20" name="MUGZ.2011.088.HN10" response="ResponsePAZ#20131203214029.991895.21">
+      <description>LE-3DliteMkII</description>
+      <model>LE-3DliteMkII</model>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="1">
+        <start>2011-03-29T00:01:00.0000Z</start>
+        <gain>400</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20131203214029.992324.23" name="MUGZ.2011.088.HZ10" response="ResponsePAZ#20131203214029.992363.24">
+      <description>LE-3DliteMkII</description>
+      <model>LE-3DliteMkII</model>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="0">
+        <start>2011-03-29T00:01:00.0000Z</start>
+        <gain>400</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+    </sensor>
+    <datalogger publicID="Datalogger#20131203214029.990457.15" name="MUGZ.2011.088.H10">
+      <description>MUGZ.2011.088.H10</description>
+      <gain>419430</gain>
+      <maxClockDrift>0.01</maxClockDrift>
+      <calibration serialNumber="xxxx" channel="2">
+        <start>2011-03-29T00:01:00.0000Z</start>
+        <gain>419430</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="1">
+        <start>2011-03-29T00:01:00.0000Z</start>
+        <gain>419430</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="0">
+        <start>2011-03-29T00:01:00.0000Z</start>
+        <gain>419430</gain>
+        <gainFrequency>15</gainFrequency>
+      </calibration>
+      <decimation sampleRateNumerator="100" sampleRateDenominator="1">
+        <digitalFilterChain>ResponseFIR#20131203214029.992126.22</digitalFilterChain>
+      </decimation>
+    </datalogger>
+    <responsePAZ publicID="ResponsePAZ#20131203214029.991276.18" name="MUGZ.2011.088.HE10">
+      <type>A</type>
+      <gain>400</gain>
+      <gainFrequency>15</gainFrequency>
+      <normalizationFactor>1.00008</normalizationFactor>
+      <normalizationFrequency>15</normalizationFrequency>
+      <numberOfZeros>3</numberOfZeros>
+      <numberOfPoles>3</numberOfPoles>
+      <zeros>(0,0) (0,0) (0,0)</zeros>
+      <poles>(-4.444,4.444) (-4.444,-4.444) (-1.083,0)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20131203214029.991895.21" name="MUGZ.2011.088.HN10">
+      <type>A</type>
+      <gain>400</gain>
+      <gainFrequency>15</gainFrequency>
+      <normalizationFactor>1.00008</normalizationFactor>
+      <normalizationFrequency>15</normalizationFrequency>
+      <numberOfZeros>3</numberOfZeros>
+      <numberOfPoles>3</numberOfPoles>
+      <zeros>(0,0) (0,0) (0,0)</zeros>
+      <poles>(-4.444,4.444) (-4.444,-4.444) (-1.083,0)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20131203214029.992363.24" name="MUGZ.2011.088.HZ10">
+      <type>A</type>
+      <gain>400</gain>
+      <gainFrequency>15</gainFrequency>
+      <normalizationFactor>1.00008</normalizationFactor>
+      <normalizationFrequency>15</normalizationFrequency>
+      <numberOfZeros>3</numberOfZeros>
+      <numberOfPoles>3</numberOfPoles>
+      <zeros>(0,0) (0,0) (0,0)</zeros>
+      <poles>(-4.444,4.444) (-4.444,-4.444) (-1.083,0)</poles>
+    </responsePAZ>
+    <responseFIR publicID="ResponseFIR#20131203214029.990676.16" name="MUGZ.10.EHE.2011.088.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>4.167</delay>
+      <correction>4.167</correction>
+      <numberOfCoefficients>65</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20131203214029.991634.19" name="MUGZ.10.EHN.2011.088.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>4.167</delay>
+      <correction>4.167</correction>
+      <numberOfCoefficients>65</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20131203214029.992126.22" name="MUGZ.10.EHZ.2011.088.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>4.167</delay>
+      <correction>4.167</correction>
+      <numberOfCoefficients>65</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
+    </responseFIR>
+    <network publicID="Network#20131203214029.989393.2" code="NZ">
+      <start>1980-01-01T00:00:00.0000Z</start>
+      <description> </description>
+      <netClass>p</netClass>
+      <archive> </archive>
+      <restricted>false</restricted>
+      <shared>true</shared>
+      <station publicID="Station#20131203214029.98957.3" code="MUGZ">
+        <start>2011-03-29T00:00:00.0000Z</start>
+        <description>Murupara</description>
+        <latitude>-38.4771</latitude>
+        <longitude>176.7705</longitude>
+        <elevation>337</elevation>
+        <place>Murupara</place>
+        <affiliation>East Cape regional seismic network</affiliation>
+        <archive> </archive>
+        <restricted>false</restricted>
+        <shared>true</shared>
+        <sensorLocation publicID="SensorLocation#20131203214029.990251.14" code="10">
+          <start>2011-03-29T00:01:00.0000Z</start>
+          <latitude>-38.4771</latitude>
+          <longitude>176.7703</longitude>
+          <elevation>337</elevation>
+          <stream code="EHE" datalogger="Datalogger#20131203214029.990457.15" sensor="Sensor#20131203214029.99112.17">
+            <start>2011-03-29T00:01:00.0000Z</start>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>2</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>2</sensorChannel>
+            <sampleRateNumerator>100</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>3</depth>
+            <azimuth>90</azimuth>
+            <dip>0</dip>
+            <gain>167772000</gain>
+            <gainFrequency>15</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="EHN" datalogger="Datalogger#20131203214029.990457.15" sensor="Sensor#20131203214029.991851.20">
+            <start>2011-03-29T00:01:00.0000Z</start>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>1</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>1</sensorChannel>
+            <sampleRateNumerator>100</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>3</depth>
+            <azimuth>0</azimuth>
+            <dip>0</dip>
+            <gain>167772000</gain>
+            <gainFrequency>15</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="EHZ" datalogger="Datalogger#20131203214029.990457.15" sensor="Sensor#20131203214029.992324.23">
+            <start>2011-03-29T00:01:00.0000Z</start>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>0</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>0</sensorChannel>
+            <sampleRateNumerator>100</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>3</depth>
+            <azimuth>0</azimuth>
+            <dip>-90</dip>
+            <gain>167772000</gain>
+            <gainFrequency>15</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+        </sensorLocation>
+      </station>
+    </network>
+  </Inventory>
+</seiscomp>
