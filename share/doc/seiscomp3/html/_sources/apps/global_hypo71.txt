@@ -1,0 +1,141 @@
+.. _global_hypo71:
+
+######
+Hypo71
+######
+
+This plugin allows the use of traditionnal Hypo71PC locator with SeisComP3
+
+Description
+===========
+
+Hypo71 locator plugin which provides a way to use HYPO71 program to locate events in SeisComP3.
+
+It uses a slightly modified Hypo71 version from Alexandre Nercessian (IPGP) which allows negative earthquake depth (above sea level)
+and negative stations altitude (below sea level - OBS).
+
+
+How it works
+------------
+
+When reveiving a list of arrivals to locate, the plugin builds a Hypo71 input file with informations from the station inventory and configured profile.
+It then runs Hypo71, reads the output file and sends the results (location, uncertainties, RMS, pick residuals ...) to SeisComP3.
+
+If several trial depths are configured, the plugin will runs as many Hypo71 as depths are configured.
+Then all the results are read, and a decision is made on the best one, based on location RMS and uncertainty.
+A final run is then made with the best result depth as trial depth.
+
+
+Profiles
+--------
+
+The plugin allows the user to set up as many profiles as needed.
+A profile contains all the information relative to the velocity model and Hypo71 iteration parameters.
+
+This allows the user to tune the behaviour of Hypo71 to what he needs.
+If no profiles are set-up, the plugin will use default Hypo71 profile, according to example shown in Hypo71 first publication.
+Some of this default Hypo71 parameters have been altered to allow for more and finer iteration, since computer power is now far above what was available in the 1970's.
+
+
+More informations
+-----------------
+
+Hypo71PC original manual and binary are available on JC Lahr website.
+http://jclahr.com/science/software/hypo71/ 
+
+
+
+Configuration
+=============
+
+
+.. confval:: hypo71.logFile
+
+   Type: *string*
+
+   Temporary file used by Hypo71 to store calculation logs
+   Default is ``HYPO71.LOG``.
+
+.. confval:: hypo71.inputFile
+
+   Type: *string*
+
+   Temporary file to write Hypo71 input data to
+   Default is ``HYPO71.INP``.
+
+.. confval:: hypo71.outputFile
+
+   Type: *string*
+
+   Temporary output file to read Hypo71 localization data from
+   Default is ``HYPO71.PRT``.
+
+.. confval:: hypo71.defaultControlFile
+
+   Type: *string*
+
+   Hypo71 default profile.
+   If no custom profile is specified, this profile will be used by the plugin when proceeding to a localization.
+
+
+.. confval:: hypo71.hypo71BinaryFile
+
+   Type: *string*
+
+   Filepath to Hypo71 binary.
+
+
+.. confval:: hypo71.hypo71ScriptFile
+
+   Type: *string*
+
+   Bash script to use when calls have to be made by the plugin when proceeding to a localization
+
+
+.. confval:: hypo71.profiles
+
+   Type: *list:string*
+
+   Hypo71 profile name.
+   Multiples names may be set, as long as they are separated by comma.
+   Each profile can have different velocity or parameters.
+
+
+.. note::
+
+   **hypo71.profile.\$name.\***
+   *A profile contains a velocity model and Hypo71PC parameters*
+   \$name is a placeholder for the name to be used and needs to be added to :confval:`hypo71.profiles` to become active.
+
+   .. code-block:: sh
+
+      hypo71.profiles = a,b
+      hypo71.profile.a.value1 = ...
+      hypo71.profile.b.value1 = ...
+      # c is not active because it has not been added
+      # to the list of hypo71.profiles
+      hypo71.profile.c.value1 = ...
+
+
+.. confval:: hypo71.profile.\$name.earthModelID
+
+   Type: *string*
+
+   Profile's velocity model name
+
+
+.. confval:: hypo71.profile.\$name.methodID
+
+   Type: *string*
+
+   Profile's method.
+   It's generally the locator's name \(Hypo71\).
+
+
+.. confval:: hypo71.profile.\$name.controlFile
+
+   Type: *string*
+
+   File containing a profile parameters
+
+

@@ -1,0 +1,198 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>LocSAT &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="global" href="../toc/extensions/global.html" />
+    <link rel="next" title="Md" href="global_md.html" />
+    <link rel="prev" title="MLv" href="global_mlv.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="global_md.html" title="Md"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="global_mlv.html" title="MLv"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/extensions.html" >Extensions</a> &raquo;</li>
+          <li><a href="../toc/extensions/global.html" accesskey="U">global</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">LocSAT</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#travel-time-tables">Travel time tables</a></li>
+<li><a class="reference internal" href="#station-corrections">Station corrections</a><ul>
+<li><a class="reference internal" href="#format">Format</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#configuration">Configuration</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="global_mlv.html"
+                        title="previous chapter">MLv</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="global_md.html"
+                        title="next chapter">Md</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/apps/global_locsat.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="locsat">
+<span id="global-locsat"></span><h1>LocSAT<a class="headerlink" href="#locsat" title="Permalink to this headline">¶</a></h1>
+<p>LOCSAT locator for SeisComP.</p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The LocSAT locator interface implements a wrapper for the LocSAT locator
+written by Walter Nagy (according to the README file shipped with the
+LocSAT distribution).</p>
+</div>
+<div class="section" id="travel-time-tables">
+<h2>Travel time tables<a class="headerlink" href="#travel-time-tables" title="Permalink to this headline">¶</a></h2>
+<p>SeisComP ships with two predefined travel time tables: tab and iasp91.
+LocSAT travel time tables are located under <tt class="file docutils literal"><span class="pre">share/locsat/tables/</span></tt>.</p>
+<p>The default profile is <em>iasp91</em>.</p>
+</div>
+<div class="section" id="station-corrections">
+<h2>Station corrections<a class="headerlink" href="#station-corrections" title="Permalink to this headline">¶</a></h2>
+<p>LocSAT does not support station corrections natively. At least checking
+the code:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="n">sta_cor</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>    <span class="cm">/* FIX !!!!!!*/</span>
+</pre></div>
+</div>
+<p>However the SeisComP wrapper adds this feature. It allows to define a
+<tt class="file docutils literal"><span class="pre">.stacor</span></tt> file which defines corrections of observation times
+in seconds. A correction is <strong>substracted</strong> (not added) from
+the observation time to be compatible with the NonLinLoc station correction
+definitions (<a class="reference external" href="http://alomax.free.fr/nlloc/soft3.03/control.html#_NLLoc_locdelay_">http://alomax.free.fr/nlloc/soft3.03/control.html#_NLLoc_locdelay_</a>).</p>
+<p>Each LocSAT profile (travel time table) can have an associated station
+correction file. To use station corrections for the iasp91 tables, the file
+<tt class="file docutils literal"><span class="pre">share/locsat/tables/iasp91.stacor</span></tt> needs to be created.</p>
+<p>A station correction table looks like this:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="c"># LOCDELAY code phase numReadings delay</span>
+LOCDELAY GE.MORC P 1 -0.1
+</pre></div>
+</div>
+<p>The forth column (numReadings) is ignored and just provided for compatibility
+reasons with NonLinLoc.</p>
+<div class="section" id="format">
+<h3>Format<a class="headerlink" href="#format" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>code</strong> (<em>string</em>) station code (after all alias evaluations)</li>
+<li><strong>phase</strong> (<em>string</em>) phase type (any of the available travel time tables)</li>
+<li><strong>numReadings</strong> (<em>integer</em>) number of residuals used to calculate mean residual/delay (not used by NLLoc, included for compatibility with the format of a summary, phase statistics file)</li>
+<li><strong>delay</strong> (<em>float</em>) delay in seconds, subtracted from observed time</li>
+</ul>
+</div>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<dl class="confval">
+<dt id="confval-LOCSAT.profiles">
+<tt class="descname">LOCSAT.profiles</tt><a class="headerlink" href="#confval-LOCSAT.profiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>list:string</em></p>
+<p>Defines a list of available LOCSAT tab directories.
+Default is <tt class="docutils literal"><span class="pre">iasp91,tab</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-LOCSAT.enableConfidenceEllipsoid">
+<tt class="descname">LOCSAT.enableConfidenceEllipsoid</tt><a class="headerlink" href="#confval-LOCSAT.enableConfidenceEllipsoid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolen</em></p>
+<p>Compute the confidence ellipsoid.
+Default is <tt class="docutils literal"><span class="pre">false</span></tt>.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="global_md.html" title="Md"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="global_mlv.html" title="MLv"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/extensions.html" >Extensions</a> &raquo;</li>
+          <li><a href="../toc/extensions/global.html" >global</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

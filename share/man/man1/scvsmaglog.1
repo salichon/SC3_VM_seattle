@@ -1,0 +1,437 @@
+.TH "SCVSMAGLOG" "1" "January 21, 2014" "2014.016" "SeisComP3"
+.SH NAME
+scvsmaglog \- SeisComP3 Documentation
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.\" Man page generated from reStructeredText.
+.
+.sp
+\fBLogs VS magnitude messages.\fP
+.SH DESCRIPTION
+.sp
+scvsmaglog is part of a new SeisComp3 implementation of the
+[Virtual Seismologist]( \fI\%http://www.seismo.ethz.ch/research/vs\fP)
+(VS) Earthquake Early Warning algorithm (Cua, 2005; Cua and Heaton, 2007) released
+under the \(aqSED Public License for SeisComP3 Contributions\(aq
+(\fI\%http://www.seismo.ethz.ch/static/seiscomp_contrib/license.txt\fP ).
+.sp
+It logs the VS magnitude messages received from \fIscvsmag\fP and, once an event
+has timed out, generates report files. These report files are saved to disk and
+can also be sent via email.
+.sp
+It also provides the possibility to send messages to the UserDisplay, a
+real\-time EEW user interface developed by Caltech
+(\fI\%http://www.eew.caltech.edu/research/userdisplay.html\fP).
+While the UserDisplay is currently not openly available, the message stream from
+this interface can be used. The xml scheme and set\-up of an ActiveMQ broker
+necessary to receive the messages is briefly discribed in section \fI\%UserDisplay interface\fP.
+.SH REPORTS
+.sp
+Below is an example of the first few lines of a report file:
+.sp
+.nf
+.ft C
+Mag.|Lat.  |Lon.  |tdiff |Depth |creation time            |origin time              |likeh.|#st.(org.) |#st.(mag.)
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+3.42| 47.15|  8.52| 12.73| 25.32|2012\-02\-11T22:45:39.0000Z|2012\-02\-11T22:45:26.2729Z|  0.99|          6|         6
+3.43| 47.15|  8.52| 13.73| 25.32|2012\-02\-11T22:45:40.0000Z|2012\-02\-11T22:45:26.2729Z|  0.99|          6|         6
+3.56| 47.15|  8.54| 14.70| 25.73|2012\-02\-11T22:45:41.0000Z|2012\-02\-11T22:45:26.3032Z|  0.99|         10|        10
+3.64| 47.16|  8.54| 15.58| 24.32|2012\-02\-11T22:45:42.0000Z|2012\-02\-11T22:45:26.4178Z|  0.99|         12|        12
+3.54| 47.16|  8.53| 16.45| 22.40|2012\-02\-11T22:45:43.0000Z|2012\-02\-11T22:45:26.5547Z|  0.99|         14|        14
+3.67| 47.15|  8.54| 17.29| 20.40|2012\-02\-11T22:45:44.0000Z|2012\-02\-11T22:45:26.7142Z|  0.99|         16|        16
+3.66| 47.16|  8.54| 18.34| 21.31|2012\-02\-11T22:45:45.0000Z|2012\-02\-11T22:45:26.6562Z|  0.99|         18|        18
+3.75| 47.16|  8.54| 19.27| 19.91|2012\-02\-11T22:45:46.0000Z|2012\-02\-11T22:45:26.7326Z|  0.99|         19|        19
+.ft P
+.fi
+.sp
+\fICreation time\fP is the time the VS magnitude message was generated, \fItdiff\fP is the
+time difference between \fIcreation time\fP and \fIorigin time\fP in seconds, \fIlikeh\fP is the
+likelihood that this event is a real event (see documentation of the \fIscvsmag\fP module), # \fIst.(org)\fP
+is the number of stations that contributed to the origin and # \fIst.(mag)\fP the number of envelope streams
+that contributed to the magnitude.
+.SH USERDISPLAY INTERFACE
+.SS Configuration
+.INDENT 0.0
+.TP
+.B host
+Type: \fIstring\fP
+.sp
+is the address of the server running the ActiveMQ broker
+.UNINDENT
+.INDENT 0.0
+.TP
+.B port
+Type: \fIint\fP
+.sp
+Port at which the ActiveMQ broker listens for messages.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B username
+Type: \fIstring\fP
+.sp
+Username necessary to connect to the ActiveMQ broker.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B password
+Type: \fIstring\fP
+.sp
+Password necessary to connect to the ActiveMQ broker.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B topic
+Type: \fIstring\fP
+.sp
+Broker topic to send event messages to.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B topicb
+Type: \fIstring\fP
+.sp
+Broker topic to send hearbeat messages to.
+.UNINDENT
+.SS Event messages
+.sp
+Event messages are sent once a first magnitude estimate is available. The
+\(aqmessage_type\(aq of the first message is \(aqnew\(aq, and for any successive message it\(aqs
+either \(aqupdate\(aq or \(aqdelete\(aq. Currently all values except the uncertainty
+estimates will be set by scvsmaglog.
+.sp
+.nf
+.ft C
+<?xml version=\(aq1.0\(aq encoding=\(aqUTF\-8\(aq?>
+<event_message message_type="new" orig_sys="dm" version="0">
+    <core_info id="\-9">
+        <mag units="Mw">\-9.9</mag>
+        <mag_uncer units="Mw">\-9.9</mag_uncer>
+        <lat units="deg">\-999.9</lat>
+        <lat_uncer units="deg">\-999.9</lat_uncer>
+        <lon units="deg">\-999.9</lon>
+        <lon_uncer units="deg">\-999.9</lon_uncer>
+        <depth units="km">\-9.9</depth>
+        <depth_uncer units="km">\-9.9</depth_uncer>
+        <orig_time units="UTC">2013\-06\-10T13:35:12Z</orig_time>
+        <orig_time_uncer units="sec">\-9.9</orig_time_uncer>
+        <likelihood>\-9.9</likelihood>
+    </core_info>
+</event_message>
+.ft P
+.fi
+.SS Heartbeat messages
+.sp
+Heartbeat messages are sent in 5 s intervals.
+.sp
+.nf
+.ft C
+<?xml version=\(aq1.0\(aq encoding=\(aqUTF\-8\(aq?>
+<hb originator="vs.9" sender="vs.9" timestamp="Mon June 10 13:41:35 2013" />
+.ft P
+.fi
+.SS ActiveMQ broker configuration
+.sp
+It is beyond the scope of this documentation to explain the complete setup of an
+ActiveMQ broker. However, since scvsmaglog uses the STOMP protocol to send
+messages to the broker it is essential to install the stompy package, which
+provides Python bindings for the STOMP protocol, and to add the following line
+to configuration of the ActiveMQ broker.
+.sp
+.nf
+.ft C
+<connector>
+<serverTransport uri="stomp://your\-server\-name:your\-port"/>
+</connector>
+.ft P
+.fi
+.SH CONFIGURATION
+.nf
+\fBetc/defaults/global.cfg\fP
+\fBetc/defaults/scvsmaglog.cfg\fP
+\fBetc/global.cfg\fP
+\fBetc/scvsmaglog.cfg\fP
+\fB~/.seiscomp3/global.cfg\fP
+\fB~/.seiscomp3/scvsmaglog.cfg\fP
+.fi
+.sp
+.sp
+scvsmaglog inherits \fIglobal options\fP.
+.INDENT 0.0
+.TP
+.B email.smtpserver
+Type: \fIstring\fP
+.sp
+URL of the smtp server to send the report files to.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B email.port
+Type: \fIint\fP
+.sp
+Port where the SMTP server accepts connections.
+Default is \fB25\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B email.usetls
+Type: \fIboolean\fP
+.sp
+Whether to use TLS when connecting to the smtp server.
+Default is \fBfalse\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B email.usessl
+Type: \fIboolean\fP
+.sp
+Whether to use SSL when connecting to the smtp server.
+Note, only \(aqemail.usetls\(aq or \(aquser.ssl\(aq can be true.
+Default is \fBfalse\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B email.authenticate
+Type: \fIboolean\fP
+.sp
+Whether the smtp server requires authentication (username + password).
+Default is \fBfalse\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B email.credentials
+Type: \fIfile\fP
+.sp
+If the smtp server requires authentication you have to specify a file that contains
+username and password in the format:
+.sp
+username=your\-username
+.sp
+password=your\-password
+.sp
+Make sure that you set the file permission as restrictive as
+possible.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B email.senderaddress
+Type: \fIstring\fP
+.sp
+Email address that will appear as sender in the report email.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B email.subject
+Type: \fIstring\fP
+.sp
+Any string that should be prepended to the email\(aqs subject string.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B email.host
+Type: \fIstring\fP
+.sp
+Host as it is supposed to appear in the email\(aqs subject string.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B email.recipients
+Type: \fIlist:string\fP
+.sp
+A list of email addresses that receive the report emails.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B userdisplay.configfile
+Type: \fIfile\fP
+.sp
+Path to the configuration file that defines the UserDisplay interface.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B report.eventbuffer
+Type: \fIint\fP
+.sp
+Time in seconds that events and the related objects are buffered.
+Default is \fB3600\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B report.directory
+Type: \fIdir\fP
+.sp
+Directory to save reports to.
+Default is \fB~/.seiscomp3/log/VS_reports\fP.
+.UNINDENT
+.SH COMMAND-LINE
+.SS Generic
+.INDENT 0.0
+.TP
+.B \-h, \-\-help
+show help message.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-V, \-\-version
+show version information
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-config\-file arg
+Use alternative configuration file. When this option is used
+the loading of all stages is disabled. Only the given configuration
+file is parsed and used. To use another name for the configuration
+create a symbolic link of the application or copy it, eg scautopick \-> scautopick2.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-plugins arg
+Load given plugins.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-D, \-\-daemon
+Run as daemon. This means the application will fork itself and
+doesn\(aqt need to be started with &.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-auto\-shutdown arg
+Enable/disable self\-shutdown because a master module shutdown. This only
+works when messaging is enabled and the master module sends a shutdown
+message (enabled with \-\-start\-stop\-msg for the master module).
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-shutdown\-master\-module arg
+Sets the name of the master\-module used for auto\-shutdown. This
+is the application name of the module actually started. If symlinks
+are used then it is the name of the symlinked application.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-shutdown\-master\-username arg
+Sets the name of the master\-username of the messaging used for
+auto\-shutdown. If "shutdown\-master\-module" is given as well this
+parameter is ignored.
+.UNINDENT
+.SS Verbosity
+.INDENT 0.0
+.TP
+.B \-\-verbosity arg
+Verbosity level [0..4]. 0:quiet, 1:error, 2:warning, 3:info, 4:debug
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-v, \-\-v
+Increase verbosity level (may be repeated, eg. \-vv)
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-q, \-\-quiet
+Quiet mode: no logging output
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-component arg
+Limits the logging to a certain component. This option can be given more than once.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-s, \-\-syslog
+Use syslog logging back end. The output usually goes to /var/lib/messages.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-l, \-\-lockfile arg
+Path to lock file.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-console arg
+Send log output to stdout.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-debug
+Debug mode: \-\-verbosity=4 \-\-console=1
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-log\-file arg
+Use alternative log file.
+.UNINDENT
+.SS Messaging
+.INDENT 0.0
+.TP
+.B \-u, \-\-user arg
+Overrides configuration parameter \fBconnection.username\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-H, \-\-host arg
+Overrides configuration parameter \fBconnection.server\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-t, \-\-timeout arg
+Overrides configuration parameter \fBconnection.timeout\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-g, \-\-primary\-group arg
+Overrides configuration parameter \fBconnection.primaryGroup\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-S, \-\-subscribe\-group arg
+A group to subscribe to. This option can be given more than once.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-encoding arg
+Overrides configuration parameter \fBconnection.encoding\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-start\-stop\-msg arg
+Sets sending of a start\- and a stop message.
+.UNINDENT
+.SS Reports
+.INDENT 0.0
+.TP
+.B \-\-savedir path
+Directory to save reports to.
+.UNINDENT
+.SH AUTHOR
+Swiss Seismological Service
+.SH COPYRIGHT
+2014, GFZ Potsdam, gempa GmbH
+.\" Generated by docutils manpage writer.
+.\" 
+.

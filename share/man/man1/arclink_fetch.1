@@ -1,0 +1,277 @@
+.TH "ARCLINK_FETCH" "1" "January 21, 2014" "2014.016" "SeisComP3"
+.SH NAME
+arclink_fetch \- SeisComP3 Documentation
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.\" Man page generated from reStructeredText.
+.
+.sp
+\fBArcLink CLI client.\fP
+.SH DESCRIPTION
+.sp
+arclink_fetch is a more sophisticated client that can be used to get data with
+a single command. It performs routing automatically. When you install SeisComP3
+it is automatically installed on your computer, but it may also be installed as
+a standalone package for users wishing only to request data from an ArcLink
+server.
+.SH INPUT FILE FORMAT
+.sp
+ArcLink Fetch  program supports  two different input  formats for  the request
+file.  It  supports  the traditional  BREQ  FAST  format,  and its own  native
+format. Both formats  contains the same information and  they differ slightly.
+.sp
+The program has the ability to read the request lines from files, or from the
+standard input (when no request file is supplied).
+.SS Native Format:
+.sp
+The native format has the following format:
+.sp
+.nf
+.ft C
+YYYY,MM,DD,HH,MM,SS YYYY,MM,DD,HH,MM,SS Network Station Channel [Location]
+.ft P
+.fi
+.sp
+the Channel, Station and Location, can contains wildcards (*) and the Location
+field is optional. For matching all locations please use the \(aq*\(aq symbol, if
+empty it assumes that only empty locations are being requested.
+.sp
+Example:
+.sp
+.nf
+.ft C
+2010,02,18,12,00,00 2010,02,18,12,10,00 GE WLF BH*
+2010,02,18,12,00,00 2010,02,18,12,10,00 GE VSU BH* 00
+.ft P
+.fi
+.SS BREQ FAST Format:
+.sp
+The  BREQ FAST  format is  a  standard format  used on  seismology to  request
+data. Each header line start with \(aq.\(aq and the request lines have the following
+format:
+.sp
+.nf
+.ft C
+Station Network {Time Start} {Time End} {Number of Channels} N x Channels Location
+.ft P
+.fi
+.sp
+Time Specification should have the following format: YYYY MM DD HH MM SS.TTTT
+.sp
+Please read more about the BREQ FAST format at:
+.sp
+\fI\%http://www.iris.edu/manuals/breq_fast.htm\fP
+.SH ARCLINK PASSWORD FILE (FOR DECRYPTION)
+.sp
+In this file (default: dcidpasswords.txt) you can store your private passwords
+given by different  data centers. Each data center  that you request encrypted
+data will send you a different password.
+.sp
+The format of the  file is really simple: just the data  center ID followed by
+the password that you received. One  data center ID and password per line. Any
+empty lines or lines starting with # are ignored.
+.sp
+Example:
+.sp
+.nf
+.ft C
+gfz password1
+odc password2
+ipgp password3
+.ft P
+.fi
+.sp
+The data  center ID and password  can be found on the automatically generated
+e\-mail that  you received from each  data center. (You will  only receive this
+email if  you have been  authorized to download  encrypted data, and  you have
+tried to download it.)
+.SH MINISEED REBLOCKING
+.sp
+The mseed4k data format (\-k mseed4k) enables a client side re\-blocking of the
+received MiniSeed records from the server to a default block size of 4096. This
+is especially important when you are downloading data from two different
+networks that were archived with different block sizes and would like to
+receive a uniform (in terms of block size) MiniSeed file.
+.sp
+Some programs have problems to proper display miniseed packages with different
+block sizes on the same file. This issue can be avoided by instead of requesting
+MiniSeed data directly (\-k mseed), just request re\-blocked MiniSeed (\-k mseed4k).
+.SH REBUILDING SEED VOLUME
+.sp
+If \-g option is used in combination with the fseed data format (\-k fseed), then
+instead of full SEED, inventory and Mini\-SEED is requested; full SEED volume is
+created from inventory and Mini\-SEED data locally. In this case, waveform data
+from multiple data centers can be merged into one SEED volume.
+.SH EXAMPLES
+.sp
+Example of a request file named "req.txt":
+.sp
+.nf
+.ft C
+2010,02,18,12,00,00 2010,02,18,12,10,00 GE WLF BH*
+2010,02,18,12,00,00 2010,02,18,12,10,00 GE VSU BH*
+.ft P
+.fi
+.sp
+Submit the request in req.txt to the ArcLink server on st55, and download full
+SEED data to req.mseed.
+.sp
+.nf
+.ft C
+> arclink_fetch \-a st55:18002 \-k fseed \-g \-u andres@gfz\-potsdam.de \e
+                \-o req.mseed \-v req.txt
+requesting inventory from st55:18002
+requesting routing from st55:18002
+launching request thread (st55:18002)
+st55:18002: request 41 ready
+launching request thread (st14:18002)
+st14:18002: request 39 ready
+the following data requests were sent:
+GFTEST55
+Request ID: 41, Label: , Type: WAVEFORM, Args: compression=bzip2 format=MSEED
+Status: READY, Size: 37137, Info:
+  Volume ID: GFTEST, Status: OK, Size: 37137, Info:
+    Request: 2010,2,18,12,0,0 2010,2,18,12,10,0 GE WLF BHN .
+    Status: OK, Size: 15360, Info:
+    Request: 2010,2,18,12,0,0 2010,2,18,12,10,0 GE WLF BHE .
+    Status: OK, Size: 15360, Info:
+    Request: 2010,2,18,12,0,0 2010,2,18,12,10,0 GE WLF BHZ .
+    Status: OK, Size: 15872, Info:
+    Request: 2010,2,18,12,0,0 2010,2,18,12,10,0 GE VSU BHN .
+    Status: NODATA, Size: 0, Info:
+    Request: 2010,2,18,12,0,0 2010,2,18,12,10,0 GE VSU BHZ .
+    Status: NODATA, Size: 0, Info:
+    Request: 2010,2,18,12,0,0 2010,2,18,12,10,0 GE VSU BHE .
+    Status: NODATA, Size: 0, Info:
+GFTEST
+Request ID: 39, Label: , Type: WAVEFORM, Args: compression=bzip2 format=MSEED
+Status: READY, Size: 46269, Info:
+  Volume ID: GFTEST, Status: OK, Size: 46269, Info:
+    Request: 2010,2,18,12,0,0 2010,2,18,12,10,0 GE VSU BHN .
+    Status: OK, Size: 17408, Info:
+    Request: 2010,2,18,12,0,0 2010,2,18,12,10,0 GE VSU BHZ .
+    Status: OK, Size: 16896, Info:
+    Request: 2010,2,18,12,0,0 2010,2,18,12,10,0 GE VSU BHE .
+    Status: OK, Size: 17408, Info:
+rebuilding SEED volume
+.ft P
+.fi
+.IP Note
+Part of the request was routed to secondary server after the primary
+server returned NODATA.
+.RE
+.sp
+This client is intended to connect to an ArcLink server as implemented by the \fISeiscomp3 Arclink Server\fP or to any other server implementing the \fIArcLink protocol\fP.
+.SH COMMAND-LINE
+.INDENT 0.0
+.TP
+.B \-\-version
+show program’s version number and exit
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-h, \-\-help
+show a help message and exit
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-l, \-\-longhelp
+show long help message and exit
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-w, \-\-password\-file
+file containing passwords used for decryption of encrypted data.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-a, \-\-address
+address of primary ArcLink node
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-f, \-\-request\-format
+request format: breqfast
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-k, \-\-data\-format
+data format: mseed, mseed4k, fseed, dseed, inv[entory]
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-n, \-\-no\-resp\-dict
+avoid using response dictionary
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-g, \-\-rebuild\-volume
+rebuild SEED volume
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-p, \-\-proxy
+proxy mode, no routing is performed, instead the request is sent directly for the server
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-t, \-\-timeout
+timeout in seconds
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-x, \-\-retries
+download retries
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-v
+increase verbosity level
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-q
+decrease verbosity level
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-u, \-\-user
+user\(aqs e\-mail address
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-o, \-\-output\-file
+file where downloaded data is written
+.UNINDENT
+.SH AUTHOR
+GFZ Potsdam
+.SH COPYRIGHT
+2014, GFZ Potsdam, gempa GmbH
+.\" Generated by docutils manpage writer.
+.\" 
+.

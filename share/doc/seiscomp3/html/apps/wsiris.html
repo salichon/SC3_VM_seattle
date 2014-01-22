@@ -1,0 +1,589 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>wsiris &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="Utilities" href="../toc/utilities.html" />
+    <link rel="next" title="Graphical user interfaces" href="../gui.html" />
+    <link rel="prev" title="sync_arc" href="sync_arc.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../gui.html" title="Graphical user interfaces"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="sync_arc.html" title="sync_arc"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/utilities.html" accesskey="U">Utilities</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">wsiris</a><ul>
+<li><a class="reference internal" href="#description">Description</a><ul>
+<li><a class="reference internal" href="#event">Event</a><ul>
+<li><a class="reference internal" href="#url">URL</a></li>
+<li><a class="reference internal" href="#example">Example</a></li>
+<li><a class="reference internal" href="#feature-notes">Feature Notes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#station">Station</a><ul>
+<li><a class="reference internal" href="#id4">URL</a></li>
+<li><a class="reference internal" href="#id5">Example</a></li>
+<li><a class="reference internal" href="#id6">Feature Notes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#availability">Availability</a><ul>
+<li><a class="reference internal" href="#id7">URL</a></li>
+<li><a class="reference internal" href="#id8">Example</a></li>
+<li><a class="reference internal" href="#id9">Feature Notes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#data-select">Data select</a><ul>
+<li><a class="reference internal" href="#id10">URL</a></li>
+<li><a class="reference internal" href="#id11">Example</a></li>
+<li><a class="reference internal" href="#id12">Feature Notes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bulk-data-select">Bulk data select</a><ul>
+<li><a class="reference internal" href="#id13">URL</a></li>
+<li><a class="reference internal" href="#id14">Example</a></li>
+<li><a class="reference internal" href="#id15">Feature Notes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#configuration">Configuration</a></li>
+<li><a class="reference internal" href="#command-line">Command-line</a><ul>
+<li><a class="reference internal" href="#generic">Generic</a></li>
+<li><a class="reference internal" href="#verbosity">Verbosity</a></li>
+<li><a class="reference internal" href="#database">Database</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="sync_arc.html"
+                        title="previous chapter">sync_arc</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../gui.html"
+                        title="next chapter">Graphical user interfaces</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/apps/wsiris.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="wsiris">
+<span id="id1"></span><h1>wsiris<a class="headerlink" href="#wsiris" title="Permalink to this headline">¶</a></h1>
+<p><strong>Provide IRIS webservices.</strong></p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>wsiris is a server that provides IRIS Web services from a SeisComP3 database
+and an SDS waveform archive. The following services are implemented:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Service</th>
+<th class="head">Retrieves this...</th>
+<th class="head">In this format</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http://www.iris.edu/ws/event">ws-event</a></td>
+<td>contributed earthquake origin and magnitude estimates</td>
+<td><a class="reference external" href="https://quake.ethz.ch/quakeml">QuakeML</a>, <a class="reference external" href="http://geofon/ns/seiscomp3-schema/">SC3ML</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://www.iris.edu/ws/station">ws-station</a></td>
+<td>network, station, channel, response metadata</td>
+<td><a class="reference external" href="http://www.data.scec.org/xml/station/">StationXML</a>, <a class="reference external" href="http://geofon/ns/seiscomp3-schema/">SC3ML</a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://www.iris.edu/ws/availability">ws-availability</a></td>
+<td>information about what time series data is available from the DMC</td>
+<td>XML, Query parameters for ws-bulkdataselect, ws-dataselect, or ws-timeseries</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="http://www.iris.edu/ws/dataselect">ws-dataselect</a></td>
+<td>single channel of time series data in miniSEED format. Use this to pass data to other workflow services</td>
+<td><a class="reference external" href="http://www.iris.edu/data/miniseed.htm">miniSEED</a></td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://www.iris.edu/ws/bulkdataselect">ws-bulkdataselect</a></td>
+<td>multiple channels of time series data</td>
+<td><a class="reference external" href="http://www.iris.edu/data/miniseed.htm">miniSEED</a></td>
+</tr>
+</tbody>
+</table>
+<p>If wsiris is started, it accepts connections by default on port 8080 which
+can be changed in the configuration.</p>
+<div class="section" id="event">
+<h3>Event<a class="headerlink" href="#event" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>contributed earthquake origin and magnitude estimates</li>
+<li>request type: HTTP-GET</li>
+<li>events may be filtered e.g. by hypocenter, time and magnitude, see <a class="reference external" href="http://www.iris.edu/ws/event/">http://www.iris.edu/ws/event/</a></li>
+</ul>
+<div class="section" id="url">
+<h4>URL<a class="headerlink" href="#url" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><a class="reference external" href="http://localhost:8080/event">http://localhost:8080/event</a></li>
+<li><a class="reference external" href="http://localhost:8080/event/query">http://localhost:8080/event/query</a></li>
+</ul>
+</div>
+<div class="section" id="example">
+<h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><a class="reference external" href="http://localhost:8080/event?starttime=2012-09-12&amp;minlat=30&amp;maxlat=60&amp;minlon=-10&amp;maxlon=30">http://localhost:8080/event?starttime=2012-09-12&amp;minlat=30&amp;maxlat=60&amp;minlon=-10&amp;maxlon=30</a></li>
+</ul>
+</div>
+<div class="section" id="feature-notes">
+<h4>Feature Notes<a class="headerlink" href="#feature-notes" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>SeisComP does not distinguish between catalogs and contributors, but supports
+agencyIDs. Hence, if specified, the value of the catalog or contributor
+parameter is mapped to the agencyID. If both parameters are supplied, the
+value of the contributor is used.</li>
+<li>origin and magnitude filter parameters are always applied to preferred origin
+resp. preferred magnitude</li>
+<li>additional request parameters:<ul>
+<li><tt class="docutils literal"><span class="pre">output:</span> <span class="pre">[qml,</span> <span class="pre">qml-rt,</span> <span class="pre">sc3ml]</span></tt>, default: <tt class="docutils literal"><span class="pre">qml</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">includecomments</span></tt>: boolean, default: <tt class="docutils literal"><span class="pre">true</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">formatted</span></tt>: boolean, default: <tt class="docutils literal"><span class="pre">false</span></tt></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="station">
+<h3>Station<a class="headerlink" href="#station" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>network, station, channel, response metadata</li>
+<li>request type: HTTP-GET</li>
+<li>stations may be filtered e.g. by geographic region and time, also the
+information depth level is selectable, see <a class="reference external" href="http://www.iris.edu/ws/station/">http://www.iris.edu/ws/station/</a></li>
+</ul>
+<div class="section" id="id4">
+<h4>URL<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><a class="reference external" href="http://localhost:8080/station">http://localhost:8080/station</a></li>
+<li><a class="reference external" href="http://localhost:8080/station/query">http://localhost:8080/station/query</a></li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h4>Example<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><a class="reference external" href="http://localhost:8080/station?net=GE&amp;level=sta">http://localhost:8080/station?net=GE&amp;level=sta</a></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h4>Feature Notes<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">updatedafter</span></tt> request parameter not implemented: The last modification time
+in SeisComP is tracked on the object level. If a child of an object is updated
+the update time is not propagated to all parents. In order to check if a
+station was updated all children must be evaluated recursively. This operation
+would be much to expensive.</li>
+<li>additional request parameters:<ul>
+<li><tt class="docutils literal"><span class="pre">output:</span> <span class="pre">[stationxml,</span> <span class="pre">sc3ml]</span></tt>, default: <tt class="docutils literal"><span class="pre">stationxml</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">formatted</span></tt>: boolean, default: <tt class="docutils literal"><span class="pre">false</span></tt></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="availability">
+<span id="sec-availability"></span><h3>Availability<a class="headerlink" href="#availability" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>information about what time series data is available from the DMC</li>
+<li>request type: HTTP-GET</li>
+<li>data may be filtered e.g. by geographic, time and channel information, see
+<a class="reference external" href="http://www.iris.edu/ws/availability/">http://www.iris.edu/ws/availability/</a></li>
+<li>supports different output formats:<ul>
+<li><tt class="docutils literal"><span class="pre">xml</span></tt> – StationXML like</li>
+<li><tt class="docutils literal"><span class="pre">query</span></tt> – HTTP-GET parameter list, used as input for <cite>ref:sec-dataselect</cite></li>
+<li><tt class="docutils literal"><span class="pre">bulkdataselect</span></tt> – Lines of stream parameters, used for
+<cite>ref:sec-bulkdataselect</cite></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="id7">
+<h4>URL<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><a class="reference external" href="http://localhost:8080/availability">http://localhost:8080/availability</a></li>
+<li><a class="reference external" href="http://localhost:8080/availability/query">http://localhost:8080/availability/query</a></li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h4>Example<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><a class="reference external" href="http://localhost:8080/availability?start=2010&amp;output=query">http://localhost:8080/availability?start=2010&amp;output=query</a></li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h4>Feature Notes<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>data availability is only based on SDS file names (not miniSEED content),
+hence date precision is limited to days</li>
+</ul>
+</div>
+</div>
+<div class="section" id="data-select">
+<span id="sec-dataselect"></span><h3>Data select<a class="headerlink" href="#data-select" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>single channel of time series data in miniSEED format</li>
+<li>request type: HTTP-GET</li>
+</ul>
+<div class="section" id="id10">
+<h4>URL<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><a class="reference external" href="http://localhost:8080/dataselect">http://localhost:8080/dataselect</a></li>
+<li><a class="reference external" href="http://localhost:8080/dataselect/query">http://localhost:8080/dataselect/query</a></li>
+</ul>
+</div>
+<div class="section" id="id11">
+<h4>Example<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><a class="reference external" href="http://localhost:8080/dataselect?net=AD&amp;sta=DLV&amp;loc=--&amp;cha=BHE&amp;start=2010-11-08T00:00:00&amp;end=2010-11-09T23:59:59">http://localhost:8080/dataselect?net=AD&amp;sta=DLV&amp;loc=--&amp;cha=BHE&amp;start=2010-11-08T00:00:00&amp;end=2010-11-09T23:59:59</a></li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h4>Feature Notes<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">quality</span></tt> parameter not implemented (information not available in SeisComP )</li>
+<li><tt class="docutils literal"><span class="pre">ref</span></tt> parameter is limited to direct, no ICAB (IRIS Caching Artifact Builder) support</li>
+</ul>
+</div>
+</div>
+<div class="section" id="bulk-data-select">
+<span id="sec-bulkdataselect"></span><h3>Bulk data select<a class="headerlink" href="#bulk-data-select" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>multiple channels of time series data</li>
+<li>request type: HTTP-POST</li>
+</ul>
+<div class="section" id="id13">
+<h4>URL<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><a class="reference external" href="http://localhost:8080/bulkdataselect">http://localhost:8080/bulkdataselect</a></li>
+<li><a class="reference external" href="http://localhost:8080/bulkdataselect/query">http://localhost:8080/bulkdataselect/query</a></li>
+</ul>
+</div>
+<div class="section" id="id14">
+<h4>Example<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<p>In the following example the command line tool <tt class="docutils literal"><span class="pre">curl</span></tt> is used to first
+retrieve a stream request list from the <cite>ref:sec-availablity</cite> service and then
+to post the list to the <cite>ref:sec-bulkdataselect</cite> service.</p>
+<div class="highlight-sh"><div class="highlight"><pre>sysop@host:~<span class="nv">$ </span>curl -o request.txt <span class="s2">&quot;http://localhost:8080/availability?start=2011&amp;output=bulkdataselect&amp;net=ge&amp;sta=M*&amp;cha=BHE&quot;</span>
+sysop@host:~<span class="nv">$ </span>curl -o data.mseed --data-urlencode selection@request.txt <span class="s2">&quot;http://localhost:8080/bulkdataselect&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id15">
+<h4>Feature Notes<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">quality</span></tt> parameter not implemented (information not available in SeisComP )</li>
+<li><tt class="docutils literal"><span class="pre">minimumlength</span></tt> parameter is not implemented</li>
+<li><tt class="docutils literal"><span class="pre">longestonly</span></tt> parameter is not implemented</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/defaults/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/defaults/wsiris.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/wsiris.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">~/.seiscomp3/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">~/.seiscomp3/wsiris.cfg</span></tt></div>
+</div>
+<p>wsiris inherits <a class="reference internal" href="global.html#global-configuration"><em>global options</em></a>.</p>
+<dl class="confval">
+<dt id="confval-listenAddress">
+<tt class="descname">listenAddress</tt><a class="headerlink" href="#confval-listenAddress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>IP</em></p>
+<p>Defines the bind address of the server. &quot;0.0.0.0&quot; allows
+any interface to connect to this server whereas &quot;127.0.0.0&quot;
+only allows connections from localhost.
+Default is <tt class="docutils literal"><span class="pre">0.0.0.0</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-port">
+<tt class="descname">port</tt><a class="headerlink" href="#confval-port" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Server port to listen for incoming requests.
+Default is <tt class="docutils literal"><span class="pre">8080</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-sdsPath">
+<tt class="descname">sdsPath</tt><a class="headerlink" href="#confval-sdsPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Defines the path to the waveform archive for waveform requests.
+Default is <tt class="docutils literal"><span class="pre">&#64;ROOTDIR&#64;/var/lib/archive</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-queryObjects">
+<tt class="descname">queryObjects</tt><a class="headerlink" href="#confval-queryObjects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Maximum number of objects per query, used in ws-station and ws-event
+services to limit main memory consumption.
+Default is <tt class="docutils literal"><span class="pre">10000</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-connections">
+<tt class="descname">connections</tt><a class="headerlink" href="#confval-connections" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Number of maximum simultaneous requests.
+Default is <tt class="docutils literal"><span class="pre">5</span></tt>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="command-line">
+<h2>Command-line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="generic">
+<h3>Generic<a class="headerlink" href="#generic" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-wsiris-h">
+<tt class="descname">-h</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--help</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-wsiris-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show help message.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-wsiris-V">
+<tt class="descname">-V</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--version</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-wsiris-V" title="Permalink to this definition">¶</a></dt>
+<dd><p>show version information</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-wsiris--config-file">
+<tt class="descname">--config-file</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-wsiris--config-file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use alternative configuration file. When this option is used
+the loading of all stages is disabled. Only the given configuration
+file is parsed and used. To use another name for the configuration
+create a symbolic link of the application or copy it, eg scautopick -&gt; scautopick2.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-wsiris--plugins">
+<tt class="descname">--plugins</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-wsiris--plugins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load given plugins.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-wsiris-D">
+<tt class="descname">-D</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--daemon</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-wsiris-D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run as daemon. This means the application will fork itself and
+doesn't need to be started with &amp;.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-wsiris--auto-shutdown">
+<tt class="descname">--auto-shutdown</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-wsiris--auto-shutdown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable/disable self-shutdown because a master module shutdown. This only
+works when messaging is enabled and the master module sends a shutdown
+message (enabled with --start-stop-msg for the master module).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-wsiris--shutdown-master-module">
+<tt class="descname">--shutdown-master-module</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-wsiris--shutdown-master-module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the name of the master-module used for auto-shutdown. This
+is the application name of the module actually started. If symlinks
+are used then it is the name of the symlinked application.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-wsiris--shutdown-master-username">
+<tt class="descname">--shutdown-master-username</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-wsiris--shutdown-master-username" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the name of the master-username of the messaging used for
+auto-shutdown. If &quot;shutdown-master-module&quot; is given as well this
+parameter is ignored.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="verbosity">
+<h3>Verbosity<a class="headerlink" href="#verbosity" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-wsiris--verbosity">
+<tt class="descname">--verbosity</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-wsiris--verbosity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verbosity level [0..4]. 0:quiet, 1:error, 2:warning, 3:info, 4:debug</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-wsiris-v">
+<tt class="descname">-v</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--v</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-wsiris-v" title="Permalink to this definition">¶</a></dt>
+<dd><p>Increase verbosity level (may be repeated, eg. -vv)</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-wsiris-q">
+<tt class="descname">-q</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--quiet</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-wsiris-q" title="Permalink to this definition">¶</a></dt>
+<dd><p>Quiet mode: no logging output</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-wsiris--component">
+<tt class="descname">--component</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-wsiris--component" title="Permalink to this definition">¶</a></dt>
+<dd><p>Limits the logging to a certain component. This option can be given more than once.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-wsiris-s">
+<tt class="descname">-s</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--syslog</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-wsiris-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use syslog logging back end. The output usually goes to /var/lib/messages.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-wsiris-l">
+<tt class="descname">-l</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--lockfile</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-wsiris-l" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path to lock file.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-wsiris--console">
+<tt class="descname">--console</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-wsiris--console" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send log output to stdout.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-wsiris--debug">
+<tt class="descname">--debug</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-wsiris--debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>Debug mode: --verbosity=4 --console=1</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-wsiris--log-file">
+<tt class="descname">--log-file</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-wsiris--log-file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use alternative log file.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="database">
+<h3>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-wsiris--db-driver-list">
+<tt class="descname">--db-driver-list</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-wsiris--db-driver-list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List all supported database drivers.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-wsiris-d">
+<tt class="descname">-d</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--database</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-wsiris-d" title="Permalink to this definition">¶</a></dt>
+<dd><p>The database connection string, format: <a class="reference external" href="service://user:pwd&#64;host/database">service://user:pwd&#64;host/database</a>.
+&quot;service&quot; is the name of the database driver which can be
+queried with &quot;--db-driver-list&quot;.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-wsiris--config-module">
+<tt class="descname">--config-module</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-wsiris--config-module" title="Permalink to this definition">¶</a></dt>
+<dd><p>The configmodule to use.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-wsiris--inventory-db">
+<tt class="descname">--inventory-db</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-wsiris--inventory-db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the inventory from the given database or file, format: [<a class="reference external" href="service://]location">service://]location</a></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-wsiris--db-disable">
+<tt class="descname">--db-disable</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-wsiris--db-disable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do not use the database at all</p>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../gui.html" title="Graphical user interfaces"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="sync_arc.html" title="sync_arc"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/utilities.html" >Utilities</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

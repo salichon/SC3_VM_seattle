@@ -1,0 +1,403 @@
+.TH "EW2SC3" "1" "January 21, 2014" "2014.016" "SeisComP3"
+.SH NAME
+ew2sc3 \- SeisComP3 Documentation
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.\" Man page generated from reStructeredText.
+.
+.sp
+\fBEarthworm hypo2000_arc messages importer\fP
+.SH DESCRIPTION
+.sp
+Earthworm to SeisComP3 application.
+.sp
+This application connects to an Earthworm export module using IP protocol and
+listens for messages thru a specified socket.
+.SS Communication
+.sp
+The communication between Earthworm and SeisComP3 is done by using Earthworm export_generic protocol.
+It\(aqs a TCP/IP protocol over which text messages are sent by Earthworm.
+An hearbeat is sent by both ends of the socket (Earthworm and SeisComP3), at a regular rate.
+If for some reason the hearbeat is not received during a configurable amount of time (which should higher than the expected heartbeat rate), then the connection is re\-initiated.
+.SS Message processing
+.sp
+The messages sent trough the socket are idenfied by their message ID, their institute ID and their module ID.
+All those IDs are configured within the export_generic Earthworm module and Earthworm system.
+Ew2sc3 only supports hypo2000_arc messages type from Earthworm. Any other message will lead to unknow behaviour of ew2sc3.
+.sp
+When a message is received, ew2sc3 will first assess whereas it is correct or not according to the IDs.
+Then, the hypo2000_arc message is parsed and picks, arrivals, magnitudes and origin are created.
+A new origin message with associated magnitudes, arrivals and picks is then sent to SeisComP3 messaging system.
+.sp
+In case the latitude and longitude in the hypo2000_arc message are null (space filled), a default location is used.
+.SS Pick uncertainties
+.sp
+Hypo2000_arc message uses weights for pick quality, 0 being the best picks and 4 the worst.
+Those weight are translated into uncertainties for SeisComP3.
+A list of uncertainties is configured into ew2sc3 configuration file (pickerUncertainties). Then weights from 0 to maxUncertainty are matched with the minimum and maximum uncertainties.
+Finally, a linear formula allows to find the uncertainty corresponding to the assigned weight.
+.SS More
+.sp
+More informations on the content of Hypo2000_arc message can be found on Earthworm website.
+\fI\%http://www.earthwormcentral.org/documentation/PROGRAMMER/y2k-formats.html\fP
+.sp
+More informations on export_generic configuration can be found on Earthworm website.
+\fI\%http://www.earthwormcentral.org/documentation/cmd/export_cmd.html\fP
+.sp
+And finally, more informations on Earthworm can be found on central Earthworm website.
+\fI\%http://www.earthwormcentral.org/\fP
+.SH CONFIGURATION
+.nf
+\fBetc/defaults/global.cfg\fP
+\fBetc/defaults/ew2sc3.cfg\fP
+\fBetc/global.cfg\fP
+\fBetc/ew2sc3.cfg\fP
+\fB~/.seiscomp3/global.cfg\fP
+\fB~/.seiscomp3/ew2sc3.cfg\fP
+.fi
+.sp
+.sp
+ew2sc3 inherits \fIglobal options\fP.
+.INDENT 0.0
+.TP
+.B ew2sc3.configPath
+Type: \fIstring\fP
+.sp
+Folder to store logs and achives of hypo2000_arc files from Earthworm export_genericer
+.UNINDENT
+.INDENT 0.0
+.TP
+.B ew2sc3.senderPort
+Type: \fIint\fP
+.sp
+Earthworm export_generic\(aqs socket to listen to
+.UNINDENT
+.INDENT 0.0
+.TP
+.B ew2sc3.modID
+Type: \fIint\fP
+.sp
+Expected Earthworm Module ID (ew2sc3 will read the message only if its ModID is correct)
+.UNINDENT
+.INDENT 0.0
+.TP
+.B ew2sc3.instID
+Type: \fIint\fP
+.sp
+Expected Earthworm Institute ID (ew2sc3 will read the message only if its InstID is correct)
+.UNINDENT
+.INDENT 0.0
+.TP
+.B ew2sc3.msgID
+Type: \fIint\fP
+.sp
+Expected Earthworm Message ID (ew2sc3 will read the message only if its MessageID is correct)
+This SHOULD be a TYPE_HYP2000ARC message (14) as this is the only message type parsed by ew2sc3.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B ew2sc3.name
+Type: \fIstring\fP
+.sp
+Institute name to use when sending origin to SeisComP3
+.UNINDENT
+.INDENT 0.0
+.TP
+.B ew2sc3.author
+Type: \fIstring\fP
+.sp
+Author name to use when sending origin to SeisComP3
+.UNINDENT
+.INDENT 0.0
+.TP
+.B ew2sc3.hostname
+Type: \fIstring\fP
+.sp
+Earthworm export_generic IP address to connect to
+.UNINDENT
+.INDENT 0.0
+.TP
+.B ew2sc3.defaultLatitude
+Type: \fIstring\fP
+.sp
+Default event latitude to use if hypo2000_arc location is null (space filled)
+.UNINDENT
+.INDENT 0.0
+.TP
+.B ew2sc3.defaultLongitude
+Type: \fIstring\fP
+.sp
+Default event longitude to use if hypo2000_arc location is null (space filled)
+.UNINDENT
+.INDENT 0.0
+.TP
+.B ew2sc3.locatorProfile
+Type: \fIstring\fP
+.sp
+Name of the earth model used by Earthworm location process
+.UNINDENT
+.INDENT 0.0
+.TP
+.B ew2sc3.enableArchiving
+Type: \fIbool\fP
+.sp
+Enable/Disable hypo2000_arc message file archiving (usefull for troobleshooting)
+.UNINDENT
+.INDENT 0.0
+.TP
+.B ew2sc3.myAliveInt
+Type: \fIint\fP
+.sp
+Time interval (in sec) between two heartbeats messages sent by SeisComP3.
+This parameter should be lower than Earthworm export_generic RcvAliveInt parameter
+.UNINDENT
+.INDENT 0.0
+.TP
+.B ew2sc3.senderTimeout
+Type: \fIint\fP
+.sp
+Maximum time (in millisecond) before the connection to Earthworm export_generic times out.
+This parameter has to be set accordingly to Earthworm export_generic parameters
+.UNINDENT
+.INDENT 0.0
+.TP
+.B ew2sc3.maxMsgSize
+Type: \fIint\fP
+.sp
+Maximum message size (in char) between the Earthworm export_generic and ew2sc3.
+This parameter has to be set accordingly to Earthworm export_generic MaxMsgSize parameter
+.UNINDENT
+.INDENT 0.0
+.TP
+.B ew2sc3.myAliveString
+Type: \fIstring\fP
+.sp
+Alive string to send to Earthworm export_generic in order to keep the connection alive.
+This string should be identical as Earthworm export_generic RcvAliveText string
+.UNINDENT
+.INDENT 0.0
+.TP
+.B ew2sc3.senderAliveString
+Type: \fIstring\fP
+.sp
+Alive string expected from Earthworm export_generic in order to keep the connection alive.
+This string should be identical as Earthworm export_generic SendAliveText string
+.UNINDENT
+.INDENT 0.0
+.TP
+.B ew2sc3.enableUncertainties
+Type: \fIbool\fP
+.sp
+Enable/Disable uncertainties conversions.
+Earthworm doesn\(aqt have uncertainties but weight from 0 to 4.
+If enabled, ew2sc3 will convert pick weight to uncertainties followind a simple mapping between weight and pickerUncertainties list.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B ew2sc3.pickerUncertainties
+Type: \fIlist:double\fP
+.sp
+Uncertainty values (in sec) to use when enableUncertainties is enabled.
+Refer to scolv document for syntax.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B ew2sc3.maxUncertainty
+Type: \fIdouble\fP
+.sp
+Maximum weight value from Earthworm corresponding to maximum uncertainty
+.UNINDENT
+.SH COMMAND-LINE
+.SS Generic
+.INDENT 0.0
+.TP
+.B \-h, \-\-help
+show help message.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-V, \-\-version
+show version information
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-config\-file arg
+Use alternative configuration file. When this option is used
+the loading of all stages is disabled. Only the given configuration
+file is parsed and used. To use another name for the configuration
+create a symbolic link of the application or copy it, eg scautopick \-> scautopick2.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-plugins arg
+Load given plugins.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-D, \-\-daemon
+Run as daemon. This means the application will fork itself and
+doesn\(aqt need to be started with &.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-auto\-shutdown arg
+Enable/disable self\-shutdown because a master module shutdown. This only
+works when messaging is enabled and the master module sends a shutdown
+message (enabled with \-\-start\-stop\-msg for the master module).
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-shutdown\-master\-module arg
+Sets the name of the master\-module used for auto\-shutdown. This
+is the application name of the module actually started. If symlinks
+are used then it is the name of the symlinked application.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-shutdown\-master\-username arg
+Sets the name of the master\-username of the messaging used for
+auto\-shutdown. If "shutdown\-master\-module" is given as well this
+parameter is ignored.
+.UNINDENT
+.SS Verbosity
+.INDENT 0.0
+.TP
+.B \-\-verbosity arg
+Verbosity level [0..4]. 0:quiet, 1:error, 2:warning, 3:info, 4:debug
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-v, \-\-v
+Increase verbosity level (may be repeated, eg. \-vv)
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-q, \-\-quiet
+Quiet mode: no logging output
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-component arg
+Limits the logging to a certain component. This option can be given more than once.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-s, \-\-syslog
+Use syslog logging back end. The output usually goes to /var/lib/messages.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-l, \-\-lockfile arg
+Path to lock file.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-console arg
+Send log output to stdout.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-debug
+Debug mode: \-\-verbosity=4 \-\-console=1
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-log\-file arg
+Use alternative log file.
+.UNINDENT
+.SS Messaging
+.INDENT 0.0
+.TP
+.B \-u, \-\-user arg
+Overrides configuration parameter \fBconnection.username\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-H, \-\-host arg
+Overrides configuration parameter \fBconnection.server\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-t, \-\-timeout arg
+Overrides configuration parameter \fBconnection.timeout\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-g, \-\-primary\-group arg
+Overrides configuration parameter \fBconnection.primaryGroup\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-S, \-\-subscribe\-group arg
+A group to subscribe to. This option can be given more than once.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-encoding arg
+Overrides configuration parameter \fBconnection.encoding\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-start\-stop\-msg arg
+Sets sending of a start\- and a stop message.
+.UNINDENT
+.SS Database
+.INDENT 0.0
+.TP
+.B \-\-db\-driver\-list
+List all supported database drivers.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-d, \-\-database arg
+The database connection string, format: \fI\%service://user:pwd@host/database\fP.
+"service" is the name of the database driver which can be
+queried with "\-\-db\-driver\-list".
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-config\-module arg
+The configmodule to use.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-inventory\-db arg
+Load the inventory from the given database or file, format: [\fI\%service://]location\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-db\-disable
+Do not use the database at all
+.UNINDENT
+.SH AUTHOR
+GFZ Potsdam
+.SH COPYRIGHT
+2014, GFZ Potsdam, gempa GmbH
+.\" Generated by docutils manpage writer.
+.\" 
+.

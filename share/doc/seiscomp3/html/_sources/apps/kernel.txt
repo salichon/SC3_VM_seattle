@@ -1,0 +1,92 @@
+.. highlight:: rst
+
+.. _kernel:
+
+######
+kernel
+######
+
+**SeisComP kernel.**
+
+
+Description
+===========
+
+The kernel is the basic configuration for the :command:`seiscomp` tool.
+It contains configuration parameters for all init scripts in :file:`etc/init`. Each init script can, but does not
+need to, read the kernel parameters and configure itself accordingly. Kernel parameters are not mandatory but
+should be taken as (serious) hints. If for example syslog is enabled in the kernel then all init scripts should
+configure syslog as logging backend for the programs they start. But if a program does not support syslog it can
+also be started without logging to syslog.
+
+
+
+Configuration
+=============
+
+
+.. note::
+
+   kernel is a standalone module and does not inherit :ref:`global options <global-configuration>`.
+
+
+| :file:`etc/defaults/kernel.cfg`
+| :file:`etc/kernel.cfg`
+| :file:`~/.seiscomp3/kernel.cfg`
+
+
+
+.. confval:: syslog
+
+   Type: *boolean*
+
+   Sends all logging output to the syslog backend which logs
+   usually to \/var\/log\/messages.
+   Default is ``false``.
+
+.. _kernel/syncarc:
+
+
+syncarc extension
+-----------------
+
+SeisComP EIDA inventory synchronization component.
+
+
+.. confval:: inventory.syncOnUpdate
+
+   Type: *boolean*
+
+   Enables\/disables the synchronization of the inventory
+   after a update\-config is called. When enabled this will
+   call the sync_arc program everytime that the seiscomp
+   update\-config is used
+   Default is ``false``.
+
+.. _kernel/messaging:
+
+
+messaging extension
+-------------------
+
+SeisComP messaging component that enables communication of modules over the network.
+
+
+.. confval:: messaging.enable
+
+   Type: *boolean*
+
+   Enables\/disables local messaging \(spread+scmaster\).
+   The messaging component is an integral component
+   of all modules \(except eg acquisition modules\).
+   If you are not sure what to do, enable it.
+   Default is ``true``.
+
+.. confval:: messaging.port
+
+   Type: *port*
+
+   Defines the messaging port. The default port
+   is 4803 and the messaging connection for
+   all modules running locally is localhost:4803.
+   Default is ``4803``.

@@ -1,0 +1,218 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Processing &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="next" title="VS" href="../apps/vs.html" />
+    <link rel="prev" title="scmaster" href="../apps/scmaster.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../apps/vs.html" title="VS"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../apps/scmaster.html" title="scmaster"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+ 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../apps/scmaster.html"
+                        title="previous chapter">scmaster</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../apps/vs.html"
+                        title="next chapter">VS</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/toc/processing.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="processing">
+<h1>Processing<a class="headerlink" href="#processing" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../apps/vs.html">VS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/vs.html#description">Description</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/ew2sc3.html">ew2sc3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/ew2sc3.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/ew2sc3.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/ew2sc3.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/scamp.html">scamp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scamp.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scamp.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scamp.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/scautoloc.html">scautoloc</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scautoloc.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scautoloc.html#location-procedure">Location procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scautoloc.html#grid-file">Grid file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scautoloc.html#station-configuration-file">Station configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scautoloc.html#preliminary-origins">Preliminary origins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scautoloc.html#logging">Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scautoloc.html#publication-interval">Publication interval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scautoloc.html#housekeeping">Housekeeping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scautoloc.html#test-mode">Test mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scautoloc.html#offline-mode">Offline mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scautoloc.html#how-to-make-autopick-and-autoloc-work-together">How to make Autopick and Autoloc work together</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scautoloc.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scautoloc.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/scautopick.html">scautopick</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scautopick.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scautopick.html#new-features">New Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scautopick.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scautopick.html#bindings">Bindings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scautopick.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/scenvelope.html">scenvelope</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scenvelope.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scenvelope.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scenvelope.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/scevent.html">scevent</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scevent.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scevent.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scevent.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/scmag.html">scmag</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scmag.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scmag.html#summary-magnitude">Summary magnitude</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scmag.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scmag.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/scqc.html">scqc</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scqc.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scqc.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scqc.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/screloc.html">screloc</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/screloc.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/screloc.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/screloc.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/scvsmag.html">scvsmag</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scvsmag.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scvsmag.html#logging">Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scvsmag.html#references">References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scvsmag.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scvsmag.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/scvsmaglog.html">scvsmaglog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scvsmaglog.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scvsmaglog.html#reports">Reports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scvsmaglog.html#userdisplay-interface">UserDisplay interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scvsmaglog.html#id2">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scvsmaglog.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/scwfparam.html">scwfparam</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scwfparam.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scwfparam.html#scheduling">Scheduling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scwfparam.html#processing">Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scwfparam.html#waveform-archival">Waveform archival</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scwfparam.html#database">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scwfparam.html#shakemaps">ShakeMaps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scwfparam.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scwfparam.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scwfparam.html#command-line">Command-line</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../apps/vs.html" title="VS"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../apps/scmaster.html" title="scmaster"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+ 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,684 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>scevent &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="Processing" href="../toc/processing.html" />
+    <link rel="next" title="scmag" href="scmag.html" />
+    <link rel="prev" title="scenvelope" href="scenvelope.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scmag.html" title="scmag"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="scenvelope.html" title="scenvelope"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/processing.html" accesskey="U">Processing</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">scevent</a><ul>
+<li><a class="reference internal" href="#description">Description</a><ul>
+<li><a class="reference internal" href="#origin-matching">Origin Matching</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#configuration">Configuration</a></li>
+<li><a class="reference internal" href="#command-line">Command-line</a><ul>
+<li><a class="reference internal" href="#generic">Generic</a></li>
+<li><a class="reference internal" href="#verbosity">Verbosity</a></li>
+<li><a class="reference internal" href="#messaging">Messaging</a></li>
+<li><a class="reference internal" href="#database">Database</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="scenvelope.html"
+                        title="previous chapter">scenvelope</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="scmag.html"
+                        title="next chapter">scmag</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/apps/scevent.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="scevent">
+<span id="id1"></span><h1>scevent<a class="headerlink" href="#scevent" title="Permalink to this headline">¶</a></h1>
+<p><strong>Associates an Origin to an Event or forms a new Event if no match is found. Selects the preferred magnitude.</strong></p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>As a consequence of a real-time system the SeisComP3 system creates several
+origins (results of localization processes) for one earthquake because as time
+goes by more seismic phases are available. scevent receives these origins and
+associates the origins to events. It is also possible to import origins from
+other agencies.</p>
+<div class="section" id="origin-matching">
+<h3>Origin Matching<a class="headerlink" href="#origin-matching" title="Permalink to this headline">¶</a></h3>
+<p>scevent associates origins to events by searching for the best match of the new
+(incoming) origin to other origins for existing events. If a match is not found
+a new event can be formed. The new origin is matched to existing origins
+by comparing differences in the horizontal components of the locations, origin
+time difference, and matching picks.
+The new origin is matched to an existing origin which has the highest rank in
+the following three groups (1, 2, 3):</p>
+<ol class="arabic">
+<li><p class="first">Location and Time (lowest)</p>
+<p>The difference in horizontal location is less than
+<a class="reference internal" href="#confval-eventAssociation.maximumDistance"><tt class="xref std std-confval docutils literal"><span class="pre">eventAssociation.maximumDistance</span></tt></a> (degrees)
+and the difference in origin times is less than
+<a class="reference internal" href="#confval-eventAssociation.maximumTimeSpan"><tt class="xref std std-confval docutils literal"><span class="pre">eventAssociation.maximumTimeSpan</span></tt></a>.</p>
+</li>
+<li><p class="first">Picks</p>
+<p>The two origins have more than <a class="reference internal" href="#confval-eventAssociation.minimumMatchingArrivals"><tt class="xref std std-confval docutils literal"><span class="pre">eventAssociation.minimumMatchingArrivals</span></tt></a>
+matching picks. Picks are matched either by ID or by time depending
+on <a class="reference internal" href="#confval-eventAssociation.maximumMatchingArrivalTimeDiff"><tt class="xref std std-confval docutils literal"><span class="pre">eventAssociation.maximumMatchingArrivalTimeDiff</span></tt></a>.</p>
+</li>
+<li><p class="first">Picks and Location and Time (highest)</p>
+<p>This is the best match, for which both the location-and-time and picks
+criteria above are satisfied.</p>
+</li>
+</ol>
+<p>If more than one origin is found in the highest ranking class, then the first
+one of them is chosen.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For efficiency events in the cache are scanned first and if no matches are found
+the database is scanned for the time window <a class="reference internal" href="#confval-eventAssociation.eventTimeBefore"><tt class="xref std std-confval docutils literal"><span class="pre">eventAssociation.eventTimeBefore</span></tt></a> - <a class="reference internal" href="#confval-eventAssociation.eventTimeAfter"><tt class="xref std std-confval docutils literal"><span class="pre">eventAssociation.eventTimeAfter</span></tt></a>
+around the incoming Origin time. The cached events are ordered by eventID and
+thus in time.</p>
+</div>
+<p><strong>No Origin Match</strong></p>
+<p>If no event with an origin that matches the incoming origin is found then a
+new event is formed and the origin is associated to that event. The following
+criteria are applied to allow the creation of the new event:</p>
+<p>The agency for the origin is not black listed (processing.blacklist.agencies).</p>
+<p>and</p>
+<p>If the origin is an automatic then it has more than eventAssociation.minimumDefiningPhases picks.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../_images/Association_of_an_origin_by_matching_picks.jpg"><img alt="alternate association of an origin by matching picks." src="../_images/Association_of_an_origin_by_matching_picks.jpg" style="width: 529.0px; height: 397.0px;" /></a>
+<p class="caption">Associations of an origin to an event by matching picks.</p>
+</div>
+</div>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/defaults/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/defaults/scevent.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/scevent.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">~/.seiscomp3/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">~/.seiscomp3/scevent.cfg</span></tt></div>
+</div>
+<p>scevent inherits <a class="reference internal" href="global.html#global-configuration"><em>global options</em></a>.</p>
+<dl class="confval">
+<dt id="confval-eventIDPrefix">
+<tt class="descname">eventIDPrefix</tt><a class="headerlink" href="#confval-eventIDPrefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Prefix for all Event IDs</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventIDPattern">
+<tt class="descname">eventIDPattern</tt><a class="headerlink" href="#confval-eventIDPattern" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Defines the pattern to generate an event ID.</p>
+<p>%p : prefix</p>
+<p>%Y : year</p>
+<p>%[w]c: alpha character</p>
+<p>%[w]C: upper case alpha character</p>
+<p>%[w]d: decimal</p>
+<p>%[w]x: hexadecimal</p>
+<p>%[w]X: upper case hexadecimal</p>
+<p>[w] is an optional width parameter.
+Default is <tt class="docutils literal"><span class="pre">%p%Y%04c</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventAssociation.minimumMagnitudes">
+<tt class="descname">eventAssociation.minimumMagnitudes</tt><a class="headerlink" href="#confval-eventAssociation.minimumMagnitudes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Minimum number of station magnitudes referenced to a network magnitude
+to become a preferred magnitude.
+Default is <tt class="docutils literal"><span class="pre">4</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventAssociation.minimumMatchingArrivals">
+<tt class="descname">eventAssociation.minimumMatchingArrivals</tt><a class="headerlink" href="#confval-eventAssociation.minimumMatchingArrivals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Minimum number of matching picks between two origins to be associated
+to the same event.
+Default is <tt class="docutils literal"><span class="pre">3</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventAssociation.maximumMatchingArrivalTimeDiff">
+<tt class="descname">eventAssociation.maximumMatchingArrivalTimeDiff</tt><a class="headerlink" href="#confval-eventAssociation.maximumMatchingArrivalTimeDiff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>float</em></p>
+<p>If this time window in seconds is negative, pickIDs
+are compared to find matching arrivals. A non negative
+value (including 0) compares pick times regardless
+of the pickID. Pass: |pick1.time - pick2.time| &lt;= threshold
+Default is <tt class="docutils literal"><span class="pre">-1</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventAssociation.compareAllArrivalTimes">
+<tt class="descname">eventAssociation.compareAllArrivalTimes</tt><a class="headerlink" href="#confval-eventAssociation.compareAllArrivalTimes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>This parameter is only used in conjunction with
+eventAssociation.maximumMatchingArrivalTimeDiff.
+If a station has multiple associated arrivals for a
+particular event, this flag defines if the time distance
+of a new pick to all arrivals must be within
+eventAssociation.maximumMatchingArrivalTimeDiff
+or if one matching arrival is enough.
+Default is <tt class="docutils literal"><span class="pre">true</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventAssociation.minimumDefiningPhases">
+<tt class="descname">eventAssociation.minimumDefiningPhases</tt><a class="headerlink" href="#confval-eventAssociation.minimumDefiningPhases" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Minimum number of Picks for an Origin that is automatic and cannot be
+associated with an Event to be allowed to form an new Event.
+Default is <tt class="docutils literal"><span class="pre">10</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventAssociation.eventTimeBefore">
+<tt class="descname">eventAssociation.eventTimeBefore</tt><a class="headerlink" href="#confval-eventAssociation.eventTimeBefore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Time range before the origin time of an incoming origin to search for
+matching events.
+Default is <tt class="docutils literal"><span class="pre">1800</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventAssociation.eventTimeAfter">
+<tt class="descname">eventAssociation.eventTimeAfter</tt><a class="headerlink" href="#confval-eventAssociation.eventTimeAfter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Time range after the origin time of an incoming origin to search for
+matching events.
+Default is <tt class="docutils literal"><span class="pre">1800</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventAssociation.maximumTimeSpan">
+<tt class="descname">eventAssociation.maximumTimeSpan</tt><a class="headerlink" href="#confval-eventAssociation.maximumTimeSpan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Associates an origin with an existing event  if the origin
+time differs not more than 60 seconds unless the
+minimumMatchingArrivals criteria matches.
+Default is <tt class="docutils literal"><span class="pre">60</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventAssociation.maximumDistance">
+<tt class="descname">eventAssociation.maximumDistance</tt><a class="headerlink" href="#confval-eventAssociation.maximumDistance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>double</em></p>
+<p>Allowed location difference between an incoming origin compared with
+preferred origins to get associated.
+Default is <tt class="docutils literal"><span class="pre">5</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventAssociation.minMwCount">
+<tt class="descname">eventAssociation.minMwCount</tt><a class="headerlink" href="#confval-eventAssociation.minMwCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Minimum number of station magnitudes required for Mw(mB) to be considered as
+preferred magnitude.
+Default is <tt class="docutils literal"><span class="pre">8</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventAssociation.mbOverMwCount">
+<tt class="descname">eventAssociation.mbOverMwCount</tt><a class="headerlink" href="#confval-eventAssociation.mbOverMwCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Minimum number of station magnitudes which ensures that Mw(mB) will be
+preferred and not mb.
+Default is <tt class="docutils literal"><span class="pre">30</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventAssociation.mbOverMwValue">
+<tt class="descname">eventAssociation.mbOverMwValue</tt><a class="headerlink" href="#confval-eventAssociation.mbOverMwValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Average between mb and Mw(mB) which must be exceeded to become Mw(mB)
+preferred.
+Default is <tt class="docutils literal"><span class="pre">6</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventAssociation.enableFallbackMagnitude">
+<tt class="descname">eventAssociation.enableFallbackMagnitude</tt><a class="headerlink" href="#confval-eventAssociation.enableFallbackMagnitude" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>If true, one magnitude will be preferred even if magnitude criteria are
+not fullfilled.
+Default is <tt class="docutils literal"><span class="pre">false</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventAssociation.magTypes">
+<tt class="descname">eventAssociation.magTypes</tt><a class="headerlink" href="#confval-eventAssociation.magTypes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>list:string</em></p>
+<p>Magnitude type priority list for becoming a preferred magnitude for an
+event.
+Default is <tt class="docutils literal"><span class="pre">mBc,</span> <span class="pre">Mw(mB),</span> <span class="pre">Mwp,</span> <span class="pre">ML,</span> <span class="pre">MLh,</span> <span class="pre">MLv,</span> <span class="pre">mb</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventAssociation.agencies">
+<tt class="descname">eventAssociation.agencies</tt><a class="headerlink" href="#confval-eventAssociation.agencies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>list:string</em></p>
+<p>The agencyID priority list. When the eventtool comes to the point to
+select a preferred origin it orders all origins by its agency priority and
+selects then the best one among the highest priority agency. It also defines the
+agency priority for custom priority checks
+(eventAssociation.priorities).</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventAssociation.authors">
+<tt class="descname">eventAssociation.authors</tt><a class="headerlink" href="#confval-eventAssociation.authors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>list:string</em></p>
+<p>The author priority list. When the eventtool comes to the point to
+select a preferred origin it orders all origins by its author priority and
+selects then the best one among the highest priority author. It also defines the
+author priority for custom priority checks (eventAssociation.priorities).</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventAssociation.priorities">
+<tt class="descname">eventAssociation.priorities</tt><a class="headerlink" href="#confval-eventAssociation.priorities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>list:string</em></p>
+<p>The general priority list to decide if an origin becomes preferred.
+This list is not used unless this parameter is activated.
+This example list replicates the default hard wired behaviour:
+AGENCY, STATUS, PHASES_AUTOMATIC, TIME_AUTOMATIC</p>
+<p>Each item in the list corresponds to a check that is performed.
+Each check computes a score of the incoming origin (s1) and the
+current preferred origin (s2). If the s1 is lower than s2,
+the incoming origin is rejected and does not become preferred. All
+subsequent checks are ignored.
+If s1 is equal to s2, the next check in the list is performed.
+If s1 is larger than s2, the origin becomes preferred and
+all subsequent checks are ignored.</p>
+<p>Available tokens:</p>
+<p>AGENCY: check based on agency priorities</p>
+<p>AUTHOR: check based on author priorities</p>
+<p>STATUS: manual origins rule out automatic ones</p>
+<p>METHOD: check based on the method priorities</p>
+<p>PHASES: higher phase count = higher priority</p>
+<p>PHASES_AUTOMATIC: only checks phase priorities for incoming automatic origins</p>
+<p>RMS: lower rms = higher priority</p>
+<p>RMS_AUTOMATIC: only check RMS on incoming automatic origins</p>
+<p>TIME: more recent origins (creationTime) have higher priorities</p>
+<p>TIME_AUTOMATIC: only check creationTime priority on incoming automatic origins</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventAssociation.delayTimeSpan">
+<tt class="descname">eventAssociation.delayTimeSpan</tt><a class="headerlink" href="#confval-eventAssociation.delayTimeSpan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Configures a timespan in seconds to delay event creation. If a new origin arrives
+which cannot be associated to an existing event, delay the event creation for a certain
+timespan.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventAssociation.region.rect">
+<tt class="descname">eventAssociation.region.rect</tt><a class="headerlink" href="#confval-eventAssociation.region.rect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Region in which scevent is allowed to create events.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventAssociation.depths.minimum">
+<tt class="descname">eventAssociation.depths.minimum</tt><a class="headerlink" href="#confval-eventAssociation.depths.minimum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>double</em></p>
+<p>Minimum depth for which scevent is allowed to create events.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventAssociation.depths.maximum">
+<tt class="descname">eventAssociation.depths.maximum</tt><a class="headerlink" href="#confval-eventAssociation.depths.maximum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>double</em></p>
+<p>Maximum depth for which scevent is allowed to create events.</p>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>eventAssociation.delayFilter.*</strong>
+<em>The delayFilter group configures an origin filter to activate the delay feature for</em>
+<em>this origin. If more than one filter is given they are combined with AND.</em></p>
+</div>
+<dl class="confval">
+<dt id="confval-eventAssociation.delayFilter.agencyID">
+<tt class="descname">eventAssociation.delayFilter.agencyID</tt><a class="headerlink" href="#confval-eventAssociation.delayFilter.agencyID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>The agencyID of the origin to be delayed.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventAssociation.delayFilter.author">
+<tt class="descname">eventAssociation.delayFilter.author</tt><a class="headerlink" href="#confval-eventAssociation.delayFilter.author" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>The author of the origin to be delayed.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventAssociation.delayFilter.evaluationMode">
+<tt class="descname">eventAssociation.delayFilter.evaluationMode</tt><a class="headerlink" href="#confval-eventAssociation.delayFilter.evaluationMode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>The evaluation mode of the origin to be delayed. Can be either &quot;manual&quot;
+or &quot;automatic&quot;.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="command-line">
+<h2>Command-line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="generic">
+<h3>Generic<a class="headerlink" href="#generic" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-scevent-h">
+<tt class="descname">-h</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--help</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scevent-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show help message.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scevent-V">
+<tt class="descname">-V</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--version</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scevent-V" title="Permalink to this definition">¶</a></dt>
+<dd><p>show version information</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scevent--config-file">
+<tt class="descname">--config-file</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scevent--config-file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use alternative configuration file. When this option is used
+the loading of all stages is disabled. Only the given configuration
+file is parsed and used. To use another name for the configuration
+create a symbolic link of the application or copy it, eg scautopick -&gt; scautopick2.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scevent--plugins">
+<tt class="descname">--plugins</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scevent--plugins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load given plugins.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scevent-D">
+<tt class="descname">-D</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--daemon</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scevent-D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run as daemon. This means the application will fork itself and
+doesn't need to be started with &amp;.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scevent--auto-shutdown">
+<tt class="descname">--auto-shutdown</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scevent--auto-shutdown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable/disable self-shutdown because a master module shutdown. This only
+works when messaging is enabled and the master module sends a shutdown
+message (enabled with --start-stop-msg for the master module).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scevent--shutdown-master-module">
+<tt class="descname">--shutdown-master-module</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scevent--shutdown-master-module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the name of the master-module used for auto-shutdown. This
+is the application name of the module actually started. If symlinks
+are used then it is the name of the symlinked application.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scevent--shutdown-master-username">
+<tt class="descname">--shutdown-master-username</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scevent--shutdown-master-username" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the name of the master-username of the messaging used for
+auto-shutdown. If &quot;shutdown-master-module&quot; is given as well this
+parameter is ignored.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scevent-x">
+<tt class="descname">-x</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--expiry</tt><tt class="descclassname"> time</tt><a class="headerlink" href="#cmdoption-scevent-x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Time span in hours after which objects expire.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scevent-O">
+<tt class="descname">-O</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--origin-id</tt><tt class="descclassname"> publicID</tt><a class="headerlink" href="#cmdoption-scevent-O" title="Permalink to this definition">¶</a></dt>
+<dd><p>OriginID to be associated. When given no messages are sent.
+Only the status of the association is written to stdout.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="verbosity">
+<h3>Verbosity<a class="headerlink" href="#verbosity" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-scevent--verbosity">
+<tt class="descname">--verbosity</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scevent--verbosity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verbosity level [0..4]. 0:quiet, 1:error, 2:warning, 3:info, 4:debug</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scevent-v">
+<tt class="descname">-v</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--v</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scevent-v" title="Permalink to this definition">¶</a></dt>
+<dd><p>Increase verbosity level (may be repeated, eg. -vv)</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scevent-q">
+<tt class="descname">-q</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--quiet</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scevent-q" title="Permalink to this definition">¶</a></dt>
+<dd><p>Quiet mode: no logging output</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scevent--component">
+<tt class="descname">--component</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scevent--component" title="Permalink to this definition">¶</a></dt>
+<dd><p>Limits the logging to a certain component. This option can be given more than once.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scevent-s">
+<tt class="descname">-s</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--syslog</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scevent-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use syslog logging back end. The output usually goes to /var/lib/messages.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scevent-l">
+<tt class="descname">-l</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--lockfile</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scevent-l" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path to lock file.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scevent--console">
+<tt class="descname">--console</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scevent--console" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send log output to stdout.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scevent--debug">
+<tt class="descname">--debug</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scevent--debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>Debug mode: --verbosity=4 --console=1</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scevent--log-file">
+<tt class="descname">--log-file</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scevent--log-file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use alternative log file.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="messaging">
+<h3>Messaging<a class="headerlink" href="#messaging" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-scevent-u">
+<tt class="descname">-u</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--user</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scevent-u" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides configuration parameter <a class="reference internal" href="global.html#confval-connection.username"><tt class="xref std std-confval docutils literal"><span class="pre">connection.username</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scevent-H">
+<tt class="descname">-H</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--host</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scevent-H" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides configuration parameter <a class="reference internal" href="global.html#confval-connection.server"><tt class="xref std std-confval docutils literal"><span class="pre">connection.server</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scevent-t">
+<tt class="descname">-t</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--timeout</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scevent-t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides configuration parameter <a class="reference internal" href="global.html#confval-connection.timeout"><tt class="xref std std-confval docutils literal"><span class="pre">connection.timeout</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scevent-g">
+<tt class="descname">-g</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--primary-group</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scevent-g" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides configuration parameter <a class="reference internal" href="global.html#confval-connection.primaryGroup"><tt class="xref std std-confval docutils literal"><span class="pre">connection.primaryGroup</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scevent-S">
+<tt class="descname">-S</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--subscribe-group</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scevent-S" title="Permalink to this definition">¶</a></dt>
+<dd><p>A group to subscribe to. This option can be given more than once.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scevent--encoding">
+<tt class="descname">--encoding</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scevent--encoding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides configuration parameter <a class="reference internal" href="global.html#confval-connection.encoding"><tt class="xref std std-confval docutils literal"><span class="pre">connection.encoding</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scevent--start-stop-msg">
+<tt class="descname">--start-stop-msg</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scevent--start-stop-msg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets sending of a start- and a stop message.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="database">
+<h3>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-scevent--db-driver-list">
+<tt class="descname">--db-driver-list</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scevent--db-driver-list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List all supported database drivers.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scevent-d">
+<tt class="descname">-d</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--database</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scevent-d" title="Permalink to this definition">¶</a></dt>
+<dd><p>The database connection string, format: <a class="reference external" href="service://user:pwd&#64;host/database">service://user:pwd&#64;host/database</a>.
+&quot;service&quot; is the name of the database driver which can be
+queried with &quot;--db-driver-list&quot;.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scevent--config-module">
+<tt class="descname">--config-module</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scevent--config-module" title="Permalink to this definition">¶</a></dt>
+<dd><p>The configmodule to use.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scevent--inventory-db">
+<tt class="descname">--inventory-db</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scevent--inventory-db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the inventory from the given database or file, format: [<a class="reference external" href="service://]location">service://]location</a></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scevent--db-disable">
+<tt class="descname">--db-disable</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scevent--db-disable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do not use the database at all</p>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scmag.html" title="scmag"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="scenvelope.html" title="scenvelope"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/processing.html" >Processing</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

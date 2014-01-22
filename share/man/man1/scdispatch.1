@@ -1,0 +1,330 @@
+.TH "SCDISPATCH" "1" "January 21, 2014" "2014.016" "SeisComP3"
+.SH NAME
+scdispatch \- SeisComP3 Documentation
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.\" Man page generated from reStructeredText.
+.
+.sp
+\fBReads objects (event, origin, etc) from a SC3ML file and sends the objects
+to the messaging system.\fP
+.SH DESCRIPTION
+.SH EXAMPLES
+.INDENT 0.0
+.IP 1. 3
+Send all objects from a SC3ML file. The default behavior is to add:
+.sp
+.nf
+.ft C
+scdispatch \-i test.xml
+.ft P
+.fi
+.IP 2. 3
+Send an update:
+.sp
+.nf
+.ft C
+scdispatch \-i test.xml \-O update
+.ft P
+.fi
+.IP 3. 3
+Remove the objects:
+.sp
+.nf
+.ft C
+scdispatch \-i test.xml \-O remove
+.ft P
+.fi
+.IP 4. 3
+Subsets of SC3ML Objects
+.sp
+It can be useful to import a subset of QuakeML objects, e.g. Origins from other
+agencies and then allow \fIscevent\fP to associate them to existing
+events (and possibly prefer them based on the rules in scevent) or create new
+events for the origins. If the event objects from a SC3ML file are not required
+to be sent to the messaging then either they should be removed (e.g. using XSLT)
+and all the remaining objects in the file added:
+.sp
+.nf
+.ft C
+scdispatch \-i test.xml
+.ft P
+.fi
+.sp
+or the event objects can be left out of the routing table, e.g.
+.sp
+.nf
+.ft C
+scdispatch \-i test.xml \e
+           \-\-routingtable Pick:PICK, \e
+                          Arrival:ARRIVAL,Amplitude:AMPLITUDE, \e
+                          Origin:LOCATION,StationMagnitude:MAGNITUDE, \e
+                          StationMagnitudeContribution:MAGNITUDE, \e
+                          Magnitude:MAGNITUDE
+.ft P
+.fi
+.IP Note
+The routing table approach is slower, scdispatch still has to try
+to send to the invalid group for each object. It seems that it should be
+possible to route to Event:NULL or some other non used group but this seems
+to always result in another Event (the one in the source SC3ML) being sent
+and loaded. Is this a bug?
+.RE
+.IP 5. 3
+Testing
+.sp
+For testing it is useful to watch the results of dispatch with \fIscolv\fP or
+\fIscxmldump\fP. It is also useful to clean the database and logs to remove
+objects from persistent storage to allow repeated reloading of a file.
+.IP Note
+The following will clear all events from the database and any other
+other object persistence. Modify the mysql command to suit your db setup.
+.RE
+.sp
+.nf
+.ft C
+mysql \-u root \-\-password=\(aqmy$q1\(aq \-e "DROP DATABASE IF EXISTS seiscomp3; \e
+  CREATE DATABASE seiscomp3 CHARACTER SET utf8 COLLATE utf8_bin; \e
+  GRANT ALL ON seiscomp3.* TO \(aqsysop\(aq@\(aqlocalhost\(aq IDENTIFIED BY \(aqsysop\(aq; \e
+  USE seiscomp3;source seiscomp3/trunk/share/db/mysql.sql;"
+
+seiscomp start
+.ft P
+.fi
+.UNINDENT
+.SH CONFIGURATION
+.nf
+\fBetc/defaults/global.cfg\fP
+\fBetc/defaults/scdispatch.cfg\fP
+\fBetc/global.cfg\fP
+\fBetc/scdispatch.cfg\fP
+\fB~/.seiscomp3/global.cfg\fP
+\fB~/.seiscomp3/scdispatch.cfg\fP
+.fi
+.sp
+.sp
+scdispatch inherits \fIglobal options\fP.
+.SH COMMAND-LINE
+.SS Generic
+.INDENT 0.0
+.TP
+.B \-h, \-\-help
+show help message.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-V, \-\-version
+show version information
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-config\-file arg
+Use alternative configuration file. When this option is used
+the loading of all stages is disabled. Only the given configuration
+file is parsed and used. To use another name for the configuration
+create a symbolic link of the application or copy it, eg scautopick \-> scautopick2.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-plugins arg
+Load given plugins.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-D, \-\-daemon
+Run as daemon. This means the application will fork itself and
+doesn\(aqt need to be started with &.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-auto\-shutdown arg
+Enable/disable self\-shutdown because a master module shutdown. This only
+works when messaging is enabled and the master module sends a shutdown
+message (enabled with \-\-start\-stop\-msg for the master module).
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-shutdown\-master\-module arg
+Sets the name of the master\-module used for auto\-shutdown. This
+is the application name of the module actually started. If symlinks
+are used then it is the name of the symlinked application.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-shutdown\-master\-username arg
+Sets the name of the master\-username of the messaging used for
+auto\-shutdown. If "shutdown\-master\-module" is given as well this
+parameter is ignored.
+.UNINDENT
+.SS Verbosity
+.INDENT 0.0
+.TP
+.B \-\-verbosity arg
+Verbosity level [0..4]. 0:quiet, 1:error, 2:warning, 3:info, 4:debug
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-v, \-\-v
+Increase verbosity level (may be repeated, eg. \-vv)
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-q, \-\-quiet
+Quiet mode: no logging output
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-component arg
+Limits the logging to a certain component. This option can be given more than once.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-s, \-\-syslog
+Use syslog logging back end. The output usually goes to /var/lib/messages.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-l, \-\-lockfile arg
+Path to lock file.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-console arg
+Send log output to stdout.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-debug
+Debug mode: \-\-verbosity=4 \-\-console=1
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-log\-file arg
+Use alternative log file.
+.UNINDENT
+.SS Messaging
+.INDENT 0.0
+.TP
+.B \-u, \-\-user arg
+Overrides configuration parameter \fBconnection.username\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-H, \-\-host arg
+Overrides configuration parameter \fBconnection.server\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-t, \-\-timeout arg
+Overrides configuration parameter \fBconnection.timeout\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-g, \-\-primary\-group arg
+Overrides configuration parameter \fBconnection.primaryGroup\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-S, \-\-subscribe\-group arg
+A group to subscribe to. This option can be given more than once.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-encoding arg
+Overrides configuration parameter \fBconnection.encoding\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-start\-stop\-msg arg
+Sets sending of a start\- and a stop message.
+.UNINDENT
+.SS Database
+.INDENT 0.0
+.TP
+.B \-\-db\-driver\-list
+List all supported database drivers.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-d, \-\-database arg
+The database connection string, format: \fI\%service://user:pwd@host/database\fP.
+"service" is the name of the database driver which can be
+queried with "\-\-db\-driver\-list".
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-config\-module arg
+The configmodule to use.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-inventory\-db arg
+Load the inventory from the given database or file, format: [\fI\%service://]location\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-db\-disable
+Do not use the database at all
+.UNINDENT
+.SS Dispatch
+.INDENT 0.0
+.TP
+.B \-i, \-\-input flag
+File to dispatch to messaging.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-O, \-\-operation flag
+Notifier operation to use if not given: add, update or remove. If the
+XML contains notifier objects then this operation is used. If just
+plain objects are given, the operation needs to be specified. The
+default is "add".
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-routingtable flag
+Specify routing table as comma separated list of object:group pairs,
+e.g. "Origin:LOCATION,Arrival:ARRIVAL".
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-print\-objects
+Print names of routable objects.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-test
+Test mode. Does not send any object.
+.UNINDENT
+.SH AUTHOR
+GFZ Potsdam
+.SH COPYRIGHT
+2014, GFZ Potsdam, gempa GmbH
+.\" Generated by docutils manpage writer.
+.\" 
+.

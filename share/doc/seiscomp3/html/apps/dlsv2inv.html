@@ -1,0 +1,340 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>dlsv2inv &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="Inventory" href="../toc/inventory.html" />
+    <link rel="next" title="import_inv" href="import_inv.html" />
+    <link rel="prev" title="Inventory" href="../toc/inventory.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="import_inv.html" title="import_inv"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../toc/inventory.html" title="Inventory"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/inventory.html" accesskey="U">Inventory</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">dlsv2inv</a><ul>
+<li><a class="reference internal" href="#description">Description</a><ul>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#configuration">Configuration</a></li>
+<li><a class="reference internal" href="#command-line">Command-line</a><ul>
+<li><a class="reference internal" href="#generic">Generic</a></li>
+<li><a class="reference internal" href="#verbosity">Verbosity</a></li>
+<li><a class="reference internal" href="#arclink">ArcLink</a></li>
+<li><a class="reference internal" href="#convert">Convert</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../toc/inventory.html"
+                        title="previous chapter">Inventory</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="import_inv.html"
+                        title="next chapter">import_inv</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/apps/dlsv2inv.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="dlsv2inv">
+<span id="id1"></span><h1>dlsv2inv<a class="headerlink" href="#dlsv2inv" title="Permalink to this headline">¶</a></h1>
+<p><strong>Converts dataless SEED to SeisComP3 inventory XML.</strong></p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>dlsv2inv converts dataless <a class="reference external" href="http://www.iris.edu/data/dataless.htm">SEED</a> to
+SeisComP3 XML. Due to the limitations of dataless SEED dlsv2inv allows to set
+attributes which are not available in dataless such as network type, network
+description and so on.</p>
+<p>It takes basically two important parameters:</p>
+<ol class="arabic simple">
+<li>input file</li>
+<li>output file</li>
+</ol>
+<p>whereas the output file defaults to stdout if not given.</p>
+<p>The SeisComP3 inventory network and station objects have the attribute archive
+which should contain the local datacenter where the information comes from.</p>
+<p>While importing the attribute <a class="reference internal" href="global.html#confval-datacenterID"><tt class="xref std std-confval docutils literal"><span class="pre">datacenterID</span></tt></a> is read and written into
+the archive attribute of all networks and stations available in the dataless.
+The datacenterID can be overridden with the <em class="xref std std-option">--dcid</em> command line option.</p>
+<div class="section" id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<p>Convert a given dataless SEED file to SeisComP3 XML.</p>
+<div class="highlight-sh"><div class="highlight"><pre>dlsv2inv GE.dataless GE.xml
+</pre></div>
+</div>
+<p>Override the datacenterID and leave it blank in the output.</p>
+<div class="highlight-sh"><div class="highlight"><pre>dlsv2inv --dcid <span class="s2">&quot;&quot;</span> GE.dataless GE.xml
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/defaults/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/defaults/dlsv2inv.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/dlsv2inv.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">~/.seiscomp3/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">~/.seiscomp3/dlsv2inv.cfg</span></tt></div>
+</div>
+<p>dlsv2inv inherits <a class="reference internal" href="global.html#global-configuration"><em>global options</em></a>.</p>
+</div>
+<div class="section" id="command-line">
+<h2>Command-line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h2>
+<p><strong class="program">dlsv2inv [OPTIONS] input [output=stdout]</strong></p>
+<div class="section" id="generic">
+<h3>Generic<a class="headerlink" href="#generic" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-dlsv2inv-h">
+<tt class="descname">-h</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--help</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-dlsv2inv-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show help message.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-dlsv2inv-V">
+<tt class="descname">-V</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--version</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-dlsv2inv-V" title="Permalink to this definition">¶</a></dt>
+<dd><p>show version information</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-dlsv2inv--config-file">
+<tt class="descname">--config-file</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-dlsv2inv--config-file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use alternative configuration file. When this option is used
+the loading of all stages is disabled. Only the given configuration
+file is parsed and used. To use another name for the configuration
+create a symbolic link of the application or copy it, eg scautopick -&gt; scautopick2.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-dlsv2inv--plugins">
+<tt class="descname">--plugins</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-dlsv2inv--plugins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load given plugins.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-dlsv2inv-D">
+<tt class="descname">-D</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--daemon</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-dlsv2inv-D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run as daemon. This means the application will fork itself and
+doesn't need to be started with &amp;.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="verbosity">
+<h3>Verbosity<a class="headerlink" href="#verbosity" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-dlsv2inv--verbosity">
+<tt class="descname">--verbosity</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-dlsv2inv--verbosity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verbosity level [0..4]. 0:quiet, 1:error, 2:warning, 3:info, 4:debug</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-dlsv2inv-v">
+<tt class="descname">-v</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--v</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-dlsv2inv-v" title="Permalink to this definition">¶</a></dt>
+<dd><p>Increase verbosity level (may be repeated, eg. -vv)</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-dlsv2inv-q">
+<tt class="descname">-q</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--quiet</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-dlsv2inv-q" title="Permalink to this definition">¶</a></dt>
+<dd><p>Quiet mode: no logging output</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-dlsv2inv--component">
+<tt class="descname">--component</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-dlsv2inv--component" title="Permalink to this definition">¶</a></dt>
+<dd><p>Limits the logging to a certain component. This option can be given more than once.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-dlsv2inv-s">
+<tt class="descname">-s</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--syslog</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-dlsv2inv-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use syslog logging back end. The output usually goes to /var/lib/messages.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-dlsv2inv-l">
+<tt class="descname">-l</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--lockfile</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-dlsv2inv-l" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path to lock file.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-dlsv2inv--console">
+<tt class="descname">--console</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-dlsv2inv--console" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send log output to stdout.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-dlsv2inv--debug">
+<tt class="descname">--debug</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-dlsv2inv--debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>Debug mode: --verbosity=4 --console=1</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-dlsv2inv--log-file">
+<tt class="descname">--log-file</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-dlsv2inv--log-file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use alternative log file.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="arclink">
+<h3>ArcLink<a class="headerlink" href="#arclink" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-dlsv2inv--dcid">
+<tt class="descname">--dcid</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-dlsv2inv--dcid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides the datacenter ID which is read from the datacenterID
+configuration parameter and written to the network and
+station archive attribute.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-dlsv2inv--net-description">
+<tt class="descname">--net-description</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-dlsv2inv--net-description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the network description. It supports the following
+placeholders: ${code}, ${start}, ${end}, ${class} and ${archive}.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-dlsv2inv--net-start">
+<tt class="descname">--net-start</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-dlsv2inv--net-start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set network start time. Format is %Y-%m-%d.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-dlsv2inv--net-end">
+<tt class="descname">--net-end</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-dlsv2inv--net-end" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set network end time. Format is %Y-%m-%d.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-dlsv2inv--net-type">
+<tt class="descname">--net-type</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-dlsv2inv--net-type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the network type (VBB, SM, etc.).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-dlsv2inv--temporary">
+<tt class="descname">--temporary</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-dlsv2inv--temporary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the network temporary flag to true.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-dlsv2inv--restricted">
+<tt class="descname">--restricted</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-dlsv2inv--restricted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the network restricted flag to true.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-dlsv2inv--private">
+<tt class="descname">--private</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-dlsv2inv--private" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the network private flag to true.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="convert">
+<h3>Convert<a class="headerlink" href="#convert" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-dlsv2inv-f">
+<tt class="descname">-f</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--formatted</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-dlsv2inv-f" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables formatted XML output.</p>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="import_inv.html" title="import_inv"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../toc/inventory.html" title="Inventory"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/inventory.html" >Inventory</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

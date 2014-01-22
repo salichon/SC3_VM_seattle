@@ -1,0 +1,616 @@
+.TH "SCAUTOPICK" "1" "January 21, 2014" "2014.016" "SeisComP3"
+.SH NAME
+scautopick \- SeisComP3 Documentation
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.\" Man page generated from reStructeredText.
+.
+.sp
+\fBMakes picks on waveforms.\fP
+.SH DESCRIPTION
+.sp
+scautopick searches for waveform anomalies in form of changes in amplitude.
+It basically applies a robust sta/lta algorithm to the waveform streams which
+have been filtered before with a Butterworth filter of third order with corner
+frequencies of 0.7 and 2 Hz. Once the sta/lta ratio reached a specific value
+(by default 3) for a particular stream, a pick is set to the time when this
+threshold is exceeded. Once the ratio reaches a factor of 3, a pick is created
+and the picker is set inactive. The picker is reactivated for this stream once
+the sta/lta ratio falls to the value of 1.5.
+.sp
+The second task of scautopick is to calculate amplitudes for given magnitude
+types where the time window starts at the pick time. For example mb is calculated
+for a fixed time window of 30s after the pick, mB for time window of 90s, for
+MLv a time window of 150s is estimated to make sure that S\-arrivals are inside
+this time window. The precalculated amplitudes are sent out and received by
+the magnitude tool.
+.SH NEW FEATURES
+.sp
+New features have been added to configure the picker. These are useful when we
+would like to use a secondary picking module with different configuration or
+add specific parameter for a single station.
+.sp
+global\-case:
+.sp
+.nf
+.ft C
+module.trunk.global.detecStream = HH
+module.trunk.global.detecLocID = ""
+module.trunk.global.detecFilter = \e
+    "RMHP(10)>>ITAPER(30)>>BW(4,0.7,2)>>STALTA(2,80)"
+module.trunk.global.trigOn = 3
+module.trunk.global.trigOff = 1.5
+.ft P
+.fi
+.sp
+In the above case all the channels will be picked on HH channel with same filter
+and trigOn trigOff values.
+.sp
+station\-case:
+.sp
+.nf
+.ft C
+module.trunk.CH.FUORN.detecStream = EH
+module.trunk.CH.FUORN.detecFilter = \e
+    "RMHP(10)>>ITAPER(30)>>BW(4,0.7,2)>>STALTA(2,80)"
+module.trunk.CH.FUORN.trigOn = 2
+module.trunk.CH.FUORN.trigOff = 1
+.ft P
+.fi
+.sp
+in this case, regardless what has been defined in the trunk/key, in the profile and
+in the module.trunk.global variable, for station FUORN we will pick on the EH
+channels with this specific parameters.
+.sp
+We can also mix the two above cases, e.g.
+.sp
+.nf
+.ft C
+module.trunk.global.detecStream = HH
+module.trunk.global.detecLocID = ""
+module.trunk.global.detecFilter = \e
+    "RMHP(10)>>ITAPER(30)>>BW(4,0.7,2)>>STALTA(2,80)"
+module.trunk.global.trigOn = 3
+module.trunk.global.trigOff = 1.5
+module.trunk.CH.EMBD.detecStream = EH
+module.trunk.CH.ZUR.trigOn = 10
+.ft P
+.fi
+.sp
+In this case we have a global config for the entire network and a specific stream
+for EMBD, and a specific trigger threshold for ZUR.
+.SH CONFIGURATION
+.nf
+\fBetc/defaults/global.cfg\fP
+\fBetc/defaults/scautopick.cfg\fP
+\fBetc/global.cfg\fP
+\fBetc/scautopick.cfg\fP
+\fB~/.seiscomp3/global.cfg\fP
+\fB~/.seiscomp3/scautopick.cfg\fP
+.fi
+.sp
+.sp
+scautopick inherits \fIglobal options\fP.
+.INDENT 0.0
+.TP
+.B filter
+Type: \fIstring\fP
+.sp
+Defines the default filter used for picking. Station specific configurations
+will override this value.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B timeCorrection
+Type: \fIdouble\fP
+.sp
+Time correction applied for each pick made. Station specific
+values override this value.
+Default is \fB\-0.8\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B ringBufferSize
+Type: \fIint\fP
+.sp
+Defined the record ringbuffer size in seconds.
+Default is \fB300\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B leadTime
+Type: \fIint\fP
+.sp
+The leadTime defines the time in seconds to start picking on
+waveforms before current time.
+Default is \fB60\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B initTime
+Type: \fIint\fP
+.sp
+The initTime defines a timespan in seconds for that the picker
+is blind after initialization. This time is needed to initialize
+the filter and depends on it.
+Default is \fB60\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B gapInterpolation
+Type: \fIboolean\fP
+.sp
+Interpolate gaps linearily? This is valid for gaps shorter
+than thresholds.maxGapLength.
+Default is \fBfalse\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B amplitudes
+Type: \fIlist:string\fP
+.sp
+Defines the amplitude types to be computed by the picker as well.
+Default is \fBMLv, mb, mB\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B picker
+Type: \fIstring\fP
+.sp
+Configures the picker to use. By default only a simple detections
+are emitted as picks. To enable real picking on a time window around
+the detection, an algorithm (plugin) can be defined with this parameter.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B spicker
+Type: \fIstring\fP
+.sp
+Configures the secondary picker to use.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B useAllStreams
+Type: \fIboolean\fP
+.sp
+If enabled the all streams are used for picking that are received by the picker.
+This option has only effect if a file is used as input which contains more data than
+the picker requests. If connected to a waveform server such as SeedLink the picker
+will only receive the data it subscribed to.
+Default is \fBtrue\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B sendDetections
+Type: \fIboolean\fP
+.sp
+If enabled and a \fI\%picker\fP is configured then detections are sent as well.
+To distinguish between detections and picks the evaluation mode of the pick is set
+to manual. This is meant to be a debug option which can be used to compare detections
+and picks by their evaluation mode.
+Default is \fBfalse\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B thresholds.triggerOn
+Type: \fIdouble\fP
+.sp
+For which value on the filtered waveforms is a pick
+detected. Station specific values override this value.
+Default is \fB3\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B thresholds.triggerOff
+Type: \fIdouble\fP
+.sp
+The value the filtered waveforms must reach to enable
+detection again. Between triggerOn and triggerOff the
+picker is blind and does not produce picks. Station
+specific values ovveride this value.
+Default is \fB1.5\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B thresholds.maxGapLength
+Type: \fIdouble\fP
+.sp
+The maximum gap length in seconds to handle.
+Gaps larger than this will cause the picker to be resettet.
+Default is \fB4.5\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B thresholds.amplMaxTimeWindow
+Type: \fIdouble\fP
+.sp
+The time window used to compute a maximum (snr) amplitude
+on the filtered waveforms.
+Default is \fB10\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B thresholds.deadTime
+Type: \fIdouble\fP
+.sp
+The dead time in seconds.
+Default is \fB30\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B thresholds.minAmplOffset
+Type: \fIdouble\fP
+.sp
+Default is \fB3\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B connection.amplitudeGroup
+Type: \fIstring\fP
+.sp
+Group used to send amplitudes to.
+Default is \fBAMPLITUDE\fP.
+.UNINDENT
+.SH BINDINGS
+.SS Configuration
+.INDENT 0.0
+.TP
+.B detecEnable
+Type: \fIboolean\fP
+.sp
+Enables/disables picking on a station.
+Default is \fBtrue\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B detecFilter
+Type: \fIstring\fP
+.sp
+Defines the filter to be used for picking.
+Default is \fB"RMHP(10)>>ITAPER(30)>>BW(4,0.7,2)>>STALTA(2,80)"\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B trigOn
+Type: \fIdouble\fP
+.sp
+For which value on the filtered waveform is a pick detected.
+Default is \fB3\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B trigOff
+Type: \fIdouble\fP
+.sp
+The value the filtered waveform must reach to
+enable a detection again.
+Default is \fB1.5\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B timeCorr
+Type: \fIdouble\fP
+.sp
+The time correction applied to a detected pick.
+Default is \fB\-0.8\fP.
+.UNINDENT
+.SH COMMAND-LINE
+.SS Generic
+.INDENT 0.0
+.TP
+.B \-h, \-\-help
+show help message.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-V, \-\-version
+show version information
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-config\-file arg
+Use alternative configuration file. When this option is used
+the loading of all stages is disabled. Only the given configuration
+file is parsed and used. To use another name for the configuration
+create a symbolic link of the application or copy it, eg scautopick \-> scautopick2.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-plugins arg
+Load given plugins.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-D, \-\-daemon
+Run as daemon. This means the application will fork itself and
+doesn\(aqt need to be started with &.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-auto\-shutdown arg
+Enable/disable self\-shutdown because a master module shutdown. This only
+works when messaging is enabled and the master module sends a shutdown
+message (enabled with \-\-start\-stop\-msg for the master module).
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-shutdown\-master\-module arg
+Sets the name of the master\-module used for auto\-shutdown. This
+is the application name of the module actually started. If symlinks
+are used then it is the name of the symlinked application.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-shutdown\-master\-username arg
+Sets the name of the master\-username of the messaging used for
+auto\-shutdown. If "shutdown\-master\-module" is given as well this
+parameter is ignored.
+.UNINDENT
+.SS Verbosity
+.INDENT 0.0
+.TP
+.B \-\-verbosity arg
+Verbosity level [0..4]. 0:quiet, 1:error, 2:warning, 3:info, 4:debug
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-v, \-\-v
+Increase verbosity level (may be repeated, eg. \-vv)
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-q, \-\-quiet
+Quiet mode: no logging output
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-component arg
+Limits the logging to a certain component. This option can be given more than once.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-s, \-\-syslog
+Use syslog logging back end. The output usually goes to /var/lib/messages.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-l, \-\-lockfile arg
+Path to lock file.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-console arg
+Send log output to stdout.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-debug
+Debug mode: \-\-verbosity=4 \-\-console=1
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-log\-file arg
+Use alternative log file.
+.UNINDENT
+.SS Messaging
+.INDENT 0.0
+.TP
+.B \-u, \-\-user arg
+Overrides configuration parameter \fBconnection.username\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-H, \-\-host arg
+Overrides configuration parameter \fBconnection.server\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-t, \-\-timeout arg
+Overrides configuration parameter \fBconnection.timeout\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-g, \-\-primary\-group arg
+Overrides configuration parameter \fBconnection.primaryGroup\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-S, \-\-subscribe\-group arg
+A group to subscribe to. This option can be given more than once.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-encoding arg
+Overrides configuration parameter \fBconnection.encoding\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-start\-stop\-msg arg
+Sets sending of a start\- and a stop message.
+.UNINDENT
+.SS Database
+.INDENT 0.0
+.TP
+.B \-\-db\-driver\-list
+List all supported database drivers.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-d, \-\-database arg
+The database connection string, format: \fI\%service://user:pwd@host/database\fP.
+"service" is the name of the database driver which can be
+queried with "\-\-db\-driver\-list".
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-config\-module arg
+The configmodule to use.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-inventory\-db arg
+Load the inventory from the given database or file, format: [\fI\%service://]location\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-db\-disable
+Do not use the database at all
+.UNINDENT
+.SS Records
+.INDENT 0.0
+.TP
+.B \-\-record\-driver\-list
+List all supported record stream drivers
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-I, \-\-record\-url arg
+The recordstream source URL, format: [\fI\%service://\fP]location[#type].
+"service" is the name of the recordstream driver which can be
+queried with "\-\-record\-driver\-list". If "service"
+is not given "\fI\%file://\fP" is used.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-record\-file arg
+Specify a file as record source.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-record\-type arg
+Specify a type for the records being read.
+.UNINDENT
+.SS Mode
+.INDENT 0.0
+.TP
+.B \-\-offline
+Do not connect to a messaging server and do not use the database.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-amplitudes arg
+Enables or disables computation of amplitudes.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-test
+Runs the picker as usual but does not send any messages. This can be useful to
+test the picker within a running system.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-dump\-config
+Dumps the current configuration and exits. Station configuration is only read if
+the picker connects to the messaging and the database. In offline mode it will
+only dump the application specific setting unless a station.conf file is provided.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-dump\-records
+This option only works in combination with \fI\%--offline\fP. It will dump
+the data of an amplitude processor if it completed processing successfully
+and a new amplitude is available. The output format is a simple ASCII format.
+.UNINDENT
+.SS Settings
+.INDENT 0.0
+.TP
+.B \-\-filter filter
+Overrides configuration parameter \fBfilter\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-time\-correction time
+Overrides configuration parameter \fI\%timeCorrection\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-buffer\-size timespan
+Overrides configuration parameter \fI\%ringBufferSize\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-before timespan
+Overrides configuration parameter \fI\%leadTime\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-init\-time timespan
+Overrides configuration parameter \fI\%initTime\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-trigger\-on arg
+Overrides configuration parameter \fI\%thresholds.triggerOn\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-trigger\-off arg
+Overrides configuration parameter \fI\%thresholds.triggerOff\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-trigger\-dead\-time arg
+Overrides configuration parameter \fI\%thresholds.deadTime\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-ampl\-max\-time\-window arg
+Overrides configuration parameter \fI\%thresholds.amplMaxTimeWindow\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-min\-ampl\-offset arg
+Overrides configuration parameter \fI\%thresholds.minAmplOffset\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-gap\-tolerance arg
+Overrides configuration parameter \fI\%thresholds.maxGapLength\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-gap\-interpolation arg
+Overrides configuration parameter \fI\%gapInterpolation\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-any\-stream arg
+Overrides configuration parameter \fI\%useAllStreams\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-send\-detections
+Overrides configuration parameter \fI\%sendDetections\fP.
+.UNINDENT
+.SH AUTHOR
+GFZ Potsdam
+.SH COPYRIGHT
+2014, GFZ Potsdam, gempa GmbH
+.\" Generated by docutils manpage writer.
+.\" 
+.

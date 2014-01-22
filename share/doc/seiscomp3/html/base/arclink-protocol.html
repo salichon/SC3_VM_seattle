@@ -1,0 +1,305 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ArcLink Protocol &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="next" title="ArcLink Server, Request Handler protocol" href="request-handler-protocol.html" />
+    <link rel="prev" title="Filter grammar" href="filter-grammar.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="request-handler-protocol.html" title="ArcLink Server, Request Handler protocol"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="filter-grammar.html" title="Filter grammar"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+ 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">ArcLink Protocol</a><ul>
+<li><a class="reference internal" href="#client-protocol">Client protocol</a></li>
+<li><a class="reference internal" href="#making-a-request">Making a request</a></li>
+<li><a class="reference internal" href="#request-types">Request types</a><ul>
+<li><a class="reference internal" href="#waveform-request">WAVEFORM request</a></li>
+<li><a class="reference internal" href="#response-request">RESPONSE request</a></li>
+<li><a class="reference internal" href="#inventory-request">INVENTORY request</a></li>
+<li><a class="reference internal" href="#routing-request">ROUTING request</a></li>
+<li><a class="reference internal" href="#qc-request">QC request</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="filter-grammar.html"
+                        title="previous chapter">Filter grammar</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="request-handler-protocol.html"
+                        title="next chapter">ArcLink Server, Request Handler protocol</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/base/arclink-protocol.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="arclink-protocol">
+<span id="id1"></span><h1>ArcLink Protocol<a class="headerlink" href="#arclink-protocol" title="Permalink to this headline">¶</a></h1>
+<p>The ArcLink protocol is a plain ASCII protocol. On connection, the server waits for a sequence of commands
+from the client. Each command is processed sequentially and the client should waits for the previous command
+to end before sending a new command.</p>
+<p>ArcLink commands consist of an ASCII string followed by zero or more arguments separated by spaces and
+terminated with carriage return (&lt;cr&gt;, ASCII code 13) followed by an optional line feed (&lt;lf&gt;, ASCII code 10).
+Except for STATUS, the response on the command consists of one or several lines terminated with &lt;cr&gt;&lt;lf&gt;.
+Unless noted otherwise, the response is OK&lt;cr&gt;&lt;lf&gt;or ERROR&lt;cr&gt;&lt;lf&gt;, depending if the command has been
+successful or not. After getting the ERROR response, it is possible to retrieve the error message with
+SHOWERR command.</p>
+<div class="section" id="client-protocol">
+<h2>Client protocol<a class="headerlink" href="#client-protocol" title="Permalink to this headline">¶</a></h2>
+<p>The description of every know command to the ArcLink client protocol is given here.</p>
+<dl class="docutils">
+<dt>HELLO</dt>
+<dd>returns two &lt;cr&gt;&lt;lf&gt;-terminated lines with the software version and the data centre name.</dd>
+<dt>BYE</dt>
+<dd>close the connection (useful for testing the server with telnet, otherwise it is enough to close the
+client-side socket).</dd>
+<dt>USER &lt;username&gt; &lt;password&gt;</dt>
+<dd>authenticates the user; required before any of the following commands.</dd>
+<dt>INSTITUTION &lt;any string&gt;</dt>
+<dd>optionally specifies institution name.</dd>
+<dt>LABEL &lt;label&gt;</dt>
+<dd>optional label of request.</dd>
+<dt>SHOWERR</dt>
+<dd>returns one &lt;cr&gt;&lt;lf&gt;-terminated line, containing the error message (to be used after getting the ERROR
+response).</dd>
+<dt>REQUEST &lt;request_type&gt; &lt;optional_attributes&gt;</dt>
+<dd>start of a request</dd>
+<dt>END</dt>
+<dd>end of a request; if successful, returns request ID, otherwise ERROR&lt;cr&gt;&lt;lf&gt;</dd>
+<dt>STATUS req id</dt>
+<dd>fetch the status of request with the ID &quot;req id&quot;. if &quot;req id&quot;==ALL, the status of all requests of the user
+are send. The response is either ERROR&lt;cr&gt;&lt;lf&gt;or an XML document, followed by END&lt;cr&gt;&lt;lf&gt;.</dd>
+<dt>DOWNLOAD &lt;req_id[.vol_id] [pos]&gt;</dt>
+<dd>download the result of the request. Response is ERROR&lt;cr&gt;&lt;lf&gt;or size, followed by the data and
+END&lt;cr&gt;&lt;lf&gt;. Optional argument &quot;pos&quot; enables to resume a broken download.</dd>
+<dt>BDOWNLOAD &lt;req_id[.vol_id] [pos]&gt;</dt>
+<dd>like DOWNLOAD, but will block the download until the data are complete.</dd>
+<dt>PURGE &lt;req_id&gt;</dt>
+<dd>delete the result of a request from the server.</dd>
+</dl>
+</div>
+<div class="section" id="making-a-request">
+<h2>Making a request<a class="headerlink" href="#making-a-request" title="Permalink to this headline">¶</a></h2>
+<p>To make a request to an ArcLink server the user should initially identify itself using the USER command. After
+this operation is performed and you received an OK string from the server you can start a request by using the
+REQUEST command. The REQUEST command is the only multiple lines command given to the ArcLink server, to end a
+REQUEST command you should use the END command.</p>
+<p>The general representation of a request is:</p>
+<div class="highlight-python"><pre>REQUEST &lt;request_type&gt; [optional_attributes]
+&lt;start_time&gt; &lt;end_time&gt; &lt;net&gt; &lt;station&gt; &lt;stream&gt; &lt;loc_id&gt; [optional_constraints]
+[more request lines...]
+END</pre>
+</div>
+<p>Allowed request types are currently WAVEFORM, RESPONSE, INVENTORY, ROUTING and QC. Resulting data format of
+WAVEFORM and RESPONSE requests is SEED (Mini-SEED or full SEED for WAVEFORM and dataless SEED for RESPONSE).
+Data format of INVENTORY, ROUTING and QC requests is XML. Data can be optionally compressed by bzip2 when the
+optional_options contains the compression option set (e.g. compression=bzip2).</p>
+<p>The start_time and end_time are strings containing: YYYY,MM,DD,HH,MM,SS e.g. &quot;1980,1,1,0,1,1&quot; and net is
+normally a FDSN network code, station a station code, stream a stream code and loc_id a location code.</p>
+<p>The server does a check on the request type and after the REQUEST command it returns OK or ERROR. If ERROR is
+returned the request type was rejected by the server. If OK is received you should continue and supply to the
+server the request lines and finish the REQUEST block with an END command.</p>
+<p>When no errors are found the server will attribute a request ID to your request, and as soon as a request
+handler of the correct type is free your request will be sent for processing. In the meatime your request
+status will be marked as UNSET status. At this point, the server also returns to the user the request ID
+attributed to this request that should be used for checking status, download and purging the request afterwards.</p>
+</div>
+<div class="section" id="request-types">
+<h2>Request types<a class="headerlink" href="#request-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="waveform-request">
+<h3>WAVEFORM request<a class="headerlink" href="#waveform-request" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>If request_type is WAVEFORM, attributes &quot;format&quot; and &quot;compression&quot; are defined. The value of &quot;format&quot;
+can be &quot;MSEED&quot; for Mini-SEED or &quot;FSEED&quot; (default) for full SEED; &quot;compression&quot; can be &quot;bzip2&quot;
+or &quot;none&quot; (default). Wildcards (&quot;*&quot;) are allowed only in stream and loc_id. Constraints are not allowed. loc_id
+is optional. If loc_id is missing or &quot;.&quot;, only streams with empty location ID are requested. Sample
+waveform request:</p>
+<div class="highlight-python"><pre>REQUEST WAVEFORM format=MSEED
+2005,09,01,00,05,00 2005,09,01,00,10,00 IA PPI BHZ .
+END</pre>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="response-request">
+<h3>RESPONSE request<a class="headerlink" href="#response-request" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>If request_type is RESPONSE, attribute &quot;compression&quot; is defined, which can be &quot;bzip2&quot; or &quot;none&quot;
+(default). Constraints are not allowed. Wildcard (&quot;*&quot;) is allowed in station stream and loc_id, so it is
+possible to request a dataless volume of a whole network. If loc_id is missing or &quot;.&quot;, only streams with
+empty location ID are included in the dataless volume. The dataless volume generated is compatible with the
+FDSN dataless seed specifications.</div></blockquote>
+</div>
+<div class="section" id="inventory-request">
+<h3>INVENTORY request<a class="headerlink" href="#inventory-request" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>If request_type is INVENTORY, attributes &quot;instruments&quot;, &quot;compression&quot; and &quot;modified_after&quot; are defined. The
+value of &quot;instruments&quot; can be &quot;true&quot; or &quot;false&quot; (default), &quot;compression&quot; can be &quot;bzip2&quot; or &quot;none&quot; (default),
+and &quot;modified_after&quot;, if present, must contain an ISO time string. When instruments is set to true whether
+instrument data is added to XML, compression set bzip2 compress the XML data and modified_after if set, only
+entries modified after given time will be returned. Wildcard (&quot;*&quot;) is allowed in all fields, except start time
+and end time. Station, stream and loc_id are optional. If station or stream is not specified, the respective
+elements are not added to the XML tree; if loc_id is missing or &quot;.&quot;, only streams with empty location ID are
+included. For example, to request a list of GEOFON stations (but not location and streams information), one
+would use:</p>
+<div class="highlight-python"><pre>REQUEST INVENTORY
+1990,1,1,0,0,0 2030,12,31,0,0,0 GE *
+END</pre>
+</div>
+<p>For inventory requet type the following constraints are defined:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>sensortype</dt>
+<dd>limit streams to those using specific sensor types: &quot;VBB&quot;, &quot;BB&quot;, &quot;SM&quot;, &quot;OBS&quot;, etc. Can be also a
+combination like &quot;VBB+BB+SM&quot;.</dd>
+<dt>latmin</dt>
+<dd>minimum latitude</dd>
+<dt>latmax</dt>
+<dd>maximum latitude</dd>
+<dt>lonmin</dt>
+<dd>minimum longitude</dd>
+<dt>lonmax</dt>
+<dd>maximum longitude</dd>
+<dt>permanent</dt>
+<dd>true or false, requesting only permanent or temporary networks respectively</dd>
+<dt>restricted</dt>
+<dd>true or false, requesting only networks/stations/streams that have restricted or open data respectively.</dd>
+</dl>
+</div></blockquote>
+<p>If any of station, stream or loc id is missing, one or more dots should be used before constraints. For
+example, to request the list of networks with open data, one would use:</p>
+<div class="highlight-python"><pre>REQUEST INVENTORY
+1990,1,1,0,0,0 2030,12,31,0,0,0 * . restricted=false
+END</pre>
+</div>
+<p>More than one constrain can be added and should be separated by spaces.</p>
+</div></blockquote>
+</div>
+<div class="section" id="routing-request">
+<h3>ROUTING request<a class="headerlink" href="#routing-request" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>If request_type is ROUTING, attributes &quot;compression&quot; and &quot;modified_after&quot; are defined. The value of
+&quot;compression&quot; can be &quot;bzip2&quot; or &quot;none&quot; (default); &quot;modified after&quot;, if present, must contain an ISO time
+string. compression set to bzip2 will compress XML data and modified after if set, only entries modified after
+given time will be returned. Wildcard (&quot;*&quot;) is allowed in all fields, except start time and end time.
+Constraints are not allowed. All fields except start time, end time and net are optional; missing station
+stands for &quot;default route&quot; of a given network. stream and loc id are ignored.</div></blockquote>
+</div>
+<div class="section" id="qc-request">
+<h3>QC request<a class="headerlink" href="#qc-request" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>If request_type is QC, attributes &quot;compression&quot;, &quot;outages&quot;, &quot;logs&quot; and &quot;parameters&quot; are defined. The value
+of &quot;compression&quot; can be &quot;bzip2&quot; or &quot;none&quot; (default). compression set to bzip2 will compress XML data,
+outages include list of outages (&quot;true&quot; or &quot;false&quot;). logs include log messages (&quot;true&quot; or &quot;false&quot;).
+parameters can contain a comma-separated list of QC parameters. Wildcard &quot;*&quot; is allowed in all fields,
+except start time and end time. All fields must be present. Constraints are not allowed. The following QC
+parameters are implemented in the present version: availability, delay, gaps count, gaps interval, gaps
+length, latency, offset, overlaps count, overlaps interval, overlaps length, rms, spikes amplitude, spikes
+count, spikes interval, timing quality. These parameters are documented at [wiki:doc/applications/scqc].</div></blockquote>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="request-handler-protocol.html">ArcLink Server, Request Handler protocol</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="request-handler-protocol.html#id1">Request handler protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="request-handler-protocol.html#session-example">Session example</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="request-handler-protocol.html" title="ArcLink Server, Request Handler protocol"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="filter-grammar.html" title="Filter grammar"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+ 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

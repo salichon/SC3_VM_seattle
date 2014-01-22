@@ -1,0 +1,286 @@
+.. highlight:: rst
+
+.. _sync_arc:
+
+########
+sync_arc
+########
+
+**ArcLink remote merging tool (one-way synchronization)**
+
+
+Description
+===========
+
+sync_arc is a tool that merges inventory from different arclink sources into
+your SeisComP3 database by following a list of nodes (master table) provided by
+the webdc.eu portal (or another source as configured on the configuration file).
+This tool is today used inside the EIDA (European Integrated Data Archives)
+network to keep its nodes synchronized (the inventory and routing parts).
+
+.. warning::
+
+   Running :command:`seiscomp update-config` (or using the GUI
+   :ref:`scconfig`) to update the system configuration will erase from your
+   database the last one-way synchronized inventory and routing. It will be
+   necessary to run the sync_arc again to restore the missing entries of the
+   inventory and routing after each update.
+
+
+
+Configuration
+=============
+
+| :file:`etc/defaults/global.cfg`
+| :file:`etc/defaults/sync_arc.cfg`
+| :file:`etc/global.cfg`
+| :file:`etc/sync_arc.cfg`
+| :file:`~/.seiscomp3/global.cfg`
+| :file:`~/.seiscomp3/sync_arc.cfg`
+
+sync_arc inherits :ref:`global options<global-configuration>`.
+
+
+
+.. confval:: poolFolder
+
+   Type: *string*
+
+   Indicates a folder to store\/retrieve the RAW inventory files when the options \-\-keep\-raw\/\-\-load\-raw are in use
+   Default is ``./``.
+
+.. confval:: poolKeep
+
+   Type: *int*
+
+   Indicate the number of Inventory and Routing files that the pool folder should contain. If set to 0 the pool folder is never cleaned, if this  variable contains a number larger than zero the sync_arc program will make sure that the pool folder contains only \"poolKeep\" set of files  \(inventory\/routing\) for each node.
+   Default is ``0``.
+
+.. confval:: masterTableAddress
+
+   Type: *string*
+
+   Location of the webservice responsible for generating the master table. The complete address used is: #masterTableAddress#\/table?group\=#arclinkGroup#
+   Default is ``http://webdc.eu/arclink``.
+
+.. confval:: arclinkGroup
+
+   Type: *string*
+
+   The arclink network group name that we want to merge to. This will be used to query the server pointed by the 'masterTableAddress' for the master table as indicated.
+   Default is ``eida``.
+
+
+Command-line
+============
+
+.. program:: sync_arc
+
+
+Generic
+-------
+
+.. option:: -h, --help
+
+   show help message.
+
+.. option:: -V, --version
+
+   show version information
+
+.. option:: --config-file arg
+
+   Use alternative configuration file. When this option is used
+   the loading of all stages is disabled. Only the given configuration
+   file is parsed and used. To use another name for the configuration
+   create a symbolic link of the application or copy it, eg scautopick \-> scautopick2.
+
+.. option:: --plugins arg
+
+   Load given plugins.
+
+.. option:: -D, --daemon
+
+   Run as daemon. This means the application will fork itself and
+   doesn't need to be started with \&.
+
+.. option:: --auto-shutdown arg
+
+   Enable\/disable self\-shutdown because a master module shutdown. This only
+   works when messaging is enabled and the master module sends a shutdown
+   message \(enabled with \-\-start\-stop\-msg for the master module\).
+
+.. option:: --shutdown-master-module arg
+
+   Sets the name of the master\-module used for auto\-shutdown. This
+   is the application name of the module actually started. If symlinks
+   are used then it is the name of the symlinked application.
+
+.. option:: --shutdown-master-username arg
+
+   Sets the name of the master\-username of the messaging used for
+   auto\-shutdown. If \"shutdown\-master\-module\" is given as well this
+   parameter is ignored.
+
+
+Verbosity
+---------
+
+.. option:: --verbosity arg
+
+   Verbosity level [0..4]. 0:quiet, 1:error, 2:warning, 3:info, 4:debug
+
+.. option:: -v, --v
+
+   Increase verbosity level \(may be repeated, eg. \-vv\)
+
+.. option:: -q, --quiet
+
+   Quiet mode: no logging output
+
+.. option:: --component arg
+
+   Limits the logging to a certain component. This option can be given more than once.
+
+.. option:: -s, --syslog
+
+   Use syslog logging back end. The output usually goes to \/var\/lib\/messages.
+
+.. option:: -l, --lockfile arg
+
+   Path to lock file.
+
+.. option:: --console arg
+
+   Send log output to stdout.
+
+.. option:: --debug
+
+   Debug mode: \-\-verbosity\=4 \-\-console\=1
+
+.. option:: --log-file arg
+
+   Use alternative log file.
+
+
+Messaging
+---------
+
+.. option:: -u, --user arg
+
+   Overrides configuration parameter :confval:`connection.username`.
+
+.. option:: -H, --host arg
+
+   Overrides configuration parameter :confval:`connection.server`.
+
+.. option:: -t, --timeout arg
+
+   Overrides configuration parameter :confval:`connection.timeout`.
+
+.. option:: -g, --primary-group arg
+
+   Overrides configuration parameter :confval:`connection.primaryGroup`.
+
+.. option:: -S, --subscribe-group arg
+
+   A group to subscribe to. This option can be given more than once.
+
+.. option:: --encoding arg
+
+   Overrides configuration parameter :confval:`connection.encoding`.
+
+.. option:: --start-stop-msg arg
+
+   Sets sending of a start\- and a stop message.
+
+
+Database
+--------
+
+.. option:: --db-driver-list
+
+   List all supported database drivers.
+
+.. option:: -d, --database arg
+
+   The database connection string, format: service:\/\/user:pwd\@host\/database.
+   \"service\" is the name of the database driver which can be
+   queried with \"\-\-db\-driver\-list\".
+
+.. option:: --config-module arg
+
+   The configmodule to use.
+
+.. option:: --inventory-db arg
+
+   Load the inventory from the given database or file, format: [service:\/\/]location
+
+.. option:: --db-disable
+
+   Do not use the database at all
+
+
+Mode of Operation
+-----------------
+
+.. option:: --check
+
+   Check my own inventory against the Master Table \(the list of nodes affected can be controlled by the \-\-nodes\/\-\-exclude options\)
+
+.. option:: --sanity-check
+
+   Check the sanity of the inventory loaded on this node finding possible overlaps with the Master Table.
+
+.. option:: --sanity-clean
+
+   Remove the conflicting elements loaded on my host pointed out by the sanity command.
+
+.. option:: --merge
+
+   Performs a merging \(one\-direction synchronization\) of inventory and routing based on the content of the Master Table \(the list of nodes affected can be controlled by the \-\-nodes\/\-\-exclude options\).
+
+.. option:: --remove
+
+   Remove \(undo the merge\) inventory\/routing information that was merged \(the list of nodes affected can be controlled by the \-\-nodes\/\-\-exclude options\).
+
+.. option:: --erase
+
+   Erase my inventory\/routing entries restoring the local seiscomp3 database to an empty state \(use with caution\).
+
+.. option:: --list
+
+   Fetch and list the Master Table content.
+
+
+Options
+-------
+
+.. option:: --nodes nodeA,nodeB
+
+   Comma separated list of nodes to remove, merge, check.
+
+.. option:: --exclude nodeA,nodeB
+
+   Comma separated list of nodes to exclude from remove, merge, check.
+
+.. option:: --keep-synced
+
+   keep a copy of the Inventory and Routing tables merged.
+
+.. option:: --keep-raw
+
+   keep a copy of the RAW Inventory and Routing tables fetched.
+
+.. option:: --load-raw YY-MM-DD
+
+   load a copy of the RAW Inventory\/Routing information from disk. It expects a date value in the following format YYYY\-MM\-DD.
+
+.. option:: --dry-run
+
+   Perform everything that should be done but don't write changes to the database.
+
+.. option:: --force
+
+   Force merging against MYSELF.
+

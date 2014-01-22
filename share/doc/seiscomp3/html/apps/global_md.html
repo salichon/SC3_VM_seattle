@@ -1,0 +1,159 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Md &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="global" href="../toc/extensions/global.html" />
+    <link rel="next" title="Hypo71" href="global_hypo71.html" />
+    <link rel="prev" title="LocSAT" href="global_locsat.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="global_hypo71.html" title="Hypo71"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="global_locsat.html" title="LocSAT"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/extensions.html" >Extensions</a> &raquo;</li>
+          <li><a href="../toc/extensions/global.html" accesskey="U">global</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Md</a><ul>
+<li><a class="reference internal" href="#description">Description</a><ul>
+<li><a class="reference internal" href="#processing-description">Processing description</a></li>
+<li><a class="reference internal" href="#more-information">More information</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="global_locsat.html"
+                        title="previous chapter">LocSAT</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="global_hypo71.html"
+                        title="next chapter">Hypo71</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/apps/global_md.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="md">
+<span id="global-md"></span><h1>Md<a class="headerlink" href="#md" title="Permalink to this headline">¶</a></h1>
+<p>Duration magnitude plugin</p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The duration magnitude is based on coda duration measurement.
+It's usually valid for small earthquakes up to magnitude 4 to 5.</p>
+<p>First used in 1972 by Lee et al., Duration magnitude (Md) or Coda duration
+magnitude plugin estimates Richter magnitude of local earthquakes by using
+signal duration on vertical components of seismographs.</p>
+<p>Estimations are quite stable for local earthquakes ranging from magnitude
+Md 0.0 to 5.0.</p>
+<div class="section" id="processing-description">
+<h3>Processing description<a class="headerlink" href="#processing-description" title="Permalink to this headline">¶</a></h3>
+<p>Duration magnitude is usually computed on short period seismometers by searching the time at which
+the amplitude of the signal is close to pre-earthquake amplitude.</p>
+<p>Since it's mainly used for small earthquake whose signal is at rather high frequency, it's usefull to highpass filter broadband seismomters.
+A good idea is to use a Wood-Anderson conversion as pre-processing.</p>
+<p>The plugin then searches for the maximum amplitude of the signal, which should be the S-wave and then computed mean amplitude of one-second time windows.
+As soon as a one-second time window mean amplitude vs pre-earthquake amplitude reaches the configured SNR ratio, the process is stopped.
+The middle of the one-second time window is assumed to be the end of the Coda and the time difference between Coda time and P arrival time is stored as Coda duration.
+Finally, the generic formula is applied and the duration magnitude is computed for a given station, if it fits the criteria (max depth, max distance).</p>
+</div>
+<div class="section" id="more-information">
+<h3>More information<a class="headerlink" href="#more-information" title="Permalink to this headline">¶</a></h3>
+<p>Description of the formula can be found in Hypo2000 manual from USGS website.
+<a class="reference external" href="http://geopubs.wr.usgs.gov/open-file/of02-171/">http://geopubs.wr.usgs.gov/open-file/of02-171/</a></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="global_hypo71.html" title="Hypo71"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="global_locsat.html" title="LocSAT"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/extensions.html" >Extensions</a> &raquo;</li>
+          <li><a href="../toc/extensions/global.html" >global</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

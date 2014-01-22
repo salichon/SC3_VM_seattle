@@ -1,0 +1,375 @@
+.TH "SCESV" "1" "January 21, 2014" "2014.016" "SeisComP3"
+.SH NAME
+scesv \- SeisComP3 Documentation
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.\" Man page generated from reStructeredText.
+.
+.sp
+\fBEvent summary view.\fP
+.SH DESCRIPTION
+.sp
+scesv is the the summary display of the event parameters. It shows the primary information
+about the current event including location, time, strength, type and processing status.
+Additional to the current event also older events can be chosen from the eventlist in the
+events tab.
+.sp
+The two tabs of scesv are shown in \fI\%Eventlist tab\fP and \fI\%Summary tab\fP.
+The events tab shows the eventlist of the time span defined on the bottom side of the window.
+.INDENT 0.0
+.INDENT 2.5
+[image]
+Eventlist tab
+Tab1\-2: Summary/Events tab, EventList: list of the last events with summarized information,
+List options: Show fake events, Reading 1: spinbox to limit timespan of displayed events (in days),
+Reading 2: spinboxes to limit timespan of displayed events (specified dates), Status: connection status
+.UNINDENT
+.UNINDENT
+.sp
+The actual (default) or selected event (from eventlist) is shown in the (\fI\%Summary tab\fP).
+Here the information are highlighted in four sections:
+.TS
+center;
+|l|l|.
+_
+T{
+section
+T}	T{
+description
+T}
+_
+T{
+Time
+T}	T{
+orign time in UTC and relative to now
+T}
+_
+T{
+Region
+T}	T{
+a map of the region and location with the event and stations
+T}
+_
+T{
+Magnitude
+T}	T{
+different magnitude types, the values and counts
+T}
+_
+T{
+Hypocenter
+T}	T{
+origin information with location, depth, azimuthal gap etc.
+T}
+_
+.TE
+.nf
+
+.fi
+.sp
+.INDENT 0.0
+.INDENT 2.5
+[image]
+Summary tab
+Tab1\-2: Summary/Events tab, Origin Time: origin time in UTC and relative to now, Map: map with region
+and location and stations, Magnitude: different magnitude types with values and counts,
+Origin Info: hypocenter information with position, phase count and azimuthal gap,
+Event: earthquake location, Station: station with ray\-path, Details: "Show Details" button to open
+detailed information in \fIscolv\fP, Event Type: event type combo box to set event type, Status: connection status
+.UNINDENT
+.UNINDENT
+.SH HOTKEYS
+.TS
+center;
+|l|l|.
+_
+T{
+Hotkey
+T}	T{
+Description
+T}
+_
+T{
+\fBF2\fP
+T}	T{
+Setup connection dialog
+T}
+_
+T{
+\fBF6\fP
+T}	T{
+Show propagation of P and S wave
+T}
+_
+T{
+\fBF8\fP
+T}	T{
+Toggle auto update
+T}
+_
+T{
+\fBF9\fP
+T}	T{
+Show raypaths and associated stations
+T}
+_
+T{
+\fBF10\fP
+T}	T{
+Toggle tabs
+T}
+_
+T{
+\fBF11\fP
+T}	T{
+Toggle fullscreen
+T}
+_
+T{
+Mouse wheel
+T}	T{
+Zoom map in/out
+T}
+_
+T{
+Double click
+T}	T{
+Center map
+T}
+_
+.TE
+.SH CONFIGURATION
+.nf
+\fBetc/defaults/global.cfg\fP
+\fBetc/defaults/scesv.cfg\fP
+\fBetc/global.cfg\fP
+\fBetc/scesv.cfg\fP
+\fB~/.seiscomp3/global.cfg\fP
+\fB~/.seiscomp3/scesv.cfg\fP
+.fi
+.sp
+.sp
+scesv inherits \fIglobal options\fP.
+.INDENT 0.0
+.TP
+.B ignoreOtherEvents
+Type: \fIboolean\fP
+.sp
+If the event type is either "other" or "not existing"
+and this flag is true then the event will not be shown.
+Default is \fBtrue\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B showLastAutomaticSolution
+Type: \fIboolean\fP
+.sp
+If enabled the last automatic solution is displayed next to the
+current solution in the summary panel. If the last automatic
+solution differs from the current solution it is displayed
+in red. If both solutions match it is displayed in gray.
+Default is \fBfalse\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B showOnlyMostRecentEvent
+Type: \fIboolean\fP
+.sp
+If enabled only the most recent event is shown even if an update of
+an older event is being received.
+Default is \fBtrue\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B enableFixAutomaticSolutions
+Type: \fIboolean\fP
+.sp
+If enabled an additional button is displayed which allows to switch back
+the latest automatic solution. This button triggers an command for
+scevent to prioritize automatic solutions until the next manual
+solution is available.
+Default is \fBfalse\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B visibleMagnitudes
+Type: \fIlist:string\fP
+.sp
+A list of magnitude types to be displayed.
+Default is \fBM,MLv,mb,mB,Mw(mB)\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B button0
+Type: \fIstring\fP
+.sp
+Label of button0 which triggers script0.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B button1
+Type: \fIstring\fP
+.sp
+Label of button1 which triggers script1.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scripts.script0
+Type: \fIstring\fP
+.sp
+Path to a script if button0 is clicked.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scripts.script1
+Type: \fIstring\fP
+.sp
+Path to a script if button1 is clicked.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scripts.script0.oldStyle
+Type: \fIboolean\fP
+.sp
+If enabled, the parameter list of script0 is eventID, arrivalCount,
+magnitude, description.
+.sp
+If disabled, the parameter list of script0 is eventID, preferredOriginID,
+preferredMagnitudeID, preferredFocalMechanismID.
+Default is \fBtrue\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scripts.script1.oldStyle
+Type: \fIboolean\fP
+.sp
+If enabled, the parameter list of script1 is eventID, arrivalCount,
+magnitude, description.
+.sp
+If disabled, the parameter list of script1 is eventID, preferredOriginID,
+preferredMagnitudeID, preferredFocalMechanismID.
+Default is \fBtrue\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B summary.borders
+Type: \fIboolean\fP
+.sp
+Draw borders in the summary panel.
+Default is \fBfalse\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B display.lonmin
+Type: \fIdouble\fP
+.sp
+Minimum longitude of initial displayed map region.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B display.lonmax
+Type: \fIdouble\fP
+.sp
+Maximum longitude of initial displayed map region.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B display.latmin
+Type: \fIdouble\fP
+.sp
+Minimum latitude of initial displayed map region.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B display.latmax
+Type: \fIdouble\fP
+.sp
+Maximum latitude of initial displayed map region.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B display.event.comment.id
+Type: \fIstring\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B display.event.comment.default
+Type: \fIstring\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B display.event.comment.label
+Type: \fIstring\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B display.origin.comment.id
+Type: \fIstring\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B display.origin.comment.default
+Type: \fIstring\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B display.origin.comment.label
+Type: \fIstring\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B poi.maxDist
+Type: \fIdouble\fP
+.sp
+Maximum distance in degrees of a POI (point of interest read
+from cities.xml) to be taken into account.
+Default is \fB20\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B poi.minPopulation
+Type: \fIdouble\fP
+.sp
+The minimum population of a POI to be taken into account.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B poi.message
+Type: \fIstring\fP
+.sp
+Message conversion string that converts a POI into the text
+displayed under the region label. There are different placeholders
+that can be used: @dist@, @dir@, @poi@ and @region@.
+.UNINDENT
+.SH AUTHOR
+GFZ Potsdam
+.SH COPYRIGHT
+2014, GFZ Potsdam, gempa GmbH
+.\" Generated by docutils manpage writer.
+.\" 
+.

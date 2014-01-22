@@ -1,0 +1,524 @@
+.. highlight:: rst
+
+.. _scevent:
+
+#######
+scevent
+#######
+
+**Associates an Origin to an Event or forms a new Event if no match is found. Selects the preferred magnitude.**
+
+
+Description
+===========
+
+As a consequence of a real-time system the SeisComP3 system creates several
+origins (results of localization processes) for one earthquake because as time
+goes by more seismic phases are available. scevent receives these origins and
+associates the origins to events. It is also possible to import origins from
+other agencies.
+
+
+Origin Matching
+---------------
+
+scevent associates origins to events by searching for the best match of the new
+(incoming) origin to other origins for existing events. If a match is not found
+a new event can be formed. The new origin is matched to existing origins
+by comparing differences in the horizontal components of the locations, origin
+time difference, and matching picks.
+The new origin is matched to an existing origin which has the highest rank in
+the following three groups (1, 2, 3):
+
+1. Location and Time (lowest)
+
+   The difference in horizontal location is less than
+   :confval:`eventAssociation.maximumDistance` (degrees)
+   and the difference in origin times is less than
+   :confval:`eventAssociation.maximumTimeSpan`.
+
+2. Picks
+
+   The two origins have more than :confval:`eventAssociation.minimumMatchingArrivals`
+   matching picks. Picks are matched either by ID or by time depending
+   on :confval:`eventAssociation.maximumMatchingArrivalTimeDiff`.
+
+3. Picks and Location and Time (highest)
+
+   This is the best match, for which both the location-and-time and picks
+   criteria above are satisfied.
+
+If more than one origin is found in the highest ranking class, then the first
+one of them is chosen.
+
+.. note::
+
+   For efficiency events in the cache are scanned first and if no matches are found
+   the database is scanned for the time window :confval:`eventAssociation.eventTimeBefore` - :confval:`eventAssociation.eventTimeAfter`
+   around the incoming Origin time. The cached events are ordered by eventID and
+   thus in time.
+
+**No Origin Match**
+
+If no event with an origin that matches the incoming origin is found then a
+new event is formed and the origin is associated to that event. The following
+criteria are applied to allow the creation of the new event:
+
+The agency for the origin is not black listed (processing.blacklist.agencies).
+
+and
+
+If the origin is an automatic then it has more than eventAssociation.minimumDefiningPhases picks.
+
+.. figure:: media/scevent/Association_of_an_origin_by_matching_picks.jpg
+    :scale: 50 %
+    :alt: alternate association of an origin by matching picks.
+
+    Associations of an origin to an event by matching picks.
+
+
+
+Configuration
+=============
+
+| :file:`etc/defaults/global.cfg`
+| :file:`etc/defaults/scevent.cfg`
+| :file:`etc/global.cfg`
+| :file:`etc/scevent.cfg`
+| :file:`~/.seiscomp3/global.cfg`
+| :file:`~/.seiscomp3/scevent.cfg`
+
+scevent inherits :ref:`global options<global-configuration>`.
+
+
+
+.. confval:: eventIDPrefix
+
+   Type: *string*
+
+   Prefix for all Event IDs
+
+
+.. confval:: eventIDPattern
+
+   Type: *string*
+
+   Defines the pattern to generate an event ID.
+   
+   %p : prefix
+   
+   %Y : year
+   
+   %[w]c: alpha character
+   
+   %[w]C: upper case alpha character
+   
+   %[w]d: decimal
+   
+   %[w]x: hexadecimal
+   
+   %[w]X: upper case hexadecimal
+   
+   [w] is an optional width parameter.
+   Default is ``%p%Y%04c``.
+
+.. confval:: eventAssociation.minimumMagnitudes
+
+   Type: *int*
+
+   Minimum number of station magnitudes referenced to a network magnitude
+   to become a preferred magnitude.
+   Default is ``4``.
+
+.. confval:: eventAssociation.minimumMatchingArrivals
+
+   Type: *int*
+
+   Minimum number of matching picks between two origins to be associated
+   to the same event.
+   Default is ``3``.
+
+.. confval:: eventAssociation.maximumMatchingArrivalTimeDiff
+
+   Type: *float*
+
+   If this time window in seconds is negative, pickIDs
+   are compared to find matching arrivals. A non negative
+   value \(including 0\) compares pick times regardless
+   of the pickID. Pass: \|pick1.time \- pick2.time\| <\= threshold
+   Default is ``-1``.
+
+.. confval:: eventAssociation.compareAllArrivalTimes
+
+   Type: *boolean*
+
+   This parameter is only used in conjunction with
+   eventAssociation.maximumMatchingArrivalTimeDiff.
+   If a station has multiple associated arrivals for a
+   particular event, this flag defines if the time distance
+   of a new pick to all arrivals must be within
+   eventAssociation.maximumMatchingArrivalTimeDiff
+   or if one matching arrival is enough.
+   Default is ``true``.
+
+.. confval:: eventAssociation.minimumDefiningPhases
+
+   Type: *int*
+
+   Minimum number of Picks for an Origin that is automatic and cannot be
+   associated with an Event to be allowed to form an new Event.
+   Default is ``10``.
+
+.. confval:: eventAssociation.eventTimeBefore
+
+   Type: *int*
+
+   Time range before the origin time of an incoming origin to search for
+   matching events.
+   Default is ``1800``.
+
+.. confval:: eventAssociation.eventTimeAfter
+
+   Type: *int*
+
+   Time range after the origin time of an incoming origin to search for
+   matching events.
+   Default is ``1800``.
+
+.. confval:: eventAssociation.maximumTimeSpan
+
+   Type: *int*
+
+   Associates an origin with an existing event  if the origin
+   time differs not more than 60 seconds unless the
+   minimumMatchingArrivals criteria matches.
+   Default is ``60``.
+
+.. confval:: eventAssociation.maximumDistance
+
+   Type: *double*
+
+   Allowed location difference between an incoming origin compared with
+   preferred origins to get associated.
+   Default is ``5``.
+
+.. confval:: eventAssociation.minMwCount
+
+   Type: *int*
+
+   Minimum number of station magnitudes required for Mw\(mB\) to be considered as
+   preferred magnitude.
+   Default is ``8``.
+
+.. confval:: eventAssociation.mbOverMwCount
+
+   Type: *int*
+
+   Minimum number of station magnitudes which ensures that Mw\(mB\) will be
+   preferred and not mb.
+   Default is ``30``.
+
+.. confval:: eventAssociation.mbOverMwValue
+
+   Type: *int*
+
+   Average between mb and Mw\(mB\) which must be exceeded to become Mw\(mB\)
+   preferred.
+   Default is ``6``.
+
+.. confval:: eventAssociation.enableFallbackMagnitude
+
+   Type: *boolean*
+
+   If true, one magnitude will be preferred even if magnitude criteria are
+   not fullfilled.
+   Default is ``false``.
+
+.. confval:: eventAssociation.magTypes
+
+   Type: *list:string*
+
+   Magnitude type priority list for becoming a preferred magnitude for an
+   event.
+   Default is ``mBc, Mw(mB), Mwp, ML, MLh, MLv, mb``.
+
+.. confval:: eventAssociation.agencies
+
+   Type: *list:string*
+
+   The agencyID priority list. When the eventtool comes to the point to
+   select a preferred origin it orders all origins by its agency priority and
+   selects then the best one among the highest priority agency. It also defines the
+   agency priority for custom priority checks
+   \(eventAssociation.priorities\).
+
+
+.. confval:: eventAssociation.authors
+
+   Type: *list:string*
+
+   The author priority list. When the eventtool comes to the point to
+   select a preferred origin it orders all origins by its author priority and
+   selects then the best one among the highest priority author. It also defines the
+   author priority for custom priority checks \(eventAssociation.priorities\).
+
+
+.. confval:: eventAssociation.priorities
+
+   Type: *list:string*
+
+   The general priority list to decide if an origin becomes preferred.
+   This list is not used unless this parameter is activated.
+   This example list replicates the default hard wired behaviour:
+   AGENCY, STATUS, PHASES_AUTOMATIC, TIME_AUTOMATIC
+   
+   Each item in the list corresponds to a check that is performed.
+   Each check computes a score of the incoming origin \(s1\) and the
+   current preferred origin \(s2\). If the s1 is lower than s2,
+   the incoming origin is rejected and does not become preferred. All
+   subsequent checks are ignored.
+   If s1 is equal to s2, the next check in the list is performed.
+   If s1 is larger than s2, the origin becomes preferred and
+   all subsequent checks are ignored.
+   
+   Available tokens:
+   
+   AGENCY: check based on agency priorities
+   
+   AUTHOR: check based on author priorities
+   
+   STATUS: manual origins rule out automatic ones
+   
+   METHOD: check based on the method priorities
+   
+   PHASES: higher phase count \= higher priority
+   
+   PHASES_AUTOMATIC: only checks phase priorities for incoming automatic origins
+   
+   RMS: lower rms \= higher priority
+   
+   RMS_AUTOMATIC: only check RMS on incoming automatic origins
+   
+   TIME: more recent origins \(creationTime\) have higher priorities
+   
+   TIME_AUTOMATIC: only check creationTime priority on incoming automatic origins
+
+
+.. confval:: eventAssociation.delayTimeSpan
+
+   Type: *int*
+
+   Configures a timespan in seconds to delay event creation. If a new origin arrives
+   which cannot be associated to an existing event, delay the event creation for a certain
+   timespan.
+
+
+.. confval:: eventAssociation.region.rect
+
+   Type: *string*
+
+   Region in which scevent is allowed to create events.
+
+
+.. confval:: eventAssociation.depths.minimum
+
+   Type: *double*
+
+   Minimum depth for which scevent is allowed to create events.
+
+
+.. confval:: eventAssociation.depths.maximum
+
+   Type: *double*
+
+   Maximum depth for which scevent is allowed to create events.
+
+
+.. note::
+   **eventAssociation.delayFilter.\***
+   *The delayFilter group configures an origin filter to activate the delay feature for*
+   *this origin. If more than one filter is given they are combined with AND.*
+
+
+
+.. confval:: eventAssociation.delayFilter.agencyID
+
+   Type: *string*
+
+   The agencyID of the origin to be delayed.
+
+
+.. confval:: eventAssociation.delayFilter.author
+
+   Type: *string*
+
+   The author of the origin to be delayed.
+
+
+.. confval:: eventAssociation.delayFilter.evaluationMode
+
+   Type: *string*
+
+   The evaluation mode of the origin to be delayed. Can be either \"manual\"
+   or \"automatic\".
+
+
+
+Command-line
+============
+
+.. program:: scevent
+
+
+Generic
+-------
+
+.. option:: -h, --help
+
+   show help message.
+
+.. option:: -V, --version
+
+   show version information
+
+.. option:: --config-file arg
+
+   Use alternative configuration file. When this option is used
+   the loading of all stages is disabled. Only the given configuration
+   file is parsed and used. To use another name for the configuration
+   create a symbolic link of the application or copy it, eg scautopick \-> scautopick2.
+
+.. option:: --plugins arg
+
+   Load given plugins.
+
+.. option:: -D, --daemon
+
+   Run as daemon. This means the application will fork itself and
+   doesn't need to be started with \&.
+
+.. option:: --auto-shutdown arg
+
+   Enable\/disable self\-shutdown because a master module shutdown. This only
+   works when messaging is enabled and the master module sends a shutdown
+   message \(enabled with \-\-start\-stop\-msg for the master module\).
+
+.. option:: --shutdown-master-module arg
+
+   Sets the name of the master\-module used for auto\-shutdown. This
+   is the application name of the module actually started. If symlinks
+   are used then it is the name of the symlinked application.
+
+.. option:: --shutdown-master-username arg
+
+   Sets the name of the master\-username of the messaging used for
+   auto\-shutdown. If \"shutdown\-master\-module\" is given as well this
+   parameter is ignored.
+
+.. option:: -x, --expiry time
+
+   Time span in hours after which objects expire.
+
+.. option:: -O, --origin-id publicID
+
+   OriginID to be associated. When given no messages are sent.
+   Only the status of the association is written to stdout.
+
+
+Verbosity
+---------
+
+.. option:: --verbosity arg
+
+   Verbosity level [0..4]. 0:quiet, 1:error, 2:warning, 3:info, 4:debug
+
+.. option:: -v, --v
+
+   Increase verbosity level \(may be repeated, eg. \-vv\)
+
+.. option:: -q, --quiet
+
+   Quiet mode: no logging output
+
+.. option:: --component arg
+
+   Limits the logging to a certain component. This option can be given more than once.
+
+.. option:: -s, --syslog
+
+   Use syslog logging back end. The output usually goes to \/var\/lib\/messages.
+
+.. option:: -l, --lockfile arg
+
+   Path to lock file.
+
+.. option:: --console arg
+
+   Send log output to stdout.
+
+.. option:: --debug
+
+   Debug mode: \-\-verbosity\=4 \-\-console\=1
+
+.. option:: --log-file arg
+
+   Use alternative log file.
+
+
+Messaging
+---------
+
+.. option:: -u, --user arg
+
+   Overrides configuration parameter :confval:`connection.username`.
+
+.. option:: -H, --host arg
+
+   Overrides configuration parameter :confval:`connection.server`.
+
+.. option:: -t, --timeout arg
+
+   Overrides configuration parameter :confval:`connection.timeout`.
+
+.. option:: -g, --primary-group arg
+
+   Overrides configuration parameter :confval:`connection.primaryGroup`.
+
+.. option:: -S, --subscribe-group arg
+
+   A group to subscribe to. This option can be given more than once.
+
+.. option:: --encoding arg
+
+   Overrides configuration parameter :confval:`connection.encoding`.
+
+.. option:: --start-stop-msg arg
+
+   Sets sending of a start\- and a stop message.
+
+
+Database
+--------
+
+.. option:: --db-driver-list
+
+   List all supported database drivers.
+
+.. option:: -d, --database arg
+
+   The database connection string, format: service:\/\/user:pwd\@host\/database.
+   \"service\" is the name of the database driver which can be
+   queried with \"\-\-db\-driver\-list\".
+
+.. option:: --config-module arg
+
+   The configmodule to use.
+
+.. option:: --inventory-db arg
+
+   Load the inventory from the given database or file, format: [service:\/\/]location
+
+.. option:: --db-disable
+
+   Do not use the database at all
+

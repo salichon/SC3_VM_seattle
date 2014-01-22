@@ -1,0 +1,245 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>scqcv &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="Graphical user interfaces" href="../gui.html" />
+    <link rel="next" title="scrttv" href="scrttv.html" />
+    <link rel="prev" title="scolv" href="scolv.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scrttv.html" title="scrttv"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="scolv.html" title="scolv"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../gui.html" accesskey="U">Graphical user interfaces</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">scqcv</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#example-configuration">Example configuration</a></li>
+<li><a class="reference internal" href="#configuration">Configuration</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="scolv.html"
+                        title="previous chapter">scolv</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="scrttv.html"
+                        title="next chapter">scrttv</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/apps/scqcv.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="scqcv">
+<span id="id1"></span><h1>scqcv<a class="headerlink" href="#scqcv" title="Permalink to this headline">¶</a></h1>
+<p><strong>Quality control view</strong></p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>scqcv provides both, a brief overview of the seismometer network status and a
+detailed view of specific stream parameters. Quality Control (QC) parameters,
+determined by scqc and sent via messaging system, are received and displayed.
+<a class="reference internal" href="#fig-tab-view"><em>Tabulator view of scqcv</em></a> shows the tabular view of the QC report messages.
+Each QC parameter is shown in a column. The default sorting by stream code can
+be changed by pressing a header field of a parameter. A widget displaying the
+currently received waveform data is shown by pressing the cell with the stream
+information. Positioning the mouse over the parameter cell a ToolTip indicates
+more detailed information for the selected parameter. Typing a regular
+expression in the &quot;StreamIDFilter&quot; text entry field will result in a stream code
+filter, only displaying the matching stream codes with qc parameter. Green
+colored fields indicate that the QC parameter values lie within the configured
+&quot;good&quot; interval. Red colors indicate that the QC parameters lie outside the
+tolerated value interval -- this stream might have an issue.</p>
+<div class="figure align-center" id="fig-tab-view">
+<img alt="../_images/Tabulator_view_of_scqcv.jpg" src="../_images/Tabulator_view_of_scqcv.jpg" style="width: 16cm;" />
+<p class="caption">Tabulator view of scqcv</p>
+</div>
+<p><a class="reference internal" href="#fig-status-overview"><em>Status overview of scqcv</em></a> shows the status overview grouped by network code.
+The more the color varies to dark red, the worse the waveform data might be.
+A dark red color indicates a stream with high latency. Light to darker red
+represents a badness sum of related QC parameters. Colors are subject to be
+changed in near future. Pressing a stream code item opens a single line table
+with detailed information of the selected stream. Again it is possible to open
+a real time waveform widget by pressing the leading header field indicating
+the stream code. Typing a regular expression in the bottom text entry field
+will result in a stream code filter, only displaying the matching stream codes.</p>
+<div class="figure align-center" id="fig-status-overview">
+<img alt="../_images/Status_overview_of_scqcv.jpg" src="../_images/Status_overview_of_scqcv.jpg" style="width: 16cm;" />
+<p class="caption">Status overview of scqcv</p>
+</div>
+<p>The compact status overview allows a quick impression of the present status of
+all received streams (<a class="reference internal" href="#fig-compact-status"><em>Compact status overview of scqcv</em></a>). Functionality is equal to the
+status overview grouped by network. You can switch between compact view and
+network seperated view by clicking the checkbox in the bottom line.</p>
+<div class="figure align-center" id="fig-compact-status">
+<img alt="../_images/Compact_status_overview_of_scqcv.jpg" src="../_images/Compact_status_overview_of_scqcv.jpg" style="width: 16cm;" />
+<p class="caption">Compact status overview of scqcv</p>
+</div>
+</div>
+<div class="section" id="example-configuration">
+<h2>Example configuration<a class="headerlink" href="#example-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-sh"><div class="highlight"><pre>connection.subscription <span class="o">=</span> QC
+<span class="nv">plugins</span> <span class="o">=</span> qcplugin_delay, qcplugin_latency, qcplugin_timing, <span class="se">\</span>
+          qcplugin_rms, qcplugin_offset, qcplugin_gap, <span class="se">\</span>
+          qcplugin_spike
+plugins.default.expire <span class="o">=</span> 0
+plugins.default.goodInterval <span class="o">=</span> 0.0, 99E99
+plugins.default.useAbs4good <span class="o">=</span> 0
+plugins.qcplugin_spike.expire <span class="o">=</span> 600
+plugins.qcplugin_spike.goodInterval <span class="o">=</span> 0.0, 0.0
+plugins.qcplugin_gap.expire <span class="o">=</span> 600
+plugins.qcplugin_gap.goodInterval <span class="o">=</span> 0.0, 0.0
+plugins.qcplugin_offset.useAbs4good <span class="o">=</span> 1
+plugins.qcplugin_offset.goodInterval <span class="o">=</span> 0.0, 550E3
+plugins.qcplugin_delay.goodInterval <span class="o">=</span> 0.0, 60.0
+plugins.qcplugin_latency.goodInterval <span class="o">=</span> 0.0, 300.0
+plugins.qcplugin_timing.goodInterval <span class="o">=</span> 50, 100
+plugins.qcplugin_rms.goodInterval <span class="o">=</span> 10.0, 10E6
+</pre></div>
+</div>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/defaults/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/defaults/scqcv.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/scqcv.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">~/.seiscomp3/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">~/.seiscomp3/scqcv.cfg</span></tt></div>
+</div>
+<p>scqcv inherits <a class="reference internal" href="global.html#global-configuration"><em>global options</em></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>plugins.$name.*</strong>
+$name is a placeholder for the name to be used.</p>
+</div>
+<dl class="confval">
+<dt id="confval-plugins.$name.expire">
+<tt class="descname">plugins.$name.expire</tt><a class="headerlink" href="#confval-plugins.$name.expire" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>integer</em></p>
+<p>Default time in seconds, how long a value is displayed in scqcv
+if no update is received. Setting to 0 means, show value until
+updated.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-plugins.$name.goodInterval">
+<tt class="descname">plugins.$name.goodInterval</tt><a class="headerlink" href="#confval-plugins.$name.goodInterval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Default thresholds in between that a QC parameter value is defined
+as &quot;good&quot;. Each QC plug-in should define its own threshold.
+Format is &lt;double&gt;, &lt;double&gt;.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-plugins.$name.useAbs4good">
+<tt class="descname">plugins.$name.useAbs4good</tt><a class="headerlink" href="#confval-plugins.$name.useAbs4good" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>Default sorting behavior. Setting to true means handle positive
+and negative values equally while sorting, i.e. use absolute
+values for sorting but display real values (e.g.: -1, 1, 2, 3,
+-4, 5, -8, 8, 9, 10, ...).</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-streams.codes">
+<tt class="descname">streams.codes</tt><a class="headerlink" href="#confval-streams.codes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>list:string</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scrttv.html" title="scrttv"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="scolv.html" title="scolv"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../gui.html" >Graphical user interfaces</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

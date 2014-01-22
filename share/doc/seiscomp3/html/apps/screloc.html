@@ -1,0 +1,459 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>screloc &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="Processing" href="../toc/processing.html" />
+    <link rel="next" title="scvsmag" href="scvsmag.html" />
+    <link rel="prev" title="scqc" href="scqc.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scvsmag.html" title="scvsmag"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="scqc.html" title="scqc"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/processing.html" accesskey="U">Processing</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">screloc</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#configuration">Configuration</a></li>
+<li><a class="reference internal" href="#command-line">Command-line</a><ul>
+<li><a class="reference internal" href="#generic">Generic</a></li>
+<li><a class="reference internal" href="#verbosity">Verbosity</a></li>
+<li><a class="reference internal" href="#messaging">Messaging</a></li>
+<li><a class="reference internal" href="#database">Database</a></li>
+<li><a class="reference internal" href="#mode">Mode</a></li>
+<li><a class="reference internal" href="#input">Input</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="scqc.html"
+                        title="previous chapter">scqc</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="scvsmag.html"
+                        title="next chapter">scvsmag</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/apps/screloc.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="screloc">
+<span id="id1"></span><h1>screloc<a class="headerlink" href="#screloc" title="Permalink to this headline">¶</a></h1>
+<p><strong>Automatic relocator.</strong></p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>screloc is an automatic relocator that receives origins from realtime
+locators such as scautoloc and relocates them with a configurable locator.
+To run screloc along with all processing modules add it to the list of
+clients in the seiscomp configuration frontend.</p>
+<p>screloc does not yet listen to event information and does not skip origins for
+that a more recent one exists. Instead any incoming automatic origin is
+processed.</p>
+<p>The following example configuration show how to setup screloc for
+<a class="reference internal" href="global_nonlinloc.html#global-nonlinloc"><em>NonLinLoc</em></a>:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nv">plugins</span> <span class="o">=</span> <span class="k">${</span><span class="nv">plugins</span><span class="k">}</span>, locnll
+
+<span class="c"># Define the locator algorithm to use</span>
+reloc.locator <span class="o">=</span> NonLinLoc
+
+<span class="c">########################################################</span>
+<span class="c">################ NonLinLoc configuration################</span>
+<span class="c">########################################################</span>
+<span class="nv">NLLROOT</span> <span class="o">=</span> <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/nll/data
+
+NonLinLoc.outputPath <span class="o">=</span> <span class="k">${</span><span class="nv">NLLROOT</span><span class="k">}</span>/output/
+
+<span class="c"># Define the default control file if no profile specific</span>
+<span class="c"># control file is defined.</span>
+NonLinLoc.controlFile <span class="o">=</span> <span class="k">${</span><span class="nv">NLLROOT</span><span class="k">}</span>/NLL.default.conf
+
+<span class="c"># Set the default pick error in seconds passed to NonLinLoc</span>
+<span class="c"># if no SC3 pick uncertainty is available.</span>
+NonLinLoc.defaultPickError <span class="o">=</span> 0.1
+
+<span class="c"># Define the available NonLinLoc location profiles. The order</span>
+<span class="c"># implicitly defines the priority for overlapping regions</span>
+<span class="c">#NonLinLoc.profiles = swiss_3d, swiss_1d, global</span>
+NonLinLoc.profiles <span class="o">=</span> swiss_3d, global
+
+<span class="c"># The earthModelID is copied to earthModelID attribute of the</span>
+<span class="c"># resulting origin</span>
+NonLinLoc.profile.swiss_1d.earthModelID <span class="o">=</span> <span class="s2">&quot;swiss regional 1D&quot;</span>
+
+<span class="c"># Specify the velocity model table path as used by NonLinLoc</span>
+NonLinLoc.profile.swiss_1d.tablePath <span class="o">=</span> <span class="k">${</span><span class="nv">NLLROOT</span><span class="k">}</span>/time_1d_regio/regio
+
+<span class="c"># Specify the region valid for this profile</span>
+NonLinLoc.profile.swiss_1d.region <span class="o">=</span> 41.2, 3.8, 50.1, 16.8
+
+<span class="c"># The NonLinLoc default control file to use for this profile</span>
+NonLinLoc.profile.swiss_1d.controlFile <span class="o">=</span> <span class="k">${</span><span class="nv">NLLROOT</span><span class="k">}</span>/NLL.swiss_1d.conf
+
+<span class="c"># Configure the swiss_3d profile</span>
+NonLinLoc.profile.swiss_3d.earthModelID <span class="o">=</span> <span class="s2">&quot;swiss regional 3D&quot;</span>
+NonLinLoc.profile.swiss_3d.tablePath <span class="o">=</span> <span class="k">${</span><span class="nv">NLLROOT</span><span class="k">}</span>/time_3d/ch
+NonLinLoc.profile.swiss_3d.region <span class="o">=</span> 45.15, 5.7, 48.3, 11.0
+NonLinLoc.profile.swiss_3d.controlFile <span class="o">=</span> <span class="k">${</span><span class="nv">NLLROOT</span><span class="k">}</span>/NLL.swiss_3d.conf
+
+<span class="c"># And the global profile</span>
+NonLinLoc.profile.global.earthModelID <span class="o">=</span> iaspei91
+NonLinLoc.profile.global.tablePath <span class="o">=</span> <span class="k">${</span><span class="nv">NLLROOT</span><span class="k">}</span>/iasp91/iasp91
+NonLinLoc.profile.global.controlFile <span class="o">=</span> <span class="k">${</span><span class="nv">NLLROOT</span><span class="k">}</span>/NLL.global.conf
+</pre></div>
+</div>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/defaults/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/defaults/screloc.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/screloc.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">~/.seiscomp3/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">~/.seiscomp3/screloc.cfg</span></tt></div>
+</div>
+<p>screloc inherits <a class="reference internal" href="global.html#global-configuration"><em>global options</em></a>.</p>
+<dl class="confval">
+<dt id="confval-reloc.locator">
+<tt class="descname">reloc.locator</tt><a class="headerlink" href="#confval-reloc.locator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Defines the locator to be used such as NonLinLoc.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-reloc.ignoreRejectedOrigins">
+<tt class="descname">reloc.ignoreRejectedOrigins</tt><a class="headerlink" href="#confval-reloc.ignoreRejectedOrigins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>Ignores origins with status REJECTED.
+Default is <tt class="docutils literal"><span class="pre">false</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-reloc.allowPreliminaryOrigins">
+<tt class="descname">reloc.allowPreliminaryOrigins</tt><a class="headerlink" href="#confval-reloc.allowPreliminaryOrigins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>Triggers processing also on origins with status PRELIMINARY.
+Default is <tt class="docutils literal"><span class="pre">false</span></tt>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="command-line">
+<h2>Command-line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="generic">
+<h3>Generic<a class="headerlink" href="#generic" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-screloc-h">
+<tt class="descname">-h</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--help</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-screloc-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show help message.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-screloc-V">
+<tt class="descname">-V</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--version</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-screloc-V" title="Permalink to this definition">¶</a></dt>
+<dd><p>show version information</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-screloc--config-file">
+<tt class="descname">--config-file</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-screloc--config-file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use alternative configuration file. When this option is used
+the loading of all stages is disabled. Only the given configuration
+file is parsed and used. To use another name for the configuration
+create a symbolic link of the application or copy it, eg scautopick -&gt; scautopick2.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-screloc--plugins">
+<tt class="descname">--plugins</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-screloc--plugins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load given plugins.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-screloc-D">
+<tt class="descname">-D</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--daemon</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-screloc-D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run as daemon. This means the application will fork itself and
+doesn't need to be started with &amp;.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-screloc--auto-shutdown">
+<tt class="descname">--auto-shutdown</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-screloc--auto-shutdown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable/disable self-shutdown because a master module shutdown. This only
+works when messaging is enabled and the master module sends a shutdown
+message (enabled with --start-stop-msg for the master module).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-screloc--shutdown-master-module">
+<tt class="descname">--shutdown-master-module</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-screloc--shutdown-master-module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the name of the master-module used for auto-shutdown. This
+is the application name of the module actually started. If symlinks
+are used then it is the name of the symlinked application.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-screloc--shutdown-master-username">
+<tt class="descname">--shutdown-master-username</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-screloc--shutdown-master-username" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the name of the master-username of the messaging used for
+auto-shutdown. If &quot;shutdown-master-module&quot; is given as well this
+parameter is ignored.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="verbosity">
+<h3>Verbosity<a class="headerlink" href="#verbosity" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-screloc--verbosity">
+<tt class="descname">--verbosity</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-screloc--verbosity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verbosity level [0..4]. 0:quiet, 1:error, 2:warning, 3:info, 4:debug</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-screloc-v">
+<tt class="descname">-v</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--v</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-screloc-v" title="Permalink to this definition">¶</a></dt>
+<dd><p>Increase verbosity level (may be repeated, eg. -vv)</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-screloc-q">
+<tt class="descname">-q</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--quiet</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-screloc-q" title="Permalink to this definition">¶</a></dt>
+<dd><p>Quiet mode: no logging output</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-screloc--component">
+<tt class="descname">--component</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-screloc--component" title="Permalink to this definition">¶</a></dt>
+<dd><p>Limits the logging to a certain component. This option can be given more than once.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-screloc-s">
+<tt class="descname">-s</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--syslog</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-screloc-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use syslog logging back end. The output usually goes to /var/lib/messages.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-screloc-l">
+<tt class="descname">-l</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--lockfile</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-screloc-l" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path to lock file.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-screloc--console">
+<tt class="descname">--console</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-screloc--console" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send log output to stdout.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-screloc--debug">
+<tt class="descname">--debug</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-screloc--debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>Debug mode: --verbosity=4 --console=1</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-screloc--log-file">
+<tt class="descname">--log-file</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-screloc--log-file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use alternative log file.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="messaging">
+<h3>Messaging<a class="headerlink" href="#messaging" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-screloc-u">
+<tt class="descname">-u</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--user</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-screloc-u" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides configuration parameter <a class="reference internal" href="global.html#confval-connection.username"><tt class="xref std std-confval docutils literal"><span class="pre">connection.username</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-screloc-H">
+<tt class="descname">-H</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--host</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-screloc-H" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides configuration parameter <a class="reference internal" href="global.html#confval-connection.server"><tt class="xref std std-confval docutils literal"><span class="pre">connection.server</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-screloc-t">
+<tt class="descname">-t</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--timeout</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-screloc-t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides configuration parameter <a class="reference internal" href="global.html#confval-connection.timeout"><tt class="xref std std-confval docutils literal"><span class="pre">connection.timeout</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-screloc-g">
+<tt class="descname">-g</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--primary-group</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-screloc-g" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides configuration parameter <a class="reference internal" href="global.html#confval-connection.primaryGroup"><tt class="xref std std-confval docutils literal"><span class="pre">connection.primaryGroup</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-screloc-S">
+<tt class="descname">-S</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--subscribe-group</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-screloc-S" title="Permalink to this definition">¶</a></dt>
+<dd><p>A group to subscribe to. This option can be given more than once.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-screloc--encoding">
+<tt class="descname">--encoding</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-screloc--encoding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides configuration parameter <a class="reference internal" href="global.html#confval-connection.encoding"><tt class="xref std std-confval docutils literal"><span class="pre">connection.encoding</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-screloc--start-stop-msg">
+<tt class="descname">--start-stop-msg</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-screloc--start-stop-msg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets sending of a start- and a stop message.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="database">
+<h3>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-screloc--db-driver-list">
+<tt class="descname">--db-driver-list</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-screloc--db-driver-list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List all supported database drivers.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-screloc-d">
+<tt class="descname">-d</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--database</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-screloc-d" title="Permalink to this definition">¶</a></dt>
+<dd><p>The database connection string, format: <a class="reference external" href="service://user:pwd&#64;host/database">service://user:pwd&#64;host/database</a>.
+&quot;service&quot; is the name of the database driver which can be
+queried with &quot;--db-driver-list&quot;.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-screloc--config-module">
+<tt class="descname">--config-module</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-screloc--config-module" title="Permalink to this definition">¶</a></dt>
+<dd><p>The configmodule to use.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-screloc--inventory-db">
+<tt class="descname">--inventory-db</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-screloc--inventory-db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the inventory from the given database or file, format: [<a class="reference external" href="service://]location">service://]location</a></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-screloc--db-disable">
+<tt class="descname">--db-disable</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-screloc--db-disable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do not use the database at all</p>
+</dd></dl>
+
+</div>
+<div class="section" id="mode">
+<h3>Mode<a class="headerlink" href="#mode" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-screloc--test">
+<tt class="descname">--test</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-screloc--test" title="Permalink to this definition">¶</a></dt>
+<dd><p>test mode, do not send any message</p>
+</dd></dl>
+
+</div>
+<div class="section" id="input">
+<h3>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-screloc-O">
+<tt class="descname">-O</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--origin-id</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-screloc-O" title="Permalink to this definition">¶</a></dt>
+<dd><p>reprocess the origin and send a message unless test mode is activated</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-screloc--locator">
+<tt class="descname">--locator</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-screloc--locator" title="Permalink to this definition">¶</a></dt>
+<dd><p>the locator type to use</p>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scvsmag.html" title="scvsmag"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="scqc.html" title="scqc"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/processing.html" >Processing</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

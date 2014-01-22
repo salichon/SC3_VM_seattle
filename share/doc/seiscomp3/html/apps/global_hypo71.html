@@ -1,0 +1,256 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Hypo71 &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="global" href="../toc/extensions/global.html" />
+    <link rel="next" title="GUI" href="global_gui.html" />
+    <link rel="prev" title="Md" href="global_md.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="global_gui.html" title="GUI"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="global_md.html" title="Md"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/extensions.html" >Extensions</a> &raquo;</li>
+          <li><a href="../toc/extensions/global.html" accesskey="U">global</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Hypo71</a><ul>
+<li><a class="reference internal" href="#description">Description</a><ul>
+<li><a class="reference internal" href="#how-it-works">How it works</a></li>
+<li><a class="reference internal" href="#profiles">Profiles</a></li>
+<li><a class="reference internal" href="#more-informations">More informations</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#configuration">Configuration</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="global_md.html"
+                        title="previous chapter">Md</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="global_gui.html"
+                        title="next chapter">GUI</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/apps/global_hypo71.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="hypo71">
+<span id="global-hypo71"></span><h1>Hypo71<a class="headerlink" href="#hypo71" title="Permalink to this headline">¶</a></h1>
+<p>This plugin allows the use of traditionnal Hypo71PC locator with SeisComP3</p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Hypo71 locator plugin which provides a way to use HYPO71 program to locate events in SeisComP3.</p>
+<p>It uses a slightly modified Hypo71 version from Alexandre Nercessian (IPGP) which allows negative earthquake depth (above sea level)
+and negative stations altitude (below sea level - OBS).</p>
+<div class="section" id="how-it-works">
+<h3>How it works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h3>
+<p>When reveiving a list of arrivals to locate, the plugin builds a Hypo71 input file with informations from the station inventory and configured profile.
+It then runs Hypo71, reads the output file and sends the results (location, uncertainties, RMS, pick residuals ...) to SeisComP3.</p>
+<p>If several trial depths are configured, the plugin will runs as many Hypo71 as depths are configured.
+Then all the results are read, and a decision is made on the best one, based on location RMS and uncertainty.
+A final run is then made with the best result depth as trial depth.</p>
+</div>
+<div class="section" id="profiles">
+<h3>Profiles<a class="headerlink" href="#profiles" title="Permalink to this headline">¶</a></h3>
+<p>The plugin allows the user to set up as many profiles as needed.
+A profile contains all the information relative to the velocity model and Hypo71 iteration parameters.</p>
+<p>This allows the user to tune the behaviour of Hypo71 to what he needs.
+If no profiles are set-up, the plugin will use default Hypo71 profile, according to example shown in Hypo71 first publication.
+Some of this default Hypo71 parameters have been altered to allow for more and finer iteration, since computer power is now far above what was available in the 1970's.</p>
+</div>
+<div class="section" id="more-informations">
+<h3>More informations<a class="headerlink" href="#more-informations" title="Permalink to this headline">¶</a></h3>
+<p>Hypo71PC original manual and binary are available on JC Lahr website.
+<a class="reference external" href="http://jclahr.com/science/software/hypo71/">http://jclahr.com/science/software/hypo71/</a></p>
+</div>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<dl class="confval">
+<dt id="confval-hypo71.logFile">
+<tt class="descname">hypo71.logFile</tt><a class="headerlink" href="#confval-hypo71.logFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Temporary file used by Hypo71 to store calculation logs
+Default is <tt class="docutils literal"><span class="pre">HYPO71.LOG</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-hypo71.inputFile">
+<tt class="descname">hypo71.inputFile</tt><a class="headerlink" href="#confval-hypo71.inputFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Temporary file to write Hypo71 input data to
+Default is <tt class="docutils literal"><span class="pre">HYPO71.INP</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-hypo71.outputFile">
+<tt class="descname">hypo71.outputFile</tt><a class="headerlink" href="#confval-hypo71.outputFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Temporary output file to read Hypo71 localization data from
+Default is <tt class="docutils literal"><span class="pre">HYPO71.PRT</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-hypo71.defaultControlFile">
+<tt class="descname">hypo71.defaultControlFile</tt><a class="headerlink" href="#confval-hypo71.defaultControlFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Hypo71 default profile.
+If no custom profile is specified, this profile will be used by the plugin when proceeding to a localization.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-hypo71.hypo71BinaryFile">
+<tt class="descname">hypo71.hypo71BinaryFile</tt><a class="headerlink" href="#confval-hypo71.hypo71BinaryFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Filepath to Hypo71 binary.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-hypo71.hypo71ScriptFile">
+<tt class="descname">hypo71.hypo71ScriptFile</tt><a class="headerlink" href="#confval-hypo71.hypo71ScriptFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Bash script to use when calls have to be made by the plugin when proceeding to a localization</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-hypo71.profiles">
+<tt class="descname">hypo71.profiles</tt><a class="headerlink" href="#confval-hypo71.profiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>list:string</em></p>
+<p>Hypo71 profile name.
+Multiples names may be set, as long as they are separated by comma.
+Each profile can have different velocity or parameters.</p>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>hypo71.profile.$name.*</strong>
+<em>A profile contains a velocity model and Hypo71PC parameters</em>
+$name is a placeholder for the name to be used and needs to be added to <a class="reference internal" href="#confval-hypo71.profiles"><tt class="xref std std-confval docutils literal"><span class="pre">hypo71.profiles</span></tt></a> to become active.</p>
+<div class="last highlight-sh"><div class="highlight"><pre>hypo71.profiles <span class="o">=</span> a,b
+hypo71.profile.a.value1 <span class="o">=</span> ...
+hypo71.profile.b.value1 <span class="o">=</span> ...
+<span class="c"># c is not active because it has not been added</span>
+<span class="c"># to the list of hypo71.profiles</span>
+hypo71.profile.c.value1 <span class="o">=</span> ...
+</pre></div>
+</div>
+</div>
+<dl class="confval">
+<dt id="confval-hypo71.profile.$name.earthModelID">
+<tt class="descname">hypo71.profile.$name.earthModelID</tt><a class="headerlink" href="#confval-hypo71.profile.$name.earthModelID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Profile's velocity model name</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-hypo71.profile.$name.methodID">
+<tt class="descname">hypo71.profile.$name.methodID</tt><a class="headerlink" href="#confval-hypo71.profile.$name.methodID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Profile's method.
+It's generally the locator's name (Hypo71).</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-hypo71.profile.$name.controlFile">
+<tt class="descname">hypo71.profile.$name.controlFile</tt><a class="headerlink" href="#confval-hypo71.profile.$name.controlFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>File containing a profile parameters</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="global_gui.html" title="GUI"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="global_md.html" title="Md"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/extensions.html" >Extensions</a> &raquo;</li>
+          <li><a href="../toc/extensions/global.html" >global</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

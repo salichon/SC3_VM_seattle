@@ -1,0 +1,370 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>arclink_fetch &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="Utilities" href="../toc/utilities.html" />
+    <link rel="next" title="arclinktool" href="arclinktool.html" />
+    <link rel="prev" title="Utilities" href="../toc/utilities.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="arclinktool.html" title="arclinktool"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../toc/utilities.html" title="Utilities"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/utilities.html" accesskey="U">Utilities</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">arclink_fetch</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#input-file-format">Input File Format</a><ul>
+<li><a class="reference internal" href="#native-format">Native Format:</a></li>
+<li><a class="reference internal" href="#breq-fast-format">BREQ FAST Format:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#arclink-password-file-for-decryption">ArcLink Password File (for decryption)</a></li>
+<li><a class="reference internal" href="#miniseed-reblocking">MiniSeed reblocking</a></li>
+<li><a class="reference internal" href="#rebuilding-seed-volume">Rebuilding SEED volume</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#command-line">Command-line</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../toc/utilities.html"
+                        title="previous chapter">Utilities</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="arclinktool.html"
+                        title="next chapter">arclinktool</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/apps/arclink_fetch.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="arclink-fetch">
+<span id="id1"></span><h1>arclink_fetch<a class="headerlink" href="#arclink-fetch" title="Permalink to this headline">¶</a></h1>
+<p><strong>ArcLink CLI client.</strong></p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>arclink_fetch is a more sophisticated client that can be used to get data with
+a single command. It performs routing automatically. When you install SeisComP3
+it is automatically installed on your computer, but it may also be installed as
+a standalone package for users wishing only to request data from an ArcLink
+server.</p>
+</div>
+<div class="section" id="input-file-format">
+<h2>Input File Format<a class="headerlink" href="#input-file-format" title="Permalink to this headline">¶</a></h2>
+<p>ArcLink Fetch  program supports  two different input  formats for  the request
+file.  It  supports  the traditional  BREQ  FAST  format,  and its own  native
+format. Both formats  contains the same information and  they differ slightly.</p>
+<p>The program has the ability to read the request lines from files, or from the
+standard input (when no request file is supplied).</p>
+<div class="section" id="native-format">
+<h3>Native Format:<a class="headerlink" href="#native-format" title="Permalink to this headline">¶</a></h3>
+<p>The native format has the following format:</p>
+<div class="highlight-sh"><div class="highlight"><pre>YYYY,MM,DD,HH,MM,SS YYYY,MM,DD,HH,MM,SS Network Station Channel <span class="o">[</span>Location<span class="o">]</span>
+</pre></div>
+</div>
+<p>the Channel, Station and Location, can contains wildcards (*) and the Location
+field is optional. For matching all locations please use the '*' symbol, if
+empty it assumes that only empty locations are being requested.</p>
+<p>Example:</p>
+<div class="highlight-sh"><div class="highlight"><pre>2010,02,18,12,00,00 2010,02,18,12,10,00 GE WLF BH*
+2010,02,18,12,00,00 2010,02,18,12,10,00 GE VSU BH* 00
+</pre></div>
+</div>
+</div>
+<div class="section" id="breq-fast-format">
+<h3>BREQ FAST Format:<a class="headerlink" href="#breq-fast-format" title="Permalink to this headline">¶</a></h3>
+<p>The  BREQ FAST  format is  a  standard format  used on  seismology to  request
+data. Each header line start with '.' and the request lines have the following
+format:</p>
+<div class="highlight-sh"><div class="highlight"><pre>Station Network <span class="o">{</span>Time Start<span class="o">}</span> <span class="o">{</span>Time End<span class="o">}</span> <span class="o">{</span>Number of Channels<span class="o">}</span> N x Channels Location
+</pre></div>
+</div>
+<p>Time Specification should have the following format: YYYY MM DD HH MM SS.TTTT</p>
+<p>Please read more about the BREQ FAST format at:</p>
+<p><a class="reference external" href="http://www.iris.edu/manuals/breq_fast.htm">http://www.iris.edu/manuals/breq_fast.htm</a></p>
+</div>
+</div>
+<div class="section" id="arclink-password-file-for-decryption">
+<h2>ArcLink Password File (for decryption)<a class="headerlink" href="#arclink-password-file-for-decryption" title="Permalink to this headline">¶</a></h2>
+<p>In this file (default: dcidpasswords.txt) you can store your private passwords
+given by different  data centers. Each data center  that you request encrypted
+data will send you a different password.</p>
+<p>The format of the  file is really simple: just the data  center ID followed by
+the password that you received. One  data center ID and password per line. Any
+empty lines or lines starting with # are ignored.</p>
+<p>Example:</p>
+<div class="highlight-sh"><div class="highlight"><pre>gfz password1
+odc password2
+ipgp password3
+</pre></div>
+</div>
+<p>The data  center ID and password  can be found on the automatically generated
+e-mail that  you received from each  data center. (You will  only receive this
+email if  you have been  authorized to download  encrypted data, and  you have
+tried to download it.)</p>
+</div>
+<div class="section" id="miniseed-reblocking">
+<h2>MiniSeed reblocking<a class="headerlink" href="#miniseed-reblocking" title="Permalink to this headline">¶</a></h2>
+<p>The mseed4k data format (-k mseed4k) enables a client side re-blocking of the
+received MiniSeed records from the server to a default block size of 4096. This
+is especially important when you are downloading data from two different
+networks that were archived with different block sizes and would like to
+receive a uniform (in terms of block size) MiniSeed file.</p>
+<p>Some programs have problems to proper display miniseed packages with different
+block sizes on the same file. This issue can be avoided by instead of requesting
+MiniSeed data directly (-k mseed), just request re-blocked MiniSeed (-k mseed4k).</p>
+</div>
+<div class="section" id="rebuilding-seed-volume">
+<h2>Rebuilding SEED volume<a class="headerlink" href="#rebuilding-seed-volume" title="Permalink to this headline">¶</a></h2>
+<p>If -g option is used in combination with the fseed data format (-k fseed), then
+instead of full SEED, inventory and Mini-SEED is requested; full SEED volume is
+created from inventory and Mini-SEED data locally. In this case, waveform data
+from multiple data centers can be merged into one SEED volume.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>Example of a request file named &quot;req.txt&quot;:</p>
+<div class="highlight-sh"><div class="highlight"><pre>2010,02,18,12,00,00 2010,02,18,12,10,00 GE WLF BH*
+2010,02,18,12,00,00 2010,02,18,12,10,00 GE VSU BH*
+</pre></div>
+</div>
+<p>Submit the request in req.txt to the ArcLink server on st55, and download full
+SEED data to req.mseed.</p>
+<div class="highlight-sh"><div class="highlight"><pre>&gt; arclink_fetch -a st55:18002 -k fseed -g -u andres@gfz-potsdam.de <span class="se">\</span>
+                -o req.mseed -v req.txt
+requesting inventory from st55:18002
+requesting routing from st55:18002
+launching request thread <span class="o">(</span>st55:18002<span class="o">)</span>
+st55:18002: request 41 ready
+launching request thread <span class="o">(</span>st14:18002<span class="o">)</span>
+st14:18002: request 39 ready
+the following data requests were sent:
+GFTEST55
+Request ID: 41, Label: , Type: WAVEFORM, Args: <span class="nv">compression</span><span class="o">=</span>bzip2 <span class="nv">format</span><span class="o">=</span>MSEED
+Status: READY, Size: 37137, Info:
+  Volume ID: GFTEST, Status: OK, Size: 37137, Info:
+    Request: 2010,2,18,12,0,0 2010,2,18,12,10,0 GE WLF BHN .
+    Status: OK, Size: 15360, Info:
+    Request: 2010,2,18,12,0,0 2010,2,18,12,10,0 GE WLF BHE .
+    Status: OK, Size: 15360, Info:
+    Request: 2010,2,18,12,0,0 2010,2,18,12,10,0 GE WLF BHZ .
+    Status: OK, Size: 15872, Info:
+    Request: 2010,2,18,12,0,0 2010,2,18,12,10,0 GE VSU BHN .
+    Status: NODATA, Size: 0, Info:
+    Request: 2010,2,18,12,0,0 2010,2,18,12,10,0 GE VSU BHZ .
+    Status: NODATA, Size: 0, Info:
+    Request: 2010,2,18,12,0,0 2010,2,18,12,10,0 GE VSU BHE .
+    Status: NODATA, Size: 0, Info:
+GFTEST
+Request ID: 39, Label: , Type: WAVEFORM, Args: <span class="nv">compression</span><span class="o">=</span>bzip2 <span class="nv">format</span><span class="o">=</span>MSEED
+Status: READY, Size: 46269, Info:
+  Volume ID: GFTEST, Status: OK, Size: 46269, Info:
+    Request: 2010,2,18,12,0,0 2010,2,18,12,10,0 GE VSU BHN .
+    Status: OK, Size: 17408, Info:
+    Request: 2010,2,18,12,0,0 2010,2,18,12,10,0 GE VSU BHZ .
+    Status: OK, Size: 16896, Info:
+    Request: 2010,2,18,12,0,0 2010,2,18,12,10,0 GE VSU BHE .
+    Status: OK, Size: 17408, Info:
+rebuilding SEED volume
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Part of the request was routed to secondary server after the primary
+server returned NODATA.</p>
+</div>
+<p>This client is intended to connect to an ArcLink server as implemented by the <a class="reference internal" href="arclink.html#arclink"><em>Seiscomp3 Arclink Server</em></a> or to any other server implementing the <a class="reference internal" href="../base/arclink-protocol.html#arclink-protocol"><em>ArcLink protocol</em></a>.</p>
+</div>
+<div class="section" id="command-line">
+<h2>Command-line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h2>
+<dl class="option">
+<dt id="cmdoption-arclink_fetch--version">
+<tt class="descname">--version</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-arclink_fetch--version" title="Permalink to this definition">¶</a></dt>
+<dd><p>show program’s version number and exit</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arclink_fetch-h">
+<tt class="descname">-h</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--help</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-arclink_fetch-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show a help message and exit</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arclink_fetch-l">
+<tt class="descname">-l</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--longhelp</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-arclink_fetch-l" title="Permalink to this definition">¶</a></dt>
+<dd><p>show long help message and exit</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arclink_fetch-w">
+<tt class="descname">-w</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--password-file</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-arclink_fetch-w" title="Permalink to this definition">¶</a></dt>
+<dd><p>file containing passwords used for decryption of encrypted data.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arclink_fetch-a">
+<tt class="descname">-a</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--address</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-arclink_fetch-a" title="Permalink to this definition">¶</a></dt>
+<dd><p>address of primary ArcLink node</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arclink_fetch-f">
+<tt class="descname">-f</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--request-format</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-arclink_fetch-f" title="Permalink to this definition">¶</a></dt>
+<dd><p>request format: breqfast</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arclink_fetch-k">
+<tt class="descname">-k</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--data-format</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-arclink_fetch-k" title="Permalink to this definition">¶</a></dt>
+<dd><p>data format: mseed, mseed4k, fseed, dseed, inv[entory]</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arclink_fetch-n">
+<tt class="descname">-n</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--no-resp-dict</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-arclink_fetch-n" title="Permalink to this definition">¶</a></dt>
+<dd><p>avoid using response dictionary</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arclink_fetch-g">
+<tt class="descname">-g</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--rebuild-volume</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-arclink_fetch-g" title="Permalink to this definition">¶</a></dt>
+<dd><p>rebuild SEED volume</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arclink_fetch-p">
+<tt class="descname">-p</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--proxy</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-arclink_fetch-p" title="Permalink to this definition">¶</a></dt>
+<dd><p>proxy mode, no routing is performed, instead the request is sent directly for the server</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arclink_fetch-t">
+<tt class="descname">-t</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--timeout</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-arclink_fetch-t" title="Permalink to this definition">¶</a></dt>
+<dd><p>timeout in seconds</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arclink_fetch-x">
+<tt class="descname">-x</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--retries</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-arclink_fetch-x" title="Permalink to this definition">¶</a></dt>
+<dd><p>download retries</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arclink_fetch-v">
+<tt class="descname">-v</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-arclink_fetch-v" title="Permalink to this definition">¶</a></dt>
+<dd><p>increase verbosity level</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arclink_fetch-q">
+<tt class="descname">-q</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-arclink_fetch-q" title="Permalink to this definition">¶</a></dt>
+<dd><p>decrease verbosity level</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arclink_fetch-u">
+<tt class="descname">-u</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--user</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-arclink_fetch-u" title="Permalink to this definition">¶</a></dt>
+<dd><p>user's e-mail address</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arclink_fetch-o">
+<tt class="descname">-o</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--output-file</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-arclink_fetch-o" title="Permalink to this definition">¶</a></dt>
+<dd><p>file where downloaded data is written</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="arclinktool.html" title="arclinktool"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../toc/utilities.html" title="Utilities"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/utilities.html" >Utilities</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

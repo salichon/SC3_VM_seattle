@@ -1,0 +1,548 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>scm &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="Utilities" href="../toc/utilities.html" />
+    <link rel="next" title="scvoice" href="scvoice.html" />
+    <link rel="prev" title="scimport" href="scimport.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scvoice.html" title="scvoice"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="scimport.html" title="scimport"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/utilities.html" accesskey="U">Utilities</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">scm</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#filters">Filters</a><ul>
+<li><a class="reference internal" href="#numerical-operators">Numerical operators</a></li>
+<li><a class="reference internal" href="#logical-operators">Logical operators</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#multiple-instances">Multiple instances</a></li>
+<li><a class="reference internal" href="#configuration">Configuration</a><ul>
+<li><a class="reference internal" href="#email-extension">email extension</a></li>
+<li><a class="reference internal" href="#text-extension">text extension</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#command-line">Command-line</a><ul>
+<li><a class="reference internal" href="#generic">Generic</a></li>
+<li><a class="reference internal" href="#verbosity">Verbosity</a></li>
+<li><a class="reference internal" href="#messaging">Messaging</a></li>
+<li><a class="reference internal" href="#monitor">Monitor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="scimport.html"
+                        title="previous chapter">scimport</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="scvoice.html"
+                        title="next chapter">scvoice</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/apps/scm.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="scm">
+<span id="id1"></span><h1>scm<a class="headerlink" href="#scm" title="Permalink to this headline">¶</a></h1>
+<p><strong>Process monitor.</strong></p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>scm monitors client activity. scm connects to a certain master and periodically
+processes the status messages sent by the clients.</p>
+<p>Each client status if forwarded to the plugins loaded by scm. By default
+the <a class="reference internal" href="scm_ncurses.html#scm-ncurses"><em>mncursesplugin</em></a> is loaded which presents an interface
+similar to the gnu program top.</p>
+</div>
+<div class="section" id="filters">
+<h2>Filters<a class="headerlink" href="#filters" title="Permalink to this headline">¶</a></h2>
+<p>Plugins might support filtering client status information. To configure filters
+each plugin supports a configuration value <tt class="xref std std-confval docutils literal"><span class="pre">$name.filter</span></tt>. This filter
+is a string which can be constructed from available status info tags and logical
+and numerical operators.</p>
+<p>List of tags:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nb">time</span>
+privategroup
+hostname
+clientname
+ips
+programname
+pid
+cpuusage
+totalmemory
+clientmemoryusage
+memoryusage
+sentmessages
+receivedmessages
+messagequeuesize
+summedmessagequeuesize
+averagemessagequeuesize
+summedmessagesize
+averagemessagesize
+objectcount
+uptime
+responsetime
+</pre></div>
+</div>
+<p>A filter might look like this:</p>
+<div class="highlight-sh"><div class="highlight"><pre>memailplugin.filter <span class="o">=</span> <span class="s2">&quot;(cpuusage&gt;100 || totalmemory&gt;1000) &amp;&amp; hostname==proc-machine&quot;</span>
+</pre></div>
+</div>
+<div class="section" id="numerical-operators">
+<h3>Numerical operators<a class="headerlink" href="#numerical-operators" title="Permalink to this headline">¶</a></h3>
+<p>Numerical operators are applied to a tag name and a constant value.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Operator</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>==</td>
+<td>equal</td>
+</tr>
+<tr class="row-odd"><td>!=</td>
+<td>not equal</td>
+</tr>
+<tr class="row-even"><td>&lt;</td>
+<td>less than</td>
+</tr>
+<tr class="row-odd"><td>&gt;</td>
+<td>greater than</td>
+</tr>
+<tr class="row-even"><td>&lt;=</td>
+<td>less or equal</td>
+</tr>
+<tr class="row-odd"><td>&gt;=</td>
+<td>greater or equal</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="logical-operators">
+<h3>Logical operators<a class="headerlink" href="#logical-operators" title="Permalink to this headline">¶</a></h3>
+<p>Logical operators are applied to a group (might be enclosed in brackets) or
+numerical expressions.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Operator</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>!</td>
+<td>not</td>
+</tr>
+<tr class="row-odd"><td>&amp;&amp;</td>
+<td>and</td>
+</tr>
+<tr class="row-even"><td>||</td>
+<td>or</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="multiple-instances">
+<h2>Multiple instances<a class="headerlink" href="#multiple-instances" title="Permalink to this headline">¶</a></h2>
+<p>To monitor different clients sets with different criteria and different plugins
+it is common practice to create aliases of scm and to configure each instance
+separately</p>
+<div class="highlight-sh"><div class="highlight"><pre>seiscomp <span class="nb">alias </span>create scm_level1 scm
+seiscomp <span class="nb">alias </span>create scm_level2 scm
+</pre></div>
+</div>
+<p>where <strong class="program">scm_level1</strong> could monitor all mandatory clients whereas
+<strong class="program">scm_level2</strong> monitors all clients which are not crucial for operation.</p>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/defaults/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/defaults/scm.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/scm.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">~/.seiscomp3/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">~/.seiscomp3/scm.cfg</span></tt></div>
+</div>
+<p>scm inherits <a class="reference internal" href="global.html#global-configuration"><em>global options</em></a>.</p>
+<div class="section" id="email-extension">
+<span id="scm-email"></span><h3>email extension<a class="headerlink" href="#email-extension" title="Permalink to this headline">¶</a></h3>
+<p>Email plugin for scm which sends emails based on client status.</p>
+<dl class="confval">
+<dt id="confval-memailplugin.recipients">
+<tt class="descname">memailplugin.recipients</tt><a class="headerlink" href="#confval-memailplugin.recipients" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>list:string</em></p>
+<p>Defines a comma separated list of email addresses to send
+notifications to.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-memailplugin.template">
+<tt class="descname">memailplugin.template</tt><a class="headerlink" href="#confval-memailplugin.template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Configures a custom message text that is appended to each message
+when clients passed the filter.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-memailplugin.filter">
+<tt class="descname">memailplugin.filter</tt><a class="headerlink" href="#confval-memailplugin.filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Defines the filter for each client status. A filter is an expression
+that can be constructed with all available status tags (scm --print-tags)
+and logical and numerical operators. See scm for more information.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-memailplugin.requiredClients">
+<tt class="descname">memailplugin.requiredClients</tt><a class="headerlink" href="#confval-memailplugin.requiredClients" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>list:string</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-memailplugin.reportSilentClients">
+<tt class="descname">memailplugin.reportSilentClients</tt><a class="headerlink" href="#confval-memailplugin.reportSilentClients" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>Default is <tt class="docutils literal"><span class="pre">true</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-memailplugin.reportSilentClientsTimeSpan">
+<tt class="descname">memailplugin.reportSilentClientsTimeSpan</tt><a class="headerlink" href="#confval-memailplugin.reportSilentClientsTimeSpan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>double</em></p>
+<p>Default is <tt class="docutils literal"><span class="pre">1</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-memailplugin.reportRequiredClients">
+<tt class="descname">memailplugin.reportRequiredClients</tt><a class="headerlink" href="#confval-memailplugin.reportRequiredClients" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>double</em></p>
+<p>Default is <tt class="docutils literal"><span class="pre">10</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-memailplugin.filterMeanInterval">
+<tt class="descname">memailplugin.filterMeanInterval</tt><a class="headerlink" href="#confval-memailplugin.filterMeanInterval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>double</em></p>
+<p>Default is <tt class="docutils literal"><span class="pre">10</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-memailplugin.sendEmail">
+<tt class="descname">memailplugin.sendEmail</tt><a class="headerlink" href="#confval-memailplugin.sendEmail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>Enables sending of emails using mailx shell command.
+Default is <tt class="docutils literal"><span class="pre">false</span></tt>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="text-extension">
+<span id="scm-text"></span><h3>text extension<a class="headerlink" href="#text-extension" title="Permalink to this headline">¶</a></h3>
+<p>Text output plugin for scm.</p>
+<dl class="confval">
+<dt id="confval-mtextplugin.outputDir">
+<tt class="descname">mtextplugin.outputDir</tt><a class="headerlink" href="#confval-mtextplugin.outputDir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Output directory where [client].txt is written to. Additionally
+an file description.txt will be created to show the order of
+tags used in the client status file.
+Default is <tt class="docutils literal"><span class="pre">&#64;LOGDIR&#64;/scm/</span></tt>.</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="command-line">
+<h2>Command-line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="generic">
+<h3>Generic<a class="headerlink" href="#generic" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-scm-h">
+<tt class="descname">-h</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--help</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scm-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show help message.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scm-V">
+<tt class="descname">-V</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--version</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scm-V" title="Permalink to this definition">¶</a></dt>
+<dd><p>show version information</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scm--config-file">
+<tt class="descname">--config-file</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scm--config-file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use alternative configuration file. When this option is used
+the loading of all stages is disabled. Only the given configuration
+file is parsed and used. To use another name for the configuration
+create a symbolic link of the application or copy it, eg scautopick -&gt; scautopick2.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scm--plugins">
+<tt class="descname">--plugins</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scm--plugins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load given plugins.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scm-D">
+<tt class="descname">-D</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--daemon</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scm-D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run as daemon. This means the application will fork itself and
+doesn't need to be started with &amp;.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scm--auto-shutdown">
+<tt class="descname">--auto-shutdown</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scm--auto-shutdown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable/disable self-shutdown because a master module shutdown. This only
+works when messaging is enabled and the master module sends a shutdown
+message (enabled with --start-stop-msg for the master module).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scm--shutdown-master-module">
+<tt class="descname">--shutdown-master-module</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scm--shutdown-master-module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the name of the master-module used for auto-shutdown. This
+is the application name of the module actually started. If symlinks
+are used then it is the name of the symlinked application.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scm--shutdown-master-username">
+<tt class="descname">--shutdown-master-username</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scm--shutdown-master-username" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the name of the master-username of the messaging used for
+auto-shutdown. If &quot;shutdown-master-module&quot; is given as well this
+parameter is ignored.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="verbosity">
+<h3>Verbosity<a class="headerlink" href="#verbosity" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-scm--verbosity">
+<tt class="descname">--verbosity</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scm--verbosity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verbosity level [0..4]. 0:quiet, 1:error, 2:warning, 3:info, 4:debug</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scm-v">
+<tt class="descname">-v</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--v</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scm-v" title="Permalink to this definition">¶</a></dt>
+<dd><p>Increase verbosity level (may be repeated, eg. -vv)</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scm-q">
+<tt class="descname">-q</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--quiet</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scm-q" title="Permalink to this definition">¶</a></dt>
+<dd><p>Quiet mode: no logging output</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scm--component">
+<tt class="descname">--component</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scm--component" title="Permalink to this definition">¶</a></dt>
+<dd><p>Limits the logging to a certain component. This option can be given more than once.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scm-s">
+<tt class="descname">-s</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--syslog</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scm-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use syslog logging back end. The output usually goes to /var/lib/messages.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scm-l">
+<tt class="descname">-l</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--lockfile</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scm-l" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path to lock file.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scm--console">
+<tt class="descname">--console</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scm--console" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send log output to stdout.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scm--debug">
+<tt class="descname">--debug</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scm--debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>Debug mode: --verbosity=4 --console=1</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scm--log-file">
+<tt class="descname">--log-file</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scm--log-file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use alternative log file.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="messaging">
+<h3>Messaging<a class="headerlink" href="#messaging" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-scm-u">
+<tt class="descname">-u</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--user</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scm-u" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides configuration parameter <a class="reference internal" href="global.html#confval-connection.username"><tt class="xref std std-confval docutils literal"><span class="pre">connection.username</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scm-H">
+<tt class="descname">-H</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--host</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scm-H" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides configuration parameter <a class="reference internal" href="global.html#confval-connection.server"><tt class="xref std std-confval docutils literal"><span class="pre">connection.server</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scm-t">
+<tt class="descname">-t</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--timeout</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scm-t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides configuration parameter <a class="reference internal" href="global.html#confval-connection.timeout"><tt class="xref std std-confval docutils literal"><span class="pre">connection.timeout</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scm-g">
+<tt class="descname">-g</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--primary-group</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scm-g" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides configuration parameter <a class="reference internal" href="global.html#confval-connection.primaryGroup"><tt class="xref std std-confval docutils literal"><span class="pre">connection.primaryGroup</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scm-S">
+<tt class="descname">-S</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--subscribe-group</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scm-S" title="Permalink to this definition">¶</a></dt>
+<dd><p>A group to subscribe to. This option can be given more than once.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scm--encoding">
+<tt class="descname">--encoding</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scm--encoding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides configuration parameter <a class="reference internal" href="global.html#confval-connection.encoding"><tt class="xref std std-confval docutils literal"><span class="pre">connection.encoding</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scm--start-stop-msg">
+<tt class="descname">--start-stop-msg</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scm--start-stop-msg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets sending of a start- and a stop message.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="monitor">
+<h3>Monitor<a class="headerlink" href="#monitor" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-scm-c">
+<tt class="descname">-c</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--clients</tt><tt class="descclassname"> list</tt><a class="headerlink" href="#cmdoption-scm-c" title="Permalink to this definition">¶</a></dt>
+<dd><p>Comma separated list of clients to monitor.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scm--print-tags">
+<tt class="descname">--print-tags</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scm--print-tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print available keys for accessing client info data and to build
+filter configurations.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scm--no-output-plugins">
+<tt class="descname">--no-output-plugins</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scm--no-output-plugins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do not use output plugins such as mncursesplugin.</p>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scvoice.html" title="scvoice"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="scimport.html" title="scimport"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/utilities.html" >Utilities</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

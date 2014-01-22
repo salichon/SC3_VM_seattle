@@ -1,0 +1,161 @@
+.TH "SCQCV" "1" "January 21, 2014" "2014.016" "SeisComP3"
+.SH NAME
+scqcv \- SeisComP3 Documentation
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.\" Man page generated from reStructeredText.
+.
+.sp
+\fBQuality control view\fP
+.SH DESCRIPTION
+.sp
+scqcv provides both, a brief overview of the seismometer network status and a
+detailed view of specific stream parameters. Quality Control (QC) parameters,
+determined by scqc and sent via messaging system, are received and displayed.
+\fI\%Tabulator view of scqcv\fP shows the tabular view of the QC report messages.
+Each QC parameter is shown in a column. The default sorting by stream code can
+be changed by pressing a header field of a parameter. A widget displaying the
+currently received waveform data is shown by pressing the cell with the stream
+information. Positioning the mouse over the parameter cell a ToolTip indicates
+more detailed information for the selected parameter. Typing a regular
+expression in the "StreamIDFilter" text entry field will result in a stream code
+filter, only displaying the matching stream codes with qc parameter. Green
+colored fields indicate that the QC parameter values lie within the configured
+"good" interval. Red colors indicate that the QC parameters lie outside the
+tolerated value interval \-\- this stream might have an issue.
+.INDENT 0.0
+.INDENT 2.5
+[image]
+Tabulator view of scqcv.UNINDENT
+.UNINDENT
+.sp
+\fI\%Status overview of scqcv\fP shows the status overview grouped by network code.
+The more the color varies to dark red, the worse the waveform data might be.
+A dark red color indicates a stream with high latency. Light to darker red
+represents a badness sum of related QC parameters. Colors are subject to be
+changed in near future. Pressing a stream code item opens a single line table
+with detailed information of the selected stream. Again it is possible to open
+a real time waveform widget by pressing the leading header field indicating
+the stream code. Typing a regular expression in the bottom text entry field
+will result in a stream code filter, only displaying the matching stream codes.
+.INDENT 0.0
+.INDENT 2.5
+[image]
+Status overview of scqcv.UNINDENT
+.UNINDENT
+.sp
+The compact status overview allows a quick impression of the present status of
+all received streams (\fI\%Compact status overview of scqcv\fP). Functionality is equal to the
+status overview grouped by network. You can switch between compact view and
+network seperated view by clicking the checkbox in the bottom line.
+.INDENT 0.0
+.INDENT 2.5
+[image]
+Compact status overview of scqcv.UNINDENT
+.UNINDENT
+.SH EXAMPLE CONFIGURATION
+.sp
+.nf
+.ft C
+connection.subscription = QC
+plugins = qcplugin_delay, qcplugin_latency, qcplugin_timing, \e
+          qcplugin_rms, qcplugin_offset, qcplugin_gap, \e
+          qcplugin_spike
+plugins.default.expire = 0
+plugins.default.goodInterval = 0.0, 99E99
+plugins.default.useAbs4good = 0
+plugins.qcplugin_spike.expire = 600
+plugins.qcplugin_spike.goodInterval = 0.0, 0.0
+plugins.qcplugin_gap.expire = 600
+plugins.qcplugin_gap.goodInterval = 0.0, 0.0
+plugins.qcplugin_offset.useAbs4good = 1
+plugins.qcplugin_offset.goodInterval = 0.0, 550E3
+plugins.qcplugin_delay.goodInterval = 0.0, 60.0
+plugins.qcplugin_latency.goodInterval = 0.0, 300.0
+plugins.qcplugin_timing.goodInterval = 50, 100
+plugins.qcplugin_rms.goodInterval = 10.0, 10E6
+.ft P
+.fi
+.SH CONFIGURATION
+.nf
+\fBetc/defaults/global.cfg\fP
+\fBetc/defaults/scqcv.cfg\fP
+\fBetc/global.cfg\fP
+\fBetc/scqcv.cfg\fP
+\fB~/.seiscomp3/global.cfg\fP
+\fB~/.seiscomp3/scqcv.cfg\fP
+.fi
+.sp
+.sp
+scqcv inherits \fIglobal options\fP.
+.IP Note
+\fBplugins.$name.*\fP
+$name is a placeholder for the name to be used.
+.RE
+.INDENT 0.0
+.TP
+.B plugins.$name.expire
+Type: \fIinteger\fP
+.sp
+Default time in seconds, how long a value is displayed in scqcv
+if no update is received. Setting to 0 means, show value until
+updated.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B plugins.$name.goodInterval
+Type: \fIstring\fP
+.sp
+Default thresholds in between that a QC parameter value is defined
+as "good". Each QC plug\-in should define its own threshold.
+Format is <double>, <double>.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B plugins.$name.useAbs4good
+Type: \fIboolean\fP
+.sp
+Default sorting behavior. Setting to true means handle positive
+and negative values equally while sorting, i.e. use absolute
+values for sorting but display real values (e.g.: \-1, 1, 2, 3,
+\-4, 5, \-8, 8, 9, 10, ...).
+.UNINDENT
+.INDENT 0.0
+.TP
+.B streams.codes
+Type: \fIlist:string\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.SH AUTHOR
+GFZ Potsdam
+.SH COPYRIGHT
+2014, GFZ Potsdam, gempa GmbH
+.\" Generated by docutils manpage writer.
+.\" 
+.

@@ -1,0 +1,231 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Introduction and Scope &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="next" title="Installation" href="installation.html" />
+    <link rel="prev" title="SeisComP3 documentation" href="../index.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="installation.html" title="Installation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="SeisComP3 documentation"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+ 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../index.html"
+                        title="previous chapter">SeisComP3 documentation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="installation.html"
+                        title="next chapter">Installation</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/base/introduction.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="introduction-and-scope">
+<h1>Introduction and Scope<a class="headerlink" href="#introduction-and-scope" title="Permalink to this headline">¶</a></h1>
+<p>SeisComP is likely the most widely distributed software package for
+seismological data acquisition and real-time data exchange over internet. Its
+data transmission protocol SeedLink became a de facto world standard. The first
+version of SeisComP was developed for the
+<a class="reference external" href="http://geofon.gfz-potsdam.de/geofon/">GEOFON</a> network and further extended
+within the MEREDIAN project under the lead of
+<a class="reference external" href="http://geofon.gfz-potsdam.de/geofon/">GEOFON</a>/<a class="reference external" href="http://www.gfz-potsdam.de/">GFZ</a>
+Potsdam and <a class="reference external" href="http://www.orfeus-eu.org/">ORFEUS</a>. Originally SeisComP was
+designed as a high standard fully automatic data acquisition and (near-)real-time
+data processing tool including quality control, event detection and location as
+well as dissemination of event alerts. In the context of the
+<a class="reference external" href="http://www.gitews.de/">GITEWS</a> project (German Indian Ocean Tsunami Early
+Warning System) additional functionality were implemented to fulfil the
+requirements of 24/7 early warning control centers. Major changes in the
+architecture of SeisComP were necessary and many new features result in the
+upgrade of SeisComP to version 3. Important SeisComP releases are shown below.
+A first prototype of SeisComP3 developed by the GITEWS/GEOFON development group
+was released in May 2007. SeisComP3 provides the following features:</p>
+<ul class="simple">
+<li>data acquisition</li>
+<li>data quality control</li>
+<li>data recording</li>
+<li>real-time data exchange</li>
+<li>network status monitoring</li>
+<li>real-time data processing</li>
+<li>issuing event alerts</li>
+<li>waveform archiving</li>
+<li>waveform data distribution</li>
+<li>automatic event detection and location</li>
+<li>interactive event detection and location</li>
+<li>event parameter archiving</li>
+<li>easy access to relevant information about stations, waveforms and recent
+earthquakes</li>
+</ul>
+<p>The new requirements for early warning purposes made it necessary to adopt the
+design and architecture of the previous SeisComP. The guidelines for the design
+of SeisComP3 are:</p>
+<ul class="simple">
+<li>implementation of critical functions as standalone modules to guarantee the
+independence from other functions (e.g. picker, magnitude calculation,
+interactive analysis)</li>
+<li>easy implementation of custom modules</li>
+<li>independence of hard- and software</li>
+<li>ability of data exchange between different automatic real-time systems</li>
+<li>distribution of modules on several systems</li>
+<li>robust system for rapid and reliable earthquake solutions (especially during
+seismic crises)</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="34%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Version</th>
+<th class="head">Time</th>
+<th class="head">&nbsp;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1.0</td>
+<td>February 2001</td>
+<td>SeedLink 2.0 (plugin interface) Plugins for
+EarthData PS2400 and Lennartz M24</td>
+</tr>
+<tr class="row-odd"><td>1.1</td>
+<td>August 2001</td>
+<td>SeedLink 2.1 (streams.xml, improved buffer
+structure); make conf/make key scripts LISS
+plugin, SeedLink-Antelope connectivity</td>
+</tr>
+<tr class="row-even"><td>1.1.5</td>
+<td>January 2002</td>
+<td>SeedLink 2.5 (multi-station mode)</td>
+</tr>
+<tr class="row-odd"><td>1.16</td>
+<td>March 2002</td>
+<td>GIF live seismograms</td>
+</tr>
+<tr class="row-even"><td>2.0</td>
+<td>October 2003</td>
+<td>SeedLink 3.0 (INFO request, time window extraction)
+libslink, chain plugin, Comserv-independence</td>
+</tr>
+<tr class="row-odd"><td>2.1</td>
+<td>June 2004</td>
+<td>Python add-on package (SeisPy) incl. AutoLoc2 chain
+plugin extension interface, triggered streams</td>
+</tr>
+<tr class="row-even"><td>2.5</td>
+<td>March 2006</td>
+<td>Integration of add-on packages, modular config
+script</td>
+</tr>
+<tr class="row-odd"><td>3.0</td>
+<td>alpha May 2007</td>
+<td>new architecture, new magnitude types, GUI</td>
+</tr>
+<tr class="row-even"><td>3.0</td>
+<td>Barcelona release May 2008</td>
+<td>Stability and performance improvements, improved
+GUI functionality</td>
+</tr>
+<tr class="row-odd"><td>3.0</td>
+<td>Erice release May 2009</td>
+<td>New Earthquake Schema and performance improvements,
+improved GUI functionality</td>
+</tr>
+<tr class="row-even"><td>3.0</td>
+<td>Potsdam release September 2010</td>
+<td>New Inventory Schema and performance improvements,
+improved GUI functionality</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="installation.html" title="Installation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="SeisComP3 documentation"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+ 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+######
+System
+######
+
+.. toctree::
+   :maxdepth: 2
+
+   /apps/diskmon
+   /apps/kernel

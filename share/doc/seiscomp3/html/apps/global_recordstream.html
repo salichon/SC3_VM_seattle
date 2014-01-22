@@ -1,0 +1,425 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>RecordStream &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="global" href="../toc/extensions/global.html" />
+    <link rel="next" title="MLv" href="global_mlv.html" />
+    <link rel="prev" title="global" href="../toc/extensions/global.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="global_mlv.html" title="MLv"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../toc/extensions/global.html" title="global"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/extensions.html" >Extensions</a> &raquo;</li>
+          <li><a href="../toc/extensions/global.html" accesskey="U">global</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">RecordStream</a><ul>
+<li><a class="reference internal" href="#description">Description</a><ul>
+<li><a class="reference internal" href="#seedlink">SeedLink</a><ul>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#arclink">ArcLink</a><ul>
+<li><a class="reference internal" href="#id1">Examples</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#fdsnws">FDSNWS</a><ul>
+<li><a class="reference internal" href="#id2">Examples</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#file">File</a><ul>
+<li><a class="reference internal" href="#id3">Examples</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#archive">Archive</a><ul>
+<li><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sdsarchive">SDSArchive</a><ul>
+<li><a class="reference internal" href="#id4">Example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#odcarchive">ODCArchive</a><ul>
+<li><a class="reference internal" href="#id5">Example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#memory">Memory</a></li>
+<li><a class="reference internal" href="#combined">Combined</a><ul>
+<li><a class="reference internal" href="#id6">Examples</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#decimation">Decimation</a><ul>
+<li><a class="reference internal" href="#id7">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../toc/extensions/global.html"
+                        title="previous chapter">global</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="global_mlv.html"
+                        title="next chapter">MLv</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/apps/global_recordstream.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="recordstream">
+<span id="global-recordstream"></span><h1>RecordStream<a class="headerlink" href="#recordstream" title="Permalink to this headline">¶</a></h1>
+<p>RecordStream interface for SeisComP.</p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>SeisComP applications access waveform data through the RecordStream interface. The following tables lists available implementations:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Service Prefix</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="#rs-slink"><em>SeedLink</em></a></td>
+<td><tt class="docutils literal"><span class="pre">slink</span></tt></td>
+<td>Connects to <a class="reference internal" href="seedlink.html#seedlink"><em>SeedLink server</em></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#rs-arclink"><em>ArcLink</em></a></td>
+<td><tt class="docutils literal"><span class="pre">arclink</span></tt></td>
+<td>Connects to <a class="reference internal" href="arclink.html#arclink"><em>ArcLink server</em></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#rs-fdsnws"><em>FDSNWS</em></a></td>
+<td><tt class="docutils literal"><span class="pre">fdsnws</span></tt></td>
+<td>Connects to <a class="reference internal" href="fdsnws.html#fdsnws"><em>FDSN Web service</em></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#rs-file"><em>File</em></a></td>
+<td><tt class="docutils literal"><span class="pre">file</span></tt></td>
+<td>Reads records from file</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#rs-archive"><em>Archive</em></a></td>
+<td><tt class="docutils literal"><span class="pre">archive</span></tt></td>
+<td>Reads all record files found in directory (and subdirectories)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#rs-sdsarchive"><em>SDSArchive</em></a></td>
+<td><tt class="docutils literal"><span class="pre">sdsarchive</span></tt></td>
+<td>Reads records from SeisComP archive (SDS)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#rs-odcarchive"><em>ODCArchive</em></a></td>
+<td><tt class="docutils literal"><span class="pre">odcarchive</span></tt></td>
+<td>Reads records from Orpheus archive (ODC)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#rs-memory"><em>Memory</em></a></td>
+<td><tt class="docutils literal"><span class="pre">memory</span></tt></td>
+<td>Reads records from memory</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#rs-combined"><em>Combined</em></a></td>
+<td><tt class="docutils literal"><span class="pre">combined</span></tt></td>
+<td>Combines archive and real-time stream</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#rs-dec"><em>Decimation</em></a></td>
+<td><tt class="docutils literal"><span class="pre">dec</span></tt></td>
+<td>Decimates (resamples) a proxy stream</td>
+</tr>
+</tbody>
+</table>
+<p>The RecordStream used by an application is either specified on the the
+commandline (<cite>-I URI</cite>) or configured through using the parameters
+<a class="reference internal" href="global.html#confval-recordstream.service"><tt class="xref std std-confval docutils literal"><span class="pre">recordstream.service</span></tt></a> and <a class="reference internal" href="global.html#confval-recordstream.source"><tt class="xref std std-confval docutils literal"><span class="pre">recordstream.source</span></tt></a>. While the
+<cite>service</cite> defines the RecordSteam implementation, the <cite>source</cite> supplies
+parameters like a IP address or a file name to use.</p>
+<div class="section" id="seedlink">
+<span id="rs-slink"></span><h3>SeedLink<a class="headerlink" href="#seedlink" title="Permalink to this headline">¶</a></h3>
+<p>This RecordStream fetches data from a SeedLink server. The source is read as an
+URL and supports URL encoded parameters. The default host ist set to
+<cite>localhost</cite>, the default port to <cite>18000</cite>. Optional parameters are:</p>
+<ul class="simple">
+<li><cite>timeout</cite> - connection timeout in seconds, default: 300</li>
+<li><cite>retries</cite> - number of connection retry attempts, default: 0</li>
+</ul>
+<div class="section" id="examples">
+<h4>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">slink://</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">slink://geofon.gfz-potsdam.de?timeout=60&amp;retries=5</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">slink://localhost:18042</span></tt></li>
+</ul>
+</div>
+</div>
+<div class="section" id="arclink">
+<span id="rs-arclink"></span><h3>ArcLink<a class="headerlink" href="#arclink" title="Permalink to this headline">¶</a></h3>
+<p>This RecordStream fetches data from a ArcLink server. The source is read as an
+URL and supports URL encoded parameters. The default host ist set to
+<cite>localhost</cite>, the default port to <cite>18001</cite>. Optional parameters are:</p>
+<ul class="simple">
+<li><cite>user</cite> - user name required on some servers</li>
+<li><cite>pwd</cite> - password required on some servers</li>
+</ul>
+<div class="section" id="id1">
+<h4>Examples<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">arclink://</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">arclink://geofon.gfz-potsdam.de?user=foo&amp;pwd=secret</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">arclink://localhost:18042</span></tt></li>
+</ul>
+</div>
+</div>
+<div class="section" id="fdsnws">
+<span id="rs-fdsnws"></span><h3>FDSNWS<a class="headerlink" href="#fdsnws" title="Permalink to this headline">¶</a></h3>
+<p>This RecordStream fetches data from a FDSN Web service. The source is read as an
+URL.</p>
+<div class="section" id="id2">
+<h4>Examples<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">fdsnws://service.iris.edu:80/fdsnws/dataselect/1/query</span></tt></li>
+</ul>
+</div>
+</div>
+<div class="section" id="file">
+<span id="rs-file"></span><h3>File<a class="headerlink" href="#file" title="Permalink to this headline">¶</a></h3>
+<p>This RecordStream reads data from a file. The source is read as an file path. If
+the source is set to <cite>'-'</cite> the data is read from <cite>stdin</cite>. By default the record
+type is set to <cite>mseed</cite>. If a file name extension is available the record type is
+set as follows:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="45%" />
+<col width="55%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Extension</th>
+<th class="head">Record Type</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><cite>*.xml</cite></td>
+<td><cite>xml</cite></td>
+</tr>
+<tr class="row-odd"><td><cite>*.bin</cite></td>
+<td><cite>binary</cite></td>
+</tr>
+<tr class="row-even"><td><cite>*.mseed</cite></td>
+<td><cite>mseed</cite></td>
+</tr>
+<tr class="row-odd"><td><cite>*.ah</cite></td>
+<td><cite>ah</cite></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id3">
+<h4>Examples<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">file://-</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">file:///tmp/input.mseed</span></tt></li>
+</ul>
+</div>
+</div>
+<div class="section" id="archive">
+<span id="rs-archive"></span><h3>Archive<a class="headerlink" href="#archive" title="Permalink to this headline">¶</a></h3>
+<p>This RecordStream recursively traverses a directory and reads records from all
+files found using the <a class="reference internal" href="#rs-file"><em>File</em></a> RecordStream. The source is interpreted as
+a directory path.</p>
+<div class="section" id="example">
+<h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">archive:///path/to/record/archive</span></tt></li>
+</ul>
+</div>
+</div>
+<div class="section" id="sdsarchive">
+<span id="rs-sdsarchive"></span><h3>SDSArchive<a class="headerlink" href="#sdsarchive" title="Permalink to this headline">¶</a></h3>
+<p>This RecordStream reads data from an SeisComP (SDS) archive using the
+<a class="reference internal" href="#rs-file"><em>File</em></a> RecordStream. The source is interpreted as a directory path.</p>
+<div class="section" id="id4">
+<h4>Example<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">sdsarchive:///home/sysop/seiscomp3/var/lib/archive</span></tt></li>
+</ul>
+</div>
+</div>
+<div class="section" id="odcarchive">
+<span id="rs-odcarchive"></span><h3>ODCArchive<a class="headerlink" href="#odcarchive" title="Permalink to this headline">¶</a></h3>
+<p>This RecordStream reads data from an ODC archive using the <a class="reference internal" href="#rs-file"><em>File</em></a>
+RecordStream. The source is interpreted as a directory path.</p>
+<div class="section" id="id5">
+<h4>Example<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">odcarchive:///path/to/record/archive</span></tt></li>
+</ul>
+</div>
+</div>
+<div class="section" id="memory">
+<span id="rs-memory"></span><h3>Memory<a class="headerlink" href="#memory" title="Permalink to this headline">¶</a></h3>
+<p>This RecordStream reads data from memory and is only useful for developing
+applications. For instance a record sequence stored in an internal buffer could
+be passed to an instance of this RecordStream for reading.</p>
+</div>
+<div class="section" id="combined">
+<span id="rs-combined"></span><h3>Combined<a class="headerlink" href="#combined" title="Permalink to this headline">¶</a></h3>
+<p>This RecordStream combines one archive and one real-time RecordStream, e.g.
+<a class="reference internal" href="#rs-arclink"><em>ArcLink</em></a> and <a class="reference internal" href="#rs-slink"><em>SeedLink</em></a>. First the archive stream is read up to
+the size of the real-time buffer. Then the acquisition is switched to the
+real-time stream. The syntax for the source is similar to an URL:</p>
+<p><tt class="docutils literal"><span class="pre">combined://real-time-stream;archive-stream??parameters</span></tt></p>
+<p>By default the real-time stream is set to ::ref::<cite>rs-slink</cite> and the
+archive-stream is set to <a class="reference internal" href="arclink.html#arclink"><em>arclink</em></a>. Any other streams may be configured.
+The parameters of the combined stream are separated by 2 question marks (<cite>??</cite>)
+in order to distinguish them from the parameters used in the proxy streams:</p>
+<ul class="simple">
+<li><cite>slinkMax|rtMax</cite> - Buffer size in seconds of the real-time stream, default: 3600</li>
+</ul>
+<div class="section" id="id6">
+<h4>Examples<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">combined://localhost:18000;localhost:18001</span></tt></td>
+<td>Seedlink on localhost:18000 combined with Arclink on localhost 18001</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">combined://slink/localhost:18000;arclink/localhost:18001</span></tt></td>
+<td>Same as above</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">combined://;</span></tt></td>
+<td>Same as above</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">combined://:18042;?user=foo&amp;pwd=secret??rtMax=1800</span></tt></td>
+<td>Seedlink on localhost:18042 combined with Arclink on localhost 18001, real-time (SeedLink) buffer size set to 30min</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">combined://;sdsarchive//home/sysop/seiscomp3/var/lib/archive?</span></tt></td>
+<td>Seedlink combined with SDS archive</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="decimation">
+<span id="rs-dec"></span><h3>Decimation<a class="headerlink" href="#decimation" title="Permalink to this headline">¶</a></h3>
+<p>This RecordStream decimates (resamples) a proxy stream, e.g. <a class="reference internal" href="#rs-slink"><em>SeedLink</em></a>.
+The syntax for the source is similar to an URL:</p>
+<p><tt class="docutils literal"><span class="pre">dec://proxy-stream?parameters/address</span></tt></p>
+<p>Optional parameters are:</p>
+<ul class="simple">
+<li><cite>rate</cite> - target sampling rate in Hz, default: 1</li>
+<li><cite>fp</cite> - default: 0.7</li>
+<li><cite>fs</cite> - default: 0.9</li>
+<li><cite>cs</cite> - coefficient scale, default: 10</li>
+</ul>
+<div class="section" id="id7">
+<h4>Examples<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">dec://slink/localhost:18000</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">dec://file?rate=2/-</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">dec://combined/;</span></tt></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="global_mlv.html" title="MLv"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../toc/extensions/global.html" title="global"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/extensions.html" >Extensions</a> &raquo;</li>
+          <li><a href="../toc/extensions/global.html" >global</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

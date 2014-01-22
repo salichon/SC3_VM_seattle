@@ -1,0 +1,256 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Utilities &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="next" title="arclink_fetch" href="../apps/arclink_fetch.html" />
+    <link rel="prev" title="kernel" href="../apps/kernel.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../apps/arclink_fetch.html" title="arclink_fetch"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../apps/kernel.html" title="kernel"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+ 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../apps/kernel.html"
+                        title="previous chapter">kernel</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../apps/arclink_fetch.html"
+                        title="next chapter">arclink_fetch</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/toc/utilities.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="utilities">
+<h1>Utilities<a class="headerlink" href="#utilities" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../apps/arclink_fetch.html">arclink_fetch</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/arclink_fetch.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/arclink_fetch.html#input-file-format">Input File Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/arclink_fetch.html#arclink-password-file-for-decryption">ArcLink Password File (for decryption)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/arclink_fetch.html#miniseed-reblocking">MiniSeed reblocking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/arclink_fetch.html#rebuilding-seed-volume">Rebuilding SEED volume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/arclink_fetch.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/arclink_fetch.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/arclinktool.html">arclinktool</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/arclinktool.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/arclinktool.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/arclinktool.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/fdsnws.html">fdsnws</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/fdsnws.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/fdsnws.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/fdsnws.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/scalert.html">scalert</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scalert.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scalert.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scalert.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/scart.html">scart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scart.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scart.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/scbulletin.html">scbulletin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scbulletin.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scbulletin.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scbulletin.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scbulletin.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/scchkcfg.html">scchkcfg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scchkcfg.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scchkcfg.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scchkcfg.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/scconfig.html">scconfig</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scconfig.html#description">Description</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/scdb.html">scdb</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scdb.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scdb.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scdb.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/scdispatch.html">scdispatch</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scdispatch.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scdispatch.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scdispatch.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scdispatch.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/scevtlog.html">scevtlog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scevtlog.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scevtlog.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scevtlog.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/scevtls.html">scevtls</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scevtls.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scevtls.html#example">Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scevtls.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scevtls.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/scevtstreams.html">scevtstreams</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scevtstreams.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scevtstreams.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scevtstreams.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scevtstreams.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/scimex.html">scimex</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scimex.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scimex.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scimex.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scimex.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/scimport.html">scimport</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scimport.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scimport.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scimport.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scimport.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/scm.html">scm</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scm.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scm.html#filters">Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scm.html#multiple-instances">Multiple instances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scm.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scm.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/scvoice.html">scvoice</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scvoice.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scvoice.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scvoice.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scvoice.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/scxmldump.html">scxmldump</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scxmldump.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scxmldump.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/scxmldump.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/sczip.html">sczip</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/sczip.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/sczip.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/sczip.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/sczip.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/sync_arc.html">sync_arc</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/sync_arc.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/sync_arc.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/sync_arc.html#command-line">Command-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../apps/wsiris.html">wsiris</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../apps/wsiris.html#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/wsiris.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apps/wsiris.html#command-line">Command-line</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../apps/arclink_fetch.html" title="arclink_fetch"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../apps/kernel.html" title="kernel"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+ 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

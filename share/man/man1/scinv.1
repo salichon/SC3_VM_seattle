@@ -1,0 +1,449 @@
+.TH "SCINV" "1" "January 21, 2014" "2014.016" "SeisComP3"
+.SH NAME
+scinv \- SeisComP3 Documentation
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.\" Man page generated from reStructeredText.
+.
+.sp
+\fBInventory database synchronisation.\fP
+.SH DESCRIPTION
+.sp
+scinv merges inventory XML files to a single inventory, synchronises an inventory
+with another (most common use is with database), creates initial key files and
+much more ...
+.sp
+scinv is used by \fBetc/init/scinv.py\fP to synchronise the inventory from
+\fBetc/inventory\fP with the database.
+.sp
+.nf
+.ft C
+seiscomp update\-config inventory
+.ft P
+.fi
+.SH COMMANDS
+.sp
+scinv works with different commands. The command \fBmust\fP be given as \fB1st\fP
+parameter to the application. All others parameters must follow.
+.sp
+.nf
+.ft C
+scinv $command [options] [files]
+.ft P
+.fi
+.SS sync
+.sp
+Synchronises an applications inventory with a given source given as file(s).
+The applications inventory is either read from the database or given with
+\fI\-\-inventory\-db\fP. As a result all information in the source is written to target
+and target does not contain any additional information. The source must hold all
+information. This works different to merge. If an output file is specified with
+\fI\-o\fP no notifiers are generated and sent via messaging.
+.sp
+This command is used by \fBetc/init/scinv.py\fP as follows:
+.sp
+.nf
+.ft C
+scinv sync \-\-console=1 \-H localhost:$p \-\-filebase "$fb" \e
+           \-\-rc\-dir "$rc" \-\-key\-dir "$kd"
+.ft P
+.fi
+.sp
+where
+.sp
+.nf
+.ft C
+$p = configured messaging port
+$fb = $SEISCOMP_ROOT/etc/inventory
+$rc = $SEISCOMP_ROOT/var/lib/rc
+$kd = $SEISCOMP_ROOT/etc/key
+.ft P
+.fi
+.SS merge
+.sp
+Merges two or more inventories into one inventory. This command
+is useful to merge existing subtrees into a final inventory before
+synchronization.
+.sp
+.nf
+.ft C
+scinv merge net1.xml net2.xml \-o inv.xml
+.ft P
+.fi
+.SS apply
+.sp
+Applies stored notifiers created with \fBsync\fP and option \fI\-\-create\-notifer\fP
+which is saved in a file (\fI\-o\fP). Source is the applications inventory read
+from the database or given with \fI\-\-inventory\-db\fP.
+If \fI\-o\fP is passed no messages are sent but the result is stored in a file.
+Useful to test/debug or prepare an inventory for offline processing.
+.sp
+.nf
+.ft C
+# Synchronise inventory and save the notifiers locally (no messages
+# are sent)
+scinv sync \-d mysql://sysop:sysop@localhost/seiscomp3 \e
+      \-\-create\-notifier \-o sync_patch.xml
+
+# Sent the notifiers to the target system
+scinv apply \-H localhost sync_patch.xml
+.ft P
+.fi
+.sp
+This operation can be useful to save synchronisation diffs for validation or to
+debug problems.
+.SS keys
+.sp
+Synchronise station key files with current inventory pool. This command merges
+all XML files in the inventory pool (or the given files) and checks if a
+corresponding station key file in \fBetc/key\fP exists. If not an empty
+station key file is created. If a station key file without a corresponding
+station in the merged inventory is found, it is deleted.
+.SS ls
+.sp
+List contained items up to channel level. This command is useful to inspect
+an XML file or the complete inventory pool.
+.sp
+.nf
+.ft C
+$ scinv ls SK.KOLS.xml
+  network SK       Slovak National Network of Seismic Stations
+    epoch 1980\-01\-01
+    station KOLS   Kolonicke sedlo, Slovakia
+      epoch 2004\-09\-01
+      location __
+        epoch 2004\-09\-01
+        channel BHE
+          epoch 2006\-04\-25 12:00:00 \- 2010\-03\-24
+        channel BHN
+          epoch 2006\-04\-25 12:00:00 \- 2010\-03\-24
+        channel BHZ
+          epoch 2006\-04\-25 12:00:00 \- 2010\-03\-24
+        channel EHE
+          epoch 2004\-09\-01 \- 2006\-04\-25 10:00:00
+        channel EHN
+          epoch 2004\-09\-01 \- 2006\-04\-25 10:00:00
+        channel EHZ
+          epoch 2004\-09\-01 \- 2006\-04\-25 10:00:00
+        channel HHE
+          epoch 2006\-04\-25 12:00:00 \- 2010\-03\-24
+        channel HHE
+          epoch 2010\-03\-25
+        channel HHN
+          epoch 2006\-04\-25 12:00:00 \- 2010\-03\-24
+        channel HHN
+          epoch 2010\-03\-25
+        channel HHZ
+          epoch 2006\-04\-25 12:00:00 \- 2010\-03\-24
+        channel HHZ
+          epoch 2010\-03\-25
+.ft P
+.fi
+.sp
+The default level of information printed is \fIchan\fP. Available levels are \fInet\fP,
+\fIsta\fP, \fIchan\fP and \fIresp\fP.
+.sp
+To check the available networks and stations in the inventory pool, calling
+.sp
+.nf
+.ft C
+scinv ls
+.ft P
+.fi
+.sp
+is enough.
+.SS check
+.sp
+Checks consistency of passed inventory files or a complete filebase. In the
+first step the inventory is merged from all files. In the second step several
+consistency checks are applied such as:
+.INDENT 0.0
+.IP \(bu 2
+overlapping epochs on each level (network, station, ...)
+.IP \(bu 2
+valid epochs (start < end)
+.IP \(bu 2
+defined gain in a stream
+.IP \(bu 2
+set gainUnit
+.IP \(bu 2
+distance of the sensor location to the station location
+.IP \(bu 2
+"invalid" location 0/0
+.UNINDENT
+.sp
+In future further checks will be added to make this tool a real help for
+correct meta data creation.
+.SH CONFIGURATION
+.nf
+\fBetc/defaults/global.cfg\fP
+\fBetc/defaults/scinv.cfg\fP
+\fBetc/global.cfg\fP
+\fBetc/scinv.cfg\fP
+\fB~/.seiscomp3/global.cfg\fP
+\fB~/.seiscomp3/scinv.cfg\fP
+.fi
+.sp
+.sp
+scinv inherits \fIglobal options\fP.
+.SH COMMAND-LINE
+.sp
+\fBscinv command [options] [files]\fP
+.sp
+Command is one of: sync, merge, apply, keys, ls and check.
+.SS Generic
+.INDENT 0.0
+.TP
+.B \-h, \-\-help
+show help message.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-V, \-\-version
+show version information
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-config\-file arg
+Use alternative configuration file. When this option is used
+the loading of all stages is disabled. Only the given configuration
+file is parsed and used. To use another name for the configuration
+create a symbolic link of the application or copy it, eg scautopick \-> scautopick2.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-plugins arg
+Load given plugins.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-D, \-\-daemon
+Run as daemon. This means the application will fork itself and
+doesn\(aqt need to be started with &.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-auto\-shutdown arg
+Enable/disable self\-shutdown because a master module shutdown. This only
+works when messaging is enabled and the master module sends a shutdown
+message (enabled with \-\-start\-stop\-msg for the master module).
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-shutdown\-master\-module arg
+Sets the name of the master\-module used for auto\-shutdown. This
+is the application name of the module actually started. If symlinks
+are used then it is the name of the symlinked application.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-shutdown\-master\-username arg
+Sets the name of the master\-username of the messaging used for
+auto\-shutdown. If "shutdown\-master\-module" is given as well this
+parameter is ignored.
+.UNINDENT
+.SS Verbosity
+.INDENT 0.0
+.TP
+.B \-\-verbosity arg
+Verbosity level [0..4]. 0:quiet, 1:error, 2:warning, 3:info, 4:debug
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-v, \-\-v
+Increase verbosity level (may be repeated, eg. \-vv)
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-q, \-\-quiet
+Quiet mode: no logging output
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-component arg
+Limits the logging to a certain component. This option can be given more than once.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-s, \-\-syslog
+Use syslog logging back end. The output usually goes to /var/lib/messages.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-l, \-\-lockfile arg
+Path to lock file.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-console arg
+Send log output to stdout.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-debug
+Debug mode: \-\-verbosity=4 \-\-console=1
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-log\-file arg
+Use alternative log file.
+.UNINDENT
+.SS Messaging
+.INDENT 0.0
+.TP
+.B \-u, \-\-user arg
+Overrides configuration parameter \fBconnection.username\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-H, \-\-host arg
+Overrides configuration parameter \fBconnection.server\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-t, \-\-timeout arg
+Overrides configuration parameter \fBconnection.timeout\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-g, \-\-primary\-group arg
+Overrides configuration parameter \fBconnection.primaryGroup\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-S, \-\-subscribe\-group arg
+A group to subscribe to. This option can be given more than once.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-encoding arg
+Overrides configuration parameter \fBconnection.encoding\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-start\-stop\-msg arg
+Sets sending of a start\- and a stop message.
+.UNINDENT
+.SS Database
+.INDENT 0.0
+.TP
+.B \-\-db\-driver\-list
+List all supported database drivers.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-d, \-\-database arg
+The database connection string, format: \fI\%service://user:pwd@host/database\fP.
+"service" is the name of the database driver which can be
+queried with "\-\-db\-driver\-list".
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-config\-module arg
+The configmodule to use.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-inventory\-db arg
+Load the inventory from the given database or file, format: [\fI\%service://]location\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-db\-disable
+Do not use the database at all
+.UNINDENT
+.SS Manager
+.INDENT 0.0
+.TP
+.B \-\-filebase dir
+Filebase to check for XML files. If not given, all XML files passed
+are checked.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-rc\-dir dir
+If given, rc (ressource) files will be created in this directory for
+each station. The stations desciption will be from the last available
+epoch.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-key\-dir dir
+If given this directory is used to synchronise key files.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-o, \-\-output file
+Output file.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-level int
+Information level (net, sta, cha or resp) used by ls.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-compact
+Enabled compact output for ls: each object one line.
+.UNINDENT
+.SS Merge
+.INDENT 0.0
+.TP
+.B \-\-strip
+Remove unreferenced objects (dataloggers, sensors, ...).
+.UNINDENT
+.SS Sync
+.INDENT 0.0
+.TP
+.B \-\-create\-notifier
+If an output file is given then all notifiers will be saved and not
+the result set itself.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-no\-keys
+Do not synchronise key files.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-no\-rc
+Do not synchronise rc files.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-test
+Does not send any notifiers and just outputs resulting operations and
+conflicts.
+.UNINDENT
+.SH AUTHOR
+GFZ Potsdam
+.SH COPYRIGHT
+2014, GFZ Potsdam, gempa GmbH
+.\" Generated by docutils manpage writer.
+.\" 
+.

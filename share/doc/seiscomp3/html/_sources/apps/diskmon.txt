@@ -1,0 +1,63 @@
+.. highlight:: rst
+
+.. _diskmon:
+
+#######
+diskmon
+#######
+
+**Monitors a disk and sends notifications.**
+
+
+Description
+===========
+
+Diskmon is a SeisComP3 init script that checks on each call to :program:`seiscomp check`
+the filesystem by running the following command:
+
+.. code-block:: sh
+
+   df | awk -v max="%d" \'{ if ( $5 > max ) print $0 }\'
+
+
+where "%d" is replaced by the configured threshold. If there are lines in the
+output (which means some filesystem exceed the usage threshold) it sends
+the output along with a description line to all configured receipients using
+the :program:`mail` command.
+
+To make diskmon work it is important that :program:`mail` is working on the shell.
+
+
+
+Configuration
+=============
+
+
+.. note::
+
+   diskmon is a standalone module and does not inherit :ref:`global options <global-configuration>`.
+
+
+| :file:`etc/defaults/diskmon.cfg`
+| :file:`etc/diskmon.cfg`
+| :file:`~/.seiscomp3/diskmon.cfg`
+
+
+
+.. confval:: threshold
+
+   Type: *int*
+
+   Disk usage threshold in percent. Each time when the disk usage exceeds this level,
+   an alert e\-mail is send to the user. Note that disk usage is only checked when a
+   cron job of seiscomp check is installed or seiscomp check is called
+   regularly by other means.
+   Default is ``95``.
+
+.. confval:: emails
+
+   Type: *list:string*
+
+   Comma\-separated list of e\-mail addresses to notify when disk usage
+   threshold is exceeded.
+

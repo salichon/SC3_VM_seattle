@@ -1,0 +1,413 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>scmv &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="Graphical user interfaces" href="../gui.html" />
+    <link rel="next" title="scolv" href="scolv.html" />
+    <link rel="prev" title="scesv" href="scesv.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scolv.html" title="scolv"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="scesv.html" title="scesv"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../gui.html" accesskey="U">Graphical user interfaces</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">scmv</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#hotkeys">Hotkeys</a></li>
+<li><a class="reference internal" href="#use-cases">Use cases</a><ul>
+<li><a class="reference internal" href="#get-station-information">Get station information</a></li>
+<li><a class="reference internal" href="#get-event-information">Get event information</a></li>
+<li><a class="reference internal" href="#set-preliminary-origin">Set preliminary origin</a></li>
+<li><a class="reference internal" href="#search-station-network">Search station/network</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#configuration">Configuration</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="scesv.html"
+                        title="previous chapter">scesv</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="scolv.html"
+                        title="next chapter">scolv</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/apps/scmv.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="scmv">
+<span id="id1"></span><h1>scmv<a class="headerlink" href="#scmv" title="Permalink to this headline">¶</a></h1>
+<p><strong>Map view.</strong></p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>scmv visualizes the actual information regarding earthquakes, trigger status,
+ground motion and station quality. This information is visualized in a map
+showing also the topography of the region including bathymetry, state borders
+and geologic faults. scmv provides two different tabs with maps showing the
+ground motion and the network status.</p>
+<p>The ground motion tab (fig. <a class="reference internal" href="#fig-scmv-gm"><em>Ground motion tab</em></a>) shows the actual groundmotion
+in nm/s at each station color-coded. Furthermore the trigger status (new picks)
+of the stations are announced by blinking triangles (the same in all
+other tabs). In case a new pick is associated to an event, the blinking color
+changes from red to green (default). Events are represented by open circles
+and the depth is color-coded. By right mouse click on the symbol of a station
+more detailed information are shown in an information widget (fig. <a class="reference internal" href="#fig-scmv-infowidget"><em>Info widget</em></a>).</p>
+<div class="figure align-center" id="fig-scmv-gm">
+<img alt="../_images/ground-motion.png" src="../_images/ground-motion.png" style="width: 16cm;" />
+<p class="caption">Ground motion tab</p>
+<div class="legend">
+Tab 1-2 = Ground Motion, Network Status tab; Station A = station with ground
+motion between 0 and 200 nm/s; Station B = triggering (red blinking) station;
+Station C = station of undefined status; Station D = triggering and associated
+station (green blinking); EQ = location of the earthquake/event; P = spreading
+of the P-wave; S = spreading of the S-wave; Legend = ground motion scale.</div>
+</div>
+<p>The network status tab (fig. <a class="reference internal" href="#fig-scmv-netstat"><em>Network status tab</em></a>) visualizes the timing quality
+of the whole seismic network. The colors of the triangles represent the data
+latencies/delay of the station. More detailed information about station quality
+can be derived by opening an information widget (fig. <a class="reference internal" href="#fig-scmv-infowidget"><em>Info widget</em></a> left)
+with a right mouse click on the symbol.</p>
+<div class="figure align-center" id="fig-scmv-netstat">
+<img alt="../_images/netstat.png" src="../_images/netstat.png" style="width: 16cm;" />
+<p class="caption">Network status tab</p>
+<div class="legend">
+Station A = station with up to 20 sec data latency/delay;
+Station B = station with up to 10 min data latency/delay and a warning;
+Station C = disabled station;
+EQ = location of a recent or historic earthquake/event;
+Legend = scale of the delay;
+Status = connection status.</div>
+</div>
+<p>In addition to the current event scmv can show all events it has currently
+saved in its session. This depends on the configured time span it remembers
+events. This can give a nice overview of the network activity. The circles
+are again colored by depth and sized by magnitude.</p>
+<div class="figure align-center" id="fig-scmv-historic-origins">
+<img alt="../_images/historic-origins.png" src="../_images/historic-origins.png" style="width: 16cm;" />
+<p class="caption">Show historic origins</p>
+<div class="legend">
+All historic origins currently saved in scmv are shown as circles.</div>
+</div>
+<p>The information widget opens by right mouse click on a station or event symbol
+in one of the scmv maps. The widget gives a more detailed list of parameters.
+For a station general information (coordinates, network code etc.), quality
+parameter (latency, gaps etc.), amplitude information and the actual waveform
+data are provided. For an event information like the location, the number of
+stations and the azimuthal gap are shown.</p>
+<div class="figure align-center" id="fig-scmv-infowidget">
+<img alt="../_images/infowidget-station.png" src="../_images/infowidget-station.png" style="width: 8cm;" />
+<p class="caption">Info widget</p>
+<div class="legend">
+The info widget of a station shows station information like network code
+and location. The quality of the station can be checked here. The lower
+part shows the last 15 minutes of waveforms including picks (if available).</div>
+</div>
+</div>
+<div class="section" id="hotkeys">
+<h2>Hotkeys<a class="headerlink" href="#hotkeys" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="66%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Hotkey</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="kbd docutils literal"><span class="pre">F2</span></tt></td>
+<td>Setup connection dialog</td>
+</tr>
+<tr class="row-odd"><td><tt class="kbd docutils literal"><span class="pre">F3</span></tt></td>
+<td>Toggle ray paths and associated stations</td>
+</tr>
+<tr class="row-even"><td><tt class="kbd docutils literal"><span class="pre">F6</span></tt></td>
+<td>Hide propagation of P and S waves</td>
+</tr>
+<tr class="row-odd"><td><tt class="kbd docutils literal"><span class="pre">F7</span></tt></td>
+<td>Toggle legend</td>
+</tr>
+<tr class="row-even"><td><tt class="kbd docutils literal"><span class="pre">F8</span></tt></td>
+<td>Toggle historic origins</td>
+</tr>
+<tr class="row-odd"><td><tt class="kbd docutils literal"><span class="pre">F9</span></tt></td>
+<td>Toggle station annotation</td>
+</tr>
+<tr class="row-even"><td><tt class="kbd docutils literal"><span class="pre">F10</span></tt></td>
+<td>Toggle event list (event tab)</td>
+</tr>
+<tr class="row-odd"><td><tt class="kbd docutils literal"><span class="pre">F11</span></tt></td>
+<td>Toggle full screen mode</td>
+</tr>
+<tr class="row-even"><td><tt class="kbd docutils literal"><span class="pre">CTRL</span> <span class="pre">+</span> <span class="pre">f</span></tt></td>
+<td>Seach station</td>
+</tr>
+<tr class="row-odd"><td><tt class="kbd docutils literal"><span class="pre">Arrows</span></tt></td>
+<td>Move focus</td>
+</tr>
+<tr class="row-even"><td>Mouse wheel</td>
+<td>Zoom in or out</td>
+</tr>
+<tr class="row-odd"><td>Double click</td>
+<td>Center map</td>
+</tr>
+<tr class="row-even"><td>Right mouse button</td>
+<td>Open info widget</td>
+</tr>
+<tr class="row-odd"><td>Mid mouse button</td>
+<td>Set preliminary origin</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="use-cases">
+<h2>Use cases<a class="headerlink" href="#use-cases" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-station-information">
+<h3>Get station information<a class="headerlink" href="#get-station-information" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Position the mouse above a triangle representing a station</li>
+<li>Click the right mouse button for opening the infowidget.</li>
+<li>Choose one station in case several stations are in the selection range</li>
+</ul>
+</div>
+<div class="section" id="get-event-information">
+<h3>Get event information<a class="headerlink" href="#get-event-information" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Position the mouse above a circle representing a location of an event</li>
+<li>Click the right mouse button for opening the infowidget.</li>
+<li>Choose one event in case several events are in the selection range</li>
+</ul>
+</div>
+<div class="section" id="set-preliminary-origin">
+<h3>Set preliminary origin<a class="headerlink" href="#set-preliminary-origin" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Position the mouse in the map</p>
+</li>
+<li><p class="first">Press the mid mouse button</p>
+</li>
+<li><p class="first">Set date &amp; time and latitude &amp; longitude</p>
+</li>
+<li><p class="first">Press &quot;Create&quot;</p>
+<img alt="../_images/artificial-origin.png" src="../_images/artificial-origin.png" style="width: 4cm;" />
+</li>
+</ul>
+</div>
+<div class="section" id="search-station-network">
+<h3>Search station/network<a class="headerlink" href="#search-station-network" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Press <tt class="kbd docutils literal"><span class="pre">CTRL</span> <span class="pre">+</span> <span class="pre">f</span></tt></li>
+<li>Type station/network name</li>
+<li>Double click in a station in the list to center the map at this location</li>
+</ul>
+</div>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/defaults/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/defaults/scmv.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/scmv.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">~/.seiscomp3/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">~/.seiscomp3/scmv.cfg</span></tt></div>
+</div>
+<p>scmv inherits <a class="reference internal" href="global.html#global-configuration"><em>global options</em></a>.</p>
+<dl class="confval">
+<dt id="confval-displaymode">
+<tt class="descname">displaymode</tt><a class="headerlink" href="#confval-displaymode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Set one of the available displaymodes: groundmotion or qualitycontrol</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-groundMotionRecordLifeSpan">
+<tt class="descname">groundMotionRecordLifeSpan</tt><a class="headerlink" href="#confval-groundMotionRecordLifeSpan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Sets the maximum latency in seconds of the ground motion records to be valid.
+Default is <tt class="docutils literal"><span class="pre">300</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-removeEventDataOlderThan">
+<tt class="descname">removeEventDataOlderThan</tt><a class="headerlink" href="#confval-removeEventDataOlderThan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>double</em></p>
+<p>Sets the time span in seconds to keep events.
+Default is <tt class="docutils literal"><span class="pre">43200</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-readEventsNotOlderThan">
+<tt class="descname">readEventsNotOlderThan</tt><a class="headerlink" href="#confval-readEventsNotOlderThan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>double</em></p>
+<p>Sets the time span in seconds to read events initially from database.
+Default is <tt class="docutils literal"><span class="pre">0</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-centerOrigins">
+<tt class="descname">centerOrigins</tt><a class="headerlink" href="#confval-centerOrigins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>If a new origin/event is set/selected this option defines if the map is centered
+or not at the origin location.
+Default is <tt class="docutils literal"><span class="pre">false</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventActivityLifeSpan">
+<tt class="descname">eventActivityLifeSpan</tt><a class="headerlink" href="#confval-eventActivityLifeSpan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>double</em></p>
+<p>Time span of which an event is active after origin time to show blinking associated
+stations.
+Default is <tt class="docutils literal"><span class="pre">900</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-legend">
+<tt class="descname">legend</tt><a class="headerlink" href="#confval-legend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>Enables/disabled the display of the legend at startup.
+Default is <tt class="docutils literal"><span class="pre">true</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-stations.groundMotionFilter">
+<tt class="descname">stations.groundMotionFilter</tt><a class="headerlink" href="#confval-stations.groundMotionFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Sets the filter applied to determine ground motion.</p>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>display.*</strong>
+<em>Allows to define an initial rectangular region for the map.</em></p>
+</div>
+<dl class="confval">
+<dt id="confval-display.latmin">
+<tt class="descname">display.latmin</tt><a class="headerlink" href="#confval-display.latmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>double</em></p>
+<p>Minimum latitude in degrees.
+Default is <tt class="docutils literal"><span class="pre">-90</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-display.lonmin">
+<tt class="descname">display.lonmin</tt><a class="headerlink" href="#confval-display.lonmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>double</em></p>
+<p>Minimum longitude in degrees.
+Default is <tt class="docutils literal"><span class="pre">-180</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-display.latmax">
+<tt class="descname">display.latmax</tt><a class="headerlink" href="#confval-display.latmax" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>double</em></p>
+<p>Maximum latitude in degrees.
+Default is <tt class="docutils literal"><span class="pre">90</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-display.lonmax">
+<tt class="descname">display.lonmax</tt><a class="headerlink" href="#confval-display.lonmax" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>double</em></p>
+<p>Maximum longitude in degrees.
+Default is <tt class="docutils literal"><span class="pre">180</span></tt>.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scolv.html" title="scolv"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="scesv.html" title="scesv"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../gui.html" >Graphical user interfaces</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

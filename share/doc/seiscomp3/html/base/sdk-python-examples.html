@@ -1,0 +1,579 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Examples &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="Python" href="sdk-python.html" />
+    <link rel="next" title="Glossary" href="glossary.html" />
+    <link rel="prev" title="seiscomp3.Client" href="api-python-client.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="glossary.html" title="Glossary"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="api-python-client.html" title="seiscomp3.Client"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="sdk.html" >Software Development Kit</a> &raquo;</li>
+          <li><a href="sdk-python.html" accesskey="U">Python</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Examples</a><ul>
+<li><a class="reference internal" href="#simple-messaging-client">Simple messaging client</a><ul>
+<li><a class="reference internal" href="#summary">Summary</a></li>
+<li><a class="reference internal" href="#goal">Goal</a></li>
+<li><a class="reference internal" href="#script">Script</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#inventory-examples">Inventory examples</a><ul>
+<li><a class="reference internal" href="#id1">Summary</a></li>
+<li><a class="reference internal" href="#id2">Goal</a></li>
+<li><a class="reference internal" href="#scripts">Scripts</a><ul>
+<li><a class="reference internal" href="#configured-streams-py">configured-streams.py</a></li>
+<li><a class="reference internal" href="#station-coordinates-py">station-coordinates.py</a></li>
+<li><a class="reference internal" href="#channel-gains-py">channel-gains.py</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#simple-waveform-client">Simple waveform client</a><ul>
+<li><a class="reference internal" href="#id3">Summary</a></li>
+<li><a class="reference internal" href="#id4">Goal</a></li>
+<li><a class="reference internal" href="#id5">Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="api-python-client.html"
+                        title="previous chapter">seiscomp3.Client</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glossary.html"
+                        title="next chapter">Glossary</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/base/sdk-python-examples.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="examples">
+<span id="sdk-python-examples"></span><h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="simple-messaging-client">
+<h2>Simple messaging client<a class="headerlink" href="#simple-messaging-client" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="summary">
+<h3>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
+<p>Example client that connects to the messaging, listens for event
+objects and dumps the event IDs.</p>
+</div>
+<div class="section" id="goal">
+<h3>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h3>
+<p>Illustrate the basic messaging concepts.</p>
+</div>
+<div class="section" id="script">
+<h3>Script<a class="headerlink" href="#script" title="Permalink to this headline">¶</a></h3>
+<p>This script was demonstrated at the SeisComP3 workshop in Erice. It should be
+relatively self-explaining, but full understanding does require certain knowlege
+of Python.</p>
+<p>The script does nothing but</p>
+<ul class="simple">
+<li>connect to a SeisComP3 messaging server</li>
+<li>subscribe to messages sent to messaging group &quot;EVENT&quot;</li>
+<li>listen to these messages</li>
+<li>dump the event IDs to the screen</li>
+</ul>
+<p>No actual real-world use case but a truly minimum example for a SeisComP3
+application.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">traceback</span><span class="o">,</span> <span class="nn">seiscomp3.Client</span>
+
+<span class="k">class</span> <span class="nc">EventListener</span><span class="p">(</span><span class="n">seiscomp3</span><span class="o">.</span><span class="n">Client</span><span class="o">.</span><span class="n">Application</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">seiscomp3</span><span class="o">.</span><span class="n">Client</span><span class="o">.</span><span class="n">Application</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">),</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setMessagingEnabled</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setDatabaseEnabled</span><span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setPrimaryMessagingGroup</span><span class="p">(</span><span class="n">seiscomp3</span><span class="o">.</span><span class="n">Communication</span><span class="o">.</span><span class="n">Protocol</span><span class="o">.</span><span class="n">LISTENER_GROUP</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">addMessagingSubscription</span><span class="p">(</span><span class="s">&quot;EVENT&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">doSomethingWithEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c">#######################################</span>
+            <span class="c">#### Include your custom code here ####</span>
+            <span class="k">print</span> <span class="s">&quot;event.publicID = </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">event</span><span class="o">.</span><span class="n">publicID</span><span class="p">()</span>
+            <span class="c">#######################################</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">info</span> <span class="o">=</span> <span class="n">traceback</span><span class="o">.</span><span class="n">format_exception</span><span class="p">(</span><span class="o">*</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">())</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span> <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">updateObject</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parentID</span><span class="p">,</span> <span class="nb">object</span><span class="p">):</span>
+        <span class="c"># called if an updated object is received</span>
+        <span class="n">event</span> <span class="o">=</span> <span class="n">seiscomp3</span><span class="o">.</span><span class="n">DataModel</span><span class="o">.</span><span class="n">Event</span><span class="o">.</span><span class="n">Cast</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">event</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&quot;received update for event </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">event</span><span class="o">.</span><span class="n">publicID</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">doSomethingWithEvent</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">addObject</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parentID</span><span class="p">,</span> <span class="nb">object</span><span class="p">):</span>
+        <span class="c"># called if a new object is received</span>
+        <span class="n">event</span> <span class="o">=</span> <span class="n">seiscomp3</span><span class="o">.</span><span class="n">DataModel</span><span class="o">.</span><span class="n">Event</span><span class="o">.</span><span class="n">Cast</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">event</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&quot;received new event </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">event</span><span class="o">.</span><span class="n">publicID</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">doSomethingWithEvent</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c"># needs not be re-implemented</span>
+        <span class="k">print</span> <span class="s">&quot;Hi! The EventListener is now running.&quot;</span>
+        <span class="k">return</span> <span class="n">seiscomp3</span><span class="o">.</span><span class="n">Client</span><span class="o">.</span><span class="n">Application</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">EventListener</span><span class="p">()</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">app</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Note that the EventListener class is derived from the application class
+seiscomp3.Client.Application from which it inherits most of the functionality.
+For instance the ability to connect to the messaging and to the database are
+both provided by seiscomp3.Client.Application; the EventListener only has to
+enable messaging and database usage in the __init__ routine. The real action
+takes place in the doSomethingWithEvent routine, which is called by both
+updateObject and addObject, depending on whether the event object received is a
+newly added or just and updated event.</p>
+</div>
+</div>
+<div class="section" id="inventory-examples">
+<h2>Inventory examples<a class="headerlink" href="#inventory-examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Summary<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Various Python example scripts that retrieve inventory information from the
+database.</p>
+</div>
+<div class="section" id="id2">
+<h3>Goal<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Illustrate the usefulness of simple Python scripts to retrieve inventory
+information.</p>
+</div>
+<div class="section" id="scripts">
+<h3>Scripts<a class="headerlink" href="#scripts" title="Permalink to this headline">¶</a></h3>
+<p>The scripts in this chapter all deal with inventory access. All need to be
+invoked with the <em class="xref std std-option">-d</em> command line option to specify the SeisComP3 database to
+read the information from.</p>
+<p>E.g.</p>
+<div class="highlight-sh"><div class="highlight"><pre>python configured-streams.py -d localhost
+</pre></div>
+</div>
+<div class="section" id="configured-streams-py">
+<h4>configured-streams.py<a class="headerlink" href="#configured-streams-py" title="Permalink to this headline">¶</a></h4>
+<p>Print a list of all streams configured on a SC3 system.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
+
+<span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">traceback</span><span class="o">,</span> <span class="nn">seiscomp3.Client</span>
+
+<span class="k">class</span> <span class="nc">ListStreamsApp</span><span class="p">(</span><span class="n">seiscomp3</span><span class="o">.</span><span class="n">Client</span><span class="o">.</span><span class="n">Application</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">):</span>
+        <span class="n">seiscomp3</span><span class="o">.</span><span class="n">Client</span><span class="o">.</span><span class="n">Application</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setMessagingEnabled</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setDatabaseEnabled</span><span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setLoggingToStdErr</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setDaemonEnabled</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+<span class="c">#       self.setLoadInventoryEnabled(True)</span>
+
+    <span class="k">def</span> <span class="nf">validateParameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">seiscomp3</span><span class="o">.</span><span class="n">Client</span><span class="o">.</span><span class="n">Application</span><span class="o">.</span><span class="n">validateParameters</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="bp">False</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">False</span>
+            <span class="k">return</span> <span class="bp">True</span>
+
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">info</span> <span class="o">=</span> <span class="n">traceback</span><span class="o">.</span><span class="n">format_exception</span><span class="p">(</span><span class="o">*</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">())</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span> <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">dbr</span> <span class="o">=</span> <span class="n">seiscomp3</span><span class="o">.</span><span class="n">DataModel</span><span class="o">.</span><span class="n">DatabaseReader</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">database</span><span class="p">())</span>
+            <span class="n">now</span> <span class="o">=</span> <span class="n">seiscomp3</span><span class="o">.</span><span class="n">Core</span><span class="o">.</span><span class="n">Time</span><span class="o">.</span><span class="n">GMT</span><span class="p">()</span>
+            <span class="n">inv</span> <span class="o">=</span> <span class="n">seiscomp3</span><span class="o">.</span><span class="n">DataModel</span><span class="o">.</span><span class="n">Inventory</span><span class="p">()</span>
+            <span class="n">dbr</span><span class="o">.</span><span class="n">loadNetworks</span><span class="p">(</span><span class="n">inv</span><span class="p">)</span>
+
+            <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="k">for</span> <span class="n">inet</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">inv</span><span class="o">.</span><span class="n">networkCount</span><span class="p">()):</span>
+                <span class="n">network</span> <span class="o">=</span> <span class="n">inv</span><span class="o">.</span><span class="n">network</span><span class="p">(</span><span class="n">inet</span><span class="p">)</span>
+                <span class="n">dbr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">network</span><span class="p">);</span>
+                <span class="k">for</span> <span class="n">ista</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">stationCount</span><span class="p">()):</span>
+                    <span class="n">station</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">station</span><span class="p">(</span><span class="n">ista</span><span class="p">)</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">start</span> <span class="o">=</span> <span class="n">station</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+                    <span class="k">except</span><span class="p">:</span>
+                        <span class="k">continue</span>
+
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">end</span> <span class="o">=</span> <span class="n">station</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+                        <span class="k">if</span> <span class="ow">not</span> <span class="n">start</span> <span class="o">&lt;=</span> <span class="n">now</span> <span class="o">&lt;=</span> <span class="n">end</span><span class="p">:</span>
+                            <span class="k">continue</span>
+                    <span class="k">except</span><span class="p">:</span>
+                        <span class="k">pass</span>
+
+                    <span class="k">for</span> <span class="n">iloc</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">station</span><span class="o">.</span><span class="n">sensorLocationCount</span><span class="p">()):</span>
+                        <span class="n">location</span> <span class="o">=</span> <span class="n">station</span><span class="o">.</span><span class="n">sensorLocation</span><span class="p">(</span><span class="n">iloc</span><span class="p">)</span>
+                        <span class="k">for</span> <span class="n">istr</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">location</span><span class="o">.</span><span class="n">streamCount</span><span class="p">()):</span>
+                            <span class="n">stream</span> <span class="o">=</span> <span class="n">location</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="n">istr</span><span class="p">)</span>
+
+                            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">code</span><span class="p">(),</span> <span class="n">station</span><span class="o">.</span><span class="n">code</span><span class="p">(),</span> <span class="n">location</span><span class="o">.</span><span class="n">code</span><span class="p">(),</span> <span class="n">stream</span><span class="o">.</span><span class="n">code</span><span class="p">())</span> <span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">net</span><span class="p">,</span> <span class="n">sta</span><span class="p">,</span> <span class="n">loc</span><span class="p">,</span> <span class="n">cha</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+                <span class="k">print</span> <span class="s">&quot;</span><span class="si">%-2s</span><span class="s"> </span><span class="si">%-5s</span><span class="s"> </span><span class="si">%-2s</span><span class="s"> </span><span class="si">%-3s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">sta</span><span class="p">,</span> <span class="n">loc</span><span class="p">,</span> <span class="n">cha</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="bp">True</span>
+
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">info</span> <span class="o">=</span> <span class="n">traceback</span><span class="o">.</span><span class="n">format_exception</span><span class="p">(</span><span class="o">*</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">())</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span> <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">ListStreamsApp</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">),</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">app</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="station-coordinates-py">
+<h4>station-coordinates.py<a class="headerlink" href="#station-coordinates-py" title="Permalink to this headline">¶</a></h4>
+<p>Print the station coordinated of all stations configured on a SC3 system.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
+
+<span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">seiscomp3.Client</span><span class="o">,</span> <span class="nn">seiscomp3.DataModel</span>
+
+<span class="k">class</span> <span class="nc">InvApp</span><span class="p">(</span><span class="n">seiscomp3</span><span class="o">.</span><span class="n">Client</span><span class="o">.</span><span class="n">Application</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">):</span>
+        <span class="n">seiscomp3</span><span class="o">.</span><span class="n">Client</span><span class="o">.</span><span class="n">Application</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setMessagingEnabled</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setDatabaseEnabled</span><span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setLoggingToStdErr</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">validateParameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">seiscomp3</span><span class="o">.</span><span class="n">Client</span><span class="o">.</span><span class="n">Application</span><span class="o">.</span><span class="n">validateParameters</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="bp">False</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">False</span>
+
+            <span class="k">return</span> <span class="bp">True</span>
+
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">info</span> <span class="o">=</span> <span class="n">traceback</span><span class="o">.</span><span class="n">format_exception</span><span class="p">(</span><span class="o">*</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">())</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span> <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">seiscomp3</span><span class="o">.</span><span class="n">Core</span><span class="o">.</span><span class="n">Time</span><span class="o">.</span><span class="n">GMT</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">dbr</span> <span class="o">=</span> <span class="n">seiscomp3</span><span class="o">.</span><span class="n">DataModel</span><span class="o">.</span><span class="n">DatabaseReader</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">database</span><span class="p">())</span>
+            <span class="n">inv</span> <span class="o">=</span> <span class="n">seiscomp3</span><span class="o">.</span><span class="n">DataModel</span><span class="o">.</span><span class="n">Inventory</span><span class="p">()</span>
+            <span class="n">dbr</span><span class="o">.</span><span class="n">loadNetworks</span><span class="p">(</span><span class="n">inv</span><span class="p">)</span>
+            <span class="n">nnet</span> <span class="o">=</span> <span class="n">inv</span><span class="o">.</span><span class="n">networkCount</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">inet</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">nnet</span><span class="p">):</span>
+                <span class="n">net</span> <span class="o">=</span> <span class="n">inv</span><span class="o">.</span><span class="n">network</span><span class="p">(</span><span class="n">inet</span><span class="p">)</span>
+                <span class="n">dbr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">net</span><span class="p">);</span>
+                <span class="n">nsta</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">stationCount</span><span class="p">()</span>
+                <span class="k">for</span> <span class="n">ista</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">nsta</span><span class="p">):</span>
+                    <span class="n">sta</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">station</span><span class="p">(</span><span class="n">ista</span><span class="p">)</span>
+                    <span class="n">line</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">%-2s</span><span class="s"> </span><span class="si">%-5s</span><span class="s"> </span><span class="si">%9.4f</span><span class="s"> </span><span class="si">%9.4f</span><span class="s"> </span><span class="si">%6.1f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span> <span class="n">net</span><span class="o">.</span><span class="n">code</span><span class="p">(),</span> <span class="n">sta</span><span class="o">.</span><span class="n">code</span><span class="p">(),</span> <span class="n">sta</span><span class="o">.</span><span class="n">latitude</span><span class="p">(),</span> <span class="n">sta</span><span class="o">.</span><span class="n">longitude</span><span class="p">(),</span> <span class="n">sta</span><span class="o">.</span><span class="n">elevation</span><span class="p">()</span> <span class="p">)</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">start</span> <span class="o">=</span> <span class="n">sta</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+                    <span class="k">except</span><span class="p">:</span>
+                        <span class="k">continue</span>
+
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">end</span> <span class="o">=</span> <span class="n">sta</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+                        <span class="k">if</span> <span class="ow">not</span> <span class="n">start</span> <span class="o">&lt;=</span> <span class="n">now</span> <span class="o">&lt;=</span> <span class="n">end</span><span class="p">:</span>
+                            <span class="k">continue</span>
+                    <span class="k">except</span><span class="p">:</span>
+                        <span class="k">pass</span>
+
+                    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+            <span class="n">lines</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+                <span class="k">print</span> <span class="n">line</span>
+
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">info</span> <span class="o">=</span> <span class="n">traceback</span><span class="o">.</span><span class="n">format_exception</span><span class="p">(</span><span class="o">*</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">())</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span> <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">InvApp</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">),</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">app</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="channel-gains-py">
+<h4>channel-gains.py<a class="headerlink" href="#channel-gains-py" title="Permalink to this headline">¶</a></h4>
+<p>Print channel gains for all streams configured on a SC3 system.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
+
+<span class="kn">import</span> <span class="nn">traceback</span><span class="o">,</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">seiscomp3.Client</span><span class="o">,</span> <span class="nn">seiscomp3.DataModel</span>
+
+<span class="k">class</span> <span class="nc">InvApp</span><span class="p">(</span><span class="n">seiscomp3</span><span class="o">.</span><span class="n">Client</span><span class="o">.</span><span class="n">Application</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">):</span>
+        <span class="n">seiscomp3</span><span class="o">.</span><span class="n">Client</span><span class="o">.</span><span class="n">Application</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setMessagingEnabled</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setDatabaseEnabled</span><span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setLoggingToStdErr</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">validateParameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">seiscomp3</span><span class="o">.</span><span class="n">Client</span><span class="o">.</span><span class="n">Application</span><span class="o">.</span><span class="n">validateParameters</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="bp">False</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">False</span>
+
+            <span class="k">return</span> <span class="bp">True</span>
+
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">info</span> <span class="o">=</span> <span class="n">traceback</span><span class="o">.</span><span class="n">format_exception</span><span class="p">(</span><span class="o">*</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">())</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span> <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">seiscomp3</span><span class="o">.</span><span class="n">Core</span><span class="o">.</span><span class="n">Time</span><span class="o">.</span><span class="n">GMT</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">dbq</span> <span class="o">=</span> <span class="n">seiscomp3</span><span class="o">.</span><span class="n">DataModel</span><span class="o">.</span><span class="n">DatabaseQuery</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">database</span><span class="p">())</span>
+            <span class="n">inv</span> <span class="o">=</span> <span class="n">seiscomp3</span><span class="o">.</span><span class="n">DataModel</span><span class="o">.</span><span class="n">Inventory</span><span class="p">()</span>
+            <span class="n">dbq</span><span class="o">.</span><span class="n">loadNetworks</span><span class="p">(</span><span class="n">inv</span><span class="p">)</span>
+            <span class="n">nnet</span> <span class="o">=</span> <span class="n">inv</span><span class="o">.</span><span class="n">networkCount</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">inet</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">nnet</span><span class="p">):</span>
+                <span class="n">network</span> <span class="o">=</span> <span class="n">inv</span><span class="o">.</span><span class="n">network</span><span class="p">(</span><span class="n">inet</span><span class="p">)</span>
+                <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\r</span><span class="s">working on network </span><span class="si">%2s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">network</span><span class="o">.</span><span class="n">code</span><span class="p">())</span>
+                <span class="n">dbq</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">network</span><span class="p">);</span>
+                <span class="n">nsta</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">stationCount</span><span class="p">()</span>
+                <span class="k">for</span> <span class="n">ista</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">nsta</span><span class="p">):</span>
+                    <span class="n">station</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">station</span><span class="p">(</span><span class="n">ista</span><span class="p">)</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">start</span> <span class="o">=</span> <span class="n">station</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+                    <span class="k">except</span><span class="p">:</span>
+                        <span class="k">continue</span>
+
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">end</span> <span class="o">=</span> <span class="n">station</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+                        <span class="k">if</span> <span class="ow">not</span> <span class="n">start</span> <span class="o">&lt;=</span> <span class="n">now</span> <span class="o">&lt;=</span> <span class="n">end</span><span class="p">:</span>
+                            <span class="k">continue</span>
+                    <span class="k">except</span><span class="p">:</span>
+                        <span class="k">pass</span>
+
+                    <span class="c"># now we know that this is an operational station</span>
+                    <span class="k">for</span> <span class="n">iloc</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">station</span><span class="o">.</span><span class="n">sensorLocationCount</span><span class="p">()):</span>
+                        <span class="n">location</span> <span class="o">=</span> <span class="n">station</span><span class="o">.</span><span class="n">sensorLocation</span><span class="p">(</span><span class="n">iloc</span><span class="p">)</span>
+                        <span class="k">for</span> <span class="n">istr</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">location</span><span class="o">.</span><span class="n">streamCount</span><span class="p">()):</span>
+                            <span class="n">stream</span> <span class="o">=</span> <span class="n">location</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="n">istr</span><span class="p">)</span>
+
+                            <span class="n">line</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">%-2s</span><span class="s"> </span><span class="si">%-5s</span><span class="s"> </span><span class="si">%-2s</span><span class="s"> </span><span class="si">%-3s</span><span class="s"> </span><span class="si">%g</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">code</span><span class="p">(),</span> <span class="n">station</span><span class="o">.</span><span class="n">code</span><span class="p">(),</span> <span class="n">location</span><span class="o">.</span><span class="n">code</span><span class="p">(),</span> <span class="n">stream</span><span class="o">.</span><span class="n">code</span><span class="p">(),</span> <span class="n">stream</span><span class="o">.</span><span class="n">gain</span><span class="p">())</span>
+                            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+            <span class="n">lines</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+                <span class="k">print</span> <span class="n">line</span>
+
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">info</span> <span class="o">=</span> <span class="n">traceback</span><span class="o">.</span><span class="n">format_exception</span><span class="p">(</span><span class="o">*</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">())</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span> <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">InvApp</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">),</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">app</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="simple-waveform-client">
+<h2>Simple waveform client<a class="headerlink" href="#simple-waveform-client" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>Summary<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Example client that connects to a record stream service and dumps the content
+to stdout.</p>
+</div>
+<div class="section" id="id4">
+<h3>Goal<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Illustrate the basic record stream concepts.</p>
+</div>
+<div class="section" id="id5">
+<h3>Script<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
+
+<span class="kn">import</span> <span class="nn">seiscomp3.Client</span><span class="o">,</span> <span class="nn">sys</span>
+
+<span class="k">class</span> <span class="nc">App</span><span class="p">(</span><span class="n">seiscomp3</span><span class="o">.</span><span class="n">Client</span><span class="o">.</span><span class="n">StreamApplication</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">):</span>
+        <span class="n">seiscomp3</span><span class="o">.</span><span class="n">Client</span><span class="o">.</span><span class="n">StreamApplication</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">)</span>
+        <span class="c"># Do not connect to messaging and do not use database at all</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setMessagingEnabled</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setDatabaseEnabled</span><span class="p">(</span><span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">seiscomp3</span><span class="o">.</span><span class="n">Client</span><span class="o">.</span><span class="n">StreamApplication</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="bp">False</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+
+        <span class="c"># For testing purposes we subscribe to the last 5 minutes of data.</span>
+        <span class="c"># To use real-time data, do not define an end time and configure</span>
+        <span class="c"># a real-time capable backend such as Seedlink.</span>
+
+        <span class="c"># First, query now</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">seiscomp3</span><span class="o">.</span><span class="n">Core</span><span class="o">.</span><span class="n">Time</span><span class="o">.</span><span class="n">GMT</span><span class="p">()</span>
+        <span class="c"># Substract 5 minutes for the start time</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">now</span> <span class="o">-</span> <span class="n">seiscomp3</span><span class="o">.</span><span class="n">Core</span><span class="o">.</span><span class="n">TimeSpan</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+        <span class="c"># Set the start time in our record stream</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">recordStream</span><span class="p">()</span><span class="o">.</span><span class="n">setStartTime</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+        <span class="c"># And the end time</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">recordStream</span><span class="p">()</span><span class="o">.</span><span class="n">setEndTime</span><span class="p">(</span><span class="n">now</span><span class="p">)</span>
+
+        <span class="c"># Now add some streams to fetch</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">recordStream</span><span class="p">()</span><span class="o">.</span><span class="n">addStream</span><span class="p">(</span><span class="s">&quot;GE&quot;</span><span class="p">,</span> <span class="s">&quot;MORC&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="s">&quot;BHZ&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">recordStream</span><span class="p">()</span><span class="o">.</span><span class="n">addStream</span><span class="p">(</span><span class="s">&quot;GE&quot;</span><span class="p">,</span> <span class="s">&quot;MORC&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="s">&quot;BHN&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">True</span>
+
+
+    <span class="c"># handleRecord is called when a new record is being read from the</span>
+    <span class="c"># record stream</span>
+    <span class="k">def</span> <span class="nf">handleRecord</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rec</span><span class="p">):</span>
+        <span class="c"># Print the streamID which is a join of NSLC separated with &#39;.&#39;</span>
+        <span class="k">print</span> <span class="n">rec</span><span class="o">.</span><span class="n">streamID</span><span class="p">()</span>
+        <span class="c"># Print the records start time in ISO format</span>
+        <span class="k">print</span> <span class="s">&quot;  </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">rec</span><span class="o">.</span><span class="n">startTime</span><span class="p">()</span><span class="o">.</span><span class="n">iso</span><span class="p">()</span>
+        <span class="c"># Print the sampling frequency</span>
+        <span class="k">print</span> <span class="s">&quot;  </span><span class="si">%f</span><span class="s">Hz&quot;</span> <span class="o">%</span> <span class="n">rec</span><span class="o">.</span><span class="n">samplingFrequency</span><span class="p">()</span>
+        <span class="c"># If data is available</span>
+        <span class="k">if</span> <span class="n">rec</span><span class="o">.</span><span class="n">data</span><span class="p">():</span>
+            <span class="c"># Print the number of samples</span>
+            <span class="k">print</span> <span class="s">&quot;  </span><span class="si">%d</span><span class="s"> samples&quot;</span> <span class="o">%</span> <span class="n">rec</span><span class="o">.</span><span class="n">data</span><span class="p">()</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+            <span class="c"># Try to extract a float array. If the samples are of other</span>
+            <span class="c"># data types, use rec.dataType() to query the type and use</span>
+            <span class="c"># the appropriate array classes.</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">seiscomp3</span><span class="o">.</span><span class="n">Core</span><span class="o">.</span><span class="n">FloatArray</span><span class="o">.</span><span class="n">Cast</span><span class="p">(</span><span class="n">rec</span><span class="o">.</span><span class="n">data</span><span class="p">())</span>
+            <span class="c"># Print the samples</span>
+            <span class="k">if</span> <span class="n">data</span><span class="p">:</span>
+                <span class="k">print</span> <span class="s">&quot;  data: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">([</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">size</span><span class="p">())])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">print</span> <span class="s">&quot;  no data&quot;</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">),</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">app</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>The <em class="xref std std-option">-I</em> command line option can be used to configure the record
+stream backend when running the test application.</p>
+<div class="highlight-sh"><div class="highlight"><pre>python testrec.py -I slink://localhost:18000
+</pre></div>
+</div>
+<p>or to ask Arclink for data</p>
+<div class="highlight-sh"><div class="highlight"><pre>python testrec.py -I arclink://localhost:18001
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="glossary.html" title="Glossary"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="api-python-client.html" title="seiscomp3.Client"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="sdk.html" >Software Development Kit</a> &raquo;</li>
+          <li><a href="sdk-python.html" >Python</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

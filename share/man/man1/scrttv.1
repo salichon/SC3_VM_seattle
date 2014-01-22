@@ -1,0 +1,545 @@
+.TH "SCRTTV" "1" "January 21, 2014" "2014.016" "SeisComP3"
+.SH NAME
+scrttv \- SeisComP3 Documentation
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.\" Man page generated from reStructeredText.
+.
+.sp
+\fBReal\-time trace view.\fP
+.SH DESCRIPTION
+.sp
+scrttv visualizes real\-time waveform data (see \fI\%scrttv overview\fP) of
+a defined window length (default=30 minutes) and of defined streams/stations
+(default is primary station channels). scrttv switches between two modi.
+In the normal mode the trace order is given by the configuration file.
+In the event mode the traces are sorted by epicentral distance to the
+latest origin received from the messaging. Additional to the waveform
+traces information about gaps, picks and the time of incoming origins
+are displayed.
+.INDENT 0.0
+.INDENT 2.5
+[image]
+scrttv overview
+An example of scrttv and the dialog window to set preliminary origin.
+Tab 1\-2 = enable/disable tab; Counts = maximum counts of a stream;
+Info = stream information (station, network and channel code);
+Filter = filter status of the traces; Status = connection status.
+.UNINDENT
+.UNINDENT
+.sp
+scrttv shows two tabs: the enabled and the disabled tab (see \fI\%scrttv overview\fP: Tab 1\-2).
+Stations listed in the disabled tab are excluded from processing (e.g. picking). To move a station
+from one tab to another just drag and drop the trace to the new tab. An alternative solution is
+to double click on the trace label to disable a trace.
+.sp
+Normally, the raw data are displayed. Pressing \fBf\fP the predefined bandpass filter
+of third order from 0.5 Hz to 10 Hz, \fBBW\fP(3,0.5,10) is applied to the traces.
+Also zoom functions for the time and amplitude axis are provided.
+.INDENT 0.0
+.INDENT 2.5
+[image]
+artifical origin.UNINDENT
+.UNINDENT
+.sp
+In case the operator recognizes several seismic signals, an artificial/preliminary origin can be set
+by either pressing the middle mouse button on a trace or by opening the context menu (right mouse button)
+on a trace and selecting "Create artificial origin". The following pop\-up window show the coordinates of the
+trace and the time the click was made on the trace. Pressing "Send" sends this origin to the
+LOCATION group. This artificial origin is received e.g. by \fIscolv\fP and enables an immediate
+manual analysis of the closest traces.
+.SH HOTKEYS
+.TS
+center;
+|l|l|.
+_
+T{
+Hotkey
+T}	T{
+Description
+T}
+_
+T{
+\fBF2\fP
+T}	T{
+Setup connection dialog
+T}
+_
+T{
+\fBF11\fP
+T}	T{
+Toggle fullscreen
+T}
+_
+T{
+\fBf\fP
+T}	T{
+Toggle filter
+T}
+_
+T{
+\fBr\fP
+T}	T{
+Toggle all records
+T}
+_
+T{
+\fBz\fP
+T}	T{
+Toggle zoom
+T}
+_
+T{
+\fBup\fP
+T}	T{
+Line up
+T}
+_
+T{
+\fBdown\fP
+T}	T{
+Line down
+T}
+_
+T{
+\fBPgUp\fP
+T}	T{
+Page up
+T}
+_
+T{
+\fBPgDn\fP
+T}	T{
+Page down
+T}
+_
+T{
+\fBAlt+PgUp\fP
+T}	T{
+To top
+T}
+_
+T{
+\fBAlt+PgDn\fP
+T}	T{
+To bottom
+T}
+_
+T{
+\fBleft\fP
+T}	T{
+Scroll left
+T}
+_
+T{
+\fBright\fP
+T}	T{
+Scroll right
+T}
+_
+T{
+\fBCtrl+left\fP
+T}	T{
+Align left
+T}
+_
+T{
+\fBCtrl+right\fP
+T}	T{
+Align right
+T}
+_
+T{
+\fBAlt+q\fP
+T}	T{
+Quit
+T}
+_
+T{
+\fB1\fP
+T}	T{
+Restore configuration order of traces
+T}
+_
+T{
+\fB2\fP
+T}	T{
+Sort traces by distance
+T}
+_
+T{
+\fB3\fP
+T}	T{
+Sort traces by station code
+T}
+_
+T{
+\fB4\fP
+T}	T{
+Sort traces by network\-station code
+T}
+_
+T{
+\fB<\fP
+T}	T{
+Horizontal zoom\-in
+T}
+_
+T{
+\fB>\fP
+T}	T{
+Horizontal zoom\-out
+T}
+_
+T{
+\fBy\fP
+T}	T{
+Vertical zoom\-out
+T}
+_
+T{
+\fBShift+y\fP
+T}	T{
+Vertical zoom\-in
+T}
+_
+T{
+\fBn\fP
+T}	T{
+Set default display
+T}
+_
+.TE
+.SH CONFIGURATION
+.nf
+\fBetc/defaults/global.cfg\fP
+\fBetc/defaults/scrttv.cfg\fP
+\fBetc/global.cfg\fP
+\fBetc/scrttv.cfg\fP
+\fB~/.seiscomp3/global.cfg\fP
+\fB~/.seiscomp3/scrttv.cfg\fP
+.fi
+.sp
+.sp
+scrttv inherits \fIglobal options\fP.
+.INDENT 0.0
+.TP
+.B maxDelay
+Type: \fIint\fP
+.sp
+If greater than 0 then all traces for which the data latency is higher
+than this value are hidden.
+Default is \fB0\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B resortAutomatically
+Type: \fIboolean\fP
+.sp
+If enabled then all traces are sorted by distance when a new
+origin arrives.
+Default is \fBtrue\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B showPicks
+Type: \fIboolean\fP
+.sp
+If enabled, picks are shown.
+Default is \fBtrue\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B filter
+Type: \fIstring\fP
+.sp
+Defines the filter to be used when filtering is activated.
+Default is \fBBW(3, 0.5, 10.0)\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B bufferSize
+Type: \fIint\fP
+.sp
+Defines the buffer size in seconds of the ring bu of each trace.
+Default is \fB1800\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B autoResetDelay
+Type: \fIint\fP
+.sp
+Time span in seconds to switch back to the last view after an origin
+caused resorting. The default is 15min.
+Default is \fB900\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B streams.codes
+Type: \fIlist:string\fP
+.sp
+Defines a list of channels codes to be displayed. Each list item
+can contain wildcards at any position and the given list is
+intersected with all channels configured in inventory.
+.UNINDENT
+.IP Note
+\fBstreams.sort.*\fP
+\fIConfigures an initial location (latitude, longitude) to be used\fP
+\fIfor sorting the traces.\fP
+.RE
+.INDENT 0.0
+.TP
+.B streams.sort.latitude
+Type: \fIdouble\fP
+.sp
+Latitude of the initial location.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B streams.sort.longitude
+Type: \fIdouble\fP
+.sp
+Longitude of the initial location.
+.UNINDENT
+.IP Note
+\fBstreams.region.*\fP
+\fIDefines a region used for clipping requested stations.\fP
+.RE
+.INDENT 0.0
+.TP
+.B streams.region.lonmin
+Type: \fIdouble\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B streams.region.lonmax
+Type: \fIdouble\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B streams.region.latmin
+Type: \fIdouble\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B streams.region.latmax
+Type: \fIdouble\fP
+.UNINDENT
+.SH COMMAND-LINE
+.SS Generic
+.INDENT 0.0
+.TP
+.B \-h, \-\-help
+show help message.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-V, \-\-version
+show version information
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-config\-file arg
+Use alternative configuration file. When this option is used
+the loading of all stages is disabled. Only the given configuration
+file is parsed and used. To use another name for the configuration
+create a symbolic link of the application or copy it, eg scautopick \-> scautopick2.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-plugins arg
+Load given plugins.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-D, \-\-daemon
+Run as daemon. This means the application will fork itself and
+doesn\(aqt need to be started with &.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-auto\-shutdown arg
+Enable/disable self\-shutdown because a master module shutdown. This only
+works when messaging is enabled and the master module sends a shutdown
+message (enabled with \-\-start\-stop\-msg for the master module).
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-shutdown\-master\-module arg
+Sets the name of the master\-module used for auto\-shutdown. This
+is the application name of the module actually started. If symlinks
+are used then it is the name of the symlinked application.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-shutdown\-master\-username arg
+Sets the name of the master\-username of the messaging used for
+auto\-shutdown. If "shutdown\-master\-module" is given as well this
+parameter is ignored.
+.UNINDENT
+.SS Verbosity
+.INDENT 0.0
+.TP
+.B \-\-verbosity arg
+Verbosity level [0..4]. 0:quiet, 1:error, 2:warning, 3:info, 4:debug
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-v, \-\-v
+Increase verbosity level (may be repeated, eg. \-vv)
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-q, \-\-quiet
+Quiet mode: no logging output
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-component arg
+Limits the logging to a certain component. This option can be given more than once.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-s, \-\-syslog
+Use syslog logging back end. The output usually goes to /var/lib/messages.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-l, \-\-lockfile arg
+Path to lock file.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-console arg
+Send log output to stdout.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-debug
+Debug mode: \-\-verbosity=4 \-\-console=1
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-log\-file arg
+Use alternative log file.
+.UNINDENT
+.SS Messaging
+.INDENT 0.0
+.TP
+.B \-u, \-\-user arg
+Overrides configuration parameter \fBconnection.username\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-H, \-\-host arg
+Overrides configuration parameter \fBconnection.server\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-t, \-\-timeout arg
+Overrides configuration parameter \fBconnection.timeout\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-g, \-\-primary\-group arg
+Overrides configuration parameter \fBconnection.primaryGroup\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-S, \-\-subscribe\-group arg
+A group to subscribe to. This option can be given more than once.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-encoding arg
+Overrides configuration parameter \fBconnection.encoding\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-start\-stop\-msg arg
+Sets sending of a start\- and a stop message.
+.UNINDENT
+.SS Database
+.INDENT 0.0
+.TP
+.B \-\-db\-driver\-list
+List all supported database drivers.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-d, \-\-database arg
+The database connection string, format: \fI\%service://user:pwd@host/database\fP.
+"service" is the name of the database driver which can be
+queried with "\-\-db\-driver\-list".
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-config\-module arg
+The configmodule to use.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-inventory\-db arg
+Load the inventory from the given database or file, format: [\fI\%service://]location\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-db\-disable
+Do not use the database at all
+.UNINDENT
+.SS Records
+.INDENT 0.0
+.TP
+.B \-\-record\-driver\-list
+List all supported record stream drivers
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-I, \-\-record\-url arg
+The recordstream source URL, format: [\fI\%service://\fP]location[#type].
+"service" is the name of the recordstream driver which can be
+queried with "\-\-record\-driver\-list". If "service"
+is not given "\fI\%file://\fP" is used.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-record\-file arg
+Specify a file as record source.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-record\-type arg
+Specify a type for the records being read.
+.UNINDENT
+.SH AUTHOR
+GFZ Potsdam
+.SH COPYRIGHT
+2014, GFZ Potsdam, gempa GmbH
+.\" Generated by docutils manpage writer.
+.\" 
+.

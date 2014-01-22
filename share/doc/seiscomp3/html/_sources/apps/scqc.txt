@@ -1,0 +1,317 @@
+.. highlight:: rst
+
+.. _scqc:
+
+####
+scqc
+####
+
+**Derives quality parameters from waveforms.**
+
+
+Description
+===========
+
+scqc determines quality parameters of seismic data streams. The output parameters
+are time averaged quality control (QC) parameters in terms of waveform quality messages.
+In regular intervals report messages are sent containing the short term average
+representation of the specific QC parameter for a given time span. Alarm messages
+are generated if the short term average (e.g. 90s) of a QC parameter differs from
+the long term average (e.g. 3600s) more than a defined threshold.
+To avoid an excessive load, QC messages are sent distributed over time.
+
+The following parameters are determined:
+
+Delay [s]
+ Time difference between arrival time and last record end time plus half
+ record length (mean data latency, valid for all samples in record) 
+
+Latency [s]
+ Time difference between current time and record arrival time (feed latency) 
+
+Offset [counts]
+ Average value of all samples of a record 
+
+RMS [counts]
+ Offset corrected root mean square (RMS) value of a record 
+
+Spike (interval [s], amplitude [counts])
+ In case of the occurrence of a spike in a record this parameter delivers the
+ time interval between adjacent spikes and the mean amplitude of the spike;
+ internally a list of spikes is stored (spike time, spike amplitude); the spike
+ finder algorithm is still preliminary 
+
+Gap (interval [s], length [s])
+ In case of a data gap between two consecutive records this parameter delivers
+ the gap interval time and the mean length of the gap 
+
+Timing [%]
+ miniseed record timing quality (0 - 100 %)
+
+
+
+Configuration
+=============
+
+| :file:`etc/defaults/global.cfg`
+| :file:`etc/defaults/scqc.cfg`
+| :file:`etc/global.cfg`
+| :file:`etc/scqc.cfg`
+| :file:`~/.seiscomp3/global.cfg`
+| :file:`~/.seiscomp3/scqc.cfg`
+
+scqc inherits :ref:`global options<global-configuration>`.
+
+
+
+.. confval:: CreatorId
+
+   Type: *string*
+
+   ID of QC message creator
+   Default is ``smi://de.gfz-potsdam/QcTool_0.3.1``.
+
+.. confval:: useConfiguredStreams
+
+   Type: *boolean*
+
+   Limit QC determination to processed data streams.
+   Default is ``false``.
+
+.. confval:: streamMask
+
+   Type: *string*
+
+   If useConfiguredStreams \=\= False then
+   load \(from inventory\) only those streams, matching the streamMask
+   
+   RegEx e.g. \"\^\(NET1\|NET2\)\\.\(STA1\|STA2\|STA3\)\\.\(LOC\)\\.\(\(BH\)\|\(LH\)\|\(HH\)\)Z\$\"
+   
+   RegEx e.g. \"\^\(.+\)\\.\(.+\)\\.\(.\*\)\\.\(.+\)Z\$\"
+   
+   streamMask \= \"\^\(.+\)\\.\(.+\)\\.\(.\*\)\\.\(BHZ\)\$\"
+
+
+.. confval:: dbLookBack
+
+   Type: *int*
+
+   Database look up for past entries not older than x days
+   \(to determine the last QC parameter calculated\).
+   Default is ``7``.
+
+.. confval:: plugins.default.reportInterval
+
+   Type: *int*
+
+   Interval for sending the report messages in seconds.
+   Default is ``60``.
+
+.. confval:: plugins.default.alertInterval
+
+   Type: *int*
+
+   Interval for checking the alert thresholds in seconds.
+   Default is ``30``.
+
+.. confval:: plugins.default.staBufferLength
+
+   Type: *int*
+
+   Short Term Average \(STA\) buffer length in seconds.
+   Default is ``600``.
+
+.. confval:: plugins.default.ltaBufferLength
+
+   Type: *int*
+
+   Long Term Average \(LTA\) buffer length in seconds.
+   Default is ``600``.
+
+.. confval:: plugins.default.timeout
+
+   Type: *int*
+
+   Generate a report message in case no data is received since timeout in seconds.
+   Default is ``0``.
+
+.. confval:: plugins.default.thresholds
+
+   Type: *int*
+
+   Alert thresholds in percent, single value [or list 25,50,75 ... not yet implemented].
+   Default is ``100``.
+
+
+Command-line
+============
+
+.. program:: scqc
+
+
+Generic
+-------
+
+.. option:: -h, --help
+
+   show help message.
+
+.. option:: -V, --version
+
+   show version information
+
+.. option:: --config-file arg
+
+   Use alternative configuration file. When this option is used
+   the loading of all stages is disabled. Only the given configuration
+   file is parsed and used. To use another name for the configuration
+   create a symbolic link of the application or copy it, eg scautopick \-> scautopick2.
+
+.. option:: --plugins arg
+
+   Load given plugins.
+
+.. option:: -D, --daemon
+
+   Run as daemon. This means the application will fork itself and
+   doesn't need to be started with \&.
+
+.. option:: --auto-shutdown arg
+
+   Enable\/disable self\-shutdown because a master module shutdown. This only
+   works when messaging is enabled and the master module sends a shutdown
+   message \(enabled with \-\-start\-stop\-msg for the master module\).
+
+.. option:: --shutdown-master-module arg
+
+   Sets the name of the master\-module used for auto\-shutdown. This
+   is the application name of the module actually started. If symlinks
+   are used then it is the name of the symlinked application.
+
+.. option:: --shutdown-master-username arg
+
+   Sets the name of the master\-username of the messaging used for
+   auto\-shutdown. If \"shutdown\-master\-module\" is given as well this
+   parameter is ignored.
+
+
+Verbosity
+---------
+
+.. option:: --verbosity arg
+
+   Verbosity level [0..4]. 0:quiet, 1:error, 2:warning, 3:info, 4:debug
+
+.. option:: -v, --v
+
+   Increase verbosity level \(may be repeated, eg. \-vv\)
+
+.. option:: -q, --quiet
+
+   Quiet mode: no logging output
+
+.. option:: --component arg
+
+   Limits the logging to a certain component. This option can be given more than once.
+
+.. option:: -s, --syslog
+
+   Use syslog logging back end. The output usually goes to \/var\/lib\/messages.
+
+.. option:: -l, --lockfile arg
+
+   Path to lock file.
+
+.. option:: --console arg
+
+   Send log output to stdout.
+
+.. option:: --debug
+
+   Debug mode: \-\-verbosity\=4 \-\-console\=1
+
+.. option:: --log-file arg
+
+   Use alternative log file.
+
+
+Messaging
+---------
+
+.. option:: -u, --user arg
+
+   Overrides configuration parameter :confval:`connection.username`.
+
+.. option:: -H, --host arg
+
+   Overrides configuration parameter :confval:`connection.server`.
+
+.. option:: -t, --timeout arg
+
+   Overrides configuration parameter :confval:`connection.timeout`.
+
+.. option:: -g, --primary-group arg
+
+   Overrides configuration parameter :confval:`connection.primaryGroup`.
+
+.. option:: -S, --subscribe-group arg
+
+   A group to subscribe to. This option can be given more than once.
+
+.. option:: --encoding arg
+
+   Overrides configuration parameter :confval:`connection.encoding`.
+
+.. option:: --start-stop-msg arg
+
+   Sets sending of a start\- and a stop message.
+
+
+Database
+--------
+
+.. option:: --db-driver-list
+
+   List all supported database drivers.
+
+.. option:: -d, --database arg
+
+   The database connection string, format: service:\/\/user:pwd\@host\/database.
+   \"service\" is the name of the database driver which can be
+   queried with \"\-\-db\-driver\-list\".
+
+.. option:: --config-module arg
+
+   The configmodule to use.
+
+.. option:: --inventory-db arg
+
+   Load the inventory from the given database or file, format: [service:\/\/]location
+
+.. option:: --db-disable
+
+   Do not use the database at all
+
+
+Records
+-------
+
+.. option:: --record-driver-list
+
+   List all supported record stream drivers
+
+.. option:: -I, --record-url arg
+
+   The recordstream source URL, format: [service:\/\/]location[#type].
+   \"service\" is the name of the recordstream driver which can be
+   queried with \"\-\-record\-driver\-list\". If \"service\"
+   is not given \"file:\/\/\" is used.
+
+.. option:: --record-file arg
+
+   Specify a file as record source.
+
+.. option:: --record-type arg
+
+   Specify a type for the records being read.
+

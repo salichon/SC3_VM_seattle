@@ -1,0 +1,573 @@
+.TH "SCEVENT" "1" "January 21, 2014" "2014.016" "SeisComP3"
+.SH NAME
+scevent \- SeisComP3 Documentation
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.\" Man page generated from reStructeredText.
+.
+.sp
+\fBAssociates an Origin to an Event or forms a new Event if no match is found. Selects the preferred magnitude.\fP
+.SH DESCRIPTION
+.sp
+As a consequence of a real\-time system the SeisComP3 system creates several
+origins (results of localization processes) for one earthquake because as time
+goes by more seismic phases are available. scevent receives these origins and
+associates the origins to events. It is also possible to import origins from
+other agencies.
+.SS Origin Matching
+.sp
+scevent associates origins to events by searching for the best match of the new
+(incoming) origin to other origins for existing events. If a match is not found
+a new event can be formed. The new origin is matched to existing origins
+by comparing differences in the horizontal components of the locations, origin
+time difference, and matching picks.
+The new origin is matched to an existing origin which has the highest rank in
+the following three groups (1, 2, 3):
+.INDENT 0.0
+.IP 1. 3
+Location and Time (lowest)
+.sp
+The difference in horizontal location is less than
+\fI\%eventAssociation.maximumDistance\fP (degrees)
+and the difference in origin times is less than
+\fI\%eventAssociation.maximumTimeSpan\fP.
+.IP 2. 3
+Picks
+.sp
+The two origins have more than \fI\%eventAssociation.minimumMatchingArrivals\fP
+matching picks. Picks are matched either by ID or by time depending
+on \fI\%eventAssociation.maximumMatchingArrivalTimeDiff\fP.
+.IP 3. 3
+Picks and Location and Time (highest)
+.sp
+This is the best match, for which both the location\-and\-time and picks
+criteria above are satisfied.
+.UNINDENT
+.sp
+If more than one origin is found in the highest ranking class, then the first
+one of them is chosen.
+.IP Note
+For efficiency events in the cache are scanned first and if no matches are found
+the database is scanned for the time window \fI\%eventAssociation.eventTimeBefore\fP \- \fI\%eventAssociation.eventTimeAfter\fP
+around the incoming Origin time. The cached events are ordered by eventID and
+thus in time.
+.RE
+.sp
+\fBNo Origin Match\fP
+.sp
+If no event with an origin that matches the incoming origin is found then a
+new event is formed and the origin is associated to that event. The following
+criteria are applied to allow the creation of the new event:
+.sp
+The agency for the origin is not black listed (processing.blacklist.agencies).
+.sp
+and
+.sp
+If the origin is an automatic then it has more than eventAssociation.minimumDefiningPhases picks.
+.INDENT 0.0
+.INDENT 2.5
+[image: alternate association of an origin by matching picks.]
+[image]
+Associations of an origin to an event by matching picks..UNINDENT
+.UNINDENT
+.SH CONFIGURATION
+.nf
+\fBetc/defaults/global.cfg\fP
+\fBetc/defaults/scevent.cfg\fP
+\fBetc/global.cfg\fP
+\fBetc/scevent.cfg\fP
+\fB~/.seiscomp3/global.cfg\fP
+\fB~/.seiscomp3/scevent.cfg\fP
+.fi
+.sp
+.sp
+scevent inherits \fIglobal options\fP.
+.INDENT 0.0
+.TP
+.B eventIDPrefix
+Type: \fIstring\fP
+.sp
+Prefix for all Event IDs
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventIDPattern
+Type: \fIstring\fP
+.sp
+Defines the pattern to generate an event ID.
+.sp
+%p : prefix
+.sp
+%Y : year
+.sp
+%[w]c: alpha character
+.sp
+%[w]C: upper case alpha character
+.sp
+%[w]d: decimal
+.sp
+%[w]x: hexadecimal
+.sp
+%[w]X: upper case hexadecimal
+.sp
+[w] is an optional width parameter.
+Default is \fB%p%Y%04c\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventAssociation.minimumMagnitudes
+Type: \fIint\fP
+.sp
+Minimum number of station magnitudes referenced to a network magnitude
+to become a preferred magnitude.
+Default is \fB4\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventAssociation.minimumMatchingArrivals
+Type: \fIint\fP
+.sp
+Minimum number of matching picks between two origins to be associated
+to the same event.
+Default is \fB3\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventAssociation.maximumMatchingArrivalTimeDiff
+Type: \fIfloat\fP
+.sp
+If this time window in seconds is negative, pickIDs
+are compared to find matching arrivals. A non negative
+value (including 0) compares pick times regardless
+of the pickID. Pass: |pick1.time \- pick2.time| <= threshold
+Default is \fB\-1\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventAssociation.compareAllArrivalTimes
+Type: \fIboolean\fP
+.sp
+This parameter is only used in conjunction with
+eventAssociation.maximumMatchingArrivalTimeDiff.
+If a station has multiple associated arrivals for a
+particular event, this flag defines if the time distance
+of a new pick to all arrivals must be within
+eventAssociation.maximumMatchingArrivalTimeDiff
+or if one matching arrival is enough.
+Default is \fBtrue\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventAssociation.minimumDefiningPhases
+Type: \fIint\fP
+.sp
+Minimum number of Picks for an Origin that is automatic and cannot be
+associated with an Event to be allowed to form an new Event.
+Default is \fB10\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventAssociation.eventTimeBefore
+Type: \fIint\fP
+.sp
+Time range before the origin time of an incoming origin to search for
+matching events.
+Default is \fB1800\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventAssociation.eventTimeAfter
+Type: \fIint\fP
+.sp
+Time range after the origin time of an incoming origin to search for
+matching events.
+Default is \fB1800\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventAssociation.maximumTimeSpan
+Type: \fIint\fP
+.sp
+Associates an origin with an existing event  if the origin
+time differs not more than 60 seconds unless the
+minimumMatchingArrivals criteria matches.
+Default is \fB60\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventAssociation.maximumDistance
+Type: \fIdouble\fP
+.sp
+Allowed location difference between an incoming origin compared with
+preferred origins to get associated.
+Default is \fB5\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventAssociation.minMwCount
+Type: \fIint\fP
+.sp
+Minimum number of station magnitudes required for Mw(mB) to be considered as
+preferred magnitude.
+Default is \fB8\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventAssociation.mbOverMwCount
+Type: \fIint\fP
+.sp
+Minimum number of station magnitudes which ensures that Mw(mB) will be
+preferred and not mb.
+Default is \fB30\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventAssociation.mbOverMwValue
+Type: \fIint\fP
+.sp
+Average between mb and Mw(mB) which must be exceeded to become Mw(mB)
+preferred.
+Default is \fB6\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventAssociation.enableFallbackMagnitude
+Type: \fIboolean\fP
+.sp
+If true, one magnitude will be preferred even if magnitude criteria are
+not fullfilled.
+Default is \fBfalse\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventAssociation.magTypes
+Type: \fIlist:string\fP
+.sp
+Magnitude type priority list for becoming a preferred magnitude for an
+event.
+Default is \fBmBc, Mw(mB), Mwp, ML, MLh, MLv, mb\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventAssociation.agencies
+Type: \fIlist:string\fP
+.sp
+The agencyID priority list. When the eventtool comes to the point to
+select a preferred origin it orders all origins by its agency priority and
+selects then the best one among the highest priority agency. It also defines the
+agency priority for custom priority checks
+(eventAssociation.priorities).
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventAssociation.authors
+Type: \fIlist:string\fP
+.sp
+The author priority list. When the eventtool comes to the point to
+select a preferred origin it orders all origins by its author priority and
+selects then the best one among the highest priority author. It also defines the
+author priority for custom priority checks (eventAssociation.priorities).
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventAssociation.priorities
+Type: \fIlist:string\fP
+.sp
+The general priority list to decide if an origin becomes preferred.
+This list is not used unless this parameter is activated.
+This example list replicates the default hard wired behaviour:
+AGENCY, STATUS, PHASES_AUTOMATIC, TIME_AUTOMATIC
+.sp
+Each item in the list corresponds to a check that is performed.
+Each check computes a score of the incoming origin (s1) and the
+current preferred origin (s2). If the s1 is lower than s2,
+the incoming origin is rejected and does not become preferred. All
+subsequent checks are ignored.
+If s1 is equal to s2, the next check in the list is performed.
+If s1 is larger than s2, the origin becomes preferred and
+all subsequent checks are ignored.
+.sp
+Available tokens:
+.sp
+AGENCY: check based on agency priorities
+.sp
+AUTHOR: check based on author priorities
+.sp
+STATUS: manual origins rule out automatic ones
+.sp
+METHOD: check based on the method priorities
+.sp
+PHASES: higher phase count = higher priority
+.sp
+PHASES_AUTOMATIC: only checks phase priorities for incoming automatic origins
+.sp
+RMS: lower rms = higher priority
+.sp
+RMS_AUTOMATIC: only check RMS on incoming automatic origins
+.sp
+TIME: more recent origins (creationTime) have higher priorities
+.sp
+TIME_AUTOMATIC: only check creationTime priority on incoming automatic origins
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventAssociation.delayTimeSpan
+Type: \fIint\fP
+.sp
+Configures a timespan in seconds to delay event creation. If a new origin arrives
+which cannot be associated to an existing event, delay the event creation for a certain
+timespan.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventAssociation.region.rect
+Type: \fIstring\fP
+.sp
+Region in which scevent is allowed to create events.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventAssociation.depths.minimum
+Type: \fIdouble\fP
+.sp
+Minimum depth for which scevent is allowed to create events.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventAssociation.depths.maximum
+Type: \fIdouble\fP
+.sp
+Maximum depth for which scevent is allowed to create events.
+.UNINDENT
+.IP Note
+\fBeventAssociation.delayFilter.*\fP
+\fIThe delayFilter group configures an origin filter to activate the delay feature for\fP
+\fIthis origin. If more than one filter is given they are combined with AND.\fP
+.RE
+.INDENT 0.0
+.TP
+.B eventAssociation.delayFilter.agencyID
+Type: \fIstring\fP
+.sp
+The agencyID of the origin to be delayed.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventAssociation.delayFilter.author
+Type: \fIstring\fP
+.sp
+The author of the origin to be delayed.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventAssociation.delayFilter.evaluationMode
+Type: \fIstring\fP
+.sp
+The evaluation mode of the origin to be delayed. Can be either "manual"
+or "automatic".
+.UNINDENT
+.SH COMMAND-LINE
+.SS Generic
+.INDENT 0.0
+.TP
+.B \-h, \-\-help
+show help message.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-V, \-\-version
+show version information
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-config\-file arg
+Use alternative configuration file. When this option is used
+the loading of all stages is disabled. Only the given configuration
+file is parsed and used. To use another name for the configuration
+create a symbolic link of the application or copy it, eg scautopick \-> scautopick2.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-plugins arg
+Load given plugins.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-D, \-\-daemon
+Run as daemon. This means the application will fork itself and
+doesn\(aqt need to be started with &.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-auto\-shutdown arg
+Enable/disable self\-shutdown because a master module shutdown. This only
+works when messaging is enabled and the master module sends a shutdown
+message (enabled with \-\-start\-stop\-msg for the master module).
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-shutdown\-master\-module arg
+Sets the name of the master\-module used for auto\-shutdown. This
+is the application name of the module actually started. If symlinks
+are used then it is the name of the symlinked application.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-shutdown\-master\-username arg
+Sets the name of the master\-username of the messaging used for
+auto\-shutdown. If "shutdown\-master\-module" is given as well this
+parameter is ignored.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-x, \-\-expiry time
+Time span in hours after which objects expire.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-O, \-\-origin\-id publicID
+OriginID to be associated. When given no messages are sent.
+Only the status of the association is written to stdout.
+.UNINDENT
+.SS Verbosity
+.INDENT 0.0
+.TP
+.B \-\-verbosity arg
+Verbosity level [0..4]. 0:quiet, 1:error, 2:warning, 3:info, 4:debug
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-v, \-\-v
+Increase verbosity level (may be repeated, eg. \-vv)
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-q, \-\-quiet
+Quiet mode: no logging output
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-component arg
+Limits the logging to a certain component. This option can be given more than once.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-s, \-\-syslog
+Use syslog logging back end. The output usually goes to /var/lib/messages.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-l, \-\-lockfile arg
+Path to lock file.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-console arg
+Send log output to stdout.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-debug
+Debug mode: \-\-verbosity=4 \-\-console=1
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-log\-file arg
+Use alternative log file.
+.UNINDENT
+.SS Messaging
+.INDENT 0.0
+.TP
+.B \-u, \-\-user arg
+Overrides configuration parameter \fBconnection.username\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-H, \-\-host arg
+Overrides configuration parameter \fBconnection.server\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-t, \-\-timeout arg
+Overrides configuration parameter \fBconnection.timeout\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-g, \-\-primary\-group arg
+Overrides configuration parameter \fBconnection.primaryGroup\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-S, \-\-subscribe\-group arg
+A group to subscribe to. This option can be given more than once.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-encoding arg
+Overrides configuration parameter \fBconnection.encoding\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-start\-stop\-msg arg
+Sets sending of a start\- and a stop message.
+.UNINDENT
+.SS Database
+.INDENT 0.0
+.TP
+.B \-\-db\-driver\-list
+List all supported database drivers.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-d, \-\-database arg
+The database connection string, format: \fI\%service://user:pwd@host/database\fP.
+"service" is the name of the database driver which can be
+queried with "\-\-db\-driver\-list".
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-config\-module arg
+The configmodule to use.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-inventory\-db arg
+Load the inventory from the given database or file, format: [\fI\%service://]location\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-db\-disable
+Do not use the database at all
+.UNINDENT
+.SH AUTHOR
+GFZ Potsdam
+.SH COPYRIGHT
+2014, GFZ Potsdam, gempa GmbH
+.\" Generated by docutils manpage writer.
+.\" 
+.

@@ -1,0 +1,249 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>scart &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="Utilities" href="../toc/utilities.html" />
+    <link rel="next" title="scbulletin" href="scbulletin.html" />
+    <link rel="prev" title="scalert" href="scalert.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scbulletin.html" title="scbulletin"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="scalert.html" title="scalert"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/utilities.html" accesskey="U">Utilities</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">scart</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#command-line">Command-line</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="scalert.html"
+                        title="previous chapter">scalert</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="scbulletin.html"
+                        title="next chapter">scbulletin</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/apps/scart.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="scart">
+<span id="id1"></span><h1>scart<a class="headerlink" href="#scart" title="Permalink to this headline">¶</a></h1>
+<p><strong>Import/export MiniSEED data to/from SDS archives.</strong></p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The archive tool scart creates playback files (multiplexed MiniSEED files) from
+SDS structured data (e.g. created by slarchive) or from data passed from
+another record source such as <a class="reference internal" href="arclink.html#arclink"><em>Arclink</em></a>. It can also playback
+records directly out of an SDS structure. Furthermore it can be used to import
+multiplexed MiniSEED files into a local SDS structure.
+So it is possible to save event based waveform data in combination with
+scevtstreams into another archive.</p>
+</div>
+<div class="section" id="command-line">
+<h2>Command-line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h2>
+<p><strong class="program">scart [options] {archive-dir}</strong></p>
+<p>The last option has to be the archive directory when dump mode is enabled.
+When no archive directory is explicitly given,
+$SEISCOMP_ROOT/acquisition/archive or the current directory
+is used depending on whether $SEISCOMP_ROOT has been set or not.
+The default operation mode is import. That means that a multiplexed
+MiniSEED file or another record source such as ArcLink is used to import
+records into a SDS structure.</p>
+<dl class="option">
+<dt id="cmdoption-scart-I">
+<tt class="descname">-I</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scart-I" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify the recordstream URL when in import mode.
+When using another recordstream than a file (like ArcLink) a stream
+list file is required (default is <a class="reference external" href="file://">file://</a>- (stdin))</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scart-t">
+<tt class="descname">-t</tt><tt class="descclassname"> timewindow</tt><a class="headerlink" href="#cmdoption-scart-t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify the time window (as one properly quoted string) to dump
+records for. Times are UTC and separated by a tilde &quot;~&quot;.
+To dump one hour of waveform data between 2008/01/01 00:00:00 and
+2008/01/01 01:00:00 use
+&lt;-t &quot;2008-01-01 00:00:00~2008-01-01 01:00:00&quot;&gt;.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scart-d">
+<tt class="descname">-d</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--dump</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scart-d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set export (dump) mode. Records are fetched from an archive and
+stored in a file (or pipe).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scart-l">
+<tt class="descname">-l</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--list</tt><tt class="descclassname"> file</tt><a class="headerlink" href="#cmdoption-scart-l" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uses a stream list file instead of defined networks and channels
+(-n and -c are ignored). Line format: starttime;endtime;streamID.
+The time format is the same as described in option '-t'.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scart-s">
+<tt class="descname">-s</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--sort</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scart-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sort records by [start-]time. To sort records by their endtime use -E.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scart-E">
+<tt class="descname">-E</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scart-E" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sort records according to their end time (default is start time).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scart-m">
+<tt class="descname">-m</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--modify</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scart-m" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modify the record time for real time playback when in export mode.
+The first record time is NOW. The relative time of successive records
+to the first one are kept.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scart--speed">
+<tt class="descname">--speed</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scart--speed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify the speed to dump the records. A value of 0 means no delay
+otherwise speed is a multiplier of the real time difference between
+the records. When feeding the records directly into the replay pipe
+a value of 1 (real time) is recommended.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scart-n">
+<tt class="descname">-n</tt><tt class="descclassname"> networks</tt><a class="headerlink" href="#cmdoption-scart-n" title="Permalink to this definition">¶</a></dt>
+<dd><p>Network list of networks to dump (comma separated) (default is *).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scart-c">
+<tt class="descname">-c</tt><tt class="descclassname"> channels</tt><a class="headerlink" href="#cmdoption-scart-c" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify the channel filter for the dumped streams as regular
+expression (default is (B|S|M|H)(L|H)(Z|N|E)). To dump only the
+BHZ, BHN and BHE streams use BH(Z|N|E).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scart--files">
+<tt class="descname">--files</tt><tt class="descclassname"> count</tt><a class="headerlink" href="#cmdoption-scart--files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify the number of file handles to cache (default is 100).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scart-v">
+<tt class="descname">-v</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--verbose</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scart-v" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verbose mode.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scart--test">
+<tt class="descname">--test</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scart--test" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test mode, no record output. This switch is useful for debugging.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scart-h">
+<tt class="descname">-h</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--help</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scart-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display a help message.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scbulletin.html" title="scbulletin"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="scalert.html" title="scalert"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/utilities.html" >Utilities</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

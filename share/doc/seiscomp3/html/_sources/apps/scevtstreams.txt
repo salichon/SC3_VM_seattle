@@ -1,0 +1,197 @@
+.. highlight:: rst
+
+.. _scevtstreams:
+
+############
+scevtstreams
+############
+
+**Extracts stream information and time windows from an event.**
+
+
+Description
+===========
+
+scevtstreams reads all picks of an event and determines the time window between
+the first pick and the last pick. In addition a time margin is added to this
+time window. It writes the streams that are picked including the determined
+time window for the event to stdout. This tool gives appropriate input
+information for :ref:`scart` to archive event based data.
+
+
+Examples
+========
+
+Create a playback of an event with a time window of 5 minutes data and sort
+the records by end time:
+
+.. code-block:: sh
+
+   scevtstreams -E gfz2012abcd -d mysql://sysop:sysop@localhost/seiscomp3 -L 0 -m 300 |
+   scart -dsvE --list - ~/seiscomp3/acquisition/archive > gfz2012abcd-sorted.mseed
+
+Download waveforms from Arclink and import into local archive:
+
+.. code-block:: sh
+
+   scevtstreams -E gfz2012abcd -d mysql://sysop:sysop@localhost/seiscomp3 -L 0 -m 300 -R |
+   scart --list - ./my-archive
+
+
+
+Configuration
+=============
+
+| :file:`etc/defaults/global.cfg`
+| :file:`etc/defaults/scevtstreams.cfg`
+| :file:`etc/global.cfg`
+| :file:`etc/scevtstreams.cfg`
+| :file:`~/.seiscomp3/global.cfg`
+| :file:`~/.seiscomp3/scevtstreams.cfg`
+
+scevtstreams inherits :ref:`global options<global-configuration>`.
+
+
+
+
+Command-line
+============
+
+.. program:: scevtstreams
+
+
+Generic
+-------
+
+.. option:: -h, --help
+
+   show help message.
+
+.. option:: -V, --version
+
+   show version information
+
+.. option:: --config-file arg
+
+   Use alternative configuration file. When this option is used
+   the loading of all stages is disabled. Only the given configuration
+   file is parsed and used. To use another name for the configuration
+   create a symbolic link of the application or copy it, eg scautopick \-> scautopick2.
+
+.. option:: --plugins arg
+
+   Load given plugins.
+
+.. option:: -D, --daemon
+
+   Run as daemon. This means the application will fork itself and
+   doesn't need to be started with \&.
+
+.. option:: --auto-shutdown arg
+
+   Enable\/disable self\-shutdown because a master module shutdown. This only
+   works when messaging is enabled and the master module sends a shutdown
+   message \(enabled with \-\-start\-stop\-msg for the master module\).
+
+.. option:: --shutdown-master-module arg
+
+   Sets the name of the master\-module used for auto\-shutdown. This
+   is the application name of the module actually started. If symlinks
+   are used then it is the name of the symlinked application.
+
+.. option:: --shutdown-master-username arg
+
+   Sets the name of the master\-username of the messaging used for
+   auto\-shutdown. If \"shutdown\-master\-module\" is given as well this
+   parameter is ignored.
+
+
+Verbosity
+---------
+
+.. option:: --verbosity arg
+
+   Verbosity level [0..4]. 0:quiet, 1:error, 2:warning, 3:info, 4:debug
+
+.. option:: -v, --v
+
+   Increase verbosity level \(may be repeated, eg. \-vv\)
+
+.. option:: -q, --quiet
+
+   Quiet mode: no logging output
+
+.. option:: --component arg
+
+   Limits the logging to a certain component. This option can be given more than once.
+
+.. option:: -s, --syslog
+
+   Use syslog logging back end. The output usually goes to \/var\/lib\/messages.
+
+.. option:: -l, --lockfile arg
+
+   Path to lock file.
+
+.. option:: --console arg
+
+   Send log output to stdout.
+
+.. option:: --debug
+
+   Debug mode: \-\-verbosity\=4 \-\-console\=1
+
+.. option:: --log-file arg
+
+   Use alternative log file.
+
+
+Database
+--------
+
+.. option:: --db-driver-list
+
+   List all supported database drivers.
+
+.. option:: -d, --database arg
+
+   The database connection string, format: service:\/\/user:pwd\@host\/database.
+   \"service\" is the name of the database driver which can be
+   queried with \"\-\-db\-driver\-list\".
+
+.. option:: --config-module arg
+
+   The configmodule to use.
+
+.. option:: --inventory-db arg
+
+   Load the inventory from the given database or file, format: [service:\/\/]location
+
+.. option:: --db-disable
+
+   Do not use the database at all
+
+
+Dump
+----
+
+.. option:: -E, --event arg
+
+   Specifies the event id.
+
+.. option:: -m, --margin arg
+
+   Time margin in seconds added to the final stream time window, default 300.
+
+.. option:: -S, --streams arg
+
+   Comma separated list of streams per station to add, e.g. BH,SH,HH.
+
+.. option:: -C, --all-components flag
+
+   Specifies whether to use all components \(0\) or just the picked one \(1\), default 1.
+
+.. option:: -L, --all-locations flag
+
+   Specifies whether to use all location codes \(0\) or just the picked one \(1\), default 1.
+

@@ -1,0 +1,162 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>stationconf &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="Inventory" href="../toc/inventory.html" />
+    <link rel="next" title="tab2inv" href="tab2inv.html" />
+    <link rel="prev" title="scinv" href="scinv.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tab2inv.html" title="tab2inv"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="scinv.html" title="scinv"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/inventory.html" accesskey="U">Inventory</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">stationconf</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#porting-stations-from-older-versions">Porting stations from older versions</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="scinv.html"
+                        title="previous chapter">scinv</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="tab2inv.html"
+                        title="next chapter">tab2inv</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/apps/stationconf.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="stationconf">
+<span id="id1"></span><h1>stationconf<a class="headerlink" href="#stationconf" title="Permalink to this headline">¶</a></h1>
+<p><strong>Station metadata configurator the old way.</strong></p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Switching from Zurich release and before to new releases means also to lose
+the old <strong class="command">seiscomp config</strong> which allowed to edit configuration
+parameters (superseded by <a class="reference internal" href="scconfig.html#scconfig"><em>scconfig</em></a>) and station metadata.</p>
+<p>To make the transition phase easier for users that still manage their inventory
+with key files, this important part has been made available in this version
+as well.</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nv">$ </span>seiscomp <span class="nb">exec </span>stationconf
+SeisComP version 3.0 <span class="o">(</span>2012.229<span class="o">)</span>
+
+A<span class="o">)</span> Add/Edit network
+R<span class="o">)</span> Remove network
+W<span class="o">)</span> Write configuration and quit
+Q<span class="o">)</span> Quit without writing configuration
+Command? <span class="o">[</span>A<span class="o">]</span>:
+</pre></div>
+</div>
+<p>When the configuration is written with <tt class="kbd docutils literal"><span class="pre">w</span></tt>, an inventory XML file
+is created in <tt class="file docutils literal"><span class="pre">etc/inventory</span></tt> named <tt class="file docutils literal"><span class="pre">stations-key.xml</span></tt>. From this
+point the same procedures needs to be applied as if a new inventory file has
+been added to <tt class="file docutils literal"><span class="pre">etc/inventory</span></tt>, namely
+<strong class="command">seiscomp update-config inventory</strong>.</p>
+</div>
+<div class="section" id="porting-stations-from-older-versions">
+<h2>Porting stations from older versions<a class="headerlink" href="#porting-stations-from-older-versions" title="Permalink to this headline">¶</a></h2>
+<p>To port station key files from older version to this version, the only thing
+that needs to be done is to copy 3 directories:</p>
+<ul class="simple">
+<li><tt class="file docutils literal"><span class="pre">old/key</span></tt> to <tt class="file docutils literal"><span class="pre">new/etc/key-2.5/key</span></tt></li>
+<li><tt class="file docutils literal"><span class="pre">old/config</span></tt> to <tt class="file docutils literal"><span class="pre">new/etc/key-2.5/config</span></tt></li>
+<li><tt class="file docutils literal"><span class="pre">old/resp</span></tt> to <tt class="file docutils literal"><span class="pre">new/etc/key-2.5/resp</span></tt></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tab2inv.html" title="tab2inv"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="scinv.html" title="scinv"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/inventory.html" >Inventory</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

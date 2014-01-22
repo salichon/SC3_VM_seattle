@@ -1,0 +1,433 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>scesv &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="Graphical user interfaces" href="../gui.html" />
+    <link rel="next" title="scmv" href="scmv.html" />
+    <link rel="prev" title="Graphical user interfaces" href="../gui.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scmv.html" title="scmv"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../gui.html" title="Graphical user interfaces"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../gui.html" accesskey="U">Graphical user interfaces</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">scesv</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#hotkeys">Hotkeys</a></li>
+<li><a class="reference internal" href="#configuration">Configuration</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../gui.html"
+                        title="previous chapter">Graphical user interfaces</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="scmv.html"
+                        title="next chapter">scmv</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/apps/scesv.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="scesv">
+<span id="id1"></span><h1>scesv<a class="headerlink" href="#scesv" title="Permalink to this headline">¶</a></h1>
+<p><strong>Event summary view.</strong></p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>scesv is the the summary display of the event parameters. It shows the primary information
+about the current event including location, time, strength, type and processing status.
+Additional to the current event also older events can be chosen from the eventlist in the
+events tab.</p>
+<p>The two tabs of scesv are shown in <a class="reference internal" href="#fig-events"><em>Eventlist tab</em></a> and <a class="reference internal" href="#fig-summary"><em>Summary tab</em></a>.
+The events tab shows the eventlist of the time span defined on the bottom side of the window.</p>
+<div class="figure align-center" id="fig-events">
+<img alt="../_images/Eventlist_tab_of_scesv.jpg" src="../_images/Eventlist_tab_of_scesv.jpg" style="width: 16cm;" />
+<p class="caption">Eventlist tab</p>
+<div class="legend">
+Tab1-2: Summary/Events tab, EventList: list of the last events with summarized information,
+List options: Show fake events, Reading 1: spinbox to limit timespan of displayed events (in days),
+Reading 2: spinboxes to limit timespan of displayed events (specified dates), Status: connection status</div>
+</div>
+<p>The actual (default) or selected event (from eventlist) is shown in the (<a class="reference internal" href="#fig-summary"><em>Summary tab</em></a>).
+Here the information are highlighted in four sections:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">section</th>
+<th class="head">description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Time</td>
+<td>orign time in UTC and relative to now</td>
+</tr>
+<tr class="row-odd"><td>Region</td>
+<td>a map of the region and location with the event and stations</td>
+</tr>
+<tr class="row-even"><td>Magnitude</td>
+<td>different magnitude types, the values and counts</td>
+</tr>
+<tr class="row-odd"><td>Hypocenter</td>
+<td>origin information with location, depth, azimuthal gap etc.</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="figure align-center" id="fig-summary">
+<img alt="../_images/Summary_tab_of_scesv.jpg" src="../_images/Summary_tab_of_scesv.jpg" style="width: 16cm;" />
+<p class="caption">Summary tab</p>
+<div class="legend">
+Tab1-2: Summary/Events tab, Origin Time: origin time in UTC and relative to now, Map: map with region
+and location and stations, Magnitude: different magnitude types with values and counts,
+Origin Info: hypocenter information with position, phase count and azimuthal gap,
+Event: earthquake location, Station: station with ray-path, Details: &quot;Show Details&quot; button to open
+detailed information in <a class="reference internal" href="scolv.html#scolv"><em>scolv</em></a>, Event Type: event type combo box to set event type, Status: connection status</div>
+</div>
+</div>
+<div class="section" id="hotkeys">
+<h2>Hotkeys<a class="headerlink" href="#hotkeys" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Hotkey</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="kbd docutils literal"><span class="pre">F2</span></tt></td>
+<td>Setup connection dialog</td>
+</tr>
+<tr class="row-odd"><td><tt class="kbd docutils literal"><span class="pre">F6</span></tt></td>
+<td>Show propagation of P and S wave</td>
+</tr>
+<tr class="row-even"><td><tt class="kbd docutils literal"><span class="pre">F8</span></tt></td>
+<td>Toggle auto update</td>
+</tr>
+<tr class="row-odd"><td><tt class="kbd docutils literal"><span class="pre">F9</span></tt></td>
+<td>Show raypaths and associated stations</td>
+</tr>
+<tr class="row-even"><td><tt class="kbd docutils literal"><span class="pre">F10</span></tt></td>
+<td>Toggle tabs</td>
+</tr>
+<tr class="row-odd"><td><tt class="kbd docutils literal"><span class="pre">F11</span></tt></td>
+<td>Toggle fullscreen</td>
+</tr>
+<tr class="row-even"><td>Mouse wheel</td>
+<td>Zoom map in/out</td>
+</tr>
+<tr class="row-odd"><td>Double click</td>
+<td>Center map</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/defaults/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/defaults/scesv.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/scesv.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">~/.seiscomp3/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">~/.seiscomp3/scesv.cfg</span></tt></div>
+</div>
+<p>scesv inherits <a class="reference internal" href="global.html#global-configuration"><em>global options</em></a>.</p>
+<dl class="confval">
+<dt id="confval-ignoreOtherEvents">
+<tt class="descname">ignoreOtherEvents</tt><a class="headerlink" href="#confval-ignoreOtherEvents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>If the event type is either &quot;other&quot; or &quot;not existing&quot;
+and this flag is true then the event will not be shown.
+Default is <tt class="docutils literal"><span class="pre">true</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-showLastAutomaticSolution">
+<tt class="descname">showLastAutomaticSolution</tt><a class="headerlink" href="#confval-showLastAutomaticSolution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>If enabled the last automatic solution is displayed next to the
+current solution in the summary panel. If the last automatic
+solution differs from the current solution it is displayed
+in red. If both solutions match it is displayed in gray.
+Default is <tt class="docutils literal"><span class="pre">false</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-showOnlyMostRecentEvent">
+<tt class="descname">showOnlyMostRecentEvent</tt><a class="headerlink" href="#confval-showOnlyMostRecentEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>If enabled only the most recent event is shown even if an update of
+an older event is being received.
+Default is <tt class="docutils literal"><span class="pre">true</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-enableFixAutomaticSolutions">
+<tt class="descname">enableFixAutomaticSolutions</tt><a class="headerlink" href="#confval-enableFixAutomaticSolutions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>If enabled an additional button is displayed which allows to switch back
+the latest automatic solution. This button triggers an command for
+scevent to prioritize automatic solutions until the next manual
+solution is available.
+Default is <tt class="docutils literal"><span class="pre">false</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-visibleMagnitudes">
+<tt class="descname">visibleMagnitudes</tt><a class="headerlink" href="#confval-visibleMagnitudes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>list:string</em></p>
+<p>A list of magnitude types to be displayed.
+Default is <tt class="docutils literal"><span class="pre">M,MLv,mb,mB,Mw(mB)</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-button0">
+<tt class="descname">button0</tt><a class="headerlink" href="#confval-button0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Label of button0 which triggers script0.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-button1">
+<tt class="descname">button1</tt><a class="headerlink" href="#confval-button1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Label of button1 which triggers script1.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scripts.script0">
+<tt class="descname">scripts.script0</tt><a class="headerlink" href="#confval-scripts.script0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Path to a script if button0 is clicked.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scripts.script1">
+<tt class="descname">scripts.script1</tt><a class="headerlink" href="#confval-scripts.script1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Path to a script if button1 is clicked.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scripts.script0.oldStyle">
+<tt class="descname">scripts.script0.oldStyle</tt><a class="headerlink" href="#confval-scripts.script0.oldStyle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>If enabled, the parameter list of script0 is eventID, arrivalCount,
+magnitude, description.</p>
+<p>If disabled, the parameter list of script0 is eventID, preferredOriginID,
+preferredMagnitudeID, preferredFocalMechanismID.
+Default is <tt class="docutils literal"><span class="pre">true</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scripts.script1.oldStyle">
+<tt class="descname">scripts.script1.oldStyle</tt><a class="headerlink" href="#confval-scripts.script1.oldStyle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>If enabled, the parameter list of script1 is eventID, arrivalCount,
+magnitude, description.</p>
+<p>If disabled, the parameter list of script1 is eventID, preferredOriginID,
+preferredMagnitudeID, preferredFocalMechanismID.
+Default is <tt class="docutils literal"><span class="pre">true</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-summary.borders">
+<tt class="descname">summary.borders</tt><a class="headerlink" href="#confval-summary.borders" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>Draw borders in the summary panel.
+Default is <tt class="docutils literal"><span class="pre">false</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-display.lonmin">
+<tt class="descname">display.lonmin</tt><a class="headerlink" href="#confval-display.lonmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>double</em></p>
+<p>Minimum longitude of initial displayed map region.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-display.lonmax">
+<tt class="descname">display.lonmax</tt><a class="headerlink" href="#confval-display.lonmax" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>double</em></p>
+<p>Maximum longitude of initial displayed map region.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-display.latmin">
+<tt class="descname">display.latmin</tt><a class="headerlink" href="#confval-display.latmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>double</em></p>
+<p>Minimum latitude of initial displayed map region.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-display.latmax">
+<tt class="descname">display.latmax</tt><a class="headerlink" href="#confval-display.latmax" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>double</em></p>
+<p>Maximum latitude of initial displayed map region.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-display.event.comment.id">
+<tt class="descname">display.event.comment.id</tt><a class="headerlink" href="#confval-display.event.comment.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-display.event.comment.default">
+<tt class="descname">display.event.comment.default</tt><a class="headerlink" href="#confval-display.event.comment.default" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-display.event.comment.label">
+<tt class="descname">display.event.comment.label</tt><a class="headerlink" href="#confval-display.event.comment.label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-display.origin.comment.id">
+<tt class="descname">display.origin.comment.id</tt><a class="headerlink" href="#confval-display.origin.comment.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-display.origin.comment.default">
+<tt class="descname">display.origin.comment.default</tt><a class="headerlink" href="#confval-display.origin.comment.default" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-display.origin.comment.label">
+<tt class="descname">display.origin.comment.label</tt><a class="headerlink" href="#confval-display.origin.comment.label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-poi.maxDist">
+<tt class="descname">poi.maxDist</tt><a class="headerlink" href="#confval-poi.maxDist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>double</em></p>
+<p>Maximum distance in degrees of a POI (point of interest read
+from cities.xml) to be taken into account.
+Default is <tt class="docutils literal"><span class="pre">20</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-poi.minPopulation">
+<tt class="descname">poi.minPopulation</tt><a class="headerlink" href="#confval-poi.minPopulation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>double</em></p>
+<p>The minimum population of a POI to be taken into account.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-poi.message">
+<tt class="descname">poi.message</tt><a class="headerlink" href="#confval-poi.message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Message conversion string that converts a POI into the text
+displayed under the region label. There are different placeholders
+that can be used: &#64;dist&#64;, &#64;dir&#64;, &#64;poi&#64; and &#64;region&#64;.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scmv.html" title="scmv"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../gui.html" title="Graphical user interfaces"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../gui.html" >Graphical user interfaces</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

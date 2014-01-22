@@ -1,0 +1,321 @@
+.TH "SCRELOC" "1" "January 21, 2014" "2014.016" "SeisComP3"
+.SH NAME
+screloc \- SeisComP3 Documentation
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.\" Man page generated from reStructeredText.
+.
+.sp
+\fBAutomatic relocator.\fP
+.SH DESCRIPTION
+.sp
+screloc is an automatic relocator that receives origins from realtime
+locators such as scautoloc and relocates them with a configurable locator.
+To run screloc along with all processing modules add it to the list of
+clients in the seiscomp configuration frontend.
+.sp
+screloc does not yet listen to event information and does not skip origins for
+that a more recent one exists. Instead any incoming automatic origin is
+processed.
+.sp
+The following example configuration show how to setup screloc for
+\fINonLinLoc\fP:
+.sp
+.nf
+.ft C
+plugins = ${plugins}, locnll
+
+# Define the locator algorithm to use
+reloc.locator = NonLinLoc
+
+########################################################
+################ NonLinLoc configuration################
+########################################################
+NLLROOT = ${HOME}/nll/data
+
+NonLinLoc.outputPath = ${NLLROOT}/output/
+
+# Define the default control file if no profile specific
+# control file is defined.
+NonLinLoc.controlFile = ${NLLROOT}/NLL.default.conf
+
+# Set the default pick error in seconds passed to NonLinLoc
+# if no SC3 pick uncertainty is available.
+NonLinLoc.defaultPickError = 0.1
+
+# Define the available NonLinLoc location profiles. The order
+# implicitly defines the priority for overlapping regions
+#NonLinLoc.profiles = swiss_3d, swiss_1d, global
+NonLinLoc.profiles = swiss_3d, global
+
+# The earthModelID is copied to earthModelID attribute of the
+# resulting origin
+NonLinLoc.profile.swiss_1d.earthModelID = "swiss regional 1D"
+
+# Specify the velocity model table path as used by NonLinLoc
+NonLinLoc.profile.swiss_1d.tablePath = ${NLLROOT}/time_1d_regio/regio
+
+# Specify the region valid for this profile
+NonLinLoc.profile.swiss_1d.region = 41.2, 3.8, 50.1, 16.8
+
+# The NonLinLoc default control file to use for this profile
+NonLinLoc.profile.swiss_1d.controlFile = ${NLLROOT}/NLL.swiss_1d.conf
+
+# Configure the swiss_3d profile
+NonLinLoc.profile.swiss_3d.earthModelID = "swiss regional 3D"
+NonLinLoc.profile.swiss_3d.tablePath = ${NLLROOT}/time_3d/ch
+NonLinLoc.profile.swiss_3d.region = 45.15, 5.7, 48.3, 11.0
+NonLinLoc.profile.swiss_3d.controlFile = ${NLLROOT}/NLL.swiss_3d.conf
+
+# And the global profile
+NonLinLoc.profile.global.earthModelID = iaspei91
+NonLinLoc.profile.global.tablePath = ${NLLROOT}/iasp91/iasp91
+NonLinLoc.profile.global.controlFile = ${NLLROOT}/NLL.global.conf
+.ft P
+.fi
+.SH CONFIGURATION
+.nf
+\fBetc/defaults/global.cfg\fP
+\fBetc/defaults/screloc.cfg\fP
+\fBetc/global.cfg\fP
+\fBetc/screloc.cfg\fP
+\fB~/.seiscomp3/global.cfg\fP
+\fB~/.seiscomp3/screloc.cfg\fP
+.fi
+.sp
+.sp
+screloc inherits \fIglobal options\fP.
+.INDENT 0.0
+.TP
+.B reloc.locator
+Type: \fIstring\fP
+.sp
+Defines the locator to be used such as NonLinLoc.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B reloc.ignoreRejectedOrigins
+Type: \fIboolean\fP
+.sp
+Ignores origins with status REJECTED.
+Default is \fBfalse\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B reloc.allowPreliminaryOrigins
+Type: \fIboolean\fP
+.sp
+Triggers processing also on origins with status PRELIMINARY.
+Default is \fBfalse\fP.
+.UNINDENT
+.SH COMMAND-LINE
+.SS Generic
+.INDENT 0.0
+.TP
+.B \-h, \-\-help
+show help message.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-V, \-\-version
+show version information
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-config\-file arg
+Use alternative configuration file. When this option is used
+the loading of all stages is disabled. Only the given configuration
+file is parsed and used. To use another name for the configuration
+create a symbolic link of the application or copy it, eg scautopick \-> scautopick2.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-plugins arg
+Load given plugins.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-D, \-\-daemon
+Run as daemon. This means the application will fork itself and
+doesn\(aqt need to be started with &.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-auto\-shutdown arg
+Enable/disable self\-shutdown because a master module shutdown. This only
+works when messaging is enabled and the master module sends a shutdown
+message (enabled with \-\-start\-stop\-msg for the master module).
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-shutdown\-master\-module arg
+Sets the name of the master\-module used for auto\-shutdown. This
+is the application name of the module actually started. If symlinks
+are used then it is the name of the symlinked application.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-shutdown\-master\-username arg
+Sets the name of the master\-username of the messaging used for
+auto\-shutdown. If "shutdown\-master\-module" is given as well this
+parameter is ignored.
+.UNINDENT
+.SS Verbosity
+.INDENT 0.0
+.TP
+.B \-\-verbosity arg
+Verbosity level [0..4]. 0:quiet, 1:error, 2:warning, 3:info, 4:debug
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-v, \-\-v
+Increase verbosity level (may be repeated, eg. \-vv)
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-q, \-\-quiet
+Quiet mode: no logging output
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-component arg
+Limits the logging to a certain component. This option can be given more than once.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-s, \-\-syslog
+Use syslog logging back end. The output usually goes to /var/lib/messages.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-l, \-\-lockfile arg
+Path to lock file.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-console arg
+Send log output to stdout.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-debug
+Debug mode: \-\-verbosity=4 \-\-console=1
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-log\-file arg
+Use alternative log file.
+.UNINDENT
+.SS Messaging
+.INDENT 0.0
+.TP
+.B \-u, \-\-user arg
+Overrides configuration parameter \fBconnection.username\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-H, \-\-host arg
+Overrides configuration parameter \fBconnection.server\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-t, \-\-timeout arg
+Overrides configuration parameter \fBconnection.timeout\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-g, \-\-primary\-group arg
+Overrides configuration parameter \fBconnection.primaryGroup\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-S, \-\-subscribe\-group arg
+A group to subscribe to. This option can be given more than once.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-encoding arg
+Overrides configuration parameter \fBconnection.encoding\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-start\-stop\-msg arg
+Sets sending of a start\- and a stop message.
+.UNINDENT
+.SS Database
+.INDENT 0.0
+.TP
+.B \-\-db\-driver\-list
+List all supported database drivers.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-d, \-\-database arg
+The database connection string, format: \fI\%service://user:pwd@host/database\fP.
+"service" is the name of the database driver which can be
+queried with "\-\-db\-driver\-list".
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-config\-module arg
+The configmodule to use.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-inventory\-db arg
+Load the inventory from the given database or file, format: [\fI\%service://]location\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-db\-disable
+Do not use the database at all
+.UNINDENT
+.SS Mode
+.INDENT 0.0
+.TP
+.B \-\-test
+test mode, do not send any message
+.UNINDENT
+.SS Input
+.INDENT 0.0
+.TP
+.B \-O, \-\-origin\-id arg
+reprocess the origin and send a message unless test mode is activated
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-locator arg
+the locator type to use
+.UNINDENT
+.SH AUTHOR
+GFZ Potsdam
+.SH COPYRIGHT
+2014, GFZ Potsdam, gempa GmbH
+.\" Generated by docutils manpage writer.
+.\" 
+.

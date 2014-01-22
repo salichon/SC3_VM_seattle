@@ -1,0 +1,245 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>arclink-access &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="Acquisition" href="../toc/acquisition.html" />
+    <link rel="next" title="arclinkproxy" href="arclinkproxy.html" />
+    <link rel="prev" title="arclink" href="arclink.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="arclinkproxy.html" title="arclinkproxy"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="arclink.html" title="arclink"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/acquisition.html" accesskey="U">Acquisition</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">arclink-access</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#bindings">Bindings</a><ul>
+<li><a class="reference internal" href="#generating-access">Generating Access</a></li>
+<li><a class="reference internal" href="#dumping-access">Dumping Access</a></li>
+<li><a class="reference internal" href="#configuration">Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="arclink.html"
+                        title="previous chapter">arclink</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="arclinkproxy.html"
+                        title="next chapter">arclinkproxy</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/apps/arclink-access.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="arclink-access">
+<span id="id1"></span><h1>arclink-access<a class="headerlink" href="#arclink-access" title="Permalink to this headline">¶</a></h1>
+<p><strong>Access module for Arclink.</strong></p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The Arclink access module is a virtual module that does not contain a binary.
+It is used to define access rule for particular stations and thus only provides
+bindings. The module itself does not need any configuration.</p>
+</div>
+<div class="section" id="bindings">
+<h2>Bindings<a class="headerlink" href="#bindings" title="Permalink to this headline">¶</a></h2>
+<p>For each network, station, stream marked as restricted in the inventory you
+may define a set of e-mail addresses of users that should have access to the
+data. This information is stored inside the SeisComp3 databases and it is later
+used by the request-handler (part of ArcLink) during the request
+authorization.</p>
+<p>The process of expanding the access rules and generation of entries in the database
+is similar to the routing.</p>
+<div class="section" id="generating-access">
+<h3>Generating Access<a class="headerlink" href="#generating-access" title="Permalink to this headline">¶</a></h3>
+<p>To define a list of users (pedro and joao) that have access to a certain
+restricted network, for example 9U, just create a file called profile_9u at the
+etc/key/arclink-access/ with the following line:</p>
+<div class="highlight-sh"><div class="highlight"><pre>access.users <span class="o">=</span> pedro, joao
+</pre></div>
+</div>
+<p>or on a more sophisticated case:</p>
+<div class="highlight-sh"><div class="highlight"><pre>access.users <span class="o">=</span> pedro, joao
+access.streams <span class="o">=</span> BH*
+</pre></div>
+</div>
+<p>Then link this profile from each station binding file in the etc/key
+folder. To link this profile just add a line like:</p>
+<div class="highlight-sh"><div class="highlight"><pre>arclink-access:9u
+</pre></div>
+</div>
+<p>to the station key file (file named like station_[Network Code]_[Station Code]).</p>
+<p>Tuning of the access can be done by using disabledStationCode (advised),
+streams, start and end parameters like (similar syntax and behavior) done with
+the <a class="reference internal" href="arclink.html#define-arclink-routing"><em>routing binding</em></a> configuration on the ArcLink
+module.</p>
+</div>
+<div class="section" id="dumping-access">
+<h3>Dumping Access<a class="headerlink" href="#dumping-access" title="Permalink to this headline">¶</a></h3>
+<p>To dump access you should use the <em>dump_db</em> command, that is also used to dump
+the routing.  Just add the option <em>with-access</em> like in:</p>
+<div class="highlight-sh"><div class="highlight"><pre>% dump_db --routing --with-access routing.xml
+</pre></div>
+</div>
+<p>the resulting file will then contain a list of access entries found in the database.
+Example:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;ns0:routing</span> <span class="na">xmlns:ns0=</span><span class="s">&quot;http://geofon.gfz-potsdam.de/ns/Routing/1.0/&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ns0:route</span> <span class="na">locationCode=</span><span class="s">&quot;&quot;</span> <span class="na">networkCode=</span><span class="s">&quot;GE&quot;</span>
+             <span class="na">publicID=</span><span class="s">&quot;Route#20120830110313.459068.338&quot;</span>
+             <span class="na">stationCode=</span><span class="s">&quot;&quot;</span> <span class="na">streamCode=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ns0:arclink</span> <span class="na">address=</span><span class="s">&quot;localhost:18001&quot;</span> <span class="na">end=</span><span class="s">&quot;&quot;</span> <span class="na">priority=</span><span class="s">&quot;1&quot;</span>
+                 <span class="na">start=</span><span class="s">&quot;1980-01-01T00:00:00.0000Z&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;ns0:seedlink</span> <span class="na">address=</span><span class="s">&quot;localhost:18000&quot;</span> <span class="na">priority=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/ns0:route&gt;</span>
+  <span class="nt">&lt;ns0:access</span> <span class="na">end=</span><span class="s">&quot;&quot;</span> <span class="na">locationCode=</span><span class="s">&quot;&quot;</span> <span class="na">networkCode=</span><span class="s">&quot;GE&quot;</span>
+              <span class="na">start=</span><span class="s">&quot;1980-01-01T00:00:00.0000Z&quot;</span> <span class="na">stationCode=</span><span class="s">&quot;&quot;</span>
+              <span class="na">streamCode=</span><span class="s">&quot;&quot;</span> <span class="na">user=</span><span class="s">&quot;pedro&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;ns0:access</span> <span class="na">end=</span><span class="s">&quot;&quot;</span> <span class="na">locationCode=</span><span class="s">&quot;&quot;</span> <span class="na">networkCode=</span><span class="s">&quot;GE&quot;</span>
+              <span class="na">start=</span><span class="s">&quot;1980-01-01T00:00:00.0000Z&quot;</span> <span class="na">stationCode=</span><span class="s">&quot;&quot;</span>
+              <span class="na">streamCode=</span><span class="s">&quot;&quot;</span> <span class="na">user=</span><span class="s">&quot;joao&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/ns0:routing&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="configuration">
+<h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>access.*</strong>
+<em>Defines access to restricted data. When defined it will add the listed users to the list of authorized users to access certain restricted data give the parameters on this binding.</em></p>
+</div>
+<dl class="confval">
+<dt id="confval-access.users">
+<tt class="descname">access.users</tt><a class="headerlink" href="#confval-access.users" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>list:string</em></p>
+<p>List of users (e-mail addresses) allowed to access the restricted data.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-access.disableStationCode">
+<tt class="descname">access.disableStationCode</tt><a class="headerlink" href="#confval-access.disableStationCode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>When disableStationCode option is set to true the access entries will be generated only for the network level (and optionally stream level), no station code will be filled (this can potentially reduce the number of entries on the access table, and save memory on the request handler when used).
+Default is <tt class="docutils literal"><span class="pre">false</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-access.streams">
+<tt class="descname">access.streams</tt><a class="headerlink" href="#confval-access.streams" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>list:string</em></p>
+<p>List of locations.streams this access rule applies to. The location code is optional (optional, allow wildcards).</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-access.start">
+<tt class="descname">access.start</tt><a class="headerlink" href="#confval-access.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>datetime</em></p>
+<p>Start of validity (optional).</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-access.end">
+<tt class="descname">access.end</tt><a class="headerlink" href="#confval-access.end" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>datetime</em></p>
+<p>End of validity (optional).</p>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="arclinkproxy.html" title="arclinkproxy"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="arclink.html" title="arclink"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/acquisition.html" >Acquisition</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

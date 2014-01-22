@@ -1,0 +1,616 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>scvsmag &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="Processing" href="../toc/processing.html" />
+    <link rel="next" title="scvsmaglog" href="scvsmaglog.html" />
+    <link rel="prev" title="screloc" href="screloc.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scvsmaglog.html" title="scvsmaglog"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="screloc.html" title="screloc"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/processing.html" accesskey="U">Processing</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">scvsmag</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#logging">Logging</a><ul>
+<li><a class="reference internal" href="#explanation">Explanation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#references">References</a></li>
+<li><a class="reference internal" href="#configuration">Configuration</a></li>
+<li><a class="reference internal" href="#command-line">Command-line</a><ul>
+<li><a class="reference internal" href="#generic">Generic</a></li>
+<li><a class="reference internal" href="#verbosity">Verbosity</a></li>
+<li><a class="reference internal" href="#messaging">Messaging</a></li>
+<li><a class="reference internal" href="#database">Database</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="screloc.html"
+                        title="previous chapter">screloc</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="scvsmaglog.html"
+                        title="next chapter">scvsmaglog</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/apps/scvsmag.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="scvsmag">
+<span id="id1"></span><h1>scvsmag<a class="headerlink" href="#scvsmag" title="Permalink to this headline">¶</a></h1>
+<p><strong>Computes VS magnitudes based on envelopes calculated by scenvelope.</strong></p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>scvsmag is a new implementation of the Virtual Seismologist (<a class="reference internal" href="vs.html#vs"><em>VS</em></a>)
+Earthquake Early Warning algorithm (Cua, 2005; Cua and Heaton, 2007). For a
+given origin it estimates single station magnitudes and a network magnitude
+based on  the envelope attenuation relationship and ground motion amplitude
+ratio derived  by Cua (2005). The original VS algorithm applies the Bayesian
+theorem by defining magnitude as the value that maximizes the product of a
+likelihood function and a prior probability density function. In the current
+version of scvsmag only the likelihood function is implemented and no prior
+information is used at this stage.</p>
+</div>
+<div class="section" id="logging">
+<h2>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h2>
+<p>Apart from the standard log messages in <tt class="file docutils literal"><span class="pre">scvsmag.log</span></tt>, processing log messages are
+also written to <tt class="file docutils literal"><span class="pre">scvsmag-processing-info.log</span></tt> every time the VS Magnitude of an event
+is re-evaluated. A typical entry is shown below.</p>
+<div class="highlight-sh"><div class="highlight"><pre>1  2013/06/28 10:51:01 <span class="o">[</span>processing/info/VsMagnitude<span class="o">]</span> Start logging <span class="k">for </span>event: sed2012cyqr
+2  2013/06/28 10:51:01 <span class="o">[</span>processing/info/VsMagnitude<span class="o">]</span> update number: 0
+3  2013/06/28 10:51:01 <span class="o">[</span>processing/info/VsMagnitude<span class="o">]</span> Sensor: CH..BNALP.HH; Wavetype: P-wave; Soil class: rock; Magnitude: 3.47
+4  2013/06/28 10:51:01 <span class="o">[</span>processing/info/VsMagnitude<span class="o">]</span> station lat: 46.87; station lon: 8.43; epicentral distance: 32.26;
+5  2013/06/28 10:51:01 <span class="o">[</span>processing/info/VsMagnitude<span class="o">]</span> PGA<span class="o">(</span>Z<span class="o">)</span>: 3.57e-03; PGV<span class="o">(</span>Z<span class="o">)</span>: 6.91e-05; PGD<span class="o">(</span>Z<span class="o">)</span>: 1.62e-06
+6  2013/06/28 10:51:01 <span class="o">[</span>processing/info/VsMagnitude<span class="o">]</span> PGA<span class="o">(</span>H<span class="o">)</span>: 2.67e-03; PGV<span class="o">(</span>H<span class="o">)</span>: 3.44e-05; PGD<span class="o">(</span>H<span class="o">)</span>: 1.02e-06
+7  2013/06/28 10:51:01 <span class="o">[</span>processing/info/VsMagnitude<span class="o">]</span> Sensor: CH..MUO.HH; Wavetype: S-wave; Soil class: rock; Magnitude: 3.83
+8  2013/06/28 10:51:01 <span class="o">[</span>processing/info/VsMagnitude<span class="o">]</span> station lat: 46.97; station lon: 8.64; epicentral distance: 22.45;
+9  2013/06/28 10:51:01 <span class="o">[</span>processing/info/VsMagnitude<span class="o">]</span> PGA<span class="o">(</span>Z<span class="o">)</span>: 8.19e-03; PGV<span class="o">(</span>Z<span class="o">)</span>: 2.12e-04; PGD<span class="o">(</span>Z<span class="o">)</span>: 6.91e-06
+10 2013/06/28 10:51:01 <span class="o">[</span>processing/info/VsMagnitude<span class="o">]</span> PGA<span class="o">(</span>H<span class="o">)</span>: 2.18e-02; PGV<span class="o">(</span>H<span class="o">)</span>: 5.00e-04; PGD<span class="o">(</span>H<span class="o">)</span>: 1.72e-05
+11 2013/06/28 10:51:01 <span class="o">[</span>processing/info/VsMagnitude<span class="o">]</span> Sensor: CH..WILA.HH; Wavetype: P-wave; Soil class: rock; Magnitude: 3.50
+12 2013/06/28 10:51:01 <span class="o">[</span>processing/info/VsMagnitude<span class="o">]</span> station lat: 47.41; station lon: 8.91; epicentral distance: 41.16;
+13 2013/06/28 10:51:01 <span class="o">[</span>processing/info/VsMagnitude<span class="o">]</span> PGA<span class="o">(</span>Z<span class="o">)</span>: 4.38e-03; PGV<span class="o">(</span>Z<span class="o">)</span>: 6.42e-05; PGD<span class="o">(</span>Z<span class="o">)</span>: 1.85e-06
+14 2013/06/28 10:51:01 <span class="o">[</span>processing/info/VsMagnitude<span class="o">]</span> PGA<span class="o">(</span>H<span class="o">)</span>: 3.35e-03; PGV<span class="o">(</span>H<span class="o">)</span>: 6.40e-05; PGD<span class="o">(</span>H<span class="o">)</span>: 1.88e-06
+15 2013/06/28 10:51:01 <span class="o">[</span>processing/info/VsMagnitude<span class="o">]</span> Sensor: CH..ZUR.HH; Wavetype: S-wave; Soil class: rock; Magnitude: 3.79
+16 2013/06/28 10:51:01 <span class="o">[</span>processing/info/VsMagnitude<span class="o">]</span> station lat: 47.37; station lon: 8.51; epicentral distance: 23.99;
+17 2013/06/28 10:51:01 <span class="o">[</span>processing/info/VsMagnitude<span class="o">]</span> PGA<span class="o">(</span>Z<span class="o">)</span>: 9.17e-02; PGV<span class="o">(</span>Z<span class="o">)</span>: 1.03e-03; PGD<span class="o">(</span>Z<span class="o">)</span>: 1.64e-05
+18 2013/06/28 10:51:01 <span class="o">[</span>processing/info/VsMagnitude<span class="o">]</span> PGA<span class="o">(</span>H<span class="o">)</span>: 9.63e-02; PGV<span class="o">(</span>H<span class="o">)</span>: 2.12e-03; PGD<span class="o">(</span>H<span class="o">)</span>: 5.31e-05
+19 2013/06/28 10:51:01 <span class="o">[</span>processing/info/VsMagnitude<span class="o">]</span> VS-mag: 3.69; median single-station-mag: 3.79; lat: 47.15; lon: 8.52; depth : 25.32 km
+20 2013/06/28 10:51:01 <span class="o">[</span>processing/info/VsMagnitude<span class="o">]</span> creation <span class="nb">time</span>: 2012-02-11T22:45:40.00Z; origin <span class="nb">time</span>: 2012-02-11T22:45:26.27Z; t-diff: 13.73; <span class="nb">time </span>since origin arrival: 0.864; <span class="nb">time </span>since origin creation: 0.873
+21 2013/06/28 10:51:01 <span class="o">[</span>processing/info/VsMagnitude<span class="o">]</span> <span class="c"># picked stations: 6; # envelope streams: 79</span>
+22 2013/06/28 10:51:01 <span class="o">[</span>processing/info/VsMagnitude<span class="o">]</span> Distance threshold <span class="o">(</span>dt<span class="o">)</span>: 44.68 km; <span class="c"># picked stations &lt; dt: 4; # envelope streams &lt; dt: 4</span>
+23 2013/06/28 10:51:01 <span class="o">[</span>processing/info/VsMagnitude<span class="o">]</span> Stations not used <span class="k">for </span>VS-mag: CH.HASLI CH.LLS
+24 2013/06/28 10:51:01 <span class="o">[</span>processing/info/VsMagnitude<span class="o">]</span> Magnitude check: 0.027; Arrivals check: 0.000
+25 2013/06/28 10:51:01 <span class="o">[</span>processing/info/VsMagnitude<span class="o">]</span> likelihood: 0.99
+26 2013/06/28 10:51:01 <span class="o">[</span>processing/info/VsMagnitude<span class="o">]</span> End logging <span class="k">for </span>event: sed2012cyqr
+</pre></div>
+</div>
+<div class="section" id="explanation">
+<h3>Explanation<a class="headerlink" href="#explanation" title="Permalink to this headline">¶</a></h3>
+<p>The following table comments each line in the above output.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="88%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Line</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>Start of the log message for the event with the given event ID</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>Update counter for this event.</td>
+</tr>
+<tr class="row-even"><td>3 - 18</td>
+<td>Information about the stations that contribute to a VS magnitude
+estimate. Each station has four lines with the first line giving
+the the stream name, the wavetype of the contributing amplitude,
+the soil type at the site and the single station magnitude. The
+next line shows the location and epicentral distance of the sensor.
+On the two following lines peak-ground-acceleration (PGA) -velocity
+(PGV) and -displacement (PGD) are given in SI units for vertical
+and the root-mean-square horizontal component.</td>
+</tr>
+<tr class="row-odd"><td>19</td>
+<td>The VS magnitude, the median of the single station magnitudes, the
+cordinates of the hypocenter</td>
+</tr>
+<tr class="row-even"><td>20</td>
+<td>The creation time of the magnitude, the origin time and the
+difference between the two ('tdiff'); also given are the time since
+origin arrival and time since origin creation which is a measure of
+how long it took to evaluate the first magnitude estimate.</td>
+</tr>
+<tr class="row-odd"><td>21</td>
+<td>The number of stations contributing to an origin ('# picked
+stations') and the number of envelope streams available
+('# envelope streams').</td>
+</tr>
+<tr class="row-even"><td>22</td>
+<td>Distance threshold from epicenter within which the relative
+difference between picked stations and envelope streams is
+evaluated (see line 24). Also shown is the number of picked
+stations and envelope streams within this distance threshold.</td>
+</tr>
+<tr class="row-odd"><td>23</td>
+<td>Stations that were used for picking but not for the magnitude
+estimation.</td>
+</tr>
+<tr class="row-even"><td>24</td>
+<td>'Magnitude check' is the relative difference between the VS
+magnitude and the median of the single station magnitudes.
+If it exceeds a certain threshold the magnitude quality value is
+set to 0.4 otherwise to 1.0. 'Arrivals check' is the relative
+difference betweeen the number of picked stations and the number of
+envelope streams contributing to the VS magnitude. If it exceeds a
+certain threshold the arrivals quality criteria is set to 0.3
+otherwise to 1.0. The full decision tree for computing the
+likelihood and the related thresholds is shown
+<a class="reference internal" href="vs.html#fig-vs-likelihood"><em>here</em></a>.</td>
+</tr>
+<tr class="row-odd"><td>25</td>
+<td>The 'likelihood' is the product of the magnitude and the arrivals
+quality criteria. If both are 1.0 than the likelihoodis set to
+0.99.</td>
+</tr>
+<tr class="row-even"><td>26</td>
+<td>End of the log message for the event with the given event ID.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>Borcherdt, R. D., 1994: Estimates of Site-Dependent Response Spectra for Design (Methodology and Justification), Earthquake Spectra</p>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/defaults/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/defaults/scvsmag.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/scvsmag.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">~/.seiscomp3/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">~/.seiscomp3/scvsmag.cfg</span></tt></div>
+</div>
+<p>scvsmag inherits <a class="reference internal" href="global.html#global-configuration"><em>global options</em></a>.</p>
+<dl class="confval">
+<dt id="confval-vsmag.siteEffect">
+<tt class="descname">vsmag.siteEffect</tt><a class="headerlink" href="#confval-vsmag.siteEffect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>Choose whether to use Vs30 base site effect corrections
+(see also the option 'vsmag.vs30filename').
+Default is <tt class="docutils literal"><span class="pre">false</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-vsmag.vs30filename">
+<tt class="descname">vsmag.vs30filename</tt><a class="headerlink" href="#confval-vsmag.vs30filename" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>A ascii grid file of Vs30 values conforming to the standard ShakeMap format.
+Each line contains a comma separated list of longitude, latitude and the
+VS30 value for one grid point. Longitude and latitude have to got from lower
+to higher values and longitudes increase faster than latitudes.
+Default is <tt class="docutils literal"><span class="pre">your-vs30-gridfile.txt</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-vsmag.vs30default">
+<tt class="descname">vsmag.vs30default</tt><a class="headerlink" href="#confval-vsmag.vs30default" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>double</em></p>
+<p>Define a default Vs30 value for points not covered by the grid file given with
+'vsmag.vs30filename'.
+Default is <tt class="docutils literal"><span class="pre">910</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-vsmag.eventExpirationTime">
+<tt class="descname">vsmag.eventExpirationTime</tt><a class="headerlink" href="#confval-vsmag.eventExpirationTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>This defines the time-span after an event's origin time during which the VS
+magnitude is re-evaluated every second. After origin-time + eventExpirationTime
+the evaluation will stop.
+Default is <tt class="docutils literal"><span class="pre">45</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-vsmag.ExpirationTimeReference">
+<tt class="descname">vsmag.ExpirationTimeReference</tt><a class="headerlink" href="#confval-vsmag.ExpirationTimeReference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Choose whether to time the event expiration time with respect to the origin
+time ('ot') or the time of the first VS estimates creation time ('ct').
+Default is <tt class="docutils literal"><span class="pre">ct</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-vsmag.clipTimeout">
+<tt class="descname">vsmag.clipTimeout</tt><a class="headerlink" href="#confval-vsmag.clipTimeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Define the number of seconds following a clipped record that a stream is not
+used for magnitude estimation.
+Default is <tt class="docutils literal"><span class="pre">30</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-vsmag.twstarttime">
+<tt class="descname">vsmag.twstarttime</tt><a class="headerlink" href="#confval-vsmag.twstarttime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>These two parameters define the timewindow around picks in which scvsmag
+looks for maximum amplitudes. twstarttime defines the time before the pick
+and twendtime the time after the pick
+Default is <tt class="docutils literal"><span class="pre">4</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-vsmag.twendtime">
+<tt class="descname">vsmag.twendtime</tt><a class="headerlink" href="#confval-vsmag.twendtime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>These two parameters define the timewindow around picks in which scvsmag
+looks for maximum amplitudes. twstarttime defines the time before the pick
+and twendtime the time after the pick
+Default is <tt class="docutils literal"><span class="pre">35</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-vsmag.mode">
+<tt class="descname">vsmag.mode</tt><a class="headerlink" href="#confval-vsmag.mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>You can choose between 'realtime' and 'playback' mode. In 'realtime' mode VS
+magnitudes are evaluated based on a realtime timer. In 'playback' mode the
+timing is determined by incoming envelope values (i.e. the internal timing is
+always set to the latest envelope arrival.
+Default is <tt class="docutils literal"><span class="pre">realtime</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-vsmag.backslots">
+<tt class="descname">vsmag.backslots</tt><a class="headerlink" href="#confval-vsmag.backslots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Time in seconds with respect to the current Time that envelope values are kept
+in memory. Envelope values with a timestamp that is older
+than current Time - vsmag.backslots will be deleted/rejected.
+Default is <tt class="docutils literal"><span class="pre">6000</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-vsmag.headslots">
+<tt class="descname">vsmag.headslots</tt><a class="headerlink" href="#confval-vsmag.headslots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Time in seconds in the future with respect to the current Time that envelope
+values are kept in memory. This feature can be of interest if scenvelope and
+scvsmag do not run on the same machine. A difference between the internal
+clocks can generate envelope messages with a timestamp in the future
+relative to the receiving machine.
+Default is <tt class="docutils literal"><span class="pre">65</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-vsmag.maxepicdist">
+<tt class="descname">vsmag.maxepicdist</tt><a class="headerlink" href="#confval-vsmag.maxepicdist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>double</em></p>
+<p>This defines a cutoff epicentral distance in kilometers; stations further than that
+won't be used for magnitude computation; a negative value means no cutoff is
+applied.
+Default is <tt class="docutils literal"><span class="pre">200</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-vsmag.logenvelopes">
+<tt class="descname">vsmag.logenvelopes</tt><a class="headerlink" href="#confval-vsmag.logenvelopes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>This toggles envelope logging. Note that this will produce very large files and
+may fill up your disk if left on for too long.
+Default is <tt class="docutils literal"><span class="pre">false</span></tt>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="command-line">
+<h2>Command-line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="generic">
+<h3>Generic<a class="headerlink" href="#generic" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-scvsmag-h">
+<tt class="descname">-h</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--help</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scvsmag-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show help message.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scvsmag-V">
+<tt class="descname">-V</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--version</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scvsmag-V" title="Permalink to this definition">¶</a></dt>
+<dd><p>show version information</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scvsmag--config-file">
+<tt class="descname">--config-file</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scvsmag--config-file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use alternative configuration file. When this option is used
+the loading of all stages is disabled. Only the given configuration
+file is parsed and used. To use another name for the configuration
+create a symbolic link of the application or copy it, eg scautopick -&gt; scautopick2.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scvsmag--plugins">
+<tt class="descname">--plugins</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scvsmag--plugins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load given plugins.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scvsmag-D">
+<tt class="descname">-D</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--daemon</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scvsmag-D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run as daemon. This means the application will fork itself and
+doesn't need to be started with &amp;.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scvsmag--auto-shutdown">
+<tt class="descname">--auto-shutdown</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scvsmag--auto-shutdown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable/disable self-shutdown because a master module shutdown. This only
+works when messaging is enabled and the master module sends a shutdown
+message (enabled with --start-stop-msg for the master module).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scvsmag--shutdown-master-module">
+<tt class="descname">--shutdown-master-module</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scvsmag--shutdown-master-module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the name of the master-module used for auto-shutdown. This
+is the application name of the module actually started. If symlinks
+are used then it is the name of the symlinked application.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scvsmag--shutdown-master-username">
+<tt class="descname">--shutdown-master-username</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scvsmag--shutdown-master-username" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the name of the master-username of the messaging used for
+auto-shutdown. If &quot;shutdown-master-module&quot; is given as well this
+parameter is ignored.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="verbosity">
+<h3>Verbosity<a class="headerlink" href="#verbosity" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-scvsmag--verbosity">
+<tt class="descname">--verbosity</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scvsmag--verbosity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verbosity level [0..4]. 0:quiet, 1:error, 2:warning, 3:info, 4:debug</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scvsmag-v">
+<tt class="descname">-v</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--v</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scvsmag-v" title="Permalink to this definition">¶</a></dt>
+<dd><p>Increase verbosity level (may be repeated, eg. -vv)</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scvsmag-q">
+<tt class="descname">-q</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--quiet</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scvsmag-q" title="Permalink to this definition">¶</a></dt>
+<dd><p>Quiet mode: no logging output</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scvsmag--component">
+<tt class="descname">--component</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scvsmag--component" title="Permalink to this definition">¶</a></dt>
+<dd><p>Limits the logging to a certain component. This option can be given more than once.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scvsmag-s">
+<tt class="descname">-s</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--syslog</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scvsmag-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use syslog logging back end. The output usually goes to /var/lib/messages.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scvsmag-l">
+<tt class="descname">-l</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--lockfile</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scvsmag-l" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path to lock file.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scvsmag--console">
+<tt class="descname">--console</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scvsmag--console" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send log output to stdout.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scvsmag--debug">
+<tt class="descname">--debug</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scvsmag--debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>Debug mode: --verbosity=4 --console=1</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scvsmag--log-file">
+<tt class="descname">--log-file</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scvsmag--log-file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use alternative log file.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="messaging">
+<h3>Messaging<a class="headerlink" href="#messaging" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-scvsmag-u">
+<tt class="descname">-u</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--user</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scvsmag-u" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides configuration parameter <a class="reference internal" href="global.html#confval-connection.username"><tt class="xref std std-confval docutils literal"><span class="pre">connection.username</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scvsmag-H">
+<tt class="descname">-H</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--host</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scvsmag-H" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides configuration parameter <a class="reference internal" href="global.html#confval-connection.server"><tt class="xref std std-confval docutils literal"><span class="pre">connection.server</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scvsmag-t">
+<tt class="descname">-t</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--timeout</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scvsmag-t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides configuration parameter <a class="reference internal" href="global.html#confval-connection.timeout"><tt class="xref std std-confval docutils literal"><span class="pre">connection.timeout</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scvsmag-g">
+<tt class="descname">-g</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--primary-group</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scvsmag-g" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides configuration parameter <a class="reference internal" href="global.html#confval-connection.primaryGroup"><tt class="xref std std-confval docutils literal"><span class="pre">connection.primaryGroup</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scvsmag-S">
+<tt class="descname">-S</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--subscribe-group</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scvsmag-S" title="Permalink to this definition">¶</a></dt>
+<dd><p>A group to subscribe to. This option can be given more than once.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scvsmag--encoding">
+<tt class="descname">--encoding</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scvsmag--encoding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides configuration parameter <a class="reference internal" href="global.html#confval-connection.encoding"><tt class="xref std std-confval docutils literal"><span class="pre">connection.encoding</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scvsmag--start-stop-msg">
+<tt class="descname">--start-stop-msg</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scvsmag--start-stop-msg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets sending of a start- and a stop message.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scvsmag--test">
+<tt class="descname">--test</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scvsmag--test" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test mode, no messages are sent</p>
+</dd></dl>
+
+</div>
+<div class="section" id="database">
+<h3>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-scvsmag--db-driver-list">
+<tt class="descname">--db-driver-list</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scvsmag--db-driver-list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List all supported database drivers.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scvsmag-d">
+<tt class="descname">-d</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--database</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scvsmag-d" title="Permalink to this definition">¶</a></dt>
+<dd><p>The database connection string, format: <a class="reference external" href="service://user:pwd&#64;host/database">service://user:pwd&#64;host/database</a>.
+&quot;service&quot; is the name of the database driver which can be
+queried with &quot;--db-driver-list&quot;.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scvsmag--config-module">
+<tt class="descname">--config-module</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scvsmag--config-module" title="Permalink to this definition">¶</a></dt>
+<dd><p>The configmodule to use.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scvsmag--inventory-db">
+<tt class="descname">--inventory-db</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scvsmag--inventory-db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the inventory from the given database or file, format: [<a class="reference external" href="service://]location">service://]location</a></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scvsmag--db-disable">
+<tt class="descname">--db-disable</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scvsmag--db-disable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do not use the database at all</p>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="scvsmaglog.html" title="scvsmaglog"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="screloc.html" title="screloc"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/processing.html" >Processing</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

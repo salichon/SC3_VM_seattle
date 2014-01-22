@@ -1,0 +1,509 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>scxmldump &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="Utilities" href="../toc/utilities.html" />
+    <link rel="next" title="sczip" href="sczip.html" />
+    <link rel="prev" title="scvoice" href="scvoice.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="sczip.html" title="sczip"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="scvoice.html" title="scvoice"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/utilities.html" accesskey="U">Utilities</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">scxmldump</a><ul>
+<li><a class="reference internal" href="#description">Description</a><ul>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#configuration">Configuration</a></li>
+<li><a class="reference internal" href="#command-line">Command-line</a><ul>
+<li><a class="reference internal" href="#generic">Generic</a></li>
+<li><a class="reference internal" href="#verbosity">Verbosity</a></li>
+<li><a class="reference internal" href="#messaging">Messaging</a></li>
+<li><a class="reference internal" href="#database">Database</a></li>
+<li><a class="reference internal" href="#dump">Dump</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="scvoice.html"
+                        title="previous chapter">scvoice</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="sczip.html"
+                        title="next chapter">sczip</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/apps/scxmldump.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="scxmldump">
+<span id="id1"></span><h1>scxmldump<a class="headerlink" href="#scxmldump" title="Permalink to this headline">¶</a></h1>
+<p><strong>Dumps database objects to XML files.</strong></p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>To get event information from the database without using SQL is an important
+task for the user. <a class="reference internal" href="#scxmldump"><em>scxmldump</em></a> queries the database and transforms that
+information into XML. The result can be converted into a bulletin with
+scbulletin or imported into another database with <a class="reference internal" href="scdb.html#scdb"><em>scdb</em></a>.</p>
+<p>An XSD schema of the XML output can be downloaded
+at <a class="reference external" href="http://geofon.gfz-potsdam.de/schema/">http://geofon.gfz-potsdam.de/schema/</a>.</p>
+<div class="section" id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<p>Export inventory</p>
+<div class="highlight-sh"><div class="highlight"><pre>scxmldump -fI -o inventory.xml -d mysql://sysop:sysop@localhost/seiscomp3
+</pre></div>
+</div>
+<p>Export configuration</p>
+<div class="highlight-sh"><div class="highlight"><pre>scxmldump -fC -o config.xml -d mysql://sysop:sysop@localhost/seiscomp3
+</pre></div>
+</div>
+<p>Export full event data</p>
+<div class="highlight-sh"><div class="highlight"><pre>scxmldump -fPAMF -E test2012abcd -o test2012abcd.xml <span class="se">\</span>
+          -d mysql://sysop:sysop@localhost/seiscomp3
+</pre></div>
+</div>
+<p>Export summary event data</p>
+<div class="highlight-sh"><div class="highlight"><pre>scxmldump -fap -E test2012abcd -o test2012abcd.xml <span class="se">\</span>
+          -d mysql://sysop:sysop@localhost/seiscomp3
+</pre></div>
+</div>
+<p>Create bulletin</p>
+<div class="highlight-sh"><div class="highlight"><pre>scxmldump -fPAMF -E test2012abcd
+          -d mysql://sysop:sysop@localhost/seiscomp3 | <span class="se">\</span>
+scbulletin
+</pre></div>
+</div>
+<p>Copy event</p>
+<div class="highlight-sh"><div class="highlight"><pre>scxmldump -fPAMF -E test2012abcd <span class="se">\</span>
+          -d mysql://sysop:sysop@localhost/seiscomp3 | <span class="se">\</span>
+scdb -i - -d mysql://sysop:sysop@archive-db/seiscomp3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/defaults/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/defaults/scxmldump.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/scxmldump.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">~/.seiscomp3/global.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">~/.seiscomp3/scxmldump.cfg</span></tt></div>
+</div>
+<p>scxmldump inherits <a class="reference internal" href="global.html#global-configuration"><em>global options</em></a>.</p>
+</div>
+<div class="section" id="command-line">
+<h2>Command-line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="generic">
+<h3>Generic<a class="headerlink" href="#generic" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-scxmldump-h">
+<tt class="descname">-h</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--help</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scxmldump-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show help message.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump-V">
+<tt class="descname">-V</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--version</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scxmldump-V" title="Permalink to this definition">¶</a></dt>
+<dd><p>show version information</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump--config-file">
+<tt class="descname">--config-file</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scxmldump--config-file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use alternative configuration file. When this option is used
+the loading of all stages is disabled. Only the given configuration
+file is parsed and used. To use another name for the configuration
+create a symbolic link of the application or copy it, eg scautopick -&gt; scautopick2.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump--plugins">
+<tt class="descname">--plugins</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scxmldump--plugins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load given plugins.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump-D">
+<tt class="descname">-D</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--daemon</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scxmldump-D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run as daemon. This means the application will fork itself and
+doesn't need to be started with &amp;.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump--auto-shutdown">
+<tt class="descname">--auto-shutdown</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scxmldump--auto-shutdown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable/disable self-shutdown because a master module shutdown. This only
+works when messaging is enabled and the master module sends a shutdown
+message (enabled with --start-stop-msg for the master module).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump--shutdown-master-module">
+<tt class="descname">--shutdown-master-module</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scxmldump--shutdown-master-module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the name of the master-module used for auto-shutdown. This
+is the application name of the module actually started. If symlinks
+are used then it is the name of the symlinked application.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump--shutdown-master-username">
+<tt class="descname">--shutdown-master-username</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scxmldump--shutdown-master-username" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the name of the master-username of the messaging used for
+auto-shutdown. If &quot;shutdown-master-module&quot; is given as well this
+parameter is ignored.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="verbosity">
+<h3>Verbosity<a class="headerlink" href="#verbosity" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-scxmldump--verbosity">
+<tt class="descname">--verbosity</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scxmldump--verbosity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verbosity level [0..4]. 0:quiet, 1:error, 2:warning, 3:info, 4:debug</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump-v">
+<tt class="descname">-v</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--v</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scxmldump-v" title="Permalink to this definition">¶</a></dt>
+<dd><p>Increase verbosity level (may be repeated, eg. -vv)</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump-q">
+<tt class="descname">-q</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--quiet</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scxmldump-q" title="Permalink to this definition">¶</a></dt>
+<dd><p>Quiet mode: no logging output</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump--component">
+<tt class="descname">--component</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scxmldump--component" title="Permalink to this definition">¶</a></dt>
+<dd><p>Limits the logging to a certain component. This option can be given more than once.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump-s">
+<tt class="descname">-s</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--syslog</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scxmldump-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use syslog logging back end. The output usually goes to /var/lib/messages.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump-l">
+<tt class="descname">-l</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--lockfile</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scxmldump-l" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path to lock file.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump--console">
+<tt class="descname">--console</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scxmldump--console" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send log output to stdout.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump--debug">
+<tt class="descname">--debug</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scxmldump--debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>Debug mode: --verbosity=4 --console=1</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump--log-file">
+<tt class="descname">--log-file</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scxmldump--log-file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use alternative log file.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="messaging">
+<h3>Messaging<a class="headerlink" href="#messaging" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-scxmldump-u">
+<tt class="descname">-u</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--user</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scxmldump-u" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides configuration parameter <a class="reference internal" href="global.html#confval-connection.username"><tt class="xref std std-confval docutils literal"><span class="pre">connection.username</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump-H">
+<tt class="descname">-H</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--host</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scxmldump-H" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides configuration parameter <a class="reference internal" href="global.html#confval-connection.server"><tt class="xref std std-confval docutils literal"><span class="pre">connection.server</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump-t">
+<tt class="descname">-t</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--timeout</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scxmldump-t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides configuration parameter <a class="reference internal" href="global.html#confval-connection.timeout"><tt class="xref std std-confval docutils literal"><span class="pre">connection.timeout</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump-g">
+<tt class="descname">-g</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--primary-group</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scxmldump-g" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides configuration parameter <a class="reference internal" href="global.html#confval-connection.primaryGroup"><tt class="xref std std-confval docutils literal"><span class="pre">connection.primaryGroup</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump-S">
+<tt class="descname">-S</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--subscribe-group</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scxmldump-S" title="Permalink to this definition">¶</a></dt>
+<dd><p>A group to subscribe to. This option can be given more than once.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump--encoding">
+<tt class="descname">--encoding</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scxmldump--encoding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides configuration parameter <a class="reference internal" href="global.html#confval-connection.encoding"><tt class="xref std std-confval docutils literal"><span class="pre">connection.encoding</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump--start-stop-msg">
+<tt class="descname">--start-stop-msg</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scxmldump--start-stop-msg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets sending of a start- and a stop message.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="database">
+<h3>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-scxmldump--db-driver-list">
+<tt class="descname">--db-driver-list</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scxmldump--db-driver-list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List all supported database drivers.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump-d">
+<tt class="descname">-d</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--database</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scxmldump-d" title="Permalink to this definition">¶</a></dt>
+<dd><p>The database connection string, format: <a class="reference external" href="service://user:pwd&#64;host/database">service://user:pwd&#64;host/database</a>.
+&quot;service&quot; is the name of the database driver which can be
+queried with &quot;--db-driver-list&quot;.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump--config-module">
+<tt class="descname">--config-module</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scxmldump--config-module" title="Permalink to this definition">¶</a></dt>
+<dd><p>The configmodule to use.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump--inventory-db">
+<tt class="descname">--inventory-db</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scxmldump--inventory-db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the inventory from the given database or file, format: [<a class="reference external" href="service://]location">service://]location</a></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump--config-db">
+<tt class="descname">--config-db</tt><tt class="descclassname"> arg</tt><a class="headerlink" href="#cmdoption-scxmldump--config-db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the configuration from the given database or file, format: [<a class="reference external" href="service://]location">service://]location</a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="dump">
+<h3>Dump<a class="headerlink" href="#dump" title="Permalink to this headline">¶</a></h3>
+<dl class="option">
+<dt id="cmdoption-scxmldump--listen">
+<tt class="descname">--listen</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scxmldump--listen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables server mode which listens to the message server for
+incoming events and dumps each received add/update.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump-I">
+<tt class="descname">-I</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--inventory</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scxmldump-I" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dump the inventory.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump--without-station-groups">
+<tt class="descname">--without-station-groups</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scxmldump--without-station-groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes all station groups from inventory.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump--stations">
+<tt class="descname">--stations</tt><tt class="descclassname"> sta-list</tt><a class="headerlink" href="#cmdoption-scxmldump--stations" title="Permalink to this definition">¶</a></dt>
+<dd><p>If inventory is exported filter the stations to export where each
+item is in format net[.{sta|*}].</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump-C">
+<tt class="descname">-C</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--config</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scxmldump-C" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dump the configuration database.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump-R">
+<tt class="descname">-R</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--routing</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scxmldump-R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dump the routing database.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump-O">
+<tt class="descname">-O</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--origin</tt><tt class="descclassname"> id</tt><a class="headerlink" href="#cmdoption-scxmldump-O" title="Permalink to this definition">¶</a></dt>
+<dd><p>Origin publicID to dump.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump-E">
+<tt class="descname">-E</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--event</tt><tt class="descclassname"> id</tt><a class="headerlink" href="#cmdoption-scxmldump-E" title="Permalink to this definition">¶</a></dt>
+<dd><p>Event publicID to dump.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump-P">
+<tt class="descname">-P</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--with-picks</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scxmldump-P" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dump associated picks along with origins.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump-A">
+<tt class="descname">-A</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--with-amplitudes</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scxmldump-A" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dump associated amplitudes along with magnitudes.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump-M">
+<tt class="descname">-M</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--with-magnitudes</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scxmldump-M" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dump station magnitudes.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump-F">
+<tt class="descname">-F</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--with-focal-mechanism</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scxmldump-F" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dump focal mechanisms of events.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump-a">
+<tt class="descname">-a</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--ignore-arrivals</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scxmldump-a" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do not dump arrivals part of origins.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump-p">
+<tt class="descname">-p</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--preferred-only</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scxmldump-p" title="Permalink to this definition">¶</a></dt>
+<dd><p>When exporting events only the preferred origin, the preferred
+magnitude and the preferred focal mechanism will be dumped.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump-m">
+<tt class="descname">-m</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--all-magnitudes</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scxmldump-m" title="Permalink to this definition">¶</a></dt>
+<dd><p>If only the preferred origin is exported, all magnitudes for this
+origin will be dumped.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump-f">
+<tt class="descname">-f</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--formatted</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scxmldump-f" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use formatted XML output.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump--prepend-datasize">
+<tt class="descname">--prepend-datasize</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scxmldump--prepend-datasize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepend a line with the length of the XML data.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-scxmldump-o">
+<tt class="descname">-o</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--output</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-scxmldump-o" title="Permalink to this definition">¶</a></dt>
+<dd><p>The output file. Default is stdout.</p>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="sczip.html" title="sczip"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="scvoice.html" title="scvoice"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/utilities.html" >Utilities</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

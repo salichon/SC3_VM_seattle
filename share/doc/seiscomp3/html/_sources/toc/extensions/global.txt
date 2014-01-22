@@ -1,0 +1,15 @@
+######
+global
+######
+
+.. toctree::
+   :maxdepth: 2
+
+   /apps/global_recordstream
+   /apps/global_mlv
+   /apps/global_locsat
+   /apps/global_md
+   /apps/global_hypo71
+   /apps/global_gui
+   /apps/global_mlh
+   /apps/global_nonlinloc

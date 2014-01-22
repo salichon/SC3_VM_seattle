@@ -1,0 +1,14 @@
+#########
+Inventory
+#########
+
+.. toctree::
+   :maxdepth: 2
+
+   /apps/dlsv2inv
+   /apps/import_inv
+   /apps/inv2dlsv
+   /apps/invextr
+   /apps/scinv
+   /apps/stationconf
+   /apps/tab2inv

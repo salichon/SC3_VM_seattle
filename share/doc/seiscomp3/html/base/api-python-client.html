@@ -1,0 +1,456 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>seiscomp3.Client &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="sdk-python-packages.html" />
+    <link rel="next" title="Examples" href="sdk-python-examples.html" />
+    <link rel="prev" title="seiscomp3.DataModel" href="api-python.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="sdk-python-examples.html" title="Examples"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="api-python.html" title="seiscomp3.DataModel"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="sdk.html" >Software Development Kit</a> &raquo;</li>
+          <li><a href="sdk-python.html" >Python</a> &raquo;</li>
+          <li><a href="sdk-python-packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">seiscomp3.Client</a><ul>
+<li><a class="reference internal" href="#application-class">Application class</a><ul>
+<li><a class="reference internal" href="#constructor">Constructor</a></li>
+<li><a class="reference internal" href="#init">Init</a></li>
+<li><a class="reference internal" href="#run">Run</a></li>
+<li><a class="reference internal" href="#done">Done</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#streamapplication-class">StreamApplication class</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="api-python.html"
+                        title="previous chapter">seiscomp3.DataModel</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="sdk-python-examples.html"
+                        title="next chapter">Examples</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/base/api-python-client.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-seiscomp3.Client">
+<span id="seiscomp3-client"></span><span id="api-client-python"></span><h1>seiscomp3.Client<a class="headerlink" href="#module-seiscomp3.Client" title="Permalink to this headline">¶</a></h1>
+<p>Modules are meant to be standalone programs doing a particular job. The
+seiscomp3.Client package focuses on three main aspects:</p>
+<ul class="simple">
+<li>Communicate with other modules</li>
+<li>Access station- and event metadata through a database</li>
+<li>Fetch waveform data</li>
+</ul>
+<p>Therefore a client package has been developed combining these concepts in an
+easy way with only a couple of API calls. Since SeisComP3 has been developed in
+C++ and uses the object oriented paradigm forcefully, modules build on the
+Application (C++: <tt class="xref py py-class docutils literal"><span class="pre">Seiscomp::Client::Application</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">Python:</span> <span class="pre">seiscomp3.Client.Application</span></tt>)
+class. It manages the messaging connection and waveform sources in a transparent
+way.</p>
+<p>The class <tt class="xref py py-class docutils literal"><span class="pre">Seiscomp::Client::Application</span></tt> is the base class for all SC3
+applications. It manages messaging and database connections, provides access to
+command line options and configuration parameters and also handles and
+interprets notifier messages.</p>
+<p>Blocking network operations like reading messages are moved into threads that
+are synchronized in a single blocking message queue. This queue allows pushing
+elements from different threads and unblocks when a new element is ready to be
+popped. If the queue is full (currently 10 elements are allowed) the pushing
+threads also block until an element can be pushed again.</p>
+<p>This way applications do not have to poll and thus do not burn CPU cycles.</p>
+<p>The application class is event driven. It runs the event loop which pops the
+message queue and dispatches events with their handlers. Handler methods are
+prefixed with <em>handle</em>, e.g. <tt class="xref py py-func docutils literal"><span class="pre">handleMessage()</span></tt>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When overriding handlers it is always good practise to call the base
+handlers before running custom code.</p>
+</div>
+<div class="section" id="application-class">
+<h2>Application class<a class="headerlink" href="#application-class" title="Permalink to this headline">¶</a></h2>
+<p>The application class is part of the seiscomp3.Client package. It needs to
+be imported first.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">seiscomp3.Client</span>
+</pre></div>
+</div>
+<p>A common strategy to write a module with that class is to derive from it and
+run it in a Python main method.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">seiscomp3.Client</span><span class="o">,</span> <span class="nn">sys</span>
+
+<span class="c"># Class definition</span>
+<span class="k">class</span> <span class="nc">MyApp</span><span class="p">(</span><span class="n">seiscomp3</span><span class="o">.</span><span class="n">Client</span><span class="o">.</span><span class="n">Application</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">):</span>
+        <span class="n">seiscomp3</span><span class="o">.</span><span class="n">Client</span><span class="o">.</span><span class="n">Application</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">)</span>
+
+<span class="c"># Main method to call the app</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">):</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">MyApp</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">app</span><span class="p">()</span>
+
+<span class="c"># Call the main method if run as script</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">),</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>An application can be called with the parenthesis operator () which returns
+the applications result code and serves as input to <tt class="xref py py-func docutils literal"><span class="pre">sys.exit()</span></tt>. Operator()
+is a wrapper for <tt class="xref py py-func docutils literal"><span class="pre">Application.exec()</span></tt>.</p>
+<p>The workflow of <tt class="xref py py-func docutils literal"><span class="pre">Application.exec()</span></tt> looks as follows:</p>
+<div class="highlight-python"><pre>def exec(self):
+    self.returnCode = 1
+
+    if self.init():
+        self.returnCode = 0
+
+        if !self.run() and self.returnCode == 0:
+            self.returnCode = 1
+
+        self.done()
+    }
+    else
+       self.done()
+
+    return self.returnCode</pre>
+</div>
+<p><tt class="xref py py-func docutils literal"><span class="pre">init()</span></tt>, <tt class="xref py py-func docutils literal"><span class="pre">run()</span></tt> and <tt class="xref py py-func docutils literal"><span class="pre">done()</span></tt> are explained in more detail in
+the next sections.</p>
+<div class="section" id="constructor">
+<h3>Constructor<a class="headerlink" href="#constructor" title="Permalink to this headline">¶</a></h3>
+<p>To create an application, derive from the seiscomp3.Client.Application class
+and configure it in the constructor.</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MyApp</span><span class="p">(</span><span class="n">seiscomp3</span><span class="o">.</span><span class="n">Client</span><span class="o">.</span><span class="n">Application</span><span class="p">):</span>
+    <span class="c"># MyApp constructor</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">):</span>
+        <span class="c"># IMPORTANT: call the base class constructor</span>
+        <span class="n">seiscomp3</span><span class="o">.</span><span class="n">Client</span><span class="o">.</span><span class="n">Application</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">)</span>
+        <span class="c"># Default is TRUE</span>
+<span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">setMessagingEnabled</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+</span>        <span class="c"># Default is TRUE, TRUE</span>
+<span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">setDatabaseEnabled</span><span class="p">(</span><span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+</span>        <span class="c"># Default is TRUE</span>
+<span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">setDaemonEnabled</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+</span></pre></div>
+</td></tr></table></div>
+<p>As marked in line 4, the call of the constructor of the base class is very
+important. It takes the command line parameters and sets up internal
+application variables. Without this call the application will either not run
+at all or show undefined/unexpected behaviour.</p>
+<p>The constructor takes also the initial parameters of the application such as
+enabling a messaging connection and enabling database access.</p>
+<p>Messaging, database and daemon mode is enabled by default. The daemon mode is
+important if the application should be started as service and therefore should
+support the <em class="xref std std-option">-D, --daemon</em> option. Utilities and non daemon applications
+should disable that mode.</p>
+<p>Example calls to this options are shown in the highlighted lines of the above
+code block.</p>
+<p>If messaging is enabled, the messaging username is derived from the binary
+called (<em>not the class name</em>). If the script is called test.py then the username
+selected is <strong>test</strong>. The username can be overridden either in the configuration
+file (<a class="reference internal" href="../apps/global.html#global"><em>Configuration</em></a>) or using the API.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="bp">self</span><span class="o">.</span><span class="n">setMessagingUsername</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Setting the username to an empty string results in a random username selected
+by the messaging server.</p>
+<p>All application methods are defined in the C++ header file
+<tt class="file docutils literal"><span class="pre">src/trunk/libs/seiscomp3/client/application.h</span></tt>.</p>
+</div>
+<div class="section" id="init">
+<h3>Init<a class="headerlink" href="#init" title="Permalink to this headline">¶</a></h3>
+<p>The workflow of the init function looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">init</span> <span class="p">(</span><span class="n">virtual</span><span class="p">)</span>
+    <span class="n">initConfiguration</span> <span class="p">(</span><span class="n">virtual</span><span class="p">)</span>
+    <span class="n">initCommandLine</span> <span class="p">(</span><span class="n">virtual</span><span class="p">)</span>
+        <span class="n">createCommandLineDescription</span> <span class="p">(</span><span class="n">virtual</span><span class="p">)</span>
+    <span class="n">parseCommandLine</span> <span class="p">(</span><span class="n">virtual</span><span class="p">)</span>
+        <span class="n">printUsage</span> <span class="p">(</span><span class="n">virtual</span><span class="p">)</span>
+    <span class="n">validateParameters</span> <span class="p">(</span><span class="n">virtual</span><span class="p">)</span>
+    <span class="n">loadPlugins</span>
+    <span class="n">forkDaemon</span>
+    <span class="n">initMessaging</span>
+    <span class="n">initDatabase</span>
+    <span class="n">loadInventory</span> <span class="ow">or</span> <span class="n">loadStations</span>
+    <span class="n">loadDBConfigModule</span>
+    <span class="n">loadCities</span>
+</pre></div>
+</div>
+<p>Methods marked with virtual can be overriden. <tt class="xref py py-func docutils literal"><span class="pre">init()</span></tt> itself calls
+a lot of handlers that can be customized. Typical handlers are
+<tt class="xref py py-func docutils literal"><span class="pre">initConfiguration()</span></tt>, <tt class="xref py py-func docutils literal"><span class="pre">createCommandLineDescription()</span></tt>
+and <tt class="xref py py-func docutils literal"><span class="pre">validateParameters()</span></tt>.</p>
+<p><tt class="xref py py-func docutils literal"><span class="pre">initConfiguration()</span></tt> is used to read parameters of the configuration files
+and to populate the internal state. If something fails or if configured values
+are out of bounds, False can be returned which causes to <tt class="xref py py-func docutils literal"><span class="pre">init()</span></tt> to return
+False and to exit the application with a non-zero result code.</p>
+<p>An example is show below:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">initConfiguration</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">seiscomp3</span><span class="o">.</span><span class="n">Client</span><span class="o">.</span><span class="n">Application</span><span class="o">.</span><span class="n">initConfiguration</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">False</span>
+
+    <span class="k">try</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_directory</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configGetString</span><span class="p">(</span><span class="s">&quot;directory&quot;</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span> <span class="k">pass</span>
+
+    <span class="k">return</span> <span class="bp">True</span>
+</pre></div>
+</div>
+<p>This method reads the directory parameter from the configuration file(s) and
+sets it internally. If the directory is not given in any of the modules
+configuration files, it logs an error and aborts the application by returning
+False.</p>
+<p><tt class="xref py py-func docutils literal"><span class="pre">createCommandLineDescription()</span></tt> is used to add custom command line options.
+This is a void function and does not return any value. It is also not necessary
+to call the baseclass method although it does not hurt.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">createCommandLineDescription</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">commandline</span><span class="p">()</span><span class="o">.</span><span class="n">addGroup</span><span class="p">(</span><span class="s">&quot;Storage&quot;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">commandline</span><span class="p">()</span><span class="o">.</span><span class="n">addStringOption</span><span class="p">(</span><span class="s">&quot;Storage&quot;</span><span class="p">,</span> <span class="s">&quot;directory,o&quot;</span><span class="p">,</span> <span class="s">&quot;Specify the storage directory&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A new command line option group is added with <tt class="xref py py-func docutils literal"><span class="pre">addGroup()</span></tt> and then a new
+option is added to this group which is a string option. 4 types can be added
+as options: string, int, double and bool: <tt class="xref py py-func docutils literal"><span class="pre">addStringOption()</span></tt>, <tt class="xref py py-func docutils literal"><span class="pre">addIntOption()</span></tt>,
+<tt class="xref py py-func docutils literal"><span class="pre">addDoubleOption()</span></tt> and <tt class="xref py py-func docutils literal"><span class="pre">addBoolOption()</span></tt>.</p>
+<p><tt class="xref py py-func docutils literal"><span class="pre">validateParameters()</span></tt> can be used to fetch the values of previously added
+command line options and to validate each parameter. If False is returned, the
+application is aborted with a non-zero result code.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">validateParameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_directory</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">commandline</span><span class="p">()</span><span class="o">.</span><span class="n">optionString</span><span class="p">(</span><span class="s">&quot;directory&quot;</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span> <span class="k">pass</span>
+
+    <span class="c"># The directory validity is checked to avoid duplicate checks in</span>
+    <span class="c"># initConfiguration.</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_directory</span><span class="p">:</span>
+        <span class="n">seiscomp3</span><span class="o">.</span><span class="n">Logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;directory not set&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">False</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">exists</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_directory</span><span class="p">):</span>
+        <span class="n">seiscomp3</span><span class="o">.</span><span class="n">Logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;directory </span><span class="si">%s</span><span class="s"> does not exist&quot;</span> <span class="o">%</span>\
+                                <span class="bp">self</span><span class="o">.</span><span class="n">_directory</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">False</span>
+
+    <span class="k">return</span> <span class="bp">True</span>
+</pre></div>
+</div>
+<p>Custom initialization code after checking all parameters can be placed in the
+overridden method <tt class="xref py py-func docutils literal"><span class="pre">init()</span></tt>.</p>
+<p>But be aware that the process forked already if started as daemon. To run before
+the fork, it needs to be put into <tt class="xref py py-func docutils literal"><span class="pre">validateParameters()</span></tt>.</p>
+</div>
+<div class="section" id="run">
+<h3>Run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h3>
+<p>The workflow of the run method looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">run</span> <span class="p">(</span><span class="n">virtual</span><span class="p">)</span>
+    <span class="n">startMessageThread</span>
+    <span class="n">messageLoop</span>
+        <span class="n">readMessage</span>
+        <span class="n">dispatchMessage</span> <span class="p">(</span><span class="n">virtual</span><span class="p">)</span>
+            <span class="n">handleMessage</span> <span class="p">(</span><span class="n">virtual</span><span class="p">)</span>
+                <span class="n">addObject</span> <span class="p">(</span><span class="n">virtual</span><span class="p">)</span>
+                <span class="n">updateObject</span> <span class="p">(</span><span class="n">virtual</span><span class="p">)</span>
+                <span class="n">removeObject</span> <span class="p">(</span><span class="n">virtual</span><span class="p">)</span>
+            <span class="n">handleReconnect</span> <span class="p">(</span><span class="n">virtual</span><span class="p">)</span>
+            <span class="n">handleDisconnect</span> <span class="p">(</span><span class="n">virtual</span><span class="p">)</span>
+            <span class="n">handleTimeout</span> <span class="p">(</span><span class="n">virtual</span><span class="p">)</span>
+            <span class="n">handleAutoShutdown</span> <span class="p">(</span><span class="n">virtual</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The run method starts the event loop and wait for new events in the queue.
+In case of messaging a thread is started that sits and waits for messages
+and feeds them to the queue and to the event loop in <tt class="xref py py-func docutils literal"><span class="pre">run()</span></tt>. Without
+messaging the run loop would do nothing but waiting for SIGTERM or
+a timer event enabled with <tt class="xref py py-func docutils literal"><span class="pre">enableTimer()</span></tt>. If the event loop is not needed
+because no timer and messages are needed, it should be overridden and the
+code should be placed there. This will disable the event loop.</p>
+<p><tt class="xref py py-func docutils literal"><span class="pre">run()</span></tt> is expected to return True on success and False otherwise. If False
+is returned the application exists with a non-zero return code. Custom return
+codes can always be set with <tt class="xref py py-func docutils literal"><span class="pre">Application.exit()</span></tt>.</p>
+<p>If the scmaster sends a message to the client it is received in the applications
+message thread and pushed to the queue. The event loop pops the message from
+the queue and calls <tt class="xref py py-func docutils literal"><span class="pre">handleMessage()</span></tt>. The default implementation uses two
+settings when handling a messages that can be controlled with
+<tt class="xref py py-func docutils literal"><span class="pre">enableInterpretNotifier()</span></tt> and <tt class="xref py py-func docutils literal"><span class="pre">enableAutoApplyNotifier()</span></tt>.</p>
+<p><tt class="xref py py-func docutils literal"><span class="pre">enableInterpretNotifier()</span></tt> controls whether the Application queries the
+message type and extracts notifier objects. For each notifier it parses the
+operation and dispatches the parentID and the object either to
+<tt class="xref py py-func docutils literal"><span class="pre">addObject()</span></tt>, <tt class="xref py py-func docutils literal"><span class="pre">updateObject()</span></tt> or <tt class="xref py py-func docutils literal"><span class="pre">removeObject()</span></tt> handler. This
+behaviour is enabled by default. If disabled, a clients needs to parse the
+messages by itself and implement this method.</p>
+<p><tt class="xref py py-func docutils literal"><span class="pre">enableAutoApplyNotifier()</span></tt> controls whether incoming notifer objects are
+applied automatically to objects in local memory. If the client has already
+an object in memory and an update notifier for this object is received, the object
+in the notifier is copied to the local object. This behaviour is enabled by default.</p>
+</div>
+<div class="section" id="done">
+<h3>Done<a class="headerlink" href="#done" title="Permalink to this headline">¶</a></h3>
+<p>The workflow of the done method looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">done</span> <span class="p">(</span><span class="n">virtual</span><span class="p">)</span>
+    <span class="n">closeTimer</span>
+    <span class="n">closeMessaging</span>
+    <span class="n">closeDatabase</span>
+</pre></div>
+</div>
+<p><tt class="xref py py-func docutils literal"><span class="pre">done()</span></tt> is usually not overridden. If custom code and clean up procedures
+need to be placed in <tt class="xref py py-func docutils literal"><span class="pre">done()</span></tt>, the base class <strong>must</strong> be called. <tt class="xref py py-func docutils literal"><span class="pre">done()</span></tt> is a
+void function.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">done</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">seiscomp3</span><span class="o">.</span><span class="n">Client</span><span class="o">.</span><span class="n">Application</span><span class="o">.</span><span class="n">done</span><span class="p">()</span>
+
+    <span class="c"># Custom clean ups</span>
+    <span class="n">closeMyDataFiles</span><span class="p">();</span>
+    <span class="n">closeCustomConnections</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="streamapplication-class">
+<h2>StreamApplication class<a class="headerlink" href="#streamapplication-class" title="Permalink to this headline">¶</a></h2>
+<p>The application class has another occurence: <tt class="xref py py-class docutils literal"><span class="pre">seiscomp3.Client.StreamApplication</span></tt>.</p>
+<p>The class <tt class="xref py py-class docutils literal"><span class="pre">StreamApplication</span></tt> extends the <tt class="xref py py-class docutils literal"><span class="pre">Application</span></tt>
+in terms of record acquisition. It spawns another thread that reads the records
+from a configurable source and adds a new handler method
+<tt class="xref py py-func docutils literal"><span class="pre">StreamApplication.handleRecord()</span></tt> to handle these records.</p>
+<p>Its workflow looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">init</span> <span class="p">(</span><span class="n">virtual</span><span class="p">)</span>
+    <span class="o">+</span><span class="n">initRecordStream</span>
+<span class="n">run</span> <span class="p">(</span><span class="n">virtual</span><span class="p">)</span>
+    <span class="o">+</span><span class="n">startAcquisitionThread</span>
+        <span class="o">+</span><span class="n">storeRecord</span>
+    <span class="n">Application</span><span class="o">.</span><span class="n">messageLoop</span>
+        <span class="n">dispatchMessage</span> <span class="p">(</span><span class="n">virtual</span><span class="p">)</span>
+            <span class="o">+</span><span class="n">handleRecord</span> <span class="p">(</span><span class="n">virtual</span><span class="p">)</span>
+ <span class="n">done</span> <span class="p">(</span><span class="n">virtual</span><span class="p">)</span>
+     <span class="o">+</span><span class="n">closeRecordStream</span>
+</pre></div>
+</div>
+<p>Received records can be handled with <tt class="xref py py-func docutils literal"><span class="pre">handleRecord()</span></tt>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">handleRecord</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rec</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">rec</span><span class="o">.</span><span class="n">streamID</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The stream subscription should be done in <tt class="xref py py-func docutils literal"><span class="pre">init()</span></tt>. <tt class="xref py py-func docutils literal"><span class="pre">recordStream()</span></tt>
+returns the RecordStream instance which can be used to add stream requests.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">seiscomp3</span><span class="o">.</span><span class="n">Client</span><span class="o">.</span><span class="n">StreamApplication</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="bp">False</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
+
+    <span class="c"># Subscribe to some streams</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">recordStream</span><span class="p">()</span><span class="o">.</span><span class="n">addStream</span><span class="p">(</span><span class="s">&quot;GE&quot;</span><span class="p">,</span> <span class="s">&quot;MORC&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="s">&quot;BHZ&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">True</span>
+</pre></div>
+</div>
+<p>The record stream service is configured either with configuration files
+(<a class="reference internal" href="../apps/global.html#confval-recordstream.service"><tt class="xref std std-confval docutils literal"><span class="pre">recordstream.service</span></tt></a>, <a class="reference internal" href="../apps/global.html#confval-recordstream.source"><tt class="xref std std-confval docutils literal"><span class="pre">recordstream.source</span></tt></a>) or
+via command line (<em class="xref std std-option">-I, --record-url</em>).</p>
+<p>The application finishes if the record stream read EOF. Running a <tt class="xref py py-class docutils literal"><span class="pre">StreamApplication</span></tt>
+with <a class="reference internal" href="../apps/seedlink.html#seedlink"><em>Seedlink</em></a> would probably never terminate since it is a
+real time connection and handles reconnects automatically.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="sdk-python-examples.html" title="Examples"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="api-python.html" title="seiscomp3.DataModel"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="sdk.html" >Software Development Kit</a> &raquo;</li>
+          <li><a href="sdk-python.html" >Python</a> &raquo;</li>
+          <li><a href="sdk-python-packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,315 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Getting started &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="next" title="System management" href="management.html" />
+    <link rel="prev" title="Installation" href="installation.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="management.html" title="System management"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="installation.html" title="Installation"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+ 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Getting started</a><ul>
+<li><a class="reference internal" href="#initial-configuration">Initial configuration</a></li>
+<li><a class="reference internal" href="#activate-modules">Activate modules</a></li>
+<li><a class="reference internal" href="#insert-networks-and-stations">Insert networks and stations</a></li>
+<li><a class="reference internal" href="#configure-station-bindings">Configure station bindings</a></li>
+<li><a class="reference internal" href="#update-configuration-and-start-everything">Update configuration and start everything</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="installation.html"
+                        title="previous chapter">Installation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="management.html"
+                        title="next chapter">System management</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/base/getting-started.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="getting-started">
+<span id="id1"></span><h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p>Once the system is installed it needs to be configured. The central tool to
+configure and control the system is <strong class="program">seiscomp</strong> which is explained
+more deeply in the <a class="reference internal" href="management.html#system-management"><em>next chapter</em></a>.</p>
+<div class="section" id="initial-configuration">
+<h2>Initial configuration<a class="headerlink" href="#initial-configuration" title="Permalink to this headline">¶</a></h2>
+<p>To configure SeisComP3 initially, run <strong class="program">seiscomp setup</strong>. This is the
+successor of the former <strong class="program">./setup</strong> script.</p>
+<div class="highlight-none"><div class="highlight"><pre>user@host:~$ seiscomp3/bin/seiscomp setup
+
+====================================================================
+SeisComP setup
+====================================================================
+
+This initializes the configuration of your installation.
+If you already made adjustments to the configuration files
+be warned that this setup will overwrite existing parameters
+with default values. This is not a configurator for all
+options of your setup but helps to setup initial standard values.
+
+--------------------------------------------------------------------
+Hint: Entered values starting with a dot (.) are handled
+      as commands. Available commands are:
+
+      quit: Quit setup without modification to your configuration.
+      back: Go back to the previous parameter.
+      help: Show help about the current parameter (if available).
+
+      If you need to enter a value with a leading dot, escape it
+      with backslash, e.g. &quot;\.value&quot;.
+--------------------------------------------------------------------
+</pre></div>
+</div>
+<p>This will ask for initial settings as database (if package trunk is installed)
+parameters and the logging backend.</p>
+<hr class="docutils" />
+<div class="highlight-none"><div class="highlight"><pre>Organization name []:
+</pre></div>
+</div>
+<p>Sets the organisation name printed e.g. when you say <em>hello</em> to Seedlink
+or Arclink.</p>
+<hr class="docutils" />
+<div class="highlight-none"><div class="highlight"><pre>Enable database storage [yes]:
+</pre></div>
+</div>
+<p>Enables or disables the database for the system. This option should be left
+enabled unless all modules should connect to remote processing machine which
+is already available. The database is required to store inventory information
+as well as processing results. The database is the central storage for all
+trunk modules and the default request handler of Arclink.</p>
+<hr class="docutils" />
+<div class="highlight-none"><div class="highlight"><pre> 0) mysql
+      MySQL server.
+ 1) postgresql
+      Postgresql server. There is currently no support in setup to create the
+      database for you. You have to setup the database and user accounts on
+      your own. The database schema is installed under share/db/postgresql.sql.
+Database backend [0]:
+</pre></div>
+</div>
+<p>If the database is enable the database backend can be selected. SeisComP3
+supports two main backends: MySQL and postgresql. Select the backend to be used
+here but be prepared that only for the MySQL backend the setup can help to
+create the database and tables for you. If you are using postgresql you have
+to provide a working database with the correct schema. The schema files are
+part of the distribution and can be found in <tt class="file docutils literal"><span class="pre">share/db/postgresql.sql</span></tt>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>As of PostgreSQL version 9 the default output encoding has changed to hex.
+In order to fix issuses with seiscomp3 log in to your database and run the
+following command.</p>
+<div class="last highlight-sql"><div class="highlight"><pre><span class="k">ALTER</span> <span class="k">DATABASE</span> <span class="n">seiscomp3</span> <span class="k">SET</span> <span class="n">bytea_output</span> <span class="k">TO</span> <span class="s1">&#39;escape&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="highlight-none"><div class="highlight"><pre>Create database [yes]:
+</pre></div>
+</div>
+<p>If MySQL is selected it is possible to let <strong class="program">seiscomp setup</strong> to create
+the database and all tables for you. If the database has been created already,
+say 'no' here.</p>
+<hr class="docutils" />
+<div class="highlight-none"><div class="highlight"><pre>MYSQL root password (input not echoed) []:
+</pre></div>
+</div>
+<p>Give the MySQL root password for your database server to create the database
+tables. This is only required if the last question has been answered with 'yes'.</p>
+<hr class="docutils" />
+<div class="highlight-none"><div class="highlight"><pre>Drop existing database [no]:
+</pre></div>
+</div>
+<p>If a database with the same name (to be selected later) exists already and the
+database should be created for you, an error is raised. To delete an existing
+database with the same name, say 'yes' here.</p>
+<hr class="docutils" />
+<div class="highlight-none"><div class="highlight"><pre>Database name [seiscomp3]:
+Database hostname [localhost]:
+Database read-write user [sysop]:
+Database read-write password [sysop]:
+Database public hostname [localhost]:
+Database read-only user [sysop]:
+Database read-only password [sysop]:
+</pre></div>
+</div>
+<p>Setup the various database options valid for all database backends. Give
+<strong class="command">.help</strong> for more information.</p>
+<hr class="docutils" />
+<p>If all question have been answered the final choice needs to be made to either
+create the initial configuration, go back to the last question or to quit
+without doing anything.</p>
+<div class="highlight-none"><div class="highlight"><pre>Finished setup
+--------------
+
+P) Proceed to apply configuration
+B) Back to last parameter
+Q) Quit without changes
+Command? [P]:
+</pre></div>
+</div>
+</div>
+<div class="section" id="activate-modules">
+<h2>Activate modules<a class="headerlink" href="#activate-modules" title="Permalink to this headline">¶</a></h2>
+<p>After the installation no module is activated for auto start. If <strong class="program">seiscomp start</strong>
+is called, nothing will happen. To activate a set of modules,
+<strong class="program">seiscomp enable</strong> needs to be called with a list of modules. To enable
+a processing system with Seedlink for data acquistion, use:</p>
+<div class="highlight-sh"><div class="highlight"><pre>user@host:~<span class="nv">$ </span>seiscomp3/bin/seiscomp <span class="nb">enable </span>seedlink <span class="se">\</span>
+scautopick scautoloc scamp scmag scevent
+enabled seedlink
+enabled scautopick
+enabled scautoloc
+enabled scamp
+enabled scmag
+enabled scevent
+</pre></div>
+</div>
+<p>A successive call of <strong class="program">seiscomp start</strong> will then start all enabled
+modules. This is also required to restart enabled modules with <strong class="program">seiscomp check</strong>.
+But before starting seiscomp, stations need to be added and the configuration
+needs to be updated.</p>
+</div>
+<div class="section" id="insert-networks-and-stations">
+<h2>Insert networks and stations<a class="headerlink" href="#insert-networks-and-stations" title="Permalink to this headline">¶</a></h2>
+<p>SeisComP3 comes with various importers to add networks and stations including
+full response information.</p>
+<p><a class="reference internal" href="../apps/import_inv.html#import-inv"><em>import_inv</em></a> is the tool to import inventory data into SeisComP3.</p>
+<div class="highlight-sh"><div class="highlight"><pre>user@host:~<span class="nv">$ </span>seiscomp3/bin/seiscomp <span class="nb">exec </span>import_inv dlsv inventory.dataless
+</pre></div>
+</div>
+<p>This will import a dataless SEED volume into <cite>etc/inventory/inventory.dataless.xml</cite>.</p>
+<p>Repeat this step for all inventory data you want to import.</p>
+</div>
+<div class="section" id="configure-station-bindings">
+<h2>Configure station bindings<a class="headerlink" href="#configure-station-bindings" title="Permalink to this headline">¶</a></h2>
+<p>The configuration of modules and bindings is explained in <a class="reference internal" href="../apps/global.html#global"><em>Configuration</em></a>. To
+add bindings in a more convenient way, start <a class="reference internal" href="../apps/scconfig.html#scconfig"><em>scconfig</em></a>.</p>
+<div class="highlight-sh"><div class="highlight"><pre>user@host:~<span class="nv">$ </span>seiscomp3/bin/seiscomp <span class="nb">exec </span>scconfig
+</pre></div>
+</div>
+</div>
+<div class="section" id="update-configuration-and-start-everything">
+<h2>Update configuration and start everything<a class="headerlink" href="#update-configuration-and-start-everything" title="Permalink to this headline">¶</a></h2>
+<p>To update the configuration when new stations have been added or modified,
+<strong class="program">seiscomp update-config</strong> needs to be run. This creates configuration
+files of modules that do not use the configuration directly, writes the trunk
+bindings to the database and sychronizes the inventory with the database.</p>
+<div class="highlight-sh"><div class="highlight"><pre>user@host:~<span class="nv">$ </span>seiscomp3/bin/seiscomp update-config
+<span class="o">[</span>output<span class="o">]</span>
+</pre></div>
+</div>
+<p>After the configuration has been updated and the inventory has been synchronized,
+call <strong class="program">seiscomp start</strong> to start all enabled modules:</p>
+<div class="highlight-sh"><div class="highlight"><pre>user@host:~<span class="nv">$ </span>seiscomp3/bin/seiscomp start
+starting seedlink
+starting scautopick
+starting scautoloc
+starting scamp
+starting scmag
+starting scevent
+</pre></div>
+</div>
+<p>Now the system should run. To check everything again, <strong class="program">seiscomp check</strong>
+can be run which should print <em>is running</em> for all started modules.
+If everything is working, the analysis tools can be started, e.g. MapView.</p>
+<div class="highlight-sh"><div class="highlight"><pre>user@host:~<span class="nv">$ </span>seiscomp3/bin/seiscomp <span class="nb">exec </span>scmv
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="management.html" title="System management"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="installation.html" title="Installation"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+ 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

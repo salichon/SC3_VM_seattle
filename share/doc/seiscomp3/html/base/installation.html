@@ -1,0 +1,437 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Installation &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="next" title="Getting started" href="getting-started.html" />
+    <link rel="prev" title="Introduction and Scope" href="introduction.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="getting-started.html" title="Getting started"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction and Scope"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+ 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Installation</a><ul>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#installation-procedure">Installation procedure</a><ul>
+<li><a class="reference internal" href="#install-dependencies">Install dependencies</a></li>
+<li><a class="reference internal" href="#sql-configuration">SQL configuration</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#directory-structure">Directory structure</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="introduction.html"
+                        title="previous chapter">Introduction and Scope</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="getting-started.html"
+                        title="next chapter">Getting started</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/base/installation.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>SeisComP3 is distributed in the form of tar files:</p>
+<ul class="simple">
+<li>Acquisition, processing and GUIs (for each supported platform)</li>
+<li>Maps</li>
+<li>Station configuration files (optional)</li>
+</ul>
+<p>Download these from <a class="reference external" href="http://www.seiscomp3.org/">http://www.seiscomp3.org/</a> .
+This section describes the installation of the binary packages of SeisComP3 on
+an openSUSE 11.1 64 bit system with KDE desktop profile.</p>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>The hardware requirements for a seismic system depend on the size of the
+station network to be operated.</p>
+<p>Minimal requirements are:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="5%" />
+<col width="95%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>CPU</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>RAM</td>
+<td>2 GB</td>
+</tr>
+<tr class="row-odd"><td>HDD</td>
+<td>20 GB</td>
+</tr>
+<tr class="row-even"><td>OS</td>
+<td>SUSE 10.2/3 32/64bit, SUSE 11 32/64bit, (K)Ubuntu 7/8 32/64bit, Debian 5.0, CentOS 5.3</td>
+</tr>
+</tbody>
+</table>
+<p>In case large networks (&gt;100 stations) are operated, a distributed system is
+recommended. Normally a SeisComP3 system is separated in several subsystems.
+A separation of data acquisition, processing and graphical user interfaces is
+useful to permit stable performance.</p>
+<p>The minimum specifications of the system should be:</p>
+<p>Data acquisition system:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>CPU</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>RAM</td>
+<td>2 GB</td>
+</tr>
+<tr class="row-odd"><td>HDD</td>
+<td>Raid1/5/0+1 with &gt;= 200GB</td>
+</tr>
+</tbody>
+</table>
+<p>Processing system:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>CPU</td>
+<td>2</td>
+</tr>
+<tr class="row-even"><td>RAM</td>
+<td>4 GB</td>
+</tr>
+<tr class="row-odd"><td>HDD</td>
+<td>Raid1/5/0+1 with &gt;= 100GB</td>
+</tr>
+</tbody>
+</table>
+<p>GUI system:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>CPU</td>
+<td>2</td>
+</tr>
+<tr class="row-even"><td>RAM</td>
+<td>4 GB</td>
+</tr>
+<tr class="row-odd"><td>HDD</td>
+<td>&gt; 50 GB</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="installation-procedure">
+<h2>Installation procedure<a class="headerlink" href="#installation-procedure" title="Permalink to this headline">¶</a></h2>
+<p>The next steps describe the installation of SeisComP3 with the prepared
+tar.gz files.</p>
+<ul>
+<li><p class="first">Log in as user (e.g. sysop)</p>
+</li>
+<li><p class="first">Copy one of the <tt class="file docutils literal"><span class="pre">seiscomp3-seattle-[version]-[OS]-[arch].tar.gz</span></tt> files to
+your home directory. Take care which is the right package (32 or 64-bit) for
+your operating system.</p>
+</li>
+<li><p class="first">Go to home directory</p>
+<div class="highlight-sh"><div class="highlight"><pre>user@host:/tmp<span class="nv">$ </span><span class="nb">cd</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Untar the SeisComP3 binary package</p>
+<div class="highlight-sh"><div class="highlight"><pre>user@host:~<span class="nv">$ </span>tar xzf seiscomp3-seattle-<span class="o">[</span>version<span class="o">]</span>-<span class="o">[</span>OS<span class="o">]</span>-<span class="o">[</span>arch<span class="o">]</span>.tar.gz
+</pre></div>
+</div>
+</li>
+<li><p class="first">Untar the SeisComP3 map package into seiscomp3/share/maps</p>
+<div class="highlight-sh"><div class="highlight"><pre>user@host:~<span class="nv">$ </span>tar xzf seiscomp3-maps.tar.gz
+</pre></div>
+</div>
+</li>
+<li><p class="first">If desired, untar the documentation into seiscomp3/share/doc</p>
+<div class="highlight-sh"><div class="highlight"><pre>user@host:~<span class="nv">$ </span>tar xzf seiscomp3-seattle-<span class="o">[</span>version<span class="o">]</span>-doc.tar.gz
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Now everything is installed and the system can be configured. The <a class="reference internal" href="getting-started.html#getting-started"><em>next chapter</em></a>
+chapter explains the first steps.</p>
+<div class="section" id="install-dependencies">
+<h3>Install dependencies<a class="headerlink" href="#install-dependencies" title="Permalink to this headline">¶</a></h3>
+<p>SeisComP3 depends on a number of additional packages shipped with each Linux
+distribution. The following table gives an overview:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="42%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Package</th>
+<th class="head">SC3 component</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>flex</td>
+<td>Seedlink (compilation only)</td>
+</tr>
+<tr class="row-odd"><td>libxml2</td>
+<td>Seedlink, Arclink, trunk</td>
+</tr>
+<tr class="row-even"><td>libboost</td>
+<td>trunk</td>
+</tr>
+<tr class="row-odd"><td>libboost-dev</td>
+<td>trunk (compilation only)</td>
+</tr>
+<tr class="row-even"><td>libncurses</td>
+<td>trunk:scm (optional)</td>
+</tr>
+<tr class="row-odd"><td>libncurses-dev</td>
+<td>trunk:scm (compilation only, optional)</td>
+</tr>
+<tr class="row-even"><td>libmysqlclient</td>
+<td>trunk (only if MYSQL is used)</td>
+</tr>
+<tr class="row-odd"><td>libmysqlclient-dev</td>
+<td>trunk (compilation only if enabled)</td>
+</tr>
+<tr class="row-even"><td>mysql-server</td>
+<td>trunk (only if MYSQL is used locally)</td>
+</tr>
+<tr class="row-odd"><td>libpq5</td>
+<td>trunk (only if PostgreSQL is used)</td>
+</tr>
+<tr class="row-even"><td>libpq-dev</td>
+<td>trunk (compilation only if enabled)</td>
+</tr>
+<tr class="row-odd"><td>libqt4</td>
+<td>trunk (only GUI should be used)</td>
+</tr>
+<tr class="row-even"><td>python-dev</td>
+<td>trunk (compilation only)</td>
+</tr>
+<tr class="row-odd"><td>festival</td>
+<td>trunk (optional voice alert)</td>
+</tr>
+</tbody>
+</table>
+<p>First the environment has to be set up. The <strong class="program">seiscomp</strong> tool comes with
+the command <strong class="command">install-deps</strong> which installs required packages.
+To use MYSQL, give 'mysql-server' as parameter. If your distribution is not
+supported by <strong class="command">install-deps</strong>, install the above packages or contact us
+to add support for your distribution.</p>
+<div class="highlight-sh"><div class="highlight"><pre>user@host:~<span class="nv">$ </span>seiscomp3/bin/seiscomp install-deps base mysql-server
+Distribution: Ubuntu 10.04
+<span class="o">[</span>sudo<span class="o">]</span> password <span class="k">for </span>sysop:
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+...
+</pre></div>
+</div>
+</div>
+<div class="section" id="sql-configuration">
+<h3>SQL configuration<a class="headerlink" href="#sql-configuration" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">For better performance with a MYSQL database, adjust the following parameters:</p>
+<ul class="simple">
+<li>&quot;innodb_buffer_pool_size = 64M&quot;</li>
+<li>&quot;innodb_flush_log_at_trx_commit = 2&quot;</li>
+</ul>
+<p>The location of the configuration can differ between distributions. For
+OpenSUSE it is in <tt class="file docutils literal"><span class="pre">/etc/my.cnf</span></tt> whereas Ubuntu uses
+<tt class="file docutils literal"><span class="pre">/etc/mysql/my.cnf</span></tt>  respectively <tt class="file docutils literal"><span class="pre">/etc/mysql/conf.d/*</span></tt>. Please
+read the documentation of your distribution .</p>
+<p>After adjusting the parameters, MYSQL needs to be restarted. If you are
+running OpenSUSE you can run</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nv">$ </span>sudo rcmysql restart
+</pre></div>
+</div>
+<p>whereas Ubuntu requires</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nv">$ </span>sudo restart mysql
+</pre></div>
+</div>
+</li>
+<li><p class="first">To start MySQL automatically during boot set in OpenSUSE</p>
+<div class="highlight-sh"><div class="highlight"><pre>user@host:~<span class="nv">$ </span>insserv mysql
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="directory-structure">
+<h2>Directory structure<a class="headerlink" href="#directory-structure" title="Permalink to this headline">¶</a></h2>
+<p>The directory structure of the installed system is described with the
+following table.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Directory</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><em>bin</em></td>
+<td>The user module binaries.</td>
+</tr>
+<tr class="row-odd"><td><em>lib</em></td>
+<td>The base library directory used by all modules.</td>
+</tr>
+<tr class="row-even"><td><em>lib/python</em></td>
+<td>The pyton library directory.</td>
+</tr>
+<tr class="row-odd"><td><em>man</em></td>
+<td>The manual pages.</td>
+</tr>
+<tr class="row-even"><td><em>sbin</em></td>
+<td>The system/service/server binaries such as seedlink.</td>
+</tr>
+<tr class="row-odd"><td><em>var</em></td>
+<td>Variable files whose content is expected to continually change.</td>
+</tr>
+<tr class="row-even"><td><em>var/log</em></td>
+<td>Log files of started modules. Usually modules log either to syslog
+or ~/.seiscomp3/log. This directory contains the logs of the start
+of each module.</td>
+</tr>
+<tr class="row-odd"><td><em>var/lib</em></td>
+<td>Default directory for files created by modules such as the
+waveform ringbuffer of SeedLink or the waveform archive created
+by slarchive.</td>
+</tr>
+<tr class="row-even"><td><em>var/run</em></td>
+<td>Contains the .run and .pid files of modules started by
+<strong class="program">seiscomp</strong>.</td>
+</tr>
+<tr class="row-odd"><td><em>include</em></td>
+<td>SDK header files for all libraries.</td>
+</tr>
+<tr class="row-even"><td><em>share</em></td>
+<td>Application data such as maps, cities.xml and others.</td>
+</tr>
+<tr class="row-odd"><td><em>share/templates</em></td>
+<td>Template files used by eg SeedLink to create its native
+configuration.</td>
+</tr>
+<tr class="row-even"><td><em>etc</em></td>
+<td>Configuration directory.</td>
+</tr>
+<tr class="row-odd"><td><em>etc/descriptions</em></td>
+<td>Contains all XML module descriptions.</td>
+</tr>
+<tr class="row-even"><td><em>etc/defaults</em></td>
+<td>The default configuration files. This directory is read as first
+when a module starts.</td>
+</tr>
+<tr class="row-odd"><td><em>etc/init</em></td>
+<td>Module init scripts called by <strong class="program">seiscomp</strong>.</td>
+</tr>
+<tr class="row-even"><td><em>etc/key</em></td>
+<td>Station configurations and module bindings.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="getting-started.html" title="Getting started"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction and Scope"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+ 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

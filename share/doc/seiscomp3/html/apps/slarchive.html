@@ -1,0 +1,524 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>slarchive &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="Acquisition" href="../toc/acquisition.html" />
+    <link rel="next" title="Inventory" href="../toc/inventory.html" />
+    <link rel="prev" title="seedlink" href="seedlink.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../toc/inventory.html" title="Inventory"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="seedlink.html" title="seedlink"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/acquisition.html" accesskey="U">Acquisition</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">slarchive</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#sds-definition">SDS definition</a></li>
+<li><a class="reference internal" href="#configuration">Configuration</a></li>
+<li><a class="reference internal" href="#bindings">Bindings</a><ul>
+<li><a class="reference internal" href="#id2">Configuration</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#command-line">Command-line</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="seedlink.html"
+                        title="previous chapter">seedlink</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../toc/inventory.html"
+                        title="next chapter">Inventory</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/apps/slarchive.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="slarchive">
+<span id="id1"></span><h1>slarchive<a class="headerlink" href="#slarchive" title="Permalink to this headline">¶</a></h1>
+<p><strong>SeedLink client for data stream archiving</strong></p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>slarchive connects to a SeedLink server, requests data streams and writes received
+packets into directory/file structures. The precise layout of the directories and
+files is defined in a format string.</p>
+<p>The implemented file layouts are:</p>
+<ul class="simple">
+<li>the SeisComP Data Structure (SDS)</li>
+<li>Buffer of Uniform Data structure (BUD)</li>
+<li>the old SeisComP/datalog structure (DLOG) for backwards compatibility</li>
+</ul>
+<p>To write more than one archive simply specify multiple format definitions (or presets).</p>
+</div>
+<div class="section" id="sds-definition">
+<h2>SDS definition<a class="headerlink" href="#sds-definition" title="Permalink to this headline">¶</a></h2>
+<p>The basic directory and file layout is defined as:</p>
+<p><tt class="file docutils literal"><span class="pre">&lt;SDSdir&gt;/Year/NET/STA/CHAN.TYPE/NET.STA.LOC.CHAN.TYPE.YEAR.DAY</span></tt>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>SDSdir</td>
+<td>Arbitrary base directory</td>
+</tr>
+<tr class="row-odd"><td>YEAR</td>
+<td>4 digit YEAR</td>
+</tr>
+<tr class="row-even"><td>NET</td>
+<td>Network code/identifier, 1-8 characters,
+no spaces</td>
+</tr>
+<tr class="row-odd"><td>STA</td>
+<td>Station code/identifier, 1-8 characters,
+no spaces</td>
+</tr>
+<tr class="row-even"><td>CHAN</td>
+<td>Channel code/identifier, 1-8 characters,
+no spaces</td>
+</tr>
+<tr class="row-odd"><td>TYPE</td>
+<td><p class="first">1 character, indicating the data type,
+provided types are:</p>
+<div class="last line-block">
+<div class="line"><strong>D</strong> Waveform data</div>
+<div class="line"><strong>E</strong> Detection data</div>
+<div class="line"><strong>L</strong> Log data</div>
+<div class="line"><strong>T</strong> Timing data</div>
+<div class="line"><strong>C</strong> Calibration data</div>
+<div class="line"><strong>R</strong> Response data</div>
+<div class="line"><strong>O</strong> Opaque data</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>LOC</td>
+<td>Location identifier, 1-8 characters,
+no spaces</td>
+</tr>
+<tr class="row-odd"><td>DAY</td>
+<td>3 digit day of year, padded with zeros</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">slarchive is a standalone module and does not inherit <a class="reference internal" href="global.html#global-configuration"><em>global options</em></a>.</p>
+</div>
+<div class="line-block">
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/defaults/slarchive.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/slarchive.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">~/.seiscomp3/slarchive.cfg</span></tt></div>
+</div>
+<dl class="confval">
+<dt id="confval-address">
+<tt class="descname">address</tt><a class="headerlink" href="#confval-address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Host of the Seedlink server to connect to. If the acquisition
+is running on one system nothing needs to be changed.
+Default is <tt class="docutils literal"><span class="pre">127.0.0.1</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-port">
+<tt class="descname">port</tt><a class="headerlink" href="#confval-port" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>The port of the Seedlink server to connect to. If the acquisition
+is running on one system this port must match the configured
+local Seedlink port.
+Default is <tt class="docutils literal"><span class="pre">18000</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-archive">
+<tt class="descname">archive</tt><a class="headerlink" href="#confval-archive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Path to waveform archive where all data is stored. Relative paths
+(as the default) are treated relative to the installation
+directory ($SEISCOMP_ROOT).
+Default is <tt class="docutils literal"><span class="pre">var/lib/archive</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-buffer">
+<tt class="descname">buffer</tt><a class="headerlink" href="#confval-buffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Number of records (512 byte units) to buffer before flushing to
+disk.
+Default is <tt class="docutils literal"><span class="pre">1000</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-delay">
+<tt class="descname">delay</tt><a class="headerlink" href="#confval-delay" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>The network reconnect delay (in seconds) for the connection
+to the SeedLink server. If the connection breaks for any
+reason this will govern how soon a reconnection should be
+attempted. The default value is 30 seconds.
+Default is <tt class="docutils literal"><span class="pre">30</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-networkTimeout">
+<tt class="descname">networkTimeout</tt><a class="headerlink" href="#confval-networkTimeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>The network timeout (in seconds) for the connection to the
+SeedLink server. If no data [or keep alive packets?] are received
+in this time range the connection is closed and re-established
+(after the reconnect delay has expired). The default value is
+600 seconds. A value of 0 disables the timeout.
+Default is <tt class="docutils literal"><span class="pre">900</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-idleTimeout">
+<tt class="descname">idleTimeout</tt><a class="headerlink" href="#confval-idleTimeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Timeout for closing idle data stream files in seconds. The idle
+time of the data streams is only checked when some packets has
+arrived. If no packets arrived no idle stream files will be
+closed. There is no reason to change this parameter except for
+the unusual cases where the process is running against an open
+file number limit. Default is 300 seconds.
+Default is <tt class="docutils literal"><span class="pre">300</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-keepalive">
+<tt class="descname">keepalive</tt><a class="headerlink" href="#confval-keepalive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Interval (in seconds) at which keepalive (heartbeat) packets
+are sent to the server. Keepalive packets are only sent if
+nothing is received within the interval. This requires a
+Seedlink version &gt;= 3.
+Default is <tt class="docutils literal"><span class="pre">0</span></tt>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="bindings">
+<h2>Bindings<a class="headerlink" href="#bindings" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>Configuration<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<dl class="confval">
+<dt id="confval-selectors">
+<tt class="descname">selectors</tt><a class="headerlink" href="#confval-selectors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>list:string</em></p>
+<p>List of stream selectors. If left empty all available
+streams will be requested. See slarchive manpage for
+more information.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-keep">
+<tt class="descname">keep</tt><a class="headerlink" href="#confval-keep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Number of days the data is kept in the archive. This
+requires purge_datafile to be run as cronjob.
+Default is <tt class="docutils literal"><span class="pre">30</span></tt>.</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="command-line">
+<h2>Command-line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h2>
+<p><strong class="program">slarchive [OPTION]... [host][:][port]</strong></p>
+<p>Address ([host][:][port]) is a required argument. It specifies the address
+of the SeedLink server in host:port format. Either the host, port or both
+can be omitted. If host is omitted then localhost is assumed,
+i.e. ':18000' implies 'localhost:18000'. If the port is omitted
+then 18000 is assumed, i.e. 'localhost' implies 'localhost:18000'.
+If only ':' is specified 'localhost:18000' is assumed.</p>
+<dl class="option">
+<dt id="cmdoption-slarchive-V">
+<tt class="descname">-V</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-slarchive-V" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print program version and exit.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-slarchive-h">
+<tt class="descname">-h</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-slarchive-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print program usage and exit.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-slarchive-v">
+<tt class="descname">-v</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-slarchive-v" title="Permalink to this definition">¶</a></dt>
+<dd><p>Be more verbose. This flag can be used multiple times (&quot;-v -v&quot; or &quot;-vv&quot;)
+for more verbosity. One flag: report basic handshaking (link configuration) details and
+briefly report each packet received. Two flags: report the details of the handshaking,
+each packet received and detailed connection diagnostics.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-slarchive-p">
+<tt class="descname">-p</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-slarchive-p" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print details of received Mini-SEED data records. This flag can be used multiple times
+(&quot;-p -p&quot; or &quot;-pp&quot;) for more detail. One flag: a single summary line
+for each data packet received. Two flags: details of the Mini-SEED data records received,
+including information from fixed header and 100/1000/1001 blockettes.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-slarchive-nd">
+<tt class="descname">-nd</tt><tt class="descclassname"> delay</tt><a class="headerlink" href="#cmdoption-slarchive-nd" title="Permalink to this definition">¶</a></dt>
+<dd><p>The network reconnect delay (in seconds) for the connection to the SeedLink server.
+If the connection breaks for any reason this will govern how soon a reconnection should
+be attempted. The default value is 30 seconds.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-slarchive-nt">
+<tt class="descname">-nt</tt><tt class="descclassname"> timeout</tt><a class="headerlink" href="#cmdoption-slarchive-nt" title="Permalink to this definition">¶</a></dt>
+<dd><p>The network timeout (in seconds) for the connection to the SeedLink server. If no data
+[or keep alive packets?] are received in this time range the connection is closed and
+re-established (after the reconnect delay has expired). The default value is 600 seconds.
+A value of 0 disables the timeout.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-slarchive-k">
+<tt class="descname">-k</tt><tt class="descclassname"> keepalive</tt><a class="headerlink" href="#cmdoption-slarchive-k" title="Permalink to this definition">¶</a></dt>
+<dd><p>Interval (in seconds) at which keepalive (heartbeat) packets are sent to the server.
+Keepalive packets are only sent if nothing is received within the interval. Requires SeedLink
+version &gt;= 3.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-slarchive-x">
+<tt class="descname">-x</tt><tt class="descclassname"> statefile[:interval]</tt><a class="headerlink" href="#cmdoption-slarchive-x" title="Permalink to this definition">¶</a></dt>
+<dd><p>During client shutdown the last received sequence numbers and time stamps (start times)
+for each data stream will be saved in this file. If this file exists upon startup the information
+will be used to resume the data streams from the point at which they were stopped. In this way the
+client can be stopped and started without data loss, assuming the data are still available on the
+server. If an interval is specified the state will be saved every interval in that packets are
+received. Otherwise the state will be saved only on normal program termination.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-slarchive-i">
+<tt class="descname">-i</tt><tt class="descclassname"> timeout</tt><a class="headerlink" href="#cmdoption-slarchive-i" title="Permalink to this definition">¶</a></dt>
+<dd><p>Timeout for closing idle data stream files in seconds. The idle time of the data streams is
+only checked when some packets has arrived. If no packets arrived no idle stream files will be
+closed. There is no reason to change this parameter except for the unusual cases where the
+process is running against an open file number limit. Default is 300 seconds.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-slarchive-d">
+<tt class="descname">-d</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-slarchive-d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure the connection in &quot;dial-up&quot; mode. The remote server will close the connection when
+it has sent all of the data in its buffers for the selected data streams. This is opposed to
+the normal behavior of waiting indefinitely for data.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-slarchive-b">
+<tt class="descname">-b</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-slarchive-b" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure the connection in &quot;batch&quot; mode.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-slarchive-Fi">
+<tt class="descname">-Fi</tt><tt class="descclassname">[:overlap]</tt><a class="headerlink" href="#cmdoption-slarchive-Fi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Future check initially. Check the last Mini-SEED data record in an existing archive file
+and do not write new data to that file if it is older than a certain overlap. The default
+overlap limit is 2 seconds; the overlap can be specified by appending a colon and the desired
+overlap limit in seconds to the option. If the overlap is exceeded an error message will be
+logged once for each time the file is opened. This option makes sense only for archive formats
+where each unique data stream is written to a unique file (e.g. SDS format). If a data stream
+is closed due to timeout (see option -i) the initial future check will be preformed when the
+file is re-opened.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-slarchive-Fc">
+<tt class="descname">-Fc</tt><tt class="descclassname">[:overlap]</tt><a class="headerlink" href="#cmdoption-slarchive-Fc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Future check continuously. Available only for archive Mini-SEED data records. Check if the
+first sample of the record is older than the last sample of the previous record for a given
+archive file, within a certain overlap. The default overlap limit is 2 seconds; the overlap
+can be specified by appending a colon and the desired overlap limit in seconds to the option.
+If the overlap is exceeded an error message will be logged once until either a non-overlapping
+packet is received or a new archive file is used. This option only makes sense for archive
+formats where each unique data stream is written to a unique file (e.g. SDS format).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-slarchive-A">
+<tt class="descname">-A</tt><tt class="descclassname"> format</tt><a class="headerlink" href="#cmdoption-slarchive-A" title="Permalink to this definition">¶</a></dt>
+<dd><p>If specified, all received packets (Mini-SEED records) will be appended to a directory/file
+structure defined by format. All directories implied in the format string will be created if
+necessary. The option may be used multiple times to write received packets to multiple archives.
+See the section &quot;archiving data&quot;.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-slarchive-SDS">
+<tt class="descname">-SDS</tt><tt class="descclassname"> path</tt><a class="headerlink" href="#cmdoption-slarchive-SDS" title="Permalink to this definition">¶</a></dt>
+<dd><p>If specified, all received packets (Mini-SEED records) will be saved into a Simple Data
+Structure (SDS) dir/file structure starting at the specified directory. This directory and
+all subdirectories will be created if necessary. This option is a preset of the '-A' option.
+The SDS dir/file structure is:</p>
+<p>&lt;SDSdir&gt;/&lt;YEAR&gt;/&lt;NET&gt;/&lt;STA&gt;/&lt;CHAN.TYPE&gt;/NET.STA.LOC.CHAN.TYPE.YEAR.DAY</p>
+<p>Details are mentioned later on.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-slarchive-BUD">
+<tt class="descname">-BUD</tt><tt class="descclassname"> path</tt><a class="headerlink" href="#cmdoption-slarchive-BUD" title="Permalink to this definition">¶</a></dt>
+<dd><p>If specified, all received waveform data packets (Mini-SEED data records) will be saved into
+a Buffer of Uniform Data (BUD) dir/file structure starting at the specified directory.
+This directory and all subdirectories will be created if necessary. This option is a preset
+of the '-A' option. The BUD dir/file structure is:</p>
+<p>&lt;BUDdir&gt;/&lt;NET&gt;/&lt;STA&gt;/STA.NET.LOC.CHAN.YEAR.DAY</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-slarchive-DLOG">
+<tt class="descname">-DLOG</tt><tt class="descclassname"> DLOGdir</tt><a class="headerlink" href="#cmdoption-slarchive-DLOG" title="Permalink to this definition">¶</a></dt>
+<dd><p>If specified, all received packets (Mini-SEED data records) will be saved into an old style
+SeisComP/datalog dir/file structure starting at the specified directory. This directory and
+all subdirectories will be created if necessary. This option is a preset of the '-A' option.
+The DLOG dir/file structure is:</p>
+<p>&lt;DLOGdir&gt;/&lt;STA&gt;/[LOC.]&lt;CHAN&gt;.&lt;TYPE&gt;/STA.NET.CHAN.TYPE.YEAR.DAY.HHMM</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-slarchive-l">
+<tt class="descname">-l</tt><tt class="descclassname"> streamfile</tt><a class="headerlink" href="#cmdoption-slarchive-l" title="Permalink to this definition">¶</a></dt>
+<dd><p>The given file contains a list of streams. This option implies multi-station mode.
+The format of the stream list file is given below in the section &quot;stream list file&quot;.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-slarchive-s">
+<tt class="descname">-s</tt><tt class="descclassname"> selectors</tt><a class="headerlink" href="#cmdoption-slarchive-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defining default selectors. If no multi-station data streams are configured these selectors
+will be used for uni-station mode. Otherwise these selectors will be used when no selectors
+are specified for a given stream with the '-S' or '-l' options.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-slarchive-S">
+<tt class="descname">-S</tt><tt class="descclassname"> stream[:selectors], ...</tt><a class="headerlink" href="#cmdoption-slarchive-S" title="Permalink to this definition">¶</a></dt>
+<dd><p>The connection will be configured in multi-station mode with optional SeedLink selectors
+for each station, see examples below. Stream should be provided in NET_STA format. If no
+selectors are provided for a given stream, the default selectors will be used, if defined.</p>
+<p>Requires SeedLink &gt;= 2.5.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-slarchive-tw">
+<tt class="descname">-tw</tt><tt class="descclassname"> start:[end]</tt><a class="headerlink" href="#cmdoption-slarchive-tw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifying a time window for the data streams that is applied by the server. The format
+for both times is year,month,day,hour,min,sec; for example: &quot;2002,08,05,14,00:2002,08,05,14,15,00&quot;.
+The end time is optional but the colon must be present. If no end time is specified the
+server will send data indefinitely. This option will override any saved state information.</p>
+<p>Warning: time windowing might be disabled on the remote server.</p>
+<p>Requires SeedLink &gt;= 3.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../toc/inventory.html" title="Inventory"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="seedlink.html" title="seedlink"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/acquisition.html" >Acquisition</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

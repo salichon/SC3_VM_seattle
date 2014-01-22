@@ -1,0 +1,28 @@
+#########
+Utilities
+#########
+
+.. toctree::
+   :maxdepth: 2
+
+   /apps/arclink_fetch
+   /apps/arclinktool
+   /apps/fdsnws
+   /apps/scalert
+   /apps/scart
+   /apps/scbulletin
+   /apps/scchkcfg
+   /apps/scconfig
+   /apps/scdb
+   /apps/scdispatch
+   /apps/scevtlog
+   /apps/scevtls
+   /apps/scevtstreams
+   /apps/scimex
+   /apps/scimport
+   /apps/scm
+   /apps/scvoice
+   /apps/scxmldump
+   /apps/sczip
+   /apps/sync_arc
+   /apps/wsiris

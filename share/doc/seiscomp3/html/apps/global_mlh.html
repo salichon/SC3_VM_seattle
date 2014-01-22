@@ -1,0 +1,164 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MLh &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="global" href="../toc/extensions/global.html" />
+    <link rel="next" title="NonLinLoc" href="global_nonlinloc.html" />
+    <link rel="prev" title="GUI" href="global_gui.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="global_nonlinloc.html" title="NonLinLoc"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="global_gui.html" title="GUI"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/extensions.html" >Extensions</a> &raquo;</li>
+          <li><a href="../toc/extensions/global.html" accesskey="U">global</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">MLh</a><ul>
+<li><a class="reference internal" href="#description">Description</a><ul>
+<li><a class="reference internal" href="#amplitude">Amplitude</a></li>
+<li><a class="reference internal" href="#station-magnitude">Station Magnitude</a></li>
+<li><a class="reference internal" href="#overall-event-magnitude">Overall Event Magnitude</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="global_gui.html"
+                        title="previous chapter">GUI</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="global_nonlinloc.html"
+                        title="next chapter">NonLinLoc</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/apps/global_mlh.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="mlh">
+<span id="global-mlh"></span><h1>MLh<a class="headerlink" href="#mlh" title="Permalink to this headline">¶</a></h1>
+<p>The MLh plugin (previously MLsed) is designed to compute amplitudes
+and magnitudes according to the Swiss Seismological Service (SED)
+standards.</p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="amplitude">
+<h3>Amplitude<a class="headerlink" href="#amplitude" title="Permalink to this headline">¶</a></h3>
+<p>The MLh amplitude calculation is very similar to the original ML. The two differences are:</p>
+<ul class="simple">
+<li>It uses the maximum of the two horizontal components (average can be configured if necessary)</li>
+<li>It uses zero-to-peak in stead of peak-to-peak values</li>
+</ul>
+<p>Zero-to-peak is calculated by just dividing the peak-to-peak amplitude by two.
+This is not exact for unsymmetrical signals, but that doesn't matter because the
+code actually generates zero-to-peak amplitudes internally and multiplies them
+with two. So in the end we get real zero-to-peak values.</p>
+</div>
+<div class="section" id="station-magnitude">
+<h3>Station Magnitude<a class="headerlink" href="#station-magnitude" title="Permalink to this headline">¶</a></h3>
+<p>The MLh plugin calculates the individual station magnitude using the following formula:</p>
+<div class="math">
+<p><img src="../_images/math/b4b104fc2951f08f6a2eee3598c092717bf16a16.png" alt="mag = \log10(waamp1) + A \times epdistkm + B"/></p>
+</div><p>waampl is the amplitude produced by the MLh plugin. Epidistkm is the distance from the sensor
+to the epicenter in kilometers. A and B are parameters that can be configured in a config file.
+Several pairs of A and B can be configured for different ranges of epicenter distance.</p>
+</div>
+<div class="section" id="overall-event-magnitude">
+<h3>Overall Event Magnitude<a class="headerlink" href="#overall-event-magnitude" title="Permalink to this headline">¶</a></h3>
+<p>The SED standard is to use the median value of all contributing station magnitudes, no trimming.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="global_nonlinloc.html" title="NonLinLoc"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="global_gui.html" title="GUI"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/extensions.html" >Extensions</a> &raquo;</li>
+          <li><a href="../toc/extensions/global.html" >global</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

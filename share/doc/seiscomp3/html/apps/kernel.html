@@ -1,0 +1,202 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>kernel &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="System" href="../toc/system.html" />
+    <link rel="next" title="Utilities" href="../toc/utilities.html" />
+    <link rel="prev" title="diskmon" href="diskmon.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../toc/utilities.html" title="Utilities"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="diskmon.html" title="diskmon"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/system.html" accesskey="U">System</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">kernel</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#configuration">Configuration</a><ul>
+<li><a class="reference internal" href="#syncarc-extension">syncarc extension</a></li>
+<li><a class="reference internal" href="#messaging-extension">messaging extension</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="diskmon.html"
+                        title="previous chapter">diskmon</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../toc/utilities.html"
+                        title="next chapter">Utilities</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/apps/kernel.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="kernel">
+<span id="id1"></span><h1>kernel<a class="headerlink" href="#kernel" title="Permalink to this headline">¶</a></h1>
+<p><strong>SeisComP kernel.</strong></p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The kernel is the basic configuration for the <strong class="command">seiscomp</strong> tool.
+It contains configuration parameters for all init scripts in <tt class="file docutils literal"><span class="pre">etc/init</span></tt>. Each init script can, but does not
+need to, read the kernel parameters and configure itself accordingly. Kernel parameters are not mandatory but
+should be taken as (serious) hints. If for example syslog is enabled in the kernel then all init scripts should
+configure syslog as logging backend for the programs they start. But if a program does not support syslog it can
+also be started without logging to syslog.</p>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">kernel is a standalone module and does not inherit <a class="reference internal" href="global.html#global-configuration"><em>global options</em></a>.</p>
+</div>
+<div class="line-block">
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/defaults/kernel.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/kernel.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">~/.seiscomp3/kernel.cfg</span></tt></div>
+</div>
+<dl class="confval">
+<dt id="confval-syslog">
+<tt class="descname">syslog</tt><a class="headerlink" href="#confval-syslog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>Sends all logging output to the syslog backend which logs
+usually to /var/log/messages.
+Default is <tt class="docutils literal"><span class="pre">false</span></tt>.</p>
+</dd></dl>
+
+<div class="section" id="syncarc-extension">
+<span id="kernel-syncarc"></span><h3>syncarc extension<a class="headerlink" href="#syncarc-extension" title="Permalink to this headline">¶</a></h3>
+<p>SeisComP EIDA inventory synchronization component.</p>
+<dl class="confval">
+<dt id="confval-inventory.syncOnUpdate">
+<tt class="descname">inventory.syncOnUpdate</tt><a class="headerlink" href="#confval-inventory.syncOnUpdate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>Enables/disables the synchronization of the inventory
+after a update-config is called. When enabled this will
+call the sync_arc program everytime that the seiscomp
+update-config is used
+Default is <tt class="docutils literal"><span class="pre">false</span></tt>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="messaging-extension">
+<span id="kernel-messaging"></span><h3>messaging extension<a class="headerlink" href="#messaging-extension" title="Permalink to this headline">¶</a></h3>
+<p>SeisComP messaging component that enables communication of modules over the network.</p>
+<dl class="confval">
+<dt id="confval-messaging.enable">
+<tt class="descname">messaging.enable</tt><a class="headerlink" href="#confval-messaging.enable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>Enables/disables local messaging (spread+scmaster).
+The messaging component is an integral component
+of all modules (except eg acquisition modules).
+If you are not sure what to do, enable it.
+Default is <tt class="docutils literal"><span class="pre">true</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-messaging.port">
+<tt class="descname">messaging.port</tt><a class="headerlink" href="#confval-messaging.port" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>port</em></p>
+<p>Defines the messaging port. The default port
+is 4803 and the messaging connection for
+all modules running locally is localhost:4803.
+Default is <tt class="docutils literal"><span class="pre">4803</span></tt>.</p>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../toc/utilities.html" title="Utilities"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="diskmon.html" title="diskmon"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/system.html" >System</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

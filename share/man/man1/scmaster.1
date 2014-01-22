@@ -1,0 +1,190 @@
+.TH "SCMASTER" "1" "January 21, 2014" "2014.016" "SeisComP3"
+.SH NAME
+scmaster \- SeisComP3 Documentation
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.\" Man page generated from reStructeredText.
+.
+.sp
+\fBscmaster\fP
+.SH DESCRIPTION
+.sp
+A SeisComP3 system consists of a set of independent applications each performing a discrete task.
+The communication between the applications is realized by a TCP/IP based messaging system.
+This messaging system is based on the open source toolkit \fI\%Spread\fP that provides a high performance
+messaging service across local and wide area networks. At the top of Spread a mediator,
+scmaster, handles additional requirements of SeisComP3 that are not natively provided by Spread.
+The messaging system is used for the exchange of meta data (e.g. picks) and configurations to some extent.
+.INDENT 0.0
+.INDENT 2.5
+[image: sketch of a distributed system]
+[image]
+Schematic view on a distributed SeisComP3 system..UNINDENT
+.UNINDENT
+
+.sp
+.ce
+----
+
+.ce 0
+.sp
+.sp
+scmaster was designed as a kind of microkernel which delegates client requests. Therefore it
+is the key application responsible for the orchestration of the distributed system. In order to participate
+in the distributed system a client needs to send a connect request to the scmaster. In turn the master
+returns an acknowledgment message which either informs the client of its admission or rejection. If the
+connect request was successful the acknowledgment message will provide the client with the available message
+groups it can subscribe to. Moreover, all currently connected clients will be notified about the newly joined
+member. In case the master is configured with a database the client will also receive a direct follow up
+message which holds the address of this database if the dbplugin is enabled. The address can be used to
+retrieve archived data later on.
+.sp
+After a connection has been established every message will pass through the master first where it is
+processed accordingly and then relayed to the target groups. Once a client is done with processing a disconnect
+message will be sent to the master who in turn notifies all remaining clients about the leaving.
+scmaster can be configured with a database (dbplugin) to ensure the integrity of the system. Before a message
+is distributed by scmaster the message is written to the specified database. This way each message
+is stored before it enters the system. In case of a crash all necessary information can be recovered
+from the database. Currently, driver exist for MySQL, PostgreSQL and sqlite. Note that the scmaster can
+run without a database but loses data integrity in doing so.
+.sp
+A common \fBscmaster.cfg\fP looks like this:
+.sp
+.nf
+.ft C
+plugins = dbplugin
+plugins.dbPlugin.dbDriver = mysql
+plugins.dbPlugin.readConnection = "sysop:sysop@host/seiscomp3"
+plugins.dbPlugin.writeConnection = "sysop:sysop@localhost/seiscomp3"
+.ft P
+.fi
+.SH CONFIGURATION
+.nf
+\fBetc/defaults/global.cfg\fP
+\fBetc/defaults/scmaster.cfg\fP
+\fBetc/global.cfg\fP
+\fBetc/scmaster.cfg\fP
+\fB~/.seiscomp3/global.cfg\fP
+\fB~/.seiscomp3/scmaster.cfg\fP
+.fi
+.sp
+.sp
+scmaster inherits \fIglobal options\fP.
+.INDENT 0.0
+.TP
+.B msgGroups
+Type: \fIlist:string\fP
+.sp
+Configures the available message groups. If nothing is configured, the default message
+groups AMPLITUDE, PICK, LOCATION, MAGNITUDE, EVENT, QC, PUBLICATION, GUI, INVENTORY,
+CONFIG, LOGGING, SERVICE_REQUEST and SERVICE_PROVIDE are provided.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B schemaVersionOverride
+Type: \fIstring\fP
+.sp
+Force the schema version to be reported to clients. This must be equal
+or lower than the one the code supports otherwise scmaster will fail to
+start. This is an expert setting and can be required if clients with
+version equal or lower than 2013.245 connect to a master with a higher
+schema version because of a bug on client side.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B admin.adminname
+Type: \fIstring\fP
+.sp
+Name of admin user used to authenticate with scadmin to manage
+client connections.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B admin.password
+Type: \fIstring\fP
+.sp
+Password of admin user used to authenticate with scadmin to manage
+client connections.
+.UNINDENT
+.IP Note
+\fBplugins.dbPlugin.*\fP
+\fIDatabase plugin for scmaster. This plugin forwards all messages received by\fP
+\fIscmaster to the configured database and garantuees that the objects in the\fP
+\fImessage (send within notifiers) are stored in the database before a client\fP
+\fIreceives the message. To load the plugin, add dbplugin to plugins in scmaster\(aqs\fP
+\fIconfiguration.\fP
+.RE
+.INDENT 0.0
+.TP
+.B plugins.dbPlugin.dbDriver
+Type: \fIstring\fP
+.sp
+Selected the database driver to use. Database drivers are
+available through plugins. The default plugin is dbmysql
+which supports the MYSQL database server. It is activated
+with the core.plugins parameter.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B plugins.dbPlugin.readConnection
+Type: \fIstring\fP
+.sp
+Sets the database read connection which is reported to clients
+that connect to this server. If a remote setup should be
+implemented, ensure that the hostname is reachable from
+the remote computer.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B plugins.dbPlugin.writeConnection
+Type: \fIstring\fP
+.sp
+Sets the database write connection which is private to
+scmaster. A separate write connection enables different
+permissions on the database level for scmaster and
+clients.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B plugins.dbPlugin.strictVersionCheck
+Type: \fIboolean\fP
+.sp
+If enabled, the plugin will check the database schema version and refuse to start
+if the version doesn\(aqt match the latest version. If disabled and the an object
+needs to be stored which is incompatible with the database schema this object is
+lost. Leave this option enabled unless you know exactly what are you doing and what
+the consequences are.
+Default is \fBtrue\fP.
+.UNINDENT
+.SH AUTHOR
+GFZ Potsdam
+.SH COPYRIGHT
+2014, GFZ Potsdam, gempa GmbH
+.\" Generated by docutils manpage writer.
+.\" 
+.

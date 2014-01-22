@@ -1,0 +1,281 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ArcLink Server, Request Handler protocol &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="ArcLink Protocol" href="arclink-protocol.html" />
+    <link rel="next" title="Software Development Kit" href="sdk.html" />
+    <link rel="prev" title="ArcLink Protocol" href="arclink-protocol.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="sdk.html" title="Software Development Kit"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="arclink-protocol.html" title="ArcLink Protocol"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="arclink-protocol.html" accesskey="U">ArcLink Protocol</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">ArcLink Server, Request Handler protocol</a><ul>
+<li><a class="reference internal" href="#id1">Request handler protocol</a></li>
+<li><a class="reference internal" href="#session-example">Session example</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="arclink-protocol.html"
+                        title="previous chapter">ArcLink Protocol</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="sdk.html"
+                        title="next chapter">Software Development Kit</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/base/request-handler-protocol.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="arclink-server-request-handler-protocol">
+<span id="request-handler-protocol"></span><h1>ArcLink Server, Request Handler protocol<a class="headerlink" href="#arclink-server-request-handler-protocol" title="Permalink to this headline">¶</a></h1>
+<p>As explained on the ArcLink server documentation the server distributed with seiscomp3 does not know nothing
+about how to prepare the data products. Instead it uses the request-handler program to generate the products
+and just deliver the results prepared to the user. The server when started will start a couple of
+request-handlers (programs) that will communicate to the server using file descriptors. The server
+uses the file descriptor 62 to send requests to a request handler and reads status responses from file
+descriptor 63.</p>
+<p>The communication between the server and the request handler is governed by an asynchronous protocol that is
+described in this documment.</p>
+<div class="section" id="id1">
+<h2>Request handler protocol<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>The ArcLink server sends a request to a request handler in the following format:</p>
+<div class="highlight-python"><pre>USER &lt;username&gt; &lt;password&gt;
+[INSTITUTION &lt;any string&gt;]
+[LABEL &lt;label&gt;]
+REQUEST &lt;request_type&gt; &lt;req_id&gt; &lt;optional_attributes&gt;
+[one or more request lines...]
+END</pre>
+</div>
+<p>After receiving the request, the request handler can send responses to the server. The following responses are
+defined:</p>
+<dl class="docutils">
+<dt>STATUS LINE &lt;n&gt; PROCESSING &lt;vol_id&gt;</dt>
+<dd>add request line number n (0-based) to volume vol id. The volume is created if it does not already exist.</dd>
+<dt>STATUS &lt;ref&gt; &lt;status&gt;</dt>
+<dd><p class="first">set line or volume status, where ref is &quot;LINE n&quot; or &quot;VOLUME vol id&quot; and status is one of the
+following:[[br]][[br]]</p>
+<table border="1" class="last docutils">
+<colgroup>
+<col width="13%" />
+<col width="87%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Status</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>OK</td>
+<td>request successfully processed, data available</td>
+</tr>
+<tr class="row-odd"><td>NODATA</td>
+<td>no processing errors, but data not available</td>
+</tr>
+<tr class="row-even"><td>WARN</td>
+<td>processing errors, some downloadable data available</td>
+</tr>
+<tr class="row-odd"><td>ERROR</td>
+<td>processing errors, no downloadable data available</td>
+</tr>
+<tr class="row-even"><td>RETRY</td>
+<td>temporarily no data available</td>
+</tr>
+<tr class="row-odd"><td>DENIED</td>
+<td>access to data denied for the user</td>
+</tr>
+<tr class="row-even"><td>CANCEL</td>
+<td>processing cancelled (eg., by operator)</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>MESSAGE</dt>
+<dd>any string error message in case of WARN or ERROR, but can be used regardless of the status (the last
+message is shown in the STATUS response)</dd>
+<dt>SIZE &lt;n&gt;</dt>
+<dd>data size; in case of a volume, it must be the exact size of downloadable product.</dd>
+<dt>MESSAGE &lt;any_string&gt;</dt>
+<dd>send a general processing (error) message. The last message is shown in the STATUS response.</dd>
+<dt>ERROR</dt>
+<dd>the request handler could not process the request due to an error (e.g., got an unhandled Python
+exception). This terminates the request and normally the request handler quits. If the request handler
+does not quit, it should be ready to handle the next request. Note that if the request handler quits
+(crashes) without sending ERROR, then the request will be repeated (sent to another request handler
+instance) by the server. This behavior might be changed in future server versions to avoid loops, e.g., by
+implying ERROR if the request handler quits.</dd>
+<dt>END</dt>
+<dd>request processing finished normally. The request handler is ready for the next request.</dd>
+</dl>
+</div>
+<div class="section" id="session-example">
+<h2>Session example<a class="headerlink" href="#session-example" title="Permalink to this headline">¶</a></h2>
+<p>Since the communication from the request handler to the ArcLink server is performed by file descriptors it is
+possible to test a request handler (provided on the seiscomp3 distribution) interactively by running a command
+similar to following:</p>
+<div class="highlight-python"><pre>python reqhandler -vvv 62&gt;&amp;0 63&lt;&amp;1 &gt;reqhandler.log 2&gt;&amp;1</pre>
+</div>
+<p>Now the program &quot;reqhandler&quot; waits for input from terminal and writes output to terminal as well. Additionally
+a logfile is written.</p>
+<p>Let's type the following request:</p>
+<div class="highlight-python"><pre>USER somebody@gfz-potsdam.de
+REQUEST WAVEFORM 123 format=MSEED
+2008,2,21,2,50,0 2008,2,21,3,10,0 EE MTSE BHZ .
+2008,2,21,2,50,0 2008,2,21,3,10,0 GE WLF BHZ .
+END</pre>
+</div>
+<p>The log might look similar to following:</p>
+<div class="highlight-python"><pre>01 [None] &gt; USER somebody@gfz-potsdam.de
+02 [None] &gt; REQUEST WAVEFORM 123 format=MSEED
+03 [123] new WAVEFORM request from somebody@gfz-potsdam.de, None
+04 [123] &gt; 2008,2,21,2,50,0 2008,2,21,3,10,0 EE MTSE BHZ .
+05 [123] &lt; STATUS LINE 0 PROCESSING GFZ
+06 [123] &gt; 2008,2,21,2,50,0 2008,2,21,3,10,0 GE WLF BHZ .
+07 [123] &lt; STATUS LINE 0 SIZE 43008
+08 [123] &gt; END
+09 [123] &lt; STATUS LINE 1 PROCESSING GFZ
+10 [123] &lt; STATUS LINE 0 OK
+11 [123] &lt; STATUS LINE 1 MESSAGE size not known
+12 [123] &lt; STATUS LINE 1 OK
+13 [123] &lt; STATUS VOLUME GFZ SIZE 73728
+14 [123] &lt; STATUS VOLUME GFZ OK
+15 [123] &lt; END</pre>
+</div>
+<p>Note that the status responses are asynchronous.</p>
+<dl class="docutils">
+<dt>02</dt>
+<dd>request ID &quot;123&quot; is chosen by the server (not user)</dd>
+<dt>05</dt>
+<dd>the first request line is associated with volume ID &quot;GFZ&quot; (chosen by the request handler)</dd>
+<dt>07</dt>
+<dd>request handler tells the size of data that is related to the first request line (optional)</dd>
+<dt>09</dt>
+<dd>the second request line is associated with volume ID &quot;GFZ&quot;</dd>
+<dt>10</dt>
+<dd>processing of the first line completed without error</dd>
+<dt>11</dt>
+<dd>send optional message regarding the second line</dd>
+<dt>12</dt>
+<dd>processing of the second line completed without error</dd>
+<dt>13</dt>
+<dd>request handler tells the size of volume (mandatory)</dd>
+<dt>14</dt>
+<dd>volume completed without error</dd>
+<dt>15</dt>
+<dd>request processing finished</dd>
+</dl>
+<p>Minimal status response when data is available:</p>
+<div class="highlight-python"><pre>STATUS LINE 0 PROCESSING GFZ
+STATUS LINE 1 PROCESSING GFZ
+STATUS LINE 0 OK
+STATUS LINE 1 OK
+STATUS VOLUME GFZ SIZE 73728
+STATUS VOLUME GFZ OK
+END</pre>
+</div>
+<p>Minimal status response (and an optional error message) when data is not available:</p>
+<div class="highlight-python"><pre>STATUS LINE 0 PROCESSING GFZ
+STATUS LINE 1 PROCESSING GFZ
+STATUS LINE 0 NODATA
+STATUS LINE 1 NODATA
+STATUS VOLUME GFZ NODATA
+MESSAGE optional error message
+END</pre>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="sdk.html" title="Software Development Kit"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="arclink-protocol.html" title="ArcLink Protocol"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="arclink-protocol.html" >ArcLink Protocol</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

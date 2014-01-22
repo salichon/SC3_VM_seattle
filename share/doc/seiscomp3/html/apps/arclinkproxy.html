@@ -1,0 +1,245 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>arclinkproxy &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="Acquisition" href="../toc/acquisition.html" />
+    <link rel="next" title="seedlink" href="seedlink.html" />
+    <link rel="prev" title="arclink-access" href="arclink-access.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="seedlink.html" title="seedlink"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="arclink-access.html" title="arclink-access"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/acquisition.html" accesskey="U">Acquisition</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">arclinkproxy</a><ul>
+<li><a class="reference internal" href="#configuration">Configuration</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="arclink-access.html"
+                        title="previous chapter">arclink-access</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="seedlink.html"
+                        title="next chapter">seedlink</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/apps/arclinkproxy.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="arclinkproxy">
+<span id="id1"></span><h1>arclinkproxy<a class="headerlink" href="#arclinkproxy" title="Permalink to this headline">¶</a></h1>
+<p><strong>Proxy ArcLink server</strong></p>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">arclinkproxy is a standalone module and does not inherit <a class="reference internal" href="global.html#global-configuration"><em>global options</em></a>.</p>
+</div>
+<div class="line-block">
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/defaults/arclinkproxy.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/arclinkproxy.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">~/.seiscomp3/arclinkproxy.cfg</span></tt></div>
+</div>
+<dl class="confval">
+<dt id="confval-arclinkAddress">
+<tt class="descname">arclinkAddress</tt><a class="headerlink" href="#confval-arclinkAddress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Arclink address (used if proxy functionality is enabled).
+Default is <tt class="docutils literal"><span class="pre">webdc.eu:18001</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-port">
+<tt class="descname">port</tt><a class="headerlink" href="#confval-port" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>TCP port that the proxy is running on.
+Default is <tt class="docutils literal"><span class="pre">18001</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-archive">
+<tt class="descname">archive</tt><a class="headerlink" href="#confval-archive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Path to waveform archive where all data is stored. Relative paths
+(as the default) are treated relative to the installation
+directory ($SEISCOMP_ROOT).
+Default is <tt class="docutils literal"><span class="pre">&#64;ROOTDIR&#64;/var/lib/archive</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-maxSessions">
+<tt class="descname">maxSessions</tt><a class="headerlink" href="#confval-maxSessions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Maximum number of simultaneous connections.
+Default is <tt class="docutils literal"><span class="pre">500</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-maxQueued">
+<tt class="descname">maxQueued</tt><a class="headerlink" href="#confval-maxQueued" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Maximum number of queued requests.
+Default is <tt class="docutils literal"><span class="pre">500</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-maxQueuedPerUser">
+<tt class="descname">maxQueuedPerUser</tt><a class="headerlink" href="#confval-maxQueuedPerUser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Maximum number of queued requests per user.
+Default is <tt class="docutils literal"><span class="pre">10</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-maxExecuting">
+<tt class="descname">maxExecuting</tt><a class="headerlink" href="#confval-maxExecuting" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Maximum number of requests executed in parallel.
+Default is <tt class="docutils literal"><span class="pre">10</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-maxLines">
+<tt class="descname">maxLines</tt><a class="headerlink" href="#confval-maxLines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Maximum number of lines per request.
+Default is <tt class="docutils literal"><span class="pre">5000</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-maxAge">
+<tt class="descname">maxAge</tt><a class="headerlink" href="#confval-maxAge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Maximum age of request before automatically purged.
+Default is <tt class="docutils literal"><span class="pre">860000</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-socketTimeout">
+<tt class="descname">socketTimeout</tt><a class="headerlink" href="#confval-socketTimeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Socket timeout in seconds.
+Default is <tt class="docutils literal"><span class="pre">300</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-downloadRetries">
+<tt class="descname">downloadRetries</tt><a class="headerlink" href="#confval-downloadRetries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Number of download retries.
+Default is <tt class="docutils literal"><span class="pre">5</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-disableRouting">
+<tt class="descname">disableRouting</tt><a class="headerlink" href="#confval-disableRouting" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>Disable routing.
+Default is <tt class="docutils literal"><span class="pre">false</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-localOnly">
+<tt class="descname">localOnly</tt><a class="headerlink" href="#confval-localOnly" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>Disable proxy functionality (use only locally stored data).
+Default is <tt class="docutils literal"><span class="pre">true</span></tt>.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="seedlink.html" title="seedlink"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="arclink-access.html" title="arclink-access"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/acquisition.html" >Acquisition</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

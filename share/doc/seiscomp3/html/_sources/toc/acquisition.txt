@@ -1,0 +1,12 @@
+###########
+Acquisition
+###########
+
+.. toctree::
+   :maxdepth: 2
+
+   /apps/arclink
+   /apps/arclink-access
+   /apps/arclinkproxy
+   /apps/seedlink
+   /apps/slarchive

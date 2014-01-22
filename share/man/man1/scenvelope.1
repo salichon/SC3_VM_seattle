@@ -1,0 +1,318 @@
+.TH "SCENVELOPE" "1" "January 21, 2014" "2014.016" "SeisComP3"
+.SH NAME
+scenvelope \- SeisComP3 Documentation
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.\" Man page generated from reStructeredText.
+.
+.sp
+\fBComputes continuous envelope values used by scvsmag.\fP
+.SH DESCRIPTION
+.sp
+Part of the \fIVS\fP package.
+.sp
+scenvelope is part of a new SeisComp3 implementation of the
+[Virtual Seismologist]( \fI\%http://www.seismo.ethz.ch/research/vs\fP) (VS) Earthquake
+Early Warning algorithm (Cua, 2005; Cua and Heaton, 2007) released
+under the \(aqSED Public License for SeisComP3 Contributions\(aq
+(\fI\%http://www.seismo.ethz.ch/static/seiscomp_contrib/license.txt\fP ). It generates
+real\-time envelope values for horizontal and vertical acceleration, velocity and
+displacement from raw acceleration and velocity waveforms. It was implemented
+to handle the waveform pre\-processing necessary for the \fIscvsmag\fP module.
+It provides in effect continuous real\-time streams of PGA, PGV and PGD values which
+could also be used independently of \fIscvsmag\fP.
+.sp
+The processing procedure is as follows:
+1. gain correction
+2. baseline correction
+3. high\-pass filter with a corner frequency of 3 s period
+4. integration or differentiation to velocity, acceleration and displacement
+5. computing the absolute value within 1 s intervals
+.sp
+The resulting envelope values are sent as messages to \fIscmaster\fP. Depending
+on the number of streams that are processed this can result in a significant
+number of messages (#streams/s).
+.SH CONFIGURATION
+.nf
+\fBetc/defaults/global.cfg\fP
+\fBetc/defaults/scenvelope.cfg\fP
+\fBetc/global.cfg\fP
+\fBetc/scenvelope.cfg\fP
+\fB~/.seiscomp3/global.cfg\fP
+\fB~/.seiscomp3/scenvelope.cfg\fP
+.fi
+.sp
+.sp
+scenvelope inherits \fIglobal options\fP.
+.INDENT 0.0
+.TP
+.B envelope.saturationThreshold
+Type: \fIdouble\fP
+.sp
+This parameter defines the relative saturation threshold in percent.
+If the absolute raw amplitude exceeds X% of 2^23 counts, the
+station will be flagged as clipped. This assumes a 24\-bit datalogger.
+Default is \fB80\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B envelope.baselineCorrectionBuffer
+Type: \fIint\fP
+.sp
+This parameter defines the length of the buffer (in seconds)
+that is used to compute a real\-time average for baseline correction.
+Default is \fB60\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B envelope.useSC3Filter
+Type: \fIboolean\fP
+.sp
+This is for internal testing purposes only. true will cause the
+SeisComp3 filter routines to be used. If false the filter routines
+from the Earthworm based CISN/ETH implementation of VS will be
+employed.
+Default is \fBfalse\fP.
+.UNINDENT
+.IP Note
+\fBenvelope.streams.*\fP
+\fIDefines the white\- and blacklist of data streams to be used. The\fP
+\fIrules to decide if a stream is used or not are the following:\fP
+**
+\fI1. if whitelist is not empty and the stream is not on the whitelist,\fP
+\fIdon\(aqt use it, ok otherwise\fP
+**
+\fI2. if blacklist is not empty and the stream is on the blacklist,\fP
+\fIdon\(aqt use it, ok otherwise\fP
+**
+\fIBoth checks are made and combined with AND. Either whitelist or\fP
+\fIblacklist contains a list of patterns (wildcard allowed as * and ?),\fP
+\fIeg GE.\fP.*.*, \fI, GE.MORC.\fP.BH? Each stream id (NET.STA.LOC.CHA) will*
+\fIbe checked against the defined patterns.\fP
+.RE
+.INDENT 0.0
+.TP
+.B envelope.streams.whitelist
+Type: \fIlist:string\fP
+.sp
+The stream whitelist
+.UNINDENT
+.INDENT 0.0
+.TP
+.B envelope.streams.blacklist
+Type: \fIlist:string\fP
+.sp
+The stream blacklist
+.UNINDENT
+.SH COMMAND-LINE
+.SS Generic
+.INDENT 0.0
+.TP
+.B \-h, \-\-help
+show help message.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-V, \-\-version
+show version information
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-config\-file arg
+Use alternative configuration file. When this option is used
+the loading of all stages is disabled. Only the given configuration
+file is parsed and used. To use another name for the configuration
+create a symbolic link of the application or copy it, eg scautopick \-> scautopick2.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-plugins arg
+Load given plugins.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-D, \-\-daemon
+Run as daemon. This means the application will fork itself and
+doesn\(aqt need to be started with &.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-auto\-shutdown arg
+Enable/disable self\-shutdown because a master module shutdown. This only
+works when messaging is enabled and the master module sends a shutdown
+message (enabled with \-\-start\-stop\-msg for the master module).
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-shutdown\-master\-module arg
+Sets the name of the master\-module used for auto\-shutdown. This
+is the application name of the module actually started. If symlinks
+are used then it is the name of the symlinked application.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-shutdown\-master\-username arg
+Sets the name of the master\-username of the messaging used for
+auto\-shutdown. If "shutdown\-master\-module" is given as well this
+parameter is ignored.
+.UNINDENT
+.SS Verbosity
+.INDENT 0.0
+.TP
+.B \-\-verbosity arg
+Verbosity level [0..4]. 0:quiet, 1:error, 2:warning, 3:info, 4:debug
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-v, \-\-v
+Increase verbosity level (may be repeated, eg. \-vv)
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-q, \-\-quiet
+Quiet mode: no logging output
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-component arg
+Limits the logging to a certain component. This option can be given more than once.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-s, \-\-syslog
+Use syslog logging back end. The output usually goes to /var/lib/messages.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-l, \-\-lockfile arg
+Path to lock file.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-console arg
+Send log output to stdout.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-debug
+Debug mode: \-\-verbosity=4 \-\-console=1
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-log\-file arg
+Use alternative log file.
+.UNINDENT
+.SS Messaging
+.INDENT 0.0
+.TP
+.B \-u, \-\-user arg
+Overrides configuration parameter \fBconnection.username\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-H, \-\-host arg
+Overrides configuration parameter \fBconnection.server\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-t, \-\-timeout arg
+Overrides configuration parameter \fBconnection.timeout\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-g, \-\-primary\-group arg
+Overrides configuration parameter \fBconnection.primaryGroup\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-S, \-\-subscribe\-group arg
+A group to subscribe to. This option can be given more than once.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-encoding arg
+Overrides configuration parameter \fBconnection.encoding\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-start\-stop\-msg arg
+Sets sending of a start\- and a stop message.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-test
+Test mode, no messages are sent
+.UNINDENT
+.SS Database
+.INDENT 0.0
+.TP
+.B \-\-db\-driver\-list
+List all supported database drivers.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-d, \-\-database arg
+The database connection string, format: \fI\%service://user:pwd@host/database\fP.
+"service" is the name of the database driver which can be
+queried with "\-\-db\-driver\-list".
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-config\-module arg
+The configmodule to use.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-inventory\-db arg
+Load the inventory from the given database or file, format: [\fI\%service://]location\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-db\-disable
+Do not use the database at all
+.UNINDENT
+.SS Offline
+.INDENT 0.0
+.TP
+.B \-\-ts arg
+Start time of data acquisition time window,
+requires also \-\-te.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-te arg
+End time of data acquisition time window, requires also
+\-\-ts.
+.UNINDENT
+.SH AUTHOR
+Swiss Seismological Service
+.SH COPYRIGHT
+2014, GFZ Potsdam, gempa GmbH
+.\" Generated by docutils manpage writer.
+.\" 
+.

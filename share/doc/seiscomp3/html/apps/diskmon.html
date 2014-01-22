@@ -1,0 +1,172 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>diskmon &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="System" href="../toc/system.html" />
+    <link rel="next" title="kernel" href="kernel.html" />
+    <link rel="prev" title="System" href="../toc/system.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="kernel.html" title="kernel"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../toc/system.html" title="System"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/system.html" accesskey="U">System</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">diskmon</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#configuration">Configuration</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../toc/system.html"
+                        title="previous chapter">System</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="kernel.html"
+                        title="next chapter">kernel</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/apps/diskmon.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="diskmon">
+<span id="id1"></span><h1>diskmon<a class="headerlink" href="#diskmon" title="Permalink to this headline">¶</a></h1>
+<p><strong>Monitors a disk and sends notifications.</strong></p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Diskmon is a SeisComP3 init script that checks on each call to <strong class="program">seiscomp check</strong>
+the filesystem by running the following command:</p>
+<div class="highlight-sh"><div class="highlight"><pre>df | awk -v <span class="nv">max</span><span class="o">=</span><span class="s2">&quot;%d&quot;</span> <span class="se">\&#39;</span><span class="o">{</span> <span class="k">if</span> <span class="o">(</span> <span class="nv">$5</span> &gt; max <span class="o">)</span> print <span class="nv">$0</span> <span class="o">}</span><span class="se">\&#39;</span>
+</pre></div>
+</div>
+<p>where &quot;%d&quot; is replaced by the configured threshold. If there are lines in the
+output (which means some filesystem exceed the usage threshold) it sends
+the output along with a description line to all configured receipients using
+the <strong class="program">mail</strong> command.</p>
+<p>To make diskmon work it is important that <strong class="program">mail</strong> is working on the shell.</p>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">diskmon is a standalone module and does not inherit <a class="reference internal" href="global.html#global-configuration"><em>global options</em></a>.</p>
+</div>
+<div class="line-block">
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/defaults/diskmon.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">etc/diskmon.cfg</span></tt></div>
+<div class="line"><tt class="file docutils literal"><span class="pre">~/.seiscomp3/diskmon.cfg</span></tt></div>
+</div>
+<dl class="confval">
+<dt id="confval-threshold">
+<tt class="descname">threshold</tt><a class="headerlink" href="#confval-threshold" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Disk usage threshold in percent. Each time when the disk usage exceeds this level,
+an alert e-mail is send to the user. Note that disk usage is only checked when a
+cron job of seiscomp check is installed or seiscomp check is called
+regularly by other means.
+Default is <tt class="docutils literal"><span class="pre">95</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-emails">
+<tt class="descname">emails</tt><a class="headerlink" href="#confval-emails" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>list:string</em></p>
+<p>Comma-separated list of e-mail addresses to notify when disk usage
+threshold is exceeded.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="kernel.html" title="kernel"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../toc/system.html" title="System"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/system.html" >System</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

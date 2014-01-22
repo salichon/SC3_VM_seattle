@@ -1,0 +1,2708 @@
+.TH "GLOBAL" "1" "January 21, 2014" "2014.016" "SeisComP3"
+.SH NAME
+global \- SeisComP3 Documentation
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.\" Man page generated from reStructeredText.
+.
+.sp
+The SeisComP3 configuration uses a unified schema to configure modules.
+Modules which use  the SeisComP3 libraries can read this configuration
+directly and share global configuration options like messaging connections,
+database configurations, logging and much more.
+There are still some modules that do not use
+the libraries and are called \fBstandalone\fP modules as \fIseedLink\fP, \fIarclink\fP
+or \fIslarchive\fP. They need wrappers to generate their native configuration when
+\fBseiscomp update\-config\fP is run.
+.sp
+Though it is easy to create the configuration by directly editing the configuration
+files, it is even more convenient to use a configurator.
+SeisComP3 ships with a graphical
+configurator and management tool (\fIscconfig\fP) which makes it easy to maintain
+module configurations and station bindings even for large networks. It has built\-in
+functionality to check the state of all registered modules and to start and stop them.
+.sp
+The configuration is divided into three parts: stations, bindings and modules.
+.SH CONFIGURATION FILES
+.sp
+The \fItrunk\fP configuration files are simple text files where each line
+is a name\-value pair.
+.IP Warning
+In contrast to previous versions of SeisComP3 the parameter names are now
+case\-sensitive. To check configurations from previous versions regarding
+case\-sensitivity, \fBscchkcfg\fP can be used.
+.RE
+.sp
+A simple example to assign a parameter "skyColor" the value "blue":
+.sp
+.nf
+.ft C
+skyColor = blue
+.ft P
+.fi
+.sp
+Everything following an un\-escaped \(aq#\(aq (hash) is a comment and ignored.
+Blank lines and white spaces are ignored by the parser as well unless
+quoted or escaped.
+.sp
+.nf
+.ft C
+skyColor = yellow  # This is a comment
+
+# The preceding empty line is ignored and previous setting "yellow"
+# is replaced by "blue":
+skyColor = blue
+.ft P
+.fi
+.sp
+Later assignments overwrite earlier ones so the order of lines in the
+configuration file is important. The file is parsed top\-down.
+.sp
+Values can be either scalar values or lists. List items are separated by commas.
+.sp
+.nf
+.ft C
+# This is a list definition
+rainbowColors = red, orange, yellow, green, blue, indigo, violet
+.ft P
+.fi
+.sp
+If a value needs to include a comma, white space or any other interpretable
+character it can either be escaped with backslash (\e) or quoted using double
+quotes ("). White space is removed in unquoted and un\-escaped values.
+.sp
+.nf
+.ft C
+# This is a comment
+
+# The following list definitions have 2 items: 1,2 and 3,4
+# quoted values
+tuples = "1,2", "3,4"
+# escaped values
+tuples = 1\e,2, 3\e,4
+.ft P
+.fi
+.sp
+Values can extend over multiple lines if a backslash is appended to each line
+.sp
+.nf
+.ft C
+# Multi\-line string
+text = "Hello world. "\e
+       "This text spawns 3 lines in the configuration file "\e
+       "but only one line in the value."
+
+# Multi\-line list definition
+rainbowColors = red,\e
+                orange,\e
+                yellow,\e
+                green, blue,\e
+                indigo, violet
+.ft P
+.fi
+.sp
+Environment or preceding configuration variables can be used with \fB${var}\fP.
+.sp
+.nf
+.ft C
+homeDir = ${HOME}
+myPath = ${homeDir}/test
+.ft P
+.fi
+.IP Note
+Values are not type\-checked. Type checking is part of the application logic
+and will be handled there. The configuration file parser will not raise an
+error if a string is assigned to a parameter that is expected to be an integer.
+.RE
+.SH STATIONS
+.sp
+Station meta\-data is a fundamental requirement for a seismic processing system and
+for SeisComP3. Older version used key files to configure available networks and stations.
+Because the support of response meta\-data was very limited, tools were build to add
+this functionality. In this version the concept of key files for station meta\-data has
+been completely removed from the system. SeisComP3 only handles station meta\-data in its
+own XML format called \fBinventory ML\fP.
+The task of supporting old key files, dataless SEED and other formats has been out\-sourced to external applications (see \fI\%Inventory synchronization is a two-stage process:\fP).
+.INDENT 0.0
+.INDENT 2.5
+[image]
+Inventory synchronization is a two\-stage process:
+(1) convert external formats into inventory ML, then
+(2) synchronize inventory pool with the database
+.UNINDENT
+.UNINDENT
+.sp
+External formats are first converted into inventory ML,
+and then merged and synchronized with the database using
+\fBseiscomp update\-config\fP.
+All station meta\-data are stored in \fBetc/inventory\fP
+and can be organized as needed. Either one file per network, a file containing the complete inventory
+or one file for all instruments and one file per station. The update script loads the existing inventory
+from the database and merges each file in \fBetc/inventory\fP. Finally it removes all unreferenced
+objects and sends all updates to the database.
+.sp
+The SeisComP3 configuration does not deal with station meta\-data anymore. It only configures parameters
+for modules and module\-station associations. The management of the inventory can and should be handled
+by external tools.
+.SH BINDINGS
+.sp
+A \fIbinding\fP is always connected to a \fImodule\fP. The binding configuration directory
+for each module is \fBetc/key/modulename\fP. It contains either station bindings or \fIprofiles\fP.
+.sp
+Bindings are configured and stored in \fBetc/key\fP.
+.INDENT 0.0
+.INDENT 2.5
+[image]
+Binding
+A binding holds the configuration how a station is used in a module.
+.UNINDENT
+.UNINDENT
+.sp
+To bind a station (identified by net_sta) to a module with a set of parameters the first step is to
+register a module for that station. For that a station key file needs to be created or modified.
+.IP Note
+To reflect the old framework, a station binding is prefixed with \fIstation_\fP and a profile with \fIprofile_\fP.
+.RE
+.sp
+Let\(aqs suppose we have two stations, GE.MORC and GE.UGM and both stations should be configured for
+SeedLink. Two station key files need to be created (or modified later): \fBetc/key/station_GE_MORC\fP and
+\fBetc/key/station_GE_UGM\fP.
+.sp
+Both files must contain a line with the module the station is configured for, e.g.:
+.sp
+.nf
+.ft C
+seedlink
+.ft P
+.fi
+.sp
+which uses the binding at \fBetc/key/seedlink/station_GE_UGM\fP. When a profile should
+be used, append it to the module with a colon.
+.sp
+.nf
+.ft C
+seedlink:geofon
+.ft P
+.fi
+.sp
+Then the binding at \fBetc/key/seedlink/profile_geofon\fP is read for station GE.UGM.
+To list all modules a particular station is configured for is very simple by printing the content
+of the station key file:
+.sp
+.nf
+.ft C
+$ cat etc/key/station_GE_MORC
+seedlink:geofon
+global:BH
+scautopick
+.ft P
+.fi
+.sp
+The other way round is a bit more complicated but at least all information is
+there.
+To show all
+stations configured for SeedLink could be done this way:
+.sp
+.nf
+.ft C
+$ for i in \(gafind etc/key \-type f \-maxdepth 1 \-name "station_*_*"\(ga; do
+> egrep \-q \(aq^seedlink(:.*){0,1}$\(aq $i && echo $i;
+> done
+etc/key/station_GE_MORC
+etc/key/station_GE_UGM
+.ft P
+.fi
+.SS Storage
+.sp
+Where are bindings stored? For standalone modules: nobody knows.
+It is the task of a standalone module\(aqs
+initialization script to convert the bindings to the module\(aqs native configuration.
+.sp
+For all \fItrunk\fP (non\-standalone) modules the bindings are written to the
+SeisComP3 database following the configuration schema. This is done when
+\fBseiscomp update\-config\fP is called.
+Each module reads the configuration database and fetches all station bindings registered
+for that module. The database schema used consists of five tables:
+ConfigModule, ConfigStation, Setup, ParameterSet and Parameter.
+.INDENT 0.0
+.INDENT 2.5
+[image]
+Configuration database schema.UNINDENT
+.UNINDENT
+.sp
+Now an example is shown how the tables are actually linked and how the station bindings are
+finally stored in the database. To illustrate the contents of the objects, the XML representation
+is used.
+.sp
+.nf
+.ft C
+<Config>
+  <module publicID="Config/trunk" name="trunk" enabled="true">
+    ...
+  </module>
+</Config>
+.ft P
+.fi
+.sp
+A ConfigModule with publicID \fIConfig/trunk\fP is created with name \fItrunk\fP. This
+ConfigModule is managed by the global initialization script (\fBetc/init/trunk.py\fP)
+and will be synchronized with configured bindings of all trunk modules. The
+ConfigModule trunk is the one that is actually used by all configurations unless
+configured otherwise with:
+.sp
+.nf
+.ft C
+scapp \-\-config\-module test
+.ft P
+.fi
+.sp
+Here \fBscapp\fP would read ConfigModule \fItest\fP. Because a ConfigModule \fItest\fP
+is not managed by \fBseiscomp update\-config\fP it is up to the user to create
+it.
+.sp
+For each station that has at least one binding, a ConfigStation object is
+attached to the ConfigModule:
+.sp
+.nf
+.ft C
+<Config>
+  <module publicID="Config/trunk" name="trunk" enabled="true">
+    <station publicID="Config/trunk/GE/UGM"
+             networkCode="GE" stationCode="UGM" enabled="true">
+      ...
+    </station>
+  </module>
+</Config>
+.ft P
+.fi
+.sp
+and finally one Setup per module:
+.sp
+.nf
+.ft C
+<Config>
+  <module publicID="Config/trunk" name="trunk" enabled="true">
+    <station publicID="Config/trunk/GE/UGM"
+             networkCode="GE" stationCode="UGM" enabled="true">
+      <setup name="default" enabled="true">
+        <parameterSetID>
+          ParameterSet/trunk/Station/GE/UGM/default
+        </parameterSetID>
+      </setup>
+      <setup name="scautopick" enabled="true">
+        <parameterSetID>
+          ParameterSet/trunk/Station/GE/UGM/scautopick
+        </parameterSetID>
+      </setup>
+    </station>
+  </module>
+</Config>
+.ft P
+.fi
+.sp
+Here two setups have been created: \fIdefault\fP (which is a special case for
+module \fIglobal\fP to be backwards compatible) and \fIscautopick\fP where each
+refers to a ParameterSet by its publicID. The next XML fragment shows
+the ParameterSet referred by the scautopick setup of station GE.UGM:
+.sp
+.nf
+.ft C
+<Config>
+  <parameterSet publicID="ParameterSet/trunk/Station/GE/UGM/scautopick"
+                created="...">
+    <baseID>ParameterSet/trunk/Station/GE/UGM/default</baseID>
+    <moduleID>Config/trunk</moduleID>
+    <parameter publicID="...">
+      <name>timeCorr</name>
+      <value>\-0.8</value>
+    </parameter>
+    <parameter publicID="...">
+      <name>detecFilter</name>
+      <value>
+        RMHP(10)&gt;&gt;ITAPER(30)&gt;&gt;BW(4,0.7,2)&gt;&gt;STALTA(2,80)
+      </value>
+    </parameter>
+    <parameter publicID="...">
+      <name>trigOff</name>
+      <value>1.5</value>
+    </parameter>
+    <parameter publicID="...">
+      <name>trigOn</name>
+      <value>3</value>
+    </parameter>
+  </parameterSet>
+</Config>
+.ft P
+.fi
+.sp
+The mapping to the binding configuration files is 1:1. Each parameter in
+the configuration file is exactly one parameter in the database and their
+names are matching exactly.
+.sp
+The concept of global bindings which are specialized for each application is
+reflected by the \fIbaseID\fP of the ParameterSet which points to setup \fIdefault\fP
+of station GE.UGM:
+.sp
+.nf
+.ft C
+<Config>
+  <parameterSet publicID="ParameterSet/trunk/Station/GE/UGM/default"
+                created="...">
+    <moduleID>Config/trunk</moduleID>
+    <parameter publicID="...">
+      <name>detecStream</name>
+      <value>BH</value>
+    </parameter>
+  </parameterSet>
+</Config>
+.ft P
+.fi
+.sp
+This ends up with a final configuration for scautopick and station GE.UGM:
+.TS
+center;
+|l|l|.
+_
+T{
+Name
+T}	T{
+Value
+T}
+_
+T{
+detecStream
+T}	T{
+BH
+T}
+_
+T{
+timeCorr
+T}	T{
+\-0.8
+T}
+_
+T{
+detecFilter
+T}	T{
+RMHP(10)>>ITAPER(30)>>BW(4,0.7,2)>>STALTA(2,80)
+T}
+_
+T{
+trigOff
+T}	T{
+1.5
+T}
+_
+T{
+trigOn
+T}	T{
+3
+T}
+_
+.TE
+.sp
+which is the concatenation of the two files \fBetc/key/global/station_GE_UGM\fP and \fBetc/key/scautopick/station_GE_UGM\fP.
+.SH MODULES
+.sp
+A \fImodule\fP is configured by its configuration files either to be used directly or to
+generate its native configuration. Modules that need to convert the configuration or do not
+use the default configuration options (see below) are called \fBstandalone\fP modules.
+.sp
+Each standalone module tries to read from three configuration files whereas trunk modules
+try to read six files. Note that configuration parameters defined earlier are overwritten
+if defined in files read in later:
+.TS
+center;
+|l|l|l|.
+_
+T{
+File
+T}	T{
+Standalone
+T}	T{
+Trunk
+T}
+_
+T{
+etc/defaults/global.cfg
+T}	T{
+T}	T{
+X
+T}
+_
+T{
+etc/defaults/module.cfg
+T}	T{
+X
+T}	T{
+X
+T}
+_
+T{
+etc/global.cfg
+T}	T{
+T}	T{
+X
+T}
+_
+T{
+etc/module.cfg
+T}	T{
+X
+T}	T{
+X
+T}
+_
+T{
+~/.seiscomp3/global.cfg
+T}	T{
+T}	T{
+X
+T}
+_
+T{
+~/.seiscomp3/module.cfg
+T}	T{
+X
+T}	T{
+X
+T}
+_
+.TE
+.sp
+The \fI\%configuration section\fP describes all available configuration parameters for a trunk module.
+Not all modules make use of all available parameters because they may be disabled, e.g. the
+messaging component. So the configuration of the messaging server is disabled too.
+.SS Extensions
+.sp
+Extensions add new configuration options to \fImodules\fP. It does
+not matter how those extensions are used. Commonly a module loads a plugin,
+which requires additional configuration parameters \- these are provided by an extension.
+.sp
+There are currently extensions for the following modules, corresponding to the
+plugins shown:
+.TS
+center;
+|l|l|.
+_
+T{
+Module
+T}	T{
+Plugin\(aqs
+T}
+_
+T{
+\fIscm\fP
+T}	T{
+\fIemail\fP \fItext\fP \fIncurses\fP
+T}
+_
+T{
+\fIkernel\fP
+T}	T{
+\fIsyncarc\fP \fImessaging\fP
+T}
+_
+T{
+\fI\%global\fP
+T}	T{
+\fIRecordStream\fP \fIMLv\fP \fILocSAT\fP \fIMd\fP \fIHypo71\fP \fIGUI\fP \fIMLh\fP \fINonLinLoc\fP
+T}
+_
+T{
+\fIseedlink\fP
+T}	T{
+\fIq330\fP \fIchain\fP
+T}
+_
+T{
+\fIarclink\fP
+T}	T{
+\fIreqhandler\fP
+T}
+_
+.TE
+.sp
+See the documentation for each module for further information about its
+extensions.
+.SH CONFIGURATION
+.INDENT 0.0
+.TP
+.B datacenterID
+Type: \fIstring\fP
+.sp
+Sets the datacenter ID which is primarily used by Arclink and
+its tools.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B agencyID
+Type: \fIstring\fP
+.sp
+Defines the agency ID used to set creationInfo.agencyID in
+data model objects.
+Default is \fBGFZ\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B organization
+Type: \fIstring\fP
+.sp
+Organization name used mainly by ArcLink and SeedLink.
+Default is \fBUnset\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B author
+Type: \fIstring\fP
+.sp
+Defines the author name used to set creationInfo.author in
+data model objects.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B plugins
+Type: \fIlist:string\fP
+.sp
+Defines a list of modules loaded at startup.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B logging.level
+Type: \fIint\fP
+.sp
+Sets the logging level between 1 and 4 where 1=ERROR, 2=WARNING, 3=INFO and 4=DEBUG.
+Default is \fB2\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B logging.file
+Type: \fIboolean\fP
+.sp
+Enables logging into a log file.
+Default is \fBtrue\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B logging.syslog
+Type: \fIboolean\fP
+.sp
+Enables logging to syslog if supported by the host system.
+Default is \fBfalse\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B logging.components
+Type: \fIlist:string\fP
+.sp
+Limit the logging to the specified list of components, e.g. \(aqApplication, Server\(aq
+.UNINDENT
+.INDENT 0.0
+.TP
+.B logging.component
+Type: \fIboolean\fP
+.sp
+For each log entry print the component right after the
+log level. By default the component output is enabled
+for file output but disabled for console output.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B logging.context
+Type: \fIboolean\fP
+.sp
+For each log entry print the source file name and line
+number.
+Default is \fBfalse\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B logging.file.rotator
+Type: \fIboolean\fP
+.sp
+Default is \fBtrue\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B logging.file.rotator.timeSpan
+Type: \fIint\fP
+.sp
+Time span after which a log file is rotated.
+Default is \fB86400\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B logging.file.rotator.archiveSize
+Type: \fIint\fP
+.sp
+How many historic log files to keep.
+Default is \fB7\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B logging.syslog.facility
+Type: \fIstring\fP
+.sp
+Defines the syslog facility to be used according to the
+defined facility names in syslog.h. The default is local0.
+If the given name is invalid or not available, initializing
+logging will fail and the application quits.
+Default is \fBlocal0\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B connection.server
+Type: \fIhost\-with\-port\fP
+.sp
+Defines the Spread server name to connect to. Format is host[:port].
+Default is \fBlocalhost\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B connection.username
+Type: \fIstring\fP
+.sp
+Defines the username to be used. The length is limited
+to 10 characters with Spread. By default the module name
+(name of the executable) is used but sometimes it exceeds
+the 10 character limit and access is denied. To prevent
+errors set a different username. An empty username will
+let Spread generate one.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B connection.timeout
+Type: \fIint\fP
+.sp
+The connection timeout in seconds. 3 seconds are normally
+more than enough. If a client needs to connect to a
+remote system with a slow connection a larger timeout might
+be needed.
+Default is \fB3\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B connection.primaryGroup
+Type: \fIstring\fP
+.sp
+Defines the primary group of a module. This is the name
+of the group where a module sends its messages to if the
+target group is not explicitely given in the send call.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B connection.encoding
+Type: \fIstring\fP
+.sp
+Defines the message encoding for sending. Allowed values
+are "binary" or "xml". XML has
+more overhead in processing but is more robust when
+schema versions between client and server are different.
+Default is \fBbinary\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B connection.subscriptions
+Type: \fIlist:string\fP
+.sp
+Defines a list of message groups to subscribe to. The
+default is usually given by the application and does not
+need to be changed.
+.UNINDENT
+.IP Note
+\fBdatabase.*\fP
+\fIDefines the database connection. If no database is configured\fP
+\fI(which is the default) and a messaging connection is available\fP
+\fIthe application will receive the parameters after the connection\fP
+\fIis established. Override these values only if you know what you\fP
+\fIare doing.\fP
+.RE
+.INDENT 0.0
+.TP
+.B database.type
+Type: \fIstring\fP
+.sp
+Defines the database backend to be used. The name corresponds to
+the defined name in the database plugin. Examples are: mysql, postgresql or
+sqlite3.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B database.parameters
+Type: \fIstring\fP
+.sp
+The database connection parameters. This value depends on the used
+database backend. E.g. sqlite3 expects the path to the database
+file whereas MYSQL or PostgreSQL expect an URI in the format
+user:pwd@host/database?param1=val1&param2=val2.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B database.inventory
+Type: \fIstring\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B database.config
+Type: \fIstring\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B processing.whitelist.agencies
+Type: \fIlist:string\fP
+.sp
+Defines a whitelist of agencies that are allowed for processing separated by comma.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B processing.blacklist.agencies
+Type: \fIlist:string\fP
+.sp
+Defines a blacklist of agencies that are not allowed for processing separated by comma.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B recordstream.service
+Type: \fIstring\fP
+.sp
+Default is \fBslink\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B recordstream.source
+Type: \fIstring\fP
+.sp
+Default is \fBlocalhost:18000\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B core.plugins
+Type: \fIlist:string\fP
+.sp
+Default is \fBdbmysql\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B client.startStopMessage
+Type: \fIboolean\fP
+.sp
+Default is \fBfalse\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B client.autoShutdown
+Type: \fIboolean\fP
+.sp
+Default is \fBfalse\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B client.shutdownMasterModule
+Type: \fIstring\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B client.shutdownMasterUsername
+Type: \fIstring\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B commands.target
+Type: \fIstring\fP
+.sp
+A regular expression of all clients that should handle
+a command message usually send to the GUI messaging group.
+Currently this flag is only used by GUI applications to
+set an artificial origin and to tell other clients to
+show this origin. To let all connected clients handle the
+command, ".*$" can be used.
+.UNINDENT
+.SS LocSAT extension
+.sp
+LOCSAT locator for SeisComP.
+.INDENT 0.0
+.TP
+.B LOCSAT.profiles
+Type: \fIlist:string\fP
+.sp
+Defines a list of available LOCSAT tab directories.
+Default is \fBiasp91,tab\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B LOCSAT.enableConfidenceEllipsoid
+Type: \fIboolen\fP
+.sp
+Compute the confidence ellipsoid.
+Default is \fBfalse\fP.
+.UNINDENT
+.SS Hypo71 extension
+.sp
+This plugin allows the use of traditionnal Hypo71PC locator with SeisComP3
+.INDENT 0.0
+.TP
+.B hypo71.logFile
+Type: \fIstring\fP
+.sp
+Temporary file used by Hypo71 to store calculation logs
+Default is \fBHYPO71.LOG\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B hypo71.inputFile
+Type: \fIstring\fP
+.sp
+Temporary file to write Hypo71 input data to
+Default is \fBHYPO71.INP\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B hypo71.outputFile
+Type: \fIstring\fP
+.sp
+Temporary output file to read Hypo71 localization data from
+Default is \fBHYPO71.PRT\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B hypo71.defaultControlFile
+Type: \fIstring\fP
+.sp
+Hypo71 default profile.
+If no custom profile is specified, this profile will be used by the plugin when proceeding to a localization.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B hypo71.hypo71BinaryFile
+Type: \fIstring\fP
+.sp
+Filepath to Hypo71 binary.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B hypo71.hypo71ScriptFile
+Type: \fIstring\fP
+.sp
+Bash script to use when calls have to be made by the plugin when proceeding to a localization
+.UNINDENT
+.INDENT 0.0
+.TP
+.B hypo71.profiles
+Type: \fIlist:string\fP
+.sp
+Hypo71 profile name.
+Multiples names may be set, as long as they are separated by comma.
+Each profile can have different velocity or parameters.
+.UNINDENT
+.IP Note
+\fBhypo71.profile.$name.*\fP
+\fIA profile contains a velocity model and Hypo71PC parameters\fP
+$name is a placeholder for the name to be used and needs to be added to \fBhypo71.profiles\fP to become active.
+.sp
+.nf
+.ft C
+hypo71.profiles = a,b
+hypo71.profile.a.value1 = ...
+hypo71.profile.b.value1 = ...
+# c is not active because it has not been added
+# to the list of hypo71.profiles
+hypo71.profile.c.value1 = ...
+.ft P
+.fi
+.RE
+.INDENT 0.0
+.TP
+.B hypo71.profile.$name.earthModelID
+Type: \fIstring\fP
+.sp
+Profile\(aqs velocity model name
+.UNINDENT
+.INDENT 0.0
+.TP
+.B hypo71.profile.$name.methodID
+Type: \fIstring\fP
+.sp
+Profile\(aqs method.
+It\(aqs generally the locator\(aqs name (Hypo71).
+.UNINDENT
+.INDENT 0.0
+.TP
+.B hypo71.profile.$name.controlFile
+Type: \fIstring\fP
+.sp
+File containing a profile parameters
+.UNINDENT
+.SS GUI extension
+.sp
+The GUI configuration plugin extends the configuration of
+graphical user interfaces to various options to adjust the look
+and feel.
+.INDENT 0.0
+.TP
+.B map.location
+Type: \fIstring\fP
+.sp
+Specified the location and the structure of the map tiles to be used. This
+path is composed of zero or more directives and must include at least one
+conversion specification which starts with is introduced by the character %
+followed by a conversion specifier.  Valid specifiers are s (replaced by
+tile ID), l (tile level), c (tile column) and r (tile row). An example for
+using the OpenStreetMap file structure is /path/to/maps/%l/%c/%r.png.
+Default is \fB@DATADIR@/maps/world%s.png\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B map.format
+Type: \fIstring\fP
+.sp
+Projection of the map tiles. Supported formats are: rectangular and mercator.
+Default is \fBrectangular\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B map.cacheSize
+Type: \fIint\fP
+.sp
+Cache size of the map tiles. If 0 is specified a default
+cache size of 32mb is used. The higher the cache size
+the better the performance in higher resolutions. A
+higher cache size causes less image loader calls but
+requires more client memory.
+Default is \fB0\fP.
+.UNINDENT
+.IP Note
+\fBscheme.*\fP
+\fIThis group defines various color and font options for SeisComp3\fP
+\fIgraphical user interfaces. There are various conventions\fP
+\fIto define colors, fonts and gradients. A color is defined in HTML\fP
+\fIconvention. If rgb or rgba is used it must be quoted because the\fP
+\fIcomma is handled as list separator by the configuration. Gradients\fP
+\fIare configured as lists of tuples where each tuple is colon separated\fP
+\fIin the form value:color. Color is again a color definition and value is\fP
+\fIeither int or double.\fP
+.RE
+.INDENT 0.0
+.TP
+.B scheme.showMenu
+Type: \fIboolean\fP
+.sp
+Show menu bar.
+Default is \fBtrue\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.showStatusBar
+Type: \fIboolean\fP
+.sp
+Show status bar.
+Default is \fBtrue\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.tabPosition
+Type: \fIstring\fP
+.sp
+Set position if tab bar. An unset value lets the application
+decide where to place the tab bar. This option might not be
+supported by all applications. Valid positions are: off, north,
+south, east, west
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.background
+Type: \fIcolor\fP
+.sp
+A general application background color. Can be uses to give
+each application a different background color. An unset value
+lets Qt decide.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.records.foreground
+Type: \fIcolor\fP
+.sp
+The general color of records/traces.
+Default is \fB808080\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.records.alternateForeground
+Type: \fIcolor\fP
+.sp
+A general trace color of the alternate trace (eg scheli).
+Default is \fB808080\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.records.gaps
+Type: \fIcolor\fP
+.sp
+The color of data gaps in trace views.
+Default is \fBFFFF0032\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.picks.manual
+Type: \fIcolor\fP
+.sp
+The color of manual picks.
+Default is \fB00FF00\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.picks.automatic
+Type: \fIcolor\fP
+.sp
+The color of automatic picks.
+Default is \fBFF0000\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.picks.undefined
+Type: \fIcolor\fP
+.sp
+The color of picks with undefined state.
+Default is \fBA0A0A4\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.picks.disabled
+Type: \fIcolor\fP
+.sp
+The color of disabled picks.
+Default is \fBA0A0A4\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.arrivals.manual
+Type: \fIcolor\fP
+.sp
+The color of manual arrivals (arrivals that bind manual picks,
+e.g. residual plot of scolv, manual picker, ...)
+Default is \fB00A000\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.arrivals.automatic
+Type: \fIcolor\fP
+.sp
+The color of automatic arrivals,
+Default is \fBA00000\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.arrivals.theoretical
+Type: \fIcolor\fP
+.sp
+The color of theoretical arrivals.
+Default is \fB0000A0\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.arrivals.undefined
+Type: \fIcolor\fP
+.sp
+The color of arrivals binding picks with undefined state.
+Default is \fBA00000\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.arrivals.disabled
+Type: \fIcolor\fP
+.sp
+The color of disabled arrivals.
+Default is \fBA0A0A4\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.arrivals.residuals
+Type: \fIgradient\fP
+.sp
+The gradient of arrivals residuals. A gradient is defined as
+a list of tuples separated by colon where the first item is
+the value and the second is the color. Colors can be given in
+rgb notation or hex. when rgb is used double quotes are needed to
+protect the comma inside the rgb definition, e.g.
+\-8:"rgb(0,0,100)", \-4:"rgb(0,0,255)", \-3:"rgb(100,100,255)", ...
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.magnitudes.set
+Type: \fIcolor\fP
+.sp
+The color of active magnitudes.
+Default is \fB00A000\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.magnitudes.unset
+Type: \fIcolor\fP
+.sp
+The color of inactive magnitudes.
+Default is \fB000000\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.magnitudes.disabled
+Type: \fIcolor\fP
+.sp
+The color of disabled magnitudes.
+Default is \fBA0A0A4\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.magnitudes.residuals
+Type: \fIgradient\fP
+.sp
+The gradient of magnitude residuals.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.stations.associated
+Type: \fIcolor\fP
+.sp
+The color of associated stations (e.g. in scmv).
+Default is \fB82AD58\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.stations.triggering
+Type: \fIcolor\fP
+.sp
+The color of triggered stations.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.stations.triggered0
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.stations.triggered1
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.stations.triggered2
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.stations.disabled
+Type: \fIcolor\fP
+.sp
+The color of disabled stations.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.stations.idle
+Type: \fIcolor\fP
+.sp
+The color of idle stations.
+.UNINDENT
+.IP Note
+\fBscheme.colors.qc.*\fP
+\fIThe color of QC.delay thresholds in scmv.\fP
+.RE
+.INDENT 0.0
+.TP
+.B scheme.colors.qc.delay0
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.qc.delay1
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.qc.delay2
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.qc.delay3
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.qc.delay4
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.qc.delay5
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.qc.delay6
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.qc.delay7
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.qc.qcWarning
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.qc.qcError
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.qc.qcOk
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.qc.qcNoSet
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.IP Note
+\fBscheme.colors.gm.*\fP
+\fIThe color of ground motion amplitudes in scmv.\fP
+.RE
+.INDENT 0.0
+.TP
+.B scheme.colors.gm.gm0
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.gm.gm1
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.gm.gm2
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.gm.gm3
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.gm.gm4
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.gm.gm5
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.gm.gm6
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.gm.gm7
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.gm.gm8
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.gm.gm9
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.gm.gmNotSet
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.recordView.selectedTraceZoom
+Type: \fIcolor\fP
+.sp
+The color of the selected zoom area (e.g. manual picker).
+Default is \fBC0C0FFC0\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.map.lines
+Type: \fIcolor\fP
+.sp
+The color of lines in the map (e.g. lines
+connecting the origin and a station).
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.map.outlines
+Type: \fIcolor\fP
+.sp
+The color of station outlines in the map.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.map.grid
+Type: \fIcolor\fP
+.sp
+The color grid line color of the map.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.map.stationAnnotations
+Type: \fIcolor\fP
+.sp
+The color of station annotations.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.map.cityLabels
+Type: \fIcolor\fP
+.sp
+The color of city labels.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.map.cityOutlines
+Type: \fIcolor\fP
+.sp
+The color of city outlines.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.map.cityCapital
+Type: \fIcolor\fP
+.sp
+The color of a capital.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.map.cityNormal
+Type: \fIcolor\fP
+.sp
+The color of a "normal" city.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.legend.background
+Type: \fIcolor\fP
+.sp
+The map legend background color.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.legend.border
+Type: \fIcolor\fP
+.sp
+The map legend border color.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.legend.text
+Type: \fIcolor\fP
+.sp
+The map legend text color.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.legend.headerText
+Type: \fIcolor\fP
+.sp
+The map legend header color.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.originSymbol.depth.gradient
+Type: \fIgradient\fP
+.sp
+The depth gradient.
+Default is \fB0:FF0000,50:ffA500,100:FFFF00,250:00FF00,600:0000FF\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.originSymbol.depth.discrete
+Type: \fIboolean\fP
+.sp
+Setting this parameter to true will not interpolate between
+the depth steps and the color for a depth <= input is used.
+Default is \fBtrue\fP.
+.UNINDENT
+.IP Note
+\fBscheme.colors.originStatus.*\fP
+\fIThe origin status colors (e.g. in event list).\fP
+.RE
+.INDENT 0.0
+.TP
+.B scheme.colors.originStatus.automatic
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.colors.originStatus.manual
+Type: \fIcolor\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.marker.lineWidth
+Type: \fIcolor\fP
+.sp
+The line width of the marker (e.g. picks of manual picker).
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.fonts.base
+Type: \fIfont\fP
+.sp
+The general base font of an application. This overrides
+the default Qt4 application font.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.fonts.small
+Type: \fIfont\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.fonts.normal
+Type: \fIfont\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.fonts.large
+Type: \fIfont\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.fonts.highlight
+Type: \fIfont\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.fonts.heading1
+Type: \fIfont\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.fonts.heading2
+Type: \fIfont\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.fonts.heading3
+Type: \fIfont\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.fonts.cityLabels
+Type: \fIfont\fP
+.sp
+\fINo description available\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.map.stationSize
+Type: \fIint\fP
+.sp
+The station symbol size (e.g. in scmv).
+Default is \fB8\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.map.originSymbolMinSize
+Type: \fIint\fP
+.sp
+The origin symbol minimum size. The formula to compute the
+size of the origin symbol is: 4.9*(M\-1.2).
+Default is \fB9\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.map.vectorLayerAntiAlias
+Type: \fIboolean\fP
+.sp
+Should the vector layer in the map use antialiasing?
+This improves the visual quality but decreases performance.
+Default is \fBfalse\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.map.bilinearFilter
+Type: \fIboolean\fP
+.sp
+Should the map use a bilinear filter?
+The bilinear filter improves the visual quality but decreases
+performance slightly. It is only used for static map images.
+Not while dragging.
+Default is \fBtrue\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.map.showGrid
+Type: \fIboolean\fP
+.sp
+Should the map display the grid?
+Default is \fBtrue\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.map.showCities
+Type: \fIboolean\fP
+.sp
+Should the map display the cities?
+Default is \fBtrue\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.map.showLayers
+Type: \fIboolean\fP
+.sp
+Should the map display the custom layers?
+Default is \fBtrue\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.map.projection
+Type: \fIstring\fP
+.sp
+SeisComP ships with the rectangular projection build in.
+Other projections may be provided through plug\-ins.
+Default is \fBRectangular\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.precision.depth
+Type: \fIint\fP
+.sp
+The precision of depth values.
+Default is \fB0\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.precision.distance
+Type: \fIint\fP
+.sp
+The precision of distance values.
+Default is \fB1\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.precision.location
+Type: \fIint\fP
+.sp
+The precision of lat/lon values.
+Default is \fB2\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.precision.pickTime
+Type: \fIint\fP
+.sp
+The precision of pick times.
+Default is \fB1\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.precision.distanceInKM
+Type: \fIboolean\fP
+.sp
+Display distances in km?
+Default is \fBfalse\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.precision.traceValues
+Type: \fIint\fP
+.sp
+Precision of displayed offset/amp in all trace widgets.
+Default is \fB1\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B scheme.precision.rms
+Type: \fIint\fP
+.sp
+Precision of RMS values.
+Default is \fB1\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B picker.filters
+Type: \fIlist:string\fP
+.sp
+Configures the default filters selectable in manual picker.
+The entry with a leading "@" is selected as default filter.
+Default is \fB"BP 0.1 \- 1 Hz  3rd order;BW(3,0.1,1)","BP 0.1 \- 2 Hz  3rd order;BW(3,0.1,2)","BP 0.4 \- 1 Hz  3rd order;BW(3,0.4,1)","@BP 0.7 \- 2 Hz  3rd order;BW(3,0.7,2)""BP 1 \- 3 Hz  3rd order;BW(3,1.0,3)","BP 2 \- 4 Hz  3rd order;BW(3,2.0,4)","BP 3 \- 6 Hz  3rd order;BW(3,3.0,6)","BP 4 \- 8 Hz  3rd order;BW(3,4.0,8)","BP 1 \- 5 Hz  3rd order;BW(3,1.0,5)","BP 0.7 \- 2 Hz + STA/LTA(1,50);RMHP(10)\->ITAPER(30)\->BW(3,0.7,2)\->STALTA(1,50)"\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventlist.visibleColumns
+Type: \fIlist:string\fP
+.sp
+Configure the columns of the event list that are visible initially.
+The first column containing the origin time is always visible and cannot
+be hidden. Possible values are: Type, M, TP, Phases, Lat, Lon, Depth, Stat, FM, Agency, Region, ID.
+Default is \fBM, TP, Phases, Lat, Lon, Depth, Stat, Agency, Region, ID\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventlist.regions
+Type: \fIlist:string\fP
+.sp
+Configured a list of regions that can be used as filter of
+the result set.
+.UNINDENT
+.IP Note
+\fBeventlist.region.$name.*\fP
+\fIDefines a rectangular region that can be used as a result\fP
+\fIset filter on client side.\fP
+$name is a placeholder for the name to be used and needs to be added to \fBeventlist.regions\fP to become active.
+.sp
+.nf
+.ft C
+eventlist.regions = a,b
+eventlist.region.a.value1 = ...
+eventlist.region.b.value1 = ...
+# c is not active because it has not been added
+# to the list of eventlist.regions
+eventlist.region.c.value1 = ...
+.ft P
+.fi
+.RE
+.INDENT 0.0
+.TP
+.B eventlist.region.$name.name
+Type: \fIstring\fP
+.sp
+Defines the name of the region that shows up in the
+listbox.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventlist.region.$name.rect
+Type: \fIlist:double\fP
+.sp
+Defines a rectangular region with a list of 4 values:
+latmin, lonmin, latmax, lonmax.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventlist.filter.agencies.label
+Type: \fIstring\fP
+.sp
+Defines the text of the option "Show only own events".
+Default is \fBShow only own events\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventlist.filter.agencies.whitelist
+Type: \fIlist:string\fP
+.sp
+Sets a list of preferred agencies. Events from preferred
+agencies are defined as "own" events.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventlist.filter.agencies.type
+Type: \fIstring\fP
+.sp
+Sets the type of the filter. If type is "events" the agency
+of the preferred origin of the event is checked.
+If type is "origins" the agency of all origins of
+an event is checked and if at least one origins agency is part
+of the whitelist it will pass the filter. Or in other words,
+the event is hidden if no origin is from a preferred agency.
+Default is \fBevents\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventlist.filter.agencies.enabled
+Type: \fIboolean\fP
+.sp
+Sets the default state of the "Show only own events"
+option.
+Default is \fBfalse\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventlist.filter.types.label
+Type: \fIstring\fP
+.sp
+Defines the text of the option "Hide other/fake events".
+Default is \fBHide other/fake events\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventlist.filter.types.blacklist
+Type: \fIlist:string\fP
+.sp
+List of event type to be hidden if the "Hide other/fake events"
+option is ticked.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventlist.filter.types.enabled
+Type: \fIboolean\fP
+.sp
+Sets the default state of the "Hide other/fake events"
+option.
+Default is \fBfalse\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B eventlist.filter.regions.enabled
+Type: \fIboolean\fP
+.sp
+Sets the default state of the "Hide events outside"
+option.
+Default is \fBfalse\fP.
+.UNINDENT
+.SS NonLinLoc extension
+.sp
+NonLinLoc locator wrapper plugin for SeisComP.
+NonLinLoc was written by Anthony Lomax (\fI\%http://alomax.free.fr/nlloc\fP).
+.INDENT 0.0
+.TP
+.B NonLinLoc.publicID
+Type: \fIstring\fP
+.sp
+PublicID creation pattern for an origin created by NonLinLoc.
+Default is \fBNLL.@time/%Y%m%d%H%M%S.%f@.@id@\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B NonLinLoc.outputPath
+Type: \fIpath\fP
+.sp
+Defines the output path for all native NonLinLoc input and output files.
+Default is \fB/tmp/sc3.nll\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B NonLinLoc.controlFile
+Type: \fIpath\fP
+.sp
+The default NonLinLoc control file to use.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B NonLinLoc.defaultPickError
+Type: \fIdouble\fP
+.sp
+The default pick error in seconds passed to NonLinLoc if a SC3 pick
+object does not provide pick time uncertainties.
+Default is \fB0.5\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B NonLinLoc.fixedDepthGridSpacing
+Type: \fIdouble\fP
+.sp
+Since NLL does not support fixing the depth natively so this
+feature is emulated by settings the Z grid very tight around
+the depth to be fixed. This value sets the Z grid spacing.
+Default is \fB0.1\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B NonLinLoc.profiles
+Type: \fIlist:string\fP
+.sp
+Defines a list of active profiles to be used by the plugin.
+.UNINDENT
+.IP Note
+\fBNonLinLoc.profile.$name.*\fP
+\fIDefines a regional profile that is used if a prelocation falls\fP
+\fIinside the configured region.\fP
+$name is a placeholder for the name to be used and needs to be added to \fBNonLinLoc.profiles\fP to become active.
+.sp
+.nf
+.ft C
+NonLinLoc.profiles = a,b
+NonLinLoc.profile.a.value1 = ...
+NonLinLoc.profile.b.value1 = ...
+# c is not active because it has not been added
+# to the list of NonLinLoc.profiles
+NonLinLoc.profile.c.value1 = ...
+.ft P
+.fi
+.RE
+.INDENT 0.0
+.TP
+.B NonLinLoc.profile.$name.earthModelID
+Type: \fIstring\fP
+.sp
+earthModelID that is stored in the created origin.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B NonLinLoc.profile.$name.methodID
+Type: \fIstring\fP
+.sp
+methodID that is stored in the created origin.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B NonLinLoc.profile.$name.tablePath
+Type: \fIpath\fP
+.sp
+Path to travel time tables (grids).
+.UNINDENT
+.INDENT 0.0
+.TP
+.B NonLinLoc.profile.$name.controlFile
+Type: \fIpath\fP
+.sp
+Control file of the current profile. If not set, the default
+control file will be used instead.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B NonLinLoc.profile.$name.transform
+Type: \fIstring\fP
+.sp
+Transformation type of the configured region. If not set, GLOBAL
+is assumed.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B NonLinLoc.profile.$name.region
+Type: \fIlist:double\fP
+.sp
+Defines the region values. If transform is GLOBAL 4 values
+(min_lat, min_lon, max_lat, max_lon) are expected. If transform
+is SIMPLE then 4 values are expected (xmin, ymin, xmax, ymax).
+.UNINDENT
+.INDENT 0.0
+.TP
+.B NonLinLoc.profile.$name.origin
+Type: \fIlist:double\fP
+.sp
+Only used for transformation SIMPLE. Expects 2 values (lat,lon).
+.UNINDENT
+.INDENT 0.0
+.TP
+.B NonLinLoc.profile.$name.rotation
+Type: \fIdouble\fP
+.sp
+Only used for transformation SIMPLE. Defines the rotation around the
+origin of the defined region.
+.UNINDENT
+.SH BINDINGS
+.SS Configuration
+.INDENT 0.0
+.TP
+.B MLv.logA0
+Type: \fIstring\fP
+.sp
+Defines the calibration function log(A0) for computing MLv.
+Format: any number of distance\-value pairs separated by semicolons
+Example: "0 \-1.3;60 \-2.8;400 \-4.5;1000 \-5.85" specifies 3 distance intervals from 0...60, 60...400 and 400...1000 km distance. Within these intervals logA0 is interpolated linearly between \-1.3...\-2.8, \-2.8...\-4.5 and \-4.5...\-5.8, respectively
+.sp
+Note: The distances of the first and last sample specify the distance range within which MLv shall be computed.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B detecStream
+Type: \fIstring\fP
+.sp
+Defines the channel code of the preferred stream used eg
+by scautopick and scrttv. If no component code is given,
+\(aqZ\(aq will be used by default.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B detecLocid
+Type: \fIstring\fP
+.sp
+Defines the location code of the preferred stream used
+eg by scautopick and scrttv.
+.UNINDENT
+.IP Note
+\fBamplitudes.*\fP
+\fIDefines general parameters for amplitudes of a certain type.\fP
+.RE
+.INDENT 0.0
+.TP
+.B amplitudes.enable
+Type: \fIboolean\fP
+.sp
+Defines if amplitude calculation is enabled. If disabled then
+this station will be skipped for amplitudes and magnitudes.
+Default is \fBtrue\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B amplitudes.saturationThreshold
+Type: \fIdouble\fP
+.sp
+Defines the saturation threshold for the optional saturation check.
+By default the saturation check is disabled but giving a value above
+0 will enable it. Waveforms that are saturated are not used  at all
+for amplitude calculations.
+Default is \fB\-1\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B amplitudes.enableResponses
+Type: \fIboolean\fP
+.sp
+Activates deconvolution for this station. If no responses are
+configured an error is raised and the data is not processed.
+Default is \fBfalse\fP.
+.UNINDENT
+.IP Note
+\fBamplitudes.$name.*\fP
+\fIAn amplitude profile configures global parameters for a\fP
+\fIparticular amplitude type. The available amplitude types\fP
+\fIare not fixed and can be extended by plugins. The name of\fP
+\fIthe type must match the one defined in the corresponding\fP
+\fIAmplitudeProcessor.\fP
+$name is a placeholder for the name to be used.
+.RE
+.INDENT 0.0
+.TP
+.B amplitudes.$name.enable
+Type: \fIboolean\fP
+.sp
+Defines if amplitude calculation of certain type is enabled.
+Default is \fBtrue\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B amplitudes.$name.saturationThreshold
+Type: \fIdouble\fP
+.sp
+If greater than 0 and the absolute value of an incoming
+unfiltered sample exceeds this value, the trace data is rejected and
+not used (saturation check).
+Default is \fB\-1\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B amplitudes.$name.minSNR
+Type: \fIdouble\fP
+.sp
+Defines the mininum SNR to be reached to compute the
+amplitudes. This value is amplitude type specific and
+has no global default value.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B amplitudes.$name.noiseBegin
+Type: \fIdouble\fP
+.sp
+Overrides the default time (relative to the trigger
+time) of the begin of the noise window used to compute
+the noise offset and noise amplitude. Each amplitude
+processor sets its own noise time window and this option
+should only be changed if you know what you are doing.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B amplitudes.$name.noiseEnd
+Type: \fIdouble\fP
+.sp
+Overrides the default time (relative to the trigger
+time) of the end of the noise window used to compute
+the noise offset and noise amplitude. Each amplitude
+processor sets its own noise time window and this option
+should only be changed if you know what you are doing.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B amplitudes.$name.signalBegin
+Type: \fIdouble\fP
+.sp
+Overrides the default time (relative to the trigger
+time) of the begin of the signal window used to compute
+the final amplitude. Each amplitude processor sets its
+own signal time window and this option should only be
+changed if you know what you are doing.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B amplitudes.$name.signalEnd
+Type: \fIdouble\fP
+.sp
+Overrides the default time (relative to the trigger
+time) of the end of the signal window used to compute
+the final amplitude. Each amplitude processor sets its
+own signal time window and this option should only be
+changed if you know what you are doing.
+.UNINDENT
+.IP Note
+\fBmag.*\fP
+\fIDefines general parameters for magnitudes of a certain type.\fP
+.RE
+.IP Note
+\fBmag.$name.*\fP
+\fIAn magnitude profile configures global parameters for a\fP
+\fIparticular magnitude type. The available magnitude types\fP
+\fIare not fixed and can be extended by plugins. The name of\fP
+\fIthe type must match the one defined in the corresponding\fP
+\fIMagnitudeProcessor.\fP
+$name is a placeholder for the name to be used.
+.RE
+.INDENT 0.0
+.TP
+.B mag.$name.multiplier
+Type: \fIdouble\fP
+.sp
+Part of the magnitude station correction. The final
+magnitude value is multiplier*M+offset. This value
+is usually not required but there for completeness.
+Default is \fB1\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B mag.$name.offset
+Type: \fIdouble\fP
+.sp
+Part of the magnitude station correction. The final
+magnitude value is multiplier*M+offset. This value
+can be used to correct station magnitudes.
+Default is \fB0\fP.
+.UNINDENT
+.IP Note
+\fBpicker.BK.*\fP
+\fIBkpicker is an implementation of the Baer/Kradolfer picker adapted\fP
+\fIto SeisComP3. It was created by converting Manfred Baers from Fortran\fP
+\fIto C++ and inserting it as a replacement for the picker algorithm.\fP
+\fIThe picker interface name to be used in configuration files is\fP
+\fI"BK".\fP
+.RE
+.INDENT 0.0
+.TP
+.B picker.BK.signalBegin
+Type: \fIdouble\fP
+.sp
+Overrides the default time (relative to the trigger
+time) of the begin of the signal window used to pick.
+Default is \fB\-20\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B picker.BK.signalEnd
+Type: \fIdouble\fP
+.sp
+Overrides the default time (relative to the trigger
+time) of the begin of the signal window used to pick.
+Default is \fB80\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B picker.BK.filterType
+Type: \fIstring\fP
+.sp
+BP (Bandpass) is currently the only option.
+Default is \fBBP\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B picker.BK.filterPoles
+Type: \fIint\fP
+.sp
+Number of poles.
+Default is \fB2\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B picker.BK.f1
+Type: \fIdouble\fP
+.sp
+Bandpass lower cutoff freq. in Hz.
+Default is \fB5\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B picker.BK.f2
+Type: \fIdouble\fP
+.sp
+Bandpass upper cutoff freq. in Hz.
+Default is \fB20\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B picker.BK.thrshl1
+Type: \fIdouble\fP
+.sp
+Threshold to trigger for pick (c.f. paper), default 10
+Default is \fB10\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B picker.BK.thrshl2
+Type: \fIdouble\fP
+.sp
+Threshold for updating sigma  (c.f. paper), default 20
+Default is \fB20\fP.
+.UNINDENT
+.IP Note
+\fBpicker.AIC.*\fP
+\fIAIC picker is an implementation using the simple non\-AR algorithm of Maeda (1985),\fP
+\fIsee paper of Zhang et al. (2003) in BSSA. The picker interface name to be used in configuration files is\fP
+\fI"AIC".\fP
+.RE
+.INDENT 0.0
+.TP
+.B picker.AIC.signalBegin
+Type: \fIdouble\fP
+.sp
+Overrides the default time (relative to the trigger
+time) of the begin of the signal window used to pick.
+Default is \fB\-30\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B picker.AIC.signalEnd
+Type: \fIdouble\fP
+.sp
+Overrides the default time (relative to the trigger
+time) of the begin of the signal window used to pick.
+Default is \fB10\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B picker.AIC.filter
+Type: \fIstring\fP
+.sp
+Overrides the default filter which is "raw". The typical filter grammar can be used.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B picker.AIC.minSNR
+Type: \fIdouble\fP
+.sp
+Defines the mininum SNR.
+Default is \fB3\fP.
+.UNINDENT
+.IP Note
+\fBspicker.L2.*\fP
+\fIL2 is a algorithm to pick S\-phases.\fP
+.RE
+.INDENT 0.0
+.TP
+.B spicker.L2.signalBegin
+Type: \fIdouble\fP
+.sp
+Overrides the relative start time (relative to the triggering
+pick) of the begin of the signal window used to pick.
+Default is \fB0\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B spicker.L2.signalEnd
+Type: \fIdouble\fP
+.sp
+Overrides the relative end time (relative to the triggering
+pick) of the end of the signal window used to pick.
+Default is \fB60\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B spicker.L2.filter
+Type: \fIstring\fP
+.sp
+Configures the filter used to compute the L2 and to pick the onset after the detector triggered.
+Default is \fBBW(4,0.3,1.0)\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B spicker.L2.detector
+Type: \fIstring\fP
+.sp
+onfigures the detector in the filtered L2.
+Default is \fBSTALTA(1,10)\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B spicker.L2.threshold
+Type: \fIdouble\fP
+.sp
+The detector threshold that triggers the AIC picker.
+Default is \fB3\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B spicker.L2.timeCorr
+Type: \fIdouble\fP
+.sp
+The time correction (in seconds) added to the final pick time.
+Default is \fB\-0.4\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B spicker.L2.marginAIC
+Type: \fIdouble\fP
+.sp
+The AIC time window around the detection used to pick. If 0 AIC is not used.
+Default is \fB5\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B spicker.L2.minSNR
+Type: \fIdouble\fP
+.sp
+Defines the mininum SNR.
+Default is \fB15\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B md.seismo
+Type: \fIint\fP
+.sp
+Default filter type to use before processing and after deconvolution. It\(aqs possible to set :
+1 for a Wood\-Anderson seismometer
+2 for a 5sec generic Seismometer
+3 for a WWSSN LP seismometer
+4 for a WSSN SP seismometer
+5 for a Generic Seismometer
+6 for a Butterworth Low pass filter
+7 for a Butterworth High pass filter
+8 for a Butterworth Band pass filter
+Default is \fB1\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B md.butterworth
+Type: \fIstring\fP
+.sp
+Butterworth filter parameter applied to the signal
+Default is \fB"3,1,15"\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B md.depthmax
+Type: \fIdouble\fP
+.sp
+Maximum depth at which duration magnitude is valid
+Default is \fB200\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B md.deltamax
+Type: \fIdouble\fP
+.sp
+Maximum distance between earthquake and station at which duration magnitude is valid
+Default is \fB400\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B md.snrmin
+Type: \fIdouble\fP
+.sp
+Signal to noise ratio below which the coda is reached
+Default is \fB1.2\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B md.mdmax
+Type: \fIdouble\fP
+.sp
+Maximum expected duration magnitude value
+This is used to find how much data should be loaded for a given station by reversing the formula
+Default is \fB5.0\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B md.fma
+Type: \fIdouble\fP
+.sp
+FMA regional coefficient
+See Hypo2000 manual
+Default is \fB\-0.87\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B md.fmb
+Type: \fIdouble\fP
+.sp
+FMB regional coefficient
+See Hypo2000 manual
+Default is \fB2.0\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B md.fmd
+Type: \fIdouble\fP
+.sp
+FMD regional coefficient
+See Hypo2000 manual
+Default is \fB0.0035\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B md.fmf
+Type: \fIdouble\fP
+.sp
+FMF regional coefficient
+See Hypo2000 manual
+Default is \fB0.0\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B md.fmz
+Type: \fIdouble\fP
+.sp
+FMZ regional coefficient
+See Hypo2000 manual
+Default is \fB0.0\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B MLh.maxavg
+Type: \fIstring\fP
+.sp
+Define combiner operation for both horizontals (min, max, avg).
+Default is \fBmax\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B MLh.ClippingThreshold
+Type: \fIdouble\fP
+.sp
+MLh clipping level, in raw counts, eg. 80% of 2^23 = 6710886.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B MLh.params
+Type: \fIstring\fP
+.sp
+Defines attenuation parameters for MLh.
+Format: "UpToKilometers A B; UpToNextKilometers A B;".
+Example: "30 nomag; 60 0.018 2.17; 700 0.0038 3.02".
+The first parameter set "30 nomag" means that up to 30km
+from the sensor the magnitude should not be calculated.
+.UNINDENT
+.SH COMMAND-LINE
+.SS Generic
+.INDENT 0.0
+.TP
+.B \-h, \-\-help
+show help message.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-V, \-\-version
+show version information
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-config\-file arg
+Use alternative configuration file. When this option is used
+the loading of all stages is disabled. Only the given configuration
+file is parsed and used. To use another name for the configuration
+create a symbolic link of the application or copy it, eg scautopick \-> scautopick2.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-plugins arg
+Load given plugins.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-D, \-\-daemon
+Run as daemon. This means the application will fork itself and
+doesn\(aqt need to be started with &.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-auto\-shutdown arg
+Enable/disable self\-shutdown because a master module shutdown. This only
+works when messaging is enabled and the master module sends a shutdown
+message (enabled with \-\-start\-stop\-msg for the master module).
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-shutdown\-master\-module arg
+Sets the name of the master\-module used for auto\-shutdown. This
+is the application name of the module actually started. If symlinks
+are used then it is the name of the symlinked application.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-shutdown\-master\-username arg
+Sets the name of the master\-username of the messaging used for
+auto\-shutdown. If "shutdown\-master\-module" is given as well this
+parameter is ignored.
+.UNINDENT
+.SS Verbose
+.INDENT 0.0
+.TP
+.B \-\-verbosity arg
+Verbosity level [0..4]. 0:quiet, 1:error, 2:warning, 3:info, 4:debug
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-v, \-\-v
+Increase verbosity level (may be repeated, eg. \-vv)
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-q, \-\-quiet
+Quiet mode: no logging output
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-print\-component arg
+For each log entry print the component right after the
+log level. By default the component output is enabled
+for file output but disabled for console output.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-print\-context arg
+For each log entry print the source file name and line
+number.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-component arg
+Limits the logging to a certain component. This option can be given more than once.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-s, \-\-syslog
+Use syslog logging back end. The output usually goes to /var/lib/messages.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-l, \-\-lockfile arg
+Path to lock file.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-console arg
+Send log output to stdout.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-debug
+Debug mode: \-\-verbosity=4 \-\-console=1
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-trace
+Trace mode: \-\-verbosity=4 \-\-console=1 \-\-print\-component=1 \-\-print\-context=1
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-log\-file arg
+Use alternative log file.
+.UNINDENT
+.SS Messaging
+.INDENT 0.0
+.TP
+.B \-u, \-\-user arg
+Overrides configuration parameter \fI\%connection.username\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-H, \-\-host arg
+Overrides configuration parameter \fI\%connection.server\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-t, \-\-timeout arg
+Overrides configuration parameter \fI\%connection.timeout\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-g, \-\-primary\-group arg
+Overrides configuration parameter \fI\%connection.primaryGroup\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-S, \-\-subscribe\-group arg
+A group to subscribe to. This option can be given more than once.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-encoding arg
+Overrides configuration parameter \fI\%connection.encoding\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-start\-stop\-msg arg
+Sets sending of a start\- and a stop message.
+.UNINDENT
+.SS Database
+.INDENT 0.0
+.TP
+.B \-\-db\-driver\-list
+List all supported database drivers.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-d, \-\-database arg
+The database connection string, format: \fI\%service://user:pwd@host/database\fP.
+"service" is the name of the database driver which can be
+queried with "\-\-db\-driver\-list".
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-config\-module arg
+The configmodule to use.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-inventory\-db arg
+Load the inventory from the given database or file, format: [\fI\%service://]location\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-config\-db arg
+Load the configuration from the given database or file, format: [\fI\%service://]location\fP
+.UNINDENT
+.SS Records
+.INDENT 0.0
+.TP
+.B \-\-record\-driver\-list
+List all supported record stream drivers
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-I, \-\-record\-url arg
+The recordstream source URL, format: [\fI\%service://\fP]location[#type].
+"service" is the name of the recordstream driver which can be
+queried with "\-\-record\-driver\-list". If "service"
+is not given "\fI\%file://\fP" is used.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-record\-file arg
+Specify a file as record source.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-record\-type arg
+Specify a type for the records being read.
+.UNINDENT
+.SS User interface
+.INDENT 0.0
+.TP
+.B \-F, \-\-full\-screen
+Starts the application filling the entire screen. This only works
+with GUI applications.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-N, \-\-non\-interactive
+Use non\-interactive presentation mode. This only works with GUI applications.
+.UNINDENT
+.SH AUTHOR
+GFZ Potsdam
+.SH COPYRIGHT
+2014, GFZ Potsdam, gempa GmbH
+.\" Generated by docutils manpage writer.
+.\" 
+.

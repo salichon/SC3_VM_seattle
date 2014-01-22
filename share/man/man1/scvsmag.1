@@ -1,0 +1,507 @@
+.TH "SCVSMAG" "1" "January 21, 2014" "2014.016" "SeisComP3"
+.SH NAME
+scvsmag \- SeisComP3 Documentation
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.\" Man page generated from reStructeredText.
+.
+.sp
+\fBComputes VS magnitudes based on envelopes calculated by scenvelope.\fP
+.SH DESCRIPTION
+.sp
+scvsmag is a new implementation of the Virtual Seismologist (\fIVS\fP)
+Earthquake Early Warning algorithm (Cua, 2005; Cua and Heaton, 2007). For a
+given origin it estimates single station magnitudes and a network magnitude
+based on  the envelope attenuation relationship and ground motion amplitude
+ratio derived  by Cua (2005). The original VS algorithm applies the Bayesian
+theorem by defining magnitude as the value that maximizes the product of a
+likelihood function and a prior probability density function. In the current
+version of scvsmag only the likelihood function is implemented and no prior
+information is used at this stage.
+.SH LOGGING
+.sp
+Apart from the standard log messages in \fBscvsmag.log\fP, processing log messages are
+also written to \fBscvsmag\-processing\-info.log\fP every time the VS Magnitude of an event
+is re\-evaluated. A typical entry is shown below.
+.sp
+.nf
+.ft C
+1  2013/06/28 10:51:01 [processing/info/VsMagnitude] Start logging for event: sed2012cyqr
+2  2013/06/28 10:51:01 [processing/info/VsMagnitude] update number: 0
+3  2013/06/28 10:51:01 [processing/info/VsMagnitude] Sensor: CH..BNALP.HH; Wavetype: P\-wave; Soil class: rock; Magnitude: 3.47
+4  2013/06/28 10:51:01 [processing/info/VsMagnitude] station lat: 46.87; station lon: 8.43; epicentral distance: 32.26;
+5  2013/06/28 10:51:01 [processing/info/VsMagnitude] PGA(Z): 3.57e\-03; PGV(Z): 6.91e\-05; PGD(Z): 1.62e\-06
+6  2013/06/28 10:51:01 [processing/info/VsMagnitude] PGA(H): 2.67e\-03; PGV(H): 3.44e\-05; PGD(H): 1.02e\-06
+7  2013/06/28 10:51:01 [processing/info/VsMagnitude] Sensor: CH..MUO.HH; Wavetype: S\-wave; Soil class: rock; Magnitude: 3.83
+8  2013/06/28 10:51:01 [processing/info/VsMagnitude] station lat: 46.97; station lon: 8.64; epicentral distance: 22.45;
+9  2013/06/28 10:51:01 [processing/info/VsMagnitude] PGA(Z): 8.19e\-03; PGV(Z): 2.12e\-04; PGD(Z): 6.91e\-06
+10 2013/06/28 10:51:01 [processing/info/VsMagnitude] PGA(H): 2.18e\-02; PGV(H): 5.00e\-04; PGD(H): 1.72e\-05
+11 2013/06/28 10:51:01 [processing/info/VsMagnitude] Sensor: CH..WILA.HH; Wavetype: P\-wave; Soil class: rock; Magnitude: 3.50
+12 2013/06/28 10:51:01 [processing/info/VsMagnitude] station lat: 47.41; station lon: 8.91; epicentral distance: 41.16;
+13 2013/06/28 10:51:01 [processing/info/VsMagnitude] PGA(Z): 4.38e\-03; PGV(Z): 6.42e\-05; PGD(Z): 1.85e\-06
+14 2013/06/28 10:51:01 [processing/info/VsMagnitude] PGA(H): 3.35e\-03; PGV(H): 6.40e\-05; PGD(H): 1.88e\-06
+15 2013/06/28 10:51:01 [processing/info/VsMagnitude] Sensor: CH..ZUR.HH; Wavetype: S\-wave; Soil class: rock; Magnitude: 3.79
+16 2013/06/28 10:51:01 [processing/info/VsMagnitude] station lat: 47.37; station lon: 8.51; epicentral distance: 23.99;
+17 2013/06/28 10:51:01 [processing/info/VsMagnitude] PGA(Z): 9.17e\-02; PGV(Z): 1.03e\-03; PGD(Z): 1.64e\-05
+18 2013/06/28 10:51:01 [processing/info/VsMagnitude] PGA(H): 9.63e\-02; PGV(H): 2.12e\-03; PGD(H): 5.31e\-05
+19 2013/06/28 10:51:01 [processing/info/VsMagnitude] VS\-mag: 3.69; median single\-station\-mag: 3.79; lat: 47.15; lon: 8.52; depth : 25.32 km
+20 2013/06/28 10:51:01 [processing/info/VsMagnitude] creation time: 2012\-02\-11T22:45:40.00Z; origin time: 2012\-02\-11T22:45:26.27Z; t\-diff: 13.73; time since origin arrival: 0.864; time since origin creation: 0.873
+21 2013/06/28 10:51:01 [processing/info/VsMagnitude] # picked stations: 6; # envelope streams: 79
+22 2013/06/28 10:51:01 [processing/info/VsMagnitude] Distance threshold (dt): 44.68 km; # picked stations < dt: 4; # envelope streams < dt: 4
+23 2013/06/28 10:51:01 [processing/info/VsMagnitude] Stations not used for VS\-mag: CH.HASLI CH.LLS
+24 2013/06/28 10:51:01 [processing/info/VsMagnitude] Magnitude check: 0.027; Arrivals check: 0.000
+25 2013/06/28 10:51:01 [processing/info/VsMagnitude] likelihood: 0.99
+26 2013/06/28 10:51:01 [processing/info/VsMagnitude] End logging for event: sed2012cyqr
+.ft P
+.fi
+.SS Explanation
+.sp
+The following table comments each line in the above output.
+.TS
+center;
+|l|l|.
+_
+T{
+Line
+T}	T{
+Description
+T}
+_
+T{
+1
+T}	T{
+Start of the log message for the event with the given event ID
+T}
+_
+T{
+2
+T}	T{
+Update counter for this event.
+T}
+_
+T{
+3 \- 18
+T}	T{
+Information about the stations that contribute to a VS magnitude
+estimate. Each station has four lines with the first line giving
+the the stream name, the wavetype of the contributing amplitude,
+the soil type at the site and the single station magnitude. The
+next line shows the location and epicentral distance of the sensor.
+On the two following lines peak\-ground\-acceleration (PGA) \-velocity
+(PGV) and \-displacement (PGD) are given in SI units for vertical
+and the root\-mean\-square horizontal component.
+T}
+_
+T{
+19
+T}	T{
+The VS magnitude, the median of the single station magnitudes, the
+cordinates of the hypocenter
+T}
+_
+T{
+20
+T}	T{
+The creation time of the magnitude, the origin time and the
+difference between the two (\(aqtdiff\(aq); also given are the time since
+origin arrival and time since origin creation which is a measure of
+how long it took to evaluate the first magnitude estimate.
+T}
+_
+T{
+21
+T}	T{
+The number of stations contributing to an origin (\(aq# picked
+stations\(aq) and the number of envelope streams available
+(\(aq# envelope streams\(aq).
+T}
+_
+T{
+22
+T}	T{
+Distance threshold from epicenter within which the relative
+difference between picked stations and envelope streams is
+evaluated (see line 24). Also shown is the number of picked
+stations and envelope streams within this distance threshold.
+T}
+_
+T{
+23
+T}	T{
+Stations that were used for picking but not for the magnitude
+estimation.
+T}
+_
+T{
+24
+T}	T{
+\(aqMagnitude check\(aq is the relative difference between the VS
+magnitude and the median of the single station magnitudes.
+If it exceeds a certain threshold the magnitude quality value is
+set to 0.4 otherwise to 1.0. \(aqArrivals check\(aq is the relative
+difference betweeen the number of picked stations and the number of
+envelope streams contributing to the VS magnitude. If it exceeds a
+certain threshold the arrivals quality criteria is set to 0.3
+otherwise to 1.0. The full decision tree for computing the
+likelihood and the related thresholds is shown
+\fIhere\fP.
+T}
+_
+T{
+25
+T}	T{
+The \(aqlikelihood\(aq is the product of the magnitude and the arrivals
+quality criteria. If both are 1.0 than the likelihoodis set to
+0.99.
+T}
+_
+T{
+26
+T}	T{
+End of the log message for the event with the given event ID.
+T}
+_
+.TE
+.SH REFERENCES
+.sp
+Borcherdt, R. D., 1994: Estimates of Site\-Dependent Response Spectra for Design (Methodology and Justification), Earthquake Spectra
+.SH CONFIGURATION
+.nf
+\fBetc/defaults/global.cfg\fP
+\fBetc/defaults/scvsmag.cfg\fP
+\fBetc/global.cfg\fP
+\fBetc/scvsmag.cfg\fP
+\fB~/.seiscomp3/global.cfg\fP
+\fB~/.seiscomp3/scvsmag.cfg\fP
+.fi
+.sp
+.sp
+scvsmag inherits \fIglobal options\fP.
+.INDENT 0.0
+.TP
+.B vsmag.siteEffect
+Type: \fIboolean\fP
+.sp
+Choose whether to use Vs30 base site effect corrections
+(see also the option \(aqvsmag.vs30filename\(aq).
+Default is \fBfalse\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B vsmag.vs30filename
+Type: \fIstring\fP
+.sp
+A ascii grid file of Vs30 values conforming to the standard ShakeMap format.
+Each line contains a comma separated list of longitude, latitude and the
+VS30 value for one grid point. Longitude and latitude have to got from lower
+to higher values and longitudes increase faster than latitudes.
+Default is \fByour\-vs30\-gridfile.txt\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B vsmag.vs30default
+Type: \fIdouble\fP
+.sp
+Define a default Vs30 value for points not covered by the grid file given with
+\(aqvsmag.vs30filename\(aq.
+Default is \fB910\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B vsmag.eventExpirationTime
+Type: \fIint\fP
+.sp
+This defines the time\-span after an event\(aqs origin time during which the VS
+magnitude is re\-evaluated every second. After origin\-time + eventExpirationTime
+the evaluation will stop.
+Default is \fB45\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B vsmag.ExpirationTimeReference
+Type: \fIstring\fP
+.sp
+Choose whether to time the event expiration time with respect to the origin
+time (\(aqot\(aq) or the time of the first VS estimates creation time (\(aqct\(aq).
+Default is \fBct\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B vsmag.clipTimeout
+Type: \fIint\fP
+.sp
+Define the number of seconds following a clipped record that a stream is not
+used for magnitude estimation.
+Default is \fB30\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B vsmag.twstarttime
+Type: \fIint\fP
+.sp
+These two parameters define the timewindow around picks in which scvsmag
+looks for maximum amplitudes. twstarttime defines the time before the pick
+and twendtime the time after the pick
+Default is \fB4\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B vsmag.twendtime
+Type: \fIint\fP
+.sp
+These two parameters define the timewindow around picks in which scvsmag
+looks for maximum amplitudes. twstarttime defines the time before the pick
+and twendtime the time after the pick
+Default is \fB35\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B vsmag.mode
+Type: \fIstring\fP
+.sp
+You can choose between \(aqrealtime\(aq and \(aqplayback\(aq mode. In \(aqrealtime\(aq mode VS
+magnitudes are evaluated based on a realtime timer. In \(aqplayback\(aq mode the
+timing is determined by incoming envelope values (i.e. the internal timing is
+always set to the latest envelope arrival.
+Default is \fBrealtime\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B vsmag.backslots
+Type: \fIint\fP
+.sp
+Time in seconds with respect to the current Time that envelope values are kept
+in memory. Envelope values with a timestamp that is older
+than current Time \- vsmag.backslots will be deleted/rejected.
+Default is \fB6000\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B vsmag.headslots
+Type: \fIint\fP
+.sp
+Time in seconds in the future with respect to the current Time that envelope
+values are kept in memory. This feature can be of interest if scenvelope and
+scvsmag do not run on the same machine. A difference between the internal
+clocks can generate envelope messages with a timestamp in the future
+relative to the receiving machine.
+Default is \fB65\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B vsmag.maxepicdist
+Type: \fIdouble\fP
+.sp
+This defines a cutoff epicentral distance in kilometers; stations further than that
+won\(aqt be used for magnitude computation; a negative value means no cutoff is
+applied.
+Default is \fB200\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B vsmag.logenvelopes
+Type: \fIboolean\fP
+.sp
+This toggles envelope logging. Note that this will produce very large files and
+may fill up your disk if left on for too long.
+Default is \fBfalse\fP.
+.UNINDENT
+.SH COMMAND-LINE
+.SS Generic
+.INDENT 0.0
+.TP
+.B \-h, \-\-help
+show help message.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-V, \-\-version
+show version information
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-config\-file arg
+Use alternative configuration file. When this option is used
+the loading of all stages is disabled. Only the given configuration
+file is parsed and used. To use another name for the configuration
+create a symbolic link of the application or copy it, eg scautopick \-> scautopick2.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-plugins arg
+Load given plugins.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-D, \-\-daemon
+Run as daemon. This means the application will fork itself and
+doesn\(aqt need to be started with &.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-auto\-shutdown arg
+Enable/disable self\-shutdown because a master module shutdown. This only
+works when messaging is enabled and the master module sends a shutdown
+message (enabled with \-\-start\-stop\-msg for the master module).
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-shutdown\-master\-module arg
+Sets the name of the master\-module used for auto\-shutdown. This
+is the application name of the module actually started. If symlinks
+are used then it is the name of the symlinked application.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-shutdown\-master\-username arg
+Sets the name of the master\-username of the messaging used for
+auto\-shutdown. If "shutdown\-master\-module" is given as well this
+parameter is ignored.
+.UNINDENT
+.SS Verbosity
+.INDENT 0.0
+.TP
+.B \-\-verbosity arg
+Verbosity level [0..4]. 0:quiet, 1:error, 2:warning, 3:info, 4:debug
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-v, \-\-v
+Increase verbosity level (may be repeated, eg. \-vv)
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-q, \-\-quiet
+Quiet mode: no logging output
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-component arg
+Limits the logging to a certain component. This option can be given more than once.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-s, \-\-syslog
+Use syslog logging back end. The output usually goes to /var/lib/messages.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-l, \-\-lockfile arg
+Path to lock file.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-console arg
+Send log output to stdout.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-debug
+Debug mode: \-\-verbosity=4 \-\-console=1
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-log\-file arg
+Use alternative log file.
+.UNINDENT
+.SS Messaging
+.INDENT 0.0
+.TP
+.B \-u, \-\-user arg
+Overrides configuration parameter \fBconnection.username\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-H, \-\-host arg
+Overrides configuration parameter \fBconnection.server\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-t, \-\-timeout arg
+Overrides configuration parameter \fBconnection.timeout\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-g, \-\-primary\-group arg
+Overrides configuration parameter \fBconnection.primaryGroup\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-S, \-\-subscribe\-group arg
+A group to subscribe to. This option can be given more than once.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-encoding arg
+Overrides configuration parameter \fBconnection.encoding\fP.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-start\-stop\-msg arg
+Sets sending of a start\- and a stop message.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-test
+Test mode, no messages are sent
+.UNINDENT
+.SS Database
+.INDENT 0.0
+.TP
+.B \-\-db\-driver\-list
+List all supported database drivers.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-d, \-\-database arg
+The database connection string, format: \fI\%service://user:pwd@host/database\fP.
+"service" is the name of the database driver which can be
+queried with "\-\-db\-driver\-list".
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-config\-module arg
+The configmodule to use.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-inventory\-db arg
+Load the inventory from the given database or file, format: [\fI\%service://]location\fP
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-db\-disable
+Do not use the database at all
+.UNINDENT
+.SH AUTHOR
+Swiss Seismological Service
+.SH COPYRIGHT
+2014, GFZ Potsdam, gempa GmbH
+.\" Generated by docutils manpage writer.
+.\" 
+.

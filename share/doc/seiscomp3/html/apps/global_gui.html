@@ -1,0 +1,1351 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GUI &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="global" href="../toc/extensions/global.html" />
+    <link rel="next" title="MLh" href="global_mlh.html" />
+    <link rel="prev" title="Hypo71" href="global_hypo71.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="global_mlh.html" title="MLh"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="global_hypo71.html" title="Hypo71"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/extensions.html" >Extensions</a> &raquo;</li>
+          <li><a href="../toc/extensions/global.html" accesskey="U">global</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GUI</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#styling">Styling</a></li>
+<li><a class="reference internal" href="#configuration-syntax">Configuration syntax</a><ul>
+<li><a class="reference internal" href="#colors">Colors</a></li>
+<li><a class="reference internal" href="#color-gradients">Color gradients</a></li>
+<li><a class="reference internal" href="#fonts">Fonts</a></li>
+<li><a class="reference internal" href="#pens">Pens</a></li>
+<li><a class="reference internal" href="#brushes">Brushes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#map-vector-layers">Map vector layers</a></li>
+<li><a class="reference internal" href="#configuration">Configuration</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="global_hypo71.html"
+                        title="previous chapter">Hypo71</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="global_mlh.html"
+                        title="next chapter">MLh</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/apps/global_gui.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="gui">
+<span id="global-gui"></span><h1>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h1>
+<p>The GUI configuration plugin extends the configuration of
+graphical user interfaces to various options to adjust the look
+and feel.</p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>All SeisComP3 graphical user interfaces are based on a common libraries.
+This chapter describes what configuration and styling options are available for
+all GUI applications. The GUI specific configuration options are additional to
+the standard application options. Setup the e.g. messaging connection and database
+is equal to the CLI (command line interface) applications.</p>
+</div>
+<div class="section" id="styling">
+<h2>Styling<a class="headerlink" href="#styling" title="Permalink to this headline">¶</a></h2>
+<p>To adjust the look-and-feel to the host desktop system and the personal taste
+several styling options are available. Since all GUI applications are using the
+Qt4 library the tool &quot;qtconfig-qt4&quot; can used to adjust the widget theme and the
+colors. If KDE is used as desktop system the same style is used since KDE
+bases on Qt as well.</p>
+<p>The style options supported by SC3 (and not covered by the general Qt setup)
+have to be given in the applications (or global) configuration file. The
+parameters are prefixed with <em>scheme.</em>.</p>
+</div>
+<div class="section" id="configuration-syntax">
+<h2>Configuration syntax<a class="headerlink" href="#configuration-syntax" title="Permalink to this headline">¶</a></h2>
+<p>Beside the usual integer, float, boolean and string parameters GUI applications
+support also color, color gradient, pen, brush and font parameters. The syntax
+is explained below:</p>
+<div class="section" id="colors">
+<h3>Colors<a class="headerlink" href="#colors" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nv">color</span> <span class="o">=</span> RRGGBBAA | <span class="s2">&quot;rgb(red,green,blue)&quot;</span> | <span class="s2">&quot;rgba(red,green,blue,alpha)&quot;</span>
+</pre></div>
+</div>
+<p>Colors are specified either in a hexadecimal notation or in a rgb(a) notation.
+When using the rgb(a) notation it should be quoted. Otherwise the configuration
+parser would tokenize the value into 3 or 4 strings due to the comma.</p>
+</div>
+<div class="section" id="color-gradients">
+<h3>Color gradients<a class="headerlink" href="#color-gradients" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nv">gradient</span> <span class="o">=</span> 1:FF0000, 2:00FF00, 3:0000FF
+</pre></div>
+</div>
+<p>This defines a gradient from red through green to blue for the nodes 1, 2 and 3.
+Values out of range are clipped to the lower or upper bound.</p>
+</div>
+<div class="section" id="fonts">
+<h3>Fonts<a class="headerlink" href="#fonts" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-sh"><div class="highlight"><pre><span class="c"># The font family</span>
+font.family <span class="o">=</span> <span class="s2">&quot;Arial&quot;</span>
+
+<span class="c"># Point size</span>
+font.size <span class="o">=</span> 12
+
+<span class="c"># Bold?</span>
+<span class="c"># Default: false</span>
+font.bold <span class="o">=</span> <span class="nb">false</span>
+
+<span class="c"># Italic?</span>
+<span class="c"># Default: false</span>
+font.italic <span class="o">=</span> <span class="nb">false</span>
+
+<span class="c"># Underline?</span>
+<span class="c"># Default: false</span>
+font.underline <span class="o">=</span> <span class="nb">false</span>
+
+<span class="c"># Overline?</span>
+<span class="c"># Default: false</span>
+font.overline <span class="o">=</span> <span class="nb">false</span>
+</pre></div>
+</div>
+<p>An example to configure the SC3 base font:</p>
+<div class="highlight-sh"><div class="highlight"><pre>scheme.fonts.base.family <span class="o">=</span> <span class="s2">&quot;Arial&quot;</span>
+scheme.fonts.base.size <span class="o">=</span> 10
+</pre></div>
+</div>
+</div>
+<div class="section" id="pens">
+<h3>Pens<a class="headerlink" href="#pens" title="Permalink to this headline">¶</a></h3>
+<p>Pens are used in the vector layer configuration. Pens have three attributes:
+color, style and width. Color follows the described color definition, width
+is a double and the styles are:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="33%" />
+<col width="36%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><div class="first last figure">
+<img alt="../_images/pen-no.png" src="../_images/pen-no.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../_images/pen-solid.png" src="../_images/pen-solid.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../_images/pen-dot.png" src="../_images/pen-dot.png" />
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>nopen</td>
+<td>solidline</td>
+<td>dotline</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure">
+<img alt="../_images/pen-dash.png" src="../_images/pen-dash.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../_images/pen-dashdot.png" src="../_images/pen-dashdot.png" />
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="../_images/pen-dashdotdot.png" src="../_images/pen-dashdotdot.png" />
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>dashline</td>
+<td>dashdotline</td>
+<td>dashdotdotline</td>
+</tr>
+<tr class="row-odd"><td colspan="3"><em>Images from Qt 4.1 documentation: http://doc.qt.digia.com/4.1/qt.html#PenStyle-enum</em></td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="c"># Blue dotted pen</span>
+pen.color <span class="o">=</span> 0000ff
+pen.style <span class="o">=</span> dotline
+</pre></div>
+</div>
+</div>
+<div class="section" id="brushes">
+<h3>Brushes<a class="headerlink" href="#brushes" title="Permalink to this headline">¶</a></h3>
+<p>Brushes are also used in the vector layer configuration. Brushes are used to
+fill a polygon. They have two attributes: color and pattern. Color followes the
+described color definition and patterns are:</p>
+<div class="figure">
+<img alt="../_images/brush-patterns.png" src="../_images/brush-patterns.png" />
+</div>
+<p>Example:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="c"># Red solid brush</span>
+brush.color <span class="o">=</span> ff0000
+brush.pattern <span class="o">=</span> solid
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="map-vector-layers">
+<h2>Map vector layers<a class="headerlink" href="#map-vector-layers" title="Permalink to this headline">¶</a></h2>
+<p>SeisComP3 supports drawing of arbitrary polygons/polylines. Currently the FEP
+(<tt class="file docutils literal"><span class="pre">share/fep</span></tt> or <tt class="file docutils literal"><span class="pre">~/.seiscomp3/fep</span></tt>) and BNA (<tt class="file docutils literal"><span class="pre">share/bna</span></tt> or
+<tt class="file docutils literal"><span class="pre">~/.seiscomp3/bna</span></tt>) data sets are loaded and may be visualized. While the
+FEP layer is configured through the layer 'fep', the layer (resp. category) of
+the BNA data is derived from the directory structure of the BNA folder.</p>
+<p>In fact the depth of the BNA directory tree is arbitrary and subfolders form
+subcategories.</p>
+<p>E.g. the directory tree <tt class="file docutils literal"><span class="pre">bna/coastline/europe/germany</span></tt> will generate
+the categories coastline, coastline.europe and coastline.europe.germany which
+all may be configured individually. Every undefined property is inherited from
+the parent category. Due to its recursive structure the configuration options
+have not been added to the description xml file.</p>
+<p>The general configuration parameter format is <em>prefix.category.param</em>.
+If global layer properties are configured then just <em>prefix.param</em>.</p>
+<p>The prefix for layer configuration is <em>map.layers</em>.</p>
+<p>Available configuration options per category are:</p>
+<dl class="confval">
+<dt id="confval-visible">
+<tt class="descname">visible</tt><a class="headerlink" href="#confval-visible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>Show/hide the layer
+Default is <tt class="docutils literal"><span class="pre">true</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-drawName">
+<tt class="descname">drawName</tt><a class="headerlink" href="#confval-drawName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>Draws the segment name in the center of the bounding box. For segments read
+from BNA files the name is extracted from the first part of the header.
+Default is <tt class="docutils literal"><span class="pre">false</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-rank">
+<tt class="descname">rank</tt><a class="headerlink" href="#confval-rank" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Set or override the rank of the segment. The rank defines
+the zoom level at which drawing of the segment starts. For
+segments read from BNA files the name is extracted from the
+second part of the header if it has the form &quot;rank VALUE&quot;,
+e.g. rank 12.
+Default is <tt class="docutils literal"><span class="pre">1</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-roughness">
+<tt class="descname">roughness</tt><a class="headerlink" href="#confval-roughness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Sets the roughness of a polyline or polygon while zooming. The roughness
+is somehow defined in pixels and removes successive vertices if the distance
+in pixel is less than roughness. The higher the value the less vertices
+a rendered polyline or polygon will finally have and the faster the rendering.
+If set to 0 then the feature is disabled.
+Default is <tt class="docutils literal"><span class="pre">3</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-debug">
+<tt class="descname">debug</tt><a class="headerlink" href="#confval-debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>If enabled, the bounding box of the segment is drawn.
+Default is <tt class="docutils literal"><span class="pre">false</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-pen.width">
+<tt class="descname">pen.width</tt><a class="headerlink" href="#confval-pen.width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>double</em></p>
+<p>Pen width.
+Default is <tt class="docutils literal"><span class="pre">1.0</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-pen.color">
+<tt class="descname">pen.color</tt><a class="headerlink" href="#confval-pen.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>Pen color.
+Default is <tt class="docutils literal"><span class="pre">000000ff</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-pen.style">
+<tt class="descname">pen.style</tt><a class="headerlink" href="#confval-pen.style" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Line style. Supported values are: dashdotdotline, dashdotline, dashline,
+dotline, nopen and solidline.
+Default is <tt class="docutils literal"><span class="pre">solidline</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-brush.color">
+<tt class="descname">brush.color</tt><a class="headerlink" href="#confval-brush.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>Fill color.
+Default is <tt class="docutils literal"><span class="pre">000000ff</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-brush.pattern">
+<tt class="descname">brush.pattern</tt><a class="headerlink" href="#confval-brush.pattern" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>Fill pattern. Supported values are:
+nobrush, solid, dense1, dense2, dense3, dense4,
+dense5, dense6, dense7, horizontal, vertical,
+cross, bdiag, fdiag and diagcross.
+Default is <tt class="docutils literal"><span class="pre">nobrush</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-font.size">
+<tt class="descname">font.size</tt><a class="headerlink" href="#confval-font.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-font.family">
+<tt class="descname">font.family</tt><a class="headerlink" href="#confval-font.family" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-font.bold">
+<tt class="descname">font.bold</tt><a class="headerlink" href="#confval-font.bold" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-font.italic">
+<tt class="descname">font.italic</tt><a class="headerlink" href="#confval-font.italic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-font.underline">
+<tt class="descname">font.underline</tt><a class="headerlink" href="#confval-font.underline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-font.overline">
+<tt class="descname">font.overline</tt><a class="headerlink" href="#confval-font.overline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+</dd></dl>
+
+<p>Example:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="c"># Set global layer boundary color to black</span>
+map.layers.pen.color <span class="o">=</span> 000000
+
+<span class="c"># Set coastline boundary color to orange and pen width to 2</span>
+map.layers.coastline.pen.color <span class="o">=</span> ff8000
+map.layers.coastline.pen.width <span class="o">=</span> 2
+
+<span class="c"># Set boundary of Germany to red. Pen width is still 2 (inherited from</span>
+<span class="c"># coastline)</span>
+map.layers.coastline.europe.germany <span class="o">=</span> ff0000
+
+<span class="c"># Set river color to blue</span>
+map.layers.river.pen.color <span class="o">=</span> 0000ff
+</pre></div>
+</div>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<dl class="confval">
+<dt id="confval-map.location">
+<tt class="descname">map.location</tt><a class="headerlink" href="#confval-map.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Specified the location and the structure of the map tiles to be used. This
+path is composed of zero or more directives and must include at least one
+conversion specification which starts with is introduced by the character %
+followed by a conversion specifier.  Valid specifiers are s (replaced by
+tile ID), l (tile level), c (tile column) and r (tile row). An example for
+using the OpenStreetMap file structure is /path/to/maps/%l/%c/%r.png.
+Default is <tt class="docutils literal"><span class="pre">&#64;DATADIR&#64;/maps/world%s.png</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-map.format">
+<tt class="descname">map.format</tt><a class="headerlink" href="#confval-map.format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Projection of the map tiles. Supported formats are: rectangular and mercator.
+Default is <tt class="docutils literal"><span class="pre">rectangular</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-map.cacheSize">
+<tt class="descname">map.cacheSize</tt><a class="headerlink" href="#confval-map.cacheSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Cache size of the map tiles. If 0 is specified a default
+cache size of 32mb is used. The higher the cache size
+the better the performance in higher resolutions. A
+higher cache size causes less image loader calls but
+requires more client memory.
+Default is <tt class="docutils literal"><span class="pre">0</span></tt>.</p>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>scheme.*</strong>
+<em>This group defines various color and font options for SeisComp3</em>
+<em>graphical user interfaces. There are various conventions</em>
+<em>to define colors, fonts and gradients. A color is defined in HTML</em>
+<em>convention. If rgb or rgba is used it must be quoted because the</em>
+<em>comma is handled as list separator by the configuration. Gradients</em>
+<em>are configured as lists of tuples where each tuple is colon separated</em>
+<em>in the form value:color. Color is again a color definition and value is</em>
+<em>either int or double.</em></p>
+</div>
+<dl class="confval">
+<dt id="confval-scheme.showMenu">
+<tt class="descname">scheme.showMenu</tt><a class="headerlink" href="#confval-scheme.showMenu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>Show menu bar.
+Default is <tt class="docutils literal"><span class="pre">true</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.showStatusBar">
+<tt class="descname">scheme.showStatusBar</tt><a class="headerlink" href="#confval-scheme.showStatusBar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>Show status bar.
+Default is <tt class="docutils literal"><span class="pre">true</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.tabPosition">
+<tt class="descname">scheme.tabPosition</tt><a class="headerlink" href="#confval-scheme.tabPosition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Set position if tab bar. An unset value lets the application
+decide where to place the tab bar. This option might not be
+supported by all applications. Valid positions are: off, north,
+south, east, west</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.background">
+<tt class="descname">scheme.colors.background</tt><a class="headerlink" href="#confval-scheme.colors.background" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>A general application background color. Can be uses to give
+each application a different background color. An unset value
+lets Qt decide.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.records.foreground">
+<tt class="descname">scheme.colors.records.foreground</tt><a class="headerlink" href="#confval-scheme.colors.records.foreground" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The general color of records/traces.
+Default is <tt class="docutils literal"><span class="pre">808080</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.records.alternateForeground">
+<tt class="descname">scheme.colors.records.alternateForeground</tt><a class="headerlink" href="#confval-scheme.colors.records.alternateForeground" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>A general trace color of the alternate trace (eg scheli).
+Default is <tt class="docutils literal"><span class="pre">808080</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.records.gaps">
+<tt class="descname">scheme.colors.records.gaps</tt><a class="headerlink" href="#confval-scheme.colors.records.gaps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The color of data gaps in trace views.
+Default is <tt class="docutils literal"><span class="pre">FFFF0032</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.picks.manual">
+<tt class="descname">scheme.colors.picks.manual</tt><a class="headerlink" href="#confval-scheme.colors.picks.manual" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The color of manual picks.
+Default is <tt class="docutils literal"><span class="pre">00FF00</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.picks.automatic">
+<tt class="descname">scheme.colors.picks.automatic</tt><a class="headerlink" href="#confval-scheme.colors.picks.automatic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The color of automatic picks.
+Default is <tt class="docutils literal"><span class="pre">FF0000</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.picks.undefined">
+<tt class="descname">scheme.colors.picks.undefined</tt><a class="headerlink" href="#confval-scheme.colors.picks.undefined" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The color of picks with undefined state.
+Default is <tt class="docutils literal"><span class="pre">A0A0A4</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.picks.disabled">
+<tt class="descname">scheme.colors.picks.disabled</tt><a class="headerlink" href="#confval-scheme.colors.picks.disabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The color of disabled picks.
+Default is <tt class="docutils literal"><span class="pre">A0A0A4</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.arrivals.manual">
+<tt class="descname">scheme.colors.arrivals.manual</tt><a class="headerlink" href="#confval-scheme.colors.arrivals.manual" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The color of manual arrivals (arrivals that bind manual picks,
+e.g. residual plot of scolv, manual picker, ...)
+Default is <tt class="docutils literal"><span class="pre">00A000</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.arrivals.automatic">
+<tt class="descname">scheme.colors.arrivals.automatic</tt><a class="headerlink" href="#confval-scheme.colors.arrivals.automatic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The color of automatic arrivals,
+Default is <tt class="docutils literal"><span class="pre">A00000</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.arrivals.theoretical">
+<tt class="descname">scheme.colors.arrivals.theoretical</tt><a class="headerlink" href="#confval-scheme.colors.arrivals.theoretical" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The color of theoretical arrivals.
+Default is <tt class="docutils literal"><span class="pre">0000A0</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.arrivals.undefined">
+<tt class="descname">scheme.colors.arrivals.undefined</tt><a class="headerlink" href="#confval-scheme.colors.arrivals.undefined" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The color of arrivals binding picks with undefined state.
+Default is <tt class="docutils literal"><span class="pre">A00000</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.arrivals.disabled">
+<tt class="descname">scheme.colors.arrivals.disabled</tt><a class="headerlink" href="#confval-scheme.colors.arrivals.disabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The color of disabled arrivals.
+Default is <tt class="docutils literal"><span class="pre">A0A0A4</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.arrivals.residuals">
+<tt class="descname">scheme.colors.arrivals.residuals</tt><a class="headerlink" href="#confval-scheme.colors.arrivals.residuals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>gradient</em></p>
+<p>The gradient of arrivals residuals. A gradient is defined as
+a list of tuples separated by colon where the first item is
+the value and the second is the color. Colors can be given in
+rgb notation or hex. when rgb is used double quotes are needed to
+protect the comma inside the rgb definition, e.g.
+-8:&quot;rgb(0,0,100)&quot;, -4:&quot;rgb(0,0,255)&quot;, -3:&quot;rgb(100,100,255)&quot;, ...</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.magnitudes.set">
+<tt class="descname">scheme.colors.magnitudes.set</tt><a class="headerlink" href="#confval-scheme.colors.magnitudes.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The color of active magnitudes.
+Default is <tt class="docutils literal"><span class="pre">00A000</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.magnitudes.unset">
+<tt class="descname">scheme.colors.magnitudes.unset</tt><a class="headerlink" href="#confval-scheme.colors.magnitudes.unset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The color of inactive magnitudes.
+Default is <tt class="docutils literal"><span class="pre">000000</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.magnitudes.disabled">
+<tt class="descname">scheme.colors.magnitudes.disabled</tt><a class="headerlink" href="#confval-scheme.colors.magnitudes.disabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The color of disabled magnitudes.
+Default is <tt class="docutils literal"><span class="pre">A0A0A4</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.magnitudes.residuals">
+<tt class="descname">scheme.colors.magnitudes.residuals</tt><a class="headerlink" href="#confval-scheme.colors.magnitudes.residuals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>gradient</em></p>
+<p>The gradient of magnitude residuals.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.stations.associated">
+<tt class="descname">scheme.colors.stations.associated</tt><a class="headerlink" href="#confval-scheme.colors.stations.associated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The color of associated stations (e.g. in scmv).
+Default is <tt class="docutils literal"><span class="pre">82AD58</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.stations.triggering">
+<tt class="descname">scheme.colors.stations.triggering</tt><a class="headerlink" href="#confval-scheme.colors.stations.triggering" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The color of triggered stations.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.stations.triggered0">
+<tt class="descname">scheme.colors.stations.triggered0</tt><a class="headerlink" href="#confval-scheme.colors.stations.triggered0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.stations.triggered1">
+<tt class="descname">scheme.colors.stations.triggered1</tt><a class="headerlink" href="#confval-scheme.colors.stations.triggered1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.stations.triggered2">
+<tt class="descname">scheme.colors.stations.triggered2</tt><a class="headerlink" href="#confval-scheme.colors.stations.triggered2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.stations.disabled">
+<tt class="descname">scheme.colors.stations.disabled</tt><a class="headerlink" href="#confval-scheme.colors.stations.disabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The color of disabled stations.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.stations.idle">
+<tt class="descname">scheme.colors.stations.idle</tt><a class="headerlink" href="#confval-scheme.colors.stations.idle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The color of idle stations.</p>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>scheme.colors.qc.*</strong>
+<em>The color of QC.delay thresholds in scmv.</em></p>
+</div>
+<dl class="confval">
+<dt id="confval-scheme.colors.qc.delay0">
+<tt class="descname">scheme.colors.qc.delay0</tt><a class="headerlink" href="#confval-scheme.colors.qc.delay0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.qc.delay1">
+<tt class="descname">scheme.colors.qc.delay1</tt><a class="headerlink" href="#confval-scheme.colors.qc.delay1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.qc.delay2">
+<tt class="descname">scheme.colors.qc.delay2</tt><a class="headerlink" href="#confval-scheme.colors.qc.delay2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.qc.delay3">
+<tt class="descname">scheme.colors.qc.delay3</tt><a class="headerlink" href="#confval-scheme.colors.qc.delay3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.qc.delay4">
+<tt class="descname">scheme.colors.qc.delay4</tt><a class="headerlink" href="#confval-scheme.colors.qc.delay4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.qc.delay5">
+<tt class="descname">scheme.colors.qc.delay5</tt><a class="headerlink" href="#confval-scheme.colors.qc.delay5" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.qc.delay6">
+<tt class="descname">scheme.colors.qc.delay6</tt><a class="headerlink" href="#confval-scheme.colors.qc.delay6" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.qc.delay7">
+<tt class="descname">scheme.colors.qc.delay7</tt><a class="headerlink" href="#confval-scheme.colors.qc.delay7" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.qc.qcWarning">
+<tt class="descname">scheme.colors.qc.qcWarning</tt><a class="headerlink" href="#confval-scheme.colors.qc.qcWarning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.qc.qcError">
+<tt class="descname">scheme.colors.qc.qcError</tt><a class="headerlink" href="#confval-scheme.colors.qc.qcError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.qc.qcOk">
+<tt class="descname">scheme.colors.qc.qcOk</tt><a class="headerlink" href="#confval-scheme.colors.qc.qcOk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.qc.qcNoSet">
+<tt class="descname">scheme.colors.qc.qcNoSet</tt><a class="headerlink" href="#confval-scheme.colors.qc.qcNoSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>scheme.colors.gm.*</strong>
+<em>The color of ground motion amplitudes in scmv.</em></p>
+</div>
+<dl class="confval">
+<dt id="confval-scheme.colors.gm.gm0">
+<tt class="descname">scheme.colors.gm.gm0</tt><a class="headerlink" href="#confval-scheme.colors.gm.gm0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.gm.gm1">
+<tt class="descname">scheme.colors.gm.gm1</tt><a class="headerlink" href="#confval-scheme.colors.gm.gm1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.gm.gm2">
+<tt class="descname">scheme.colors.gm.gm2</tt><a class="headerlink" href="#confval-scheme.colors.gm.gm2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.gm.gm3">
+<tt class="descname">scheme.colors.gm.gm3</tt><a class="headerlink" href="#confval-scheme.colors.gm.gm3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.gm.gm4">
+<tt class="descname">scheme.colors.gm.gm4</tt><a class="headerlink" href="#confval-scheme.colors.gm.gm4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.gm.gm5">
+<tt class="descname">scheme.colors.gm.gm5</tt><a class="headerlink" href="#confval-scheme.colors.gm.gm5" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.gm.gm6">
+<tt class="descname">scheme.colors.gm.gm6</tt><a class="headerlink" href="#confval-scheme.colors.gm.gm6" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.gm.gm7">
+<tt class="descname">scheme.colors.gm.gm7</tt><a class="headerlink" href="#confval-scheme.colors.gm.gm7" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.gm.gm8">
+<tt class="descname">scheme.colors.gm.gm8</tt><a class="headerlink" href="#confval-scheme.colors.gm.gm8" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.gm.gm9">
+<tt class="descname">scheme.colors.gm.gm9</tt><a class="headerlink" href="#confval-scheme.colors.gm.gm9" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.gm.gmNotSet">
+<tt class="descname">scheme.colors.gm.gmNotSet</tt><a class="headerlink" href="#confval-scheme.colors.gm.gmNotSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.recordView.selectedTraceZoom">
+<tt class="descname">scheme.colors.recordView.selectedTraceZoom</tt><a class="headerlink" href="#confval-scheme.colors.recordView.selectedTraceZoom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The color of the selected zoom area (e.g. manual picker).
+Default is <tt class="docutils literal"><span class="pre">C0C0FFC0</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.map.lines">
+<tt class="descname">scheme.colors.map.lines</tt><a class="headerlink" href="#confval-scheme.colors.map.lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The color of lines in the map (e.g. lines
+connecting the origin and a station).</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.map.outlines">
+<tt class="descname">scheme.colors.map.outlines</tt><a class="headerlink" href="#confval-scheme.colors.map.outlines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The color of station outlines in the map.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.map.grid">
+<tt class="descname">scheme.colors.map.grid</tt><a class="headerlink" href="#confval-scheme.colors.map.grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The color grid line color of the map.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.map.stationAnnotations">
+<tt class="descname">scheme.colors.map.stationAnnotations</tt><a class="headerlink" href="#confval-scheme.colors.map.stationAnnotations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The color of station annotations.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.map.cityLabels">
+<tt class="descname">scheme.colors.map.cityLabels</tt><a class="headerlink" href="#confval-scheme.colors.map.cityLabels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The color of city labels.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.map.cityOutlines">
+<tt class="descname">scheme.colors.map.cityOutlines</tt><a class="headerlink" href="#confval-scheme.colors.map.cityOutlines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The color of city outlines.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.map.cityCapital">
+<tt class="descname">scheme.colors.map.cityCapital</tt><a class="headerlink" href="#confval-scheme.colors.map.cityCapital" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The color of a capital.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.map.cityNormal">
+<tt class="descname">scheme.colors.map.cityNormal</tt><a class="headerlink" href="#confval-scheme.colors.map.cityNormal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The color of a &quot;normal&quot; city.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.legend.background">
+<tt class="descname">scheme.colors.legend.background</tt><a class="headerlink" href="#confval-scheme.colors.legend.background" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The map legend background color.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.legend.border">
+<tt class="descname">scheme.colors.legend.border</tt><a class="headerlink" href="#confval-scheme.colors.legend.border" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The map legend border color.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.legend.text">
+<tt class="descname">scheme.colors.legend.text</tt><a class="headerlink" href="#confval-scheme.colors.legend.text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The map legend text color.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.legend.headerText">
+<tt class="descname">scheme.colors.legend.headerText</tt><a class="headerlink" href="#confval-scheme.colors.legend.headerText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The map legend header color.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.originSymbol.depth.gradient">
+<tt class="descname">scheme.colors.originSymbol.depth.gradient</tt><a class="headerlink" href="#confval-scheme.colors.originSymbol.depth.gradient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>gradient</em></p>
+<p>The depth gradient.
+Default is <tt class="docutils literal"><span class="pre">0:FF0000,50:ffA500,100:FFFF00,250:00FF00,600:0000FF</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.originSymbol.depth.discrete">
+<tt class="descname">scheme.colors.originSymbol.depth.discrete</tt><a class="headerlink" href="#confval-scheme.colors.originSymbol.depth.discrete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>Setting this parameter to true will not interpolate between
+the depth steps and the color for a depth &lt;= input is used.
+Default is <tt class="docutils literal"><span class="pre">true</span></tt>.</p>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>scheme.colors.originStatus.*</strong>
+<em>The origin status colors (e.g. in event list).</em></p>
+</div>
+<dl class="confval">
+<dt id="confval-scheme.colors.originStatus.automatic">
+<tt class="descname">scheme.colors.originStatus.automatic</tt><a class="headerlink" href="#confval-scheme.colors.originStatus.automatic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.colors.originStatus.manual">
+<tt class="descname">scheme.colors.originStatus.manual</tt><a class="headerlink" href="#confval-scheme.colors.originStatus.manual" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.marker.lineWidth">
+<tt class="descname">scheme.marker.lineWidth</tt><a class="headerlink" href="#confval-scheme.marker.lineWidth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>color</em></p>
+<p>The line width of the marker (e.g. picks of manual picker).</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.fonts.base">
+<tt class="descname">scheme.fonts.base</tt><a class="headerlink" href="#confval-scheme.fonts.base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>font</em></p>
+<p>The general base font of an application. This overrides
+the default Qt4 application font.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.fonts.small">
+<tt class="descname">scheme.fonts.small</tt><a class="headerlink" href="#confval-scheme.fonts.small" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>font</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.fonts.normal">
+<tt class="descname">scheme.fonts.normal</tt><a class="headerlink" href="#confval-scheme.fonts.normal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>font</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.fonts.large">
+<tt class="descname">scheme.fonts.large</tt><a class="headerlink" href="#confval-scheme.fonts.large" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>font</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.fonts.highlight">
+<tt class="descname">scheme.fonts.highlight</tt><a class="headerlink" href="#confval-scheme.fonts.highlight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>font</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.fonts.heading1">
+<tt class="descname">scheme.fonts.heading1</tt><a class="headerlink" href="#confval-scheme.fonts.heading1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>font</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.fonts.heading2">
+<tt class="descname">scheme.fonts.heading2</tt><a class="headerlink" href="#confval-scheme.fonts.heading2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>font</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.fonts.heading3">
+<tt class="descname">scheme.fonts.heading3</tt><a class="headerlink" href="#confval-scheme.fonts.heading3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>font</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.fonts.cityLabels">
+<tt class="descname">scheme.fonts.cityLabels</tt><a class="headerlink" href="#confval-scheme.fonts.cityLabels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>font</em></p>
+<p><em>No description available</em></p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.map.stationSize">
+<tt class="descname">scheme.map.stationSize</tt><a class="headerlink" href="#confval-scheme.map.stationSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>The station symbol size (e.g. in scmv).
+Default is <tt class="docutils literal"><span class="pre">8</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.map.originSymbolMinSize">
+<tt class="descname">scheme.map.originSymbolMinSize</tt><a class="headerlink" href="#confval-scheme.map.originSymbolMinSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>The origin symbol minimum size. The formula to compute the
+size of the origin symbol is: 4.9*(M-1.2).
+Default is <tt class="docutils literal"><span class="pre">9</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.map.vectorLayerAntiAlias">
+<tt class="descname">scheme.map.vectorLayerAntiAlias</tt><a class="headerlink" href="#confval-scheme.map.vectorLayerAntiAlias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>Should the vector layer in the map use antialiasing?
+This improves the visual quality but decreases performance.
+Default is <tt class="docutils literal"><span class="pre">false</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.map.bilinearFilter">
+<tt class="descname">scheme.map.bilinearFilter</tt><a class="headerlink" href="#confval-scheme.map.bilinearFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>Should the map use a bilinear filter?
+The bilinear filter improves the visual quality but decreases
+performance slightly. It is only used for static map images.
+Not while dragging.
+Default is <tt class="docutils literal"><span class="pre">true</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.map.showGrid">
+<tt class="descname">scheme.map.showGrid</tt><a class="headerlink" href="#confval-scheme.map.showGrid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>Should the map display the grid?
+Default is <tt class="docutils literal"><span class="pre">true</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.map.showCities">
+<tt class="descname">scheme.map.showCities</tt><a class="headerlink" href="#confval-scheme.map.showCities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>Should the map display the cities?
+Default is <tt class="docutils literal"><span class="pre">true</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.map.showLayers">
+<tt class="descname">scheme.map.showLayers</tt><a class="headerlink" href="#confval-scheme.map.showLayers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>Should the map display the custom layers?
+Default is <tt class="docutils literal"><span class="pre">true</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.map.projection">
+<tt class="descname">scheme.map.projection</tt><a class="headerlink" href="#confval-scheme.map.projection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>SeisComP ships with the rectangular projection build in.
+Other projections may be provided through plug-ins.
+Default is <tt class="docutils literal"><span class="pre">Rectangular</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.precision.depth">
+<tt class="descname">scheme.precision.depth</tt><a class="headerlink" href="#confval-scheme.precision.depth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>The precision of depth values.
+Default is <tt class="docutils literal"><span class="pre">0</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.precision.distance">
+<tt class="descname">scheme.precision.distance</tt><a class="headerlink" href="#confval-scheme.precision.distance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>The precision of distance values.
+Default is <tt class="docutils literal"><span class="pre">1</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.precision.location">
+<tt class="descname">scheme.precision.location</tt><a class="headerlink" href="#confval-scheme.precision.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>The precision of lat/lon values.
+Default is <tt class="docutils literal"><span class="pre">2</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.precision.pickTime">
+<tt class="descname">scheme.precision.pickTime</tt><a class="headerlink" href="#confval-scheme.precision.pickTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>The precision of pick times.
+Default is <tt class="docutils literal"><span class="pre">1</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.precision.distanceInKM">
+<tt class="descname">scheme.precision.distanceInKM</tt><a class="headerlink" href="#confval-scheme.precision.distanceInKM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>Display distances in km?
+Default is <tt class="docutils literal"><span class="pre">false</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.precision.traceValues">
+<tt class="descname">scheme.precision.traceValues</tt><a class="headerlink" href="#confval-scheme.precision.traceValues" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Precision of displayed offset/amp in all trace widgets.
+Default is <tt class="docutils literal"><span class="pre">1</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-scheme.precision.rms">
+<tt class="descname">scheme.precision.rms</tt><a class="headerlink" href="#confval-scheme.precision.rms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>int</em></p>
+<p>Precision of RMS values.
+Default is <tt class="docutils literal"><span class="pre">1</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-picker.filters">
+<tt class="descname">picker.filters</tt><a class="headerlink" href="#confval-picker.filters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>list:string</em></p>
+<p>Configures the default filters selectable in manual picker.
+The entry with a leading &quot;&#64;&quot; is selected as default filter.
+Default is <tt class="docutils literal"><span class="pre">&quot;BP</span> <span class="pre">0.1</span> <span class="pre">-</span> <span class="pre">1</span> <span class="pre">Hz</span>&nbsp; <span class="pre">3rd</span> <span class="pre">order;BW(3,0.1,1)&quot;,&quot;BP</span> <span class="pre">0.1</span> <span class="pre">-</span> <span class="pre">2</span> <span class="pre">Hz</span>&nbsp; <span class="pre">3rd</span> <span class="pre">order;BW(3,0.1,2)&quot;,&quot;BP</span> <span class="pre">0.4</span> <span class="pre">-</span> <span class="pre">1</span> <span class="pre">Hz</span>&nbsp; <span class="pre">3rd</span> <span class="pre">order;BW(3,0.4,1)&quot;,&quot;&#64;BP</span> <span class="pre">0.7</span> <span class="pre">-</span> <span class="pre">2</span> <span class="pre">Hz</span>&nbsp; <span class="pre">3rd</span> <span class="pre">order;BW(3,0.7,2)&quot;&quot;BP</span> <span class="pre">1</span> <span class="pre">-</span> <span class="pre">3</span> <span class="pre">Hz</span>&nbsp; <span class="pre">3rd</span> <span class="pre">order;BW(3,1.0,3)&quot;,&quot;BP</span> <span class="pre">2</span> <span class="pre">-</span> <span class="pre">4</span> <span class="pre">Hz</span>&nbsp; <span class="pre">3rd</span> <span class="pre">order;BW(3,2.0,4)&quot;,&quot;BP</span> <span class="pre">3</span> <span class="pre">-</span> <span class="pre">6</span> <span class="pre">Hz</span>&nbsp; <span class="pre">3rd</span> <span class="pre">order;BW(3,3.0,6)&quot;,&quot;BP</span> <span class="pre">4</span> <span class="pre">-</span> <span class="pre">8</span> <span class="pre">Hz</span>&nbsp; <span class="pre">3rd</span> <span class="pre">order;BW(3,4.0,8)&quot;,&quot;BP</span> <span class="pre">1</span> <span class="pre">-</span> <span class="pre">5</span> <span class="pre">Hz</span>&nbsp; <span class="pre">3rd</span> <span class="pre">order;BW(3,1.0,5)&quot;,&quot;BP</span> <span class="pre">0.7</span> <span class="pre">-</span> <span class="pre">2</span> <span class="pre">Hz</span> <span class="pre">+</span> <span class="pre">STA/LTA(1,50);RMHP(10)-&gt;ITAPER(30)-&gt;BW(3,0.7,2)-&gt;STALTA(1,50)&quot;</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventlist.visibleColumns">
+<tt class="descname">eventlist.visibleColumns</tt><a class="headerlink" href="#confval-eventlist.visibleColumns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>list:string</em></p>
+<p>Configure the columns of the event list that are visible initially.
+The first column containing the origin time is always visible and cannot
+be hidden. Possible values are: Type, M, TP, Phases, Lat, Lon, Depth, Stat, FM, Agency, Region, ID.
+Default is <tt class="docutils literal"><span class="pre">M,</span> <span class="pre">TP,</span> <span class="pre">Phases,</span> <span class="pre">Lat,</span> <span class="pre">Lon,</span> <span class="pre">Depth,</span> <span class="pre">Stat,</span> <span class="pre">Agency,</span> <span class="pre">Region,</span> <span class="pre">ID</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventlist.regions">
+<tt class="descname">eventlist.regions</tt><a class="headerlink" href="#confval-eventlist.regions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>list:string</em></p>
+<p>Configured a list of regions that can be used as filter of
+the result set.</p>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>eventlist.region.$name.*</strong>
+<em>Defines a rectangular region that can be used as a result</em>
+<em>set filter on client side.</em>
+$name is a placeholder for the name to be used and needs to be added to <a class="reference internal" href="#confval-eventlist.regions"><tt class="xref std std-confval docutils literal"><span class="pre">eventlist.regions</span></tt></a> to become active.</p>
+<div class="last highlight-sh"><div class="highlight"><pre>eventlist.regions <span class="o">=</span> a,b
+eventlist.region.a.value1 <span class="o">=</span> ...
+eventlist.region.b.value1 <span class="o">=</span> ...
+<span class="c"># c is not active because it has not been added</span>
+<span class="c"># to the list of eventlist.regions</span>
+eventlist.region.c.value1 <span class="o">=</span> ...
+</pre></div>
+</div>
+</div>
+<dl class="confval">
+<dt id="confval-eventlist.region.$name.name">
+<tt class="descname">eventlist.region.$name.name</tt><a class="headerlink" href="#confval-eventlist.region.$name.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Defines the name of the region that shows up in the
+listbox.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventlist.region.$name.rect">
+<tt class="descname">eventlist.region.$name.rect</tt><a class="headerlink" href="#confval-eventlist.region.$name.rect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>list:double</em></p>
+<p>Defines a rectangular region with a list of 4 values:
+latmin, lonmin, latmax, lonmax.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventlist.filter.agencies.label">
+<tt class="descname">eventlist.filter.agencies.label</tt><a class="headerlink" href="#confval-eventlist.filter.agencies.label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Defines the text of the option &quot;Show only own events&quot;.
+Default is <tt class="docutils literal"><span class="pre">Show</span> <span class="pre">only</span> <span class="pre">own</span> <span class="pre">events</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventlist.filter.agencies.whitelist">
+<tt class="descname">eventlist.filter.agencies.whitelist</tt><a class="headerlink" href="#confval-eventlist.filter.agencies.whitelist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>list:string</em></p>
+<p>Sets a list of preferred agencies. Events from preferred
+agencies are defined as &quot;own&quot; events.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventlist.filter.agencies.type">
+<tt class="descname">eventlist.filter.agencies.type</tt><a class="headerlink" href="#confval-eventlist.filter.agencies.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Sets the type of the filter. If type is &quot;events&quot; the agency
+of the preferred origin of the event is checked.
+If type is &quot;origins&quot; the agency of all origins of
+an event is checked and if at least one origins agency is part
+of the whitelist it will pass the filter. Or in other words,
+the event is hidden if no origin is from a preferred agency.
+Default is <tt class="docutils literal"><span class="pre">events</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventlist.filter.agencies.enabled">
+<tt class="descname">eventlist.filter.agencies.enabled</tt><a class="headerlink" href="#confval-eventlist.filter.agencies.enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>Sets the default state of the &quot;Show only own events&quot;
+option.
+Default is <tt class="docutils literal"><span class="pre">false</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventlist.filter.types.label">
+<tt class="descname">eventlist.filter.types.label</tt><a class="headerlink" href="#confval-eventlist.filter.types.label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>string</em></p>
+<p>Defines the text of the option &quot;Hide other/fake events&quot;.
+Default is <tt class="docutils literal"><span class="pre">Hide</span> <span class="pre">other/fake</span> <span class="pre">events</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventlist.filter.types.blacklist">
+<tt class="descname">eventlist.filter.types.blacklist</tt><a class="headerlink" href="#confval-eventlist.filter.types.blacklist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>list:string</em></p>
+<p>List of event type to be hidden if the &quot;Hide other/fake events&quot;
+option is ticked.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventlist.filter.types.enabled">
+<tt class="descname">eventlist.filter.types.enabled</tt><a class="headerlink" href="#confval-eventlist.filter.types.enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>Sets the default state of the &quot;Hide other/fake events&quot;
+option.
+Default is <tt class="docutils literal"><span class="pre">false</span></tt>.</p>
+</dd></dl>
+
+<dl class="confval">
+<dt id="confval-eventlist.filter.regions.enabled">
+<tt class="descname">eventlist.filter.regions.enabled</tt><a class="headerlink" href="#confval-eventlist.filter.regions.enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type: <em>boolean</em></p>
+<p>Sets the default state of the &quot;Hide events outside&quot;
+option.
+Default is <tt class="docutils literal"><span class="pre">false</span></tt>.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="global_mlh.html" title="MLh"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="global_hypo71.html" title="Hypo71"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/extensions.html" >Extensions</a> &raquo;</li>
+          <li><a href="../toc/extensions/global.html" >global</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

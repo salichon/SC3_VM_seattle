@@ -1,0 +1,281 @@
+.. highlight:: rst
+
+.. _scdispatch:
+
+##########
+scdispatch
+##########
+
+**Reads objects (event, origin, etc) from a SC3ML file and sends the objects
+to the messaging system.**
+
+
+Description
+===========
+
+Examples
+========
+
+#. Send all objects from a SC3ML file. The default behavior is to add:
+
+   .. code-block:: sh
+
+      scdispatch -i test.xml
+
+#. Send an update:
+
+   .. code-block:: sh
+
+      scdispatch -i test.xml -O update
+
+
+#. Remove the objects:
+
+   .. code-block:: sh
+
+      scdispatch -i test.xml -O remove
+
+
+#. Subsets of SC3ML Objects
+
+   It can be useful to import a subset of QuakeML objects, e.g. Origins from other
+   agencies and then allow :ref:`scevent` to associate them to existing
+   events (and possibly prefer them based on the rules in scevent) or create new
+   events for the origins. If the event objects from a SC3ML file are not required
+   to be sent to the messaging then either they should be removed (e.g. using XSLT)
+   and all the remaining objects in the file added:
+
+   .. code-block:: sh
+
+      scdispatch -i test.xml
+
+   or the event objects can be left out of the routing table, e.g.
+
+   .. code-block:: sh
+
+      scdispatch -i test.xml \
+                 --routingtable Pick:PICK, \
+                                Arrival:ARRIVAL,Amplitude:AMPLITUDE, \
+                                Origin:LOCATION,StationMagnitude:MAGNITUDE, \
+                                StationMagnitudeContribution:MAGNITUDE, \
+                                Magnitude:MAGNITUDE
+
+   .. note:: The routing table approach is slower, scdispatch still has to try
+      to send to the invalid group for each object. It seems that it should be
+      possible to route to Event:NULL or some other non used group but this seems
+      to always result in another Event (the one in the source SC3ML) being sent
+      and loaded. Is this a bug?
+
+
+#. Testing
+
+   For testing it is useful to watch the results of dispatch with :ref:`scolv` or
+   :ref:`scxmldump`. It is also useful to clean the database and logs to remove
+   objects from persistent storage to allow repeated reloading of a file.
+
+   .. note:: The following will clear all events from the database and any other
+      other object persistence. Modify the mysql command to suit your db setup.
+
+   .. code-block:: sh
+
+      mysql -u root --password='my$q1' -e "DROP DATABASE IF EXISTS seiscomp3; \
+        CREATE DATABASE seiscomp3 CHARACTER SET utf8 COLLATE utf8_bin; \
+        GRANT ALL ON seiscomp3.* TO 'sysop'@'localhost' IDENTIFIED BY 'sysop'; \
+        USE seiscomp3;source seiscomp3/trunk/share/db/mysql.sql;"
+
+      seiscomp start
+
+
+
+Configuration
+=============
+
+| :file:`etc/defaults/global.cfg`
+| :file:`etc/defaults/scdispatch.cfg`
+| :file:`etc/global.cfg`
+| :file:`etc/scdispatch.cfg`
+| :file:`~/.seiscomp3/global.cfg`
+| :file:`~/.seiscomp3/scdispatch.cfg`
+
+scdispatch inherits :ref:`global options<global-configuration>`.
+
+
+
+
+Command-line
+============
+
+.. program:: scdispatch
+
+
+Generic
+-------
+
+.. option:: -h, --help
+
+   show help message.
+
+.. option:: -V, --version
+
+   show version information
+
+.. option:: --config-file arg
+
+   Use alternative configuration file. When this option is used
+   the loading of all stages is disabled. Only the given configuration
+   file is parsed and used. To use another name for the configuration
+   create a symbolic link of the application or copy it, eg scautopick \-> scautopick2.
+
+.. option:: --plugins arg
+
+   Load given plugins.
+
+.. option:: -D, --daemon
+
+   Run as daemon. This means the application will fork itself and
+   doesn't need to be started with \&.
+
+.. option:: --auto-shutdown arg
+
+   Enable\/disable self\-shutdown because a master module shutdown. This only
+   works when messaging is enabled and the master module sends a shutdown
+   message \(enabled with \-\-start\-stop\-msg for the master module\).
+
+.. option:: --shutdown-master-module arg
+
+   Sets the name of the master\-module used for auto\-shutdown. This
+   is the application name of the module actually started. If symlinks
+   are used then it is the name of the symlinked application.
+
+.. option:: --shutdown-master-username arg
+
+   Sets the name of the master\-username of the messaging used for
+   auto\-shutdown. If \"shutdown\-master\-module\" is given as well this
+   parameter is ignored.
+
+
+Verbosity
+---------
+
+.. option:: --verbosity arg
+
+   Verbosity level [0..4]. 0:quiet, 1:error, 2:warning, 3:info, 4:debug
+
+.. option:: -v, --v
+
+   Increase verbosity level \(may be repeated, eg. \-vv\)
+
+.. option:: -q, --quiet
+
+   Quiet mode: no logging output
+
+.. option:: --component arg
+
+   Limits the logging to a certain component. This option can be given more than once.
+
+.. option:: -s, --syslog
+
+   Use syslog logging back end. The output usually goes to \/var\/lib\/messages.
+
+.. option:: -l, --lockfile arg
+
+   Path to lock file.
+
+.. option:: --console arg
+
+   Send log output to stdout.
+
+.. option:: --debug
+
+   Debug mode: \-\-verbosity\=4 \-\-console\=1
+
+.. option:: --log-file arg
+
+   Use alternative log file.
+
+
+Messaging
+---------
+
+.. option:: -u, --user arg
+
+   Overrides configuration parameter :confval:`connection.username`.
+
+.. option:: -H, --host arg
+
+   Overrides configuration parameter :confval:`connection.server`.
+
+.. option:: -t, --timeout arg
+
+   Overrides configuration parameter :confval:`connection.timeout`.
+
+.. option:: -g, --primary-group arg
+
+   Overrides configuration parameter :confval:`connection.primaryGroup`.
+
+.. option:: -S, --subscribe-group arg
+
+   A group to subscribe to. This option can be given more than once.
+
+.. option:: --encoding arg
+
+   Overrides configuration parameter :confval:`connection.encoding`.
+
+.. option:: --start-stop-msg arg
+
+   Sets sending of a start\- and a stop message.
+
+
+Database
+--------
+
+.. option:: --db-driver-list
+
+   List all supported database drivers.
+
+.. option:: -d, --database arg
+
+   The database connection string, format: service:\/\/user:pwd\@host\/database.
+   \"service\" is the name of the database driver which can be
+   queried with \"\-\-db\-driver\-list\".
+
+.. option:: --config-module arg
+
+   The configmodule to use.
+
+.. option:: --inventory-db arg
+
+   Load the inventory from the given database or file, format: [service:\/\/]location
+
+.. option:: --db-disable
+
+   Do not use the database at all
+
+
+Dispatch
+--------
+
+.. option:: -i, --input flag
+
+   File to dispatch to messaging.
+
+.. option:: -O, --operation flag
+
+   Notifier operation to use if not given: add, update or remove. If the
+   XML contains notifier objects then this operation is used. If just
+   plain objects are given, the operation needs to be specified. The
+   default is \"add\".
+
+.. option:: --routingtable flag
+
+   Specify routing table as comma separated list of object:group pairs,
+   e.g. \"Origin:LOCATION,Arrival:ARRIVAL\".
+
+.. option:: --print-objects
+
+   Print names of routable objects.
+
+.. option:: --test
+
+   Test mode. Does not send any object.
+

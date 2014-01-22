@@ -1,0 +1,263 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>arclinktool &mdash; SeisComP3 Seattle documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Seattle',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="SeisComP3 Seattle documentation" href="../index.html" />
+    <link rel="up" title="Utilities" href="../toc/utilities.html" />
+    <link rel="next" title="fdsnws" href="fdsnws.html" />
+    <link rel="prev" title="arclink_fetch" href="arclink_fetch.html" />
+    <link rel="stylesheet" href="../_static/seiscomp3.css" type="text/css" />
+
+  </head>
+  <body>
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+<a href="http://www.seiscomp3.org"><img src="../_static/SeisComP3.png" border="0" alt="SeisComP3"/></a>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="fdsnws.html" title="fdsnws"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="arclink_fetch.html" title="arclink_fetch"
+             accesskey="P">previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/utilities.html" accesskey="U">Utilities</a> &raquo;</li> 
+      </ul>
+    </div>
+
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">arclinktool</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#command-line">Command-line</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="arclink_fetch.html"
+                        title="previous chapter">arclink_fetch</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="fdsnws.html"
+                        title="next chapter">fdsnws</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/apps/arclinktool.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="arclinktool">
+<span id="id1"></span><h1>arclinktool<a class="headerlink" href="#arclinktool" title="Permalink to this headline">¶</a></h1>
+<p><strong>ArcLink CLI client.</strong></p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>arclinktool is a simple client for requesting information to an ArcLink servers.
+It is possible to send all types of requests directly to a specified server, check
+status, download or purge requests. You can request routing information but the
+tool itself does not resolve the routing automatically before sending the requests.</p>
+<p>An ArcLink request has the following syntax:</p>
+<div class="highlight-sh"><div class="highlight"><pre>REQUEST &lt;TYPE&gt; &lt;ATTRIBUTES&gt;
+&lt;TimeSpam line&gt;
+&lt;TimeSpam line&gt;
+&lt;TimeSpam line&gt;
+END
+</pre></div>
+</div>
+<p>Where TYPE is one of WAVEFORM, INVENTORY, RESPONSE, ROUTING, QC.</p>
+<p>And a Timespam line contains:</p>
+<div class="highlight-sh"><div class="highlight"><pre>YYYY,MM,DD,HH,MM,SS YYYY,MM,DD,HH,MM,SS &lt;Network Code&gt; <span class="o">[</span>&lt;Station Code&gt; <span class="o">[</span>&lt;Channel Code&gt; <span class="o">[</span>Location Code<span class="o">]]]</span>
+</pre></div>
+</div>
+<p>where the network/station/channel/location codes can contains wildcards or can
+be empty depending on the request type.</p>
+<p>A complete description of the request format for the ArcLink protocol can be found at the
+<a class="reference internal" href="../base/arclink-protocol.html#arclink-protocol"><em>ArcLink protocol</em></a> page.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>Example of a request file named &quot;req.txt&quot;:</p>
+<div class="highlight-sh"><div class="highlight"><pre>REQUEST WAVEFORM <span class="nv">format</span><span class="o">=</span>MSEED
+2008,06,04,06,00,00 2008,06,04,06,10,00 GE CART BHZ .
+2008,06,04,06,00,00 2008,06,04,06,10,00 GE MAHO BHZ .
+END
+</pre></div>
+</div>
+<p>Submit the request to the ArcLink server.</p>
+<div class="highlight-sh"><div class="highlight"><pre>&gt; arclinktool -u andres -r req.txt localhost:18001
+Connected to ArcLink v0.4 <span class="o">(</span>2006.276<span class="o">)</span> at GITEWS
+Request successfully submitted
+Request ID: 91
+</pre></div>
+</div>
+<p>Check the status.</p>
+<div class="highlight-sh"><div class="highlight"><pre>&gt; arclinktool -u andres -s 91 localhost:18001
+Connected to ArcLink v0.4 <span class="o">(</span>2006.276<span class="o">)</span> at GITEWS
+Request ID: 91, Type: WAVEFORM, Args: <span class="nv">format</span><span class="o">=</span>MSEED
+Status: READY, Size: 37376, Info:
+Volume ID: <span class="nb">local</span>, Status: OK, Size: 37376, Info:
+Request: 2008,06,04,06,00,00 2008,06,04,06,10,00 GE CART BHZ .
+Status: OK, Size: 18432, Info:
+Request: 2008,06,04,06,00,00 2008,06,04,06,10,00 GE MAHO BHZ .
+Status: OK, Size: 18944, Info:
+</pre></div>
+</div>
+<p>Download data.</p>
+<div class="highlight-sh"><div class="highlight"><pre>&gt; arclinktool -u andres -d 91 -o data.mseed localhost:18001
+Connected to ArcLink v0.4 <span class="o">(</span>2006.276<span class="o">)</span> at GITEWS
+Download successful
+</pre></div>
+</div>
+<p>Delete request from server.</p>
+<div class="highlight-sh"><div class="highlight"><pre>&gt; arclinktool -u andres -p 91 localhost:18001
+Connected to ArcLink v0.4 <span class="o">(</span>2006.276<span class="o">)</span> at GITEWS
+Product successfully deleted
+</pre></div>
+</div>
+</div>
+<div class="section" id="command-line">
+<h2>Command-line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h2>
+<dl class="option">
+<dt id="cmdoption-arclinktool--version">
+<tt class="descname">--version</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-arclinktool--version" title="Permalink to this definition">¶</a></dt>
+<dd><p>show program’s version number and exit</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arclinktool-h">
+<tt class="descname">-h</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--help</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-arclinktool-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>show a help message and exit</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arclinktool--u">
+<tt class="descname">--u</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--user</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-arclinktool--u" title="Permalink to this definition">¶</a></dt>
+<dd><p>user's e-mail address</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arclinktool--i">
+<tt class="descname">--i</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--institution</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-arclinktool--i" title="Permalink to this definition">¶</a></dt>
+<dd><p>user's institution</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arclinktool--o">
+<tt class="descname">--o</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--output-file</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-arclinktool--o" title="Permalink to this definition">¶</a></dt>
+<dd><p>file where downloaded data is written</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arclinktool--w">
+<tt class="descname">--w</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--SSLpassword</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-arclinktool--w" title="Permalink to this definition">¶</a></dt>
+<dd><p>password to decrypt the received file</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arclinktool--r">
+<tt class="descname">--r</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--submit</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-arclinktool--r" title="Permalink to this definition">¶</a></dt>
+<dd><p>submit request</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arclinktool--s">
+<tt class="descname">--s</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--status</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-arclinktool--s" title="Permalink to this definition">¶</a></dt>
+<dd><p>check status</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arclinktool--d">
+<tt class="descname">--d</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--download</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-arclinktool--d" title="Permalink to this definition">¶</a></dt>
+<dd><p>download product, returns an error when the product is not ready to download, in this case you should use the -b [block mode] option toguether with the -d option or check the request status with the -s option prior to download.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arclinktool--b">
+<tt class="descname">--b</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--blocking</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-arclinktool--b" title="Permalink to this definition">¶</a></dt>
+<dd><p>use blocking download. On the Arclink protocol blocking download commands can be issued even when the request is not ready for download yet, in this case the connection will hang until the request is ready and the download will start.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arclinktool--p">
+<tt class="descname">--p</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--purge</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-arclinktool--p" title="Permalink to this definition">¶</a></dt>
+<dd><p>delete product from the server</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="fdsnws.html" title="fdsnws"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="arclink_fetch.html" title="arclink_fetch"
+             >previous</a> |</li>
+       <li><a href="../index.html">Home </a> &raquo;</li>
+
+          <li><a href="../toc/utilities.html" >Utilities</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+     Release <b>Seattle</b> version <b>2014.016</b>
+        &copy; Copyright 2014, GFZ Potsdam, gempa GmbH.
+    </div>
+  </body>
+</html>

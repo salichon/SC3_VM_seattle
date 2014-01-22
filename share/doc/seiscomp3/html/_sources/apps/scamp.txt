@@ -1,0 +1,263 @@
+.. highlight:: rst
+
+.. _scamp:
+
+#####
+scamp
+#####
+
+**Calculates amplitudes on basis of incoming origins and the associated picks.**
+
+
+Description
+===========
+
+scamp measures several different kinds of amplitudes from waveform data.
+It listens for origins and measures amplitudes in time windows determined
+from the origin. The resulting amplitude objects are sent to the "AMPLITUDE"
+messaging group. scamp is the counterpart of scmag. Usually, all
+amplitudes are computed at once by scamp and then published.
+Only very rarely an amplitude needs to be recomputed if the location of an
+origin changes significantly. The amplitude can be reused by scmag, making
+magnitude computation and update efficient. Currently, the automatic picker
+in SeisComP3, scautopick, also measures a small set of amplitudes
+(namely "snr" and "mb", the signal-to-noise ratio and the amplitude used in
+mb magnitude computation, respectively) for each automatic pick in fixed
+time windows. If there already exists an amplitude, e.g. a previously determined
+one by scautopick, scamp will not measure it again for the respective stream.
+
+Amplitudes are also needed, however, for manual picks. scamp does this as well.
+Picks with weight smaller than 0.5 in the corresponding Origin are discarded.
+
+Amplitudes for the following magnitudes are currently computed:
+
+MLv
+   Local magnitude calculated on the vertical component using a correction term to fit with the standard ML.
+
+MLh
+   Local amplitude calculated on the horizontals.
+
+mb
+   Narrow band body wave magnitude using a third order Butterworth filter with corner frequencies of 0.7 and 2.0 Hz. Note that this amplitude is also computed by scautopick for all automatic picks.
+
+mB
+   Broad band body wave magnitude.
+
+Mw(mB)
+   Estimation of the moment magnitude Mw based on mB.
+
+Note that in order to be used by scmag, the input amplitude names for the
+various magnitude types must match exactly.
+
+
+
+Configuration
+=============
+
+| :file:`etc/defaults/global.cfg`
+| :file:`etc/defaults/scamp.cfg`
+| :file:`etc/global.cfg`
+| :file:`etc/scamp.cfg`
+| :file:`~/.seiscomp3/global.cfg`
+| :file:`~/.seiscomp3/scamp.cfg`
+
+scamp inherits :ref:`global options<global-configuration>`.
+
+
+
+.. confval:: amplitudes
+
+   Type: *list:string*
+
+   Definition of amplitude types to be calculated.
+   Default is ``MLv, mb, mB, Mwp``.
+
+
+Command-line
+============
+
+.. program:: scamp
+
+
+Generic
+-------
+
+.. option:: -h, --help
+
+   show help message.
+
+.. option:: -V, --version
+
+   show version information
+
+.. option:: --config-file arg
+
+   Use alternative configuration file. When this option is used
+   the loading of all stages is disabled. Only the given configuration
+   file is parsed and used. To use another name for the configuration
+   create a symbolic link of the application or copy it, eg scautopick \-> scautopick2.
+
+.. option:: --plugins arg
+
+   Load given plugins.
+
+.. option:: -D, --daemon
+
+   Run as daemon. This means the application will fork itself and
+   doesn't need to be started with \&.
+
+.. option:: --auto-shutdown arg
+
+   Enable\/disable self\-shutdown because a master module shutdown. This only
+   works when messaging is enabled and the master module sends a shutdown
+   message \(enabled with \-\-start\-stop\-msg for the master module\).
+
+.. option:: --shutdown-master-module arg
+
+   Sets the name of the master\-module used for auto\-shutdown. This
+   is the application name of the module actually started. If symlinks
+   are used then it is the name of the symlinked application.
+
+.. option:: --shutdown-master-username arg
+
+   Sets the name of the master\-username of the messaging used for
+   auto\-shutdown. If \"shutdown\-master\-module\" is given as well this
+   parameter is ignored.
+
+.. option:: -x, --expiry time
+
+   Time span in hours after which objects expire.
+
+.. option:: -O, --origin-id publicID
+
+   OriginID to calculate amplitudes for and exit.
+
+.. option:: --dump-records
+
+   Dumps the filtered traces to ASCII when using \-O.
+
+
+Verbosity
+---------
+
+.. option:: --verbosity arg
+
+   Verbosity level [0..4]. 0:quiet, 1:error, 2:warning, 3:info, 4:debug
+
+.. option:: -v, --v
+
+   Increase verbosity level \(may be repeated, eg. \-vv\)
+
+.. option:: -q, --quiet
+
+   Quiet mode: no logging output
+
+.. option:: --component arg
+
+   Limits the logging to a certain component. This option can be given more than once.
+
+.. option:: -s, --syslog
+
+   Use syslog logging back end. The output usually goes to \/var\/lib\/messages.
+
+.. option:: -l, --lockfile arg
+
+   Path to lock file.
+
+.. option:: --console arg
+
+   Send log output to stdout.
+
+.. option:: --debug
+
+   Debug mode: \-\-verbosity\=4 \-\-console\=1
+
+.. option:: --log-file arg
+
+   Use alternative log file.
+
+
+Messaging
+---------
+
+.. option:: -u, --user arg
+
+   Overrides configuration parameter :confval:`connection.username`.
+
+.. option:: -H, --host arg
+
+   Overrides configuration parameter :confval:`connection.server`.
+
+.. option:: -t, --timeout arg
+
+   Overrides configuration parameter :confval:`connection.timeout`.
+
+.. option:: -g, --primary-group arg
+
+   Overrides configuration parameter :confval:`connection.primaryGroup`.
+
+.. option:: -S, --subscribe-group arg
+
+   A group to subscribe to. This option can be given more than once.
+
+.. option:: --encoding arg
+
+   Overrides configuration parameter :confval:`connection.encoding`.
+
+.. option:: --start-stop-msg arg
+
+   Sets sending of a start\- and a stop message.
+
+.. option:: --test
+
+   Test mode where no messages are sent.
+
+
+Database
+--------
+
+.. option:: --db-driver-list
+
+   List all supported database drivers.
+
+.. option:: -d, --database arg
+
+   The database connection string, format: service:\/\/user:pwd\@host\/database.
+   \"service\" is the name of the database driver which can be
+   queried with \"\-\-db\-driver\-list\".
+
+.. option:: --config-module arg
+
+   The configmodule to use.
+
+.. option:: --inventory-db arg
+
+   Load the inventory from the given database or file, format: [service:\/\/]location
+
+.. option:: --db-disable
+
+   Do not use the database at all
+
+
+Records
+-------
+
+.. option:: --record-driver-list
+
+   List all supported record stream drivers
+
+.. option:: -I, --record-url arg
+
+   The recordstream source URL, format: [service:\/\/]location[#type].
+   \"service\" is the name of the recordstream driver which can be
+   queried with \"\-\-record\-driver\-list\". If \"service\"
+   is not given \"file:\/\/\" is used.
+
+.. option:: --record-file arg
+
+   Specify a file as record source.
+
+.. option:: --record-type arg
+
+   Specify a type for the records being read.
+

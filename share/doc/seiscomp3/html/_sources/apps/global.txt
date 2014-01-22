@@ -1,0 +1,2461 @@
+.. _global:
+
+*************
+Configuration
+*************
+
+The SeisComP3 configuration uses a unified schema to configure modules.
+Modules which use  the SeisComP3 libraries can read this configuration
+directly and share global configuration options like messaging connections,
+database configurations, logging and much more.
+There are still some modules that do not use
+the libraries and are called **standalone** modules as :ref:`seedLink`, :ref:`arclink`
+or :ref:`slarchive`. They need wrappers to generate their native configuration when
+:command:`seiscomp update-config` is run.
+
+Though it is easy to create the configuration by directly editing the configuration
+files, it is even more convenient to use a configurator.
+SeisComP3 ships with a graphical
+configurator and management tool (:ref:`scconfig`) which makes it easy to maintain
+module configurations and station bindings even for large networks. It has built-in
+functionality to check the state of all registered modules and to start and stop them.
+
+The configuration is divided into three parts: stations, bindings and modules.
+
+Configuration files
+===================
+
+The :term:`trunk` configuration files are simple text files where each line
+is a name-value pair.
+
+.. warning::
+
+   In contrast to previous versions of SeisComP3 the parameter names are now
+   case-sensitive. To check configurations from previous versions regarding
+   case-sensitivity, :program:`scchkcfg` can be used.
+
+A simple example to assign a parameter "skyColor" the value "blue":
+
+.. code-block:: sh
+
+   skyColor = blue
+
+Everything following an un-escaped '#' (hash) is a comment and ignored.
+Blank lines and white spaces are ignored by the parser as well unless
+quoted or escaped.
+
+.. code-block:: sh
+
+   skyColor = yellow  # This is a comment
+
+   # The preceding empty line is ignored and previous setting "yellow"
+   # is replaced by "blue":
+   skyColor = blue
+
+Later assignments overwrite earlier ones so the order of lines in the
+configuration file is important. The file is parsed top-down.
+
+Values can be either scalar values or lists. List items are separated by commas.
+
+.. code-block:: sh
+
+   # This is a list definition
+   rainbowColors = red, orange, yellow, green, blue, indigo, violet
+
+If a value needs to include a comma, white space or any other interpretable
+character it can either be escaped with backslash (\\) or quoted using double
+quotes ("). White space is removed in unquoted and un-escaped values.
+
+.. code-block:: sh
+
+   # This is a comment
+
+   # The following list definitions have 2 items: 1,2 and 3,4
+   # quoted values
+   tuples = "1,2", "3,4"
+   # escaped values
+   tuples = 1\,2, 3\,4
+
+Values can extend over multiple lines if a backslash is appended to each line
+
+.. code-block:: sh
+
+   # Multi-line string
+   text = "Hello world. "\
+          "This text spawns 3 lines in the configuration file "\
+          "but only one line in the value."
+
+   # Multi-line list definition
+   rainbowColors = red,\
+                   orange,\
+                   yellow,\
+                   green, blue,\
+                   indigo, violet
+
+Environment or preceding configuration variables can be used with ``${var}``.
+
+.. code-block:: sh
+
+   homeDir = ${HOME}
+   myPath = ${homeDir}/test
+
+.. note::
+
+   Values are not type-checked. Type checking is part of the application logic
+   and will be handled there. The configuration file parser will not raise an
+   error if a string is assigned to a parameter that is expected to be an integer.
+
+
+.. _global-stations:
+
+Stations
+========
+
+Station meta-data is a fundamental requirement for a seismic processing system and
+for SeisComP3. Older version used key files to configure available networks and stations.
+Because the support of response meta-data was very limited, tools were build to add
+this functionality. In this version the concept of key files for station meta-data has
+been completely removed from the system. SeisComP3 only handles station meta-data in its
+own XML format called **inventory ML**.
+The task of supporting old key files, dataless SEED and other formats has been out-sourced to external applications (see :ref:`config-fig-inventory-sync`).
+
+.. _config-fig-inventory-sync:
+
+.. figure:: media/config/inventory-sync.*
+   :align: center
+
+   Inventory synchronization is a two-stage process:
+
+   \(1\) convert external formats into inventory ML, then
+   \(2\) synchronize inventory pool with the database
+
+External formats are first converted into inventory ML,
+and then merged and synchronized with the database using
+:program:`seiscomp update-config`.
+All station meta-data are stored in :file:`etc/inventory`
+and can be organized as needed. Either one file per network, a file containing the complete inventory
+or one file for all instruments and one file per station. The update script loads the existing inventory
+from the database and merges each file in :file:`etc/inventory`. Finally it removes all unreferenced
+objects and sends all updates to the database. 
+
+The SeisComP3 configuration does not deal with station meta-data anymore. It only configures parameters
+for modules and module-station associations. The management of the inventory can and should be handled
+by external tools.
+
+
+Bindings
+========
+
+A :term:`binding` is always connected to a :term:`module`. The binding configuration directory
+for each module is :file:`etc/key/modulename`. It contains either station bindings or :term:`profiles<profile>`.
+
+Bindings are configured and stored in :file:`etc/key`.
+
+.. _config-fig-binding:
+
+.. figure:: media/config/binding.*
+   :align: center
+
+   Binding
+
+   A binding holds the configuration how a station is used in a module.
+
+To bind a station (identified by net_sta) to a module with a set of parameters the first step is to
+register a module for that station. For that a station key file needs to be created or modified.
+
+.. note::
+
+   To reflect the old framework, a station binding is prefixed with *station_* and a profile with *profile_*.
+
+Let's suppose we have two stations, GE.MORC and GE.UGM and both stations should be configured for
+SeedLink. Two station key files need to be created (or modified later): :file:`etc/key/station_GE_MORC` and
+:file:`etc/key/station_GE_UGM`.
+
+Both files must contain a line with the module the station is configured for, e.g.:
+
+.. code-block:: sh
+
+   seedlink
+
+which uses the binding at :file:`etc/key/seedlink/station_GE_UGM`. When a profile should
+be used, append it to the module with a colon.
+
+.. code-block:: sh
+
+   seedlink:geofon
+
+Then the binding at :file:`etc/key/seedlink/profile_geofon` is read for station GE.UGM.
+To list all modules a particular station is configured for is very simple by printing the content
+of the station key file:
+
+.. code-block:: sh
+
+   $ cat etc/key/station_GE_MORC
+   seedlink:geofon
+   global:BH
+   scautopick
+
+The other way round is a bit more complicated but at least all information is
+there.
+To show all
+stations configured for SeedLink could be done this way:
+
+.. code-block:: sh
+
+   $ for i in `find etc/key -type f -maxdepth 1 -name "station_*_*"`; do
+   > egrep -q '^seedlink(:.*){0,1}$' $i && echo $i;
+   > done
+   etc/key/station_GE_MORC
+   etc/key/station_GE_UGM
+
+
+Storage
+-------
+
+Where are bindings stored? For standalone modules: nobody knows.
+It is the task of a standalone module's
+initialization script to convert the bindings to the module's native configuration.
+
+For all :term:`trunk` (non-standalone) modules the bindings are written to the
+SeisComP3 database following the configuration schema. This is done when
+:program:`seiscomp update-config` is called.
+Each module reads the configuration database and fetches all station bindings registered
+for that module. The database schema used consists of five tables:
+ConfigModule, ConfigStation, Setup, ParameterSet and Parameter.
+
+.. _config-fig-configdb-schema:
+
+.. figure:: media/config/configdb-schema.*
+   :align: center
+
+   Configuration database schema
+
+Now an example is shown how the tables are actually linked and how the station bindings are
+finally stored in the database. To illustrate the contents of the objects, the XML representation
+is used.
+
+.. code-block:: xml
+
+   <Config>
+     <module publicID="Config/trunk" name="trunk" enabled="true">
+       ...
+     </module>
+   </Config>
+
+A ConfigModule with publicID *Config/trunk* is created with name *trunk*. This
+ConfigModule is managed by the global initialization script (:file:`etc/init/trunk.py`)
+and will be synchronized with configured bindings of all trunk modules. The
+ConfigModule trunk is the one that is actually used by all configurations unless
+configured otherwise with:
+
+.. code-block:: sh
+
+   scapp --config-module test
+
+Here :program:`scapp` would read ConfigModule *test*. Because a ConfigModule *test*
+is not managed by :program:`seiscomp update-config` it is up to the user to create
+it.
+
+
+For each station that has at least one binding, a ConfigStation object is
+attached to the ConfigModule:
+
+.. code-block:: xml
+
+   <Config>
+     <module publicID="Config/trunk" name="trunk" enabled="true">
+       <station publicID="Config/trunk/GE/UGM"
+                networkCode="GE" stationCode="UGM" enabled="true">
+         ...
+       </station>
+     </module>
+   </Config>
+
+and finally one Setup per module:
+
+.. code-block:: xml
+
+   <Config>
+     <module publicID="Config/trunk" name="trunk" enabled="true">
+       <station publicID="Config/trunk/GE/UGM"
+                networkCode="GE" stationCode="UGM" enabled="true">
+         <setup name="default" enabled="true">
+           <parameterSetID>
+             ParameterSet/trunk/Station/GE/UGM/default
+           </parameterSetID>
+         </setup>
+         <setup name="scautopick" enabled="true">
+           <parameterSetID>
+             ParameterSet/trunk/Station/GE/UGM/scautopick
+           </parameterSetID>
+         </setup>
+       </station>
+     </module>
+   </Config>
+
+
+Here two setups have been created: *default* (which is a special case for
+module *global* to be backwards compatible) and *scautopick* where each
+refers to a ParameterSet by its publicID. The next XML fragment shows
+the ParameterSet referred by the scautopick setup of station GE.UGM:
+
+.. code-block:: xml
+
+   <Config>
+     <parameterSet publicID="ParameterSet/trunk/Station/GE/UGM/scautopick"
+                   created="...">
+       <baseID>ParameterSet/trunk/Station/GE/UGM/default</baseID>
+       <moduleID>Config/trunk</moduleID>
+       <parameter publicID="...">
+         <name>timeCorr</name>
+         <value>-0.8</value>
+       </parameter>
+       <parameter publicID="...">
+         <name>detecFilter</name>
+         <value>
+           RMHP(10)&gt;&gt;ITAPER(30)&gt;&gt;BW(4,0.7,2)&gt;&gt;STALTA(2,80)
+         </value>
+       </parameter>
+       <parameter publicID="...">
+         <name>trigOff</name>
+         <value>1.5</value>
+       </parameter>
+       <parameter publicID="...">
+         <name>trigOn</name>
+         <value>3</value>
+       </parameter>
+     </parameterSet>
+   </Config>
+
+The mapping to the binding configuration files is 1:1. Each parameter in
+the configuration file is exactly one parameter in the database and their
+names are matching exactly.
+
+The concept of global bindings which are specialized for each application is
+reflected by the *baseID* of the ParameterSet which points to setup *default*
+of station GE.UGM:
+
+.. code-block:: xml
+
+   <Config>
+     <parameterSet publicID="ParameterSet/trunk/Station/GE/UGM/default"
+                   created="...">
+       <moduleID>Config/trunk</moduleID>
+       <parameter publicID="...">
+         <name>detecStream</name>
+         <value>BH</value>
+       </parameter>
+     </parameterSet>
+   </Config>
+
+This ends up with a final configuration for scautopick and station GE.UGM:
+
+===========   ==================
+Name          Value
+===========   ==================
+detecStream   BH
+timeCorr      -0.8
+detecFilter   RMHP(10)>>ITAPER(30)>>BW(4,0.7,2)>>STALTA(2,80)
+trigOff       1.5
+trigOn        3
+===========   ==================
+
+which is the concatenation of the two files :file:`etc/key/global/station_GE_UGM` and :file:`etc/key/scautopick/station_GE_UGM`.
+
+
+.. _global_modules:
+
+Modules
+=======
+
+A :term:`module` is configured by its configuration files either to be used directly or to
+generate its native configuration. Modules that need to convert the configuration or do not
+use the default configuration options (see below) are called **standalone** modules.
+
+Each standalone module tries to read from three configuration files whereas trunk modules
+try to read six files. Note that configuration parameters defined earlier are overwritten
+if defined in files read in later:
+
++---------------------------------+------------+----------------+
+| File                            | Standalone | Trunk          |
++=================================+============+================+
+|        etc/defaults/global.cfg  |            |    X           |
++---------------------------------+------------+----------------+
+|        etc/defaults/module.cfg  |  X         |    X           |
++---------------------------------+------------+----------------+
+|        etc/global.cfg           |            |    X           |
++---------------------------------+------------+----------------+
+|        etc/module.cfg           |  X         |    X           |
++---------------------------------+------------+----------------+
+|        ~/.seiscomp3/global.cfg  |            |    X           |
++---------------------------------+------------+----------------+
+|        ~/.seiscomp3/module.cfg  |  X         |    X           |
++---------------------------------+------------+----------------+
+
+The :ref:`configuration section<global-configuration>` describes all available configuration parameters for a trunk module.
+Not all modules make use of all available parameters because they may be disabled, e.g. the
+messaging component. So the configuration of the messaging server is disabled too.
+
+
+Extensions
+----------
+
+Extensions add new configuration options to :term:`modules<module>`. It does
+not matter how those extensions are used. Commonly a module loads a plugin,
+which requires additional configuration parameters - these are provided by an extension.
+
+There are currently extensions for the following modules, corresponding to the
+plugins shown:
+
+.. include:: /base/extensions.doc
+
+See the documentation for each module for further information about its
+extensions.
+
+
+
+.. _global-configuration:
+
+
+Configuration
+=============
+
+
+
+.. confval:: datacenterID
+
+   Type: *string*
+
+   Sets the datacenter ID which is primarily used by Arclink and
+   its tools.
+
+
+.. confval:: agencyID
+
+   Type: *string*
+
+   Defines the agency ID used to set creationInfo.agencyID in
+   data model objects.
+   Default is ``GFZ``.
+
+.. confval:: organization
+
+   Type: *string*
+
+   Organization name used mainly by ArcLink and SeedLink.
+   Default is ``Unset``.
+
+.. confval:: author
+
+   Type: *string*
+
+   Defines the author name used to set creationInfo.author in
+   data model objects.
+
+
+.. confval:: plugins
+
+   Type: *list:string*
+
+   Defines a list of modules loaded at startup.
+
+
+.. confval:: logging.level
+
+   Type: *int*
+
+   Sets the logging level between 1 and 4 where 1\=ERROR, 2\=WARNING, 3\=INFO and 4\=DEBUG.
+   Default is ``2``.
+
+.. confval:: logging.file
+
+   Type: *boolean*
+
+   Enables logging into a log file.
+   Default is ``true``.
+
+.. confval:: logging.syslog
+
+   Type: *boolean*
+
+   Enables logging to syslog if supported by the host system.
+   Default is ``false``.
+
+.. confval:: logging.components
+
+   Type: *list:string*
+
+   Limit the logging to the specified list of components, e.g. 'Application, Server'
+
+
+.. confval:: logging.component
+
+   Type: *boolean*
+
+   For each log entry print the component right after the
+   log level. By default the component output is enabled
+   for file output but disabled for console output.
+
+
+.. confval:: logging.context
+
+   Type: *boolean*
+
+   For each log entry print the source file name and line
+   number.
+   Default is ``false``.
+
+.. confval:: logging.file.rotator
+
+   Type: *boolean*
+
+   Default is ``true``.
+
+.. confval:: logging.file.rotator.timeSpan
+
+   Type: *int*
+
+   Time span after which a log file is rotated.
+   Default is ``86400``.
+
+.. confval:: logging.file.rotator.archiveSize
+
+   Type: *int*
+
+   How many historic log files to keep.
+   Default is ``7``.
+
+.. confval:: logging.syslog.facility
+
+   Type: *string*
+
+   Defines the syslog facility to be used according to the
+   defined facility names in syslog.h. The default is local0.
+   If the given name is invalid or not available, initializing
+   logging will fail and the application quits.
+   Default is ``local0``.
+
+.. confval:: connection.server
+
+   Type: *host-with-port*
+
+   Defines the Spread server name to connect to. Format is host[:port].
+   Default is ``localhost``.
+
+.. confval:: connection.username
+
+   Type: *string*
+
+   Defines the username to be used. The length is limited
+   to 10 characters with Spread. By default the module name
+   \(name of the executable\) is used but sometimes it exceeds
+   the 10 character limit and access is denied. To prevent
+   errors set a different username. An empty username will
+   let Spread generate one.
+
+
+.. confval:: connection.timeout
+
+   Type: *int*
+
+   The connection timeout in seconds. 3 seconds are normally
+   more than enough. If a client needs to connect to a
+   remote system with a slow connection a larger timeout might
+   be needed.
+   Default is ``3``.
+
+.. confval:: connection.primaryGroup
+
+   Type: *string*
+
+   Defines the primary group of a module. This is the name
+   of the group where a module sends its messages to if the
+   target group is not explicitely given in the send call.
+
+
+.. confval:: connection.encoding
+
+   Type: *string*
+
+   Defines the message encoding for sending. Allowed values
+   are \"binary\" or \"xml\". XML has
+   more overhead in processing but is more robust when
+   schema versions between client and server are different.
+   Default is ``binary``.
+
+.. confval:: connection.subscriptions
+
+   Type: *list:string*
+
+   Defines a list of message groups to subscribe to. The
+   default is usually given by the application and does not
+   need to be changed.
+
+
+.. note::
+   **database.\***
+   *Defines the database connection. If no database is configured*
+   *(which is the default) and a messaging connection is available*
+   *the application will receive the parameters after the connection*
+   *is established. Override these values only if you know what you*
+   *are doing.*
+
+
+
+.. confval:: database.type
+
+   Type: *string*
+
+   Defines the database backend to be used. The name corresponds to
+   the defined name in the database plugin. Examples are: mysql, postgresql or
+   sqlite3.
+
+
+.. confval:: database.parameters
+
+   Type: *string*
+
+   The database connection parameters. This value depends on the used
+   database backend. E.g. sqlite3 expects the path to the database
+   file whereas MYSQL or PostgreSQL expect an URI in the format
+   user:pwd\@host\/database?param1\=val1\&param2\=val2.
+
+
+.. confval:: database.inventory
+
+   Type: *string*
+
+   *No description available*
+
+.. confval:: database.config
+
+   Type: *string*
+
+   *No description available*
+
+.. confval:: processing.whitelist.agencies
+
+   Type: *list:string*
+
+   Defines a whitelist of agencies that are allowed for processing separated by comma.
+
+
+.. confval:: processing.blacklist.agencies
+
+   Type: *list:string*
+
+   Defines a blacklist of agencies that are not allowed for processing separated by comma.
+
+
+.. confval:: recordstream.service
+
+   Type: *string*
+
+   Default is ``slink``.
+
+.. confval:: recordstream.source
+
+   Type: *string*
+
+   Default is ``localhost:18000``.
+
+.. confval:: core.plugins
+
+   Type: *list:string*
+
+   Default is ``dbmysql``.
+
+.. confval:: client.startStopMessage
+
+   Type: *boolean*
+
+   Default is ``false``.
+
+.. confval:: client.autoShutdown
+
+   Type: *boolean*
+
+   Default is ``false``.
+
+.. confval:: client.shutdownMasterModule
+
+   Type: *string*
+
+   *No description available*
+
+.. confval:: client.shutdownMasterUsername
+
+   Type: *string*
+
+   *No description available*
+
+.. confval:: commands.target
+
+   Type: *string*
+
+   A regular expression of all clients that should handle
+   a command message usually send to the GUI messaging group.
+   Currently this flag is only used by GUI applications to
+   set an artificial origin and to tell other clients to
+   show this origin. To let all connected clients handle the
+   command, \".\*\$\" can be used.
+
+
+.. _global/LocSAT:
+
+
+LocSAT extension
+----------------
+
+LOCSAT locator for SeisComP.
+
+
+.. confval:: LOCSAT.profiles
+
+   Type: *list:string*
+
+   Defines a list of available LOCSAT tab directories.
+   Default is ``iasp91,tab``.
+
+.. confval:: LOCSAT.enableConfidenceEllipsoid
+
+   Type: *boolen*
+
+   Compute the confidence ellipsoid.
+   Default is ``false``.
+
+.. _global/Hypo71:
+
+
+Hypo71 extension
+----------------
+
+This plugin allows the use of traditionnal Hypo71PC locator with SeisComP3
+
+
+.. confval:: hypo71.logFile
+
+   Type: *string*
+
+   Temporary file used by Hypo71 to store calculation logs
+   Default is ``HYPO71.LOG``.
+
+.. confval:: hypo71.inputFile
+
+   Type: *string*
+
+   Temporary file to write Hypo71 input data to
+   Default is ``HYPO71.INP``.
+
+.. confval:: hypo71.outputFile
+
+   Type: *string*
+
+   Temporary output file to read Hypo71 localization data from
+   Default is ``HYPO71.PRT``.
+
+.. confval:: hypo71.defaultControlFile
+
+   Type: *string*
+
+   Hypo71 default profile.
+   If no custom profile is specified, this profile will be used by the plugin when proceeding to a localization.
+
+
+.. confval:: hypo71.hypo71BinaryFile
+
+   Type: *string*
+
+   Filepath to Hypo71 binary.
+
+
+.. confval:: hypo71.hypo71ScriptFile
+
+   Type: *string*
+
+   Bash script to use when calls have to be made by the plugin when proceeding to a localization
+
+
+.. confval:: hypo71.profiles
+
+   Type: *list:string*
+
+   Hypo71 profile name.
+   Multiples names may be set, as long as they are separated by comma.
+   Each profile can have different velocity or parameters.
+
+
+.. note::
+
+   **hypo71.profile.\$name.\***
+   *A profile contains a velocity model and Hypo71PC parameters*
+   \$name is a placeholder for the name to be used and needs to be added to :confval:`hypo71.profiles` to become active.
+
+   .. code-block:: sh
+
+      hypo71.profiles = a,b
+      hypo71.profile.a.value1 = ...
+      hypo71.profile.b.value1 = ...
+      # c is not active because it has not been added
+      # to the list of hypo71.profiles
+      hypo71.profile.c.value1 = ...
+
+
+.. confval:: hypo71.profile.\$name.earthModelID
+
+   Type: *string*
+
+   Profile's velocity model name
+
+
+.. confval:: hypo71.profile.\$name.methodID
+
+   Type: *string*
+
+   Profile's method.
+   It's generally the locator's name \(Hypo71\).
+
+
+.. confval:: hypo71.profile.\$name.controlFile
+
+   Type: *string*
+
+   File containing a profile parameters
+
+
+.. _global/GUI:
+
+
+GUI extension
+-------------
+
+The GUI configuration plugin extends the configuration of
+graphical user interfaces to various options to adjust the look
+and feel.
+
+
+.. confval:: map.location
+
+   Type: *string*
+
+   Specified the location and the structure of the map tiles to be used. This
+   path is composed of zero or more directives and must include at least one
+   conversion specification which starts with is introduced by the character %
+   followed by a conversion specifier.  Valid specifiers are s \(replaced by
+   tile ID\), l \(tile level\), c \(tile column\) and r \(tile row\). An example for
+   using the OpenStreetMap file structure is \/path\/to\/maps\/%l\/%c\/%r.png.
+   Default is ``@DATADIR@/maps/world%s.png``.
+
+.. confval:: map.format
+
+   Type: *string*
+
+   Projection of the map tiles. Supported formats are: rectangular and mercator.
+   Default is ``rectangular``.
+
+.. confval:: map.cacheSize
+
+   Type: *int*
+
+   Cache size of the map tiles. If 0 is specified a default
+   cache size of 32mb is used. The higher the cache size
+   the better the performance in higher resolutions. A
+   higher cache size causes less image loader calls but
+   requires more client memory.
+   Default is ``0``.
+
+.. note::
+   **scheme.\***
+   *This group defines various color and font options for SeisComp3*
+   *graphical user interfaces. There are various conventions*
+   *to define colors, fonts and gradients. A color is defined in HTML*
+   *convention. If rgb or rgba is used it must be quoted because the*
+   *comma is handled as list separator by the configuration. Gradients*
+   *are configured as lists of tuples where each tuple is colon separated*
+   *in the form value:color. Color is again a color definition and value is*
+   *either int or double.*
+
+
+
+.. confval:: scheme.showMenu
+
+   Type: *boolean*
+
+   Show menu bar.
+   Default is ``true``.
+
+.. confval:: scheme.showStatusBar
+
+   Type: *boolean*
+
+   Show status bar.
+   Default is ``true``.
+
+.. confval:: scheme.tabPosition
+
+   Type: *string*
+
+   Set position if tab bar. An unset value lets the application
+   decide where to place the tab bar. This option might not be
+   supported by all applications. Valid positions are: off, north,
+   south, east, west
+
+
+.. confval:: scheme.colors.background
+
+   Type: *color*
+
+   A general application background color. Can be uses to give
+   each application a different background color. An unset value
+   lets Qt decide.
+
+
+.. confval:: scheme.colors.records.foreground
+
+   Type: *color*
+
+   The general color of records\/traces.
+   Default is ``808080``.
+
+.. confval:: scheme.colors.records.alternateForeground
+
+   Type: *color*
+
+   A general trace color of the alternate trace \(eg scheli\).
+   Default is ``808080``.
+
+.. confval:: scheme.colors.records.gaps
+
+   Type: *color*
+
+   The color of data gaps in trace views.
+   Default is ``FFFF0032``.
+
+.. confval:: scheme.colors.picks.manual
+
+   Type: *color*
+
+   The color of manual picks.
+   Default is ``00FF00``.
+
+.. confval:: scheme.colors.picks.automatic
+
+   Type: *color*
+
+   The color of automatic picks.
+   Default is ``FF0000``.
+
+.. confval:: scheme.colors.picks.undefined
+
+   Type: *color*
+
+   The color of picks with undefined state.
+   Default is ``A0A0A4``.
+
+.. confval:: scheme.colors.picks.disabled
+
+   Type: *color*
+
+   The color of disabled picks.
+   Default is ``A0A0A4``.
+
+.. confval:: scheme.colors.arrivals.manual
+
+   Type: *color*
+
+   The color of manual arrivals \(arrivals that bind manual picks,
+   e.g. residual plot of scolv, manual picker, ...\)
+   Default is ``00A000``.
+
+.. confval:: scheme.colors.arrivals.automatic
+
+   Type: *color*
+
+   The color of automatic arrivals,
+   Default is ``A00000``.
+
+.. confval:: scheme.colors.arrivals.theoretical
+
+   Type: *color*
+
+   The color of theoretical arrivals.
+   Default is ``0000A0``.
+
+.. confval:: scheme.colors.arrivals.undefined
+
+   Type: *color*
+
+   The color of arrivals binding picks with undefined state.
+   Default is ``A00000``.
+
+.. confval:: scheme.colors.arrivals.disabled
+
+   Type: *color*
+
+   The color of disabled arrivals.
+   Default is ``A0A0A4``.
+
+.. confval:: scheme.colors.arrivals.residuals
+
+   Type: *gradient*
+
+   The gradient of arrivals residuals. A gradient is defined as
+   a list of tuples separated by colon where the first item is
+   the value and the second is the color. Colors can be given in
+   rgb notation or hex. when rgb is used double quotes are needed to
+   protect the comma inside the rgb definition, e.g.
+   \-8:\"rgb\(0,0,100\)\", \-4:\"rgb\(0,0,255\)\", \-3:\"rgb\(100,100,255\)\", ...
+
+
+.. confval:: scheme.colors.magnitudes.set
+
+   Type: *color*
+
+   The color of active magnitudes.
+   Default is ``00A000``.
+
+.. confval:: scheme.colors.magnitudes.unset
+
+   Type: *color*
+
+   The color of inactive magnitudes.
+   Default is ``000000``.
+
+.. confval:: scheme.colors.magnitudes.disabled
+
+   Type: *color*
+
+   The color of disabled magnitudes.
+   Default is ``A0A0A4``.
+
+.. confval:: scheme.colors.magnitudes.residuals
+
+   Type: *gradient*
+
+   The gradient of magnitude residuals.
+
+
+.. confval:: scheme.colors.stations.associated
+
+   Type: *color*
+
+   The color of associated stations \(e.g. in scmv\).
+   Default is ``82AD58``.
+
+.. confval:: scheme.colors.stations.triggering
+
+   Type: *color*
+
+   The color of triggered stations.
+
+
+.. confval:: scheme.colors.stations.triggered0
+
+   Type: *color*
+
+   *No description available*
+
+.. confval:: scheme.colors.stations.triggered1
+
+   Type: *color*
+
+   *No description available*
+
+.. confval:: scheme.colors.stations.triggered2
+
+   Type: *color*
+
+   *No description available*
+
+.. confval:: scheme.colors.stations.disabled
+
+   Type: *color*
+
+   The color of disabled stations.
+
+
+.. confval:: scheme.colors.stations.idle
+
+   Type: *color*
+
+   The color of idle stations.
+
+
+.. note::
+   **scheme.colors.qc.\***
+   *The color of QC.delay thresholds in scmv.*
+
+
+
+.. confval:: scheme.colors.qc.delay0
+
+   Type: *color*
+
+   *No description available*
+
+.. confval:: scheme.colors.qc.delay1
+
+   Type: *color*
+
+   *No description available*
+
+.. confval:: scheme.colors.qc.delay2
+
+   Type: *color*
+
+   *No description available*
+
+.. confval:: scheme.colors.qc.delay3
+
+   Type: *color*
+
+   *No description available*
+
+.. confval:: scheme.colors.qc.delay4
+
+   Type: *color*
+
+   *No description available*
+
+.. confval:: scheme.colors.qc.delay5
+
+   Type: *color*
+
+   *No description available*
+
+.. confval:: scheme.colors.qc.delay6
+
+   Type: *color*
+
+   *No description available*
+
+.. confval:: scheme.colors.qc.delay7
+
+   Type: *color*
+
+   *No description available*
+
+.. confval:: scheme.colors.qc.qcWarning
+
+   Type: *color*
+
+   *No description available*
+
+.. confval:: scheme.colors.qc.qcError
+
+   Type: *color*
+
+   *No description available*
+
+.. confval:: scheme.colors.qc.qcOk
+
+   Type: *color*
+
+   *No description available*
+
+.. confval:: scheme.colors.qc.qcNoSet
+
+   Type: *color*
+
+   *No description available*
+
+.. note::
+   **scheme.colors.gm.\***
+   *The color of ground motion amplitudes in scmv.*
+
+
+
+.. confval:: scheme.colors.gm.gm0
+
+   Type: *color*
+
+   *No description available*
+
+.. confval:: scheme.colors.gm.gm1
+
+   Type: *color*
+
+   *No description available*
+
+.. confval:: scheme.colors.gm.gm2
+
+   Type: *color*
+
+   *No description available*
+
+.. confval:: scheme.colors.gm.gm3
+
+   Type: *color*
+
+   *No description available*
+
+.. confval:: scheme.colors.gm.gm4
+
+   Type: *color*
+
+   *No description available*
+
+.. confval:: scheme.colors.gm.gm5
+
+   Type: *color*
+
+   *No description available*
+
+.. confval:: scheme.colors.gm.gm6
+
+   Type: *color*
+
+   *No description available*
+
+.. confval:: scheme.colors.gm.gm7
+
+   Type: *color*
+
+   *No description available*
+
+.. confval:: scheme.colors.gm.gm8
+
+   Type: *color*
+
+   *No description available*
+
+.. confval:: scheme.colors.gm.gm9
+
+   Type: *color*
+
+   *No description available*
+
+.. confval:: scheme.colors.gm.gmNotSet
+
+   Type: *color*
+
+   *No description available*
+
+.. confval:: scheme.colors.recordView.selectedTraceZoom
+
+   Type: *color*
+
+   The color of the selected zoom area \(e.g. manual picker\).
+   Default is ``C0C0FFC0``.
+
+.. confval:: scheme.colors.map.lines
+
+   Type: *color*
+
+   The color of lines in the map \(e.g. lines
+   connecting the origin and a station\).
+
+
+.. confval:: scheme.colors.map.outlines
+
+   Type: *color*
+
+   The color of station outlines in the map.
+
+
+.. confval:: scheme.colors.map.grid
+
+   Type: *color*
+
+   The color grid line color of the map.
+
+
+.. confval:: scheme.colors.map.stationAnnotations
+
+   Type: *color*
+
+   The color of station annotations.
+
+
+.. confval:: scheme.colors.map.cityLabels
+
+   Type: *color*
+
+   The color of city labels.
+
+
+.. confval:: scheme.colors.map.cityOutlines
+
+   Type: *color*
+
+   The color of city outlines.
+
+
+.. confval:: scheme.colors.map.cityCapital
+
+   Type: *color*
+
+   The color of a capital.
+
+
+.. confval:: scheme.colors.map.cityNormal
+
+   Type: *color*
+
+   The color of a \"normal\" city.
+
+
+.. confval:: scheme.colors.legend.background
+
+   Type: *color*
+
+   The map legend background color.
+
+
+.. confval:: scheme.colors.legend.border
+
+   Type: *color*
+
+   The map legend border color.
+
+
+.. confval:: scheme.colors.legend.text
+
+   Type: *color*
+
+   The map legend text color.
+
+
+.. confval:: scheme.colors.legend.headerText
+
+   Type: *color*
+
+   The map legend header color.
+
+
+.. confval:: scheme.colors.originSymbol.depth.gradient
+
+   Type: *gradient*
+
+   The depth gradient.
+   Default is ``0:FF0000,50:ffA500,100:FFFF00,250:00FF00,600:0000FF``.
+
+.. confval:: scheme.colors.originSymbol.depth.discrete
+
+   Type: *boolean*
+
+   Setting this parameter to true will not interpolate between
+   the depth steps and the color for a depth <\= input is used.
+   Default is ``true``.
+
+.. note::
+   **scheme.colors.originStatus.\***
+   *The origin status colors (e.g. in event list).*
+
+
+
+.. confval:: scheme.colors.originStatus.automatic
+
+   Type: *color*
+
+   *No description available*
+
+.. confval:: scheme.colors.originStatus.manual
+
+   Type: *color*
+
+   *No description available*
+
+.. confval:: scheme.marker.lineWidth
+
+   Type: *color*
+
+   The line width of the marker \(e.g. picks of manual picker\).
+
+
+.. confval:: scheme.fonts.base
+
+   Type: *font*
+
+   The general base font of an application. This overrides
+   the default Qt4 application font.
+
+
+.. confval:: scheme.fonts.small
+
+   Type: *font*
+
+   *No description available*
+
+.. confval:: scheme.fonts.normal
+
+   Type: *font*
+
+   *No description available*
+
+.. confval:: scheme.fonts.large
+
+   Type: *font*
+
+   *No description available*
+
+.. confval:: scheme.fonts.highlight
+
+   Type: *font*
+
+   *No description available*
+
+.. confval:: scheme.fonts.heading1
+
+   Type: *font*
+
+   *No description available*
+
+.. confval:: scheme.fonts.heading2
+
+   Type: *font*
+
+   *No description available*
+
+.. confval:: scheme.fonts.heading3
+
+   Type: *font*
+
+   *No description available*
+
+.. confval:: scheme.fonts.cityLabels
+
+   Type: *font*
+
+   *No description available*
+
+.. confval:: scheme.map.stationSize
+
+   Type: *int*
+
+   The station symbol size \(e.g. in scmv\).
+   Default is ``8``.
+
+.. confval:: scheme.map.originSymbolMinSize
+
+   Type: *int*
+
+   The origin symbol minimum size. The formula to compute the
+   size of the origin symbol is: 4.9\*\(M\-1.2\).
+   Default is ``9``.
+
+.. confval:: scheme.map.vectorLayerAntiAlias
+
+   Type: *boolean*
+
+   Should the vector layer in the map use antialiasing?
+   This improves the visual quality but decreases performance.
+   Default is ``false``.
+
+.. confval:: scheme.map.bilinearFilter
+
+   Type: *boolean*
+
+   Should the map use a bilinear filter?
+   The bilinear filter improves the visual quality but decreases
+   performance slightly. It is only used for static map images.
+   Not while dragging.
+   Default is ``true``.
+
+.. confval:: scheme.map.showGrid
+
+   Type: *boolean*
+
+   Should the map display the grid?
+   Default is ``true``.
+
+.. confval:: scheme.map.showCities
+
+   Type: *boolean*
+
+   Should the map display the cities?
+   Default is ``true``.
+
+.. confval:: scheme.map.showLayers
+
+   Type: *boolean*
+
+   Should the map display the custom layers?
+   Default is ``true``.
+
+.. confval:: scheme.map.projection
+
+   Type: *string*
+
+   SeisComP ships with the rectangular projection build in.
+   Other projections may be provided through plug\-ins.
+   Default is ``Rectangular``.
+
+.. confval:: scheme.precision.depth
+
+   Type: *int*
+
+   The precision of depth values.
+   Default is ``0``.
+
+.. confval:: scheme.precision.distance
+
+   Type: *int*
+
+   The precision of distance values.
+   Default is ``1``.
+
+.. confval:: scheme.precision.location
+
+   Type: *int*
+
+   The precision of lat\/lon values.
+   Default is ``2``.
+
+.. confval:: scheme.precision.pickTime
+
+   Type: *int*
+
+   The precision of pick times.
+   Default is ``1``.
+
+.. confval:: scheme.precision.distanceInKM
+
+   Type: *boolean*
+
+   Display distances in km?
+   Default is ``false``.
+
+.. confval:: scheme.precision.traceValues
+
+   Type: *int*
+
+   Precision of displayed offset\/amp in all trace widgets.
+   Default is ``1``.
+
+.. confval:: scheme.precision.rms
+
+   Type: *int*
+
+   Precision of RMS values.
+   Default is ``1``.
+
+.. confval:: picker.filters
+
+   Type: *list:string*
+
+   Configures the default filters selectable in manual picker.
+   The entry with a leading \"\@\" is selected as default filter.
+   Default is ``"BP 0.1 - 1 Hz  3rd order;BW(3,0.1,1)","BP 0.1 - 2 Hz  3rd order;BW(3,0.1,2)","BP 0.4 - 1 Hz  3rd order;BW(3,0.4,1)","@BP 0.7 - 2 Hz  3rd order;BW(3,0.7,2)""BP 1 - 3 Hz  3rd order;BW(3,1.0,3)","BP 2 - 4 Hz  3rd order;BW(3,2.0,4)","BP 3 - 6 Hz  3rd order;BW(3,3.0,6)","BP 4 - 8 Hz  3rd order;BW(3,4.0,8)","BP 1 - 5 Hz  3rd order;BW(3,1.0,5)","BP 0.7 - 2 Hz + STA/LTA(1,50);RMHP(10)->ITAPER(30)->BW(3,0.7,2)->STALTA(1,50)"``.
+
+.. confval:: eventlist.visibleColumns
+
+   Type: *list:string*
+
+   Configure the columns of the event list that are visible initially.
+   The first column containing the origin time is always visible and cannot
+   be hidden. Possible values are: Type, M, TP, Phases, Lat, Lon, Depth, Stat, FM, Agency, Region, ID.
+   Default is ``M, TP, Phases, Lat, Lon, Depth, Stat, Agency, Region, ID``.
+
+.. confval:: eventlist.regions
+
+   Type: *list:string*
+
+   Configured a list of regions that can be used as filter of
+   the result set.
+
+
+.. note::
+
+   **eventlist.region.\$name.\***
+   *Defines a rectangular region that can be used as a result*
+   *set filter on client side.*
+   \$name is a placeholder for the name to be used and needs to be added to :confval:`eventlist.regions` to become active.
+
+   .. code-block:: sh
+
+      eventlist.regions = a,b
+      eventlist.region.a.value1 = ...
+      eventlist.region.b.value1 = ...
+      # c is not active because it has not been added
+      # to the list of eventlist.regions
+      eventlist.region.c.value1 = ...
+
+
+.. confval:: eventlist.region.\$name.name
+
+   Type: *string*
+
+   Defines the name of the region that shows up in the
+   listbox.
+
+
+.. confval:: eventlist.region.\$name.rect
+
+   Type: *list:double*
+
+   Defines a rectangular region with a list of 4 values:
+   latmin, lonmin, latmax, lonmax.
+
+
+.. confval:: eventlist.filter.agencies.label
+
+   Type: *string*
+
+   Defines the text of the option \"Show only own events\".
+   Default is ``Show only own events``.
+
+.. confval:: eventlist.filter.agencies.whitelist
+
+   Type: *list:string*
+
+   Sets a list of preferred agencies. Events from preferred
+   agencies are defined as \"own\" events.
+
+
+.. confval:: eventlist.filter.agencies.type
+
+   Type: *string*
+
+   Sets the type of the filter. If type is \"events\" the agency
+   of the preferred origin of the event is checked.
+   If type is \"origins\" the agency of all origins of
+   an event is checked and if at least one origins agency is part
+   of the whitelist it will pass the filter. Or in other words,
+   the event is hidden if no origin is from a preferred agency.
+   Default is ``events``.
+
+.. confval:: eventlist.filter.agencies.enabled
+
+   Type: *boolean*
+
+   Sets the default state of the \"Show only own events\"
+   option.
+   Default is ``false``.
+
+.. confval:: eventlist.filter.types.label
+
+   Type: *string*
+
+   Defines the text of the option \"Hide other\/fake events\".
+   Default is ``Hide other/fake events``.
+
+.. confval:: eventlist.filter.types.blacklist
+
+   Type: *list:string*
+
+   List of event type to be hidden if the \"Hide other\/fake events\"
+   option is ticked.
+
+
+.. confval:: eventlist.filter.types.enabled
+
+   Type: *boolean*
+
+   Sets the default state of the \"Hide other\/fake events\"
+   option.
+   Default is ``false``.
+
+.. confval:: eventlist.filter.regions.enabled
+
+   Type: *boolean*
+
+   Sets the default state of the \"Hide events outside\"
+   option.
+   Default is ``false``.
+
+.. _global/NonLinLoc:
+
+
+NonLinLoc extension
+-------------------
+
+NonLinLoc locator wrapper plugin for SeisComP.
+NonLinLoc was written by Anthony Lomax (http://alomax.free.fr/nlloc).
+
+
+.. confval:: NonLinLoc.publicID
+
+   Type: *string*
+
+   PublicID creation pattern for an origin created by NonLinLoc.
+   Default is ``NLL.@time/%Y%m%d%H%M%S.%f@.@id@``.
+
+.. confval:: NonLinLoc.outputPath
+
+   Type: *path*
+
+   Defines the output path for all native NonLinLoc input and output files.
+   Default is ``/tmp/sc3.nll``.
+
+.. confval:: NonLinLoc.controlFile
+
+   Type: *path*
+
+   The default NonLinLoc control file to use.
+
+
+.. confval:: NonLinLoc.defaultPickError
+
+   Type: *double*
+
+   The default pick error in seconds passed to NonLinLoc if a SC3 pick
+   object does not provide pick time uncertainties.
+   Default is ``0.5``.
+
+.. confval:: NonLinLoc.fixedDepthGridSpacing
+
+   Type: *double*
+
+   Since NLL does not support fixing the depth natively so this
+   feature is emulated by settings the Z grid very tight around
+   the depth to be fixed. This value sets the Z grid spacing.
+   Default is ``0.1``.
+
+.. confval:: NonLinLoc.profiles
+
+   Type: *list:string*
+
+   Defines a list of active profiles to be used by the plugin.
+
+
+.. note::
+
+   **NonLinLoc.profile.\$name.\***
+   *Defines a regional profile that is used if a prelocation falls*
+   *inside the configured region.*
+   \$name is a placeholder for the name to be used and needs to be added to :confval:`NonLinLoc.profiles` to become active.
+
+   .. code-block:: sh
+
+      NonLinLoc.profiles = a,b
+      NonLinLoc.profile.a.value1 = ...
+      NonLinLoc.profile.b.value1 = ...
+      # c is not active because it has not been added
+      # to the list of NonLinLoc.profiles
+      NonLinLoc.profile.c.value1 = ...
+
+
+.. confval:: NonLinLoc.profile.\$name.earthModelID
+
+   Type: *string*
+
+   earthModelID that is stored in the created origin.
+
+
+.. confval:: NonLinLoc.profile.\$name.methodID
+
+   Type: *string*
+
+   methodID that is stored in the created origin.
+
+
+.. confval:: NonLinLoc.profile.\$name.tablePath
+
+   Type: *path*
+
+   Path to travel time tables \(grids\).
+
+
+.. confval:: NonLinLoc.profile.\$name.controlFile
+
+   Type: *path*
+
+   Control file of the current profile. If not set, the default
+   control file will be used instead.
+
+
+.. confval:: NonLinLoc.profile.\$name.transform
+
+   Type: *string*
+
+   Transformation type of the configured region. If not set, GLOBAL
+   is assumed.
+
+
+.. confval:: NonLinLoc.profile.\$name.region
+
+   Type: *list:double*
+
+   Defines the region values. If transform is GLOBAL 4 values
+   \(min_lat, min_lon, max_lat, max_lon\) are expected. If transform
+   is SIMPLE then 4 values are expected \(xmin, ymin, xmax, ymax\).
+
+
+.. confval:: NonLinLoc.profile.\$name.origin
+
+   Type: *list:double*
+
+   Only used for transformation SIMPLE. Expects 2 values \(lat,lon\).
+
+
+.. confval:: NonLinLoc.profile.\$name.rotation
+
+   Type: *double*
+
+   Only used for transformation SIMPLE. Defines the rotation around the
+   origin of the defined region.
+
+
+
+Bindings
+========
+
+
+Configuration
+-------------
+
+
+.. confval:: MLv.logA0
+
+   Type: *string*
+
+   Defines the calibration function log\(A0\) for computing MLv.
+   Format: any number of distance\-value pairs separated by semicolons
+   Example: \"0 \-1.3;60 \-2.8;400 \-4.5;1000 \-5.85\" specifies 3 distance intervals from 0...60, 60...400 and 400...1000 km distance. Within these intervals logA0 is interpolated linearly between \-1.3...\-2.8, \-2.8...\-4.5 and \-4.5...\-5.8, respectively
+   
+   Note: The distances of the first and last sample specify the distance range within which MLv shall be computed.
+
+
+.. confval:: detecStream
+
+   Type: *string*
+
+   Defines the channel code of the preferred stream used eg
+   by scautopick and scrttv. If no component code is given,
+   'Z' will be used by default.
+
+
+.. confval:: detecLocid
+
+   Type: *string*
+
+   Defines the location code of the preferred stream used
+   eg by scautopick and scrttv.
+
+
+.. note::
+   **amplitudes.\***
+   *Defines general parameters for amplitudes of a certain type.*
+
+
+
+.. confval:: amplitudes.enable
+
+   Type: *boolean*
+
+   Defines if amplitude calculation is enabled. If disabled then
+   this station will be skipped for amplitudes and magnitudes.
+   Default is ``true``.
+
+.. confval:: amplitudes.saturationThreshold
+
+   Type: *double*
+
+   Defines the saturation threshold for the optional saturation check.
+   By default the saturation check is disabled but giving a value above
+   0 will enable it. Waveforms that are saturated are not used  at all
+   for amplitude calculations.
+   Default is ``-1``.
+
+.. confval:: amplitudes.enableResponses
+
+   Type: *boolean*
+
+   Activates deconvolution for this station. If no responses are
+   configured an error is raised and the data is not processed.
+   Default is ``false``.
+
+.. note::
+
+   **amplitudes.\$name.\***
+   *An amplitude profile configures global parameters for a*
+   *particular amplitude type. The available amplitude types*
+   *are not fixed and can be extended by plugins. The name of*
+   *the type must match the one defined in the corresponding*
+   *AmplitudeProcessor.*
+   \$name is a placeholder for the name to be used.
+
+
+.. confval:: amplitudes.\$name.enable
+
+   Type: *boolean*
+
+   Defines if amplitude calculation of certain type is enabled.
+   Default is ``true``.
+
+.. confval:: amplitudes.\$name.saturationThreshold
+
+   Type: *double*
+
+   If greater than 0 and the absolute value of an incoming
+   unfiltered sample exceeds this value, the trace data is rejected and
+   not used \(saturation check\).
+   Default is ``-1``.
+
+.. confval:: amplitudes.\$name.minSNR
+
+   Type: *double*
+
+   Defines the mininum SNR to be reached to compute the
+   amplitudes. This value is amplitude type specific and
+   has no global default value.
+
+
+.. confval:: amplitudes.\$name.noiseBegin
+
+   Type: *double*
+
+   Overrides the default time \(relative to the trigger
+   time\) of the begin of the noise window used to compute
+   the noise offset and noise amplitude. Each amplitude
+   processor sets its own noise time window and this option
+   should only be changed if you know what you are doing.
+
+
+.. confval:: amplitudes.\$name.noiseEnd
+
+   Type: *double*
+
+   Overrides the default time \(relative to the trigger
+   time\) of the end of the noise window used to compute
+   the noise offset and noise amplitude. Each amplitude
+   processor sets its own noise time window and this option
+   should only be changed if you know what you are doing.
+
+
+.. confval:: amplitudes.\$name.signalBegin
+
+   Type: *double*
+
+   Overrides the default time \(relative to the trigger
+   time\) of the begin of the signal window used to compute
+   the final amplitude. Each amplitude processor sets its
+   own signal time window and this option should only be
+   changed if you know what you are doing.
+
+
+.. confval:: amplitudes.\$name.signalEnd
+
+   Type: *double*
+
+   Overrides the default time \(relative to the trigger
+   time\) of the end of the signal window used to compute
+   the final amplitude. Each amplitude processor sets its
+   own signal time window and this option should only be
+   changed if you know what you are doing.
+
+
+.. note::
+   **mag.\***
+   *Defines general parameters for magnitudes of a certain type.*
+
+
+
+.. note::
+
+   **mag.\$name.\***
+   *An magnitude profile configures global parameters for a*
+   *particular magnitude type. The available magnitude types*
+   *are not fixed and can be extended by plugins. The name of*
+   *the type must match the one defined in the corresponding*
+   *MagnitudeProcessor.*
+   \$name is a placeholder for the name to be used.
+
+
+.. confval:: mag.\$name.multiplier
+
+   Type: *double*
+
+   Part of the magnitude station correction. The final
+   magnitude value is multiplier\*M+offset. This value
+   is usually not required but there for completeness.
+   Default is ``1``.
+
+.. confval:: mag.\$name.offset
+
+   Type: *double*
+
+   Part of the magnitude station correction. The final
+   magnitude value is multiplier\*M+offset. This value
+   can be used to correct station magnitudes.
+   Default is ``0``.
+
+.. note::
+   **picker.BK.\***
+   *Bkpicker is an implementation of the Baer/Kradolfer picker adapted*
+   *to SeisComP3. It was created by converting Manfred Baers from Fortran*
+   *to C++ and inserting it as a replacement for the picker algorithm.*
+   *The picker interface name to be used in configuration files is*
+   *"BK".*
+
+
+
+.. confval:: picker.BK.signalBegin
+
+   Type: *double*
+
+   Overrides the default time \(relative to the trigger
+   time\) of the begin of the signal window used to pick.
+   Default is ``-20``.
+
+.. confval:: picker.BK.signalEnd
+
+   Type: *double*
+
+   Overrides the default time \(relative to the trigger
+   time\) of the begin of the signal window used to pick.
+   Default is ``80``.
+
+.. confval:: picker.BK.filterType
+
+   Type: *string*
+
+   BP \(Bandpass\) is currently the only option.
+   Default is ``BP``.
+
+.. confval:: picker.BK.filterPoles
+
+   Type: *int*
+
+   Number of poles.
+   Default is ``2``.
+
+.. confval:: picker.BK.f1
+
+   Type: *double*
+
+   Bandpass lower cutoff freq. in Hz.
+   Default is ``5``.
+
+.. confval:: picker.BK.f2
+
+   Type: *double*
+
+   Bandpass upper cutoff freq. in Hz.
+   Default is ``20``.
+
+.. confval:: picker.BK.thrshl1
+
+   Type: *double*
+
+   Threshold to trigger for pick \(c.f. paper\), default 10
+   Default is ``10``.
+
+.. confval:: picker.BK.thrshl2
+
+   Type: *double*
+
+   Threshold for updating sigma  \(c.f. paper\), default 20
+   Default is ``20``.
+
+.. note::
+   **picker.AIC.\***
+   *AIC picker is an implementation using the simple non-AR algorithm of Maeda (1985),*
+   *see paper of Zhang et al. (2003) in BSSA. The picker interface name to be used in configuration files is*
+   *"AIC".*
+
+
+
+.. confval:: picker.AIC.signalBegin
+
+   Type: *double*
+
+   Overrides the default time \(relative to the trigger
+   time\) of the begin of the signal window used to pick.
+   Default is ``-30``.
+
+.. confval:: picker.AIC.signalEnd
+
+   Type: *double*
+
+   Overrides the default time \(relative to the trigger
+   time\) of the begin of the signal window used to pick.
+   Default is ``10``.
+
+.. confval:: picker.AIC.filter
+
+   Type: *string*
+
+   Overrides the default filter which is \"raw\". The typical filter grammar can be used.
+
+
+.. confval:: picker.AIC.minSNR
+
+   Type: *double*
+
+   Defines the mininum SNR.
+   Default is ``3``.
+
+.. note::
+   **spicker.L2.\***
+   *L2 is a algorithm to pick S-phases.*
+
+
+
+.. confval:: spicker.L2.signalBegin
+
+   Type: *double*
+
+   Overrides the relative start time \(relative to the triggering
+   pick\) of the begin of the signal window used to pick.
+   Default is ``0``.
+
+.. confval:: spicker.L2.signalEnd
+
+   Type: *double*
+
+   Overrides the relative end time \(relative to the triggering
+   pick\) of the end of the signal window used to pick.
+   Default is ``60``.
+
+.. confval:: spicker.L2.filter
+
+   Type: *string*
+
+   Configures the filter used to compute the L2 and to pick the onset after the detector triggered.
+   Default is ``BW(4,0.3,1.0)``.
+
+.. confval:: spicker.L2.detector
+
+   Type: *string*
+
+   onfigures the detector in the filtered L2.
+   Default is ``STALTA(1,10)``.
+
+.. confval:: spicker.L2.threshold
+
+   Type: *double*
+
+   The detector threshold that triggers the AIC picker.
+   Default is ``3``.
+
+.. confval:: spicker.L2.timeCorr
+
+   Type: *double*
+
+   The time correction \(in seconds\) added to the final pick time.
+   Default is ``-0.4``.
+
+.. confval:: spicker.L2.marginAIC
+
+   Type: *double*
+
+   The AIC time window around the detection used to pick. If 0 AIC is not used.
+   Default is ``5``.
+
+.. confval:: spicker.L2.minSNR
+
+   Type: *double*
+
+   Defines the mininum SNR.
+   Default is ``15``.
+
+.. confval:: md.seismo
+
+   Type: *int*
+
+   Default filter type to use before processing and after deconvolution. It's possible to set :
+   1 for a Wood\-Anderson seismometer
+   2 for a 5sec generic Seismometer
+   3 for a WWSSN LP seismometer
+   4 for a WSSN SP seismometer
+   5 for a Generic Seismometer
+   6 for a Butterworth Low pass filter
+   7 for a Butterworth High pass filter
+   8 for a Butterworth Band pass filter
+   Default is ``1``.
+
+.. confval:: md.butterworth
+
+   Type: *string*
+
+   Butterworth filter parameter applied to the signal
+   Default is ``"3,1,15"``.
+
+.. confval:: md.depthmax
+
+   Type: *double*
+
+   Maximum depth at which duration magnitude is valid
+   Default is ``200``.
+
+.. confval:: md.deltamax
+
+   Type: *double*
+
+   Maximum distance between earthquake and station at which duration magnitude is valid
+   Default is ``400``.
+
+.. confval:: md.snrmin
+
+   Type: *double*
+
+   Signal to noise ratio below which the coda is reached
+   Default is ``1.2``.
+
+.. confval:: md.mdmax
+
+   Type: *double*
+
+   Maximum expected duration magnitude value
+   This is used to find how much data should be loaded for a given station by reversing the formula
+   Default is ``5.0``.
+
+.. confval:: md.fma
+
+   Type: *double*
+
+   FMA regional coefficient
+   See Hypo2000 manual
+   Default is ``-0.87``.
+
+.. confval:: md.fmb
+
+   Type: *double*
+
+   FMB regional coefficient
+   See Hypo2000 manual
+   Default is ``2.0``.
+
+.. confval:: md.fmd
+
+   Type: *double*
+
+   FMD regional coefficient
+   See Hypo2000 manual
+   Default is ``0.0035``.
+
+.. confval:: md.fmf
+
+   Type: *double*
+
+   FMF regional coefficient
+   See Hypo2000 manual
+   Default is ``0.0``.
+
+.. confval:: md.fmz
+
+   Type: *double*
+
+   FMZ regional coefficient
+   See Hypo2000 manual
+   Default is ``0.0``.
+
+.. confval:: MLh.maxavg
+
+   Type: *string*
+
+   Define combiner operation for both horizontals \(min, max, avg\).
+   Default is ``max``.
+
+.. confval:: MLh.ClippingThreshold
+
+   Type: *double*
+
+   MLh clipping level, in raw counts, eg. 80% of 2\^23 \= 6710886.
+
+
+.. confval:: MLh.params
+
+   Type: *string*
+
+   Defines attenuation parameters for MLh.
+   Format: \"UpToKilometers A B; UpToNextKilometers A B;\".
+   Example: \"30 nomag; 60 0.018 2.17; 700 0.0038 3.02\".
+   The first parameter set \"30 nomag\" means that up to 30km
+   from the sensor the magnitude should not be calculated.
+
+
+
+
+Command-line
+============
+
+.. program:: global
+
+
+Generic
+-------
+
+.. option:: -h, --help
+
+   show help message.
+
+.. option:: -V, --version
+
+   show version information
+
+.. option:: --config-file arg
+
+   Use alternative configuration file. When this option is used
+   the loading of all stages is disabled. Only the given configuration
+   file is parsed and used. To use another name for the configuration
+   create a symbolic link of the application or copy it, eg scautopick \-> scautopick2.
+
+.. option:: --plugins arg
+
+   Load given plugins.
+
+.. option:: -D, --daemon
+
+   Run as daemon. This means the application will fork itself and
+   doesn't need to be started with \&.
+
+.. option:: --auto-shutdown arg
+
+   Enable\/disable self\-shutdown because a master module shutdown. This only
+   works when messaging is enabled and the master module sends a shutdown
+   message \(enabled with \-\-start\-stop\-msg for the master module\).
+
+.. option:: --shutdown-master-module arg
+
+   Sets the name of the master\-module used for auto\-shutdown. This
+   is the application name of the module actually started. If symlinks
+   are used then it is the name of the symlinked application.
+
+.. option:: --shutdown-master-username arg
+
+   Sets the name of the master\-username of the messaging used for
+   auto\-shutdown. If \"shutdown\-master\-module\" is given as well this
+   parameter is ignored.
+
+
+Verbose
+-------
+
+.. option:: --verbosity arg
+
+   Verbosity level [0..4]. 0:quiet, 1:error, 2:warning, 3:info, 4:debug
+
+.. option:: -v, --v
+
+   Increase verbosity level \(may be repeated, eg. \-vv\)
+
+.. option:: -q, --quiet
+
+   Quiet mode: no logging output
+
+.. option:: --print-component arg
+
+   For each log entry print the component right after the
+   log level. By default the component output is enabled
+   for file output but disabled for console output.
+
+.. option:: --print-context arg
+
+   For each log entry print the source file name and line
+   number.
+
+.. option:: --component arg
+
+   Limits the logging to a certain component. This option can be given more than once.
+
+.. option:: -s, --syslog
+
+   Use syslog logging back end. The output usually goes to \/var\/lib\/messages.
+
+.. option:: -l, --lockfile arg
+
+   Path to lock file.
+
+.. option:: --console arg
+
+   Send log output to stdout.
+
+.. option:: --debug
+
+   Debug mode: \-\-verbosity\=4 \-\-console\=1
+
+.. option:: --trace
+
+   Trace mode: \-\-verbosity\=4 \-\-console\=1 \-\-print\-component\=1 \-\-print\-context\=1
+
+.. option:: --log-file arg
+
+   Use alternative log file.
+
+
+Messaging
+---------
+
+.. option:: -u, --user arg
+
+   Overrides configuration parameter :confval:`connection.username`.
+
+.. option:: -H, --host arg
+
+   Overrides configuration parameter :confval:`connection.server`.
+
+.. option:: -t, --timeout arg
+
+   Overrides configuration parameter :confval:`connection.timeout`.
+
+.. option:: -g, --primary-group arg
+
+   Overrides configuration parameter :confval:`connection.primaryGroup`.
+
+.. option:: -S, --subscribe-group arg
+
+   A group to subscribe to. This option can be given more than once.
+
+.. option:: --encoding arg
+
+   Overrides configuration parameter :confval:`connection.encoding`.
+
+.. option:: --start-stop-msg arg
+
+   Sets sending of a start\- and a stop message.
+
+
+Database
+--------
+
+.. option:: --db-driver-list
+
+   List all supported database drivers.
+
+.. option:: -d, --database arg
+
+   The database connection string, format: service:\/\/user:pwd\@host\/database.
+   \"service\" is the name of the database driver which can be
+   queried with \"\-\-db\-driver\-list\".
+
+.. option:: --config-module arg
+
+   The configmodule to use.
+
+.. option:: --inventory-db arg
+
+   Load the inventory from the given database or file, format: [service:\/\/]location
+
+.. option:: --config-db arg
+
+   Load the configuration from the given database or file, format: [service:\/\/]location
+
+
+Records
+-------
+
+.. option:: --record-driver-list
+
+   List all supported record stream drivers
+
+.. option:: -I, --record-url arg
+
+   The recordstream source URL, format: [service:\/\/]location[#type].
+   \"service\" is the name of the recordstream driver which can be
+   queried with \"\-\-record\-driver\-list\". If \"service\"
+   is not given \"file:\/\/\" is used.
+
+.. option:: --record-file arg
+
+   Specify a file as record source.
+
+.. option:: --record-type arg
+
+   Specify a type for the records being read.
+
+
+User interface
+--------------
+
+.. option:: -F, --full-screen
+
+   Starts the application filling the entire screen. This only works
+   with GUI applications.
+
+.. option:: -N, --non-interactive
+
+   Use non\-interactive presentation mode. This only works with GUI applications.
+

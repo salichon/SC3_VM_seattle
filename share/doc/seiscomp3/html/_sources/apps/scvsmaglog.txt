@@ -1,0 +1,403 @@
+.. highlight:: rst
+
+.. _scvsmaglog:
+
+##########
+scvsmaglog
+##########
+
+**Logs VS magnitude messages.**
+
+
+Description
+===========
+
+scvsmaglog is part of a new SeisComp3 implementation of the
+[Virtual Seismologist]( http://www.seismo.ethz.ch/research/vs)
+(VS) Earthquake Early Warning algorithm (Cua, 2005; Cua and Heaton, 2007) released
+under the 'SED Public License for SeisComP3 Contributions'
+(http://www.seismo.ethz.ch/static/seiscomp_contrib/license.txt ).
+
+It logs the VS magnitude messages received from *scvsmag* and, once an event
+has timed out, generates report files. These report files are saved to disk and
+can also be sent via email.
+
+It also provides the possibility to send messages to the UserDisplay, a
+real-time EEW user interface developed by Caltech
+(http://www.eew.caltech.edu/research/userdisplay.html).
+While the UserDisplay is currently not openly available, the message stream from
+this interface can be used. The xml scheme and set-up of an ActiveMQ broker
+necessary to receive the messages is briefly discribed in section :ref:`ref_VS_UDI`.
+
+
+Reports
+=======
+
+Below is an example of the first few lines of a report file:
+
+.. code-block:: sh
+
+   Mag.|Lat.  |Lon.  |tdiff |Depth |creation time            |origin time              |likeh.|#st.(org.) |#st.(mag.)
+   ------------------------------------------------------------------------------------------------------------------
+   3.42| 47.15|  8.52| 12.73| 25.32|2012-02-11T22:45:39.0000Z|2012-02-11T22:45:26.2729Z|  0.99|          6|         6
+   3.43| 47.15|  8.52| 13.73| 25.32|2012-02-11T22:45:40.0000Z|2012-02-11T22:45:26.2729Z|  0.99|          6|         6
+   3.56| 47.15|  8.54| 14.70| 25.73|2012-02-11T22:45:41.0000Z|2012-02-11T22:45:26.3032Z|  0.99|         10|        10
+   3.64| 47.16|  8.54| 15.58| 24.32|2012-02-11T22:45:42.0000Z|2012-02-11T22:45:26.4178Z|  0.99|         12|        12
+   3.54| 47.16|  8.53| 16.45| 22.40|2012-02-11T22:45:43.0000Z|2012-02-11T22:45:26.5547Z|  0.99|         14|        14
+   3.67| 47.15|  8.54| 17.29| 20.40|2012-02-11T22:45:44.0000Z|2012-02-11T22:45:26.7142Z|  0.99|         16|        16
+   3.66| 47.16|  8.54| 18.34| 21.31|2012-02-11T22:45:45.0000Z|2012-02-11T22:45:26.6562Z|  0.99|         18|        18
+   3.75| 47.16|  8.54| 19.27| 19.91|2012-02-11T22:45:46.0000Z|2012-02-11T22:45:26.7326Z|  0.99|         19|        19
+
+*Creation time* is the time the VS magnitude message was generated, *tdiff* is the
+time difference between *creation time* and *origin time* in seconds, *likeh* is the
+likelihood that this event is a real event (see documentation of the *scvsmag* module), # *st.(org)*
+is the number of stations that contributed to the origin and # *st.(mag)* the number of envelope streams
+that contributed to the magnitude.
+
+
+.. _ref_VS_UDI:
+
+UserDisplay interface
+=====================
+
+Configuration
+-------------
+
+.. confval:: host
+
+   Type: *string*
+
+   is the address of the server running the ActiveMQ broker
+
+.. confval:: port
+
+   Type: *int*
+
+   Port at which the ActiveMQ broker listens for messages.
+
+.. confval:: username
+
+   Type: *string*
+
+   Username necessary to connect to the ActiveMQ broker.
+
+.. confval:: password
+
+   Type: *string*
+
+   Password necessary to connect to the ActiveMQ broker.
+
+.. confval:: topic
+
+   Type: *string*
+
+   Broker topic to send event messages to.
+
+.. confval:: topicb
+
+   Type: *string*
+
+   Broker topic to send hearbeat messages to.
+
+
+Event messages
+--------------
+
+Event messages are sent once a first magnitude estimate is available. The
+'message_type' of the first message is 'new', and for any successive message it's
+either 'update' or 'delete'. Currently all values except the uncertainty
+estimates will be set by scvsmaglog.
+
+.. code-block:: xml
+
+   <?xml version='1.0' encoding='UTF-8'?>
+   <event_message message_type="new" orig_sys="dm" version="0">
+       <core_info id="-9">
+           <mag units="Mw">-9.9</mag>
+           <mag_uncer units="Mw">-9.9</mag_uncer>
+           <lat units="deg">-999.9</lat>
+           <lat_uncer units="deg">-999.9</lat_uncer>
+           <lon units="deg">-999.9</lon>
+           <lon_uncer units="deg">-999.9</lon_uncer>
+           <depth units="km">-9.9</depth>
+           <depth_uncer units="km">-9.9</depth_uncer>
+           <orig_time units="UTC">2013-06-10T13:35:12Z</orig_time>
+           <orig_time_uncer units="sec">-9.9</orig_time_uncer>
+           <likelihood>-9.9</likelihood>
+       </core_info>
+   </event_message>
+
+
+Heartbeat messages
+------------------
+
+Heartbeat messages are sent in 5 s intervals.
+
+.. code-block:: sh
+
+   <?xml version='1.0' encoding='UTF-8'?>
+   <hb originator="vs.9" sender="vs.9" timestamp="Mon June 10 13:41:35 2013" />
+
+ActiveMQ broker configuration
+-----------------------------
+
+It is beyond the scope of this documentation to explain the complete setup of an
+ActiveMQ broker. However, since scvsmaglog uses the STOMP protocol to send
+messages to the broker it is essential to install the stompy package, which
+provides Python bindings for the STOMP protocol, and to add the following line
+to configuration of the ActiveMQ broker.
+
+.. code-block:: sh
+
+   <connector>
+   <serverTransport uri="stomp://your-server-name:your-port"/>
+   </connector>
+
+
+
+Configuration
+=============
+
+| :file:`etc/defaults/global.cfg`
+| :file:`etc/defaults/scvsmaglog.cfg`
+| :file:`etc/global.cfg`
+| :file:`etc/scvsmaglog.cfg`
+| :file:`~/.seiscomp3/global.cfg`
+| :file:`~/.seiscomp3/scvsmaglog.cfg`
+
+scvsmaglog inherits :ref:`global options<global-configuration>`.
+
+
+
+.. confval:: email.smtpserver
+
+   Type: *string*
+
+   URL of the smtp server to send the report files to.
+
+
+.. confval:: email.port
+
+   Type: *int*
+
+   Port where the SMTP server accepts connections.
+   Default is ``25``.
+
+.. confval:: email.usetls
+
+   Type: *boolean*
+
+   Whether to use TLS when connecting to the smtp server.
+   Default is ``false``.
+
+.. confval:: email.usessl
+
+   Type: *boolean*
+
+   Whether to use SSL when connecting to the smtp server.
+   Note, only 'email.usetls' or 'user.ssl' can be true.
+   Default is ``false``.
+
+.. confval:: email.authenticate
+
+   Type: *boolean*
+
+   Whether the smtp server requires authentication \(username + password\).
+   Default is ``false``.
+
+.. confval:: email.credentials
+
+   Type: *file*
+
+   If the smtp server requires authentication you have to specify a file that contains
+   username and password in the format:
+   
+   username\=your\-username
+   
+   password\=your\-password
+   
+   Make sure that you set the file permission as restrictive as
+   possible.
+
+
+.. confval:: email.senderaddress
+
+   Type: *string*
+
+   Email address that will appear as sender in the report email.
+
+
+.. confval:: email.subject
+
+   Type: *string*
+
+   Any string that should be prepended to the email's subject string.
+
+
+.. confval:: email.host
+
+   Type: *string*
+
+   Host as it is supposed to appear in the email's subject string.
+
+
+.. confval:: email.recipients
+
+   Type: *list:string*
+
+   A list of email addresses that receive the report emails.
+
+
+.. confval:: userdisplay.configfile
+
+   Type: *file*
+
+   Path to the configuration file that defines the UserDisplay interface.
+
+
+.. confval:: report.eventbuffer
+
+   Type: *int*
+
+   Time in seconds that events and the related objects are buffered.
+   Default is ``3600``.
+
+.. confval:: report.directory
+
+   Type: *dir*
+
+   Directory to save reports to.
+   Default is ``~/.seiscomp3/log/VS_reports``.
+
+
+Command-line
+============
+
+.. program:: scvsmaglog
+
+
+Generic
+-------
+
+.. option:: -h, --help
+
+   show help message.
+
+.. option:: -V, --version
+
+   show version information
+
+.. option:: --config-file arg
+
+   Use alternative configuration file. When this option is used
+   the loading of all stages is disabled. Only the given configuration
+   file is parsed and used. To use another name for the configuration
+   create a symbolic link of the application or copy it, eg scautopick \-> scautopick2.
+
+.. option:: --plugins arg
+
+   Load given plugins.
+
+.. option:: -D, --daemon
+
+   Run as daemon. This means the application will fork itself and
+   doesn't need to be started with \&.
+
+.. option:: --auto-shutdown arg
+
+   Enable\/disable self\-shutdown because a master module shutdown. This only
+   works when messaging is enabled and the master module sends a shutdown
+   message \(enabled with \-\-start\-stop\-msg for the master module\).
+
+.. option:: --shutdown-master-module arg
+
+   Sets the name of the master\-module used for auto\-shutdown. This
+   is the application name of the module actually started. If symlinks
+   are used then it is the name of the symlinked application.
+
+.. option:: --shutdown-master-username arg
+
+   Sets the name of the master\-username of the messaging used for
+   auto\-shutdown. If \"shutdown\-master\-module\" is given as well this
+   parameter is ignored.
+
+
+Verbosity
+---------
+
+.. option:: --verbosity arg
+
+   Verbosity level [0..4]. 0:quiet, 1:error, 2:warning, 3:info, 4:debug
+
+.. option:: -v, --v
+
+   Increase verbosity level \(may be repeated, eg. \-vv\)
+
+.. option:: -q, --quiet
+
+   Quiet mode: no logging output
+
+.. option:: --component arg
+
+   Limits the logging to a certain component. This option can be given more than once.
+
+.. option:: -s, --syslog
+
+   Use syslog logging back end. The output usually goes to \/var\/lib\/messages.
+
+.. option:: -l, --lockfile arg
+
+   Path to lock file.
+
+.. option:: --console arg
+
+   Send log output to stdout.
+
+.. option:: --debug
+
+   Debug mode: \-\-verbosity\=4 \-\-console\=1
+
+.. option:: --log-file arg
+
+   Use alternative log file.
+
+
+Messaging
+---------
+
+.. option:: -u, --user arg
+
+   Overrides configuration parameter :confval:`connection.username`.
+
+.. option:: -H, --host arg
+
+   Overrides configuration parameter :confval:`connection.server`.
+
+.. option:: -t, --timeout arg
+
+   Overrides configuration parameter :confval:`connection.timeout`.
+
+.. option:: -g, --primary-group arg
+
+   Overrides configuration parameter :confval:`connection.primaryGroup`.
+
+.. option:: -S, --subscribe-group arg
+
+   A group to subscribe to. This option can be given more than once.
+
+.. option:: --encoding arg
+
+   Overrides configuration parameter :confval:`connection.encoding`.
+
+.. option:: --start-stop-msg arg
+
+   Sets sending of a start\- and a stop message.
+
+
+Reports
+-------
+
+.. option:: --savedir path
+
+   Directory to save reports to.
+

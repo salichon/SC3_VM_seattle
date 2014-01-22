@@ -1,0 +1,118 @@
+.. highlight:: rst
+
+.. _arclinkproxy:
+
+############
+arclinkproxy
+############
+
+**Proxy ArcLink server**
+
+
+Configuration
+=============
+
+
+.. note::
+
+   arclinkproxy is a standalone module and does not inherit :ref:`global options <global-configuration>`.
+
+
+| :file:`etc/defaults/arclinkproxy.cfg`
+| :file:`etc/arclinkproxy.cfg`
+| :file:`~/.seiscomp3/arclinkproxy.cfg`
+
+
+
+.. confval:: arclinkAddress
+
+   Type: *string*
+
+   Arclink address \(used if proxy functionality is enabled\).
+   Default is ``webdc.eu:18001``.
+
+.. confval:: port
+
+   Type: *int*
+
+   TCP port that the proxy is running on.
+   Default is ``18001``.
+
+.. confval:: archive
+
+   Type: *string*
+
+   Path to waveform archive where all data is stored. Relative paths
+   \(as the default\) are treated relative to the installation
+   directory \(\$SEISCOMP_ROOT\).
+   Default is ``@ROOTDIR@/var/lib/archive``.
+
+.. confval:: maxSessions
+
+   Type: *int*
+
+   Maximum number of simultaneous connections.
+   Default is ``500``.
+
+.. confval:: maxQueued
+
+   Type: *int*
+
+   Maximum number of queued requests.
+   Default is ``500``.
+
+.. confval:: maxQueuedPerUser
+
+   Type: *int*
+
+   Maximum number of queued requests per user.
+   Default is ``10``.
+
+.. confval:: maxExecuting
+
+   Type: *int*
+
+   Maximum number of requests executed in parallel.
+   Default is ``10``.
+
+.. confval:: maxLines
+
+   Type: *int*
+
+   Maximum number of lines per request.
+   Default is ``5000``.
+
+.. confval:: maxAge
+
+   Type: *int*
+
+   Maximum age of request before automatically purged.
+   Default is ``860000``.
+
+.. confval:: socketTimeout
+
+   Type: *int*
+
+   Socket timeout in seconds.
+   Default is ``300``.
+
+.. confval:: downloadRetries
+
+   Type: *int*
+
+   Number of download retries.
+   Default is ``5``.
+
+.. confval:: disableRouting
+
+   Type: *boolean*
+
+   Disable routing.
+   Default is ``false``.
+
+.. confval:: localOnly
+
+   Type: *boolean*
+
+   Disable proxy functionality \(use only locally stored data\).
+   Default is ``true``.
