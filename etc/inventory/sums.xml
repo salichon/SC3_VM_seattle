@@ -1,0 +1,2007 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seiscomp xmlns="http://geofon.gfz-potsdam.de/ns/seiscomp3-schema/0.7" version="0.7">
+  <Inventory>
+    <sensor publicID="Sensor#20140123020816.589039.144" name="SUMS.2012.114.N120" response="ResponsePAZ#20140123020816.589919.145">
+      <description>FBA-ES-T-BASALT</description>
+      <model>FBA-ES-T-BASALT</model>
+      <unit>M/S**2</unit>
+      <calibration serialNumber="yyyy" channel="1">
+        <start>2012-04-23T03:00:00.0000Z</start>
+        <end>2012-12-18T03:15:00.0000Z</end>
+        <gain>0.254712</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20140123020816.592422.152" name="SUMS.2013.010.N120" response="ResponsePAZ#20140123020816.593009.153">
+      <description>FBA-ES-T-BASALT</description>
+      <model>FBA-ES-T-BASALT</model>
+      <unit>M/S**2</unit>
+      <calibration serialNumber="yyyy" channel="1">
+        <start>2013-01-10T22:00:01.0000Z</start>
+        <end>2013-01-10T22:05:00.0000Z</end>
+        <gain>0.254712</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <calibration serialNumber="yyyy" channel="1">
+        <start>2013-01-10T22:09:00.0000Z</start>
+        <end>2013-08-08T00:00:00.0000Z</end>
+        <gain>0.254712</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20140123020816.595263.160" name="SUMS.2012.353.N120" response="ResponsePAZ#20140123020816.595916.161">
+      <description>FBA-ES-T-BASALT</description>
+      <model>FBA-ES-T-BASALT</model>
+      <unit>M/S**2</unit>
+      <calibration serialNumber="yyyy" channel="1">
+        <start>2012-12-18T03:19:00.0000Z</start>
+        <end>2013-01-10T22:05:00.0000Z</end>
+        <gain>0.254712</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20140123020816.601255.168" name="SUMS.2013.220.N120" response="ResponsePAZ#20140123020816.601474.169">
+      <description>FBA-ES-T-BASALT</description>
+      <model>FBA-ES-T-BASALT</model>
+      <unit>M/S**2</unit>
+      <calibration serialNumber="yyyy" channel="1">
+        <start>2013-08-08T00:05:00.0000Z</start>
+        <gain>0.254712</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20140123020816.603206.175" name="SUMS.2012.114.N220" response="ResponsePAZ#20140123020816.603383.176">
+      <description>FBA-ES-T-BASALT</description>
+      <model>FBA-ES-T-BASALT</model>
+      <unit>M/S**2</unit>
+      <calibration serialNumber="yyyy" channel="2">
+        <start>2012-04-23T03:00:00.0000Z</start>
+        <end>2012-12-18T03:15:00.0000Z</end>
+        <gain>0.254712</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20140123020816.604723.182" name="SUMS.2012.353.N220" response="ResponsePAZ#20140123020816.604889.183">
+      <description>FBA-ES-T-BASALT</description>
+      <model>FBA-ES-T-BASALT</model>
+      <unit>M/S**2</unit>
+      <calibration serialNumber="yyyy" channel="2">
+        <start>2012-12-18T03:19:00.0000Z</start>
+        <end>2013-01-10T22:05:00.0000Z</end>
+        <gain>0.254712</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20140123020816.606219.189" name="SUMS.2013.010.N220" response="ResponsePAZ#20140123020816.606385.190">
+      <description>FBA-ES-T-BASALT</description>
+      <model>FBA-ES-T-BASALT</model>
+      <unit>M/S**2</unit>
+      <calibration serialNumber="yyyy" channel="2">
+        <start>2013-01-10T22:00:01.0000Z</start>
+        <end>2013-01-10T22:05:00.0000Z</end>
+        <gain>0.254712</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <calibration serialNumber="yyyy" channel="2">
+        <start>2013-01-10T22:09:00.0000Z</start>
+        <end>2013-08-08T00:00:00.0000Z</end>
+        <gain>0.254712</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20140123020816.623646.196" name="SUMS.2013.220.N220" response="ResponsePAZ#20140123020816.623851.197">
+      <description>FBA-ES-T-BASALT</description>
+      <model>FBA-ES-T-BASALT</model>
+      <unit>M/S**2</unit>
+      <calibration serialNumber="yyyy" channel="2">
+        <start>2013-08-08T00:05:00.0000Z</start>
+        <gain>0.254712</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20140123020816.625414.203" name="SUMS.2012.114.NZ20" response="ResponsePAZ#20140123020816.625595.204">
+      <description>FBA-ES-T-BASALT</description>
+      <model>FBA-ES-T-BASALT</model>
+      <unit>M/S**2</unit>
+      <calibration serialNumber="yyyy" channel="0">
+        <start>2012-04-23T03:00:00.0000Z</start>
+        <end>2012-12-18T03:15:00.0000Z</end>
+        <gain>0.254712</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20140123020816.626904.210" name="SUMS.2012.353.NZ20" response="ResponsePAZ#20140123020816.627108.211">
+      <description>FBA-ES-T-BASALT</description>
+      <model>FBA-ES-T-BASALT</model>
+      <unit>M/S**2</unit>
+      <calibration serialNumber="yyyy" channel="0">
+        <start>2012-12-18T03:19:00.0000Z</start>
+        <end>2013-01-10T22:05:00.0000Z</end>
+        <gain>0.254712</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20140123020816.628398.217" name="SUMS.2013.010.NZ20" response="ResponsePAZ#20140123020816.628556.218">
+      <description>FBA-ES-T-BASALT</description>
+      <model>FBA-ES-T-BASALT</model>
+      <unit>M/S**2</unit>
+      <calibration serialNumber="yyyy" channel="0">
+        <start>2013-01-10T22:00:01.0000Z</start>
+        <end>2013-01-10T22:05:00.0000Z</end>
+        <gain>0.254712</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <calibration serialNumber="yyyy" channel="0">
+        <start>2013-01-10T22:09:00.0000Z</start>
+        <end>2013-08-08T00:00:00.0000Z</end>
+        <gain>0.254712</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20140123020816.632974.224" name="SUMS.2013.220.NZ20" response="ResponsePAZ#20140123020816.63318.225">
+      <description>FBA-ES-T-BASALT</description>
+      <model>FBA-ES-T-BASALT</model>
+      <unit>M/S**2</unit>
+      <calibration serialNumber="yyyy" channel="0">
+        <start>2013-08-08T00:05:00.0000Z</start>
+        <gain>0.254712</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+    </sensor>
+    <datalogger publicID="Datalogger#20140123020816.585812.138" name="SUMS.2012.114.N20">
+      <description>SUMS.2012.114.N20</description>
+      <gain>1677720</gain>
+      <maxClockDrift>0.02</maxClockDrift>
+      <calibration serialNumber="xxxx" channel="1">
+        <start>2012-04-23T03:00:00.0000Z</start>
+        <end>2012-12-18T03:15:00.0000Z</end>
+        <gain>1677720</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="2">
+        <start>2012-04-23T03:00:00.0000Z</start>
+        <end>2012-12-18T03:15:00.0000Z</end>
+        <gain>1677720</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="0">
+        <start>2012-04-23T03:00:00.0000Z</start>
+        <end>2012-12-18T03:15:00.0000Z</end>
+        <gain>1677720</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <decimation sampleRateNumerator="50" sampleRateDenominator="1">
+        <digitalFilterChain>ResponseFIR#20140123020816.62433.198 ResponseFIR#20140123020816.624656.199 ResponseFIR#20140123020816.624778.200 ResponseFIR#20140123020816.624935.201 ResponseFIR#20140123020816.625106.202</digitalFilterChain>
+      </decimation>
+      <decimation sampleRateNumerator="200" sampleRateDenominator="1">
+        <digitalFilterChain>ResponseFIR#20140123020816.68222.258 ResponseFIR#20140123020816.682371.259 ResponseFIR#20140123020816.682477.260 ResponseFIR#20140123020816.682635.261</digitalFilterChain>
+      </decimation>
+    </datalogger>
+    <datalogger publicID="Datalogger#20140123020816.590719.146" name="SUMS.2013.010.N20">
+      <description>SUMS.2013.010.N20</description>
+      <gain>1677720</gain>
+      <maxClockDrift>0.02</maxClockDrift>
+      <calibration serialNumber="xxxx" channel="1">
+        <start>2013-01-10T22:00:01.0000Z</start>
+        <end>2013-01-10T22:05:00.0000Z</end>
+        <gain>1677720</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="1">
+        <start>2013-01-10T22:09:00.0000Z</start>
+        <end>2013-08-08T00:00:00.0000Z</end>
+        <gain>1677720</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="2">
+        <start>2013-01-10T22:00:01.0000Z</start>
+        <end>2013-01-10T22:05:00.0000Z</end>
+        <gain>1677720</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="2">
+        <start>2013-01-10T22:09:00.0000Z</start>
+        <end>2013-08-08T00:00:00.0000Z</end>
+        <gain>1677720</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="0">
+        <start>2013-01-10T22:00:01.0000Z</start>
+        <end>2013-01-10T22:05:00.0000Z</end>
+        <gain>1677720</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="0">
+        <start>2013-01-10T22:09:00.0000Z</start>
+        <end>2013-08-08T00:00:00.0000Z</end>
+        <gain>1677720</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <decimation sampleRateNumerator="50" sampleRateDenominator="1">
+        <digitalFilterChain>ResponseFIR#20140123020816.627509.212 ResponseFIR#20140123020816.627659.213 ResponseFIR#20140123020816.627772.214 ResponseFIR#20140123020816.627924.215 ResponseFIR#20140123020816.628108.216</digitalFilterChain>
+      </decimation>
+      <decimation sampleRateNumerator="200" sampleRateDenominator="1">
+        <digitalFilterChain>ResponseFIR#20140123020816.684384.266 ResponseFIR#20140123020816.684645.267 ResponseFIR#20140123020816.684761.268 ResponseFIR#20140123020816.684917.269</digitalFilterChain>
+      </decimation>
+    </datalogger>
+    <datalogger publicID="Datalogger#20140123020816.593542.154" name="SUMS.2012.353.N20">
+      <description>SUMS.2012.353.N20</description>
+      <gain>1677720</gain>
+      <maxClockDrift>0.02</maxClockDrift>
+      <calibration serialNumber="xxxx" channel="1">
+        <start>2012-12-18T03:19:00.0000Z</start>
+        <end>2013-01-10T22:05:00.0000Z</end>
+        <gain>1677720</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="2">
+        <start>2012-12-18T03:19:00.0000Z</start>
+        <end>2013-01-10T22:05:00.0000Z</end>
+        <gain>1677720</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="0">
+        <start>2012-12-18T03:19:00.0000Z</start>
+        <end>2013-01-10T22:05:00.0000Z</end>
+        <gain>1677720</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <decimation sampleRateNumerator="50" sampleRateDenominator="1">
+        <digitalFilterChain>ResponseFIR#20140123020816.626036.205 ResponseFIR#20140123020816.626185.206 ResponseFIR#20140123020816.626299.207 ResponseFIR#20140123020816.62645.208 ResponseFIR#20140123020816.626617.209</digitalFilterChain>
+      </decimation>
+      <decimation sampleRateNumerator="200" sampleRateDenominator="1">
+        <digitalFilterChain>ResponseFIR#20140123020816.683319.262 ResponseFIR#20140123020816.683458.263 ResponseFIR#20140123020816.683562.264 ResponseFIR#20140123020816.683718.265</digitalFilterChain>
+      </decimation>
+    </datalogger>
+    <datalogger publicID="Datalogger#20140123020816.600075.162" name="SUMS.2013.220.N20">
+      <description>SUMS.2013.220.N20</description>
+      <gain>1677720</gain>
+      <maxClockDrift>0.02</maxClockDrift>
+      <calibration serialNumber="xxxx" channel="1">
+        <start>2013-08-08T00:05:00.0000Z</start>
+        <gain>1677720</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="2">
+        <start>2013-08-08T00:05:00.0000Z</start>
+        <gain>1677720</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="0">
+        <start>2013-08-08T00:05:00.0000Z</start>
+        <gain>1677720</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <decimation sampleRateNumerator="50" sampleRateDenominator="1">
+        <digitalFilterChain>ResponseFIR#20140123020816.632007.219 ResponseFIR#20140123020816.632202.220 ResponseFIR#20140123020816.632322.221 ResponseFIR#20140123020816.63248.222 ResponseFIR#20140123020816.632654.223</digitalFilterChain>
+      </decimation>
+      <decimation sampleRateNumerator="200" sampleRateDenominator="1">
+        <digitalFilterChain>ResponseFIR#20140123020816.689776.270 ResponseFIR#20140123020816.689939.271 ResponseFIR#20140123020816.69009.272 ResponseFIR#20140123020816.690265.273</digitalFilterChain>
+      </decimation>
+    </datalogger>
+    <responsePAZ publicID="ResponsePAZ#20140123020816.589919.145" name="SUMS.2012.114.N120">
+      <type>A</type>
+      <gain>0.254712</gain>
+      <gainFrequency>1</gainFrequency>
+      <normalizationFactor>2.45957e+13</normalizationFactor>
+      <normalizationFrequency>1</normalizationFrequency>
+      <numberOfZeros>0</numberOfZeros>
+      <numberOfPoles>4</numberOfPoles>
+      <zeros/>
+      <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20140123020816.593009.153" name="SUMS.2013.010.N120">
+      <type>A</type>
+      <gain>0.254712</gain>
+      <gainFrequency>1</gainFrequency>
+      <normalizationFactor>2.45957e+13</normalizationFactor>
+      <normalizationFrequency>1</normalizationFrequency>
+      <numberOfZeros>0</numberOfZeros>
+      <numberOfPoles>4</numberOfPoles>
+      <zeros/>
+      <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20140123020816.595916.161" name="SUMS.2012.353.N120">
+      <type>A</type>
+      <gain>0.254712</gain>
+      <gainFrequency>1</gainFrequency>
+      <normalizationFactor>2.45957e+13</normalizationFactor>
+      <normalizationFrequency>1</normalizationFrequency>
+      <numberOfZeros>0</numberOfZeros>
+      <numberOfPoles>4</numberOfPoles>
+      <zeros/>
+      <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20140123020816.601474.169" name="SUMS.2013.220.N120">
+      <type>A</type>
+      <gain>0.254712</gain>
+      <gainFrequency>1</gainFrequency>
+      <normalizationFactor>2.45957e+13</normalizationFactor>
+      <normalizationFrequency>1</normalizationFrequency>
+      <numberOfZeros>0</numberOfZeros>
+      <numberOfPoles>4</numberOfPoles>
+      <zeros/>
+      <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20140123020816.603383.176" name="SUMS.2012.114.N220">
+      <type>A</type>
+      <gain>0.254712</gain>
+      <gainFrequency>1</gainFrequency>
+      <normalizationFactor>2.45957e+13</normalizationFactor>
+      <normalizationFrequency>1</normalizationFrequency>
+      <numberOfZeros>0</numberOfZeros>
+      <numberOfPoles>4</numberOfPoles>
+      <zeros/>
+      <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20140123020816.604889.183" name="SUMS.2012.353.N220">
+      <type>A</type>
+      <gain>0.254712</gain>
+      <gainFrequency>1</gainFrequency>
+      <normalizationFactor>2.45957e+13</normalizationFactor>
+      <normalizationFrequency>1</normalizationFrequency>
+      <numberOfZeros>0</numberOfZeros>
+      <numberOfPoles>4</numberOfPoles>
+      <zeros/>
+      <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20140123020816.606385.190" name="SUMS.2013.010.N220">
+      <type>A</type>
+      <gain>0.254712</gain>
+      <gainFrequency>1</gainFrequency>
+      <normalizationFactor>2.45957e+13</normalizationFactor>
+      <normalizationFrequency>1</normalizationFrequency>
+      <numberOfZeros>0</numberOfZeros>
+      <numberOfPoles>4</numberOfPoles>
+      <zeros/>
+      <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20140123020816.623851.197" name="SUMS.2013.220.N220">
+      <type>A</type>
+      <gain>0.254712</gain>
+      <gainFrequency>1</gainFrequency>
+      <normalizationFactor>2.45957e+13</normalizationFactor>
+      <normalizationFrequency>1</normalizationFrequency>
+      <numberOfZeros>0</numberOfZeros>
+      <numberOfPoles>4</numberOfPoles>
+      <zeros/>
+      <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20140123020816.625595.204" name="SUMS.2012.114.NZ20">
+      <type>A</type>
+      <gain>0.254712</gain>
+      <gainFrequency>1</gainFrequency>
+      <normalizationFactor>2.45957e+13</normalizationFactor>
+      <normalizationFrequency>1</normalizationFrequency>
+      <numberOfZeros>0</numberOfZeros>
+      <numberOfPoles>4</numberOfPoles>
+      <zeros/>
+      <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20140123020816.627108.211" name="SUMS.2012.353.NZ20">
+      <type>A</type>
+      <gain>0.254712</gain>
+      <gainFrequency>1</gainFrequency>
+      <normalizationFactor>2.45957e+13</normalizationFactor>
+      <normalizationFrequency>1</normalizationFrequency>
+      <numberOfZeros>0</numberOfZeros>
+      <numberOfPoles>4</numberOfPoles>
+      <zeros/>
+      <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20140123020816.628556.218" name="SUMS.2013.010.NZ20">
+      <type>A</type>
+      <gain>0.254712</gain>
+      <gainFrequency>1</gainFrequency>
+      <normalizationFactor>2.45957e+13</normalizationFactor>
+      <normalizationFrequency>1</normalizationFrequency>
+      <numberOfZeros>0</numberOfZeros>
+      <numberOfPoles>4</numberOfPoles>
+      <zeros/>
+      <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20140123020816.63318.225" name="SUMS.2013.220.NZ20">
+      <type>A</type>
+      <gain>0.254712</gain>
+      <gainFrequency>1</gainFrequency>
+      <normalizationFactor>2.45957e+13</normalizationFactor>
+      <normalizationFrequency>1</normalizationFrequency>
+      <numberOfZeros>0</numberOfZeros>
+      <numberOfPoles>4</numberOfPoles>
+      <zeros/>
+      <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
+    </responsePAZ>
+    <responseFIR publicID="ResponseFIR#20140123020816.586469.139" name="SUMS.20.BN1.2012.114.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>29.0001</delay>
+      <correction>29.0001</correction>
+      <numberOfCoefficients>30</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>8.48249e-06 3.89037e-05 0.000109346 0.000226937 0.00036584 0.000447944 0.000346227 -7.08089e-05 -0.000851525 -0.00185801 -0.0027055 -0.00281272 -0.00160384 0.00116656 0.00508161 0.00890325 0.010758 0.00873375 0.00177379 -0.00943683 -0.0219989 -0.0310883 -0.0311164 -0.0175223 0.0113614 0.0530733 0.100994 0.145714 0.177481 0.188975</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.586794.140" name="SUMS.20.BN1.2012.114.stage_4">
+      <gain>1</gain>
+      <decimationFactor>3</decimationFactor>
+      <delay>16.9998</delay>
+      <correction>16.9998</correction>
+      <numberOfCoefficients>18</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>4.13465e-05 0.000234989 0.000591262 0.000653151 -0.000475707 -0.00295148 -0.00454665 -0.00123816 0.0081097 0.0164184 0.0105253 -0.0154747 -0.0453658 -0.0428086 0.0222852 0.14106 0.258835 0.308214</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.587027.141" name="SUMS.20.BN1.2012.114.stage_5">
+      <gain>1</gain>
+      <decimationFactor>4</decimationFactor>
+      <delay>34</delay>
+      <correction>34</correction>
+      <numberOfCoefficients>35</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-3.35276e-08 -3.35276e-07 -1.76951e-06 -6.51088e-06 -1.83936e-05 -4.15682e-05 -7.5826e-05 -0.000108499 -0.000106949 -2.08658e-05 0.000194796 0.000533339 0.000883073 0.00100778 0.000610251 -0.000498588 -0.0021711 -0.00376407 -0.00421941 -0.00249074 0.00176057 0.00751189 0.0122265 0.0125688 0.00597886 -0.0074359 -0.0236465 -0.0350249 -0.0326168 -0.00979105 0.03418 0.0923474 0.151291 0.195214 0.211464</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.588286.142" name="SUMS.20.BN1.2012.114.stage_6">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>42</delay>
+      <correction>42</correction>
+      <numberOfCoefficients>43</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-1.25729e-08 -1.05239e-07 -4.85219e-07 -1.62749e-06 -4.36278e-06 -9.75467e-06 -1.85249e-05 -2.98358e-05 -3.95435e-05 -3.85744e-05 -1.27601e-05 5.41867e-05 0.000173287 0.00033889 0.000516461 0.000635812 0.000597759 0.000300498 -0.000314192 -0.00120507 -0.00218704 -0.00292612 -0.00299796 -0.0020174 0.000182455 0.003375 0.00684425 0.00944234 0.00984065 0.00695227 0.00042907 -0.00892353 -0.0189876 -0.026559 -0.0279847 -0.020103 -0.0012493 0.0279692 0.0644083 0.10278 0.136674 0.159965 0.168261</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.588529.143" name="SUMS.20.BN1.2012.114.stage_7">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>86</delay>
+      <correction>86</correction>
+      <numberOfCoefficients>87</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>2.8871e-08 2.05357e-07 6.20727e-07 7.18515e-07 -1.38441e-06 -7.7975e-06 -1.69897e-05 -2.11047e-05 -1.16173e-05 7.80309e-06 1.77319e-05 2.98768e-06 -2.14367e-05 -1.9717e-05 1.55247e-05 3.81991e-05 4.42239e-06 -5.01745e-05 -3.89661e-05 4.42239e-05 8.129e-05 -1.01537e-05 -0.000116444 -5.57676e-05 0.00012339 0.000145692 -8.04989e-05 -0.000237298 -2.62186e-05 0.000295014 0.000193928 -0.000276734 -0.000395855 0.000145696 0.000579332 0.000114268 -0.000671905 -0.00048414 0.000596339 0.000900563 -0.000293051 -0.00125695 -0.000254198 0.00141822 0.000996165 -0.0012493 -0.001807 0.000653577 0.00249086 0.000385978 -0.00280996 -0.00177377 0.00253297 0.00328742 -0.00149677 -0.00459133 -0.000329872 0.00528226 0.00279596 -0.00496379 -0.00554609 0.00333984 0.00803791 -0.000310468 -0.0096033 -0.00394934 0.00954874 0.00894634 -0.00728015 -0.013873 0.00243061 0.0176589 0.00503427 -0.0190534 -0.0147575 0.0166972 0.0259952 -0.00908776 -0.0376895 -0.00581503 0.0486034 0.0323113 -0.0574957 -0.0859903 0.0633078 0.311379 0.434671</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.591176.147" name="SUMS.20.BN1.2013.010.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>29.0001</delay>
+      <correction>29.0001</correction>
+      <numberOfCoefficients>30</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>8.48249e-06 3.89037e-05 0.000109346 0.000226937 0.00036584 0.000447944 0.000346227 -7.08089e-05 -0.000851525 -0.00185801 -0.0027055 -0.00281272 -0.00160384 0.00116656 0.00508161 0.00890325 0.010758 0.00873375 0.00177379 -0.00943683 -0.0219989 -0.0310883 -0.0311164 -0.0175223 0.0113614 0.0530733 0.100994 0.145714 0.177481 0.188975</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.591397.148" name="SUMS.20.BN1.2013.010.stage_4">
+      <gain>1</gain>
+      <decimationFactor>3</decimationFactor>
+      <delay>16.9998</delay>
+      <correction>16.9998</correction>
+      <numberOfCoefficients>18</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>4.13465e-05 0.000234989 0.000591262 0.000653151 -0.000475707 -0.00295148 -0.00454665 -0.00123816 0.0081097 0.0164184 0.0105253 -0.0154747 -0.0453658 -0.0428086 0.0222852 0.14106 0.258835 0.308214</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.591561.149" name="SUMS.20.BN1.2013.010.stage_5">
+      <gain>1</gain>
+      <decimationFactor>4</decimationFactor>
+      <delay>34</delay>
+      <correction>34</correction>
+      <numberOfCoefficients>35</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-3.35276e-08 -3.35276e-07 -1.76951e-06 -6.51088e-06 -1.83936e-05 -4.15682e-05 -7.5826e-05 -0.000108499 -0.000106949 -2.08658e-05 0.000194796 0.000533339 0.000883073 0.00100778 0.000610251 -0.000498588 -0.0021711 -0.00376407 -0.00421941 -0.00249074 0.00176057 0.00751189 0.0122265 0.0125688 0.00597886 -0.0074359 -0.0236465 -0.0350249 -0.0326168 -0.00979105 0.03418 0.0923474 0.151291 0.195214 0.211464</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.591761.150" name="SUMS.20.BN1.2013.010.stage_6">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>42</delay>
+      <correction>42</correction>
+      <numberOfCoefficients>43</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-1.25729e-08 -1.05239e-07 -4.85219e-07 -1.62749e-06 -4.36278e-06 -9.75467e-06 -1.85249e-05 -2.98358e-05 -3.95435e-05 -3.85744e-05 -1.27601e-05 5.41867e-05 0.000173287 0.00033889 0.000516461 0.000635812 0.000597759 0.000300498 -0.000314192 -0.00120507 -0.00218704 -0.00292612 -0.00299796 -0.0020174 0.000182455 0.003375 0.00684425 0.00944234 0.00984065 0.00695227 0.00042907 -0.00892353 -0.0189876 -0.026559 -0.0279847 -0.020103 -0.0012493 0.0279692 0.0644083 0.10278 0.136674 0.159965 0.168261</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.592009.151" name="SUMS.20.BN1.2013.010.stage_7">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>86</delay>
+      <correction>86</correction>
+      <numberOfCoefficients>87</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>2.8871e-08 2.05357e-07 6.20727e-07 7.18515e-07 -1.38441e-06 -7.7975e-06 -1.69897e-05 -2.11047e-05 -1.16173e-05 7.80309e-06 1.77319e-05 2.98768e-06 -2.14367e-05 -1.9717e-05 1.55247e-05 3.81991e-05 4.42239e-06 -5.01745e-05 -3.89661e-05 4.42239e-05 8.129e-05 -1.01537e-05 -0.000116444 -5.57676e-05 0.00012339 0.000145692 -8.04989e-05 -0.000237298 -2.62186e-05 0.000295014 0.000193928 -0.000276734 -0.000395855 0.000145696 0.000579332 0.000114268 -0.000671905 -0.00048414 0.000596339 0.000900563 -0.000293051 -0.00125695 -0.000254198 0.00141822 0.000996165 -0.0012493 -0.001807 0.000653577 0.00249086 0.000385978 -0.00280996 -0.00177377 0.00253297 0.00328742 -0.00149677 -0.00459133 -0.000329872 0.00528226 0.00279596 -0.00496379 -0.00554609 0.00333984 0.00803791 -0.000310468 -0.0096033 -0.00394934 0.00954874 0.00894634 -0.00728015 -0.013873 0.00243061 0.0176589 0.00503427 -0.0190534 -0.0147575 0.0166972 0.0259952 -0.00908776 -0.0376895 -0.00581503 0.0486034 0.0323113 -0.0574957 -0.0859903 0.0633078 0.311379 0.434671</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.593969.155" name="SUMS.20.BN1.2012.353.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>29.0001</delay>
+      <correction>29.0001</correction>
+      <numberOfCoefficients>30</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>8.48249e-06 3.89037e-05 0.000109346 0.000226937 0.00036584 0.000447944 0.000346227 -7.08089e-05 -0.000851525 -0.00185801 -0.0027055 -0.00281272 -0.00160384 0.00116656 0.00508161 0.00890325 0.010758 0.00873375 0.00177379 -0.00943683 -0.0219989 -0.0310883 -0.0311164 -0.0175223 0.0113614 0.0530733 0.100994 0.145714 0.177481 0.188975</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.594169.156" name="SUMS.20.BN1.2012.353.stage_4">
+      <gain>1</gain>
+      <decimationFactor>3</decimationFactor>
+      <delay>16.9998</delay>
+      <correction>16.9998</correction>
+      <numberOfCoefficients>18</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>4.13465e-05 0.000234989 0.000591262 0.000653151 -0.000475707 -0.00295148 -0.00454665 -0.00123816 0.0081097 0.0164184 0.0105253 -0.0154747 -0.0453658 -0.0428086 0.0222852 0.14106 0.258835 0.308214</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.594332.157" name="SUMS.20.BN1.2012.353.stage_5">
+      <gain>1</gain>
+      <decimationFactor>4</decimationFactor>
+      <delay>34</delay>
+      <correction>34</correction>
+      <numberOfCoefficients>35</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-3.35276e-08 -3.35276e-07 -1.76951e-06 -6.51088e-06 -1.83936e-05 -4.15682e-05 -7.5826e-05 -0.000108499 -0.000106949 -2.08658e-05 0.000194796 0.000533339 0.000883073 0.00100778 0.000610251 -0.000498588 -0.0021711 -0.00376407 -0.00421941 -0.00249074 0.00176057 0.00751189 0.0122265 0.0125688 0.00597886 -0.0074359 -0.0236465 -0.0350249 -0.0326168 -0.00979105 0.03418 0.0923474 0.151291 0.195214 0.211464</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.59461.158" name="SUMS.20.BN1.2012.353.stage_6">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>42</delay>
+      <correction>42</correction>
+      <numberOfCoefficients>43</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-1.25729e-08 -1.05239e-07 -4.85219e-07 -1.62749e-06 -4.36278e-06 -9.75467e-06 -1.85249e-05 -2.98358e-05 -3.95435e-05 -3.85744e-05 -1.27601e-05 5.41867e-05 0.000173287 0.00033889 0.000516461 0.000635812 0.000597759 0.000300498 -0.000314192 -0.00120507 -0.00218704 -0.00292612 -0.00299796 -0.0020174 0.000182455 0.003375 0.00684425 0.00944234 0.00984065 0.00695227 0.00042907 -0.00892353 -0.0189876 -0.026559 -0.0279847 -0.020103 -0.0012493 0.0279692 0.0644083 0.10278 0.136674 0.159965 0.168261</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.594828.159" name="SUMS.20.BN1.2012.353.stage_7">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>86</delay>
+      <correction>86</correction>
+      <numberOfCoefficients>87</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>2.8871e-08 2.05357e-07 6.20727e-07 7.18515e-07 -1.38441e-06 -7.7975e-06 -1.69897e-05 -2.11047e-05 -1.16173e-05 7.80309e-06 1.77319e-05 2.98768e-06 -2.14367e-05 -1.9717e-05 1.55247e-05 3.81991e-05 4.42239e-06 -5.01745e-05 -3.89661e-05 4.42239e-05 8.129e-05 -1.01537e-05 -0.000116444 -5.57676e-05 0.00012339 0.000145692 -8.04989e-05 -0.000237298 -2.62186e-05 0.000295014 0.000193928 -0.000276734 -0.000395855 0.000145696 0.000579332 0.000114268 -0.000671905 -0.00048414 0.000596339 0.000900563 -0.000293051 -0.00125695 -0.000254198 0.00141822 0.000996165 -0.0012493 -0.001807 0.000653577 0.00249086 0.000385978 -0.00280996 -0.00177377 0.00253297 0.00328742 -0.00149677 -0.00459133 -0.000329872 0.00528226 0.00279596 -0.00496379 -0.00554609 0.00333984 0.00803791 -0.000310468 -0.0096033 -0.00394934 0.00954874 0.00894634 -0.00728015 -0.013873 0.00243061 0.0176589 0.00503427 -0.0190534 -0.0147575 0.0166972 0.0259952 -0.00908776 -0.0376895 -0.00581503 0.0486034 0.0323113 -0.0574957 -0.0859903 0.0633078 0.311379 0.434671</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.600321.163" name="SUMS.20.BN1.2013.220.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>29.0001</delay>
+      <correction>29.0001</correction>
+      <numberOfCoefficients>30</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>8.48249e-06 3.89037e-05 0.000109346 0.000226937 0.00036584 0.000447944 0.000346227 -7.08089e-05 -0.000851525 -0.00185801 -0.0027055 -0.00281272 -0.00160384 0.00116656 0.00508161 0.00890325 0.010758 0.00873375 0.00177379 -0.00943683 -0.0219989 -0.0310883 -0.0311164 -0.0175223 0.0113614 0.0530733 0.100994 0.145714 0.177481 0.188975</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.60049.164" name="SUMS.20.BN1.2013.220.stage_4">
+      <gain>1</gain>
+      <decimationFactor>3</decimationFactor>
+      <delay>16.9998</delay>
+      <correction>16.9998</correction>
+      <numberOfCoefficients>18</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>4.13465e-05 0.000234989 0.000591262 0.000653151 -0.000475707 -0.00295148 -0.00454665 -0.00123816 0.0081097 0.0164184 0.0105253 -0.0154747 -0.0453658 -0.0428086 0.0222852 0.14106 0.258835 0.308214</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.600621.165" name="SUMS.20.BN1.2013.220.stage_5">
+      <gain>1</gain>
+      <decimationFactor>4</decimationFactor>
+      <delay>34</delay>
+      <correction>34</correction>
+      <numberOfCoefficients>35</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-3.35276e-08 -3.35276e-07 -1.76951e-06 -6.51088e-06 -1.83936e-05 -4.15682e-05 -7.5826e-05 -0.000108499 -0.000106949 -2.08658e-05 0.000194796 0.000533339 0.000883073 0.00100778 0.000610251 -0.000498588 -0.0021711 -0.00376407 -0.00421941 -0.00249074 0.00176057 0.00751189 0.0122265 0.0125688 0.00597886 -0.0074359 -0.0236465 -0.0350249 -0.0326168 -0.00979105 0.03418 0.0923474 0.151291 0.195214 0.211464</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.600775.166" name="SUMS.20.BN1.2013.220.stage_6">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>42</delay>
+      <correction>42</correction>
+      <numberOfCoefficients>43</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-1.25729e-08 -1.05239e-07 -4.85219e-07 -1.62749e-06 -4.36278e-06 -9.75467e-06 -1.85249e-05 -2.98358e-05 -3.95435e-05 -3.85744e-05 -1.27601e-05 5.41867e-05 0.000173287 0.00033889 0.000516461 0.000635812 0.000597759 0.000300498 -0.000314192 -0.00120507 -0.00218704 -0.00292612 -0.00299796 -0.0020174 0.000182455 0.003375 0.00684425 0.00944234 0.00984065 0.00695227 0.00042907 -0.00892353 -0.0189876 -0.026559 -0.0279847 -0.020103 -0.0012493 0.0279692 0.0644083 0.10278 0.136674 0.159965 0.168261</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.600947.167" name="SUMS.20.BN1.2013.220.stage_7">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>86</delay>
+      <correction>86</correction>
+      <numberOfCoefficients>87</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>2.8871e-08 2.05357e-07 6.20727e-07 7.18515e-07 -1.38441e-06 -7.7975e-06 -1.69897e-05 -2.11047e-05 -1.16173e-05 7.80309e-06 1.77319e-05 2.98768e-06 -2.14367e-05 -1.9717e-05 1.55247e-05 3.81991e-05 4.42239e-06 -5.01745e-05 -3.89661e-05 4.42239e-05 8.129e-05 -1.01537e-05 -0.000116444 -5.57676e-05 0.00012339 0.000145692 -8.04989e-05 -0.000237298 -2.62186e-05 0.000295014 0.000193928 -0.000276734 -0.000395855 0.000145696 0.000579332 0.000114268 -0.000671905 -0.00048414 0.000596339 0.000900563 -0.000293051 -0.00125695 -0.000254198 0.00141822 0.000996165 -0.0012493 -0.001807 0.000653577 0.00249086 0.000385978 -0.00280996 -0.00177377 0.00253297 0.00328742 -0.00149677 -0.00459133 -0.000329872 0.00528226 0.00279596 -0.00496379 -0.00554609 0.00333984 0.00803791 -0.000310468 -0.0096033 -0.00394934 0.00954874 0.00894634 -0.00728015 -0.013873 0.00243061 0.0176589 0.00503427 -0.0190534 -0.0147575 0.0166972 0.0259952 -0.00908776 -0.0376895 -0.00581503 0.0486034 0.0323113 -0.0574957 -0.0859903 0.0633078 0.311379 0.434671</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.602197.170" name="SUMS.20.BN2.2012.114.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>29.0001</delay>
+      <correction>29.0001</correction>
+      <numberOfCoefficients>30</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>8.48249e-06 3.89037e-05 0.000109346 0.000226937 0.00036584 0.000447944 0.000346227 -7.08089e-05 -0.000851525 -0.00185801 -0.0027055 -0.00281272 -0.00160384 0.00116656 0.00508161 0.00890325 0.010758 0.00873375 0.00177379 -0.00943683 -0.0219989 -0.0310883 -0.0311164 -0.0175223 0.0113614 0.0530733 0.100994 0.145714 0.177481 0.188975</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.602397.171" name="SUMS.20.BN2.2012.114.stage_4">
+      <gain>1</gain>
+      <decimationFactor>3</decimationFactor>
+      <delay>16.9998</delay>
+      <correction>16.9998</correction>
+      <numberOfCoefficients>18</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>4.13465e-05 0.000234989 0.000591262 0.000653151 -0.000475707 -0.00295148 -0.00454665 -0.00123816 0.0081097 0.0164184 0.0105253 -0.0154747 -0.0453658 -0.0428086 0.0222852 0.14106 0.258835 0.308214</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.602561.172" name="SUMS.20.BN2.2012.114.stage_5">
+      <gain>1</gain>
+      <decimationFactor>4</decimationFactor>
+      <delay>34</delay>
+      <correction>34</correction>
+      <numberOfCoefficients>35</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-3.35276e-08 -3.35276e-07 -1.76951e-06 -6.51088e-06 -1.83936e-05 -4.15682e-05 -7.5826e-05 -0.000108499 -0.000106949 -2.08658e-05 0.000194796 0.000533339 0.000883073 0.00100778 0.000610251 -0.000498588 -0.0021711 -0.00376407 -0.00421941 -0.00249074 0.00176057 0.00751189 0.0122265 0.0125688 0.00597886 -0.0074359 -0.0236465 -0.0350249 -0.0326168 -0.00979105 0.03418 0.0923474 0.151291 0.195214 0.211464</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.602735.173" name="SUMS.20.BN2.2012.114.stage_6">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>42</delay>
+      <correction>42</correction>
+      <numberOfCoefficients>43</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-1.25729e-08 -1.05239e-07 -4.85219e-07 -1.62749e-06 -4.36278e-06 -9.75467e-06 -1.85249e-05 -2.98358e-05 -3.95435e-05 -3.85744e-05 -1.27601e-05 5.41867e-05 0.000173287 0.00033889 0.000516461 0.000635812 0.000597759 0.000300498 -0.000314192 -0.00120507 -0.00218704 -0.00292612 -0.00299796 -0.0020174 0.000182455 0.003375 0.00684425 0.00944234 0.00984065 0.00695227 0.00042907 -0.00892353 -0.0189876 -0.026559 -0.0279847 -0.020103 -0.0012493 0.0279692 0.0644083 0.10278 0.136674 0.159965 0.168261</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.602911.174" name="SUMS.20.BN2.2012.114.stage_7">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>86</delay>
+      <correction>86</correction>
+      <numberOfCoefficients>87</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>2.8871e-08 2.05357e-07 6.20727e-07 7.18515e-07 -1.38441e-06 -7.7975e-06 -1.69897e-05 -2.11047e-05 -1.16173e-05 7.80309e-06 1.77319e-05 2.98768e-06 -2.14367e-05 -1.9717e-05 1.55247e-05 3.81991e-05 4.42239e-06 -5.01745e-05 -3.89661e-05 4.42239e-05 8.129e-05 -1.01537e-05 -0.000116444 -5.57676e-05 0.00012339 0.000145692 -8.04989e-05 -0.000237298 -2.62186e-05 0.000295014 0.000193928 -0.000276734 -0.000395855 0.000145696 0.000579332 0.000114268 -0.000671905 -0.00048414 0.000596339 0.000900563 -0.000293051 -0.00125695 -0.000254198 0.00141822 0.000996165 -0.0012493 -0.001807 0.000653577 0.00249086 0.000385978 -0.00280996 -0.00177377 0.00253297 0.00328742 -0.00149677 -0.00459133 -0.000329872 0.00528226 0.00279596 -0.00496379 -0.00554609 0.00333984 0.00803791 -0.000310468 -0.0096033 -0.00394934 0.00954874 0.00894634 -0.00728015 -0.013873 0.00243061 0.0176589 0.00503427 -0.0190534 -0.0147575 0.0166972 0.0259952 -0.00908776 -0.0376895 -0.00581503 0.0486034 0.0323113 -0.0574957 -0.0859903 0.0633078 0.311379 0.434671</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.603804.177" name="SUMS.20.BN2.2012.353.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>29.0001</delay>
+      <correction>29.0001</correction>
+      <numberOfCoefficients>30</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>8.48249e-06 3.89037e-05 0.000109346 0.000226937 0.00036584 0.000447944 0.000346227 -7.08089e-05 -0.000851525 -0.00185801 -0.0027055 -0.00281272 -0.00160384 0.00116656 0.00508161 0.00890325 0.010758 0.00873375 0.00177379 -0.00943683 -0.0219989 -0.0310883 -0.0311164 -0.0175223 0.0113614 0.0530733 0.100994 0.145714 0.177481 0.188975</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.603958.178" name="SUMS.20.BN2.2012.353.stage_4">
+      <gain>1</gain>
+      <decimationFactor>3</decimationFactor>
+      <delay>16.9998</delay>
+      <correction>16.9998</correction>
+      <numberOfCoefficients>18</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>4.13465e-05 0.000234989 0.000591262 0.000653151 -0.000475707 -0.00295148 -0.00454665 -0.00123816 0.0081097 0.0164184 0.0105253 -0.0154747 -0.0453658 -0.0428086 0.0222852 0.14106 0.258835 0.308214</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.604073.179" name="SUMS.20.BN2.2012.353.stage_5">
+      <gain>1</gain>
+      <decimationFactor>4</decimationFactor>
+      <delay>34</delay>
+      <correction>34</correction>
+      <numberOfCoefficients>35</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-3.35276e-08 -3.35276e-07 -1.76951e-06 -6.51088e-06 -1.83936e-05 -4.15682e-05 -7.5826e-05 -0.000108499 -0.000106949 -2.08658e-05 0.000194796 0.000533339 0.000883073 0.00100778 0.000610251 -0.000498588 -0.0021711 -0.00376407 -0.00421941 -0.00249074 0.00176057 0.00751189 0.0122265 0.0125688 0.00597886 -0.0074359 -0.0236465 -0.0350249 -0.0326168 -0.00979105 0.03418 0.0923474 0.151291 0.195214 0.211464</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.604225.180" name="SUMS.20.BN2.2012.353.stage_6">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>42</delay>
+      <correction>42</correction>
+      <numberOfCoefficients>43</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-1.25729e-08 -1.05239e-07 -4.85219e-07 -1.62749e-06 -4.36278e-06 -9.75467e-06 -1.85249e-05 -2.98358e-05 -3.95435e-05 -3.85744e-05 -1.27601e-05 5.41867e-05 0.000173287 0.00033889 0.000516461 0.000635812 0.000597759 0.000300498 -0.000314192 -0.00120507 -0.00218704 -0.00292612 -0.00299796 -0.0020174 0.000182455 0.003375 0.00684425 0.00944234 0.00984065 0.00695227 0.00042907 -0.00892353 -0.0189876 -0.026559 -0.0279847 -0.020103 -0.0012493 0.0279692 0.0644083 0.10278 0.136674 0.159965 0.168261</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.604395.181" name="SUMS.20.BN2.2012.353.stage_7">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>86</delay>
+      <correction>86</correction>
+      <numberOfCoefficients>87</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>2.8871e-08 2.05357e-07 6.20727e-07 7.18515e-07 -1.38441e-06 -7.7975e-06 -1.69897e-05 -2.11047e-05 -1.16173e-05 7.80309e-06 1.77319e-05 2.98768e-06 -2.14367e-05 -1.9717e-05 1.55247e-05 3.81991e-05 4.42239e-06 -5.01745e-05 -3.89661e-05 4.42239e-05 8.129e-05 -1.01537e-05 -0.000116444 -5.57676e-05 0.00012339 0.000145692 -8.04989e-05 -0.000237298 -2.62186e-05 0.000295014 0.000193928 -0.000276734 -0.000395855 0.000145696 0.000579332 0.000114268 -0.000671905 -0.00048414 0.000596339 0.000900563 -0.000293051 -0.00125695 -0.000254198 0.00141822 0.000996165 -0.0012493 -0.001807 0.000653577 0.00249086 0.000385978 -0.00280996 -0.00177377 0.00253297 0.00328742 -0.00149677 -0.00459133 -0.000329872 0.00528226 0.00279596 -0.00496379 -0.00554609 0.00333984 0.00803791 -0.000310468 -0.0096033 -0.00394934 0.00954874 0.00894634 -0.00728015 -0.013873 0.00243061 0.0176589 0.00503427 -0.0190534 -0.0147575 0.0166972 0.0259952 -0.00908776 -0.0376895 -0.00581503 0.0486034 0.0323113 -0.0574957 -0.0859903 0.0633078 0.311379 0.434671</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.605302.184" name="SUMS.20.BN2.2013.010.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>29.0001</delay>
+      <correction>29.0001</correction>
+      <numberOfCoefficients>30</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>8.48249e-06 3.89037e-05 0.000109346 0.000226937 0.00036584 0.000447944 0.000346227 -7.08089e-05 -0.000851525 -0.00185801 -0.0027055 -0.00281272 -0.00160384 0.00116656 0.00508161 0.00890325 0.010758 0.00873375 0.00177379 -0.00943683 -0.0219989 -0.0310883 -0.0311164 -0.0175223 0.0113614 0.0530733 0.100994 0.145714 0.177481 0.188975</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.605455.185" name="SUMS.20.BN2.2013.010.stage_4">
+      <gain>1</gain>
+      <decimationFactor>3</decimationFactor>
+      <delay>16.9998</delay>
+      <correction>16.9998</correction>
+      <numberOfCoefficients>18</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>4.13465e-05 0.000234989 0.000591262 0.000653151 -0.000475707 -0.00295148 -0.00454665 -0.00123816 0.0081097 0.0164184 0.0105253 -0.0154747 -0.0453658 -0.0428086 0.0222852 0.14106 0.258835 0.308214</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.60557.186" name="SUMS.20.BN2.2013.010.stage_5">
+      <gain>1</gain>
+      <decimationFactor>4</decimationFactor>
+      <delay>34</delay>
+      <correction>34</correction>
+      <numberOfCoefficients>35</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-3.35276e-08 -3.35276e-07 -1.76951e-06 -6.51088e-06 -1.83936e-05 -4.15682e-05 -7.5826e-05 -0.000108499 -0.000106949 -2.08658e-05 0.000194796 0.000533339 0.000883073 0.00100778 0.000610251 -0.000498588 -0.0021711 -0.00376407 -0.00421941 -0.00249074 0.00176057 0.00751189 0.0122265 0.0125688 0.00597886 -0.0074359 -0.0236465 -0.0350249 -0.0326168 -0.00979105 0.03418 0.0923474 0.151291 0.195214 0.211464</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.60573.187" name="SUMS.20.BN2.2013.010.stage_6">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>42</delay>
+      <correction>42</correction>
+      <numberOfCoefficients>43</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-1.25729e-08 -1.05239e-07 -4.85219e-07 -1.62749e-06 -4.36278e-06 -9.75467e-06 -1.85249e-05 -2.98358e-05 -3.95435e-05 -3.85744e-05 -1.27601e-05 5.41867e-05 0.000173287 0.00033889 0.000516461 0.000635812 0.000597759 0.000300498 -0.000314192 -0.00120507 -0.00218704 -0.00292612 -0.00299796 -0.0020174 0.000182455 0.003375 0.00684425 0.00944234 0.00984065 0.00695227 0.00042907 -0.00892353 -0.0189876 -0.026559 -0.0279847 -0.020103 -0.0012493 0.0279692 0.0644083 0.10278 0.136674 0.159965 0.168261</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.605901.188" name="SUMS.20.BN2.2013.010.stage_7">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>86</delay>
+      <correction>86</correction>
+      <numberOfCoefficients>87</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>2.8871e-08 2.05357e-07 6.20727e-07 7.18515e-07 -1.38441e-06 -7.7975e-06 -1.69897e-05 -2.11047e-05 -1.16173e-05 7.80309e-06 1.77319e-05 2.98768e-06 -2.14367e-05 -1.9717e-05 1.55247e-05 3.81991e-05 4.42239e-06 -5.01745e-05 -3.89661e-05 4.42239e-05 8.129e-05 -1.01537e-05 -0.000116444 -5.57676e-05 0.00012339 0.000145692 -8.04989e-05 -0.000237298 -2.62186e-05 0.000295014 0.000193928 -0.000276734 -0.000395855 0.000145696 0.000579332 0.000114268 -0.000671905 -0.00048414 0.000596339 0.000900563 -0.000293051 -0.00125695 -0.000254198 0.00141822 0.000996165 -0.0012493 -0.001807 0.000653577 0.00249086 0.000385978 -0.00280996 -0.00177377 0.00253297 0.00328742 -0.00149677 -0.00459133 -0.000329872 0.00528226 0.00279596 -0.00496379 -0.00554609 0.00333984 0.00803791 -0.000310468 -0.0096033 -0.00394934 0.00954874 0.00894634 -0.00728015 -0.013873 0.00243061 0.0176589 0.00503427 -0.0190534 -0.0147575 0.0166972 0.0259952 -0.00908776 -0.0376895 -0.00581503 0.0486034 0.0323113 -0.0574957 -0.0859903 0.0633078 0.311379 0.434671</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.622664.191" name="SUMS.20.BN2.2013.220.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>29.0001</delay>
+      <correction>29.0001</correction>
+      <numberOfCoefficients>30</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>8.48249e-06 3.89037e-05 0.000109346 0.000226937 0.00036584 0.000447944 0.000346227 -7.08089e-05 -0.000851525 -0.00185801 -0.0027055 -0.00281272 -0.00160384 0.00116656 0.00508161 0.00890325 0.010758 0.00873375 0.00177379 -0.00943683 -0.0219989 -0.0310883 -0.0311164 -0.0175223 0.0113614 0.0530733 0.100994 0.145714 0.177481 0.188975</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.62286.192" name="SUMS.20.BN2.2013.220.stage_4">
+      <gain>1</gain>
+      <decimationFactor>3</decimationFactor>
+      <delay>16.9998</delay>
+      <correction>16.9998</correction>
+      <numberOfCoefficients>18</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>4.13465e-05 0.000234989 0.000591262 0.000653151 -0.000475707 -0.00295148 -0.00454665 -0.00123816 0.0081097 0.0164184 0.0105253 -0.0154747 -0.0453658 -0.0428086 0.0222852 0.14106 0.258835 0.308214</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.622991.193" name="SUMS.20.BN2.2013.220.stage_5">
+      <gain>1</gain>
+      <decimationFactor>4</decimationFactor>
+      <delay>34</delay>
+      <correction>34</correction>
+      <numberOfCoefficients>35</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-3.35276e-08 -3.35276e-07 -1.76951e-06 -6.51088e-06 -1.83936e-05 -4.15682e-05 -7.5826e-05 -0.000108499 -0.000106949 -2.08658e-05 0.000194796 0.000533339 0.000883073 0.00100778 0.000610251 -0.000498588 -0.0021711 -0.00376407 -0.00421941 -0.00249074 0.00176057 0.00751189 0.0122265 0.0125688 0.00597886 -0.0074359 -0.0236465 -0.0350249 -0.0326168 -0.00979105 0.03418 0.0923474 0.151291 0.195214 0.211464</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.623146.194" name="SUMS.20.BN2.2013.220.stage_6">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>42</delay>
+      <correction>42</correction>
+      <numberOfCoefficients>43</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-1.25729e-08 -1.05239e-07 -4.85219e-07 -1.62749e-06 -4.36278e-06 -9.75467e-06 -1.85249e-05 -2.98358e-05 -3.95435e-05 -3.85744e-05 -1.27601e-05 5.41867e-05 0.000173287 0.00033889 0.000516461 0.000635812 0.000597759 0.000300498 -0.000314192 -0.00120507 -0.00218704 -0.00292612 -0.00299796 -0.0020174 0.000182455 0.003375 0.00684425 0.00944234 0.00984065 0.00695227 0.00042907 -0.00892353 -0.0189876 -0.026559 -0.0279847 -0.020103 -0.0012493 0.0279692 0.0644083 0.10278 0.136674 0.159965 0.168261</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.623318.195" name="SUMS.20.BN2.2013.220.stage_7">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>86</delay>
+      <correction>86</correction>
+      <numberOfCoefficients>87</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>2.8871e-08 2.05357e-07 6.20727e-07 7.18515e-07 -1.38441e-06 -7.7975e-06 -1.69897e-05 -2.11047e-05 -1.16173e-05 7.80309e-06 1.77319e-05 2.98768e-06 -2.14367e-05 -1.9717e-05 1.55247e-05 3.81991e-05 4.42239e-06 -5.01745e-05 -3.89661e-05 4.42239e-05 8.129e-05 -1.01537e-05 -0.000116444 -5.57676e-05 0.00012339 0.000145692 -8.04989e-05 -0.000237298 -2.62186e-05 0.000295014 0.000193928 -0.000276734 -0.000395855 0.000145696 0.000579332 0.000114268 -0.000671905 -0.00048414 0.000596339 0.000900563 -0.000293051 -0.00125695 -0.000254198 0.00141822 0.000996165 -0.0012493 -0.001807 0.000653577 0.00249086 0.000385978 -0.00280996 -0.00177377 0.00253297 0.00328742 -0.00149677 -0.00459133 -0.000329872 0.00528226 0.00279596 -0.00496379 -0.00554609 0.00333984 0.00803791 -0.000310468 -0.0096033 -0.00394934 0.00954874 0.00894634 -0.00728015 -0.013873 0.00243061 0.0176589 0.00503427 -0.0190534 -0.0147575 0.0166972 0.0259952 -0.00908776 -0.0376895 -0.00581503 0.0486034 0.0323113 -0.0574957 -0.0859903 0.0633078 0.311379 0.434671</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.62433.198" name="SUMS.20.BNZ.2012.114.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>29.0001</delay>
+      <correction>29.0001</correction>
+      <numberOfCoefficients>30</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>8.48249e-06 3.89037e-05 0.000109346 0.000226937 0.00036584 0.000447944 0.000346227 -7.08089e-05 -0.000851525 -0.00185801 -0.0027055 -0.00281272 -0.00160384 0.00116656 0.00508161 0.00890325 0.010758 0.00873375 0.00177379 -0.00943683 -0.0219989 -0.0310883 -0.0311164 -0.0175223 0.0113614 0.0530733 0.100994 0.145714 0.177481 0.188975</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.624656.199" name="SUMS.20.BNZ.2012.114.stage_4">
+      <gain>1</gain>
+      <decimationFactor>3</decimationFactor>
+      <delay>16.9998</delay>
+      <correction>16.9998</correction>
+      <numberOfCoefficients>18</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>4.13465e-05 0.000234989 0.000591262 0.000653151 -0.000475707 -0.00295148 -0.00454665 -0.00123816 0.0081097 0.0164184 0.0105253 -0.0154747 -0.0453658 -0.0428086 0.0222852 0.14106 0.258835 0.308214</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.624778.200" name="SUMS.20.BNZ.2012.114.stage_5">
+      <gain>1</gain>
+      <decimationFactor>4</decimationFactor>
+      <delay>34</delay>
+      <correction>34</correction>
+      <numberOfCoefficients>35</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-3.35276e-08 -3.35276e-07 -1.76951e-06 -6.51088e-06 -1.83936e-05 -4.15682e-05 -7.5826e-05 -0.000108499 -0.000106949 -2.08658e-05 0.000194796 0.000533339 0.000883073 0.00100778 0.000610251 -0.000498588 -0.0021711 -0.00376407 -0.00421941 -0.00249074 0.00176057 0.00751189 0.0122265 0.0125688 0.00597886 -0.0074359 -0.0236465 -0.0350249 -0.0326168 -0.00979105 0.03418 0.0923474 0.151291 0.195214 0.211464</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.624935.201" name="SUMS.20.BNZ.2012.114.stage_6">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>42</delay>
+      <correction>42</correction>
+      <numberOfCoefficients>43</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-1.25729e-08 -1.05239e-07 -4.85219e-07 -1.62749e-06 -4.36278e-06 -9.75467e-06 -1.85249e-05 -2.98358e-05 -3.95435e-05 -3.85744e-05 -1.27601e-05 5.41867e-05 0.000173287 0.00033889 0.000516461 0.000635812 0.000597759 0.000300498 -0.000314192 -0.00120507 -0.00218704 -0.00292612 -0.00299796 -0.0020174 0.000182455 0.003375 0.00684425 0.00944234 0.00984065 0.00695227 0.00042907 -0.00892353 -0.0189876 -0.026559 -0.0279847 -0.020103 -0.0012493 0.0279692 0.0644083 0.10278 0.136674 0.159965 0.168261</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.625106.202" name="SUMS.20.BNZ.2012.114.stage_7">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>86</delay>
+      <correction>86</correction>
+      <numberOfCoefficients>87</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>2.8871e-08 2.05357e-07 6.20727e-07 7.18515e-07 -1.38441e-06 -7.7975e-06 -1.69897e-05 -2.11047e-05 -1.16173e-05 7.80309e-06 1.77319e-05 2.98768e-06 -2.14367e-05 -1.9717e-05 1.55247e-05 3.81991e-05 4.42239e-06 -5.01745e-05 -3.89661e-05 4.42239e-05 8.129e-05 -1.01537e-05 -0.000116444 -5.57676e-05 0.00012339 0.000145692 -8.04989e-05 -0.000237298 -2.62186e-05 0.000295014 0.000193928 -0.000276734 -0.000395855 0.000145696 0.000579332 0.000114268 -0.000671905 -0.00048414 0.000596339 0.000900563 -0.000293051 -0.00125695 -0.000254198 0.00141822 0.000996165 -0.0012493 -0.001807 0.000653577 0.00249086 0.000385978 -0.00280996 -0.00177377 0.00253297 0.00328742 -0.00149677 -0.00459133 -0.000329872 0.00528226 0.00279596 -0.00496379 -0.00554609 0.00333984 0.00803791 -0.000310468 -0.0096033 -0.00394934 0.00954874 0.00894634 -0.00728015 -0.013873 0.00243061 0.0176589 0.00503427 -0.0190534 -0.0147575 0.0166972 0.0259952 -0.00908776 -0.0376895 -0.00581503 0.0486034 0.0323113 -0.0574957 -0.0859903 0.0633078 0.311379 0.434671</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.626036.205" name="SUMS.20.BNZ.2012.353.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>29.0001</delay>
+      <correction>29.0001</correction>
+      <numberOfCoefficients>30</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>8.48249e-06 3.89037e-05 0.000109346 0.000226937 0.00036584 0.000447944 0.000346227 -7.08089e-05 -0.000851525 -0.00185801 -0.0027055 -0.00281272 -0.00160384 0.00116656 0.00508161 0.00890325 0.010758 0.00873375 0.00177379 -0.00943683 -0.0219989 -0.0310883 -0.0311164 -0.0175223 0.0113614 0.0530733 0.100994 0.145714 0.177481 0.188975</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.626185.206" name="SUMS.20.BNZ.2012.353.stage_4">
+      <gain>1</gain>
+      <decimationFactor>3</decimationFactor>
+      <delay>16.9998</delay>
+      <correction>16.9998</correction>
+      <numberOfCoefficients>18</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>4.13465e-05 0.000234989 0.000591262 0.000653151 -0.000475707 -0.00295148 -0.00454665 -0.00123816 0.0081097 0.0164184 0.0105253 -0.0154747 -0.0453658 -0.0428086 0.0222852 0.14106 0.258835 0.308214</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.626299.207" name="SUMS.20.BNZ.2012.353.stage_5">
+      <gain>1</gain>
+      <decimationFactor>4</decimationFactor>
+      <delay>34</delay>
+      <correction>34</correction>
+      <numberOfCoefficients>35</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-3.35276e-08 -3.35276e-07 -1.76951e-06 -6.51088e-06 -1.83936e-05 -4.15682e-05 -7.5826e-05 -0.000108499 -0.000106949 -2.08658e-05 0.000194796 0.000533339 0.000883073 0.00100778 0.000610251 -0.000498588 -0.0021711 -0.00376407 -0.00421941 -0.00249074 0.00176057 0.00751189 0.0122265 0.0125688 0.00597886 -0.0074359 -0.0236465 -0.0350249 -0.0326168 -0.00979105 0.03418 0.0923474 0.151291 0.195214 0.211464</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.62645.208" name="SUMS.20.BNZ.2012.353.stage_6">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>42</delay>
+      <correction>42</correction>
+      <numberOfCoefficients>43</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-1.25729e-08 -1.05239e-07 -4.85219e-07 -1.62749e-06 -4.36278e-06 -9.75467e-06 -1.85249e-05 -2.98358e-05 -3.95435e-05 -3.85744e-05 -1.27601e-05 5.41867e-05 0.000173287 0.00033889 0.000516461 0.000635812 0.000597759 0.000300498 -0.000314192 -0.00120507 -0.00218704 -0.00292612 -0.00299796 -0.0020174 0.000182455 0.003375 0.00684425 0.00944234 0.00984065 0.00695227 0.00042907 -0.00892353 -0.0189876 -0.026559 -0.0279847 -0.020103 -0.0012493 0.0279692 0.0644083 0.10278 0.136674 0.159965 0.168261</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.626617.209" name="SUMS.20.BNZ.2012.353.stage_7">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>86</delay>
+      <correction>86</correction>
+      <numberOfCoefficients>87</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>2.8871e-08 2.05357e-07 6.20727e-07 7.18515e-07 -1.38441e-06 -7.7975e-06 -1.69897e-05 -2.11047e-05 -1.16173e-05 7.80309e-06 1.77319e-05 2.98768e-06 -2.14367e-05 -1.9717e-05 1.55247e-05 3.81991e-05 4.42239e-06 -5.01745e-05 -3.89661e-05 4.42239e-05 8.129e-05 -1.01537e-05 -0.000116444 -5.57676e-05 0.00012339 0.000145692 -8.04989e-05 -0.000237298 -2.62186e-05 0.000295014 0.000193928 -0.000276734 -0.000395855 0.000145696 0.000579332 0.000114268 -0.000671905 -0.00048414 0.000596339 0.000900563 -0.000293051 -0.00125695 -0.000254198 0.00141822 0.000996165 -0.0012493 -0.001807 0.000653577 0.00249086 0.000385978 -0.00280996 -0.00177377 0.00253297 0.00328742 -0.00149677 -0.00459133 -0.000329872 0.00528226 0.00279596 -0.00496379 -0.00554609 0.00333984 0.00803791 -0.000310468 -0.0096033 -0.00394934 0.00954874 0.00894634 -0.00728015 -0.013873 0.00243061 0.0176589 0.00503427 -0.0190534 -0.0147575 0.0166972 0.0259952 -0.00908776 -0.0376895 -0.00581503 0.0486034 0.0323113 -0.0574957 -0.0859903 0.0633078 0.311379 0.434671</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.627509.212" name="SUMS.20.BNZ.2013.010.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>29.0001</delay>
+      <correction>29.0001</correction>
+      <numberOfCoefficients>30</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>8.48249e-06 3.89037e-05 0.000109346 0.000226937 0.00036584 0.000447944 0.000346227 -7.08089e-05 -0.000851525 -0.00185801 -0.0027055 -0.00281272 -0.00160384 0.00116656 0.00508161 0.00890325 0.010758 0.00873375 0.00177379 -0.00943683 -0.0219989 -0.0310883 -0.0311164 -0.0175223 0.0113614 0.0530733 0.100994 0.145714 0.177481 0.188975</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.627659.213" name="SUMS.20.BNZ.2013.010.stage_4">
+      <gain>1</gain>
+      <decimationFactor>3</decimationFactor>
+      <delay>16.9998</delay>
+      <correction>16.9998</correction>
+      <numberOfCoefficients>18</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>4.13465e-05 0.000234989 0.000591262 0.000653151 -0.000475707 -0.00295148 -0.00454665 -0.00123816 0.0081097 0.0164184 0.0105253 -0.0154747 -0.0453658 -0.0428086 0.0222852 0.14106 0.258835 0.308214</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.627772.214" name="SUMS.20.BNZ.2013.010.stage_5">
+      <gain>1</gain>
+      <decimationFactor>4</decimationFactor>
+      <delay>34</delay>
+      <correction>34</correction>
+      <numberOfCoefficients>35</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-3.35276e-08 -3.35276e-07 -1.76951e-06 -6.51088e-06 -1.83936e-05 -4.15682e-05 -7.5826e-05 -0.000108499 -0.000106949 -2.08658e-05 0.000194796 0.000533339 0.000883073 0.00100778 0.000610251 -0.000498588 -0.0021711 -0.00376407 -0.00421941 -0.00249074 0.00176057 0.00751189 0.0122265 0.0125688 0.00597886 -0.0074359 -0.0236465 -0.0350249 -0.0326168 -0.00979105 0.03418 0.0923474 0.151291 0.195214 0.211464</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.627924.215" name="SUMS.20.BNZ.2013.010.stage_6">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>42</delay>
+      <correction>42</correction>
+      <numberOfCoefficients>43</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-1.25729e-08 -1.05239e-07 -4.85219e-07 -1.62749e-06 -4.36278e-06 -9.75467e-06 -1.85249e-05 -2.98358e-05 -3.95435e-05 -3.85744e-05 -1.27601e-05 5.41867e-05 0.000173287 0.00033889 0.000516461 0.000635812 0.000597759 0.000300498 -0.000314192 -0.00120507 -0.00218704 -0.00292612 -0.00299796 -0.0020174 0.000182455 0.003375 0.00684425 0.00944234 0.00984065 0.00695227 0.00042907 -0.00892353 -0.0189876 -0.026559 -0.0279847 -0.020103 -0.0012493 0.0279692 0.0644083 0.10278 0.136674 0.159965 0.168261</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.628108.216" name="SUMS.20.BNZ.2013.010.stage_7">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>86</delay>
+      <correction>86</correction>
+      <numberOfCoefficients>87</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>2.8871e-08 2.05357e-07 6.20727e-07 7.18515e-07 -1.38441e-06 -7.7975e-06 -1.69897e-05 -2.11047e-05 -1.16173e-05 7.80309e-06 1.77319e-05 2.98768e-06 -2.14367e-05 -1.9717e-05 1.55247e-05 3.81991e-05 4.42239e-06 -5.01745e-05 -3.89661e-05 4.42239e-05 8.129e-05 -1.01537e-05 -0.000116444 -5.57676e-05 0.00012339 0.000145692 -8.04989e-05 -0.000237298 -2.62186e-05 0.000295014 0.000193928 -0.000276734 -0.000395855 0.000145696 0.000579332 0.000114268 -0.000671905 -0.00048414 0.000596339 0.000900563 -0.000293051 -0.00125695 -0.000254198 0.00141822 0.000996165 -0.0012493 -0.001807 0.000653577 0.00249086 0.000385978 -0.00280996 -0.00177377 0.00253297 0.00328742 -0.00149677 -0.00459133 -0.000329872 0.00528226 0.00279596 -0.00496379 -0.00554609 0.00333984 0.00803791 -0.000310468 -0.0096033 -0.00394934 0.00954874 0.00894634 -0.00728015 -0.013873 0.00243061 0.0176589 0.00503427 -0.0190534 -0.0147575 0.0166972 0.0259952 -0.00908776 -0.0376895 -0.00581503 0.0486034 0.0323113 -0.0574957 -0.0859903 0.0633078 0.311379 0.434671</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.632007.219" name="SUMS.20.BNZ.2013.220.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>29.0001</delay>
+      <correction>29.0001</correction>
+      <numberOfCoefficients>30</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>8.48249e-06 3.89037e-05 0.000109346 0.000226937 0.00036584 0.000447944 0.000346227 -7.08089e-05 -0.000851525 -0.00185801 -0.0027055 -0.00281272 -0.00160384 0.00116656 0.00508161 0.00890325 0.010758 0.00873375 0.00177379 -0.00943683 -0.0219989 -0.0310883 -0.0311164 -0.0175223 0.0113614 0.0530733 0.100994 0.145714 0.177481 0.188975</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.632202.220" name="SUMS.20.BNZ.2013.220.stage_4">
+      <gain>1</gain>
+      <decimationFactor>3</decimationFactor>
+      <delay>16.9998</delay>
+      <correction>16.9998</correction>
+      <numberOfCoefficients>18</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>4.13465e-05 0.000234989 0.000591262 0.000653151 -0.000475707 -0.00295148 -0.00454665 -0.00123816 0.0081097 0.0164184 0.0105253 -0.0154747 -0.0453658 -0.0428086 0.0222852 0.14106 0.258835 0.308214</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.632322.221" name="SUMS.20.BNZ.2013.220.stage_5">
+      <gain>1</gain>
+      <decimationFactor>4</decimationFactor>
+      <delay>34</delay>
+      <correction>34</correction>
+      <numberOfCoefficients>35</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-3.35276e-08 -3.35276e-07 -1.76951e-06 -6.51088e-06 -1.83936e-05 -4.15682e-05 -7.5826e-05 -0.000108499 -0.000106949 -2.08658e-05 0.000194796 0.000533339 0.000883073 0.00100778 0.000610251 -0.000498588 -0.0021711 -0.00376407 -0.00421941 -0.00249074 0.00176057 0.00751189 0.0122265 0.0125688 0.00597886 -0.0074359 -0.0236465 -0.0350249 -0.0326168 -0.00979105 0.03418 0.0923474 0.151291 0.195214 0.211464</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.63248.222" name="SUMS.20.BNZ.2013.220.stage_6">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>42</delay>
+      <correction>42</correction>
+      <numberOfCoefficients>43</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-1.25729e-08 -1.05239e-07 -4.85219e-07 -1.62749e-06 -4.36278e-06 -9.75467e-06 -1.85249e-05 -2.98358e-05 -3.95435e-05 -3.85744e-05 -1.27601e-05 5.41867e-05 0.000173287 0.00033889 0.000516461 0.000635812 0.000597759 0.000300498 -0.000314192 -0.00120507 -0.00218704 -0.00292612 -0.00299796 -0.0020174 0.000182455 0.003375 0.00684425 0.00944234 0.00984065 0.00695227 0.00042907 -0.00892353 -0.0189876 -0.026559 -0.0279847 -0.020103 -0.0012493 0.0279692 0.0644083 0.10278 0.136674 0.159965 0.168261</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.632654.223" name="SUMS.20.BNZ.2013.220.stage_7">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>86</delay>
+      <correction>86</correction>
+      <numberOfCoefficients>87</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>2.8871e-08 2.05357e-07 6.20727e-07 7.18515e-07 -1.38441e-06 -7.7975e-06 -1.69897e-05 -2.11047e-05 -1.16173e-05 7.80309e-06 1.77319e-05 2.98768e-06 -2.14367e-05 -1.9717e-05 1.55247e-05 3.81991e-05 4.42239e-06 -5.01745e-05 -3.89661e-05 4.42239e-05 8.129e-05 -1.01537e-05 -0.000116444 -5.57676e-05 0.00012339 0.000145692 -8.04989e-05 -0.000237298 -2.62186e-05 0.000295014 0.000193928 -0.000276734 -0.000395855 0.000145696 0.000579332 0.000114268 -0.000671905 -0.00048414 0.000596339 0.000900563 -0.000293051 -0.00125695 -0.000254198 0.00141822 0.000996165 -0.0012493 -0.001807 0.000653577 0.00249086 0.000385978 -0.00280996 -0.00177377 0.00253297 0.00328742 -0.00149677 -0.00459133 -0.000329872 0.00528226 0.00279596 -0.00496379 -0.00554609 0.00333984 0.00803791 -0.000310468 -0.0096033 -0.00394934 0.00954874 0.00894634 -0.00728015 -0.013873 0.00243061 0.0176589 0.00503427 -0.0190534 -0.0147575 0.0166972 0.0259952 -0.00908776 -0.0376895 -0.00581503 0.0486034 0.0323113 -0.0574957 -0.0859903 0.0633078 0.311379 0.434671</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.633693.226" name="SUMS.20.HN1.2012.114.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>29.0001</delay>
+      <correction>29.0001</correction>
+      <numberOfCoefficients>30</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>8.48249e-06 3.89037e-05 0.000109346 0.000226937 0.00036584 0.000447944 0.000346227 -7.08089e-05 -0.000851525 -0.00185801 -0.0027055 -0.00281272 -0.00160384 0.00116656 0.00508161 0.00890325 0.010758 0.00873375 0.00177379 -0.00943683 -0.0219989 -0.0310883 -0.0311164 -0.0175223 0.0113614 0.0530733 0.100994 0.145714 0.177481 0.188975</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.633862.227" name="SUMS.20.HN1.2012.114.stage_4">
+      <gain>1</gain>
+      <decimationFactor>3</decimationFactor>
+      <delay>16.9998</delay>
+      <correction>16.9998</correction>
+      <numberOfCoefficients>18</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>4.13465e-05 0.000234989 0.000591262 0.000653151 -0.000475707 -0.00295148 -0.00454665 -0.00123816 0.0081097 0.0164184 0.0105253 -0.0154747 -0.0453658 -0.0428086 0.0222852 0.14106 0.258835 0.308214</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.633982.228" name="SUMS.20.HN1.2012.114.stage_5">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>42</delay>
+      <correction>42</correction>
+      <numberOfCoefficients>43</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-1.25729e-08 -1.05239e-07 -4.85219e-07 -1.62749e-06 -4.36278e-06 -9.75467e-06 -1.85249e-05 -2.98358e-05 -3.95435e-05 -3.85744e-05 -1.27601e-05 5.41867e-05 0.000173287 0.00033889 0.000516461 0.000635812 0.000597759 0.000300498 -0.000314192 -0.00120507 -0.00218704 -0.00292612 -0.00299796 -0.0020174 0.000182455 0.003375 0.00684425 0.00944234 0.00984065 0.00695227 0.00042907 -0.00892353 -0.0189876 -0.026559 -0.0279847 -0.020103 -0.0012493 0.0279692 0.0644083 0.10278 0.136674 0.159965 0.168261</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.634156.229" name="SUMS.20.HN1.2012.114.stage_6">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>86</delay>
+      <correction>86</correction>
+      <numberOfCoefficients>87</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>2.8871e-08 2.05357e-07 6.20727e-07 7.18515e-07 -1.38441e-06 -7.7975e-06 -1.69897e-05 -2.11047e-05 -1.16173e-05 7.80309e-06 1.77319e-05 2.98768e-06 -2.14367e-05 -1.9717e-05 1.55247e-05 3.81991e-05 4.42239e-06 -5.01745e-05 -3.89661e-05 4.42239e-05 8.129e-05 -1.01537e-05 -0.000116444 -5.57676e-05 0.00012339 0.000145692 -8.04989e-05 -0.000237298 -2.62186e-05 0.000295014 0.000193928 -0.000276734 -0.000395855 0.000145696 0.000579332 0.000114268 -0.000671905 -0.00048414 0.000596339 0.000900563 -0.000293051 -0.00125695 -0.000254198 0.00141822 0.000996165 -0.0012493 -0.001807 0.000653577 0.00249086 0.000385978 -0.00280996 -0.00177377 0.00253297 0.00328742 -0.00149677 -0.00459133 -0.000329872 0.00528226 0.00279596 -0.00496379 -0.00554609 0.00333984 0.00803791 -0.000310468 -0.0096033 -0.00394934 0.00954874 0.00894634 -0.00728015 -0.013873 0.00243061 0.0176589 0.00503427 -0.0190534 -0.0147575 0.0166972 0.0259952 -0.00908776 -0.0376895 -0.00581503 0.0486034 0.0323113 -0.0574957 -0.0859903 0.0633078 0.311379 0.434671</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.655067.230" name="SUMS.20.HN1.2013.010.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>29.0001</delay>
+      <correction>29.0001</correction>
+      <numberOfCoefficients>30</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>8.48249e-06 3.89037e-05 0.000109346 0.000226937 0.00036584 0.000447944 0.000346227 -7.08089e-05 -0.000851525 -0.00185801 -0.0027055 -0.00281272 -0.00160384 0.00116656 0.00508161 0.00890325 0.010758 0.00873375 0.00177379 -0.00943683 -0.0219989 -0.0310883 -0.0311164 -0.0175223 0.0113614 0.0530733 0.100994 0.145714 0.177481 0.188975</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.655275.231" name="SUMS.20.HN1.2013.010.stage_4">
+      <gain>1</gain>
+      <decimationFactor>3</decimationFactor>
+      <delay>16.9998</delay>
+      <correction>16.9998</correction>
+      <numberOfCoefficients>18</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>4.13465e-05 0.000234989 0.000591262 0.000653151 -0.000475707 -0.00295148 -0.00454665 -0.00123816 0.0081097 0.0164184 0.0105253 -0.0154747 -0.0453658 -0.0428086 0.0222852 0.14106 0.258835 0.308214</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.65539.232" name="SUMS.20.HN1.2013.010.stage_5">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>42</delay>
+      <correction>42</correction>
+      <numberOfCoefficients>43</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-1.25729e-08 -1.05239e-07 -4.85219e-07 -1.62749e-06 -4.36278e-06 -9.75467e-06 -1.85249e-05 -2.98358e-05 -3.95435e-05 -3.85744e-05 -1.27601e-05 5.41867e-05 0.000173287 0.00033889 0.000516461 0.000635812 0.000597759 0.000300498 -0.000314192 -0.00120507 -0.00218704 -0.00292612 -0.00299796 -0.0020174 0.000182455 0.003375 0.00684425 0.00944234 0.00984065 0.00695227 0.00042907 -0.00892353 -0.0189876 -0.026559 -0.0279847 -0.020103 -0.0012493 0.0279692 0.0644083 0.10278 0.136674 0.159965 0.168261</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.655587.233" name="SUMS.20.HN1.2013.010.stage_6">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>86</delay>
+      <correction>86</correction>
+      <numberOfCoefficients>87</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>2.8871e-08 2.05357e-07 6.20727e-07 7.18515e-07 -1.38441e-06 -7.7975e-06 -1.69897e-05 -2.11047e-05 -1.16173e-05 7.80309e-06 1.77319e-05 2.98768e-06 -2.14367e-05 -1.9717e-05 1.55247e-05 3.81991e-05 4.42239e-06 -5.01745e-05 -3.89661e-05 4.42239e-05 8.129e-05 -1.01537e-05 -0.000116444 -5.57676e-05 0.00012339 0.000145692 -8.04989e-05 -0.000237298 -2.62186e-05 0.000295014 0.000193928 -0.000276734 -0.000395855 0.000145696 0.000579332 0.000114268 -0.000671905 -0.00048414 0.000596339 0.000900563 -0.000293051 -0.00125695 -0.000254198 0.00141822 0.000996165 -0.0012493 -0.001807 0.000653577 0.00249086 0.000385978 -0.00280996 -0.00177377 0.00253297 0.00328742 -0.00149677 -0.00459133 -0.000329872 0.00528226 0.00279596 -0.00496379 -0.00554609 0.00333984 0.00803791 -0.000310468 -0.0096033 -0.00394934 0.00954874 0.00894634 -0.00728015 -0.013873 0.00243061 0.0176589 0.00503427 -0.0190534 -0.0147575 0.0166972 0.0259952 -0.00908776 -0.0376895 -0.00581503 0.0486034 0.0323113 -0.0574957 -0.0859903 0.0633078 0.311379 0.434671</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.656653.234" name="SUMS.20.HN1.2012.353.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>29.0001</delay>
+      <correction>29.0001</correction>
+      <numberOfCoefficients>30</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>8.48249e-06 3.89037e-05 0.000109346 0.000226937 0.00036584 0.000447944 0.000346227 -7.08089e-05 -0.000851525 -0.00185801 -0.0027055 -0.00281272 -0.00160384 0.00116656 0.00508161 0.00890325 0.010758 0.00873375 0.00177379 -0.00943683 -0.0219989 -0.0310883 -0.0311164 -0.0175223 0.0113614 0.0530733 0.100994 0.145714 0.177481 0.188975</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.656889.235" name="SUMS.20.HN1.2012.353.stage_4">
+      <gain>1</gain>
+      <decimationFactor>3</decimationFactor>
+      <delay>16.9998</delay>
+      <correction>16.9998</correction>
+      <numberOfCoefficients>18</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>4.13465e-05 0.000234989 0.000591262 0.000653151 -0.000475707 -0.00295148 -0.00454665 -0.00123816 0.0081097 0.0164184 0.0105253 -0.0154747 -0.0453658 -0.0428086 0.0222852 0.14106 0.258835 0.308214</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.657084.236" name="SUMS.20.HN1.2012.353.stage_5">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>42</delay>
+      <correction>42</correction>
+      <numberOfCoefficients>43</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-1.25729e-08 -1.05239e-07 -4.85219e-07 -1.62749e-06 -4.36278e-06 -9.75467e-06 -1.85249e-05 -2.98358e-05 -3.95435e-05 -3.85744e-05 -1.27601e-05 5.41867e-05 0.000173287 0.00033889 0.000516461 0.000635812 0.000597759 0.000300498 -0.000314192 -0.00120507 -0.00218704 -0.00292612 -0.00299796 -0.0020174 0.000182455 0.003375 0.00684425 0.00944234 0.00984065 0.00695227 0.00042907 -0.00892353 -0.0189876 -0.026559 -0.0279847 -0.020103 -0.0012493 0.0279692 0.0644083 0.10278 0.136674 0.159965 0.168261</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.657381.237" name="SUMS.20.HN1.2012.353.stage_6">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>86</delay>
+      <correction>86</correction>
+      <numberOfCoefficients>87</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>2.8871e-08 2.05357e-07 6.20727e-07 7.18515e-07 -1.38441e-06 -7.7975e-06 -1.69897e-05 -2.11047e-05 -1.16173e-05 7.80309e-06 1.77319e-05 2.98768e-06 -2.14367e-05 -1.9717e-05 1.55247e-05 3.81991e-05 4.42239e-06 -5.01745e-05 -3.89661e-05 4.42239e-05 8.129e-05 -1.01537e-05 -0.000116444 -5.57676e-05 0.00012339 0.000145692 -8.04989e-05 -0.000237298 -2.62186e-05 0.000295014 0.000193928 -0.000276734 -0.000395855 0.000145696 0.000579332 0.000114268 -0.000671905 -0.00048414 0.000596339 0.000900563 -0.000293051 -0.00125695 -0.000254198 0.00141822 0.000996165 -0.0012493 -0.001807 0.000653577 0.00249086 0.000385978 -0.00280996 -0.00177377 0.00253297 0.00328742 -0.00149677 -0.00459133 -0.000329872 0.00528226 0.00279596 -0.00496379 -0.00554609 0.00333984 0.00803791 -0.000310468 -0.0096033 -0.00394934 0.00954874 0.00894634 -0.00728015 -0.013873 0.00243061 0.0176589 0.00503427 -0.0190534 -0.0147575 0.0166972 0.0259952 -0.00908776 -0.0376895 -0.00581503 0.0486034 0.0323113 -0.0574957 -0.0859903 0.0633078 0.311379 0.434671</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.661186.238" name="SUMS.20.HN1.2013.220.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>29.0001</delay>
+      <correction>29.0001</correction>
+      <numberOfCoefficients>30</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>8.48249e-06 3.89037e-05 0.000109346 0.000226937 0.00036584 0.000447944 0.000346227 -7.08089e-05 -0.000851525 -0.00185801 -0.0027055 -0.00281272 -0.00160384 0.00116656 0.00508161 0.00890325 0.010758 0.00873375 0.00177379 -0.00943683 -0.0219989 -0.0310883 -0.0311164 -0.0175223 0.0113614 0.0530733 0.100994 0.145714 0.177481 0.188975</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.661368.239" name="SUMS.20.HN1.2013.220.stage_4">
+      <gain>1</gain>
+      <decimationFactor>3</decimationFactor>
+      <delay>16.9998</delay>
+      <correction>16.9998</correction>
+      <numberOfCoefficients>18</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>4.13465e-05 0.000234989 0.000591262 0.000653151 -0.000475707 -0.00295148 -0.00454665 -0.00123816 0.0081097 0.0164184 0.0105253 -0.0154747 -0.0453658 -0.0428086 0.0222852 0.14106 0.258835 0.308214</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.661505.240" name="SUMS.20.HN1.2013.220.stage_5">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>42</delay>
+      <correction>42</correction>
+      <numberOfCoefficients>43</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-1.25729e-08 -1.05239e-07 -4.85219e-07 -1.62749e-06 -4.36278e-06 -9.75467e-06 -1.85249e-05 -2.98358e-05 -3.95435e-05 -3.85744e-05 -1.27601e-05 5.41867e-05 0.000173287 0.00033889 0.000516461 0.000635812 0.000597759 0.000300498 -0.000314192 -0.00120507 -0.00218704 -0.00292612 -0.00299796 -0.0020174 0.000182455 0.003375 0.00684425 0.00944234 0.00984065 0.00695227 0.00042907 -0.00892353 -0.0189876 -0.026559 -0.0279847 -0.020103 -0.0012493 0.0279692 0.0644083 0.10278 0.136674 0.159965 0.168261</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.661673.241" name="SUMS.20.HN1.2013.220.stage_6">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>86</delay>
+      <correction>86</correction>
+      <numberOfCoefficients>87</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>2.8871e-08 2.05357e-07 6.20727e-07 7.18515e-07 -1.38441e-06 -7.7975e-06 -1.69897e-05 -2.11047e-05 -1.16173e-05 7.80309e-06 1.77319e-05 2.98768e-06 -2.14367e-05 -1.9717e-05 1.55247e-05 3.81991e-05 4.42239e-06 -5.01745e-05 -3.89661e-05 4.42239e-05 8.129e-05 -1.01537e-05 -0.000116444 -5.57676e-05 0.00012339 0.000145692 -8.04989e-05 -0.000237298 -2.62186e-05 0.000295014 0.000193928 -0.000276734 -0.000395855 0.000145696 0.000579332 0.000114268 -0.000671905 -0.00048414 0.000596339 0.000900563 -0.000293051 -0.00125695 -0.000254198 0.00141822 0.000996165 -0.0012493 -0.001807 0.000653577 0.00249086 0.000385978 -0.00280996 -0.00177377 0.00253297 0.00328742 -0.00149677 -0.00459133 -0.000329872 0.00528226 0.00279596 -0.00496379 -0.00554609 0.00333984 0.00803791 -0.000310468 -0.0096033 -0.00394934 0.00954874 0.00894634 -0.00728015 -0.013873 0.00243061 0.0176589 0.00503427 -0.0190534 -0.0147575 0.0166972 0.0259952 -0.00908776 -0.0376895 -0.00581503 0.0486034 0.0323113 -0.0574957 -0.0859903 0.0633078 0.311379 0.434671</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.662631.242" name="SUMS.20.HN2.2012.114.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>29.0001</delay>
+      <correction>29.0001</correction>
+      <numberOfCoefficients>30</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>8.48249e-06 3.89037e-05 0.000109346 0.000226937 0.00036584 0.000447944 0.000346227 -7.08089e-05 -0.000851525 -0.00185801 -0.0027055 -0.00281272 -0.00160384 0.00116656 0.00508161 0.00890325 0.010758 0.00873375 0.00177379 -0.00943683 -0.0219989 -0.0310883 -0.0311164 -0.0175223 0.0113614 0.0530733 0.100994 0.145714 0.177481 0.188975</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.66285.243" name="SUMS.20.HN2.2012.114.stage_4">
+      <gain>1</gain>
+      <decimationFactor>3</decimationFactor>
+      <delay>16.9998</delay>
+      <correction>16.9998</correction>
+      <numberOfCoefficients>18</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>4.13465e-05 0.000234989 0.000591262 0.000653151 -0.000475707 -0.00295148 -0.00454665 -0.00123816 0.0081097 0.0164184 0.0105253 -0.0154747 -0.0453658 -0.0428086 0.0222852 0.14106 0.258835 0.308214</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.662998.244" name="SUMS.20.HN2.2012.114.stage_5">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>42</delay>
+      <correction>42</correction>
+      <numberOfCoefficients>43</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-1.25729e-08 -1.05239e-07 -4.85219e-07 -1.62749e-06 -4.36278e-06 -9.75467e-06 -1.85249e-05 -2.98358e-05 -3.95435e-05 -3.85744e-05 -1.27601e-05 5.41867e-05 0.000173287 0.00033889 0.000516461 0.000635812 0.000597759 0.000300498 -0.000314192 -0.00120507 -0.00218704 -0.00292612 -0.00299796 -0.0020174 0.000182455 0.003375 0.00684425 0.00944234 0.00984065 0.00695227 0.00042907 -0.00892353 -0.0189876 -0.026559 -0.0279847 -0.020103 -0.0012493 0.0279692 0.0644083 0.10278 0.136674 0.159965 0.168261</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.663177.245" name="SUMS.20.HN2.2012.114.stage_6">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>86</delay>
+      <correction>86</correction>
+      <numberOfCoefficients>87</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>2.8871e-08 2.05357e-07 6.20727e-07 7.18515e-07 -1.38441e-06 -7.7975e-06 -1.69897e-05 -2.11047e-05 -1.16173e-05 7.80309e-06 1.77319e-05 2.98768e-06 -2.14367e-05 -1.9717e-05 1.55247e-05 3.81991e-05 4.42239e-06 -5.01745e-05 -3.89661e-05 4.42239e-05 8.129e-05 -1.01537e-05 -0.000116444 -5.57676e-05 0.00012339 0.000145692 -8.04989e-05 -0.000237298 -2.62186e-05 0.000295014 0.000193928 -0.000276734 -0.000395855 0.000145696 0.000579332 0.000114268 -0.000671905 -0.00048414 0.000596339 0.000900563 -0.000293051 -0.00125695 -0.000254198 0.00141822 0.000996165 -0.0012493 -0.001807 0.000653577 0.00249086 0.000385978 -0.00280996 -0.00177377 0.00253297 0.00328742 -0.00149677 -0.00459133 -0.000329872 0.00528226 0.00279596 -0.00496379 -0.00554609 0.00333984 0.00803791 -0.000310468 -0.0096033 -0.00394934 0.00954874 0.00894634 -0.00728015 -0.013873 0.00243061 0.0176589 0.00503427 -0.0190534 -0.0147575 0.0166972 0.0259952 -0.00908776 -0.0376895 -0.00581503 0.0486034 0.0323113 -0.0574957 -0.0859903 0.0633078 0.311379 0.434671</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.664371.246" name="SUMS.20.HN2.2012.353.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>29.0001</delay>
+      <correction>29.0001</correction>
+      <numberOfCoefficients>30</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>8.48249e-06 3.89037e-05 0.000109346 0.000226937 0.00036584 0.000447944 0.000346227 -7.08089e-05 -0.000851525 -0.00185801 -0.0027055 -0.00281272 -0.00160384 0.00116656 0.00508161 0.00890325 0.010758 0.00873375 0.00177379 -0.00943683 -0.0219989 -0.0310883 -0.0311164 -0.0175223 0.0113614 0.0530733 0.100994 0.145714 0.177481 0.188975</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.664763.247" name="SUMS.20.HN2.2012.353.stage_4">
+      <gain>1</gain>
+      <decimationFactor>3</decimationFactor>
+      <delay>16.9998</delay>
+      <correction>16.9998</correction>
+      <numberOfCoefficients>18</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>4.13465e-05 0.000234989 0.000591262 0.000653151 -0.000475707 -0.00295148 -0.00454665 -0.00123816 0.0081097 0.0164184 0.0105253 -0.0154747 -0.0453658 -0.0428086 0.0222852 0.14106 0.258835 0.308214</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.665134.248" name="SUMS.20.HN2.2012.353.stage_5">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>42</delay>
+      <correction>42</correction>
+      <numberOfCoefficients>43</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-1.25729e-08 -1.05239e-07 -4.85219e-07 -1.62749e-06 -4.36278e-06 -9.75467e-06 -1.85249e-05 -2.98358e-05 -3.95435e-05 -3.85744e-05 -1.27601e-05 5.41867e-05 0.000173287 0.00033889 0.000516461 0.000635812 0.000597759 0.000300498 -0.000314192 -0.00120507 -0.00218704 -0.00292612 -0.00299796 -0.0020174 0.000182455 0.003375 0.00684425 0.00944234 0.00984065 0.00695227 0.00042907 -0.00892353 -0.0189876 -0.026559 -0.0279847 -0.020103 -0.0012493 0.0279692 0.0644083 0.10278 0.136674 0.159965 0.168261</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.665326.249" name="SUMS.20.HN2.2012.353.stage_6">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>86</delay>
+      <correction>86</correction>
+      <numberOfCoefficients>87</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>2.8871e-08 2.05357e-07 6.20727e-07 7.18515e-07 -1.38441e-06 -7.7975e-06 -1.69897e-05 -2.11047e-05 -1.16173e-05 7.80309e-06 1.77319e-05 2.98768e-06 -2.14367e-05 -1.9717e-05 1.55247e-05 3.81991e-05 4.42239e-06 -5.01745e-05 -3.89661e-05 4.42239e-05 8.129e-05 -1.01537e-05 -0.000116444 -5.57676e-05 0.00012339 0.000145692 -8.04989e-05 -0.000237298 -2.62186e-05 0.000295014 0.000193928 -0.000276734 -0.000395855 0.000145696 0.000579332 0.000114268 -0.000671905 -0.00048414 0.000596339 0.000900563 -0.000293051 -0.00125695 -0.000254198 0.00141822 0.000996165 -0.0012493 -0.001807 0.000653577 0.00249086 0.000385978 -0.00280996 -0.00177377 0.00253297 0.00328742 -0.00149677 -0.00459133 -0.000329872 0.00528226 0.00279596 -0.00496379 -0.00554609 0.00333984 0.00803791 -0.000310468 -0.0096033 -0.00394934 0.00954874 0.00894634 -0.00728015 -0.013873 0.00243061 0.0176589 0.00503427 -0.0190534 -0.0147575 0.0166972 0.0259952 -0.00908776 -0.0376895 -0.00581503 0.0486034 0.0323113 -0.0574957 -0.0859903 0.0633078 0.311379 0.434671</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.666249.250" name="SUMS.20.HN2.2013.010.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>29.0001</delay>
+      <correction>29.0001</correction>
+      <numberOfCoefficients>30</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>8.48249e-06 3.89037e-05 0.000109346 0.000226937 0.00036584 0.000447944 0.000346227 -7.08089e-05 -0.000851525 -0.00185801 -0.0027055 -0.00281272 -0.00160384 0.00116656 0.00508161 0.00890325 0.010758 0.00873375 0.00177379 -0.00943683 -0.0219989 -0.0310883 -0.0311164 -0.0175223 0.0113614 0.0530733 0.100994 0.145714 0.177481 0.188975</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.666433.251" name="SUMS.20.HN2.2013.010.stage_4">
+      <gain>1</gain>
+      <decimationFactor>3</decimationFactor>
+      <delay>16.9998</delay>
+      <correction>16.9998</correction>
+      <numberOfCoefficients>18</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>4.13465e-05 0.000234989 0.000591262 0.000653151 -0.000475707 -0.00295148 -0.00454665 -0.00123816 0.0081097 0.0164184 0.0105253 -0.0154747 -0.0453658 -0.0428086 0.0222852 0.14106 0.258835 0.308214</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.666553.252" name="SUMS.20.HN2.2013.010.stage_5">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>42</delay>
+      <correction>42</correction>
+      <numberOfCoefficients>43</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-1.25729e-08 -1.05239e-07 -4.85219e-07 -1.62749e-06 -4.36278e-06 -9.75467e-06 -1.85249e-05 -2.98358e-05 -3.95435e-05 -3.85744e-05 -1.27601e-05 5.41867e-05 0.000173287 0.00033889 0.000516461 0.000635812 0.000597759 0.000300498 -0.000314192 -0.00120507 -0.00218704 -0.00292612 -0.00299796 -0.0020174 0.000182455 0.003375 0.00684425 0.00944234 0.00984065 0.00695227 0.00042907 -0.00892353 -0.0189876 -0.026559 -0.0279847 -0.020103 -0.0012493 0.0279692 0.0644083 0.10278 0.136674 0.159965 0.168261</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.66673.253" name="SUMS.20.HN2.2013.010.stage_6">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>86</delay>
+      <correction>86</correction>
+      <numberOfCoefficients>87</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>2.8871e-08 2.05357e-07 6.20727e-07 7.18515e-07 -1.38441e-06 -7.7975e-06 -1.69897e-05 -2.11047e-05 -1.16173e-05 7.80309e-06 1.77319e-05 2.98768e-06 -2.14367e-05 -1.9717e-05 1.55247e-05 3.81991e-05 4.42239e-06 -5.01745e-05 -3.89661e-05 4.42239e-05 8.129e-05 -1.01537e-05 -0.000116444 -5.57676e-05 0.00012339 0.000145692 -8.04989e-05 -0.000237298 -2.62186e-05 0.000295014 0.000193928 -0.000276734 -0.000395855 0.000145696 0.000579332 0.000114268 -0.000671905 -0.00048414 0.000596339 0.000900563 -0.000293051 -0.00125695 -0.000254198 0.00141822 0.000996165 -0.0012493 -0.001807 0.000653577 0.00249086 0.000385978 -0.00280996 -0.00177377 0.00253297 0.00328742 -0.00149677 -0.00459133 -0.000329872 0.00528226 0.00279596 -0.00496379 -0.00554609 0.00333984 0.00803791 -0.000310468 -0.0096033 -0.00394934 0.00954874 0.00894634 -0.00728015 -0.013873 0.00243061 0.0176589 0.00503427 -0.0190534 -0.0147575 0.0166972 0.0259952 -0.00908776 -0.0376895 -0.00581503 0.0486034 0.0323113 -0.0574957 -0.0859903 0.0633078 0.311379 0.434671</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.671797.254" name="SUMS.20.HN2.2013.220.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>29.0001</delay>
+      <correction>29.0001</correction>
+      <numberOfCoefficients>30</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>8.48249e-06 3.89037e-05 0.000109346 0.000226937 0.00036584 0.000447944 0.000346227 -7.08089e-05 -0.000851525 -0.00185801 -0.0027055 -0.00281272 -0.00160384 0.00116656 0.00508161 0.00890325 0.010758 0.00873375 0.00177379 -0.00943683 -0.0219989 -0.0310883 -0.0311164 -0.0175223 0.0113614 0.0530733 0.100994 0.145714 0.177481 0.188975</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.672.255" name="SUMS.20.HN2.2013.220.stage_4">
+      <gain>1</gain>
+      <decimationFactor>3</decimationFactor>
+      <delay>16.9998</delay>
+      <correction>16.9998</correction>
+      <numberOfCoefficients>18</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>4.13465e-05 0.000234989 0.000591262 0.000653151 -0.000475707 -0.00295148 -0.00454665 -0.00123816 0.0081097 0.0164184 0.0105253 -0.0154747 -0.0453658 -0.0428086 0.0222852 0.14106 0.258835 0.308214</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.672117.256" name="SUMS.20.HN2.2013.220.stage_5">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>42</delay>
+      <correction>42</correction>
+      <numberOfCoefficients>43</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-1.25729e-08 -1.05239e-07 -4.85219e-07 -1.62749e-06 -4.36278e-06 -9.75467e-06 -1.85249e-05 -2.98358e-05 -3.95435e-05 -3.85744e-05 -1.27601e-05 5.41867e-05 0.000173287 0.00033889 0.000516461 0.000635812 0.000597759 0.000300498 -0.000314192 -0.00120507 -0.00218704 -0.00292612 -0.00299796 -0.0020174 0.000182455 0.003375 0.00684425 0.00944234 0.00984065 0.00695227 0.00042907 -0.00892353 -0.0189876 -0.026559 -0.0279847 -0.020103 -0.0012493 0.0279692 0.0644083 0.10278 0.136674 0.159965 0.168261</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.672285.257" name="SUMS.20.HN2.2013.220.stage_6">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>86</delay>
+      <correction>86</correction>
+      <numberOfCoefficients>87</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>2.8871e-08 2.05357e-07 6.20727e-07 7.18515e-07 -1.38441e-06 -7.7975e-06 -1.69897e-05 -2.11047e-05 -1.16173e-05 7.80309e-06 1.77319e-05 2.98768e-06 -2.14367e-05 -1.9717e-05 1.55247e-05 3.81991e-05 4.42239e-06 -5.01745e-05 -3.89661e-05 4.42239e-05 8.129e-05 -1.01537e-05 -0.000116444 -5.57676e-05 0.00012339 0.000145692 -8.04989e-05 -0.000237298 -2.62186e-05 0.000295014 0.000193928 -0.000276734 -0.000395855 0.000145696 0.000579332 0.000114268 -0.000671905 -0.00048414 0.000596339 0.000900563 -0.000293051 -0.00125695 -0.000254198 0.00141822 0.000996165 -0.0012493 -0.001807 0.000653577 0.00249086 0.000385978 -0.00280996 -0.00177377 0.00253297 0.00328742 -0.00149677 -0.00459133 -0.000329872 0.00528226 0.00279596 -0.00496379 -0.00554609 0.00333984 0.00803791 -0.000310468 -0.0096033 -0.00394934 0.00954874 0.00894634 -0.00728015 -0.013873 0.00243061 0.0176589 0.00503427 -0.0190534 -0.0147575 0.0166972 0.0259952 -0.00908776 -0.0376895 -0.00581503 0.0486034 0.0323113 -0.0574957 -0.0859903 0.0633078 0.311379 0.434671</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.68222.258" name="SUMS.20.HNZ.2012.114.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>29.0001</delay>
+      <correction>29.0001</correction>
+      <numberOfCoefficients>30</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>8.48249e-06 3.89037e-05 0.000109346 0.000226937 0.00036584 0.000447944 0.000346227 -7.08089e-05 -0.000851525 -0.00185801 -0.0027055 -0.00281272 -0.00160384 0.00116656 0.00508161 0.00890325 0.010758 0.00873375 0.00177379 -0.00943683 -0.0219989 -0.0310883 -0.0311164 -0.0175223 0.0113614 0.0530733 0.100994 0.145714 0.177481 0.188975</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.682371.259" name="SUMS.20.HNZ.2012.114.stage_4">
+      <gain>1</gain>
+      <decimationFactor>3</decimationFactor>
+      <delay>16.9998</delay>
+      <correction>16.9998</correction>
+      <numberOfCoefficients>18</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>4.13465e-05 0.000234989 0.000591262 0.000653151 -0.000475707 -0.00295148 -0.00454665 -0.00123816 0.0081097 0.0164184 0.0105253 -0.0154747 -0.0453658 -0.0428086 0.0222852 0.14106 0.258835 0.308214</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.682477.260" name="SUMS.20.HNZ.2012.114.stage_5">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>42</delay>
+      <correction>42</correction>
+      <numberOfCoefficients>43</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-1.25729e-08 -1.05239e-07 -4.85219e-07 -1.62749e-06 -4.36278e-06 -9.75467e-06 -1.85249e-05 -2.98358e-05 -3.95435e-05 -3.85744e-05 -1.27601e-05 5.41867e-05 0.000173287 0.00033889 0.000516461 0.000635812 0.000597759 0.000300498 -0.000314192 -0.00120507 -0.00218704 -0.00292612 -0.00299796 -0.0020174 0.000182455 0.003375 0.00684425 0.00944234 0.00984065 0.00695227 0.00042907 -0.00892353 -0.0189876 -0.026559 -0.0279847 -0.020103 -0.0012493 0.0279692 0.0644083 0.10278 0.136674 0.159965 0.168261</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.682635.261" name="SUMS.20.HNZ.2012.114.stage_6">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>86</delay>
+      <correction>86</correction>
+      <numberOfCoefficients>87</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>2.8871e-08 2.05357e-07 6.20727e-07 7.18515e-07 -1.38441e-06 -7.7975e-06 -1.69897e-05 -2.11047e-05 -1.16173e-05 7.80309e-06 1.77319e-05 2.98768e-06 -2.14367e-05 -1.9717e-05 1.55247e-05 3.81991e-05 4.42239e-06 -5.01745e-05 -3.89661e-05 4.42239e-05 8.129e-05 -1.01537e-05 -0.000116444 -5.57676e-05 0.00012339 0.000145692 -8.04989e-05 -0.000237298 -2.62186e-05 0.000295014 0.000193928 -0.000276734 -0.000395855 0.000145696 0.000579332 0.000114268 -0.000671905 -0.00048414 0.000596339 0.000900563 -0.000293051 -0.00125695 -0.000254198 0.00141822 0.000996165 -0.0012493 -0.001807 0.000653577 0.00249086 0.000385978 -0.00280996 -0.00177377 0.00253297 0.00328742 -0.00149677 -0.00459133 -0.000329872 0.00528226 0.00279596 -0.00496379 -0.00554609 0.00333984 0.00803791 -0.000310468 -0.0096033 -0.00394934 0.00954874 0.00894634 -0.00728015 -0.013873 0.00243061 0.0176589 0.00503427 -0.0190534 -0.0147575 0.0166972 0.0259952 -0.00908776 -0.0376895 -0.00581503 0.0486034 0.0323113 -0.0574957 -0.0859903 0.0633078 0.311379 0.434671</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.683319.262" name="SUMS.20.HNZ.2012.353.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>29.0001</delay>
+      <correction>29.0001</correction>
+      <numberOfCoefficients>30</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>8.48249e-06 3.89037e-05 0.000109346 0.000226937 0.00036584 0.000447944 0.000346227 -7.08089e-05 -0.000851525 -0.00185801 -0.0027055 -0.00281272 -0.00160384 0.00116656 0.00508161 0.00890325 0.010758 0.00873375 0.00177379 -0.00943683 -0.0219989 -0.0310883 -0.0311164 -0.0175223 0.0113614 0.0530733 0.100994 0.145714 0.177481 0.188975</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.683458.263" name="SUMS.20.HNZ.2012.353.stage_4">
+      <gain>1</gain>
+      <decimationFactor>3</decimationFactor>
+      <delay>16.9998</delay>
+      <correction>16.9998</correction>
+      <numberOfCoefficients>18</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>4.13465e-05 0.000234989 0.000591262 0.000653151 -0.000475707 -0.00295148 -0.00454665 -0.00123816 0.0081097 0.0164184 0.0105253 -0.0154747 -0.0453658 -0.0428086 0.0222852 0.14106 0.258835 0.308214</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.683562.264" name="SUMS.20.HNZ.2012.353.stage_5">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>42</delay>
+      <correction>42</correction>
+      <numberOfCoefficients>43</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-1.25729e-08 -1.05239e-07 -4.85219e-07 -1.62749e-06 -4.36278e-06 -9.75467e-06 -1.85249e-05 -2.98358e-05 -3.95435e-05 -3.85744e-05 -1.27601e-05 5.41867e-05 0.000173287 0.00033889 0.000516461 0.000635812 0.000597759 0.000300498 -0.000314192 -0.00120507 -0.00218704 -0.00292612 -0.00299796 -0.0020174 0.000182455 0.003375 0.00684425 0.00944234 0.00984065 0.00695227 0.00042907 -0.00892353 -0.0189876 -0.026559 -0.0279847 -0.020103 -0.0012493 0.0279692 0.0644083 0.10278 0.136674 0.159965 0.168261</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.683718.265" name="SUMS.20.HNZ.2012.353.stage_6">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>86</delay>
+      <correction>86</correction>
+      <numberOfCoefficients>87</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>2.8871e-08 2.05357e-07 6.20727e-07 7.18515e-07 -1.38441e-06 -7.7975e-06 -1.69897e-05 -2.11047e-05 -1.16173e-05 7.80309e-06 1.77319e-05 2.98768e-06 -2.14367e-05 -1.9717e-05 1.55247e-05 3.81991e-05 4.42239e-06 -5.01745e-05 -3.89661e-05 4.42239e-05 8.129e-05 -1.01537e-05 -0.000116444 -5.57676e-05 0.00012339 0.000145692 -8.04989e-05 -0.000237298 -2.62186e-05 0.000295014 0.000193928 -0.000276734 -0.000395855 0.000145696 0.000579332 0.000114268 -0.000671905 -0.00048414 0.000596339 0.000900563 -0.000293051 -0.00125695 -0.000254198 0.00141822 0.000996165 -0.0012493 -0.001807 0.000653577 0.00249086 0.000385978 -0.00280996 -0.00177377 0.00253297 0.00328742 -0.00149677 -0.00459133 -0.000329872 0.00528226 0.00279596 -0.00496379 -0.00554609 0.00333984 0.00803791 -0.000310468 -0.0096033 -0.00394934 0.00954874 0.00894634 -0.00728015 -0.013873 0.00243061 0.0176589 0.00503427 -0.0190534 -0.0147575 0.0166972 0.0259952 -0.00908776 -0.0376895 -0.00581503 0.0486034 0.0323113 -0.0574957 -0.0859903 0.0633078 0.311379 0.434671</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.684384.266" name="SUMS.20.HNZ.2013.010.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>29.0001</delay>
+      <correction>29.0001</correction>
+      <numberOfCoefficients>30</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>8.48249e-06 3.89037e-05 0.000109346 0.000226937 0.00036584 0.000447944 0.000346227 -7.08089e-05 -0.000851525 -0.00185801 -0.0027055 -0.00281272 -0.00160384 0.00116656 0.00508161 0.00890325 0.010758 0.00873375 0.00177379 -0.00943683 -0.0219989 -0.0310883 -0.0311164 -0.0175223 0.0113614 0.0530733 0.100994 0.145714 0.177481 0.188975</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.684645.267" name="SUMS.20.HNZ.2013.010.stage_4">
+      <gain>1</gain>
+      <decimationFactor>3</decimationFactor>
+      <delay>16.9998</delay>
+      <correction>16.9998</correction>
+      <numberOfCoefficients>18</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>4.13465e-05 0.000234989 0.000591262 0.000653151 -0.000475707 -0.00295148 -0.00454665 -0.00123816 0.0081097 0.0164184 0.0105253 -0.0154747 -0.0453658 -0.0428086 0.0222852 0.14106 0.258835 0.308214</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.684761.268" name="SUMS.20.HNZ.2013.010.stage_5">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>42</delay>
+      <correction>42</correction>
+      <numberOfCoefficients>43</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-1.25729e-08 -1.05239e-07 -4.85219e-07 -1.62749e-06 -4.36278e-06 -9.75467e-06 -1.85249e-05 -2.98358e-05 -3.95435e-05 -3.85744e-05 -1.27601e-05 5.41867e-05 0.000173287 0.00033889 0.000516461 0.000635812 0.000597759 0.000300498 -0.000314192 -0.00120507 -0.00218704 -0.00292612 -0.00299796 -0.0020174 0.000182455 0.003375 0.00684425 0.00944234 0.00984065 0.00695227 0.00042907 -0.00892353 -0.0189876 -0.026559 -0.0279847 -0.020103 -0.0012493 0.0279692 0.0644083 0.10278 0.136674 0.159965 0.168261</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.684917.269" name="SUMS.20.HNZ.2013.010.stage_6">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>86</delay>
+      <correction>86</correction>
+      <numberOfCoefficients>87</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>2.8871e-08 2.05357e-07 6.20727e-07 7.18515e-07 -1.38441e-06 -7.7975e-06 -1.69897e-05 -2.11047e-05 -1.16173e-05 7.80309e-06 1.77319e-05 2.98768e-06 -2.14367e-05 -1.9717e-05 1.55247e-05 3.81991e-05 4.42239e-06 -5.01745e-05 -3.89661e-05 4.42239e-05 8.129e-05 -1.01537e-05 -0.000116444 -5.57676e-05 0.00012339 0.000145692 -8.04989e-05 -0.000237298 -2.62186e-05 0.000295014 0.000193928 -0.000276734 -0.000395855 0.000145696 0.000579332 0.000114268 -0.000671905 -0.00048414 0.000596339 0.000900563 -0.000293051 -0.00125695 -0.000254198 0.00141822 0.000996165 -0.0012493 -0.001807 0.000653577 0.00249086 0.000385978 -0.00280996 -0.00177377 0.00253297 0.00328742 -0.00149677 -0.00459133 -0.000329872 0.00528226 0.00279596 -0.00496379 -0.00554609 0.00333984 0.00803791 -0.000310468 -0.0096033 -0.00394934 0.00954874 0.00894634 -0.00728015 -0.013873 0.00243061 0.0176589 0.00503427 -0.0190534 -0.0147575 0.0166972 0.0259952 -0.00908776 -0.0376895 -0.00581503 0.0486034 0.0323113 -0.0574957 -0.0859903 0.0633078 0.311379 0.434671</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.689776.270" name="SUMS.20.HNZ.2013.220.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>29.0001</delay>
+      <correction>29.0001</correction>
+      <numberOfCoefficients>30</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>8.48249e-06 3.89037e-05 0.000109346 0.000226937 0.00036584 0.000447944 0.000346227 -7.08089e-05 -0.000851525 -0.00185801 -0.0027055 -0.00281272 -0.00160384 0.00116656 0.00508161 0.00890325 0.010758 0.00873375 0.00177379 -0.00943683 -0.0219989 -0.0310883 -0.0311164 -0.0175223 0.0113614 0.0530733 0.100994 0.145714 0.177481 0.188975</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.689939.271" name="SUMS.20.HNZ.2013.220.stage_4">
+      <gain>1</gain>
+      <decimationFactor>3</decimationFactor>
+      <delay>16.9998</delay>
+      <correction>16.9998</correction>
+      <numberOfCoefficients>18</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>4.13465e-05 0.000234989 0.000591262 0.000653151 -0.000475707 -0.00295148 -0.00454665 -0.00123816 0.0081097 0.0164184 0.0105253 -0.0154747 -0.0453658 -0.0428086 0.0222852 0.14106 0.258835 0.308214</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.69009.272" name="SUMS.20.HNZ.2013.220.stage_5">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>42</delay>
+      <correction>42</correction>
+      <numberOfCoefficients>43</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>-1.25729e-08 -1.05239e-07 -4.85219e-07 -1.62749e-06 -4.36278e-06 -9.75467e-06 -1.85249e-05 -2.98358e-05 -3.95435e-05 -3.85744e-05 -1.27601e-05 5.41867e-05 0.000173287 0.00033889 0.000516461 0.000635812 0.000597759 0.000300498 -0.000314192 -0.00120507 -0.00218704 -0.00292612 -0.00299796 -0.0020174 0.000182455 0.003375 0.00684425 0.00944234 0.00984065 0.00695227 0.00042907 -0.00892353 -0.0189876 -0.026559 -0.0279847 -0.020103 -0.0012493 0.0279692 0.0644083 0.10278 0.136674 0.159965 0.168261</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140123020816.690265.273" name="SUMS.20.HNZ.2013.220.stage_6">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>86</delay>
+      <correction>86</correction>
+      <numberOfCoefficients>87</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>2.8871e-08 2.05357e-07 6.20727e-07 7.18515e-07 -1.38441e-06 -7.7975e-06 -1.69897e-05 -2.11047e-05 -1.16173e-05 7.80309e-06 1.77319e-05 2.98768e-06 -2.14367e-05 -1.9717e-05 1.55247e-05 3.81991e-05 4.42239e-06 -5.01745e-05 -3.89661e-05 4.42239e-05 8.129e-05 -1.01537e-05 -0.000116444 -5.57676e-05 0.00012339 0.000145692 -8.04989e-05 -0.000237298 -2.62186e-05 0.000295014 0.000193928 -0.000276734 -0.000395855 0.000145696 0.000579332 0.000114268 -0.000671905 -0.00048414 0.000596339 0.000900563 -0.000293051 -0.00125695 -0.000254198 0.00141822 0.000996165 -0.0012493 -0.001807 0.000653577 0.00249086 0.000385978 -0.00280996 -0.00177377 0.00253297 0.00328742 -0.00149677 -0.00459133 -0.000329872 0.00528226 0.00279596 -0.00496379 -0.00554609 0.00333984 0.00803791 -0.000310468 -0.0096033 -0.00394934 0.00954874 0.00894634 -0.00728015 -0.013873 0.00243061 0.0176589 0.00503427 -0.0190534 -0.0147575 0.0166972 0.0259952 -0.00908776 -0.0376895 -0.00581503 0.0486034 0.0323113 -0.0574957 -0.0859903 0.0633078 0.311379 0.434671</coefficients>
+    </responseFIR>
+    <network publicID="Network#20140123020816.578515.2" code="NZ">
+      <start>1980-01-01T00:00:00.0000Z</start>
+      <description> </description>
+      <netClass>p</netClass>
+      <archive> </archive>
+      <restricted>false</restricted>
+      <shared>true</shared>
+      <station publicID="Station#20140123020816.578797.3" code="SUMS">
+        <start>2012-04-23T00:00:00.0000Z</start>
+        <description>Sumner</description>
+        <latitude>-43.56921</latitude>
+        <longitude>172.75681</longitude>
+        <elevation>9</elevation>
+        <place>Sumner</place>
+        <affiliation>National strong motion network</affiliation>
+        <archive> </archive>
+        <restricted>false</restricted>
+        <shared>true</shared>
+        <sensorLocation publicID="SensorLocation#20140123020816.585352.137" code="20">
+          <start>2012-04-23T03:00:00.0000Z</start>
+          <latitude>-43.56921</latitude>
+          <longitude>172.75681</longitude>
+          <elevation>9</elevation>
+          <stream code="BN1" datalogger="Datalogger#20140123020816.585812.138" sensor="Sensor#20140123020816.589039.144">
+            <start>2012-04-23T03:00:00.0000Z</start>
+            <end>2012-12-18T03:15:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>1</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>1</sensorChannel>
+            <sampleRateNumerator>50</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>212</azimuth>
+            <dip>0</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="BN1" datalogger="Datalogger#20140123020816.590719.146" sensor="Sensor#20140123020816.592422.152">
+            <start>2013-01-10T22:00:01.0000Z</start>
+            <end>2013-01-10T22:05:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>1</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>1</sensorChannel>
+            <sampleRateNumerator>50</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>212</azimuth>
+            <dip>0</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="BN1" datalogger="Datalogger#20140123020816.593542.154" sensor="Sensor#20140123020816.595263.160">
+            <start>2012-12-18T03:19:00.0000Z</start>
+            <end>2013-01-10T22:05:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>1</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>1</sensorChannel>
+            <sampleRateNumerator>50</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>212</azimuth>
+            <dip>0</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="BN1" datalogger="Datalogger#20140123020816.590719.146" sensor="Sensor#20140123020816.592422.152">
+            <start>2013-01-10T22:09:00.0000Z</start>
+            <end>2013-08-08T00:00:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>1</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>1</sensorChannel>
+            <sampleRateNumerator>50</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>212</azimuth>
+            <dip>0</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="BN1" datalogger="Datalogger#20140123020816.600075.162" sensor="Sensor#20140123020816.601255.168">
+            <start>2013-08-08T00:05:00.0000Z</start>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>1</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>1</sensorChannel>
+            <sampleRateNumerator>50</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>0</azimuth>
+            <dip>0</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="BN2" datalogger="Datalogger#20140123020816.585812.138" sensor="Sensor#20140123020816.603206.175">
+            <start>2012-04-23T03:00:00.0000Z</start>
+            <end>2012-12-18T03:15:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>2</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>2</sensorChannel>
+            <sampleRateNumerator>50</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>302</azimuth>
+            <dip>0</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="BN2" datalogger="Datalogger#20140123020816.593542.154" sensor="Sensor#20140123020816.604723.182">
+            <start>2012-12-18T03:19:00.0000Z</start>
+            <end>2013-01-10T22:05:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>2</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>2</sensorChannel>
+            <sampleRateNumerator>50</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>302</azimuth>
+            <dip>0</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="BN2" datalogger="Datalogger#20140123020816.590719.146" sensor="Sensor#20140123020816.606219.189">
+            <start>2013-01-10T22:00:01.0000Z</start>
+            <end>2013-01-10T22:05:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>2</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>2</sensorChannel>
+            <sampleRateNumerator>50</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>302</azimuth>
+            <dip>0</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="BN2" datalogger="Datalogger#20140123020816.590719.146" sensor="Sensor#20140123020816.606219.189">
+            <start>2013-01-10T22:09:00.0000Z</start>
+            <end>2013-08-08T00:00:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>2</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>2</sensorChannel>
+            <sampleRateNumerator>50</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>302</azimuth>
+            <dip>0</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="BN2" datalogger="Datalogger#20140123020816.600075.162" sensor="Sensor#20140123020816.623646.196">
+            <start>2013-08-08T00:05:00.0000Z</start>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>2</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>2</sensorChannel>
+            <sampleRateNumerator>50</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>90</azimuth>
+            <dip>0</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="BNZ" datalogger="Datalogger#20140123020816.585812.138" sensor="Sensor#20140123020816.625414.203">
+            <start>2012-04-23T03:00:00.0000Z</start>
+            <end>2012-12-18T03:15:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>0</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>0</sensorChannel>
+            <sampleRateNumerator>50</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>212</azimuth>
+            <dip>-90</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="BNZ" datalogger="Datalogger#20140123020816.593542.154" sensor="Sensor#20140123020816.626904.210">
+            <start>2012-12-18T03:19:00.0000Z</start>
+            <end>2013-01-10T22:05:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>0</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>0</sensorChannel>
+            <sampleRateNumerator>50</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>212</azimuth>
+            <dip>-90</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="BNZ" datalogger="Datalogger#20140123020816.590719.146" sensor="Sensor#20140123020816.628398.217">
+            <start>2013-01-10T22:00:01.0000Z</start>
+            <end>2013-01-10T22:05:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>0</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>0</sensorChannel>
+            <sampleRateNumerator>50</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>212</azimuth>
+            <dip>-90</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="BNZ" datalogger="Datalogger#20140123020816.590719.146" sensor="Sensor#20140123020816.628398.217">
+            <start>2013-01-10T22:09:00.0000Z</start>
+            <end>2013-08-08T00:00:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>0</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>0</sensorChannel>
+            <sampleRateNumerator>50</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>212</azimuth>
+            <dip>-90</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="BNZ" datalogger="Datalogger#20140123020816.600075.162" sensor="Sensor#20140123020816.632974.224">
+            <start>2013-08-08T00:05:00.0000Z</start>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>0</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>0</sensorChannel>
+            <sampleRateNumerator>50</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>0</azimuth>
+            <dip>-90</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HN1" datalogger="Datalogger#20140123020816.585812.138" sensor="Sensor#20140123020816.589039.144">
+            <start>2012-04-23T03:00:00.0000Z</start>
+            <end>2012-12-18T03:15:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>1</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>1</sensorChannel>
+            <sampleRateNumerator>200</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>212</azimuth>
+            <dip>0</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>TG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HN1" datalogger="Datalogger#20140123020816.590719.146" sensor="Sensor#20140123020816.592422.152">
+            <start>2013-01-10T22:00:01.0000Z</start>
+            <end>2013-01-10T22:05:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>1</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>1</sensorChannel>
+            <sampleRateNumerator>200</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>212</azimuth>
+            <dip>0</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>TG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HN1" datalogger="Datalogger#20140123020816.593542.154" sensor="Sensor#20140123020816.595263.160">
+            <start>2012-12-18T03:19:00.0000Z</start>
+            <end>2013-01-10T22:05:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>1</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>1</sensorChannel>
+            <sampleRateNumerator>200</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>212</azimuth>
+            <dip>0</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>TG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HN1" datalogger="Datalogger#20140123020816.590719.146" sensor="Sensor#20140123020816.592422.152">
+            <start>2013-01-10T22:09:00.0000Z</start>
+            <end>2013-08-08T00:00:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>1</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>1</sensorChannel>
+            <sampleRateNumerator>200</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>212</azimuth>
+            <dip>0</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>TG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HN1" datalogger="Datalogger#20140123020816.600075.162" sensor="Sensor#20140123020816.601255.168">
+            <start>2013-08-08T00:05:00.0000Z</start>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>1</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>1</sensorChannel>
+            <sampleRateNumerator>200</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>0</azimuth>
+            <dip>0</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>TG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HN2" datalogger="Datalogger#20140123020816.585812.138" sensor="Sensor#20140123020816.603206.175">
+            <start>2012-04-23T03:00:00.0000Z</start>
+            <end>2012-12-18T03:15:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>2</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>2</sensorChannel>
+            <sampleRateNumerator>200</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>302</azimuth>
+            <dip>0</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>TG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HN2" datalogger="Datalogger#20140123020816.593542.154" sensor="Sensor#20140123020816.604723.182">
+            <start>2012-12-18T03:19:00.0000Z</start>
+            <end>2013-01-10T22:05:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>2</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>2</sensorChannel>
+            <sampleRateNumerator>200</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>302</azimuth>
+            <dip>0</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>TG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HN2" datalogger="Datalogger#20140123020816.590719.146" sensor="Sensor#20140123020816.606219.189">
+            <start>2013-01-10T22:00:01.0000Z</start>
+            <end>2013-01-10T22:05:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>2</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>2</sensorChannel>
+            <sampleRateNumerator>200</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>302</azimuth>
+            <dip>0</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>TG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HN2" datalogger="Datalogger#20140123020816.590719.146" sensor="Sensor#20140123020816.606219.189">
+            <start>2013-01-10T22:09:00.0000Z</start>
+            <end>2013-08-08T00:00:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>2</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>2</sensorChannel>
+            <sampleRateNumerator>200</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>302</azimuth>
+            <dip>0</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>TG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HN2" datalogger="Datalogger#20140123020816.600075.162" sensor="Sensor#20140123020816.623646.196">
+            <start>2013-08-08T00:05:00.0000Z</start>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>2</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>2</sensorChannel>
+            <sampleRateNumerator>200</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>90</azimuth>
+            <dip>0</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>TG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HNZ" datalogger="Datalogger#20140123020816.585812.138" sensor="Sensor#20140123020816.625414.203">
+            <start>2012-04-23T03:00:00.0000Z</start>
+            <end>2012-12-18T03:15:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>0</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>0</sensorChannel>
+            <sampleRateNumerator>200</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>212</azimuth>
+            <dip>-90</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>TG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HNZ" datalogger="Datalogger#20140123020816.593542.154" sensor="Sensor#20140123020816.626904.210">
+            <start>2012-12-18T03:19:00.0000Z</start>
+            <end>2013-01-10T22:05:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>0</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>0</sensorChannel>
+            <sampleRateNumerator>200</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>212</azimuth>
+            <dip>-90</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>TG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HNZ" datalogger="Datalogger#20140123020816.590719.146" sensor="Sensor#20140123020816.628398.217">
+            <start>2013-01-10T22:00:01.0000Z</start>
+            <end>2013-01-10T22:05:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>0</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>0</sensorChannel>
+            <sampleRateNumerator>200</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>212</azimuth>
+            <dip>-90</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>TG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HNZ" datalogger="Datalogger#20140123020816.590719.146" sensor="Sensor#20140123020816.628398.217">
+            <start>2013-01-10T22:09:00.0000Z</start>
+            <end>2013-08-08T00:00:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>0</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>0</sensorChannel>
+            <sampleRateNumerator>200</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>212</azimuth>
+            <dip>-90</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>TG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HNZ" datalogger="Datalogger#20140123020816.600075.162" sensor="Sensor#20140123020816.632974.224">
+            <start>2013-08-08T00:05:00.0000Z</start>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>0</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>0</sensorChannel>
+            <sampleRateNumerator>200</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>0</azimuth>
+            <dip>-90</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>TG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+        </sensorLocation>
+      </station>
+    </network>
+  </Inventory>
+</seiscomp>
