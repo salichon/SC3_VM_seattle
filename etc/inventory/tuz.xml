@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <seiscomp xmlns="http://geofon.gfz-potsdam.de/ns/seiscomp3-schema/0.7" version="0.7">
   <Inventory>
-    <sensor publicID="Sensor#20131203214121.289097.80" name="TUZ.2010.036.NE20" response="ResponsePAZ#20131203214121.289244.81">
+    <sensor publicID="Sensor#20140205034021.690905.80" name="TUZ.2010.036.NE20" response="ResponsePAZ#20140205034021.691063.81">
       <description>FBA-ES-T</description>
       <model>FBA-ES-T</model>
       <unit>M/S**2</unit>
@@ -11,7 +11,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214121.289831.83" name="TUZ.2010.036.NN20" response="ResponsePAZ#20131203214121.289875.84">
+    <sensor publicID="Sensor#20140205034021.691787.83" name="TUZ.2010.036.NN20" response="ResponsePAZ#20140205034021.69184.84">
       <description>FBA-ES-T</description>
       <model>FBA-ES-T</model>
       <unit>M/S**2</unit>
@@ -21,7 +21,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214121.290325.86" name="TUZ.2010.036.NZ20" response="ResponsePAZ#20131203214121.290364.87">
+    <sensor publicID="Sensor#20140205034021.692322.86" name="TUZ.2010.036.NZ20" response="ResponsePAZ#20140205034021.692363.87">
       <description>FBA-ES-T</description>
       <model>FBA-ES-T</model>
       <unit>M/S**2</unit>
@@ -31,7 +31,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214121.292486.94" name="TUZ.2003.253.HE10" response="ResponsePAZ#20131203214121.292516.95">
+    <sensor publicID="Sensor#20140205034021.694545.94" name="TUZ.2003.253.HE10" response="ResponsePAZ#20140205034021.694577.95">
       <description>CMG-3ESP</description>
       <model>CMG-3ESP</model>
       <unit>M/S</unit>
@@ -42,7 +42,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214121.295038.101" name="TUZ.2003.305.HE10" response="ResponsePAZ#20131203214121.295076.102">
+    <sensor publicID="Sensor#20140205034021.696656.101" name="TUZ.2003.305.HE10" response="ResponsePAZ#20140205034021.696692.102">
       <description>CMG-3ESP</description>
       <model>CMG-3ESP</model>
       <unit>M/S</unit>
@@ -53,7 +53,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214121.297291.108" name="TUZ.2003.344.HE10" response="ResponsePAZ#20131203214121.297324.109">
+    <sensor publicID="Sensor#20140205034021.69869.108" name="TUZ.2003.344.HE10" response="ResponsePAZ#20140205034021.698721.109">
       <description>CMG-3ESP</description>
       <model>CMG-3ESP</model>
       <unit>M/S</unit>
@@ -64,7 +64,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214121.297798.112" name="TUZ.2010.036.HE10" response="ResponsePAZ#20131203214121.297836.113">
+    <sensor publicID="Sensor#20140205034021.699266.112" name="TUZ.2010.036.HE10" response="ResponsePAZ#20140205034021.699306.113">
       <description>CMG-3ESP</description>
       <model>CMG-3ESP</model>
       <unit>M/S</unit>
@@ -74,7 +74,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214121.300113.118" name="TUZ.2003.253.HN10" response="ResponsePAZ#20131203214121.300147.119">
+    <sensor publicID="Sensor#20140205034021.701271.118" name="TUZ.2003.253.HN10" response="ResponsePAZ#20140205034021.701302.119">
       <description>CMG-3ESP</description>
       <model>CMG-3ESP</model>
       <unit>M/S</unit>
@@ -85,7 +85,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214121.302189.124" name="TUZ.2003.305.HN10" response="ResponsePAZ#20131203214121.302224.125">
+    <sensor publicID="Sensor#20140205034021.703348.124" name="TUZ.2003.305.HN10" response="ResponsePAZ#20140205034021.703383.125">
       <description>CMG-3ESP</description>
       <model>CMG-3ESP</model>
       <unit>M/S</unit>
@@ -96,7 +96,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214121.304257.130" name="TUZ.2003.344.HN10" response="ResponsePAZ#20131203214121.304289.131">
+    <sensor publicID="Sensor#20140205034021.705619.130" name="TUZ.2003.344.HN10" response="ResponsePAZ#20140205034021.705653.131">
       <description>CMG-3ESP</description>
       <model>CMG-3ESP</model>
       <unit>M/S</unit>
@@ -107,7 +107,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214121.30473.133" name="TUZ.2010.036.HN10" response="ResponsePAZ#20131203214121.304769.134">
+    <sensor publicID="Sensor#20140205034021.706108.133" name="TUZ.2010.036.HN10" response="ResponsePAZ#20140205034021.706148.134">
       <description>CMG-3ESP</description>
       <model>CMG-3ESP</model>
       <unit>M/S</unit>
@@ -117,7 +117,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214121.306894.139" name="TUZ.2003.253.HZ10" response="ResponsePAZ#20131203214121.306928.140">
+    <sensor publicID="Sensor#20140205034021.70977.139" name="TUZ.2003.253.HZ10" response="ResponsePAZ#20140205034021.70981.140">
       <description>CMG-3ESP</description>
       <model>CMG-3ESP</model>
       <unit>M/S</unit>
@@ -128,7 +128,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214121.309016.145" name="TUZ.2003.305.HZ10" response="ResponsePAZ#20131203214121.309049.146">
+    <sensor publicID="Sensor#20140205034021.712013.145" name="TUZ.2003.305.HZ10" response="ResponsePAZ#20140205034021.712048.146">
       <description>CMG-3ESP</description>
       <model>CMG-3ESP</model>
       <unit>M/S</unit>
@@ -139,7 +139,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214121.311098.151" name="TUZ.2003.344.HZ10" response="ResponsePAZ#20131203214121.31113.152">
+    <sensor publicID="Sensor#20140205034021.714168.151" name="TUZ.2003.344.HZ10" response="ResponsePAZ#20140205034021.714203.152">
       <description>CMG-3ESP</description>
       <model>CMG-3ESP</model>
       <unit>M/S</unit>
@@ -150,7 +150,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214121.311561.154" name="TUZ.2010.036.HZ10" response="ResponsePAZ#20131203214121.3116.155">
+    <sensor publicID="Sensor#20140205034021.714674.154" name="TUZ.2010.036.HZ10" response="ResponsePAZ#20140205034021.714723.155">
       <description>CMG-3ESP</description>
       <model>CMG-3ESP</model>
       <unit>M/S</unit>
@@ -160,7 +160,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214121.313584.160" name="TUZ.2003.253.NE20" response="ResponsePAZ#20131203214121.313636.161">
+    <sensor publicID="Sensor#20140205034021.716659.160" name="TUZ.2003.253.NE20" response="ResponsePAZ#20140205034021.716704.161">
       <description>FBA-ES-T</description>
       <model>FBA-ES-T</model>
       <unit>M/S**2</unit>
@@ -171,7 +171,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214121.31556.166" name="TUZ.2003.344.NE20" response="ResponsePAZ#20131203214121.315597.167">
+    <sensor publicID="Sensor#20140205034021.718532.166" name="TUZ.2003.344.NE20" response="ResponsePAZ#20140205034021.718572.167">
       <description>FBA-ES-T</description>
       <model>FBA-ES-T</model>
       <unit>M/S**2</unit>
@@ -182,7 +182,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214121.317968.172" name="TUZ.2003.253.NN20" response="ResponsePAZ#20131203214121.318002.173">
+    <sensor publicID="Sensor#20140205034021.720804.172" name="TUZ.2003.253.NN20" response="ResponsePAZ#20140205034021.720838.173">
       <description>FBA-ES-T</description>
       <model>FBA-ES-T</model>
       <unit>M/S**2</unit>
@@ -193,7 +193,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214121.319871.177" name="TUZ.2003.344.NN20" response="ResponsePAZ#20131203214121.319904.178">
+    <sensor publicID="Sensor#20140205034021.722696.177" name="TUZ.2003.344.NN20" response="ResponsePAZ#20140205034021.722731.178">
       <description>FBA-ES-T</description>
       <model>FBA-ES-T</model>
       <unit>M/S**2</unit>
@@ -204,7 +204,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214121.322067.183" name="TUZ.2003.253.NZ20" response="ResponsePAZ#20131203214121.3221.184">
+    <sensor publicID="Sensor#20140205034021.726159.183" name="TUZ.2003.253.NZ20" response="ResponsePAZ#20140205034021.726222.184">
       <description>FBA-ES-T</description>
       <model>FBA-ES-T</model>
       <unit>M/S**2</unit>
@@ -215,7 +215,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214121.323868.188" name="TUZ.2003.344.NZ20" response="ResponsePAZ#20131203214121.3239.189">
+    <sensor publicID="Sensor#20140205034021.728769.188" name="TUZ.2003.344.NZ20" response="ResponsePAZ#20140205034021.728806.189">
       <description>FBA-ES-T</description>
       <model>FBA-ES-T</model>
       <unit>M/S**2</unit>
@@ -226,7 +226,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <datalogger publicID="Datalogger#20131203214121.288507.78" name="TUZ.2010.036.N20">
+    <datalogger publicID="Datalogger#20140205034021.690284.78" name="TUZ.2010.036.N20">
       <description>TUZ.2010.036.N20</description>
       <gain>419430</gain>
       <maxClockDrift>0.02</maxClockDrift>
@@ -246,13 +246,13 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
       <decimation sampleRateNumerator="50" sampleRateDenominator="1">
-        <digitalFilterChain>ResponseFIR#20131203214121.29009.85</digitalFilterChain>
+        <digitalFilterChain>ResponseFIR#20140205034021.692063.85</digitalFilterChain>
       </decimation>
       <decimation sampleRateNumerator="200" sampleRateDenominator="1">
-        <digitalFilterChain>ResponseFIR#20131203214121.324117.190</digitalFilterChain>
+        <digitalFilterChain>ResponseFIR#20140205034021.729048.190</digitalFilterChain>
       </decimation>
     </datalogger>
-    <datalogger publicID="Datalogger#20131203214121.290594.89" name="TUZ.2003.253.H10">
+    <datalogger publicID="Datalogger#20140205034021.69262.89" name="TUZ.2003.253.H10">
       <description>TUZ.2003.253.H10</description>
       <gain>419430</gain>
       <maxClockDrift>0.01</maxClockDrift>
@@ -275,10 +275,10 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
       <decimation sampleRateNumerator="100" sampleRateDenominator="1">
-        <digitalFilterChain>ResponseFIR#20131203214121.30501.135 ResponseFIR#20131203214121.305982.136 ResponseFIR#20131203214121.306382.137 ResponseFIR#20131203214121.306634.138</digitalFilterChain>
+        <digitalFilterChain>ResponseFIR#20140205034021.706392.135 ResponseFIR#20140205034021.708724.136 ResponseFIR#20140205034021.709241.137 ResponseFIR#20140205034021.7095.138</digitalFilterChain>
       </decimation>
     </datalogger>
-    <datalogger publicID="Datalogger#20131203214121.292769.96" name="TUZ.2003.305.H10">
+    <datalogger publicID="Datalogger#20140205034021.694803.96" name="TUZ.2003.305.H10">
       <description>TUZ.2003.305.H10</description>
       <gain>419430</gain>
       <maxClockDrift>0.01</maxClockDrift>
@@ -301,10 +301,10 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
       <decimation sampleRateNumerator="100" sampleRateDenominator="1">
-        <digitalFilterChain>ResponseFIR#20131203214121.307178.141 ResponseFIR#20131203214121.308071.142 ResponseFIR#20131203214121.308516.143 ResponseFIR#20131203214121.308764.144</digitalFilterChain>
+        <digitalFilterChain>ResponseFIR#20140205034021.710074.141 ResponseFIR#20140205034021.710974.142 ResponseFIR#20140205034021.711461.143 ResponseFIR#20140205034021.711752.144</digitalFilterChain>
       </decimation>
     </datalogger>
-    <datalogger publicID="Datalogger#20131203214121.295325.103" name="TUZ.2003.344.H10">
+    <datalogger publicID="Datalogger#20140205034021.69692.103" name="TUZ.2003.344.H10">
       <description>TUZ.2003.344.H10</description>
       <gain>419430</gain>
       <maxClockDrift>0.01</maxClockDrift>
@@ -327,10 +327,10 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
       <decimation sampleRateNumerator="100" sampleRateDenominator="1">
-        <digitalFilterChain>ResponseFIR#20131203214121.309297.147 ResponseFIR#20131203214121.310145.148 ResponseFIR#20131203214121.310515.149 ResponseFIR#20131203214121.310855.150</digitalFilterChain>
+        <digitalFilterChain>ResponseFIR#20140205034021.712299.147 ResponseFIR#20140205034021.713202.148 ResponseFIR#20140205034021.713598.149 ResponseFIR#20140205034021.713854.150</digitalFilterChain>
       </decimation>
     </datalogger>
-    <datalogger publicID="Datalogger#20131203214121.297545.110" name="TUZ.2010.036.H10">
+    <datalogger publicID="Datalogger#20140205034021.698933.110" name="TUZ.2010.036.H10">
       <description>TUZ.2010.036.H10</description>
       <gain>419430</gain>
       <maxClockDrift>0.01</maxClockDrift>
@@ -350,10 +350,10 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
       <decimation sampleRateNumerator="100" sampleRateDenominator="1">
-        <digitalFilterChain>ResponseFIR#20131203214121.311365.153</digitalFilterChain>
+        <digitalFilterChain>ResponseFIR#20140205034021.714458.153</digitalFilterChain>
       </decimation>
     </datalogger>
-    <datalogger publicID="Datalogger#20131203214121.31182.156" name="TUZ.2003.253.N20">
+    <datalogger publicID="Datalogger#20140205034021.714983.156" name="TUZ.2003.253.N20">
       <description>TUZ.2003.253.N20</description>
       <gain>419430</gain>
       <maxClockDrift>0.02</maxClockDrift>
@@ -376,10 +376,10 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
       <decimation sampleRateNumerator="200" sampleRateDenominator="1">
-        <digitalFilterChain>ResponseFIR#20131203214121.320474.180 ResponseFIR#20131203214121.321429.181 ResponseFIR#20131203214121.321813.182</digitalFilterChain>
+        <digitalFilterChain>ResponseFIR#20140205034021.723507.180 ResponseFIR#20140205034021.724702.181 ResponseFIR#20140205034021.725808.182</digitalFilterChain>
       </decimation>
     </datalogger>
-    <datalogger publicID="Datalogger#20131203214121.313944.162" name="TUZ.2003.344.N20">
+    <datalogger publicID="Datalogger#20140205034021.716938.162" name="TUZ.2003.344.N20">
       <description>TUZ.2003.344.N20</description>
       <gain>419430</gain>
       <maxClockDrift>0.02</maxClockDrift>
@@ -402,10 +402,10 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
       <decimation sampleRateNumerator="200" sampleRateDenominator="1">
-        <digitalFilterChain>ResponseFIR#20131203214121.322329.185 ResponseFIR#20131203214121.32324.186 ResponseFIR#20131203214121.323616.187</digitalFilterChain>
+        <digitalFilterChain>ResponseFIR#20140205034021.726501.185 ResponseFIR#20140205034021.727534.186 ResponseFIR#20140205034021.72794.187</digitalFilterChain>
       </decimation>
     </datalogger>
-    <responsePAZ publicID="ResponsePAZ#20131203214121.289244.81" name="TUZ.2010.036.NE20">
+    <responsePAZ publicID="ResponsePAZ#20140205034021.691063.81" name="TUZ.2010.036.NE20">
       <type>A</type>
       <gain>1.01885</gain>
       <gainFrequency>1</gainFrequency>
@@ -416,7 +416,7 @@
       <zeros/>
       <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214121.289875.84" name="TUZ.2010.036.NN20">
+    <responsePAZ publicID="ResponsePAZ#20140205034021.69184.84" name="TUZ.2010.036.NN20">
       <type>A</type>
       <gain>1.01885</gain>
       <gainFrequency>1</gainFrequency>
@@ -427,7 +427,7 @@
       <zeros/>
       <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214121.290364.87" name="TUZ.2010.036.NZ20">
+    <responsePAZ publicID="ResponsePAZ#20140205034021.692363.87" name="TUZ.2010.036.NZ20">
       <type>A</type>
       <gain>1.01885</gain>
       <gainFrequency>1</gainFrequency>
@@ -438,7 +438,7 @@
       <zeros/>
       <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214121.292516.95" name="TUZ.2003.253.HE10">
+    <responsePAZ publicID="ResponsePAZ#20140205034021.694577.95" name="TUZ.2003.253.HE10">
       <type>B</type>
       <gain>2000</gain>
       <gainFrequency>1</gainFrequency>
@@ -449,7 +449,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-0.01178,0.01178) (-0.01178,-0.01178) (-180,0) (-160,0) (-80,0)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214121.295076.102" name="TUZ.2003.305.HE10">
+    <responsePAZ publicID="ResponsePAZ#20140205034021.696692.102" name="TUZ.2003.305.HE10">
       <type>B</type>
       <gain>2000</gain>
       <gainFrequency>1</gainFrequency>
@@ -460,7 +460,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-0.01178,0.01178) (-0.01178,-0.01178) (-180,0) (-160,0) (-80,0)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214121.297324.109" name="TUZ.2003.344.HE10">
+    <responsePAZ publicID="ResponsePAZ#20140205034021.698721.109" name="TUZ.2003.344.HE10">
       <type>B</type>
       <gain>2000</gain>
       <gainFrequency>1</gainFrequency>
@@ -471,7 +471,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-0.01178,0.01178) (-0.01178,-0.01178) (-180,0) (-160,0) (-80,0)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214121.297836.113" name="TUZ.2010.036.HE10">
+    <responsePAZ publicID="ResponsePAZ#20140205034021.699306.113" name="TUZ.2010.036.HE10">
       <type>B</type>
       <gain>2000</gain>
       <gainFrequency>1</gainFrequency>
@@ -482,7 +482,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-0.01178,0.01178) (-0.01178,-0.01178) (-180,0) (-160,0) (-80,0)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214121.300147.119" name="TUZ.2003.253.HN10">
+    <responsePAZ publicID="ResponsePAZ#20140205034021.701302.119" name="TUZ.2003.253.HN10">
       <type>B</type>
       <gain>2000</gain>
       <gainFrequency>1</gainFrequency>
@@ -493,7 +493,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-0.01178,0.01178) (-0.01178,-0.01178) (-180,0) (-160,0) (-80,0)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214121.302224.125" name="TUZ.2003.305.HN10">
+    <responsePAZ publicID="ResponsePAZ#20140205034021.703383.125" name="TUZ.2003.305.HN10">
       <type>B</type>
       <gain>2000</gain>
       <gainFrequency>1</gainFrequency>
@@ -504,7 +504,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-0.01178,0.01178) (-0.01178,-0.01178) (-180,0) (-160,0) (-80,0)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214121.304289.131" name="TUZ.2003.344.HN10">
+    <responsePAZ publicID="ResponsePAZ#20140205034021.705653.131" name="TUZ.2003.344.HN10">
       <type>B</type>
       <gain>2000</gain>
       <gainFrequency>1</gainFrequency>
@@ -515,7 +515,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-0.01178,0.01178) (-0.01178,-0.01178) (-180,0) (-160,0) (-80,0)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214121.304769.134" name="TUZ.2010.036.HN10">
+    <responsePAZ publicID="ResponsePAZ#20140205034021.706148.134" name="TUZ.2010.036.HN10">
       <type>B</type>
       <gain>2000</gain>
       <gainFrequency>1</gainFrequency>
@@ -526,7 +526,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-0.01178,0.01178) (-0.01178,-0.01178) (-180,0) (-160,0) (-80,0)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214121.306928.140" name="TUZ.2003.253.HZ10">
+    <responsePAZ publicID="ResponsePAZ#20140205034021.70981.140" name="TUZ.2003.253.HZ10">
       <type>B</type>
       <gain>2000</gain>
       <gainFrequency>1</gainFrequency>
@@ -537,7 +537,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-0.01178,0.01178) (-0.01178,-0.01178) (-180,0) (-160,0) (-80,0)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214121.309049.146" name="TUZ.2003.305.HZ10">
+    <responsePAZ publicID="ResponsePAZ#20140205034021.712048.146" name="TUZ.2003.305.HZ10">
       <type>B</type>
       <gain>2000</gain>
       <gainFrequency>1</gainFrequency>
@@ -548,7 +548,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-0.01178,0.01178) (-0.01178,-0.01178) (-180,0) (-160,0) (-80,0)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214121.31113.152" name="TUZ.2003.344.HZ10">
+    <responsePAZ publicID="ResponsePAZ#20140205034021.714203.152" name="TUZ.2003.344.HZ10">
       <type>B</type>
       <gain>2000</gain>
       <gainFrequency>1</gainFrequency>
@@ -559,7 +559,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-0.01178,0.01178) (-0.01178,-0.01178) (-180,0) (-160,0) (-80,0)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214121.3116.155" name="TUZ.2010.036.HZ10">
+    <responsePAZ publicID="ResponsePAZ#20140205034021.714723.155" name="TUZ.2010.036.HZ10">
       <type>B</type>
       <gain>2000</gain>
       <gainFrequency>1</gainFrequency>
@@ -570,7 +570,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-0.01178,0.01178) (-0.01178,-0.01178) (-180,0) (-160,0) (-80,0)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214121.313636.161" name="TUZ.2003.253.NE20">
+    <responsePAZ publicID="ResponsePAZ#20140205034021.716704.161" name="TUZ.2003.253.NE20">
       <type>A</type>
       <gain>1.01885</gain>
       <gainFrequency>1</gainFrequency>
@@ -581,7 +581,7 @@
       <zeros/>
       <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214121.315597.167" name="TUZ.2003.344.NE20">
+    <responsePAZ publicID="ResponsePAZ#20140205034021.718572.167" name="TUZ.2003.344.NE20">
       <type>A</type>
       <gain>1.01885</gain>
       <gainFrequency>1</gainFrequency>
@@ -592,7 +592,7 @@
       <zeros/>
       <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214121.318002.173" name="TUZ.2003.253.NN20">
+    <responsePAZ publicID="ResponsePAZ#20140205034021.720838.173" name="TUZ.2003.253.NN20">
       <type>A</type>
       <gain>1.01885</gain>
       <gainFrequency>1</gainFrequency>
@@ -603,7 +603,7 @@
       <zeros/>
       <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214121.319904.178" name="TUZ.2003.344.NN20">
+    <responsePAZ publicID="ResponsePAZ#20140205034021.722731.178" name="TUZ.2003.344.NN20">
       <type>A</type>
       <gain>1.01885</gain>
       <gainFrequency>1</gainFrequency>
@@ -614,7 +614,7 @@
       <zeros/>
       <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214121.3221.184" name="TUZ.2003.253.NZ20">
+    <responsePAZ publicID="ResponsePAZ#20140205034021.726222.184" name="TUZ.2003.253.NZ20">
       <type>A</type>
       <gain>1.01885</gain>
       <gainFrequency>1</gainFrequency>
@@ -625,7 +625,7 @@
       <zeros/>
       <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214121.3239.189" name="TUZ.2003.344.NZ20">
+    <responsePAZ publicID="ResponsePAZ#20140205034021.728806.189" name="TUZ.2003.344.NZ20">
       <type>A</type>
       <gain>1.01885</gain>
       <gainFrequency>1</gainFrequency>
@@ -636,7 +636,7 @@
       <zeros/>
       <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
     </responsePAZ>
-    <responseFIR publicID="ResponseFIR#20131203214121.28873.79" name="TUZ.20.BNE.2010.036.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034021.690532.79" name="TUZ.20.BNE.2010.036.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>26.5835</delay>
@@ -645,7 +645,7 @@
       <symmetry>A</symmetry>
       <coefficients>6.91505e-16 9.98147e-07 8.98629e-05 0.000353686 -0.000319675 0.000239831 4.3433e-05 -0.000614038 0.00145024 -0.00241418 0.00324379 -0.00356528 0.00295628 -0.00104873 -0.00235349 0.00714658 -0.0128356 0.0184956 -0.0228036 0.0241435 -0.0207542 0.0108537 0.00737684 -0.0362805 0.0807303 -0.156379 0.596632 0.661616 -0.198503 0.059628 -0.0120156 -0.0203127 0.0348973 -0.0378304 0.034148 -0.0268187 0.0180545 -0.00968411 0.00192455 0.00227022 -0.00492995 0.00578354 -0.00527811 0.00401236 -0.00251217 0.00116612 -0.000191529 -0.000354995 0.000535582 -0.000481017 0.000418632 7.8096e-05 -5.47007e-06 -2.12376e-06 -6.62053e-07 7.23897e-07 1.01323e-06 -1.9292e-06 7.80123e-07 -7.88756e-07 5.81863e-07 3.22105e-08 -1.07638e-07 1.99955e-08 -7.05214e-08 -1.35764e-08 -3.31118e-08 1.55212e-08 -5.39556e-09 7.79127e-09 2.07592e-10 -9.32678e-10 1.85069e-09 -1.97386e-09 1.33428e-09 -6.31547e-10 6.99472e-11 1.14869e-10 -5.59561e-11 5.76057e-12 -5.48986e-12</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.289585.82" name="TUZ.20.BNN.2010.036.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034021.691431.82" name="TUZ.20.BNN.2010.036.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>26.5835</delay>
@@ -654,7 +654,7 @@
       <symmetry>A</symmetry>
       <coefficients>6.91505e-16 9.98147e-07 8.98629e-05 0.000353686 -0.000319675 0.000239831 4.3433e-05 -0.000614038 0.00145024 -0.00241418 0.00324379 -0.00356528 0.00295628 -0.00104873 -0.00235349 0.00714658 -0.0128356 0.0184956 -0.0228036 0.0241435 -0.0207542 0.0108537 0.00737684 -0.0362805 0.0807303 -0.156379 0.596632 0.661616 -0.198503 0.059628 -0.0120156 -0.0203127 0.0348973 -0.0378304 0.034148 -0.0268187 0.0180545 -0.00968411 0.00192455 0.00227022 -0.00492995 0.00578354 -0.00527811 0.00401236 -0.00251217 0.00116612 -0.000191529 -0.000354995 0.000535582 -0.000481017 0.000418632 7.8096e-05 -5.47007e-06 -2.12376e-06 -6.62053e-07 7.23897e-07 1.01323e-06 -1.9292e-06 7.80123e-07 -7.88756e-07 5.81863e-07 3.22105e-08 -1.07638e-07 1.99955e-08 -7.05214e-08 -1.35764e-08 -3.31118e-08 1.55212e-08 -5.39556e-09 7.79127e-09 2.07592e-10 -9.32678e-10 1.85069e-09 -1.97386e-09 1.33428e-09 -6.31547e-10 6.99472e-11 1.14869e-10 -5.59561e-11 5.76057e-12 -5.48986e-12</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.29009.85" name="TUZ.20.BNZ.2010.036.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034021.692063.85" name="TUZ.20.BNZ.2010.036.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>26.5835</delay>
@@ -663,7 +663,7 @@
       <symmetry>A</symmetry>
       <coefficients>6.91505e-16 9.98147e-07 8.98629e-05 0.000353686 -0.000319675 0.000239831 4.3433e-05 -0.000614038 0.00145024 -0.00241418 0.00324379 -0.00356528 0.00295628 -0.00104873 -0.00235349 0.00714658 -0.0128356 0.0184956 -0.0228036 0.0241435 -0.0207542 0.0108537 0.00737684 -0.0362805 0.0807303 -0.156379 0.596632 0.661616 -0.198503 0.059628 -0.0120156 -0.0203127 0.0348973 -0.0378304 0.034148 -0.0268187 0.0180545 -0.00968411 0.00192455 0.00227022 -0.00492995 0.00578354 -0.00527811 0.00401236 -0.00251217 0.00116612 -0.000191529 -0.000354995 0.000535582 -0.000481017 0.000418632 7.8096e-05 -5.47007e-06 -2.12376e-06 -6.62053e-07 7.23897e-07 1.01323e-06 -1.9292e-06 7.80123e-07 -7.88756e-07 5.81863e-07 3.22105e-08 -1.07638e-07 1.99955e-08 -7.05214e-08 -1.35764e-08 -3.31118e-08 1.55212e-08 -5.39556e-09 7.79127e-09 2.07592e-10 -9.32678e-10 1.85069e-09 -1.97386e-09 1.33428e-09 -6.31547e-10 6.99472e-11 1.14869e-10 -5.59561e-11 5.76057e-12 -5.48986e-12</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.290634.90" name="TUZ.10.HHE.2003.253.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034021.692664.90" name="TUZ.10.HHE.2003.253.stage_3">
       <gain>1</gain>
       <decimationFactor>16</decimationFactor>
       <delay>199.5008</delay>
@@ -672,7 +672,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.08283e-06 1.78083e-06 3.24104e-06 5.46273e-06 8.68294e-06 1.32408e-05 1.95653e-05 2.81851e-05 3.96569e-05 5.46887e-05 7.41536e-05 9.89892e-05 0.000130368 0.000169549 0.000217982 0.000277317 0.000349365 0.000436138 0.000539843 0.000662866 0.000807771 0.000977334 0.00117443 0.00140214 0.0016636 0.00196207 0.00230085 0.00268325 0.00311254 0.0035919 0.00412437 0.00471277 0.00535966 0.00606724 0.00683732 0.00767117 0.00856955 0.00953256 0.0105596 0.0116493 0.0127994 0.0140068 0.0152675 0.0165764 0.0179276 0.0193139 0.0207274 0.0221589 0.0235984 0.025035 0.026457 0.0278517 0.0292059 0.0305059 0.0317375 0.0328862 0.0339377 0.0348775 0.0356915 0.036366 0.0368881 0.0372459 0.0374283 0.0374257 0.03723 0.0368348 0.0362355 0.0354296 0.0344166 0.0331983 0.031779 0.030165 0.0283655 0.0263915 0.0242569 0.0219773 0.0195709 0.0170573 0.0144584 0.0117973 0.00909843 0.00638718 0.00368967 0.00103232 -0.00155845 -0.00405656 -0.00643665 -0.00867446 -0.0107471 -0.0126335 -0.0143147 -0.0157739 -0.0169972 -0.0179736 -0.0186948 -0.0191561 -0.019356 -0.0192964 -0.0189824 -0.0184226 -0.0176288 -0.0166159 -0.0154017 -0.0140065 -0.012453 -0.010766 -0.0089718 -0.00709813 -0.00517342 -0.00322655 -0.0012864 0.000618651 0.00246109 0.00421474 0.00585512 0.00735983 0.00870891 0.00988508 0.010874 0.0116647 0.0122491 0.0126229 0.012785 0.012738 0.0124875 0.0120424 0.0114147 0.010619 0.00967263 0.00859478 0.0074066 0.00613063 0.00479037 0.00340996 0.00201365 0.000625458 -0.000731273 -0.00203427 -0.0032627 -0.00439749 -0.00542165 -0.0063205 -0.00708194 -0.00769656 -0.00815775 -0.00846181 -0.00860791 -0.00859805 -0.00843695 -0.00813196 -0.00769278 -0.00713129 -0.00646126 -0.00569805 -0.00485829 -0.00395954 -0.00301995 -0.00205791 -0.00109166 -0.000139022 0.00078298 0.00165839 0.00247261 0.00321261 0.00386716 0.00442698 0.00488486 0.00523573 0.00547673 0.00560713 0.00562837 0.0055439 0.00535905 0.00508092 0.00471816 0.00428072 0.00377968 0.00322694 0.00263498 0.00201662 0.00138472 0.000751944 0.000130509 -0.000468028 -0.00103299 -0.00155475 -0.0020249 -0.00243637 -0.00278349 -0.00306212 -0.00326961 -0.00340483 -0.00346814 -0.00346131 -0.00338745 -0.00325086 -0.00305694 -0.00281202 -0.00252318 -0.0021981 -0.00184485 -0.00147175 -0.00108715 -0.000699266 -0.000316036 5.5053e-05 0.000407094 0.000733876 0.00102999 0.00129089 0.00151298 0.00169361 0.00183112 0.00192482 0.00197495 0.00198264 0.00194987 0.00187935 0.00177444 0.00163906 0.00147758 0.0012947 0.00109531 0.000884439 0.000667068 0.000448076 0.00023212 2.35517e-05 -0.000173665 -0.000356014 -0.000520488 -0.00066462 -0.000786511 -0.000884846 -0.000958886 -0.00100845 -0.00103392 -0.00103614 -0.00101643 -0.000976515 -0.000918456 -0.000844589 -0.000757459 -0.000659755 -0.000554239 -0.000443681 -0.000330795 -0.000218187 -0.000108297 -3.35481e-06 9.46528e-05 0.000184018 0.000263332 0.000331499 0.000387738 0.000431592 0.000462904 0.000481816 0.000488738 0.000484325 0.000469448 0.000445157 0.000412648 0.000373226 0.000328265 0.000279174 0.000227364 0.000174207 0.000121017 6.90166e-05 1.93149e-05 -2.71087e-05 -6.94202e-05 -0.000106941 -0.000139155 -0.000165703 -0.000186392 -0.000201174 -0.000210151 -0.00021355 -0.000211715 -0.000205091 -0.000194203 -0.000179638 -0.000162028 -0.000142031 -0.00012031 -9.75224e-05 -7.42979e-05 -5.12291e-05 -2.88596e-05 -7.67146e-06 1.19192e-05 2.9568e-05 4.50062e-05 5.8043e-05 6.85571e-05 7.65073e-05 8.19115e-05 8.48545e-05 8.5474e-05 8.39532e-05 8.05145e-05 7.54109e-05 6.89143e-05 6.13087e-05 5.28863e-05 4.39266e-05 3.47082e-05 2.54843e-05 1.64892e-05 7.93092e-06 -1.33589e-08 -7.1986e-06 -1.351e-05 -1.88671e-05 -2.32245e-05 -2.65589e-05 -2.88878e-05 -3.02428e-05 -3.06848e-05 -3.02914e-05 -2.91548e-05 -2.73769e-05 -2.50704e-05 -2.23479e-05 -1.93219e-05 -1.61094e-05 -1.28084e-05 -9.52341e-06 -6.33822e-06 -3.3291e-06 -5.59878e-07 1.91876e-06 4.07237e-06 5.87439e-06 7.31229e-06 8.39055e-06 9.10975e-06 9.49794e-06 9.57516e-06 9.37626e-06 8.93829e-06 8.30169e-06 7.5046e-06 6.59243e-06 5.6033e-06 4.57132e-06 3.54042e-06 2.53025e-06 1.57718e-06 6.99307e-07 -8.60475e-08 -7.66767e-07 -1.33326e-06 -1.78756e-06 -2.12669e-06 -2.35267e-06 -2.48244e-06 -2.50989e-06 -2.45985e-06 -2.33535e-06 -2.15236e-06 -1.92515e-06 -1.67077e-06 -1.39524e-06 -1.11738e-06 -8.4543e-07 -5.79483e-07 -3.44469e-07 -1.25053e-07 6.17435e-08 2.18738e-07 3.44248e-07 4.37481e-07 4.93136e-07 5.25519e-07 5.34475e-07 5.13616e-07 4.90298e-07 4.3492e-07 3.81986e-07 3.22367e-07 2.60231e-07 1.93632e-07 1.33825e-07 6.86725e-08 2.14437e-08 -1.96713e-09 -4.75222e-08 -6.27191e-08 -1.01907e-07 -1.20153e-07 -1.10366e-07 -1.02949e-07 -1.1966e-07 -1.36123e-07 -1.46392e-07 -1.47524e-07 3.98023e-07</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.291612.91" name="TUZ.10.HHE.2003.253.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205034021.693618.91" name="TUZ.10.HHE.2003.253.stage_4">
       <gain>1</gain>
       <decimationFactor>5</decimationFactor>
       <delay>79.5</delay>
@@ -681,7 +681,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.000122702 0.000487772 0.00137444 0.00317439 0.0064039 0.0116563 0.0195096 0.0303968 0.0444432 0.0613064 0.0800596 0.099153 0.116493 0.129658 0.13624 0.134259 0.122607 0.101396 0.0721513 0.0377665 0.00218767 -0.030141 -0.0549948 -0.0691204 -0.0708734 -0.0605967 -0.0406432 -0.0150078 0.0113818 0.0335861 0.0476023 0.0511449 0.0440846 0.0284415 0.00792673 -0.0128754 -0.0295073 -0.0385979 -0.0385691 -0.0299301 -0.0150931 0.00223832 0.0179618 0.0285378 0.0317906 0.0273641 0.0167307 0.00276538 -0.0110038 -0.0212739 -0.0257575 -0.0236935 -0.0159616 -0.00478775 0.00687098 0.0160974 0.0207398 0.0199111 0.014146 0.00519124 -0.00450192 -0.012438 -0.0167151 -0.0164772 -0.012073 -0.00489628 0.00303413 0.00963288 0.013291 0.0132627 0.00980445 0.00404402 -0.00236986 -0.00773217 -0.0107308 -0.0107631 -0.00804452 -0.00349412 0.00155739 0.00574836 0.00804754 0.00800144 0.00581021 0.0022247 -0.00169532 -0.00488659 -0.00656448 -0.00640827 -0.00460787 -0.00177043 0.00127653 0.00372379 0.00499322 0.00486975 0.00352424 0.00143131 -0.000786368 -0.0025386 -0.00342105 -0.00330322 -0.00233405 -0.000871405 0.00063734 0.0017854 0.00231135 0.00215261 0.00143861 0.0004328 -0.000555537 -0.00126165 -0.00153162 -0.00135015 -0.000827507 -0.000152813 0.000468642 0.000874068 0.000982688 0.000806979 0.000436045 4.7845e-07 -0.000369898 -0.000582565 -0.000602332 -0.00045285 -0.000201922 6.47544e-05 0.000270714 0.000368176 0.000347351 0.000233553 7.41256e-05 -7.82947e-05 -0.000182015 -0.00021673 -0.000184688 -0.000106498 -1.31074e-05 6.60491e-05 0.000111544 0.000116734 8.79112e-05 4.01788e-05 -9.15771e-06 -4.52785e-05 -6.04436e-05 -5.52841e-05 -3.53122e-05 -9.37856e-06 1.27137e-05 2.57777e-05 2.85097e-05 2.18128e-05 1.04925e-05 -5.30604e-07 -8.71451e-06 -1.1724e-05 -1.05914e-05 -7.13148e-06 -3.92333e-06 1.33538e-05</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.291998.92" name="TUZ.10.HHE.2003.253.stage_5">
+    <responseFIR publicID="ResponseFIR#20140205034021.694008.92" name="TUZ.10.HHE.2003.253.stage_5">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -690,7 +690,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.292241.93" name="TUZ.10.HHE.2003.253.stage_6">
+    <responseFIR publicID="ResponseFIR#20140205034021.694295.93" name="TUZ.10.HHE.2003.253.stage_6">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -699,7 +699,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.292846.97" name="TUZ.10.HHE.2003.305.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034021.694839.97" name="TUZ.10.HHE.2003.305.stage_3">
       <gain>1</gain>
       <decimationFactor>16</decimationFactor>
       <delay>199.5008</delay>
@@ -708,7 +708,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.08283e-06 1.78083e-06 3.24104e-06 5.46273e-06 8.68294e-06 1.32408e-05 1.95653e-05 2.81851e-05 3.96569e-05 5.46887e-05 7.41536e-05 9.89892e-05 0.000130368 0.000169549 0.000217982 0.000277317 0.000349365 0.000436138 0.000539843 0.000662866 0.000807771 0.000977334 0.00117443 0.00140214 0.0016636 0.00196207 0.00230085 0.00268325 0.00311254 0.0035919 0.00412437 0.00471277 0.00535966 0.00606724 0.00683732 0.00767117 0.00856955 0.00953256 0.0105596 0.0116493 0.0127994 0.0140068 0.0152675 0.0165764 0.0179276 0.0193139 0.0207274 0.0221589 0.0235984 0.025035 0.026457 0.0278517 0.0292059 0.0305059 0.0317375 0.0328862 0.0339377 0.0348775 0.0356915 0.036366 0.0368881 0.0372459 0.0374283 0.0374257 0.03723 0.0368348 0.0362355 0.0354296 0.0344166 0.0331983 0.031779 0.030165 0.0283655 0.0263915 0.0242569 0.0219773 0.0195709 0.0170573 0.0144584 0.0117973 0.00909843 0.00638718 0.00368967 0.00103232 -0.00155845 -0.00405656 -0.00643665 -0.00867446 -0.0107471 -0.0126335 -0.0143147 -0.0157739 -0.0169972 -0.0179736 -0.0186948 -0.0191561 -0.019356 -0.0192964 -0.0189824 -0.0184226 -0.0176288 -0.0166159 -0.0154017 -0.0140065 -0.012453 -0.010766 -0.0089718 -0.00709813 -0.00517342 -0.00322655 -0.0012864 0.000618651 0.00246109 0.00421474 0.00585512 0.00735983 0.00870891 0.00988508 0.010874 0.0116647 0.0122491 0.0126229 0.012785 0.012738 0.0124875 0.0120424 0.0114147 0.010619 0.00967263 0.00859478 0.0074066 0.00613063 0.00479037 0.00340996 0.00201365 0.000625458 -0.000731273 -0.00203427 -0.0032627 -0.00439749 -0.00542165 -0.0063205 -0.00708194 -0.00769656 -0.00815775 -0.00846181 -0.00860791 -0.00859805 -0.00843695 -0.00813196 -0.00769278 -0.00713129 -0.00646126 -0.00569805 -0.00485829 -0.00395954 -0.00301995 -0.00205791 -0.00109166 -0.000139022 0.00078298 0.00165839 0.00247261 0.00321261 0.00386716 0.00442698 0.00488486 0.00523573 0.00547673 0.00560713 0.00562837 0.0055439 0.00535905 0.00508092 0.00471816 0.00428072 0.00377968 0.00322694 0.00263498 0.00201662 0.00138472 0.000751944 0.000130509 -0.000468028 -0.00103299 -0.00155475 -0.0020249 -0.00243637 -0.00278349 -0.00306212 -0.00326961 -0.00340483 -0.00346814 -0.00346131 -0.00338745 -0.00325086 -0.00305694 -0.00281202 -0.00252318 -0.0021981 -0.00184485 -0.00147175 -0.00108715 -0.000699266 -0.000316036 5.5053e-05 0.000407094 0.000733876 0.00102999 0.00129089 0.00151298 0.00169361 0.00183112 0.00192482 0.00197495 0.00198264 0.00194987 0.00187935 0.00177444 0.00163906 0.00147758 0.0012947 0.00109531 0.000884439 0.000667068 0.000448076 0.00023212 2.35517e-05 -0.000173665 -0.000356014 -0.000520488 -0.00066462 -0.000786511 -0.000884846 -0.000958886 -0.00100845 -0.00103392 -0.00103614 -0.00101643 -0.000976515 -0.000918456 -0.000844589 -0.000757459 -0.000659755 -0.000554239 -0.000443681 -0.000330795 -0.000218187 -0.000108297 -3.35481e-06 9.46528e-05 0.000184018 0.000263332 0.000331499 0.000387738 0.000431592 0.000462904 0.000481816 0.000488738 0.000484325 0.000469448 0.000445157 0.000412648 0.000373226 0.000328265 0.000279174 0.000227364 0.000174207 0.000121017 6.90166e-05 1.93149e-05 -2.71087e-05 -6.94202e-05 -0.000106941 -0.000139155 -0.000165703 -0.000186392 -0.000201174 -0.000210151 -0.00021355 -0.000211715 -0.000205091 -0.000194203 -0.000179638 -0.000162028 -0.000142031 -0.00012031 -9.75224e-05 -7.42979e-05 -5.12291e-05 -2.88596e-05 -7.67146e-06 1.19192e-05 2.9568e-05 4.50062e-05 5.8043e-05 6.85571e-05 7.65073e-05 8.19115e-05 8.48545e-05 8.5474e-05 8.39532e-05 8.05145e-05 7.54109e-05 6.89143e-05 6.13087e-05 5.28863e-05 4.39266e-05 3.47082e-05 2.54843e-05 1.64892e-05 7.93092e-06 -1.33589e-08 -7.1986e-06 -1.351e-05 -1.88671e-05 -2.32245e-05 -2.65589e-05 -2.88878e-05 -3.02428e-05 -3.06848e-05 -3.02914e-05 -2.91548e-05 -2.73769e-05 -2.50704e-05 -2.23479e-05 -1.93219e-05 -1.61094e-05 -1.28084e-05 -9.52341e-06 -6.33822e-06 -3.3291e-06 -5.59878e-07 1.91876e-06 4.07237e-06 5.87439e-06 7.31229e-06 8.39055e-06 9.10975e-06 9.49794e-06 9.57516e-06 9.37626e-06 8.93829e-06 8.30169e-06 7.5046e-06 6.59243e-06 5.6033e-06 4.57132e-06 3.54042e-06 2.53025e-06 1.57718e-06 6.99307e-07 -8.60475e-08 -7.66767e-07 -1.33326e-06 -1.78756e-06 -2.12669e-06 -2.35267e-06 -2.48244e-06 -2.50989e-06 -2.45985e-06 -2.33535e-06 -2.15236e-06 -1.92515e-06 -1.67077e-06 -1.39524e-06 -1.11738e-06 -8.4543e-07 -5.79483e-07 -3.44469e-07 -1.25053e-07 6.17435e-08 2.18738e-07 3.44248e-07 4.37481e-07 4.93136e-07 5.25519e-07 5.34475e-07 5.13616e-07 4.90298e-07 4.3492e-07 3.81986e-07 3.22367e-07 2.60231e-07 1.93632e-07 1.33825e-07 6.86725e-08 2.14437e-08 -1.96713e-09 -4.75222e-08 -6.27191e-08 -1.01907e-07 -1.20153e-07 -1.10366e-07 -1.02949e-07 -1.1966e-07 -1.36123e-07 -1.46392e-07 -1.47524e-07 3.98023e-07</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.294109.98" name="TUZ.10.HHE.2003.305.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205034021.695706.98" name="TUZ.10.HHE.2003.305.stage_4">
       <gain>1</gain>
       <decimationFactor>5</decimationFactor>
       <delay>79.5</delay>
@@ -717,7 +717,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.000122702 0.000487772 0.00137444 0.00317439 0.0064039 0.0116563 0.0195096 0.0303968 0.0444432 0.0613064 0.0800596 0.099153 0.116493 0.129658 0.13624 0.134259 0.122607 0.101396 0.0721513 0.0377665 0.00218767 -0.030141 -0.0549948 -0.0691204 -0.0708734 -0.0605967 -0.0406432 -0.0150078 0.0113818 0.0335861 0.0476023 0.0511449 0.0440846 0.0284415 0.00792673 -0.0128754 -0.0295073 -0.0385979 -0.0385691 -0.0299301 -0.0150931 0.00223832 0.0179618 0.0285378 0.0317906 0.0273641 0.0167307 0.00276538 -0.0110038 -0.0212739 -0.0257575 -0.0236935 -0.0159616 -0.00478775 0.00687098 0.0160974 0.0207398 0.0199111 0.014146 0.00519124 -0.00450192 -0.012438 -0.0167151 -0.0164772 -0.012073 -0.00489628 0.00303413 0.00963288 0.013291 0.0132627 0.00980445 0.00404402 -0.00236986 -0.00773217 -0.0107308 -0.0107631 -0.00804452 -0.00349412 0.00155739 0.00574836 0.00804754 0.00800144 0.00581021 0.0022247 -0.00169532 -0.00488659 -0.00656448 -0.00640827 -0.00460787 -0.00177043 0.00127653 0.00372379 0.00499322 0.00486975 0.00352424 0.00143131 -0.000786368 -0.0025386 -0.00342105 -0.00330322 -0.00233405 -0.000871405 0.00063734 0.0017854 0.00231135 0.00215261 0.00143861 0.0004328 -0.000555537 -0.00126165 -0.00153162 -0.00135015 -0.000827507 -0.000152813 0.000468642 0.000874068 0.000982688 0.000806979 0.000436045 4.7845e-07 -0.000369898 -0.000582565 -0.000602332 -0.00045285 -0.000201922 6.47544e-05 0.000270714 0.000368176 0.000347351 0.000233553 7.41256e-05 -7.82947e-05 -0.000182015 -0.00021673 -0.000184688 -0.000106498 -1.31074e-05 6.60491e-05 0.000111544 0.000116734 8.79112e-05 4.01788e-05 -9.15771e-06 -4.52785e-05 -6.04436e-05 -5.52841e-05 -3.53122e-05 -9.37856e-06 1.27137e-05 2.57777e-05 2.85097e-05 2.18128e-05 1.04925e-05 -5.30604e-07 -8.71451e-06 -1.1724e-05 -1.05914e-05 -7.13148e-06 -3.92333e-06 1.33538e-05</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.294515.99" name="TUZ.10.HHE.2003.305.stage_5">
+    <responseFIR publicID="ResponseFIR#20140205034021.696084.99" name="TUZ.10.HHE.2003.305.stage_5">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -726,7 +726,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.294775.100" name="TUZ.10.HHE.2003.305.stage_6">
+    <responseFIR publicID="ResponseFIR#20140205034021.696346.100" name="TUZ.10.HHE.2003.305.stage_6">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -735,7 +735,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.295362.104" name="TUZ.10.HHE.2003.344.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034021.696955.104" name="TUZ.10.HHE.2003.344.stage_3">
       <gain>1</gain>
       <decimationFactor>16</decimationFactor>
       <delay>199.5008</delay>
@@ -744,7 +744,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.08283e-06 1.78083e-06 3.24104e-06 5.46273e-06 8.68294e-06 1.32408e-05 1.95653e-05 2.81851e-05 3.96569e-05 5.46887e-05 7.41536e-05 9.89892e-05 0.000130368 0.000169549 0.000217982 0.000277317 0.000349365 0.000436138 0.000539843 0.000662866 0.000807771 0.000977334 0.00117443 0.00140214 0.0016636 0.00196207 0.00230085 0.00268325 0.00311254 0.0035919 0.00412437 0.00471277 0.00535966 0.00606724 0.00683732 0.00767117 0.00856955 0.00953256 0.0105596 0.0116493 0.0127994 0.0140068 0.0152675 0.0165764 0.0179276 0.0193139 0.0207274 0.0221589 0.0235984 0.025035 0.026457 0.0278517 0.0292059 0.0305059 0.0317375 0.0328862 0.0339377 0.0348775 0.0356915 0.036366 0.0368881 0.0372459 0.0374283 0.0374257 0.03723 0.0368348 0.0362355 0.0354296 0.0344166 0.0331983 0.031779 0.030165 0.0283655 0.0263915 0.0242569 0.0219773 0.0195709 0.0170573 0.0144584 0.0117973 0.00909843 0.00638718 0.00368967 0.00103232 -0.00155845 -0.00405656 -0.00643665 -0.00867446 -0.0107471 -0.0126335 -0.0143147 -0.0157739 -0.0169972 -0.0179736 -0.0186948 -0.0191561 -0.019356 -0.0192964 -0.0189824 -0.0184226 -0.0176288 -0.0166159 -0.0154017 -0.0140065 -0.012453 -0.010766 -0.0089718 -0.00709813 -0.00517342 -0.00322655 -0.0012864 0.000618651 0.00246109 0.00421474 0.00585512 0.00735983 0.00870891 0.00988508 0.010874 0.0116647 0.0122491 0.0126229 0.012785 0.012738 0.0124875 0.0120424 0.0114147 0.010619 0.00967263 0.00859478 0.0074066 0.00613063 0.00479037 0.00340996 0.00201365 0.000625458 -0.000731273 -0.00203427 -0.0032627 -0.00439749 -0.00542165 -0.0063205 -0.00708194 -0.00769656 -0.00815775 -0.00846181 -0.00860791 -0.00859805 -0.00843695 -0.00813196 -0.00769278 -0.00713129 -0.00646126 -0.00569805 -0.00485829 -0.00395954 -0.00301995 -0.00205791 -0.00109166 -0.000139022 0.00078298 0.00165839 0.00247261 0.00321261 0.00386716 0.00442698 0.00488486 0.00523573 0.00547673 0.00560713 0.00562837 0.0055439 0.00535905 0.00508092 0.00471816 0.00428072 0.00377968 0.00322694 0.00263498 0.00201662 0.00138472 0.000751944 0.000130509 -0.000468028 -0.00103299 -0.00155475 -0.0020249 -0.00243637 -0.00278349 -0.00306212 -0.00326961 -0.00340483 -0.00346814 -0.00346131 -0.00338745 -0.00325086 -0.00305694 -0.00281202 -0.00252318 -0.0021981 -0.00184485 -0.00147175 -0.00108715 -0.000699266 -0.000316036 5.5053e-05 0.000407094 0.000733876 0.00102999 0.00129089 0.00151298 0.00169361 0.00183112 0.00192482 0.00197495 0.00198264 0.00194987 0.00187935 0.00177444 0.00163906 0.00147758 0.0012947 0.00109531 0.000884439 0.000667068 0.000448076 0.00023212 2.35517e-05 -0.000173665 -0.000356014 -0.000520488 -0.00066462 -0.000786511 -0.000884846 -0.000958886 -0.00100845 -0.00103392 -0.00103614 -0.00101643 -0.000976515 -0.000918456 -0.000844589 -0.000757459 -0.000659755 -0.000554239 -0.000443681 -0.000330795 -0.000218187 -0.000108297 -3.35481e-06 9.46528e-05 0.000184018 0.000263332 0.000331499 0.000387738 0.000431592 0.000462904 0.000481816 0.000488738 0.000484325 0.000469448 0.000445157 0.000412648 0.000373226 0.000328265 0.000279174 0.000227364 0.000174207 0.000121017 6.90166e-05 1.93149e-05 -2.71087e-05 -6.94202e-05 -0.000106941 -0.000139155 -0.000165703 -0.000186392 -0.000201174 -0.000210151 -0.00021355 -0.000211715 -0.000205091 -0.000194203 -0.000179638 -0.000162028 -0.000142031 -0.00012031 -9.75224e-05 -7.42979e-05 -5.12291e-05 -2.88596e-05 -7.67146e-06 1.19192e-05 2.9568e-05 4.50062e-05 5.8043e-05 6.85571e-05 7.65073e-05 8.19115e-05 8.48545e-05 8.5474e-05 8.39532e-05 8.05145e-05 7.54109e-05 6.89143e-05 6.13087e-05 5.28863e-05 4.39266e-05 3.47082e-05 2.54843e-05 1.64892e-05 7.93092e-06 -1.33589e-08 -7.1986e-06 -1.351e-05 -1.88671e-05 -2.32245e-05 -2.65589e-05 -2.88878e-05 -3.02428e-05 -3.06848e-05 -3.02914e-05 -2.91548e-05 -2.73769e-05 -2.50704e-05 -2.23479e-05 -1.93219e-05 -1.61094e-05 -1.28084e-05 -9.52341e-06 -6.33822e-06 -3.3291e-06 -5.59878e-07 1.91876e-06 4.07237e-06 5.87439e-06 7.31229e-06 8.39055e-06 9.10975e-06 9.49794e-06 9.57516e-06 9.37626e-06 8.93829e-06 8.30169e-06 7.5046e-06 6.59243e-06 5.6033e-06 4.57132e-06 3.54042e-06 2.53025e-06 1.57718e-06 6.99307e-07 -8.60475e-08 -7.66767e-07 -1.33326e-06 -1.78756e-06 -2.12669e-06 -2.35267e-06 -2.48244e-06 -2.50989e-06 -2.45985e-06 -2.33535e-06 -2.15236e-06 -1.92515e-06 -1.67077e-06 -1.39524e-06 -1.11738e-06 -8.4543e-07 -5.79483e-07 -3.44469e-07 -1.25053e-07 6.17435e-08 2.18738e-07 3.44248e-07 4.37481e-07 4.93136e-07 5.25519e-07 5.34475e-07 5.13616e-07 4.90298e-07 4.3492e-07 3.81986e-07 3.22367e-07 2.60231e-07 1.93632e-07 1.33825e-07 6.86725e-08 2.14437e-08 -1.96713e-09 -4.75222e-08 -6.27191e-08 -1.01907e-07 -1.20153e-07 -1.10366e-07 -1.02949e-07 -1.1966e-07 -1.36123e-07 -1.46392e-07 -1.47524e-07 3.98023e-07</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.296372.105" name="TUZ.10.HHE.2003.344.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205034021.697823.105" name="TUZ.10.HHE.2003.344.stage_4">
       <gain>1</gain>
       <decimationFactor>5</decimationFactor>
       <delay>79.5</delay>
@@ -753,7 +753,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.000122702 0.000487772 0.00137444 0.00317439 0.0064039 0.0116563 0.0195096 0.0303968 0.0444432 0.0613064 0.0800596 0.099153 0.116493 0.129658 0.13624 0.134259 0.122607 0.101396 0.0721513 0.0377665 0.00218767 -0.030141 -0.0549948 -0.0691204 -0.0708734 -0.0605967 -0.0406432 -0.0150078 0.0113818 0.0335861 0.0476023 0.0511449 0.0440846 0.0284415 0.00792673 -0.0128754 -0.0295073 -0.0385979 -0.0385691 -0.0299301 -0.0150931 0.00223832 0.0179618 0.0285378 0.0317906 0.0273641 0.0167307 0.00276538 -0.0110038 -0.0212739 -0.0257575 -0.0236935 -0.0159616 -0.00478775 0.00687098 0.0160974 0.0207398 0.0199111 0.014146 0.00519124 -0.00450192 -0.012438 -0.0167151 -0.0164772 -0.012073 -0.00489628 0.00303413 0.00963288 0.013291 0.0132627 0.00980445 0.00404402 -0.00236986 -0.00773217 -0.0107308 -0.0107631 -0.00804452 -0.00349412 0.00155739 0.00574836 0.00804754 0.00800144 0.00581021 0.0022247 -0.00169532 -0.00488659 -0.00656448 -0.00640827 -0.00460787 -0.00177043 0.00127653 0.00372379 0.00499322 0.00486975 0.00352424 0.00143131 -0.000786368 -0.0025386 -0.00342105 -0.00330322 -0.00233405 -0.000871405 0.00063734 0.0017854 0.00231135 0.00215261 0.00143861 0.0004328 -0.000555537 -0.00126165 -0.00153162 -0.00135015 -0.000827507 -0.000152813 0.000468642 0.000874068 0.000982688 0.000806979 0.000436045 4.7845e-07 -0.000369898 -0.000582565 -0.000602332 -0.00045285 -0.000201922 6.47544e-05 0.000270714 0.000368176 0.000347351 0.000233553 7.41256e-05 -7.82947e-05 -0.000182015 -0.00021673 -0.000184688 -0.000106498 -1.31074e-05 6.60491e-05 0.000111544 0.000116734 8.79112e-05 4.01788e-05 -9.15771e-06 -4.52785e-05 -6.04436e-05 -5.52841e-05 -3.53122e-05 -9.37856e-06 1.27137e-05 2.57777e-05 2.85097e-05 2.18128e-05 1.04925e-05 -5.30604e-07 -8.71451e-06 -1.1724e-05 -1.05914e-05 -7.13148e-06 -3.92333e-06 1.33538e-05</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.296774.106" name="TUZ.10.HHE.2003.344.stage_5">
+    <responseFIR publicID="ResponseFIR#20140205034021.698199.106" name="TUZ.10.HHE.2003.344.stage_5">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -762,7 +762,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.297037.107" name="TUZ.10.HHE.2003.344.stage_6">
+    <responseFIR publicID="ResponseFIR#20140205034021.698442.107" name="TUZ.10.HHE.2003.344.stage_6">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -771,7 +771,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.297593.111" name="TUZ.10.HHE.2010.036.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034021.698977.111" name="TUZ.10.HHE.2010.036.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.167</delay>
@@ -780,7 +780,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.298078.114" name="TUZ.10.HHN.2003.253.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034021.69954.114" name="TUZ.10.HHN.2003.253.stage_3">
       <gain>1</gain>
       <decimationFactor>16</decimationFactor>
       <delay>199.5008</delay>
@@ -789,7 +789,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.08283e-06 1.78083e-06 3.24104e-06 5.46273e-06 8.68294e-06 1.32408e-05 1.95653e-05 2.81851e-05 3.96569e-05 5.46887e-05 7.41536e-05 9.89892e-05 0.000130368 0.000169549 0.000217982 0.000277317 0.000349365 0.000436138 0.000539843 0.000662866 0.000807771 0.000977334 0.00117443 0.00140214 0.0016636 0.00196207 0.00230085 0.00268325 0.00311254 0.0035919 0.00412437 0.00471277 0.00535966 0.00606724 0.00683732 0.00767117 0.00856955 0.00953256 0.0105596 0.0116493 0.0127994 0.0140068 0.0152675 0.0165764 0.0179276 0.0193139 0.0207274 0.0221589 0.0235984 0.025035 0.026457 0.0278517 0.0292059 0.0305059 0.0317375 0.0328862 0.0339377 0.0348775 0.0356915 0.036366 0.0368881 0.0372459 0.0374283 0.0374257 0.03723 0.0368348 0.0362355 0.0354296 0.0344166 0.0331983 0.031779 0.030165 0.0283655 0.0263915 0.0242569 0.0219773 0.0195709 0.0170573 0.0144584 0.0117973 0.00909843 0.00638718 0.00368967 0.00103232 -0.00155845 -0.00405656 -0.00643665 -0.00867446 -0.0107471 -0.0126335 -0.0143147 -0.0157739 -0.0169972 -0.0179736 -0.0186948 -0.0191561 -0.019356 -0.0192964 -0.0189824 -0.0184226 -0.0176288 -0.0166159 -0.0154017 -0.0140065 -0.012453 -0.010766 -0.0089718 -0.00709813 -0.00517342 -0.00322655 -0.0012864 0.000618651 0.00246109 0.00421474 0.00585512 0.00735983 0.00870891 0.00988508 0.010874 0.0116647 0.0122491 0.0126229 0.012785 0.012738 0.0124875 0.0120424 0.0114147 0.010619 0.00967263 0.00859478 0.0074066 0.00613063 0.00479037 0.00340996 0.00201365 0.000625458 -0.000731273 -0.00203427 -0.0032627 -0.00439749 -0.00542165 -0.0063205 -0.00708194 -0.00769656 -0.00815775 -0.00846181 -0.00860791 -0.00859805 -0.00843695 -0.00813196 -0.00769278 -0.00713129 -0.00646126 -0.00569805 -0.00485829 -0.00395954 -0.00301995 -0.00205791 -0.00109166 -0.000139022 0.00078298 0.00165839 0.00247261 0.00321261 0.00386716 0.00442698 0.00488486 0.00523573 0.00547673 0.00560713 0.00562837 0.0055439 0.00535905 0.00508092 0.00471816 0.00428072 0.00377968 0.00322694 0.00263498 0.00201662 0.00138472 0.000751944 0.000130509 -0.000468028 -0.00103299 -0.00155475 -0.0020249 -0.00243637 -0.00278349 -0.00306212 -0.00326961 -0.00340483 -0.00346814 -0.00346131 -0.00338745 -0.00325086 -0.00305694 -0.00281202 -0.00252318 -0.0021981 -0.00184485 -0.00147175 -0.00108715 -0.000699266 -0.000316036 5.5053e-05 0.000407094 0.000733876 0.00102999 0.00129089 0.00151298 0.00169361 0.00183112 0.00192482 0.00197495 0.00198264 0.00194987 0.00187935 0.00177444 0.00163906 0.00147758 0.0012947 0.00109531 0.000884439 0.000667068 0.000448076 0.00023212 2.35517e-05 -0.000173665 -0.000356014 -0.000520488 -0.00066462 -0.000786511 -0.000884846 -0.000958886 -0.00100845 -0.00103392 -0.00103614 -0.00101643 -0.000976515 -0.000918456 -0.000844589 -0.000757459 -0.000659755 -0.000554239 -0.000443681 -0.000330795 -0.000218187 -0.000108297 -3.35481e-06 9.46528e-05 0.000184018 0.000263332 0.000331499 0.000387738 0.000431592 0.000462904 0.000481816 0.000488738 0.000484325 0.000469448 0.000445157 0.000412648 0.000373226 0.000328265 0.000279174 0.000227364 0.000174207 0.000121017 6.90166e-05 1.93149e-05 -2.71087e-05 -6.94202e-05 -0.000106941 -0.000139155 -0.000165703 -0.000186392 -0.000201174 -0.000210151 -0.00021355 -0.000211715 -0.000205091 -0.000194203 -0.000179638 -0.000162028 -0.000142031 -0.00012031 -9.75224e-05 -7.42979e-05 -5.12291e-05 -2.88596e-05 -7.67146e-06 1.19192e-05 2.9568e-05 4.50062e-05 5.8043e-05 6.85571e-05 7.65073e-05 8.19115e-05 8.48545e-05 8.5474e-05 8.39532e-05 8.05145e-05 7.54109e-05 6.89143e-05 6.13087e-05 5.28863e-05 4.39266e-05 3.47082e-05 2.54843e-05 1.64892e-05 7.93092e-06 -1.33589e-08 -7.1986e-06 -1.351e-05 -1.88671e-05 -2.32245e-05 -2.65589e-05 -2.88878e-05 -3.02428e-05 -3.06848e-05 -3.02914e-05 -2.91548e-05 -2.73769e-05 -2.50704e-05 -2.23479e-05 -1.93219e-05 -1.61094e-05 -1.28084e-05 -9.52341e-06 -6.33822e-06 -3.3291e-06 -5.59878e-07 1.91876e-06 4.07237e-06 5.87439e-06 7.31229e-06 8.39055e-06 9.10975e-06 9.49794e-06 9.57516e-06 9.37626e-06 8.93829e-06 8.30169e-06 7.5046e-06 6.59243e-06 5.6033e-06 4.57132e-06 3.54042e-06 2.53025e-06 1.57718e-06 6.99307e-07 -8.60475e-08 -7.66767e-07 -1.33326e-06 -1.78756e-06 -2.12669e-06 -2.35267e-06 -2.48244e-06 -2.50989e-06 -2.45985e-06 -2.33535e-06 -2.15236e-06 -1.92515e-06 -1.67077e-06 -1.39524e-06 -1.11738e-06 -8.4543e-07 -5.79483e-07 -3.44469e-07 -1.25053e-07 6.17435e-08 2.18738e-07 3.44248e-07 4.37481e-07 4.93136e-07 5.25519e-07 5.34475e-07 5.13616e-07 4.90298e-07 4.3492e-07 3.81986e-07 3.22367e-07 2.60231e-07 1.93632e-07 1.33825e-07 6.86725e-08 2.14437e-08 -1.96713e-09 -4.75222e-08 -6.27191e-08 -1.01907e-07 -1.20153e-07 -1.10366e-07 -1.02949e-07 -1.1966e-07 -1.36123e-07 -1.46392e-07 -1.47524e-07 3.98023e-07</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.299235.115" name="TUZ.10.HHN.2003.253.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205034021.70041.115" name="TUZ.10.HHN.2003.253.stage_4">
       <gain>1</gain>
       <decimationFactor>5</decimationFactor>
       <delay>79.5</delay>
@@ -798,7 +798,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.000122702 0.000487772 0.00137444 0.00317439 0.0064039 0.0116563 0.0195096 0.0303968 0.0444432 0.0613064 0.0800596 0.099153 0.116493 0.129658 0.13624 0.134259 0.122607 0.101396 0.0721513 0.0377665 0.00218767 -0.030141 -0.0549948 -0.0691204 -0.0708734 -0.0605967 -0.0406432 -0.0150078 0.0113818 0.0335861 0.0476023 0.0511449 0.0440846 0.0284415 0.00792673 -0.0128754 -0.0295073 -0.0385979 -0.0385691 -0.0299301 -0.0150931 0.00223832 0.0179618 0.0285378 0.0317906 0.0273641 0.0167307 0.00276538 -0.0110038 -0.0212739 -0.0257575 -0.0236935 -0.0159616 -0.00478775 0.00687098 0.0160974 0.0207398 0.0199111 0.014146 0.00519124 -0.00450192 -0.012438 -0.0167151 -0.0164772 -0.012073 -0.00489628 0.00303413 0.00963288 0.013291 0.0132627 0.00980445 0.00404402 -0.00236986 -0.00773217 -0.0107308 -0.0107631 -0.00804452 -0.00349412 0.00155739 0.00574836 0.00804754 0.00800144 0.00581021 0.0022247 -0.00169532 -0.00488659 -0.00656448 -0.00640827 -0.00460787 -0.00177043 0.00127653 0.00372379 0.00499322 0.00486975 0.00352424 0.00143131 -0.000786368 -0.0025386 -0.00342105 -0.00330322 -0.00233405 -0.000871405 0.00063734 0.0017854 0.00231135 0.00215261 0.00143861 0.0004328 -0.000555537 -0.00126165 -0.00153162 -0.00135015 -0.000827507 -0.000152813 0.000468642 0.000874068 0.000982688 0.000806979 0.000436045 4.7845e-07 -0.000369898 -0.000582565 -0.000602332 -0.00045285 -0.000201922 6.47544e-05 0.000270714 0.000368176 0.000347351 0.000233553 7.41256e-05 -7.82947e-05 -0.000182015 -0.00021673 -0.000184688 -0.000106498 -1.31074e-05 6.60491e-05 0.000111544 0.000116734 8.79112e-05 4.01788e-05 -9.15771e-06 -4.52785e-05 -6.04436e-05 -5.52841e-05 -3.53122e-05 -9.37856e-06 1.27137e-05 2.57777e-05 2.85097e-05 2.18128e-05 1.04925e-05 -5.30604e-07 -8.71451e-06 -1.1724e-05 -1.05914e-05 -7.13148e-06 -3.92333e-06 1.33538e-05</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.299616.116" name="TUZ.10.HHN.2003.253.stage_5">
+    <responseFIR publicID="ResponseFIR#20140205034021.700791.116" name="TUZ.10.HHN.2003.253.stage_5">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -807,7 +807,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.299865.117" name="TUZ.10.HHN.2003.253.stage_6">
+    <responseFIR publicID="ResponseFIR#20140205034021.701029.117" name="TUZ.10.HHN.2003.253.stage_6">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -816,7 +816,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.300389.120" name="TUZ.10.HHN.2003.305.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034021.701548.120" name="TUZ.10.HHN.2003.305.stage_3">
       <gain>1</gain>
       <decimationFactor>16</decimationFactor>
       <delay>199.5008</delay>
@@ -825,7 +825,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.08283e-06 1.78083e-06 3.24104e-06 5.46273e-06 8.68294e-06 1.32408e-05 1.95653e-05 2.81851e-05 3.96569e-05 5.46887e-05 7.41536e-05 9.89892e-05 0.000130368 0.000169549 0.000217982 0.000277317 0.000349365 0.000436138 0.000539843 0.000662866 0.000807771 0.000977334 0.00117443 0.00140214 0.0016636 0.00196207 0.00230085 0.00268325 0.00311254 0.0035919 0.00412437 0.00471277 0.00535966 0.00606724 0.00683732 0.00767117 0.00856955 0.00953256 0.0105596 0.0116493 0.0127994 0.0140068 0.0152675 0.0165764 0.0179276 0.0193139 0.0207274 0.0221589 0.0235984 0.025035 0.026457 0.0278517 0.0292059 0.0305059 0.0317375 0.0328862 0.0339377 0.0348775 0.0356915 0.036366 0.0368881 0.0372459 0.0374283 0.0374257 0.03723 0.0368348 0.0362355 0.0354296 0.0344166 0.0331983 0.031779 0.030165 0.0283655 0.0263915 0.0242569 0.0219773 0.0195709 0.0170573 0.0144584 0.0117973 0.00909843 0.00638718 0.00368967 0.00103232 -0.00155845 -0.00405656 -0.00643665 -0.00867446 -0.0107471 -0.0126335 -0.0143147 -0.0157739 -0.0169972 -0.0179736 -0.0186948 -0.0191561 -0.019356 -0.0192964 -0.0189824 -0.0184226 -0.0176288 -0.0166159 -0.0154017 -0.0140065 -0.012453 -0.010766 -0.0089718 -0.00709813 -0.00517342 -0.00322655 -0.0012864 0.000618651 0.00246109 0.00421474 0.00585512 0.00735983 0.00870891 0.00988508 0.010874 0.0116647 0.0122491 0.0126229 0.012785 0.012738 0.0124875 0.0120424 0.0114147 0.010619 0.00967263 0.00859478 0.0074066 0.00613063 0.00479037 0.00340996 0.00201365 0.000625458 -0.000731273 -0.00203427 -0.0032627 -0.00439749 -0.00542165 -0.0063205 -0.00708194 -0.00769656 -0.00815775 -0.00846181 -0.00860791 -0.00859805 -0.00843695 -0.00813196 -0.00769278 -0.00713129 -0.00646126 -0.00569805 -0.00485829 -0.00395954 -0.00301995 -0.00205791 -0.00109166 -0.000139022 0.00078298 0.00165839 0.00247261 0.00321261 0.00386716 0.00442698 0.00488486 0.00523573 0.00547673 0.00560713 0.00562837 0.0055439 0.00535905 0.00508092 0.00471816 0.00428072 0.00377968 0.00322694 0.00263498 0.00201662 0.00138472 0.000751944 0.000130509 -0.000468028 -0.00103299 -0.00155475 -0.0020249 -0.00243637 -0.00278349 -0.00306212 -0.00326961 -0.00340483 -0.00346814 -0.00346131 -0.00338745 -0.00325086 -0.00305694 -0.00281202 -0.00252318 -0.0021981 -0.00184485 -0.00147175 -0.00108715 -0.000699266 -0.000316036 5.5053e-05 0.000407094 0.000733876 0.00102999 0.00129089 0.00151298 0.00169361 0.00183112 0.00192482 0.00197495 0.00198264 0.00194987 0.00187935 0.00177444 0.00163906 0.00147758 0.0012947 0.00109531 0.000884439 0.000667068 0.000448076 0.00023212 2.35517e-05 -0.000173665 -0.000356014 -0.000520488 -0.00066462 -0.000786511 -0.000884846 -0.000958886 -0.00100845 -0.00103392 -0.00103614 -0.00101643 -0.000976515 -0.000918456 -0.000844589 -0.000757459 -0.000659755 -0.000554239 -0.000443681 -0.000330795 -0.000218187 -0.000108297 -3.35481e-06 9.46528e-05 0.000184018 0.000263332 0.000331499 0.000387738 0.000431592 0.000462904 0.000481816 0.000488738 0.000484325 0.000469448 0.000445157 0.000412648 0.000373226 0.000328265 0.000279174 0.000227364 0.000174207 0.000121017 6.90166e-05 1.93149e-05 -2.71087e-05 -6.94202e-05 -0.000106941 -0.000139155 -0.000165703 -0.000186392 -0.000201174 -0.000210151 -0.00021355 -0.000211715 -0.000205091 -0.000194203 -0.000179638 -0.000162028 -0.000142031 -0.00012031 -9.75224e-05 -7.42979e-05 -5.12291e-05 -2.88596e-05 -7.67146e-06 1.19192e-05 2.9568e-05 4.50062e-05 5.8043e-05 6.85571e-05 7.65073e-05 8.19115e-05 8.48545e-05 8.5474e-05 8.39532e-05 8.05145e-05 7.54109e-05 6.89143e-05 6.13087e-05 5.28863e-05 4.39266e-05 3.47082e-05 2.54843e-05 1.64892e-05 7.93092e-06 -1.33589e-08 -7.1986e-06 -1.351e-05 -1.88671e-05 -2.32245e-05 -2.65589e-05 -2.88878e-05 -3.02428e-05 -3.06848e-05 -3.02914e-05 -2.91548e-05 -2.73769e-05 -2.50704e-05 -2.23479e-05 -1.93219e-05 -1.61094e-05 -1.28084e-05 -9.52341e-06 -6.33822e-06 -3.3291e-06 -5.59878e-07 1.91876e-06 4.07237e-06 5.87439e-06 7.31229e-06 8.39055e-06 9.10975e-06 9.49794e-06 9.57516e-06 9.37626e-06 8.93829e-06 8.30169e-06 7.5046e-06 6.59243e-06 5.6033e-06 4.57132e-06 3.54042e-06 2.53025e-06 1.57718e-06 6.99307e-07 -8.60475e-08 -7.66767e-07 -1.33326e-06 -1.78756e-06 -2.12669e-06 -2.35267e-06 -2.48244e-06 -2.50989e-06 -2.45985e-06 -2.33535e-06 -2.15236e-06 -1.92515e-06 -1.67077e-06 -1.39524e-06 -1.11738e-06 -8.4543e-07 -5.79483e-07 -3.44469e-07 -1.25053e-07 6.17435e-08 2.18738e-07 3.44248e-07 4.37481e-07 4.93136e-07 5.25519e-07 5.34475e-07 5.13616e-07 4.90298e-07 4.3492e-07 3.81986e-07 3.22367e-07 2.60231e-07 1.93632e-07 1.33825e-07 6.86725e-08 2.14437e-08 -1.96713e-09 -4.75222e-08 -6.27191e-08 -1.01907e-07 -1.20153e-07 -1.10366e-07 -1.02949e-07 -1.1966e-07 -1.36123e-07 -1.46392e-07 -1.47524e-07 3.98023e-07</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.301313.121" name="TUZ.10.HHN.2003.305.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205034021.702458.121" name="TUZ.10.HHN.2003.305.stage_4">
       <gain>1</gain>
       <decimationFactor>5</decimationFactor>
       <delay>79.5</delay>
@@ -834,7 +834,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.000122702 0.000487772 0.00137444 0.00317439 0.0064039 0.0116563 0.0195096 0.0303968 0.0444432 0.0613064 0.0800596 0.099153 0.116493 0.129658 0.13624 0.134259 0.122607 0.101396 0.0721513 0.0377665 0.00218767 -0.030141 -0.0549948 -0.0691204 -0.0708734 -0.0605967 -0.0406432 -0.0150078 0.0113818 0.0335861 0.0476023 0.0511449 0.0440846 0.0284415 0.00792673 -0.0128754 -0.0295073 -0.0385979 -0.0385691 -0.0299301 -0.0150931 0.00223832 0.0179618 0.0285378 0.0317906 0.0273641 0.0167307 0.00276538 -0.0110038 -0.0212739 -0.0257575 -0.0236935 -0.0159616 -0.00478775 0.00687098 0.0160974 0.0207398 0.0199111 0.014146 0.00519124 -0.00450192 -0.012438 -0.0167151 -0.0164772 -0.012073 -0.00489628 0.00303413 0.00963288 0.013291 0.0132627 0.00980445 0.00404402 -0.00236986 -0.00773217 -0.0107308 -0.0107631 -0.00804452 -0.00349412 0.00155739 0.00574836 0.00804754 0.00800144 0.00581021 0.0022247 -0.00169532 -0.00488659 -0.00656448 -0.00640827 -0.00460787 -0.00177043 0.00127653 0.00372379 0.00499322 0.00486975 0.00352424 0.00143131 -0.000786368 -0.0025386 -0.00342105 -0.00330322 -0.00233405 -0.000871405 0.00063734 0.0017854 0.00231135 0.00215261 0.00143861 0.0004328 -0.000555537 -0.00126165 -0.00153162 -0.00135015 -0.000827507 -0.000152813 0.000468642 0.000874068 0.000982688 0.000806979 0.000436045 4.7845e-07 -0.000369898 -0.000582565 -0.000602332 -0.00045285 -0.000201922 6.47544e-05 0.000270714 0.000368176 0.000347351 0.000233553 7.41256e-05 -7.82947e-05 -0.000182015 -0.00021673 -0.000184688 -0.000106498 -1.31074e-05 6.60491e-05 0.000111544 0.000116734 8.79112e-05 4.01788e-05 -9.15771e-06 -4.52785e-05 -6.04436e-05 -5.52841e-05 -3.53122e-05 -9.37856e-06 1.27137e-05 2.57777e-05 2.85097e-05 2.18128e-05 1.04925e-05 -5.30604e-07 -8.71451e-06 -1.1724e-05 -1.05914e-05 -7.13148e-06 -3.92333e-06 1.33538e-05</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.301696.122" name="TUZ.10.HHN.2003.305.stage_5">
+    <responseFIR publicID="ResponseFIR#20140205034021.702823.122" name="TUZ.10.HHN.2003.305.stage_5">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -843,7 +843,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.30194.123" name="TUZ.10.HHN.2003.305.stage_6">
+    <responseFIR publicID="ResponseFIR#20140205034021.703061.123" name="TUZ.10.HHN.2003.305.stage_6">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -852,7 +852,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.302469.126" name="TUZ.10.HHN.2003.344.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034021.703657.126" name="TUZ.10.HHN.2003.344.stage_3">
       <gain>1</gain>
       <decimationFactor>16</decimationFactor>
       <delay>199.5008</delay>
@@ -861,7 +861,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.08283e-06 1.78083e-06 3.24104e-06 5.46273e-06 8.68294e-06 1.32408e-05 1.95653e-05 2.81851e-05 3.96569e-05 5.46887e-05 7.41536e-05 9.89892e-05 0.000130368 0.000169549 0.000217982 0.000277317 0.000349365 0.000436138 0.000539843 0.000662866 0.000807771 0.000977334 0.00117443 0.00140214 0.0016636 0.00196207 0.00230085 0.00268325 0.00311254 0.0035919 0.00412437 0.00471277 0.00535966 0.00606724 0.00683732 0.00767117 0.00856955 0.00953256 0.0105596 0.0116493 0.0127994 0.0140068 0.0152675 0.0165764 0.0179276 0.0193139 0.0207274 0.0221589 0.0235984 0.025035 0.026457 0.0278517 0.0292059 0.0305059 0.0317375 0.0328862 0.0339377 0.0348775 0.0356915 0.036366 0.0368881 0.0372459 0.0374283 0.0374257 0.03723 0.0368348 0.0362355 0.0354296 0.0344166 0.0331983 0.031779 0.030165 0.0283655 0.0263915 0.0242569 0.0219773 0.0195709 0.0170573 0.0144584 0.0117973 0.00909843 0.00638718 0.00368967 0.00103232 -0.00155845 -0.00405656 -0.00643665 -0.00867446 -0.0107471 -0.0126335 -0.0143147 -0.0157739 -0.0169972 -0.0179736 -0.0186948 -0.0191561 -0.019356 -0.0192964 -0.0189824 -0.0184226 -0.0176288 -0.0166159 -0.0154017 -0.0140065 -0.012453 -0.010766 -0.0089718 -0.00709813 -0.00517342 -0.00322655 -0.0012864 0.000618651 0.00246109 0.00421474 0.00585512 0.00735983 0.00870891 0.00988508 0.010874 0.0116647 0.0122491 0.0126229 0.012785 0.012738 0.0124875 0.0120424 0.0114147 0.010619 0.00967263 0.00859478 0.0074066 0.00613063 0.00479037 0.00340996 0.00201365 0.000625458 -0.000731273 -0.00203427 -0.0032627 -0.00439749 -0.00542165 -0.0063205 -0.00708194 -0.00769656 -0.00815775 -0.00846181 -0.00860791 -0.00859805 -0.00843695 -0.00813196 -0.00769278 -0.00713129 -0.00646126 -0.00569805 -0.00485829 -0.00395954 -0.00301995 -0.00205791 -0.00109166 -0.000139022 0.00078298 0.00165839 0.00247261 0.00321261 0.00386716 0.00442698 0.00488486 0.00523573 0.00547673 0.00560713 0.00562837 0.0055439 0.00535905 0.00508092 0.00471816 0.00428072 0.00377968 0.00322694 0.00263498 0.00201662 0.00138472 0.000751944 0.000130509 -0.000468028 -0.00103299 -0.00155475 -0.0020249 -0.00243637 -0.00278349 -0.00306212 -0.00326961 -0.00340483 -0.00346814 -0.00346131 -0.00338745 -0.00325086 -0.00305694 -0.00281202 -0.00252318 -0.0021981 -0.00184485 -0.00147175 -0.00108715 -0.000699266 -0.000316036 5.5053e-05 0.000407094 0.000733876 0.00102999 0.00129089 0.00151298 0.00169361 0.00183112 0.00192482 0.00197495 0.00198264 0.00194987 0.00187935 0.00177444 0.00163906 0.00147758 0.0012947 0.00109531 0.000884439 0.000667068 0.000448076 0.00023212 2.35517e-05 -0.000173665 -0.000356014 -0.000520488 -0.00066462 -0.000786511 -0.000884846 -0.000958886 -0.00100845 -0.00103392 -0.00103614 -0.00101643 -0.000976515 -0.000918456 -0.000844589 -0.000757459 -0.000659755 -0.000554239 -0.000443681 -0.000330795 -0.000218187 -0.000108297 -3.35481e-06 9.46528e-05 0.000184018 0.000263332 0.000331499 0.000387738 0.000431592 0.000462904 0.000481816 0.000488738 0.000484325 0.000469448 0.000445157 0.000412648 0.000373226 0.000328265 0.000279174 0.000227364 0.000174207 0.000121017 6.90166e-05 1.93149e-05 -2.71087e-05 -6.94202e-05 -0.000106941 -0.000139155 -0.000165703 -0.000186392 -0.000201174 -0.000210151 -0.00021355 -0.000211715 -0.000205091 -0.000194203 -0.000179638 -0.000162028 -0.000142031 -0.00012031 -9.75224e-05 -7.42979e-05 -5.12291e-05 -2.88596e-05 -7.67146e-06 1.19192e-05 2.9568e-05 4.50062e-05 5.8043e-05 6.85571e-05 7.65073e-05 8.19115e-05 8.48545e-05 8.5474e-05 8.39532e-05 8.05145e-05 7.54109e-05 6.89143e-05 6.13087e-05 5.28863e-05 4.39266e-05 3.47082e-05 2.54843e-05 1.64892e-05 7.93092e-06 -1.33589e-08 -7.1986e-06 -1.351e-05 -1.88671e-05 -2.32245e-05 -2.65589e-05 -2.88878e-05 -3.02428e-05 -3.06848e-05 -3.02914e-05 -2.91548e-05 -2.73769e-05 -2.50704e-05 -2.23479e-05 -1.93219e-05 -1.61094e-05 -1.28084e-05 -9.52341e-06 -6.33822e-06 -3.3291e-06 -5.59878e-07 1.91876e-06 4.07237e-06 5.87439e-06 7.31229e-06 8.39055e-06 9.10975e-06 9.49794e-06 9.57516e-06 9.37626e-06 8.93829e-06 8.30169e-06 7.5046e-06 6.59243e-06 5.6033e-06 4.57132e-06 3.54042e-06 2.53025e-06 1.57718e-06 6.99307e-07 -8.60475e-08 -7.66767e-07 -1.33326e-06 -1.78756e-06 -2.12669e-06 -2.35267e-06 -2.48244e-06 -2.50989e-06 -2.45985e-06 -2.33535e-06 -2.15236e-06 -1.92515e-06 -1.67077e-06 -1.39524e-06 -1.11738e-06 -8.4543e-07 -5.79483e-07 -3.44469e-07 -1.25053e-07 6.17435e-08 2.18738e-07 3.44248e-07 4.37481e-07 4.93136e-07 5.25519e-07 5.34475e-07 5.13616e-07 4.90298e-07 4.3492e-07 3.81986e-07 3.22367e-07 2.60231e-07 1.93632e-07 1.33825e-07 6.86725e-08 2.14437e-08 -1.96713e-09 -4.75222e-08 -6.27191e-08 -1.01907e-07 -1.20153e-07 -1.10366e-07 -1.02949e-07 -1.1966e-07 -1.36123e-07 -1.46392e-07 -1.47524e-07 3.98023e-07</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.303387.127" name="TUZ.10.HHN.2003.344.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205034021.704656.127" name="TUZ.10.HHN.2003.344.stage_4">
       <gain>1</gain>
       <decimationFactor>5</decimationFactor>
       <delay>79.5</delay>
@@ -870,7 +870,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.000122702 0.000487772 0.00137444 0.00317439 0.0064039 0.0116563 0.0195096 0.0303968 0.0444432 0.0613064 0.0800596 0.099153 0.116493 0.129658 0.13624 0.134259 0.122607 0.101396 0.0721513 0.0377665 0.00218767 -0.030141 -0.0549948 -0.0691204 -0.0708734 -0.0605967 -0.0406432 -0.0150078 0.0113818 0.0335861 0.0476023 0.0511449 0.0440846 0.0284415 0.00792673 -0.0128754 -0.0295073 -0.0385979 -0.0385691 -0.0299301 -0.0150931 0.00223832 0.0179618 0.0285378 0.0317906 0.0273641 0.0167307 0.00276538 -0.0110038 -0.0212739 -0.0257575 -0.0236935 -0.0159616 -0.00478775 0.00687098 0.0160974 0.0207398 0.0199111 0.014146 0.00519124 -0.00450192 -0.012438 -0.0167151 -0.0164772 -0.012073 -0.00489628 0.00303413 0.00963288 0.013291 0.0132627 0.00980445 0.00404402 -0.00236986 -0.00773217 -0.0107308 -0.0107631 -0.00804452 -0.00349412 0.00155739 0.00574836 0.00804754 0.00800144 0.00581021 0.0022247 -0.00169532 -0.00488659 -0.00656448 -0.00640827 -0.00460787 -0.00177043 0.00127653 0.00372379 0.00499322 0.00486975 0.00352424 0.00143131 -0.000786368 -0.0025386 -0.00342105 -0.00330322 -0.00233405 -0.000871405 0.00063734 0.0017854 0.00231135 0.00215261 0.00143861 0.0004328 -0.000555537 -0.00126165 -0.00153162 -0.00135015 -0.000827507 -0.000152813 0.000468642 0.000874068 0.000982688 0.000806979 0.000436045 4.7845e-07 -0.000369898 -0.000582565 -0.000602332 -0.00045285 -0.000201922 6.47544e-05 0.000270714 0.000368176 0.000347351 0.000233553 7.41256e-05 -7.82947e-05 -0.000182015 -0.00021673 -0.000184688 -0.000106498 -1.31074e-05 6.60491e-05 0.000111544 0.000116734 8.79112e-05 4.01788e-05 -9.15771e-06 -4.52785e-05 -6.04436e-05 -5.52841e-05 -3.53122e-05 -9.37856e-06 1.27137e-05 2.57777e-05 2.85097e-05 2.18128e-05 1.04925e-05 -5.30604e-07 -8.71451e-06 -1.1724e-05 -1.05914e-05 -7.13148e-06 -3.92333e-06 1.33538e-05</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.303765.128" name="TUZ.10.HHN.2003.344.stage_5">
+    <responseFIR publicID="ResponseFIR#20140205034021.705085.128" name="TUZ.10.HHN.2003.344.stage_5">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -879,7 +879,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.30401.129" name="TUZ.10.HHN.2003.344.stage_6">
+    <responseFIR publicID="ResponseFIR#20140205034021.705362.129" name="TUZ.10.HHN.2003.344.stage_6">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -888,7 +888,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.304528.132" name="TUZ.10.HHN.2010.036.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034021.705898.132" name="TUZ.10.HHN.2010.036.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.167</delay>
@@ -897,7 +897,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.30501.135" name="TUZ.10.HHZ.2003.253.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034021.706392.135" name="TUZ.10.HHZ.2003.253.stage_3">
       <gain>1</gain>
       <decimationFactor>16</decimationFactor>
       <delay>199.5008</delay>
@@ -906,7 +906,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.08283e-06 1.78083e-06 3.24104e-06 5.46273e-06 8.68294e-06 1.32408e-05 1.95653e-05 2.81851e-05 3.96569e-05 5.46887e-05 7.41536e-05 9.89892e-05 0.000130368 0.000169549 0.000217982 0.000277317 0.000349365 0.000436138 0.000539843 0.000662866 0.000807771 0.000977334 0.00117443 0.00140214 0.0016636 0.00196207 0.00230085 0.00268325 0.00311254 0.0035919 0.00412437 0.00471277 0.00535966 0.00606724 0.00683732 0.00767117 0.00856955 0.00953256 0.0105596 0.0116493 0.0127994 0.0140068 0.0152675 0.0165764 0.0179276 0.0193139 0.0207274 0.0221589 0.0235984 0.025035 0.026457 0.0278517 0.0292059 0.0305059 0.0317375 0.0328862 0.0339377 0.0348775 0.0356915 0.036366 0.0368881 0.0372459 0.0374283 0.0374257 0.03723 0.0368348 0.0362355 0.0354296 0.0344166 0.0331983 0.031779 0.030165 0.0283655 0.0263915 0.0242569 0.0219773 0.0195709 0.0170573 0.0144584 0.0117973 0.00909843 0.00638718 0.00368967 0.00103232 -0.00155845 -0.00405656 -0.00643665 -0.00867446 -0.0107471 -0.0126335 -0.0143147 -0.0157739 -0.0169972 -0.0179736 -0.0186948 -0.0191561 -0.019356 -0.0192964 -0.0189824 -0.0184226 -0.0176288 -0.0166159 -0.0154017 -0.0140065 -0.012453 -0.010766 -0.0089718 -0.00709813 -0.00517342 -0.00322655 -0.0012864 0.000618651 0.00246109 0.00421474 0.00585512 0.00735983 0.00870891 0.00988508 0.010874 0.0116647 0.0122491 0.0126229 0.012785 0.012738 0.0124875 0.0120424 0.0114147 0.010619 0.00967263 0.00859478 0.0074066 0.00613063 0.00479037 0.00340996 0.00201365 0.000625458 -0.000731273 -0.00203427 -0.0032627 -0.00439749 -0.00542165 -0.0063205 -0.00708194 -0.00769656 -0.00815775 -0.00846181 -0.00860791 -0.00859805 -0.00843695 -0.00813196 -0.00769278 -0.00713129 -0.00646126 -0.00569805 -0.00485829 -0.00395954 -0.00301995 -0.00205791 -0.00109166 -0.000139022 0.00078298 0.00165839 0.00247261 0.00321261 0.00386716 0.00442698 0.00488486 0.00523573 0.00547673 0.00560713 0.00562837 0.0055439 0.00535905 0.00508092 0.00471816 0.00428072 0.00377968 0.00322694 0.00263498 0.00201662 0.00138472 0.000751944 0.000130509 -0.000468028 -0.00103299 -0.00155475 -0.0020249 -0.00243637 -0.00278349 -0.00306212 -0.00326961 -0.00340483 -0.00346814 -0.00346131 -0.00338745 -0.00325086 -0.00305694 -0.00281202 -0.00252318 -0.0021981 -0.00184485 -0.00147175 -0.00108715 -0.000699266 -0.000316036 5.5053e-05 0.000407094 0.000733876 0.00102999 0.00129089 0.00151298 0.00169361 0.00183112 0.00192482 0.00197495 0.00198264 0.00194987 0.00187935 0.00177444 0.00163906 0.00147758 0.0012947 0.00109531 0.000884439 0.000667068 0.000448076 0.00023212 2.35517e-05 -0.000173665 -0.000356014 -0.000520488 -0.00066462 -0.000786511 -0.000884846 -0.000958886 -0.00100845 -0.00103392 -0.00103614 -0.00101643 -0.000976515 -0.000918456 -0.000844589 -0.000757459 -0.000659755 -0.000554239 -0.000443681 -0.000330795 -0.000218187 -0.000108297 -3.35481e-06 9.46528e-05 0.000184018 0.000263332 0.000331499 0.000387738 0.000431592 0.000462904 0.000481816 0.000488738 0.000484325 0.000469448 0.000445157 0.000412648 0.000373226 0.000328265 0.000279174 0.000227364 0.000174207 0.000121017 6.90166e-05 1.93149e-05 -2.71087e-05 -6.94202e-05 -0.000106941 -0.000139155 -0.000165703 -0.000186392 -0.000201174 -0.000210151 -0.00021355 -0.000211715 -0.000205091 -0.000194203 -0.000179638 -0.000162028 -0.000142031 -0.00012031 -9.75224e-05 -7.42979e-05 -5.12291e-05 -2.88596e-05 -7.67146e-06 1.19192e-05 2.9568e-05 4.50062e-05 5.8043e-05 6.85571e-05 7.65073e-05 8.19115e-05 8.48545e-05 8.5474e-05 8.39532e-05 8.05145e-05 7.54109e-05 6.89143e-05 6.13087e-05 5.28863e-05 4.39266e-05 3.47082e-05 2.54843e-05 1.64892e-05 7.93092e-06 -1.33589e-08 -7.1986e-06 -1.351e-05 -1.88671e-05 -2.32245e-05 -2.65589e-05 -2.88878e-05 -3.02428e-05 -3.06848e-05 -3.02914e-05 -2.91548e-05 -2.73769e-05 -2.50704e-05 -2.23479e-05 -1.93219e-05 -1.61094e-05 -1.28084e-05 -9.52341e-06 -6.33822e-06 -3.3291e-06 -5.59878e-07 1.91876e-06 4.07237e-06 5.87439e-06 7.31229e-06 8.39055e-06 9.10975e-06 9.49794e-06 9.57516e-06 9.37626e-06 8.93829e-06 8.30169e-06 7.5046e-06 6.59243e-06 5.6033e-06 4.57132e-06 3.54042e-06 2.53025e-06 1.57718e-06 6.99307e-07 -8.60475e-08 -7.66767e-07 -1.33326e-06 -1.78756e-06 -2.12669e-06 -2.35267e-06 -2.48244e-06 -2.50989e-06 -2.45985e-06 -2.33535e-06 -2.15236e-06 -1.92515e-06 -1.67077e-06 -1.39524e-06 -1.11738e-06 -8.4543e-07 -5.79483e-07 -3.44469e-07 -1.25053e-07 6.17435e-08 2.18738e-07 3.44248e-07 4.37481e-07 4.93136e-07 5.25519e-07 5.34475e-07 5.13616e-07 4.90298e-07 4.3492e-07 3.81986e-07 3.22367e-07 2.60231e-07 1.93632e-07 1.33825e-07 6.86725e-08 2.14437e-08 -1.96713e-09 -4.75222e-08 -6.27191e-08 -1.01907e-07 -1.20153e-07 -1.10366e-07 -1.02949e-07 -1.1966e-07 -1.36123e-07 -1.46392e-07 -1.47524e-07 3.98023e-07</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.305982.136" name="TUZ.10.HHZ.2003.253.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205034021.708724.136" name="TUZ.10.HHZ.2003.253.stage_4">
       <gain>1</gain>
       <decimationFactor>5</decimationFactor>
       <delay>79.5</delay>
@@ -915,7 +915,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.000122702 0.000487772 0.00137444 0.00317439 0.0064039 0.0116563 0.0195096 0.0303968 0.0444432 0.0613064 0.0800596 0.099153 0.116493 0.129658 0.13624 0.134259 0.122607 0.101396 0.0721513 0.0377665 0.00218767 -0.030141 -0.0549948 -0.0691204 -0.0708734 -0.0605967 -0.0406432 -0.0150078 0.0113818 0.0335861 0.0476023 0.0511449 0.0440846 0.0284415 0.00792673 -0.0128754 -0.0295073 -0.0385979 -0.0385691 -0.0299301 -0.0150931 0.00223832 0.0179618 0.0285378 0.0317906 0.0273641 0.0167307 0.00276538 -0.0110038 -0.0212739 -0.0257575 -0.0236935 -0.0159616 -0.00478775 0.00687098 0.0160974 0.0207398 0.0199111 0.014146 0.00519124 -0.00450192 -0.012438 -0.0167151 -0.0164772 -0.012073 -0.00489628 0.00303413 0.00963288 0.013291 0.0132627 0.00980445 0.00404402 -0.00236986 -0.00773217 -0.0107308 -0.0107631 -0.00804452 -0.00349412 0.00155739 0.00574836 0.00804754 0.00800144 0.00581021 0.0022247 -0.00169532 -0.00488659 -0.00656448 -0.00640827 -0.00460787 -0.00177043 0.00127653 0.00372379 0.00499322 0.00486975 0.00352424 0.00143131 -0.000786368 -0.0025386 -0.00342105 -0.00330322 -0.00233405 -0.000871405 0.00063734 0.0017854 0.00231135 0.00215261 0.00143861 0.0004328 -0.000555537 -0.00126165 -0.00153162 -0.00135015 -0.000827507 -0.000152813 0.000468642 0.000874068 0.000982688 0.000806979 0.000436045 4.7845e-07 -0.000369898 -0.000582565 -0.000602332 -0.00045285 -0.000201922 6.47544e-05 0.000270714 0.000368176 0.000347351 0.000233553 7.41256e-05 -7.82947e-05 -0.000182015 -0.00021673 -0.000184688 -0.000106498 -1.31074e-05 6.60491e-05 0.000111544 0.000116734 8.79112e-05 4.01788e-05 -9.15771e-06 -4.52785e-05 -6.04436e-05 -5.52841e-05 -3.53122e-05 -9.37856e-06 1.27137e-05 2.57777e-05 2.85097e-05 2.18128e-05 1.04925e-05 -5.30604e-07 -8.71451e-06 -1.1724e-05 -1.05914e-05 -7.13148e-06 -3.92333e-06 1.33538e-05</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.306382.137" name="TUZ.10.HHZ.2003.253.stage_5">
+    <responseFIR publicID="ResponseFIR#20140205034021.709241.137" name="TUZ.10.HHZ.2003.253.stage_5">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -924,7 +924,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.306634.138" name="TUZ.10.HHZ.2003.253.stage_6">
+    <responseFIR publicID="ResponseFIR#20140205034021.7095.138" name="TUZ.10.HHZ.2003.253.stage_6">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -933,7 +933,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.307178.141" name="TUZ.10.HHZ.2003.305.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034021.710074.141" name="TUZ.10.HHZ.2003.305.stage_3">
       <gain>1</gain>
       <decimationFactor>16</decimationFactor>
       <delay>199.5008</delay>
@@ -942,7 +942,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.08283e-06 1.78083e-06 3.24104e-06 5.46273e-06 8.68294e-06 1.32408e-05 1.95653e-05 2.81851e-05 3.96569e-05 5.46887e-05 7.41536e-05 9.89892e-05 0.000130368 0.000169549 0.000217982 0.000277317 0.000349365 0.000436138 0.000539843 0.000662866 0.000807771 0.000977334 0.00117443 0.00140214 0.0016636 0.00196207 0.00230085 0.00268325 0.00311254 0.0035919 0.00412437 0.00471277 0.00535966 0.00606724 0.00683732 0.00767117 0.00856955 0.00953256 0.0105596 0.0116493 0.0127994 0.0140068 0.0152675 0.0165764 0.0179276 0.0193139 0.0207274 0.0221589 0.0235984 0.025035 0.026457 0.0278517 0.0292059 0.0305059 0.0317375 0.0328862 0.0339377 0.0348775 0.0356915 0.036366 0.0368881 0.0372459 0.0374283 0.0374257 0.03723 0.0368348 0.0362355 0.0354296 0.0344166 0.0331983 0.031779 0.030165 0.0283655 0.0263915 0.0242569 0.0219773 0.0195709 0.0170573 0.0144584 0.0117973 0.00909843 0.00638718 0.00368967 0.00103232 -0.00155845 -0.00405656 -0.00643665 -0.00867446 -0.0107471 -0.0126335 -0.0143147 -0.0157739 -0.0169972 -0.0179736 -0.0186948 -0.0191561 -0.019356 -0.0192964 -0.0189824 -0.0184226 -0.0176288 -0.0166159 -0.0154017 -0.0140065 -0.012453 -0.010766 -0.0089718 -0.00709813 -0.00517342 -0.00322655 -0.0012864 0.000618651 0.00246109 0.00421474 0.00585512 0.00735983 0.00870891 0.00988508 0.010874 0.0116647 0.0122491 0.0126229 0.012785 0.012738 0.0124875 0.0120424 0.0114147 0.010619 0.00967263 0.00859478 0.0074066 0.00613063 0.00479037 0.00340996 0.00201365 0.000625458 -0.000731273 -0.00203427 -0.0032627 -0.00439749 -0.00542165 -0.0063205 -0.00708194 -0.00769656 -0.00815775 -0.00846181 -0.00860791 -0.00859805 -0.00843695 -0.00813196 -0.00769278 -0.00713129 -0.00646126 -0.00569805 -0.00485829 -0.00395954 -0.00301995 -0.00205791 -0.00109166 -0.000139022 0.00078298 0.00165839 0.00247261 0.00321261 0.00386716 0.00442698 0.00488486 0.00523573 0.00547673 0.00560713 0.00562837 0.0055439 0.00535905 0.00508092 0.00471816 0.00428072 0.00377968 0.00322694 0.00263498 0.00201662 0.00138472 0.000751944 0.000130509 -0.000468028 -0.00103299 -0.00155475 -0.0020249 -0.00243637 -0.00278349 -0.00306212 -0.00326961 -0.00340483 -0.00346814 -0.00346131 -0.00338745 -0.00325086 -0.00305694 -0.00281202 -0.00252318 -0.0021981 -0.00184485 -0.00147175 -0.00108715 -0.000699266 -0.000316036 5.5053e-05 0.000407094 0.000733876 0.00102999 0.00129089 0.00151298 0.00169361 0.00183112 0.00192482 0.00197495 0.00198264 0.00194987 0.00187935 0.00177444 0.00163906 0.00147758 0.0012947 0.00109531 0.000884439 0.000667068 0.000448076 0.00023212 2.35517e-05 -0.000173665 -0.000356014 -0.000520488 -0.00066462 -0.000786511 -0.000884846 -0.000958886 -0.00100845 -0.00103392 -0.00103614 -0.00101643 -0.000976515 -0.000918456 -0.000844589 -0.000757459 -0.000659755 -0.000554239 -0.000443681 -0.000330795 -0.000218187 -0.000108297 -3.35481e-06 9.46528e-05 0.000184018 0.000263332 0.000331499 0.000387738 0.000431592 0.000462904 0.000481816 0.000488738 0.000484325 0.000469448 0.000445157 0.000412648 0.000373226 0.000328265 0.000279174 0.000227364 0.000174207 0.000121017 6.90166e-05 1.93149e-05 -2.71087e-05 -6.94202e-05 -0.000106941 -0.000139155 -0.000165703 -0.000186392 -0.000201174 -0.000210151 -0.00021355 -0.000211715 -0.000205091 -0.000194203 -0.000179638 -0.000162028 -0.000142031 -0.00012031 -9.75224e-05 -7.42979e-05 -5.12291e-05 -2.88596e-05 -7.67146e-06 1.19192e-05 2.9568e-05 4.50062e-05 5.8043e-05 6.85571e-05 7.65073e-05 8.19115e-05 8.48545e-05 8.5474e-05 8.39532e-05 8.05145e-05 7.54109e-05 6.89143e-05 6.13087e-05 5.28863e-05 4.39266e-05 3.47082e-05 2.54843e-05 1.64892e-05 7.93092e-06 -1.33589e-08 -7.1986e-06 -1.351e-05 -1.88671e-05 -2.32245e-05 -2.65589e-05 -2.88878e-05 -3.02428e-05 -3.06848e-05 -3.02914e-05 -2.91548e-05 -2.73769e-05 -2.50704e-05 -2.23479e-05 -1.93219e-05 -1.61094e-05 -1.28084e-05 -9.52341e-06 -6.33822e-06 -3.3291e-06 -5.59878e-07 1.91876e-06 4.07237e-06 5.87439e-06 7.31229e-06 8.39055e-06 9.10975e-06 9.49794e-06 9.57516e-06 9.37626e-06 8.93829e-06 8.30169e-06 7.5046e-06 6.59243e-06 5.6033e-06 4.57132e-06 3.54042e-06 2.53025e-06 1.57718e-06 6.99307e-07 -8.60475e-08 -7.66767e-07 -1.33326e-06 -1.78756e-06 -2.12669e-06 -2.35267e-06 -2.48244e-06 -2.50989e-06 -2.45985e-06 -2.33535e-06 -2.15236e-06 -1.92515e-06 -1.67077e-06 -1.39524e-06 -1.11738e-06 -8.4543e-07 -5.79483e-07 -3.44469e-07 -1.25053e-07 6.17435e-08 2.18738e-07 3.44248e-07 4.37481e-07 4.93136e-07 5.25519e-07 5.34475e-07 5.13616e-07 4.90298e-07 4.3492e-07 3.81986e-07 3.22367e-07 2.60231e-07 1.93632e-07 1.33825e-07 6.86725e-08 2.14437e-08 -1.96713e-09 -4.75222e-08 -6.27191e-08 -1.01907e-07 -1.20153e-07 -1.10366e-07 -1.02949e-07 -1.1966e-07 -1.36123e-07 -1.46392e-07 -1.47524e-07 3.98023e-07</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.308071.142" name="TUZ.10.HHZ.2003.305.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205034021.710974.142" name="TUZ.10.HHZ.2003.305.stage_4">
       <gain>1</gain>
       <decimationFactor>5</decimationFactor>
       <delay>79.5</delay>
@@ -951,7 +951,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.000122702 0.000487772 0.00137444 0.00317439 0.0064039 0.0116563 0.0195096 0.0303968 0.0444432 0.0613064 0.0800596 0.099153 0.116493 0.129658 0.13624 0.134259 0.122607 0.101396 0.0721513 0.0377665 0.00218767 -0.030141 -0.0549948 -0.0691204 -0.0708734 -0.0605967 -0.0406432 -0.0150078 0.0113818 0.0335861 0.0476023 0.0511449 0.0440846 0.0284415 0.00792673 -0.0128754 -0.0295073 -0.0385979 -0.0385691 -0.0299301 -0.0150931 0.00223832 0.0179618 0.0285378 0.0317906 0.0273641 0.0167307 0.00276538 -0.0110038 -0.0212739 -0.0257575 -0.0236935 -0.0159616 -0.00478775 0.00687098 0.0160974 0.0207398 0.0199111 0.014146 0.00519124 -0.00450192 -0.012438 -0.0167151 -0.0164772 -0.012073 -0.00489628 0.00303413 0.00963288 0.013291 0.0132627 0.00980445 0.00404402 -0.00236986 -0.00773217 -0.0107308 -0.0107631 -0.00804452 -0.00349412 0.00155739 0.00574836 0.00804754 0.00800144 0.00581021 0.0022247 -0.00169532 -0.00488659 -0.00656448 -0.00640827 -0.00460787 -0.00177043 0.00127653 0.00372379 0.00499322 0.00486975 0.00352424 0.00143131 -0.000786368 -0.0025386 -0.00342105 -0.00330322 -0.00233405 -0.000871405 0.00063734 0.0017854 0.00231135 0.00215261 0.00143861 0.0004328 -0.000555537 -0.00126165 -0.00153162 -0.00135015 -0.000827507 -0.000152813 0.000468642 0.000874068 0.000982688 0.000806979 0.000436045 4.7845e-07 -0.000369898 -0.000582565 -0.000602332 -0.00045285 -0.000201922 6.47544e-05 0.000270714 0.000368176 0.000347351 0.000233553 7.41256e-05 -7.82947e-05 -0.000182015 -0.00021673 -0.000184688 -0.000106498 -1.31074e-05 6.60491e-05 0.000111544 0.000116734 8.79112e-05 4.01788e-05 -9.15771e-06 -4.52785e-05 -6.04436e-05 -5.52841e-05 -3.53122e-05 -9.37856e-06 1.27137e-05 2.57777e-05 2.85097e-05 2.18128e-05 1.04925e-05 -5.30604e-07 -8.71451e-06 -1.1724e-05 -1.05914e-05 -7.13148e-06 -3.92333e-06 1.33538e-05</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.308516.143" name="TUZ.10.HHZ.2003.305.stage_5">
+    <responseFIR publicID="ResponseFIR#20140205034021.711461.143" name="TUZ.10.HHZ.2003.305.stage_5">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -960,7 +960,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.308764.144" name="TUZ.10.HHZ.2003.305.stage_6">
+    <responseFIR publicID="ResponseFIR#20140205034021.711752.144" name="TUZ.10.HHZ.2003.305.stage_6">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -969,7 +969,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.309297.147" name="TUZ.10.HHZ.2003.344.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034021.712299.147" name="TUZ.10.HHZ.2003.344.stage_3">
       <gain>1</gain>
       <decimationFactor>16</decimationFactor>
       <delay>199.5008</delay>
@@ -978,7 +978,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.08283e-06 1.78083e-06 3.24104e-06 5.46273e-06 8.68294e-06 1.32408e-05 1.95653e-05 2.81851e-05 3.96569e-05 5.46887e-05 7.41536e-05 9.89892e-05 0.000130368 0.000169549 0.000217982 0.000277317 0.000349365 0.000436138 0.000539843 0.000662866 0.000807771 0.000977334 0.00117443 0.00140214 0.0016636 0.00196207 0.00230085 0.00268325 0.00311254 0.0035919 0.00412437 0.00471277 0.00535966 0.00606724 0.00683732 0.00767117 0.00856955 0.00953256 0.0105596 0.0116493 0.0127994 0.0140068 0.0152675 0.0165764 0.0179276 0.0193139 0.0207274 0.0221589 0.0235984 0.025035 0.026457 0.0278517 0.0292059 0.0305059 0.0317375 0.0328862 0.0339377 0.0348775 0.0356915 0.036366 0.0368881 0.0372459 0.0374283 0.0374257 0.03723 0.0368348 0.0362355 0.0354296 0.0344166 0.0331983 0.031779 0.030165 0.0283655 0.0263915 0.0242569 0.0219773 0.0195709 0.0170573 0.0144584 0.0117973 0.00909843 0.00638718 0.00368967 0.00103232 -0.00155845 -0.00405656 -0.00643665 -0.00867446 -0.0107471 -0.0126335 -0.0143147 -0.0157739 -0.0169972 -0.0179736 -0.0186948 -0.0191561 -0.019356 -0.0192964 -0.0189824 -0.0184226 -0.0176288 -0.0166159 -0.0154017 -0.0140065 -0.012453 -0.010766 -0.0089718 -0.00709813 -0.00517342 -0.00322655 -0.0012864 0.000618651 0.00246109 0.00421474 0.00585512 0.00735983 0.00870891 0.00988508 0.010874 0.0116647 0.0122491 0.0126229 0.012785 0.012738 0.0124875 0.0120424 0.0114147 0.010619 0.00967263 0.00859478 0.0074066 0.00613063 0.00479037 0.00340996 0.00201365 0.000625458 -0.000731273 -0.00203427 -0.0032627 -0.00439749 -0.00542165 -0.0063205 -0.00708194 -0.00769656 -0.00815775 -0.00846181 -0.00860791 -0.00859805 -0.00843695 -0.00813196 -0.00769278 -0.00713129 -0.00646126 -0.00569805 -0.00485829 -0.00395954 -0.00301995 -0.00205791 -0.00109166 -0.000139022 0.00078298 0.00165839 0.00247261 0.00321261 0.00386716 0.00442698 0.00488486 0.00523573 0.00547673 0.00560713 0.00562837 0.0055439 0.00535905 0.00508092 0.00471816 0.00428072 0.00377968 0.00322694 0.00263498 0.00201662 0.00138472 0.000751944 0.000130509 -0.000468028 -0.00103299 -0.00155475 -0.0020249 -0.00243637 -0.00278349 -0.00306212 -0.00326961 -0.00340483 -0.00346814 -0.00346131 -0.00338745 -0.00325086 -0.00305694 -0.00281202 -0.00252318 -0.0021981 -0.00184485 -0.00147175 -0.00108715 -0.000699266 -0.000316036 5.5053e-05 0.000407094 0.000733876 0.00102999 0.00129089 0.00151298 0.00169361 0.00183112 0.00192482 0.00197495 0.00198264 0.00194987 0.00187935 0.00177444 0.00163906 0.00147758 0.0012947 0.00109531 0.000884439 0.000667068 0.000448076 0.00023212 2.35517e-05 -0.000173665 -0.000356014 -0.000520488 -0.00066462 -0.000786511 -0.000884846 -0.000958886 -0.00100845 -0.00103392 -0.00103614 -0.00101643 -0.000976515 -0.000918456 -0.000844589 -0.000757459 -0.000659755 -0.000554239 -0.000443681 -0.000330795 -0.000218187 -0.000108297 -3.35481e-06 9.46528e-05 0.000184018 0.000263332 0.000331499 0.000387738 0.000431592 0.000462904 0.000481816 0.000488738 0.000484325 0.000469448 0.000445157 0.000412648 0.000373226 0.000328265 0.000279174 0.000227364 0.000174207 0.000121017 6.90166e-05 1.93149e-05 -2.71087e-05 -6.94202e-05 -0.000106941 -0.000139155 -0.000165703 -0.000186392 -0.000201174 -0.000210151 -0.00021355 -0.000211715 -0.000205091 -0.000194203 -0.000179638 -0.000162028 -0.000142031 -0.00012031 -9.75224e-05 -7.42979e-05 -5.12291e-05 -2.88596e-05 -7.67146e-06 1.19192e-05 2.9568e-05 4.50062e-05 5.8043e-05 6.85571e-05 7.65073e-05 8.19115e-05 8.48545e-05 8.5474e-05 8.39532e-05 8.05145e-05 7.54109e-05 6.89143e-05 6.13087e-05 5.28863e-05 4.39266e-05 3.47082e-05 2.54843e-05 1.64892e-05 7.93092e-06 -1.33589e-08 -7.1986e-06 -1.351e-05 -1.88671e-05 -2.32245e-05 -2.65589e-05 -2.88878e-05 -3.02428e-05 -3.06848e-05 -3.02914e-05 -2.91548e-05 -2.73769e-05 -2.50704e-05 -2.23479e-05 -1.93219e-05 -1.61094e-05 -1.28084e-05 -9.52341e-06 -6.33822e-06 -3.3291e-06 -5.59878e-07 1.91876e-06 4.07237e-06 5.87439e-06 7.31229e-06 8.39055e-06 9.10975e-06 9.49794e-06 9.57516e-06 9.37626e-06 8.93829e-06 8.30169e-06 7.5046e-06 6.59243e-06 5.6033e-06 4.57132e-06 3.54042e-06 2.53025e-06 1.57718e-06 6.99307e-07 -8.60475e-08 -7.66767e-07 -1.33326e-06 -1.78756e-06 -2.12669e-06 -2.35267e-06 -2.48244e-06 -2.50989e-06 -2.45985e-06 -2.33535e-06 -2.15236e-06 -1.92515e-06 -1.67077e-06 -1.39524e-06 -1.11738e-06 -8.4543e-07 -5.79483e-07 -3.44469e-07 -1.25053e-07 6.17435e-08 2.18738e-07 3.44248e-07 4.37481e-07 4.93136e-07 5.25519e-07 5.34475e-07 5.13616e-07 4.90298e-07 4.3492e-07 3.81986e-07 3.22367e-07 2.60231e-07 1.93632e-07 1.33825e-07 6.86725e-08 2.14437e-08 -1.96713e-09 -4.75222e-08 -6.27191e-08 -1.01907e-07 -1.20153e-07 -1.10366e-07 -1.02949e-07 -1.1966e-07 -1.36123e-07 -1.46392e-07 -1.47524e-07 3.98023e-07</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.310145.148" name="TUZ.10.HHZ.2003.344.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205034021.713202.148" name="TUZ.10.HHZ.2003.344.stage_4">
       <gain>1</gain>
       <decimationFactor>5</decimationFactor>
       <delay>79.5</delay>
@@ -987,7 +987,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.000122702 0.000487772 0.00137444 0.00317439 0.0064039 0.0116563 0.0195096 0.0303968 0.0444432 0.0613064 0.0800596 0.099153 0.116493 0.129658 0.13624 0.134259 0.122607 0.101396 0.0721513 0.0377665 0.00218767 -0.030141 -0.0549948 -0.0691204 -0.0708734 -0.0605967 -0.0406432 -0.0150078 0.0113818 0.0335861 0.0476023 0.0511449 0.0440846 0.0284415 0.00792673 -0.0128754 -0.0295073 -0.0385979 -0.0385691 -0.0299301 -0.0150931 0.00223832 0.0179618 0.0285378 0.0317906 0.0273641 0.0167307 0.00276538 -0.0110038 -0.0212739 -0.0257575 -0.0236935 -0.0159616 -0.00478775 0.00687098 0.0160974 0.0207398 0.0199111 0.014146 0.00519124 -0.00450192 -0.012438 -0.0167151 -0.0164772 -0.012073 -0.00489628 0.00303413 0.00963288 0.013291 0.0132627 0.00980445 0.00404402 -0.00236986 -0.00773217 -0.0107308 -0.0107631 -0.00804452 -0.00349412 0.00155739 0.00574836 0.00804754 0.00800144 0.00581021 0.0022247 -0.00169532 -0.00488659 -0.00656448 -0.00640827 -0.00460787 -0.00177043 0.00127653 0.00372379 0.00499322 0.00486975 0.00352424 0.00143131 -0.000786368 -0.0025386 -0.00342105 -0.00330322 -0.00233405 -0.000871405 0.00063734 0.0017854 0.00231135 0.00215261 0.00143861 0.0004328 -0.000555537 -0.00126165 -0.00153162 -0.00135015 -0.000827507 -0.000152813 0.000468642 0.000874068 0.000982688 0.000806979 0.000436045 4.7845e-07 -0.000369898 -0.000582565 -0.000602332 -0.00045285 -0.000201922 6.47544e-05 0.000270714 0.000368176 0.000347351 0.000233553 7.41256e-05 -7.82947e-05 -0.000182015 -0.00021673 -0.000184688 -0.000106498 -1.31074e-05 6.60491e-05 0.000111544 0.000116734 8.79112e-05 4.01788e-05 -9.15771e-06 -4.52785e-05 -6.04436e-05 -5.52841e-05 -3.53122e-05 -9.37856e-06 1.27137e-05 2.57777e-05 2.85097e-05 2.18128e-05 1.04925e-05 -5.30604e-07 -8.71451e-06 -1.1724e-05 -1.05914e-05 -7.13148e-06 -3.92333e-06 1.33538e-05</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.310515.149" name="TUZ.10.HHZ.2003.344.stage_5">
+    <responseFIR publicID="ResponseFIR#20140205034021.713598.149" name="TUZ.10.HHZ.2003.344.stage_5">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -996,7 +996,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.310855.150" name="TUZ.10.HHZ.2003.344.stage_6">
+    <responseFIR publicID="ResponseFIR#20140205034021.713854.150" name="TUZ.10.HHZ.2003.344.stage_6">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -1005,7 +1005,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.311365.153" name="TUZ.10.HHZ.2010.036.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034021.714458.153" name="TUZ.10.HHZ.2010.036.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.167</delay>
@@ -1014,7 +1014,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.311857.157" name="TUZ.20.HNE.2003.253.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034021.715032.157" name="TUZ.20.HNE.2003.253.stage_3">
       <gain>1</gain>
       <decimationFactor>16</decimationFactor>
       <delay>199.5008</delay>
@@ -1023,7 +1023,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.08283e-06 1.78083e-06 3.24104e-06 5.46273e-06 8.68294e-06 1.32408e-05 1.95653e-05 2.81851e-05 3.96569e-05 5.46887e-05 7.41536e-05 9.89892e-05 0.000130368 0.000169549 0.000217982 0.000277317 0.000349365 0.000436138 0.000539843 0.000662866 0.000807771 0.000977334 0.00117443 0.00140214 0.0016636 0.00196207 0.00230085 0.00268325 0.00311254 0.0035919 0.00412437 0.00471277 0.00535966 0.00606724 0.00683732 0.00767117 0.00856955 0.00953256 0.0105596 0.0116493 0.0127994 0.0140068 0.0152675 0.0165764 0.0179276 0.0193139 0.0207274 0.0221589 0.0235984 0.025035 0.026457 0.0278517 0.0292059 0.0305059 0.0317375 0.0328862 0.0339377 0.0348775 0.0356915 0.036366 0.0368881 0.0372459 0.0374283 0.0374257 0.03723 0.0368348 0.0362355 0.0354296 0.0344166 0.0331983 0.031779 0.030165 0.0283655 0.0263915 0.0242569 0.0219773 0.0195709 0.0170573 0.0144584 0.0117973 0.00909843 0.00638718 0.00368967 0.00103232 -0.00155845 -0.00405656 -0.00643665 -0.00867446 -0.0107471 -0.0126335 -0.0143147 -0.0157739 -0.0169972 -0.0179736 -0.0186948 -0.0191561 -0.019356 -0.0192964 -0.0189824 -0.0184226 -0.0176288 -0.0166159 -0.0154017 -0.0140065 -0.012453 -0.010766 -0.0089718 -0.00709813 -0.00517342 -0.00322655 -0.0012864 0.000618651 0.00246109 0.00421474 0.00585512 0.00735983 0.00870891 0.00988508 0.010874 0.0116647 0.0122491 0.0126229 0.012785 0.012738 0.0124875 0.0120424 0.0114147 0.010619 0.00967263 0.00859478 0.0074066 0.00613063 0.00479037 0.00340996 0.00201365 0.000625458 -0.000731273 -0.00203427 -0.0032627 -0.00439749 -0.00542165 -0.0063205 -0.00708194 -0.00769656 -0.00815775 -0.00846181 -0.00860791 -0.00859805 -0.00843695 -0.00813196 -0.00769278 -0.00713129 -0.00646126 -0.00569805 -0.00485829 -0.00395954 -0.00301995 -0.00205791 -0.00109166 -0.000139022 0.00078298 0.00165839 0.00247261 0.00321261 0.00386716 0.00442698 0.00488486 0.00523573 0.00547673 0.00560713 0.00562837 0.0055439 0.00535905 0.00508092 0.00471816 0.00428072 0.00377968 0.00322694 0.00263498 0.00201662 0.00138472 0.000751944 0.000130509 -0.000468028 -0.00103299 -0.00155475 -0.0020249 -0.00243637 -0.00278349 -0.00306212 -0.00326961 -0.00340483 -0.00346814 -0.00346131 -0.00338745 -0.00325086 -0.00305694 -0.00281202 -0.00252318 -0.0021981 -0.00184485 -0.00147175 -0.00108715 -0.000699266 -0.000316036 5.5053e-05 0.000407094 0.000733876 0.00102999 0.00129089 0.00151298 0.00169361 0.00183112 0.00192482 0.00197495 0.00198264 0.00194987 0.00187935 0.00177444 0.00163906 0.00147758 0.0012947 0.00109531 0.000884439 0.000667068 0.000448076 0.00023212 2.35517e-05 -0.000173665 -0.000356014 -0.000520488 -0.00066462 -0.000786511 -0.000884846 -0.000958886 -0.00100845 -0.00103392 -0.00103614 -0.00101643 -0.000976515 -0.000918456 -0.000844589 -0.000757459 -0.000659755 -0.000554239 -0.000443681 -0.000330795 -0.000218187 -0.000108297 -3.35481e-06 9.46528e-05 0.000184018 0.000263332 0.000331499 0.000387738 0.000431592 0.000462904 0.000481816 0.000488738 0.000484325 0.000469448 0.000445157 0.000412648 0.000373226 0.000328265 0.000279174 0.000227364 0.000174207 0.000121017 6.90166e-05 1.93149e-05 -2.71087e-05 -6.94202e-05 -0.000106941 -0.000139155 -0.000165703 -0.000186392 -0.000201174 -0.000210151 -0.00021355 -0.000211715 -0.000205091 -0.000194203 -0.000179638 -0.000162028 -0.000142031 -0.00012031 -9.75224e-05 -7.42979e-05 -5.12291e-05 -2.88596e-05 -7.67146e-06 1.19192e-05 2.9568e-05 4.50062e-05 5.8043e-05 6.85571e-05 7.65073e-05 8.19115e-05 8.48545e-05 8.5474e-05 8.39532e-05 8.05145e-05 7.54109e-05 6.89143e-05 6.13087e-05 5.28863e-05 4.39266e-05 3.47082e-05 2.54843e-05 1.64892e-05 7.93092e-06 -1.33589e-08 -7.1986e-06 -1.351e-05 -1.88671e-05 -2.32245e-05 -2.65589e-05 -2.88878e-05 -3.02428e-05 -3.06848e-05 -3.02914e-05 -2.91548e-05 -2.73769e-05 -2.50704e-05 -2.23479e-05 -1.93219e-05 -1.61094e-05 -1.28084e-05 -9.52341e-06 -6.33822e-06 -3.3291e-06 -5.59878e-07 1.91876e-06 4.07237e-06 5.87439e-06 7.31229e-06 8.39055e-06 9.10975e-06 9.49794e-06 9.57516e-06 9.37626e-06 8.93829e-06 8.30169e-06 7.5046e-06 6.59243e-06 5.6033e-06 4.57132e-06 3.54042e-06 2.53025e-06 1.57718e-06 6.99307e-07 -8.60475e-08 -7.66767e-07 -1.33326e-06 -1.78756e-06 -2.12669e-06 -2.35267e-06 -2.48244e-06 -2.50989e-06 -2.45985e-06 -2.33535e-06 -2.15236e-06 -1.92515e-06 -1.67077e-06 -1.39524e-06 -1.11738e-06 -8.4543e-07 -5.79483e-07 -3.44469e-07 -1.25053e-07 6.17435e-08 2.18738e-07 3.44248e-07 4.37481e-07 4.93136e-07 5.25519e-07 5.34475e-07 5.13616e-07 4.90298e-07 4.3492e-07 3.81986e-07 3.22367e-07 2.60231e-07 1.93632e-07 1.33825e-07 6.86725e-08 2.14437e-08 -1.96713e-09 -4.75222e-08 -6.27191e-08 -1.01907e-07 -1.20153e-07 -1.10366e-07 -1.02949e-07 -1.1966e-07 -1.36123e-07 -1.46392e-07 -1.47524e-07 3.98023e-07</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.312702.158" name="TUZ.20.HNE.2003.253.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205034021.715937.158" name="TUZ.20.HNE.2003.253.stage_4">
       <gain>1</gain>
       <decimationFactor>5</decimationFactor>
       <delay>79.5</delay>
@@ -1032,7 +1032,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.000122702 0.000487772 0.00137444 0.00317439 0.0064039 0.0116563 0.0195096 0.0303968 0.0444432 0.0613064 0.0800596 0.099153 0.116493 0.129658 0.13624 0.134259 0.122607 0.101396 0.0721513 0.0377665 0.00218767 -0.030141 -0.0549948 -0.0691204 -0.0708734 -0.0605967 -0.0406432 -0.0150078 0.0113818 0.0335861 0.0476023 0.0511449 0.0440846 0.0284415 0.00792673 -0.0128754 -0.0295073 -0.0385979 -0.0385691 -0.0299301 -0.0150931 0.00223832 0.0179618 0.0285378 0.0317906 0.0273641 0.0167307 0.00276538 -0.0110038 -0.0212739 -0.0257575 -0.0236935 -0.0159616 -0.00478775 0.00687098 0.0160974 0.0207398 0.0199111 0.014146 0.00519124 -0.00450192 -0.012438 -0.0167151 -0.0164772 -0.012073 -0.00489628 0.00303413 0.00963288 0.013291 0.0132627 0.00980445 0.00404402 -0.00236986 -0.00773217 -0.0107308 -0.0107631 -0.00804452 -0.00349412 0.00155739 0.00574836 0.00804754 0.00800144 0.00581021 0.0022247 -0.00169532 -0.00488659 -0.00656448 -0.00640827 -0.00460787 -0.00177043 0.00127653 0.00372379 0.00499322 0.00486975 0.00352424 0.00143131 -0.000786368 -0.0025386 -0.00342105 -0.00330322 -0.00233405 -0.000871405 0.00063734 0.0017854 0.00231135 0.00215261 0.00143861 0.0004328 -0.000555537 -0.00126165 -0.00153162 -0.00135015 -0.000827507 -0.000152813 0.000468642 0.000874068 0.000982688 0.000806979 0.000436045 4.7845e-07 -0.000369898 -0.000582565 -0.000602332 -0.00045285 -0.000201922 6.47544e-05 0.000270714 0.000368176 0.000347351 0.000233553 7.41256e-05 -7.82947e-05 -0.000182015 -0.00021673 -0.000184688 -0.000106498 -1.31074e-05 6.60491e-05 0.000111544 0.000116734 8.79112e-05 4.01788e-05 -9.15771e-06 -4.52785e-05 -6.04436e-05 -5.52841e-05 -3.53122e-05 -9.37856e-06 1.27137e-05 2.57777e-05 2.85097e-05 2.18128e-05 1.04925e-05 -5.30604e-07 -8.71451e-06 -1.1724e-05 -1.05914e-05 -7.13148e-06 -3.92333e-06 1.33538e-05</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.313221.159" name="TUZ.20.HNE.2003.253.stage_5">
+    <responseFIR publicID="ResponseFIR#20140205034021.716331.159" name="TUZ.20.HNE.2003.253.stage_5">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -1041,7 +1041,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.31399.163" name="TUZ.20.HNE.2003.344.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034021.71698.163" name="TUZ.20.HNE.2003.344.stage_3">
       <gain>1</gain>
       <decimationFactor>16</decimationFactor>
       <delay>199.5008</delay>
@@ -1050,7 +1050,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.08283e-06 1.78083e-06 3.24104e-06 5.46273e-06 8.68294e-06 1.32408e-05 1.95653e-05 2.81851e-05 3.96569e-05 5.46887e-05 7.41536e-05 9.89892e-05 0.000130368 0.000169549 0.000217982 0.000277317 0.000349365 0.000436138 0.000539843 0.000662866 0.000807771 0.000977334 0.00117443 0.00140214 0.0016636 0.00196207 0.00230085 0.00268325 0.00311254 0.0035919 0.00412437 0.00471277 0.00535966 0.00606724 0.00683732 0.00767117 0.00856955 0.00953256 0.0105596 0.0116493 0.0127994 0.0140068 0.0152675 0.0165764 0.0179276 0.0193139 0.0207274 0.0221589 0.0235984 0.025035 0.026457 0.0278517 0.0292059 0.0305059 0.0317375 0.0328862 0.0339377 0.0348775 0.0356915 0.036366 0.0368881 0.0372459 0.0374283 0.0374257 0.03723 0.0368348 0.0362355 0.0354296 0.0344166 0.0331983 0.031779 0.030165 0.0283655 0.0263915 0.0242569 0.0219773 0.0195709 0.0170573 0.0144584 0.0117973 0.00909843 0.00638718 0.00368967 0.00103232 -0.00155845 -0.00405656 -0.00643665 -0.00867446 -0.0107471 -0.0126335 -0.0143147 -0.0157739 -0.0169972 -0.0179736 -0.0186948 -0.0191561 -0.019356 -0.0192964 -0.0189824 -0.0184226 -0.0176288 -0.0166159 -0.0154017 -0.0140065 -0.012453 -0.010766 -0.0089718 -0.00709813 -0.00517342 -0.00322655 -0.0012864 0.000618651 0.00246109 0.00421474 0.00585512 0.00735983 0.00870891 0.00988508 0.010874 0.0116647 0.0122491 0.0126229 0.012785 0.012738 0.0124875 0.0120424 0.0114147 0.010619 0.00967263 0.00859478 0.0074066 0.00613063 0.00479037 0.00340996 0.00201365 0.000625458 -0.000731273 -0.00203427 -0.0032627 -0.00439749 -0.00542165 -0.0063205 -0.00708194 -0.00769656 -0.00815775 -0.00846181 -0.00860791 -0.00859805 -0.00843695 -0.00813196 -0.00769278 -0.00713129 -0.00646126 -0.00569805 -0.00485829 -0.00395954 -0.00301995 -0.00205791 -0.00109166 -0.000139022 0.00078298 0.00165839 0.00247261 0.00321261 0.00386716 0.00442698 0.00488486 0.00523573 0.00547673 0.00560713 0.00562837 0.0055439 0.00535905 0.00508092 0.00471816 0.00428072 0.00377968 0.00322694 0.00263498 0.00201662 0.00138472 0.000751944 0.000130509 -0.000468028 -0.00103299 -0.00155475 -0.0020249 -0.00243637 -0.00278349 -0.00306212 -0.00326961 -0.00340483 -0.00346814 -0.00346131 -0.00338745 -0.00325086 -0.00305694 -0.00281202 -0.00252318 -0.0021981 -0.00184485 -0.00147175 -0.00108715 -0.000699266 -0.000316036 5.5053e-05 0.000407094 0.000733876 0.00102999 0.00129089 0.00151298 0.00169361 0.00183112 0.00192482 0.00197495 0.00198264 0.00194987 0.00187935 0.00177444 0.00163906 0.00147758 0.0012947 0.00109531 0.000884439 0.000667068 0.000448076 0.00023212 2.35517e-05 -0.000173665 -0.000356014 -0.000520488 -0.00066462 -0.000786511 -0.000884846 -0.000958886 -0.00100845 -0.00103392 -0.00103614 -0.00101643 -0.000976515 -0.000918456 -0.000844589 -0.000757459 -0.000659755 -0.000554239 -0.000443681 -0.000330795 -0.000218187 -0.000108297 -3.35481e-06 9.46528e-05 0.000184018 0.000263332 0.000331499 0.000387738 0.000431592 0.000462904 0.000481816 0.000488738 0.000484325 0.000469448 0.000445157 0.000412648 0.000373226 0.000328265 0.000279174 0.000227364 0.000174207 0.000121017 6.90166e-05 1.93149e-05 -2.71087e-05 -6.94202e-05 -0.000106941 -0.000139155 -0.000165703 -0.000186392 -0.000201174 -0.000210151 -0.00021355 -0.000211715 -0.000205091 -0.000194203 -0.000179638 -0.000162028 -0.000142031 -0.00012031 -9.75224e-05 -7.42979e-05 -5.12291e-05 -2.88596e-05 -7.67146e-06 1.19192e-05 2.9568e-05 4.50062e-05 5.8043e-05 6.85571e-05 7.65073e-05 8.19115e-05 8.48545e-05 8.5474e-05 8.39532e-05 8.05145e-05 7.54109e-05 6.89143e-05 6.13087e-05 5.28863e-05 4.39266e-05 3.47082e-05 2.54843e-05 1.64892e-05 7.93092e-06 -1.33589e-08 -7.1986e-06 -1.351e-05 -1.88671e-05 -2.32245e-05 -2.65589e-05 -2.88878e-05 -3.02428e-05 -3.06848e-05 -3.02914e-05 -2.91548e-05 -2.73769e-05 -2.50704e-05 -2.23479e-05 -1.93219e-05 -1.61094e-05 -1.28084e-05 -9.52341e-06 -6.33822e-06 -3.3291e-06 -5.59878e-07 1.91876e-06 4.07237e-06 5.87439e-06 7.31229e-06 8.39055e-06 9.10975e-06 9.49794e-06 9.57516e-06 9.37626e-06 8.93829e-06 8.30169e-06 7.5046e-06 6.59243e-06 5.6033e-06 4.57132e-06 3.54042e-06 2.53025e-06 1.57718e-06 6.99307e-07 -8.60475e-08 -7.66767e-07 -1.33326e-06 -1.78756e-06 -2.12669e-06 -2.35267e-06 -2.48244e-06 -2.50989e-06 -2.45985e-06 -2.33535e-06 -2.15236e-06 -1.92515e-06 -1.67077e-06 -1.39524e-06 -1.11738e-06 -8.4543e-07 -5.79483e-07 -3.44469e-07 -1.25053e-07 6.17435e-08 2.18738e-07 3.44248e-07 4.37481e-07 4.93136e-07 5.25519e-07 5.34475e-07 5.13616e-07 4.90298e-07 4.3492e-07 3.81986e-07 3.22367e-07 2.60231e-07 1.93632e-07 1.33825e-07 6.86725e-08 2.14437e-08 -1.96713e-09 -4.75222e-08 -6.27191e-08 -1.01907e-07 -1.20153e-07 -1.10366e-07 -1.02949e-07 -1.1966e-07 -1.36123e-07 -1.46392e-07 -1.47524e-07 3.98023e-07</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.314904.164" name="TUZ.20.HNE.2003.344.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205034021.717883.164" name="TUZ.20.HNE.2003.344.stage_4">
       <gain>1</gain>
       <decimationFactor>5</decimationFactor>
       <delay>79.5</delay>
@@ -1059,7 +1059,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.000122702 0.000487772 0.00137444 0.00317439 0.0064039 0.0116563 0.0195096 0.0303968 0.0444432 0.0613064 0.0800596 0.099153 0.116493 0.129658 0.13624 0.134259 0.122607 0.101396 0.0721513 0.0377665 0.00218767 -0.030141 -0.0549948 -0.0691204 -0.0708734 -0.0605967 -0.0406432 -0.0150078 0.0113818 0.0335861 0.0476023 0.0511449 0.0440846 0.0284415 0.00792673 -0.0128754 -0.0295073 -0.0385979 -0.0385691 -0.0299301 -0.0150931 0.00223832 0.0179618 0.0285378 0.0317906 0.0273641 0.0167307 0.00276538 -0.0110038 -0.0212739 -0.0257575 -0.0236935 -0.0159616 -0.00478775 0.00687098 0.0160974 0.0207398 0.0199111 0.014146 0.00519124 -0.00450192 -0.012438 -0.0167151 -0.0164772 -0.012073 -0.00489628 0.00303413 0.00963288 0.013291 0.0132627 0.00980445 0.00404402 -0.00236986 -0.00773217 -0.0107308 -0.0107631 -0.00804452 -0.00349412 0.00155739 0.00574836 0.00804754 0.00800144 0.00581021 0.0022247 -0.00169532 -0.00488659 -0.00656448 -0.00640827 -0.00460787 -0.00177043 0.00127653 0.00372379 0.00499322 0.00486975 0.00352424 0.00143131 -0.000786368 -0.0025386 -0.00342105 -0.00330322 -0.00233405 -0.000871405 0.00063734 0.0017854 0.00231135 0.00215261 0.00143861 0.0004328 -0.000555537 -0.00126165 -0.00153162 -0.00135015 -0.000827507 -0.000152813 0.000468642 0.000874068 0.000982688 0.000806979 0.000436045 4.7845e-07 -0.000369898 -0.000582565 -0.000602332 -0.00045285 -0.000201922 6.47544e-05 0.000270714 0.000368176 0.000347351 0.000233553 7.41256e-05 -7.82947e-05 -0.000182015 -0.00021673 -0.000184688 -0.000106498 -1.31074e-05 6.60491e-05 0.000111544 0.000116734 8.79112e-05 4.01788e-05 -9.15771e-06 -4.52785e-05 -6.04436e-05 -5.52841e-05 -3.53122e-05 -9.37856e-06 1.27137e-05 2.57777e-05 2.85097e-05 2.18128e-05 1.04925e-05 -5.30604e-07 -8.71451e-06 -1.1724e-05 -1.05914e-05 -7.13148e-06 -3.92333e-06 1.33538e-05</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.315292.165" name="TUZ.20.HNE.2003.344.stage_5">
+    <responseFIR publicID="ResponseFIR#20140205034021.718274.165" name="TUZ.20.HNE.2003.344.stage_5">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -1068,7 +1068,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.315957.168" name="TUZ.20.HNE.2010.036.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034021.718842.168" name="TUZ.20.HNE.2010.036.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.0924</delay>
@@ -1077,7 +1077,7 @@
       <symmetry>A</symmetry>
       <coefficients>4.30494e-09 0.000948276 0.0420678 0.297745 0.645344 0.263193 -0.352798 0.0655933 0.157879 -0.204676 0.126866 -0.0132329 -0.0737818 0.106119 -0.0918536 0.047031 -0.00295521 -0.0346579 0.0416751 -0.0410116 0.0271261 -0.00405225 -0.00873152 0.0121996 -0.010217 0.00626758 -0.00257406 0.000130275 0.000993726 -0.00115464 0.000857116 -0.000448739 0.000155499 -3.03826e-06 -4.33831e-05</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.316382.169" name="TUZ.20.HNN.2003.253.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034021.719258.169" name="TUZ.20.HNN.2003.253.stage_3">
       <gain>1</gain>
       <decimationFactor>16</decimationFactor>
       <delay>199.5008</delay>
@@ -1086,7 +1086,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.08283e-06 1.78083e-06 3.24104e-06 5.46273e-06 8.68294e-06 1.32408e-05 1.95653e-05 2.81851e-05 3.96569e-05 5.46887e-05 7.41536e-05 9.89892e-05 0.000130368 0.000169549 0.000217982 0.000277317 0.000349365 0.000436138 0.000539843 0.000662866 0.000807771 0.000977334 0.00117443 0.00140214 0.0016636 0.00196207 0.00230085 0.00268325 0.00311254 0.0035919 0.00412437 0.00471277 0.00535966 0.00606724 0.00683732 0.00767117 0.00856955 0.00953256 0.0105596 0.0116493 0.0127994 0.0140068 0.0152675 0.0165764 0.0179276 0.0193139 0.0207274 0.0221589 0.0235984 0.025035 0.026457 0.0278517 0.0292059 0.0305059 0.0317375 0.0328862 0.0339377 0.0348775 0.0356915 0.036366 0.0368881 0.0372459 0.0374283 0.0374257 0.03723 0.0368348 0.0362355 0.0354296 0.0344166 0.0331983 0.031779 0.030165 0.0283655 0.0263915 0.0242569 0.0219773 0.0195709 0.0170573 0.0144584 0.0117973 0.00909843 0.00638718 0.00368967 0.00103232 -0.00155845 -0.00405656 -0.00643665 -0.00867446 -0.0107471 -0.0126335 -0.0143147 -0.0157739 -0.0169972 -0.0179736 -0.0186948 -0.0191561 -0.019356 -0.0192964 -0.0189824 -0.0184226 -0.0176288 -0.0166159 -0.0154017 -0.0140065 -0.012453 -0.010766 -0.0089718 -0.00709813 -0.00517342 -0.00322655 -0.0012864 0.000618651 0.00246109 0.00421474 0.00585512 0.00735983 0.00870891 0.00988508 0.010874 0.0116647 0.0122491 0.0126229 0.012785 0.012738 0.0124875 0.0120424 0.0114147 0.010619 0.00967263 0.00859478 0.0074066 0.00613063 0.00479037 0.00340996 0.00201365 0.000625458 -0.000731273 -0.00203427 -0.0032627 -0.00439749 -0.00542165 -0.0063205 -0.00708194 -0.00769656 -0.00815775 -0.00846181 -0.00860791 -0.00859805 -0.00843695 -0.00813196 -0.00769278 -0.00713129 -0.00646126 -0.00569805 -0.00485829 -0.00395954 -0.00301995 -0.00205791 -0.00109166 -0.000139022 0.00078298 0.00165839 0.00247261 0.00321261 0.00386716 0.00442698 0.00488486 0.00523573 0.00547673 0.00560713 0.00562837 0.0055439 0.00535905 0.00508092 0.00471816 0.00428072 0.00377968 0.00322694 0.00263498 0.00201662 0.00138472 0.000751944 0.000130509 -0.000468028 -0.00103299 -0.00155475 -0.0020249 -0.00243637 -0.00278349 -0.00306212 -0.00326961 -0.00340483 -0.00346814 -0.00346131 -0.00338745 -0.00325086 -0.00305694 -0.00281202 -0.00252318 -0.0021981 -0.00184485 -0.00147175 -0.00108715 -0.000699266 -0.000316036 5.5053e-05 0.000407094 0.000733876 0.00102999 0.00129089 0.00151298 0.00169361 0.00183112 0.00192482 0.00197495 0.00198264 0.00194987 0.00187935 0.00177444 0.00163906 0.00147758 0.0012947 0.00109531 0.000884439 0.000667068 0.000448076 0.00023212 2.35517e-05 -0.000173665 -0.000356014 -0.000520488 -0.00066462 -0.000786511 -0.000884846 -0.000958886 -0.00100845 -0.00103392 -0.00103614 -0.00101643 -0.000976515 -0.000918456 -0.000844589 -0.000757459 -0.000659755 -0.000554239 -0.000443681 -0.000330795 -0.000218187 -0.000108297 -3.35481e-06 9.46528e-05 0.000184018 0.000263332 0.000331499 0.000387738 0.000431592 0.000462904 0.000481816 0.000488738 0.000484325 0.000469448 0.000445157 0.000412648 0.000373226 0.000328265 0.000279174 0.000227364 0.000174207 0.000121017 6.90166e-05 1.93149e-05 -2.71087e-05 -6.94202e-05 -0.000106941 -0.000139155 -0.000165703 -0.000186392 -0.000201174 -0.000210151 -0.00021355 -0.000211715 -0.000205091 -0.000194203 -0.000179638 -0.000162028 -0.000142031 -0.00012031 -9.75224e-05 -7.42979e-05 -5.12291e-05 -2.88596e-05 -7.67146e-06 1.19192e-05 2.9568e-05 4.50062e-05 5.8043e-05 6.85571e-05 7.65073e-05 8.19115e-05 8.48545e-05 8.5474e-05 8.39532e-05 8.05145e-05 7.54109e-05 6.89143e-05 6.13087e-05 5.28863e-05 4.39266e-05 3.47082e-05 2.54843e-05 1.64892e-05 7.93092e-06 -1.33589e-08 -7.1986e-06 -1.351e-05 -1.88671e-05 -2.32245e-05 -2.65589e-05 -2.88878e-05 -3.02428e-05 -3.06848e-05 -3.02914e-05 -2.91548e-05 -2.73769e-05 -2.50704e-05 -2.23479e-05 -1.93219e-05 -1.61094e-05 -1.28084e-05 -9.52341e-06 -6.33822e-06 -3.3291e-06 -5.59878e-07 1.91876e-06 4.07237e-06 5.87439e-06 7.31229e-06 8.39055e-06 9.10975e-06 9.49794e-06 9.57516e-06 9.37626e-06 8.93829e-06 8.30169e-06 7.5046e-06 6.59243e-06 5.6033e-06 4.57132e-06 3.54042e-06 2.53025e-06 1.57718e-06 6.99307e-07 -8.60475e-08 -7.66767e-07 -1.33326e-06 -1.78756e-06 -2.12669e-06 -2.35267e-06 -2.48244e-06 -2.50989e-06 -2.45985e-06 -2.33535e-06 -2.15236e-06 -1.92515e-06 -1.67077e-06 -1.39524e-06 -1.11738e-06 -8.4543e-07 -5.79483e-07 -3.44469e-07 -1.25053e-07 6.17435e-08 2.18738e-07 3.44248e-07 4.37481e-07 4.93136e-07 5.25519e-07 5.34475e-07 5.13616e-07 4.90298e-07 4.3492e-07 3.81986e-07 3.22367e-07 2.60231e-07 1.93632e-07 1.33825e-07 6.86725e-08 2.14437e-08 -1.96713e-09 -4.75222e-08 -6.27191e-08 -1.01907e-07 -1.20153e-07 -1.10366e-07 -1.02949e-07 -1.1966e-07 -1.36123e-07 -1.46392e-07 -1.47524e-07 3.98023e-07</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.317303.170" name="TUZ.20.HNN.2003.253.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205034021.720158.170" name="TUZ.20.HNN.2003.253.stage_4">
       <gain>1</gain>
       <decimationFactor>5</decimationFactor>
       <delay>79.5</delay>
@@ -1095,7 +1095,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.000122702 0.000487772 0.00137444 0.00317439 0.0064039 0.0116563 0.0195096 0.0303968 0.0444432 0.0613064 0.0800596 0.099153 0.116493 0.129658 0.13624 0.134259 0.122607 0.101396 0.0721513 0.0377665 0.00218767 -0.030141 -0.0549948 -0.0691204 -0.0708734 -0.0605967 -0.0406432 -0.0150078 0.0113818 0.0335861 0.0476023 0.0511449 0.0440846 0.0284415 0.00792673 -0.0128754 -0.0295073 -0.0385979 -0.0385691 -0.0299301 -0.0150931 0.00223832 0.0179618 0.0285378 0.0317906 0.0273641 0.0167307 0.00276538 -0.0110038 -0.0212739 -0.0257575 -0.0236935 -0.0159616 -0.00478775 0.00687098 0.0160974 0.0207398 0.0199111 0.014146 0.00519124 -0.00450192 -0.012438 -0.0167151 -0.0164772 -0.012073 -0.00489628 0.00303413 0.00963288 0.013291 0.0132627 0.00980445 0.00404402 -0.00236986 -0.00773217 -0.0107308 -0.0107631 -0.00804452 -0.00349412 0.00155739 0.00574836 0.00804754 0.00800144 0.00581021 0.0022247 -0.00169532 -0.00488659 -0.00656448 -0.00640827 -0.00460787 -0.00177043 0.00127653 0.00372379 0.00499322 0.00486975 0.00352424 0.00143131 -0.000786368 -0.0025386 -0.00342105 -0.00330322 -0.00233405 -0.000871405 0.00063734 0.0017854 0.00231135 0.00215261 0.00143861 0.0004328 -0.000555537 -0.00126165 -0.00153162 -0.00135015 -0.000827507 -0.000152813 0.000468642 0.000874068 0.000982688 0.000806979 0.000436045 4.7845e-07 -0.000369898 -0.000582565 -0.000602332 -0.00045285 -0.000201922 6.47544e-05 0.000270714 0.000368176 0.000347351 0.000233553 7.41256e-05 -7.82947e-05 -0.000182015 -0.00021673 -0.000184688 -0.000106498 -1.31074e-05 6.60491e-05 0.000111544 0.000116734 8.79112e-05 4.01788e-05 -9.15771e-06 -4.52785e-05 -6.04436e-05 -5.52841e-05 -3.53122e-05 -9.37856e-06 1.27137e-05 2.57777e-05 2.85097e-05 2.18128e-05 1.04925e-05 -5.30604e-07 -8.71451e-06 -1.1724e-05 -1.05914e-05 -7.13148e-06 -3.92333e-06 1.33538e-05</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.317702.171" name="TUZ.20.HNN.2003.253.stage_5">
+    <responseFIR publicID="ResponseFIR#20140205034021.720546.171" name="TUZ.20.HNN.2003.253.stage_5">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -1104,7 +1104,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.31833.174" name="TUZ.20.HNN.2003.344.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034021.721067.174" name="TUZ.20.HNN.2003.344.stage_3">
       <gain>1</gain>
       <decimationFactor>16</decimationFactor>
       <delay>199.5008</delay>
@@ -1113,7 +1113,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.08283e-06 1.78083e-06 3.24104e-06 5.46273e-06 8.68294e-06 1.32408e-05 1.95653e-05 2.81851e-05 3.96569e-05 5.46887e-05 7.41536e-05 9.89892e-05 0.000130368 0.000169549 0.000217982 0.000277317 0.000349365 0.000436138 0.000539843 0.000662866 0.000807771 0.000977334 0.00117443 0.00140214 0.0016636 0.00196207 0.00230085 0.00268325 0.00311254 0.0035919 0.00412437 0.00471277 0.00535966 0.00606724 0.00683732 0.00767117 0.00856955 0.00953256 0.0105596 0.0116493 0.0127994 0.0140068 0.0152675 0.0165764 0.0179276 0.0193139 0.0207274 0.0221589 0.0235984 0.025035 0.026457 0.0278517 0.0292059 0.0305059 0.0317375 0.0328862 0.0339377 0.0348775 0.0356915 0.036366 0.0368881 0.0372459 0.0374283 0.0374257 0.03723 0.0368348 0.0362355 0.0354296 0.0344166 0.0331983 0.031779 0.030165 0.0283655 0.0263915 0.0242569 0.0219773 0.0195709 0.0170573 0.0144584 0.0117973 0.00909843 0.00638718 0.00368967 0.00103232 -0.00155845 -0.00405656 -0.00643665 -0.00867446 -0.0107471 -0.0126335 -0.0143147 -0.0157739 -0.0169972 -0.0179736 -0.0186948 -0.0191561 -0.019356 -0.0192964 -0.0189824 -0.0184226 -0.0176288 -0.0166159 -0.0154017 -0.0140065 -0.012453 -0.010766 -0.0089718 -0.00709813 -0.00517342 -0.00322655 -0.0012864 0.000618651 0.00246109 0.00421474 0.00585512 0.00735983 0.00870891 0.00988508 0.010874 0.0116647 0.0122491 0.0126229 0.012785 0.012738 0.0124875 0.0120424 0.0114147 0.010619 0.00967263 0.00859478 0.0074066 0.00613063 0.00479037 0.00340996 0.00201365 0.000625458 -0.000731273 -0.00203427 -0.0032627 -0.00439749 -0.00542165 -0.0063205 -0.00708194 -0.00769656 -0.00815775 -0.00846181 -0.00860791 -0.00859805 -0.00843695 -0.00813196 -0.00769278 -0.00713129 -0.00646126 -0.00569805 -0.00485829 -0.00395954 -0.00301995 -0.00205791 -0.00109166 -0.000139022 0.00078298 0.00165839 0.00247261 0.00321261 0.00386716 0.00442698 0.00488486 0.00523573 0.00547673 0.00560713 0.00562837 0.0055439 0.00535905 0.00508092 0.00471816 0.00428072 0.00377968 0.00322694 0.00263498 0.00201662 0.00138472 0.000751944 0.000130509 -0.000468028 -0.00103299 -0.00155475 -0.0020249 -0.00243637 -0.00278349 -0.00306212 -0.00326961 -0.00340483 -0.00346814 -0.00346131 -0.00338745 -0.00325086 -0.00305694 -0.00281202 -0.00252318 -0.0021981 -0.00184485 -0.00147175 -0.00108715 -0.000699266 -0.000316036 5.5053e-05 0.000407094 0.000733876 0.00102999 0.00129089 0.00151298 0.00169361 0.00183112 0.00192482 0.00197495 0.00198264 0.00194987 0.00187935 0.00177444 0.00163906 0.00147758 0.0012947 0.00109531 0.000884439 0.000667068 0.000448076 0.00023212 2.35517e-05 -0.000173665 -0.000356014 -0.000520488 -0.00066462 -0.000786511 -0.000884846 -0.000958886 -0.00100845 -0.00103392 -0.00103614 -0.00101643 -0.000976515 -0.000918456 -0.000844589 -0.000757459 -0.000659755 -0.000554239 -0.000443681 -0.000330795 -0.000218187 -0.000108297 -3.35481e-06 9.46528e-05 0.000184018 0.000263332 0.000331499 0.000387738 0.000431592 0.000462904 0.000481816 0.000488738 0.000484325 0.000469448 0.000445157 0.000412648 0.000373226 0.000328265 0.000279174 0.000227364 0.000174207 0.000121017 6.90166e-05 1.93149e-05 -2.71087e-05 -6.94202e-05 -0.000106941 -0.000139155 -0.000165703 -0.000186392 -0.000201174 -0.000210151 -0.00021355 -0.000211715 -0.000205091 -0.000194203 -0.000179638 -0.000162028 -0.000142031 -0.00012031 -9.75224e-05 -7.42979e-05 -5.12291e-05 -2.88596e-05 -7.67146e-06 1.19192e-05 2.9568e-05 4.50062e-05 5.8043e-05 6.85571e-05 7.65073e-05 8.19115e-05 8.48545e-05 8.5474e-05 8.39532e-05 8.05145e-05 7.54109e-05 6.89143e-05 6.13087e-05 5.28863e-05 4.39266e-05 3.47082e-05 2.54843e-05 1.64892e-05 7.93092e-06 -1.33589e-08 -7.1986e-06 -1.351e-05 -1.88671e-05 -2.32245e-05 -2.65589e-05 -2.88878e-05 -3.02428e-05 -3.06848e-05 -3.02914e-05 -2.91548e-05 -2.73769e-05 -2.50704e-05 -2.23479e-05 -1.93219e-05 -1.61094e-05 -1.28084e-05 -9.52341e-06 -6.33822e-06 -3.3291e-06 -5.59878e-07 1.91876e-06 4.07237e-06 5.87439e-06 7.31229e-06 8.39055e-06 9.10975e-06 9.49794e-06 9.57516e-06 9.37626e-06 8.93829e-06 8.30169e-06 7.5046e-06 6.59243e-06 5.6033e-06 4.57132e-06 3.54042e-06 2.53025e-06 1.57718e-06 6.99307e-07 -8.60475e-08 -7.66767e-07 -1.33326e-06 -1.78756e-06 -2.12669e-06 -2.35267e-06 -2.48244e-06 -2.50989e-06 -2.45985e-06 -2.33535e-06 -2.15236e-06 -1.92515e-06 -1.67077e-06 -1.39524e-06 -1.11738e-06 -8.4543e-07 -5.79483e-07 -3.44469e-07 -1.25053e-07 6.17435e-08 2.18738e-07 3.44248e-07 4.37481e-07 4.93136e-07 5.25519e-07 5.34475e-07 5.13616e-07 4.90298e-07 4.3492e-07 3.81986e-07 3.22367e-07 2.60231e-07 1.93632e-07 1.33825e-07 6.86725e-08 2.14437e-08 -1.96713e-09 -4.75222e-08 -6.27191e-08 -1.01907e-07 -1.20153e-07 -1.10366e-07 -1.02949e-07 -1.1966e-07 -1.36123e-07 -1.46392e-07 -1.47524e-07 3.98023e-07</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.319241.175" name="TUZ.20.HNN.2003.344.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205034021.722042.175" name="TUZ.20.HNN.2003.344.stage_4">
       <gain>1</gain>
       <decimationFactor>5</decimationFactor>
       <delay>79.5</delay>
@@ -1122,7 +1122,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.000122702 0.000487772 0.00137444 0.00317439 0.0064039 0.0116563 0.0195096 0.0303968 0.0444432 0.0613064 0.0800596 0.099153 0.116493 0.129658 0.13624 0.134259 0.122607 0.101396 0.0721513 0.0377665 0.00218767 -0.030141 -0.0549948 -0.0691204 -0.0708734 -0.0605967 -0.0406432 -0.0150078 0.0113818 0.0335861 0.0476023 0.0511449 0.0440846 0.0284415 0.00792673 -0.0128754 -0.0295073 -0.0385979 -0.0385691 -0.0299301 -0.0150931 0.00223832 0.0179618 0.0285378 0.0317906 0.0273641 0.0167307 0.00276538 -0.0110038 -0.0212739 -0.0257575 -0.0236935 -0.0159616 -0.00478775 0.00687098 0.0160974 0.0207398 0.0199111 0.014146 0.00519124 -0.00450192 -0.012438 -0.0167151 -0.0164772 -0.012073 -0.00489628 0.00303413 0.00963288 0.013291 0.0132627 0.00980445 0.00404402 -0.00236986 -0.00773217 -0.0107308 -0.0107631 -0.00804452 -0.00349412 0.00155739 0.00574836 0.00804754 0.00800144 0.00581021 0.0022247 -0.00169532 -0.00488659 -0.00656448 -0.00640827 -0.00460787 -0.00177043 0.00127653 0.00372379 0.00499322 0.00486975 0.00352424 0.00143131 -0.000786368 -0.0025386 -0.00342105 -0.00330322 -0.00233405 -0.000871405 0.00063734 0.0017854 0.00231135 0.00215261 0.00143861 0.0004328 -0.000555537 -0.00126165 -0.00153162 -0.00135015 -0.000827507 -0.000152813 0.000468642 0.000874068 0.000982688 0.000806979 0.000436045 4.7845e-07 -0.000369898 -0.000582565 -0.000602332 -0.00045285 -0.000201922 6.47544e-05 0.000270714 0.000368176 0.000347351 0.000233553 7.41256e-05 -7.82947e-05 -0.000182015 -0.00021673 -0.000184688 -0.000106498 -1.31074e-05 6.60491e-05 0.000111544 0.000116734 8.79112e-05 4.01788e-05 -9.15771e-06 -4.52785e-05 -6.04436e-05 -5.52841e-05 -3.53122e-05 -9.37856e-06 1.27137e-05 2.57777e-05 2.85097e-05 2.18128e-05 1.04925e-05 -5.30604e-07 -8.71451e-06 -1.1724e-05 -1.05914e-05 -7.13148e-06 -3.92333e-06 1.33538e-05</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.319619.176" name="TUZ.20.HNN.2003.344.stage_5">
+    <responseFIR publicID="ResponseFIR#20140205034021.722435.176" name="TUZ.20.HNN.2003.344.stage_5">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -1131,7 +1131,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.320121.179" name="TUZ.20.HNN.2010.036.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034021.722966.179" name="TUZ.20.HNN.2010.036.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.0924</delay>
@@ -1140,7 +1140,7 @@
       <symmetry>A</symmetry>
       <coefficients>4.30494e-09 0.000948276 0.0420678 0.297745 0.645344 0.263193 -0.352798 0.0655933 0.157879 -0.204676 0.126866 -0.0132329 -0.0737818 0.106119 -0.0918536 0.047031 -0.00295521 -0.0346579 0.0416751 -0.0410116 0.0271261 -0.00405225 -0.00873152 0.0121996 -0.010217 0.00626758 -0.00257406 0.000130275 0.000993726 -0.00115464 0.000857116 -0.000448739 0.000155499 -3.03826e-06 -4.33831e-05</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.320474.180" name="TUZ.20.HNZ.2003.253.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034021.723507.180" name="TUZ.20.HNZ.2003.253.stage_3">
       <gain>1</gain>
       <decimationFactor>16</decimationFactor>
       <delay>199.5008</delay>
@@ -1149,7 +1149,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.08283e-06 1.78083e-06 3.24104e-06 5.46273e-06 8.68294e-06 1.32408e-05 1.95653e-05 2.81851e-05 3.96569e-05 5.46887e-05 7.41536e-05 9.89892e-05 0.000130368 0.000169549 0.000217982 0.000277317 0.000349365 0.000436138 0.000539843 0.000662866 0.000807771 0.000977334 0.00117443 0.00140214 0.0016636 0.00196207 0.00230085 0.00268325 0.00311254 0.0035919 0.00412437 0.00471277 0.00535966 0.00606724 0.00683732 0.00767117 0.00856955 0.00953256 0.0105596 0.0116493 0.0127994 0.0140068 0.0152675 0.0165764 0.0179276 0.0193139 0.0207274 0.0221589 0.0235984 0.025035 0.026457 0.0278517 0.0292059 0.0305059 0.0317375 0.0328862 0.0339377 0.0348775 0.0356915 0.036366 0.0368881 0.0372459 0.0374283 0.0374257 0.03723 0.0368348 0.0362355 0.0354296 0.0344166 0.0331983 0.031779 0.030165 0.0283655 0.0263915 0.0242569 0.0219773 0.0195709 0.0170573 0.0144584 0.0117973 0.00909843 0.00638718 0.00368967 0.00103232 -0.00155845 -0.00405656 -0.00643665 -0.00867446 -0.0107471 -0.0126335 -0.0143147 -0.0157739 -0.0169972 -0.0179736 -0.0186948 -0.0191561 -0.019356 -0.0192964 -0.0189824 -0.0184226 -0.0176288 -0.0166159 -0.0154017 -0.0140065 -0.012453 -0.010766 -0.0089718 -0.00709813 -0.00517342 -0.00322655 -0.0012864 0.000618651 0.00246109 0.00421474 0.00585512 0.00735983 0.00870891 0.00988508 0.010874 0.0116647 0.0122491 0.0126229 0.012785 0.012738 0.0124875 0.0120424 0.0114147 0.010619 0.00967263 0.00859478 0.0074066 0.00613063 0.00479037 0.00340996 0.00201365 0.000625458 -0.000731273 -0.00203427 -0.0032627 -0.00439749 -0.00542165 -0.0063205 -0.00708194 -0.00769656 -0.00815775 -0.00846181 -0.00860791 -0.00859805 -0.00843695 -0.00813196 -0.00769278 -0.00713129 -0.00646126 -0.00569805 -0.00485829 -0.00395954 -0.00301995 -0.00205791 -0.00109166 -0.000139022 0.00078298 0.00165839 0.00247261 0.00321261 0.00386716 0.00442698 0.00488486 0.00523573 0.00547673 0.00560713 0.00562837 0.0055439 0.00535905 0.00508092 0.00471816 0.00428072 0.00377968 0.00322694 0.00263498 0.00201662 0.00138472 0.000751944 0.000130509 -0.000468028 -0.00103299 -0.00155475 -0.0020249 -0.00243637 -0.00278349 -0.00306212 -0.00326961 -0.00340483 -0.00346814 -0.00346131 -0.00338745 -0.00325086 -0.00305694 -0.00281202 -0.00252318 -0.0021981 -0.00184485 -0.00147175 -0.00108715 -0.000699266 -0.000316036 5.5053e-05 0.000407094 0.000733876 0.00102999 0.00129089 0.00151298 0.00169361 0.00183112 0.00192482 0.00197495 0.00198264 0.00194987 0.00187935 0.00177444 0.00163906 0.00147758 0.0012947 0.00109531 0.000884439 0.000667068 0.000448076 0.00023212 2.35517e-05 -0.000173665 -0.000356014 -0.000520488 -0.00066462 -0.000786511 -0.000884846 -0.000958886 -0.00100845 -0.00103392 -0.00103614 -0.00101643 -0.000976515 -0.000918456 -0.000844589 -0.000757459 -0.000659755 -0.000554239 -0.000443681 -0.000330795 -0.000218187 -0.000108297 -3.35481e-06 9.46528e-05 0.000184018 0.000263332 0.000331499 0.000387738 0.000431592 0.000462904 0.000481816 0.000488738 0.000484325 0.000469448 0.000445157 0.000412648 0.000373226 0.000328265 0.000279174 0.000227364 0.000174207 0.000121017 6.90166e-05 1.93149e-05 -2.71087e-05 -6.94202e-05 -0.000106941 -0.000139155 -0.000165703 -0.000186392 -0.000201174 -0.000210151 -0.00021355 -0.000211715 -0.000205091 -0.000194203 -0.000179638 -0.000162028 -0.000142031 -0.00012031 -9.75224e-05 -7.42979e-05 -5.12291e-05 -2.88596e-05 -7.67146e-06 1.19192e-05 2.9568e-05 4.50062e-05 5.8043e-05 6.85571e-05 7.65073e-05 8.19115e-05 8.48545e-05 8.5474e-05 8.39532e-05 8.05145e-05 7.54109e-05 6.89143e-05 6.13087e-05 5.28863e-05 4.39266e-05 3.47082e-05 2.54843e-05 1.64892e-05 7.93092e-06 -1.33589e-08 -7.1986e-06 -1.351e-05 -1.88671e-05 -2.32245e-05 -2.65589e-05 -2.88878e-05 -3.02428e-05 -3.06848e-05 -3.02914e-05 -2.91548e-05 -2.73769e-05 -2.50704e-05 -2.23479e-05 -1.93219e-05 -1.61094e-05 -1.28084e-05 -9.52341e-06 -6.33822e-06 -3.3291e-06 -5.59878e-07 1.91876e-06 4.07237e-06 5.87439e-06 7.31229e-06 8.39055e-06 9.10975e-06 9.49794e-06 9.57516e-06 9.37626e-06 8.93829e-06 8.30169e-06 7.5046e-06 6.59243e-06 5.6033e-06 4.57132e-06 3.54042e-06 2.53025e-06 1.57718e-06 6.99307e-07 -8.60475e-08 -7.66767e-07 -1.33326e-06 -1.78756e-06 -2.12669e-06 -2.35267e-06 -2.48244e-06 -2.50989e-06 -2.45985e-06 -2.33535e-06 -2.15236e-06 -1.92515e-06 -1.67077e-06 -1.39524e-06 -1.11738e-06 -8.4543e-07 -5.79483e-07 -3.44469e-07 -1.25053e-07 6.17435e-08 2.18738e-07 3.44248e-07 4.37481e-07 4.93136e-07 5.25519e-07 5.34475e-07 5.13616e-07 4.90298e-07 4.3492e-07 3.81986e-07 3.22367e-07 2.60231e-07 1.93632e-07 1.33825e-07 6.86725e-08 2.14437e-08 -1.96713e-09 -4.75222e-08 -6.27191e-08 -1.01907e-07 -1.20153e-07 -1.10366e-07 -1.02949e-07 -1.1966e-07 -1.36123e-07 -1.46392e-07 -1.47524e-07 3.98023e-07</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.321429.181" name="TUZ.20.HNZ.2003.253.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205034021.724702.181" name="TUZ.20.HNZ.2003.253.stage_4">
       <gain>1</gain>
       <decimationFactor>5</decimationFactor>
       <delay>79.5</delay>
@@ -1158,7 +1158,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.000122702 0.000487772 0.00137444 0.00317439 0.0064039 0.0116563 0.0195096 0.0303968 0.0444432 0.0613064 0.0800596 0.099153 0.116493 0.129658 0.13624 0.134259 0.122607 0.101396 0.0721513 0.0377665 0.00218767 -0.030141 -0.0549948 -0.0691204 -0.0708734 -0.0605967 -0.0406432 -0.0150078 0.0113818 0.0335861 0.0476023 0.0511449 0.0440846 0.0284415 0.00792673 -0.0128754 -0.0295073 -0.0385979 -0.0385691 -0.0299301 -0.0150931 0.00223832 0.0179618 0.0285378 0.0317906 0.0273641 0.0167307 0.00276538 -0.0110038 -0.0212739 -0.0257575 -0.0236935 -0.0159616 -0.00478775 0.00687098 0.0160974 0.0207398 0.0199111 0.014146 0.00519124 -0.00450192 -0.012438 -0.0167151 -0.0164772 -0.012073 -0.00489628 0.00303413 0.00963288 0.013291 0.0132627 0.00980445 0.00404402 -0.00236986 -0.00773217 -0.0107308 -0.0107631 -0.00804452 -0.00349412 0.00155739 0.00574836 0.00804754 0.00800144 0.00581021 0.0022247 -0.00169532 -0.00488659 -0.00656448 -0.00640827 -0.00460787 -0.00177043 0.00127653 0.00372379 0.00499322 0.00486975 0.00352424 0.00143131 -0.000786368 -0.0025386 -0.00342105 -0.00330322 -0.00233405 -0.000871405 0.00063734 0.0017854 0.00231135 0.00215261 0.00143861 0.0004328 -0.000555537 -0.00126165 -0.00153162 -0.00135015 -0.000827507 -0.000152813 0.000468642 0.000874068 0.000982688 0.000806979 0.000436045 4.7845e-07 -0.000369898 -0.000582565 -0.000602332 -0.00045285 -0.000201922 6.47544e-05 0.000270714 0.000368176 0.000347351 0.000233553 7.41256e-05 -7.82947e-05 -0.000182015 -0.00021673 -0.000184688 -0.000106498 -1.31074e-05 6.60491e-05 0.000111544 0.000116734 8.79112e-05 4.01788e-05 -9.15771e-06 -4.52785e-05 -6.04436e-05 -5.52841e-05 -3.53122e-05 -9.37856e-06 1.27137e-05 2.57777e-05 2.85097e-05 2.18128e-05 1.04925e-05 -5.30604e-07 -8.71451e-06 -1.1724e-05 -1.05914e-05 -7.13148e-06 -3.92333e-06 1.33538e-05</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.321813.182" name="TUZ.20.HNZ.2003.253.stage_5">
+    <responseFIR publicID="ResponseFIR#20140205034021.725808.182" name="TUZ.20.HNZ.2003.253.stage_5">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -1167,7 +1167,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.322329.185" name="TUZ.20.HNZ.2003.344.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034021.726501.185" name="TUZ.20.HNZ.2003.344.stage_3">
       <gain>1</gain>
       <decimationFactor>16</decimationFactor>
       <delay>199.5008</delay>
@@ -1176,7 +1176,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.08283e-06 1.78083e-06 3.24104e-06 5.46273e-06 8.68294e-06 1.32408e-05 1.95653e-05 2.81851e-05 3.96569e-05 5.46887e-05 7.41536e-05 9.89892e-05 0.000130368 0.000169549 0.000217982 0.000277317 0.000349365 0.000436138 0.000539843 0.000662866 0.000807771 0.000977334 0.00117443 0.00140214 0.0016636 0.00196207 0.00230085 0.00268325 0.00311254 0.0035919 0.00412437 0.00471277 0.00535966 0.00606724 0.00683732 0.00767117 0.00856955 0.00953256 0.0105596 0.0116493 0.0127994 0.0140068 0.0152675 0.0165764 0.0179276 0.0193139 0.0207274 0.0221589 0.0235984 0.025035 0.026457 0.0278517 0.0292059 0.0305059 0.0317375 0.0328862 0.0339377 0.0348775 0.0356915 0.036366 0.0368881 0.0372459 0.0374283 0.0374257 0.03723 0.0368348 0.0362355 0.0354296 0.0344166 0.0331983 0.031779 0.030165 0.0283655 0.0263915 0.0242569 0.0219773 0.0195709 0.0170573 0.0144584 0.0117973 0.00909843 0.00638718 0.00368967 0.00103232 -0.00155845 -0.00405656 -0.00643665 -0.00867446 -0.0107471 -0.0126335 -0.0143147 -0.0157739 -0.0169972 -0.0179736 -0.0186948 -0.0191561 -0.019356 -0.0192964 -0.0189824 -0.0184226 -0.0176288 -0.0166159 -0.0154017 -0.0140065 -0.012453 -0.010766 -0.0089718 -0.00709813 -0.00517342 -0.00322655 -0.0012864 0.000618651 0.00246109 0.00421474 0.00585512 0.00735983 0.00870891 0.00988508 0.010874 0.0116647 0.0122491 0.0126229 0.012785 0.012738 0.0124875 0.0120424 0.0114147 0.010619 0.00967263 0.00859478 0.0074066 0.00613063 0.00479037 0.00340996 0.00201365 0.000625458 -0.000731273 -0.00203427 -0.0032627 -0.00439749 -0.00542165 -0.0063205 -0.00708194 -0.00769656 -0.00815775 -0.00846181 -0.00860791 -0.00859805 -0.00843695 -0.00813196 -0.00769278 -0.00713129 -0.00646126 -0.00569805 -0.00485829 -0.00395954 -0.00301995 -0.00205791 -0.00109166 -0.000139022 0.00078298 0.00165839 0.00247261 0.00321261 0.00386716 0.00442698 0.00488486 0.00523573 0.00547673 0.00560713 0.00562837 0.0055439 0.00535905 0.00508092 0.00471816 0.00428072 0.00377968 0.00322694 0.00263498 0.00201662 0.00138472 0.000751944 0.000130509 -0.000468028 -0.00103299 -0.00155475 -0.0020249 -0.00243637 -0.00278349 -0.00306212 -0.00326961 -0.00340483 -0.00346814 -0.00346131 -0.00338745 -0.00325086 -0.00305694 -0.00281202 -0.00252318 -0.0021981 -0.00184485 -0.00147175 -0.00108715 -0.000699266 -0.000316036 5.5053e-05 0.000407094 0.000733876 0.00102999 0.00129089 0.00151298 0.00169361 0.00183112 0.00192482 0.00197495 0.00198264 0.00194987 0.00187935 0.00177444 0.00163906 0.00147758 0.0012947 0.00109531 0.000884439 0.000667068 0.000448076 0.00023212 2.35517e-05 -0.000173665 -0.000356014 -0.000520488 -0.00066462 -0.000786511 -0.000884846 -0.000958886 -0.00100845 -0.00103392 -0.00103614 -0.00101643 -0.000976515 -0.000918456 -0.000844589 -0.000757459 -0.000659755 -0.000554239 -0.000443681 -0.000330795 -0.000218187 -0.000108297 -3.35481e-06 9.46528e-05 0.000184018 0.000263332 0.000331499 0.000387738 0.000431592 0.000462904 0.000481816 0.000488738 0.000484325 0.000469448 0.000445157 0.000412648 0.000373226 0.000328265 0.000279174 0.000227364 0.000174207 0.000121017 6.90166e-05 1.93149e-05 -2.71087e-05 -6.94202e-05 -0.000106941 -0.000139155 -0.000165703 -0.000186392 -0.000201174 -0.000210151 -0.00021355 -0.000211715 -0.000205091 -0.000194203 -0.000179638 -0.000162028 -0.000142031 -0.00012031 -9.75224e-05 -7.42979e-05 -5.12291e-05 -2.88596e-05 -7.67146e-06 1.19192e-05 2.9568e-05 4.50062e-05 5.8043e-05 6.85571e-05 7.65073e-05 8.19115e-05 8.48545e-05 8.5474e-05 8.39532e-05 8.05145e-05 7.54109e-05 6.89143e-05 6.13087e-05 5.28863e-05 4.39266e-05 3.47082e-05 2.54843e-05 1.64892e-05 7.93092e-06 -1.33589e-08 -7.1986e-06 -1.351e-05 -1.88671e-05 -2.32245e-05 -2.65589e-05 -2.88878e-05 -3.02428e-05 -3.06848e-05 -3.02914e-05 -2.91548e-05 -2.73769e-05 -2.50704e-05 -2.23479e-05 -1.93219e-05 -1.61094e-05 -1.28084e-05 -9.52341e-06 -6.33822e-06 -3.3291e-06 -5.59878e-07 1.91876e-06 4.07237e-06 5.87439e-06 7.31229e-06 8.39055e-06 9.10975e-06 9.49794e-06 9.57516e-06 9.37626e-06 8.93829e-06 8.30169e-06 7.5046e-06 6.59243e-06 5.6033e-06 4.57132e-06 3.54042e-06 2.53025e-06 1.57718e-06 6.99307e-07 -8.60475e-08 -7.66767e-07 -1.33326e-06 -1.78756e-06 -2.12669e-06 -2.35267e-06 -2.48244e-06 -2.50989e-06 -2.45985e-06 -2.33535e-06 -2.15236e-06 -1.92515e-06 -1.67077e-06 -1.39524e-06 -1.11738e-06 -8.4543e-07 -5.79483e-07 -3.44469e-07 -1.25053e-07 6.17435e-08 2.18738e-07 3.44248e-07 4.37481e-07 4.93136e-07 5.25519e-07 5.34475e-07 5.13616e-07 4.90298e-07 4.3492e-07 3.81986e-07 3.22367e-07 2.60231e-07 1.93632e-07 1.33825e-07 6.86725e-08 2.14437e-08 -1.96713e-09 -4.75222e-08 -6.27191e-08 -1.01907e-07 -1.20153e-07 -1.10366e-07 -1.02949e-07 -1.1966e-07 -1.36123e-07 -1.46392e-07 -1.47524e-07 3.98023e-07</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.32324.186" name="TUZ.20.HNZ.2003.344.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205034021.727534.186" name="TUZ.20.HNZ.2003.344.stage_4">
       <gain>1</gain>
       <decimationFactor>5</decimationFactor>
       <delay>79.5</delay>
@@ -1185,7 +1185,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.000122702 0.000487772 0.00137444 0.00317439 0.0064039 0.0116563 0.0195096 0.0303968 0.0444432 0.0613064 0.0800596 0.099153 0.116493 0.129658 0.13624 0.134259 0.122607 0.101396 0.0721513 0.0377665 0.00218767 -0.030141 -0.0549948 -0.0691204 -0.0708734 -0.0605967 -0.0406432 -0.0150078 0.0113818 0.0335861 0.0476023 0.0511449 0.0440846 0.0284415 0.00792673 -0.0128754 -0.0295073 -0.0385979 -0.0385691 -0.0299301 -0.0150931 0.00223832 0.0179618 0.0285378 0.0317906 0.0273641 0.0167307 0.00276538 -0.0110038 -0.0212739 -0.0257575 -0.0236935 -0.0159616 -0.00478775 0.00687098 0.0160974 0.0207398 0.0199111 0.014146 0.00519124 -0.00450192 -0.012438 -0.0167151 -0.0164772 -0.012073 -0.00489628 0.00303413 0.00963288 0.013291 0.0132627 0.00980445 0.00404402 -0.00236986 -0.00773217 -0.0107308 -0.0107631 -0.00804452 -0.00349412 0.00155739 0.00574836 0.00804754 0.00800144 0.00581021 0.0022247 -0.00169532 -0.00488659 -0.00656448 -0.00640827 -0.00460787 -0.00177043 0.00127653 0.00372379 0.00499322 0.00486975 0.00352424 0.00143131 -0.000786368 -0.0025386 -0.00342105 -0.00330322 -0.00233405 -0.000871405 0.00063734 0.0017854 0.00231135 0.00215261 0.00143861 0.0004328 -0.000555537 -0.00126165 -0.00153162 -0.00135015 -0.000827507 -0.000152813 0.000468642 0.000874068 0.000982688 0.000806979 0.000436045 4.7845e-07 -0.000369898 -0.000582565 -0.000602332 -0.00045285 -0.000201922 6.47544e-05 0.000270714 0.000368176 0.000347351 0.000233553 7.41256e-05 -7.82947e-05 -0.000182015 -0.00021673 -0.000184688 -0.000106498 -1.31074e-05 6.60491e-05 0.000111544 0.000116734 8.79112e-05 4.01788e-05 -9.15771e-06 -4.52785e-05 -6.04436e-05 -5.52841e-05 -3.53122e-05 -9.37856e-06 1.27137e-05 2.57777e-05 2.85097e-05 2.18128e-05 1.04925e-05 -5.30604e-07 -8.71451e-06 -1.1724e-05 -1.05914e-05 -7.13148e-06 -3.92333e-06 1.33538e-05</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.323616.187" name="TUZ.20.HNZ.2003.344.stage_5">
+    <responseFIR publicID="ResponseFIR#20140205034021.72794.187" name="TUZ.20.HNZ.2003.344.stage_5">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -1194,7 +1194,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214121.324117.190" name="TUZ.20.HNZ.2010.036.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034021.729048.190" name="TUZ.20.HNZ.2010.036.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.0924</delay>
@@ -1203,14 +1203,14 @@
       <symmetry>A</symmetry>
       <coefficients>4.30494e-09 0.000948276 0.0420678 0.297745 0.645344 0.263193 -0.352798 0.0655933 0.157879 -0.204676 0.126866 -0.0132329 -0.0737818 0.106119 -0.0918536 0.047031 -0.00295521 -0.0346579 0.0416751 -0.0410116 0.0271261 -0.00405225 -0.00873152 0.0121996 -0.010217 0.00626758 -0.00257406 0.000130275 0.000993726 -0.00115464 0.000857116 -0.000448739 0.000155499 -3.03826e-06 -4.33831e-05</coefficients>
     </responseFIR>
-    <network publicID="Network#20131203214121.284455.2" code="NZ">
+    <network publicID="Network#20140205034021.68622.2" code="NZ">
       <start>1980-01-01T00:00:00.0000Z</start>
       <description> </description>
       <netClass>p</netClass>
       <archive> </archive>
       <restricted>false</restricted>
       <shared>true</shared>
-      <station publicID="Station#20131203214121.284654.3" code="TUZ">
+      <station publicID="Station#20140205034021.686461.3" code="TUZ">
         <start>1991-04-04T00:00:00.0000Z</start>
         <description>Tuapeka</description>
         <latitude>-45.953975</latitude>
@@ -1221,12 +1221,12 @@
         <archive> </archive>
         <restricted>false</restricted>
         <shared>true</shared>
-        <sensorLocation publicID="SensorLocation#20131203214121.288296.77" code="20">
+        <sensorLocation publicID="SensorLocation#20140205034021.690062.77" code="20">
           <start>2003-09-10T00:00:00.0000Z</start>
           <latitude>-45.953975</latitude>
           <longitude>169.631143</longitude>
           <elevation>110</elevation>
-          <stream code="BNE" datalogger="Datalogger#20131203214121.288507.78" sensor="Sensor#20131203214121.289097.80">
+          <stream code="BNE" datalogger="Datalogger#20140205034021.690284.78" sensor="Sensor#20140205034021.690905.80">
             <start>2010-02-05T23:00:01.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>2</dataloggerChannel>
@@ -1245,7 +1245,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="BNN" datalogger="Datalogger#20131203214121.288507.78" sensor="Sensor#20131203214121.289831.83">
+          <stream code="BNN" datalogger="Datalogger#20140205034021.690284.78" sensor="Sensor#20140205034021.691787.83">
             <start>2010-02-05T23:00:01.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>1</dataloggerChannel>
@@ -1264,7 +1264,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="BNZ" datalogger="Datalogger#20131203214121.288507.78" sensor="Sensor#20131203214121.290325.86">
+          <stream code="BNZ" datalogger="Datalogger#20140205034021.690284.78" sensor="Sensor#20140205034021.692322.86">
             <start>2010-02-05T23:00:01.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>0</dataloggerChannel>
@@ -1283,7 +1283,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HNE" datalogger="Datalogger#20131203214121.31182.156" sensor="Sensor#20131203214121.313584.160">
+          <stream code="HNE" datalogger="Datalogger#20140205034021.714983.156" sensor="Sensor#20140205034021.716659.160">
             <start>2003-09-10T00:00:00.0000Z</start>
             <end>2003-12-10T20:30:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -1303,7 +1303,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HNE" datalogger="Datalogger#20131203214121.313944.162" sensor="Sensor#20131203214121.31556.166">
+          <stream code="HNE" datalogger="Datalogger#20140205034021.716938.162" sensor="Sensor#20140205034021.718532.166">
             <start>2003-12-10T20:40:00.0000Z</start>
             <end>2010-02-05T23:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -1323,7 +1323,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HNE" datalogger="Datalogger#20131203214121.288507.78" sensor="Sensor#20131203214121.289097.80">
+          <stream code="HNE" datalogger="Datalogger#20140205034021.690284.78" sensor="Sensor#20140205034021.690905.80">
             <start>2010-02-05T23:00:01.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>2</dataloggerChannel>
@@ -1342,7 +1342,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HNN" datalogger="Datalogger#20131203214121.31182.156" sensor="Sensor#20131203214121.317968.172">
+          <stream code="HNN" datalogger="Datalogger#20140205034021.714983.156" sensor="Sensor#20140205034021.720804.172">
             <start>2003-09-10T00:00:00.0000Z</start>
             <end>2003-12-10T20:30:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -1362,7 +1362,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HNN" datalogger="Datalogger#20131203214121.313944.162" sensor="Sensor#20131203214121.319871.177">
+          <stream code="HNN" datalogger="Datalogger#20140205034021.716938.162" sensor="Sensor#20140205034021.722696.177">
             <start>2003-12-10T20:40:00.0000Z</start>
             <end>2010-02-05T23:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -1382,7 +1382,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HNN" datalogger="Datalogger#20131203214121.288507.78" sensor="Sensor#20131203214121.289831.83">
+          <stream code="HNN" datalogger="Datalogger#20140205034021.690284.78" sensor="Sensor#20140205034021.691787.83">
             <start>2010-02-05T23:00:01.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>1</dataloggerChannel>
@@ -1401,7 +1401,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HNZ" datalogger="Datalogger#20131203214121.31182.156" sensor="Sensor#20131203214121.322067.183">
+          <stream code="HNZ" datalogger="Datalogger#20140205034021.714983.156" sensor="Sensor#20140205034021.726159.183">
             <start>2003-09-10T00:00:00.0000Z</start>
             <end>2003-12-10T20:30:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -1421,7 +1421,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HNZ" datalogger="Datalogger#20131203214121.313944.162" sensor="Sensor#20131203214121.323868.188">
+          <stream code="HNZ" datalogger="Datalogger#20140205034021.716938.162" sensor="Sensor#20140205034021.728769.188">
             <start>2003-12-10T20:40:00.0000Z</start>
             <end>2010-02-05T23:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -1441,7 +1441,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HNZ" datalogger="Datalogger#20131203214121.288507.78" sensor="Sensor#20131203214121.290325.86">
+          <stream code="HNZ" datalogger="Datalogger#20140205034021.690284.78" sensor="Sensor#20140205034021.692322.86">
             <start>2010-02-05T23:00:01.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>0</dataloggerChannel>
@@ -1461,12 +1461,12 @@
             <shared>true</shared>
           </stream>
         </sensorLocation>
-        <sensorLocation publicID="SensorLocation#20131203214121.290512.88" code="10">
+        <sensorLocation publicID="SensorLocation#20140205034021.692516.88" code="10">
           <start>2003-09-10T00:00:00.0000Z</start>
           <latitude>-45.953975</latitude>
           <longitude>169.631143</longitude>
           <elevation>110</elevation>
-          <stream code="HHE" datalogger="Datalogger#20131203214121.290594.89" sensor="Sensor#20131203214121.292486.94">
+          <stream code="HHE" datalogger="Datalogger#20140205034021.69262.89" sensor="Sensor#20140205034021.694545.94">
             <start>2003-09-10T00:00:00.0000Z</start>
             <end>2003-10-31T23:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -1486,7 +1486,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HHE" datalogger="Datalogger#20131203214121.292769.96" sensor="Sensor#20131203214121.295038.101">
+          <stream code="HHE" datalogger="Datalogger#20140205034021.694803.96" sensor="Sensor#20140205034021.696656.101">
             <start>2003-11-01T00:00:00.0000Z</start>
             <end>2003-12-10T20:30:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -1506,7 +1506,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HHE" datalogger="Datalogger#20131203214121.295325.103" sensor="Sensor#20131203214121.297291.108">
+          <stream code="HHE" datalogger="Datalogger#20140205034021.69692.103" sensor="Sensor#20140205034021.69869.108">
             <start>2003-12-10T20:40:00.0000Z</start>
             <end>2010-02-05T23:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -1526,7 +1526,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HHE" datalogger="Datalogger#20131203214121.297545.110" sensor="Sensor#20131203214121.297798.112">
+          <stream code="HHE" datalogger="Datalogger#20140205034021.698933.110" sensor="Sensor#20140205034021.699266.112">
             <start>2010-02-05T23:00:01.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>2</dataloggerChannel>
@@ -1545,7 +1545,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HHN" datalogger="Datalogger#20131203214121.290594.89" sensor="Sensor#20131203214121.300113.118">
+          <stream code="HHN" datalogger="Datalogger#20140205034021.69262.89" sensor="Sensor#20140205034021.701271.118">
             <start>2003-09-10T00:00:00.0000Z</start>
             <end>2003-10-31T23:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -1565,7 +1565,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HHN" datalogger="Datalogger#20131203214121.292769.96" sensor="Sensor#20131203214121.302189.124">
+          <stream code="HHN" datalogger="Datalogger#20140205034021.694803.96" sensor="Sensor#20140205034021.703348.124">
             <start>2003-11-01T00:00:00.0000Z</start>
             <end>2003-12-10T20:30:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -1585,7 +1585,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HHN" datalogger="Datalogger#20131203214121.295325.103" sensor="Sensor#20131203214121.304257.130">
+          <stream code="HHN" datalogger="Datalogger#20140205034021.69692.103" sensor="Sensor#20140205034021.705619.130">
             <start>2003-12-10T20:40:00.0000Z</start>
             <end>2010-02-05T23:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -1605,7 +1605,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HHN" datalogger="Datalogger#20131203214121.297545.110" sensor="Sensor#20131203214121.30473.133">
+          <stream code="HHN" datalogger="Datalogger#20140205034021.698933.110" sensor="Sensor#20140205034021.706108.133">
             <start>2010-02-05T23:00:01.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>1</dataloggerChannel>
@@ -1624,7 +1624,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HHZ" datalogger="Datalogger#20131203214121.290594.89" sensor="Sensor#20131203214121.306894.139">
+          <stream code="HHZ" datalogger="Datalogger#20140205034021.69262.89" sensor="Sensor#20140205034021.70977.139">
             <start>2003-09-10T00:00:00.0000Z</start>
             <end>2003-10-31T23:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -1644,7 +1644,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HHZ" datalogger="Datalogger#20131203214121.292769.96" sensor="Sensor#20131203214121.309016.145">
+          <stream code="HHZ" datalogger="Datalogger#20140205034021.694803.96" sensor="Sensor#20140205034021.712013.145">
             <start>2003-11-01T00:00:00.0000Z</start>
             <end>2003-12-10T20:30:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -1664,7 +1664,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HHZ" datalogger="Datalogger#20131203214121.295325.103" sensor="Sensor#20131203214121.311098.151">
+          <stream code="HHZ" datalogger="Datalogger#20140205034021.69692.103" sensor="Sensor#20140205034021.714168.151">
             <start>2003-12-10T20:40:00.0000Z</start>
             <end>2010-02-05T23:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -1684,7 +1684,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HHZ" datalogger="Datalogger#20131203214121.297545.110" sensor="Sensor#20131203214121.311561.154">
+          <stream code="HHZ" datalogger="Datalogger#20140205034021.698933.110" sensor="Sensor#20140205034021.714674.154">
             <start>2010-02-05T23:00:01.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>0</dataloggerChannel>

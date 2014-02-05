@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seiscomp xmlns="http://geofon.gfz-potsdam.de/ns/seiscomp3-schema/0.7" version="0.7">
+  <Inventory>
+    <sensor publicID="Sensor#20140205040803.998768.7" name="AFI.2013.214.H100" response="ResponsePAZ#20140205040803.998914.8">
+      <description>STS-1VBB</description>
+      <model>STS-1VBB</model>
+      <manufacturer>Streckeisen</manufacturer>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="1">
+        <start>2013-08-02T09:15:59.0000Z</start>
+        <gain>2789.7</gain>
+        <gainFrequency>0.05</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20140205040803.999462.12" name="AFI.2013.212.H110" response="ResponsePAZ#20140205040803.999507.13">
+      <description>STS-2.5</description>
+      <model>STS-2.5</model>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="1">
+        <start>2013-07-31T00:00:00.0000Z</start>
+        <gain>1459</gain>
+        <gainFrequency>0.02</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20140205040804.000034.15" name="AFI.2013.214.H200" response="ResponsePAZ#20140205040804.000077.16">
+      <description>STS-1VBB</description>
+      <model>STS-1VBB</model>
+      <manufacturer>Streckeisen</manufacturer>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="2">
+        <start>2013-08-02T09:15:59.0000Z</start>
+        <gain>2748.83</gain>
+        <gainFrequency>0.05</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20140205040804.000476.18" name="AFI.2013.212.H210" response="ResponsePAZ#20140205040804.000515.19">
+      <description>STS-2.5</description>
+      <model>STS-2.5</model>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="2">
+        <start>2013-07-31T00:00:00.0000Z</start>
+        <gain>1459</gain>
+        <gainFrequency>0.02</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20140205040804.000993.21" name="AFI.2013.214.HZ00" response="ResponsePAZ#20140205040804.001036.22">
+      <description>STS-1VBB</description>
+      <model>STS-1VBB</model>
+      <manufacturer>Streckeisen</manufacturer>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="0">
+        <start>2013-08-02T09:15:59.0000Z</start>
+        <gain>3269.7</gain>
+        <gainFrequency>0.05</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20140205040804.001462.24" name="AFI.2013.212.HZ10" response="ResponsePAZ#20140205040804.001501.25">
+      <description>STS-2.5</description>
+      <model>STS-2.5</model>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="0">
+        <start>2013-07-31T00:00:00.0000Z</start>
+        <gain>1459</gain>
+        <gainFrequency>0.02</gainFrequency>
+      </calibration>
+    </sensor>
+    <datalogger publicID="Datalogger#20140205040803.998177.5" name="AFI.2013.214.H00">
+      <description>AFI.2013.214.H00</description>
+      <gain>1677720</gain>
+      <maxClockDrift>0</maxClockDrift>
+      <calibration serialNumber="xxxx" channel="1">
+        <start>2013-08-02T09:15:59.0000Z</start>
+        <gain>1677720</gain>
+        <gainFrequency>0</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="2">
+        <start>2013-08-02T09:15:59.0000Z</start>
+        <gain>1677720</gain>
+        <gainFrequency>0</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="0">
+        <start>2013-08-02T09:15:59.0000Z</start>
+        <gain>1677720</gain>
+        <gainFrequency>0</gainFrequency>
+      </calibration>
+      <decimation sampleRateNumerator="20" sampleRateDenominator="1">
+        <digitalFilterChain>ResponseFIR#20140205040804.000778.20</digitalFilterChain>
+      </decimation>
+    </datalogger>
+    <datalogger publicID="Datalogger#20140205040803.999251.10" name="AFI.2013.212.H10">
+      <description>AFI.2013.212.H10</description>
+      <gain>1677720</gain>
+      <maxClockDrift>0</maxClockDrift>
+      <calibration serialNumber="xxxx" channel="1">
+        <start>2013-07-31T00:00:00.0000Z</start>
+        <gain>1677720</gain>
+        <gainFrequency>0</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="2">
+        <start>2013-07-31T00:00:00.0000Z</start>
+        <gain>1677720</gain>
+        <gainFrequency>0</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="0">
+        <start>2013-07-31T00:00:00.0000Z</start>
+        <gain>1677720</gain>
+        <gainFrequency>0</gainFrequency>
+      </calibration>
+      <decimation sampleRateNumerator="40" sampleRateDenominator="1">
+        <digitalFilterChain>ResponseFIR#20140205040804.001314.23</digitalFilterChain>
+      </decimation>
+    </datalogger>
+    <responsePAZ publicID="ResponsePAZ#20140205040803.998914.8" name="AFI.2013.214.H100">
+      <type>A</type>
+      <gain>2789.7</gain>
+      <gainFrequency>0.05</gainFrequency>
+      <normalizationFactor>3947.79</normalizationFactor>
+      <normalizationFrequency>0.05</normalizationFrequency>
+      <numberOfZeros>4</numberOfZeros>
+      <numberOfPoles>6</numberOfPoles>
+      <zeros>(0,0) (0,0) (-0.0239116,0) (-0.0239116,0)</zeros>
+      <poles>(-0.0140889,0.01234) (-0.0140889,-0.01234) (-0.0154839,0) (-0.028436,0) (-39.18,49.12) (-39.18,-49.12)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20140205040803.999507.13" name="AFI.2013.212.H110">
+      <type>A</type>
+      <gain>1459</gain>
+      <gainFrequency>0.02</gainFrequency>
+      <normalizationFactor>45.5532</normalizationFactor>
+      <normalizationFrequency>0.02</normalizationFrequency>
+      <numberOfZeros>6</numberOfZeros>
+      <numberOfPoles>7</numberOfPoles>
+      <zeros>(0,0) (0,0) (-9.42478,0) (-628.319,0) (-565.487,979.452) (-565.487,-979.452)</zeros>
+      <poles>(-0.037,0.037) (-0.037,-0.037) (-9.73894,0) (-219.911,138.23) (-219.911,-138.23) (-219.911,684.867) (-219.911,-684.867)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20140205040804.000077.16" name="AFI.2013.214.H200">
+      <type>A</type>
+      <gain>2748.83</gain>
+      <gainFrequency>0.05</gainFrequency>
+      <normalizationFactor>3949.74</normalizationFactor>
+      <normalizationFrequency>0.05</normalizationFrequency>
+      <numberOfZeros>4</numberOfZeros>
+      <numberOfPoles>6</numberOfPoles>
+      <zeros>(0,0) (0,0) (-0.0128026,0) (-0.0128026,0)</zeros>
+      <poles>(-0.0122275,0.01234) (-0.0122275,-0.01234) (-0.00668267,0) (-0.0195974,0) (-39.18,49.12) (-39.18,-49.12)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20140205040804.000515.19" name="AFI.2013.212.H210">
+      <type>A</type>
+      <gain>1459</gain>
+      <gainFrequency>0.02</gainFrequency>
+      <normalizationFactor>45.5532</normalizationFactor>
+      <normalizationFrequency>0.02</normalizationFrequency>
+      <numberOfZeros>6</numberOfZeros>
+      <numberOfPoles>7</numberOfPoles>
+      <zeros>(0,0) (0,0) (-9.42478,0) (-628.319,0) (-565.487,979.452) (-565.487,-979.452)</zeros>
+      <poles>(-0.037,0.037) (-0.037,-0.037) (-9.73894,0) (-219.911,138.23) (-219.911,-138.23) (-219.911,684.867) (-219.911,-684.867)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20140205040804.001036.22" name="AFI.2013.214.HZ00">
+      <type>A</type>
+      <gain>3269.7</gain>
+      <gainFrequency>0.05</gainFrequency>
+      <normalizationFactor>3949.12</normalizationFactor>
+      <normalizationFrequency>0.05</normalizationFrequency>
+      <numberOfZeros>4</numberOfZeros>
+      <numberOfPoles>6</numberOfPoles>
+      <zeros>(0,0) (0,0) (-0.0134438,0) (-0.0134438,0)</zeros>
+      <poles>(-0.0123649,0.01234) (-0.0123649,-0.01234) (-0.00801336,0) (-0.0189828,0) (-39.18,49.12) (-39.18,-49.12)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20140205040804.001501.25" name="AFI.2013.212.HZ10">
+      <type>A</type>
+      <gain>1459</gain>
+      <gainFrequency>0.02</gainFrequency>
+      <normalizationFactor>45.5532</normalizationFactor>
+      <normalizationFrequency>0.02</normalizationFrequency>
+      <numberOfZeros>6</numberOfZeros>
+      <numberOfPoles>7</numberOfPoles>
+      <zeros>(0,0) (0,0) (-9.42478,0) (-628.319,0) (-565.487,979.452) (-565.487,-979.452)</zeros>
+      <poles>(-0.037,0.037) (-0.037,-0.037) (-9.73894,0) (-219.911,138.23) (-219.911,-138.23) (-219.911,684.867) (-219.911,-684.867)</poles>
+    </responsePAZ>
+    <responseFIR publicID="ResponseFIR#20140205040803.998393.6" name="AFI.00.BH1.2013.214.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>32.61</delay>
+      <correction>32.61</correction>
+      <numberOfCoefficients>67</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>-3.65342e-17 3.67488e-08 -4.2706e-07 1.14502e-06 -1.87594e-07 -3.37274e-07 2.78747e-06 -3.74403e-06 5.41172e-06 7.47336e-06 -0.000517759 0.000210677 4.63258e-05 -0.000608222 0.00144175 -0.00240627 0.00322534 -0.00350639 0.00281441 -0.000771971 -0.00280512 0.00777805 -0.0135815 0.0191765 -0.0229704 0.0240398 -0.0220986 0.00860734 0.0117525 -0.0447787 0.0964923 -0.191755 0.527652 0.724167 -0.156905 0.0442574 0.00314168 -0.0266714 0.0361532 -0.0385687 0.0310842 -0.0235259 0.0153211 -0.00740398 0.00109645 0.00309797 -0.0051932 0.00556131 -0.0047611 0.00338213 -0.00192052 0.000715218 7.67719e-05 -0.000451897 0.0005027 -0.000565037 -5.568e-05 1.57736e-05 -1.41985e-06 8.14909e-07 6.80795e-07 -1.25273e-06 1.52435e-06 -2.83336e-07 -1.06384e-08 1.25712e-09 -5.42954e-11</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140205040803.999305.11" name="AFI.10.BH1.2013.212.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>17.2184</delay>
+      <correction>17.2184</correction>
+      <numberOfCoefficients>39</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>4.18952e-13 0.000330318 0.00102921 -0.00314123 0.000205709 0.00152521 -0.00623193 0.0104801 -0.0131202 0.0107821 -0.00144455 -0.0158729 0.0395074 -0.0651036 0.0853716 -0.0891913 0.0500619 0.837233 0.266723 -0.166693 0.095284 -0.0509218 0.0161458 0.00706362 -0.0183877 0.0199414 -0.0154895 0.00852735 -0.00255789 -0.00181103 0.00242649 -0.00375769 0.000467293 0.000633072 -1.56874e-06 -1.2548e-05 3.21041e-07 -2.63324e-08 -5.09997e-08</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140205040803.999822.14" name="AFI.00.BH2.2013.214.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>32.61</delay>
+      <correction>32.61</correction>
+      <numberOfCoefficients>67</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>-3.65342e-17 3.67488e-08 -4.2706e-07 1.14502e-06 -1.87594e-07 -3.37274e-07 2.78747e-06 -3.74403e-06 5.41172e-06 7.47336e-06 -0.000517759 0.000210677 4.63258e-05 -0.000608222 0.00144175 -0.00240627 0.00322534 -0.00350639 0.00281441 -0.000771971 -0.00280512 0.00777805 -0.0135815 0.0191765 -0.0229704 0.0240398 -0.0220986 0.00860734 0.0117525 -0.0447787 0.0964923 -0.191755 0.527652 0.724167 -0.156905 0.0442574 0.00314168 -0.0266714 0.0361532 -0.0385687 0.0310842 -0.0235259 0.0153211 -0.00740398 0.00109645 0.00309797 -0.0051932 0.00556131 -0.0047611 0.00338213 -0.00192052 0.000715218 7.67719e-05 -0.000451897 0.0005027 -0.000565037 -5.568e-05 1.57736e-05 -1.41985e-06 8.14909e-07 6.80795e-07 -1.25273e-06 1.52435e-06 -2.83336e-07 -1.06384e-08 1.25712e-09 -5.42954e-11</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140205040804.000327.17" name="AFI.10.BH2.2013.212.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>17.2184</delay>
+      <correction>17.2184</correction>
+      <numberOfCoefficients>39</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>4.18952e-13 0.000330318 0.00102921 -0.00314123 0.000205709 0.00152521 -0.00623193 0.0104801 -0.0131202 0.0107821 -0.00144455 -0.0158729 0.0395074 -0.0651036 0.0853716 -0.0891913 0.0500619 0.837233 0.266723 -0.166693 0.095284 -0.0509218 0.0161458 0.00706362 -0.0183877 0.0199414 -0.0154895 0.00852735 -0.00255789 -0.00181103 0.00242649 -0.00375769 0.000467293 0.000633072 -1.56874e-06 -1.2548e-05 3.21041e-07 -2.63324e-08 -5.09997e-08</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140205040804.000778.20" name="AFI.00.BHZ.2013.214.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>32.61</delay>
+      <correction>32.61</correction>
+      <numberOfCoefficients>67</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>-3.65342e-17 3.67488e-08 -4.2706e-07 1.14502e-06 -1.87594e-07 -3.37274e-07 2.78747e-06 -3.74403e-06 5.41172e-06 7.47336e-06 -0.000517759 0.000210677 4.63258e-05 -0.000608222 0.00144175 -0.00240627 0.00322534 -0.00350639 0.00281441 -0.000771971 -0.00280512 0.00777805 -0.0135815 0.0191765 -0.0229704 0.0240398 -0.0220986 0.00860734 0.0117525 -0.0447787 0.0964923 -0.191755 0.527652 0.724167 -0.156905 0.0442574 0.00314168 -0.0266714 0.0361532 -0.0385687 0.0310842 -0.0235259 0.0153211 -0.00740398 0.00109645 0.00309797 -0.0051932 0.00556131 -0.0047611 0.00338213 -0.00192052 0.000715218 7.67719e-05 -0.000451897 0.0005027 -0.000565037 -5.568e-05 1.57736e-05 -1.41985e-06 8.14909e-07 6.80795e-07 -1.25273e-06 1.52435e-06 -2.83336e-07 -1.06384e-08 1.25712e-09 -5.42954e-11</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140205040804.001314.23" name="AFI.10.BHZ.2013.212.stage_3">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>17.2184</delay>
+      <correction>17.2184</correction>
+      <numberOfCoefficients>39</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>4.18952e-13 0.000330318 0.00102921 -0.00314123 0.000205709 0.00152521 -0.00623193 0.0104801 -0.0131202 0.0107821 -0.00144455 -0.0158729 0.0395074 -0.0651036 0.0853716 -0.0891913 0.0500619 0.837233 0.266723 -0.166693 0.095284 -0.0509218 0.0161458 0.00706362 -0.0183877 0.0199414 -0.0154895 0.00852735 -0.00255789 -0.00181103 0.00242649 -0.00375769 0.000467293 0.000633072 -1.56874e-06 -1.2548e-05 3.21041e-07 -2.63324e-08 -5.09997e-08</coefficients>
+    </responseFIR>
+    <network publicID="Network#20140205040803.997245.2" code="IU">
+      <start>1980-01-01T00:00:00.0000Z</start>
+      <description> </description>
+      <netClass>p</netClass>
+      <archive> </archive>
+      <restricted>false</restricted>
+      <shared>true</shared>
+      <station publicID="Station#20140205040803.997479.3" code="AFI">
+        <start>2010-02-23T00:00:00.0000Z</start>
+        <description>Afiamalu, Samoa</description>
+        <latitude>-13.9093</latitude>
+        <longitude>-171.7773</longitude>
+        <elevation>706</elevation>
+        <place>Afiamalu</place>
+        <country> Samoa</country>
+        <affiliation>(GSN) IRIS/USGS (IU) and Samoa Met. Div.</affiliation>
+        <archive> </archive>
+        <restricted>false</restricted>
+        <shared>true</shared>
+        <sensorLocation publicID="SensorLocation#20140205040803.997954.4" code="00">
+          <start>2013-08-02T09:15:59.0000Z</start>
+          <latitude>-13.9093</latitude>
+          <longitude>-171.7773</longitude>
+          <elevation>705</elevation>
+          <stream code="BH1" datalogger="Datalogger#20140205040803.998177.5" sensor="Sensor#20140205040803.998768.7">
+            <start>2013-08-02T09:15:59.0000Z</start>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>1</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>1</sensorChannel>
+            <sampleRateNumerator>20</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>1</depth>
+            <azimuth>0</azimuth>
+            <dip>0</dip>
+            <gain>4680340000</gain>
+            <gainFrequency>0.05</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="BH2" datalogger="Datalogger#20140205040803.998177.5" sensor="Sensor#20140205040804.000034.15">
+            <start>2013-08-02T09:15:59.0000Z</start>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>2</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>2</sensorChannel>
+            <sampleRateNumerator>20</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>1</depth>
+            <azimuth>90</azimuth>
+            <dip>0</dip>
+            <gain>4611770000</gain>
+            <gainFrequency>0.05</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="BHZ" datalogger="Datalogger#20140205040803.998177.5" sensor="Sensor#20140205040804.000993.21">
+            <start>2013-08-02T09:15:59.0000Z</start>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>0</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>0</sensorChannel>
+            <sampleRateNumerator>20</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>1</depth>
+            <azimuth>0</azimuth>
+            <dip>-90</dip>
+            <gain>5485640000</gain>
+            <gainFrequency>0.05</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+        </sensorLocation>
+        <sensorLocation publicID="SensorLocation#20140205040803.999173.9" code="10">
+          <start>2013-07-31T00:00:00.0000Z</start>
+          <latitude>-13.9093</latitude>
+          <longitude>-171.7773</longitude>
+          <elevation>705</elevation>
+          <stream code="BH1" datalogger="Datalogger#20140205040803.999251.10" sensor="Sensor#20140205040803.999462.12">
+            <start>2013-07-31T00:00:00.0000Z</start>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>1</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>1</sensorChannel>
+            <sampleRateNumerator>40</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>1</depth>
+            <azimuth>0</azimuth>
+            <dip>0</dip>
+            <gain>2447790000</gain>
+            <gainFrequency>0.02</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="BH2" datalogger="Datalogger#20140205040803.999251.10" sensor="Sensor#20140205040804.000476.18">
+            <start>2013-07-31T00:00:00.0000Z</start>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>2</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>2</sensorChannel>
+            <sampleRateNumerator>40</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>1</depth>
+            <azimuth>90</azimuth>
+            <dip>0</dip>
+            <gain>2447790000</gain>
+            <gainFrequency>0.02</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="BHZ" datalogger="Datalogger#20140205040803.999251.10" sensor="Sensor#20140205040804.001462.24">
+            <start>2013-07-31T00:00:00.0000Z</start>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>0</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>0</sensorChannel>
+            <sampleRateNumerator>40</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>1</depth>
+            <azimuth>0</azimuth>
+            <dip>-90</dip>
+            <gain>2447790000</gain>
+            <gainFrequency>0.02</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>CG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+        </sensorLocation>
+      </station>
+    </network>
+  </Inventory>
+</seiscomp>

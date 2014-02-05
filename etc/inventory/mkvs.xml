@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <seiscomp xmlns="http://geofon.gfz-potsdam.de/ns/seiscomp3-schema/0.7" version="0.7">
   <Inventory>
-    <sensor publicID="Sensor#20140123020810.246314.45" name="MKVS.2011.311.N120" response="ResponsePAZ#20140123020810.246724.46">
+    <sensor publicID="Sensor#20140205033947.318589.45" name="MKVS.2011.311.N120" response="ResponsePAZ#20140205033947.31873.46">
       <description>CUSP3D</description>
       <model>CUSP3D</model>
       <manufacturer>CSI</manufacturer>
@@ -13,7 +13,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20140123020810.248151.50" name="MKVS.2013.284.N120" response="ResponsePAZ#20140123020810.248342.51">
+    <sensor publicID="Sensor#20140205033947.319539.50" name="MKVS.2013.284.N120" response="ResponsePAZ#20140205033947.319587.51">
       <description>CUSP3D</description>
       <model>CUSP3D</model>
       <manufacturer>CSI</manufacturer>
@@ -24,7 +24,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20140123020810.24949.54" name="MKVS.2011.311.N220" response="ResponsePAZ#20140123020810.249801.55">
+    <sensor publicID="Sensor#20140205033947.320351.54" name="MKVS.2011.311.N220" response="ResponsePAZ#20140205033947.320384.55">
       <description>CUSP3D</description>
       <model>CUSP3D</model>
       <manufacturer>CSI</manufacturer>
@@ -36,7 +36,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20140123020810.251094.58" name="MKVS.2013.284.N220" response="ResponsePAZ#20140123020810.251275.59">
+    <sensor publicID="Sensor#20140205033947.321061.58" name="MKVS.2013.284.N220" response="ResponsePAZ#20140205033947.321101.59">
       <description>CUSP3D</description>
       <model>CUSP3D</model>
       <manufacturer>CSI</manufacturer>
@@ -47,7 +47,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20140123020810.252507.62" name="MKVS.2011.311.NZ20" response="ResponsePAZ#20140123020810.252679.63">
+    <sensor publicID="Sensor#20140205033947.321778.62" name="MKVS.2011.311.NZ20" response="ResponsePAZ#20140205033947.321812.63">
       <description>CUSP3D</description>
       <model>CUSP3D</model>
       <manufacturer>CSI</manufacturer>
@@ -59,7 +59,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20140123020810.253688.66" name="MKVS.2013.284.NZ20" response="ResponsePAZ#20140123020810.253864.67">
+    <sensor publicID="Sensor#20140205033947.322619.66" name="MKVS.2013.284.NZ20" response="ResponsePAZ#20140205033947.322662.67">
       <description>CUSP3D</description>
       <model>CUSP3D</model>
       <manufacturer>CSI</manufacturer>
@@ -70,7 +70,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <datalogger publicID="Datalogger#20140123020810.244979.42" name="MKVS.2011.311.N20">
+    <datalogger publicID="Datalogger#20140205033947.317731.42" name="MKVS.2011.311.N20">
       <description>MKVS.2011.311.N20</description>
       <gain>1</gain>
       <maxClockDrift>0.02</maxClockDrift>
@@ -93,11 +93,11 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
       <decimation sampleRateNumerator="50" sampleRateDenominator="1">
-        <digitalFilterChain>ResponseFIR#20140123020810.251731.60 ResponseFIR#20140123020810.25211.61</digitalFilterChain>
+        <digitalFilterChain>ResponseFIR#20140205033947.321277.60 ResponseFIR#20140205033947.321528.61</digitalFilterChain>
       </decimation>
       <decimation sampleRateNumerator="200" sampleRateDenominator="1"/>
     </datalogger>
-    <datalogger publicID="Datalogger#20140123020810.247174.47" name="MKVS.2013.284.N20">
+    <datalogger publicID="Datalogger#20140205033947.318977.47" name="MKVS.2013.284.N20">
       <description>MKVS.2013.284.N20</description>
       <gain>1</gain>
       <maxClockDrift>0.02</maxClockDrift>
@@ -117,11 +117,11 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
       <decimation sampleRateNumerator="50" sampleRateDenominator="1">
-        <digitalFilterChain>ResponseFIR#20140123020810.253055.64 ResponseFIR#20140123020810.25337.65</digitalFilterChain>
+        <digitalFilterChain>ResponseFIR#20140205033947.321988.64 ResponseFIR#20140205033947.32224.65</digitalFilterChain>
       </decimation>
       <decimation sampleRateNumerator="200" sampleRateDenominator="1"/>
     </datalogger>
-    <responsePAZ publicID="ResponsePAZ#20140123020810.246724.46" name="MKVS.2011.311.N120">
+    <responsePAZ publicID="ResponsePAZ#20140205033947.31873.46" name="MKVS.2011.311.N120">
       <type>A</type>
       <gain>101972</gain>
       <gainFrequency>1</gainFrequency>
@@ -132,7 +132,7 @@
       <zeros/>
       <poles/>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20140123020810.248342.51" name="MKVS.2013.284.N120">
+    <responsePAZ publicID="ResponsePAZ#20140205033947.319587.51" name="MKVS.2013.284.N120">
       <type>A</type>
       <gain>101972</gain>
       <gainFrequency>1</gainFrequency>
@@ -143,7 +143,7 @@
       <zeros/>
       <poles/>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20140123020810.249801.55" name="MKVS.2011.311.N220">
+    <responsePAZ publicID="ResponsePAZ#20140205033947.320384.55" name="MKVS.2011.311.N220">
       <type>A</type>
       <gain>101972</gain>
       <gainFrequency>1</gainFrequency>
@@ -154,7 +154,7 @@
       <zeros/>
       <poles/>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20140123020810.251275.59" name="MKVS.2013.284.N220">
+    <responsePAZ publicID="ResponsePAZ#20140205033947.321101.59" name="MKVS.2013.284.N220">
       <type>A</type>
       <gain>101972</gain>
       <gainFrequency>1</gainFrequency>
@@ -165,7 +165,7 @@
       <zeros/>
       <poles/>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20140123020810.252679.63" name="MKVS.2011.311.NZ20">
+    <responsePAZ publicID="ResponsePAZ#20140205033947.321812.63" name="MKVS.2011.311.NZ20">
       <type>A</type>
       <gain>101972</gain>
       <gainFrequency>1</gainFrequency>
@@ -176,7 +176,7 @@
       <zeros/>
       <poles/>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20140123020810.253864.67" name="MKVS.2013.284.NZ20">
+    <responsePAZ publicID="ResponsePAZ#20140205033947.322662.67" name="MKVS.2013.284.NZ20">
       <type>A</type>
       <gain>101972</gain>
       <gainFrequency>1</gainFrequency>
@@ -187,7 +187,7 @@
       <zeros/>
       <poles/>
     </responsePAZ>
-    <responseFIR publicID="ResponseFIR#20140123020810.245398.43" name="MKVS.20.BN1.2011.311.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033947.317917.43" name="MKVS.20.BN1.2011.311.stage_3">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -196,7 +196,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20140123020810.245879.44" name="MKVS.20.BN1.2011.311.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205033947.318294.44" name="MKVS.20.BN1.2011.311.stage_4">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -205,7 +205,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20140123020810.247425.48" name="MKVS.20.BN1.2013.284.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033947.31903.48" name="MKVS.20.BN1.2013.284.stage_3">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -214,7 +214,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20140123020810.24778.49" name="MKVS.20.BN1.2013.284.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205033947.31929.49" name="MKVS.20.BN1.2013.284.stage_4">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -223,7 +223,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20140123020810.248755.52" name="MKVS.20.BN2.2011.311.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033947.319838.52" name="MKVS.20.BN2.2011.311.stage_3">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -232,7 +232,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20140123020810.24908.53" name="MKVS.20.BN2.2011.311.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205033947.320106.53" name="MKVS.20.BN2.2011.311.stage_4">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -241,7 +241,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20140123020810.25037.56" name="MKVS.20.BN2.2013.284.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033947.320561.56" name="MKVS.20.BN2.2013.284.stage_3">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -250,7 +250,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20140123020810.250747.57" name="MKVS.20.BN2.2013.284.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205033947.320814.57" name="MKVS.20.BN2.2013.284.stage_4">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -259,7 +259,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20140123020810.251731.60" name="MKVS.20.BNZ.2011.311.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033947.321277.60" name="MKVS.20.BNZ.2011.311.stage_3">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -268,7 +268,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20140123020810.25211.61" name="MKVS.20.BNZ.2011.311.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205033947.321528.61" name="MKVS.20.BNZ.2011.311.stage_4">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -277,7 +277,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20140123020810.253055.64" name="MKVS.20.BNZ.2013.284.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033947.321988.64" name="MKVS.20.BNZ.2013.284.stage_3">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -286,7 +286,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20140123020810.25337.65" name="MKVS.20.BNZ.2013.284.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205033947.32224.65" name="MKVS.20.BNZ.2013.284.stage_4">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -295,14 +295,14 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <network publicID="Network#20140123020810.242252.2" code="NZ">
+    <network publicID="Network#20140205033947.315446.2" code="NZ">
       <start>1980-01-01T00:00:00.0000Z</start>
       <description> </description>
       <netClass>p</netClass>
       <archive> </archive>
       <restricted>false</restricted>
       <shared>true</shared>
-      <station publicID="Station#20140123020810.242507.3" code="MKVS">
+      <station publicID="Station#20140205033947.31563.3" code="MKVS">
         <start>2011-11-07T00:00:00.0000Z</start>
         <description>Makara Village</description>
         <latitude>-41.265421</latitude>
@@ -313,12 +313,12 @@
         <archive> </archive>
         <restricted>false</restricted>
         <shared>true</shared>
-        <sensorLocation publicID="SensorLocation#20140123020810.24463.41" code="20">
+        <sensorLocation publicID="SensorLocation#20140205033947.317518.41" code="20">
           <start>2011-11-07T02:03:00.0000Z</start>
           <latitude>-41.265421</latitude>
           <longitude>174.705524</longitude>
           <elevation>81</elevation>
-          <stream code="BN1" datalogger="Datalogger#20140123020810.244979.42" sensor="Sensor#20140123020810.246314.45">
+          <stream code="BN1" datalogger="Datalogger#20140205033947.317731.42" sensor="Sensor#20140205033947.318589.45">
             <start>2011-11-07T02:03:00.0000Z</start>
             <end>2013-10-11T02:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -338,7 +338,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="BN1" datalogger="Datalogger#20140123020810.247174.47" sensor="Sensor#20140123020810.248151.50">
+          <stream code="BN1" datalogger="Datalogger#20140205033947.318977.47" sensor="Sensor#20140205033947.319539.50">
             <start>2013-10-11T02:55:00.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>1</dataloggerChannel>
@@ -357,7 +357,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="BN2" datalogger="Datalogger#20140123020810.244979.42" sensor="Sensor#20140123020810.24949.54">
+          <stream code="BN2" datalogger="Datalogger#20140205033947.317731.42" sensor="Sensor#20140205033947.320351.54">
             <start>2011-11-07T02:03:00.0000Z</start>
             <end>2013-10-11T02:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -377,7 +377,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="BN2" datalogger="Datalogger#20140123020810.247174.47" sensor="Sensor#20140123020810.251094.58">
+          <stream code="BN2" datalogger="Datalogger#20140205033947.318977.47" sensor="Sensor#20140205033947.321061.58">
             <start>2013-10-11T02:55:00.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>2</dataloggerChannel>
@@ -396,7 +396,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="BNZ" datalogger="Datalogger#20140123020810.244979.42" sensor="Sensor#20140123020810.252507.62">
+          <stream code="BNZ" datalogger="Datalogger#20140205033947.317731.42" sensor="Sensor#20140205033947.321778.62">
             <start>2011-11-07T02:03:00.0000Z</start>
             <end>2013-10-11T02:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -416,7 +416,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="BNZ" datalogger="Datalogger#20140123020810.247174.47" sensor="Sensor#20140123020810.253688.66">
+          <stream code="BNZ" datalogger="Datalogger#20140205033947.318977.47" sensor="Sensor#20140205033947.322619.66">
             <start>2013-10-11T02:55:00.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>0</dataloggerChannel>
@@ -435,7 +435,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HN1" datalogger="Datalogger#20140123020810.244979.42" sensor="Sensor#20140123020810.246314.45">
+          <stream code="HN1" datalogger="Datalogger#20140205033947.317731.42" sensor="Sensor#20140205033947.318589.45">
             <start>2011-11-07T02:03:00.0000Z</start>
             <end>2013-10-11T02:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -455,7 +455,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HN1" datalogger="Datalogger#20140123020810.247174.47" sensor="Sensor#20140123020810.248151.50">
+          <stream code="HN1" datalogger="Datalogger#20140205033947.318977.47" sensor="Sensor#20140205033947.319539.50">
             <start>2013-10-11T02:55:00.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>1</dataloggerChannel>
@@ -474,7 +474,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HN2" datalogger="Datalogger#20140123020810.244979.42" sensor="Sensor#20140123020810.24949.54">
+          <stream code="HN2" datalogger="Datalogger#20140205033947.317731.42" sensor="Sensor#20140205033947.320351.54">
             <start>2011-11-07T02:03:00.0000Z</start>
             <end>2013-10-11T02:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -494,7 +494,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HN2" datalogger="Datalogger#20140123020810.247174.47" sensor="Sensor#20140123020810.251094.58">
+          <stream code="HN2" datalogger="Datalogger#20140205033947.318977.47" sensor="Sensor#20140205033947.321061.58">
             <start>2013-10-11T02:55:00.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>2</dataloggerChannel>
@@ -513,7 +513,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HNZ" datalogger="Datalogger#20140123020810.244979.42" sensor="Sensor#20140123020810.252507.62">
+          <stream code="HNZ" datalogger="Datalogger#20140205033947.317731.42" sensor="Sensor#20140205033947.321778.62">
             <start>2011-11-07T02:03:00.0000Z</start>
             <end>2013-10-11T02:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -533,7 +533,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HNZ" datalogger="Datalogger#20140123020810.247174.47" sensor="Sensor#20140123020810.253688.66">
+          <stream code="HNZ" datalogger="Datalogger#20140205033947.318977.47" sensor="Sensor#20140205033947.322619.66">
             <start>2013-10-11T02:55:00.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>0</dataloggerChannel>

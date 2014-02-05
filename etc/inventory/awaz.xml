@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <seiscomp xmlns="http://geofon.gfz-potsdam.de/ns/seiscomp3-schema/0.7" version="0.7">
   <Inventory>
-    <sensor publicID="Sensor#20131203213934.614849.18" name="AWAZ.2010.348.H110" response="ResponsePAZ#20131203213934.614994.19">
+    <sensor publicID="Sensor#20140205033925.090841.18" name="AWAZ.2010.348.H110" response="ResponsePAZ#20140205033925.090991.19">
       <description>2</description>
       <model>2</model>
       <manufacturer>Duke</manufacturer>
@@ -12,7 +12,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203213934.615574.22" name="AWAZ.2010.348.H210" response="ResponsePAZ#20131203213934.615622.23">
+    <sensor publicID="Sensor#20140205033925.091588.22" name="AWAZ.2010.348.H210" response="ResponsePAZ#20140205033925.091638.23">
       <description>2</description>
       <model>2</model>
       <manufacturer>Duke</manufacturer>
@@ -23,7 +23,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203213934.616183.26" name="AWAZ.2010.348.HZ10" response="ResponsePAZ#20131203213934.61623.27">
+    <sensor publicID="Sensor#20140205033925.092162.26" name="AWAZ.2010.348.HZ10" response="ResponsePAZ#20140205033925.092207.27">
       <description>2</description>
       <model>2</model>
       <manufacturer>Duke</manufacturer>
@@ -34,7 +34,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <datalogger publicID="Datalogger#20131203213934.614154.15" name="AWAZ.2010.348.H10">
+    <datalogger publicID="Datalogger#20140205033925.089296.15" name="AWAZ.2010.348.H10">
       <description>AWAZ.2010.348.H10</description>
       <gain>419430</gain>
       <maxClockDrift>0.01</maxClockDrift>
@@ -54,11 +54,11 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
       <decimation sampleRateNumerator="100" sampleRateDenominator="1">
-        <analogueFilterChain>ResponsePAZ#20131203213934.616131.25</analogueFilterChain>
-        <digitalFilterChain>ResponseFIR#20131203213934.61585.24</digitalFilterChain>
+        <analogueFilterChain>ResponsePAZ#20140205033925.092117.25</analogueFilterChain>
+        <digitalFilterChain>ResponseFIR#20140205033925.09187.24</digitalFilterChain>
       </decimation>
     </datalogger>
-    <responsePAZ publicID="ResponsePAZ#20131203213934.614717.17" name="AWAZ.10.EH1.2010.348.stage_2">
+    <responsePAZ publicID="ResponsePAZ#20140205033925.090689.17" name="AWAZ.10.EH1.2010.348.stage_2">
       <type>A</type>
       <gain>30</gain>
       <gainFrequency>15</gainFrequency>
@@ -69,7 +69,7 @@
       <zeros/>
       <poles/>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203213934.614994.19" name="AWAZ.2010.348.H110">
+    <responsePAZ publicID="ResponsePAZ#20140205033925.090991.19" name="AWAZ.2010.348.H110">
       <type>A</type>
       <gain>62.2</gain>
       <gainFrequency>15</gainFrequency>
@@ -80,7 +80,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-7.66549,9.95761) (-7.66549,-9.95761)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203213934.615528.21" name="AWAZ.10.EH2.2010.348.stage_2">
+    <responsePAZ publicID="ResponsePAZ#20140205033925.09154.21" name="AWAZ.10.EH2.2010.348.stage_2">
       <type>A</type>
       <gain>30</gain>
       <gainFrequency>15</gainFrequency>
@@ -91,7 +91,7 @@
       <zeros/>
       <poles/>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203213934.615622.23" name="AWAZ.2010.348.H210">
+    <responsePAZ publicID="ResponsePAZ#20140205033925.091638.23" name="AWAZ.2010.348.H210">
       <type>A</type>
       <gain>62.2</gain>
       <gainFrequency>15</gainFrequency>
@@ -102,7 +102,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-7.66549,9.95761) (-7.66549,-9.95761)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203213934.616131.25" name="AWAZ.10.EHZ.2010.348.stage_2">
+    <responsePAZ publicID="ResponsePAZ#20140205033925.092117.25" name="AWAZ.10.EHZ.2010.348.stage_2">
       <type>A</type>
       <gain>30</gain>
       <gainFrequency>15</gainFrequency>
@@ -113,7 +113,7 @@
       <zeros/>
       <poles/>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203213934.61623.27" name="AWAZ.2010.348.HZ10">
+    <responsePAZ publicID="ResponsePAZ#20140205033925.092207.27" name="AWAZ.2010.348.HZ10">
       <type>A</type>
       <gain>62.2</gain>
       <gainFrequency>15</gainFrequency>
@@ -124,7 +124,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-7.66549,9.95761) (-7.66549,-9.95761)</poles>
     </responsePAZ>
-    <responseFIR publicID="ResponseFIR#20131203213934.614385.16" name="AWAZ.10.EH1.2010.348.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205033925.090365.16" name="AWAZ.10.EH1.2010.348.stage_4">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.167</delay>
@@ -133,7 +133,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203213934.615307.20" name="AWAZ.10.EH2.2010.348.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205033925.091305.20" name="AWAZ.10.EH2.2010.348.stage_4">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.167</delay>
@@ -142,7 +142,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203213934.61585.24" name="AWAZ.10.EHZ.2010.348.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205033925.09187.24" name="AWAZ.10.EHZ.2010.348.stage_4">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.167</delay>
@@ -151,14 +151,14 @@
       <symmetry>A</symmetry>
       <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
     </responseFIR>
-    <network publicID="Network#20131203213934.612929.2" code="NZ">
+    <network publicID="Network#20140205033925.088186.2" code="NZ">
       <start>1980-01-01T00:00:00.0000Z</start>
       <description> </description>
       <netClass>p</netClass>
       <archive> </archive>
       <restricted>false</restricted>
       <shared>true</shared>
-      <station publicID="Station#20131203213934.613154.3" code="AWAZ">
+      <station publicID="Station#20140205033925.088385.3" code="AWAZ">
         <start>2010-12-14T00:00:00.0000Z</start>
         <description>Awhitu Peninsula</description>
         <latitude>-37.06378</latitude>
@@ -169,12 +169,12 @@
         <archive> </archive>
         <restricted>false</restricted>
         <shared>true</shared>
-        <sensorLocation publicID="SensorLocation#20131203213934.613945.14" code="10">
+        <sensorLocation publicID="SensorLocation#20140205033925.08908.14" code="10">
           <start>2010-12-14T01:00:00.0000Z</start>
           <latitude>-37.06378</latitude>
           <longitude>174.64292</longitude>
           <elevation>103</elevation>
-          <stream code="EH1" datalogger="Datalogger#20131203213934.614154.15" sensor="Sensor#20131203213934.614849.18">
+          <stream code="EH1" datalogger="Datalogger#20140205033925.089296.15" sensor="Sensor#20140205033925.090841.18">
             <start>2010-12-14T01:00:00.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>1</dataloggerChannel>
@@ -193,7 +193,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EH2" datalogger="Datalogger#20131203213934.614154.15" sensor="Sensor#20131203213934.615574.22">
+          <stream code="EH2" datalogger="Datalogger#20140205033925.089296.15" sensor="Sensor#20140205033925.091588.22">
             <start>2010-12-14T01:00:00.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>2</dataloggerChannel>
@@ -212,7 +212,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHZ" datalogger="Datalogger#20131203213934.614154.15" sensor="Sensor#20131203213934.616183.26">
+          <stream code="EHZ" datalogger="Datalogger#20140205033925.089296.15" sensor="Sensor#20140205033925.092162.26">
             <start>2010-12-14T01:00:00.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>0</dataloggerChannel>

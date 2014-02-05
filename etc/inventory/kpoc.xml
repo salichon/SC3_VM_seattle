@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <seiscomp xmlns="http://geofon.gfz-potsdam.de/ns/seiscomp3-schema/0.7" version="0.7">
   <Inventory>
-    <sensor publicID="Sensor#20140123020808.490556.36" name="KPOC.2011.237.N120" response="ResponsePAZ#20140123020808.491287.37">
+    <sensor publicID="Sensor#20140205033941.693146.36" name="KPOC.2011.237.N120" response="ResponsePAZ#20140205033941.693672.37">
       <description>CUSP3D</description>
       <model>CUSP3D</model>
       <manufacturer>CSI</manufacturer>
@@ -12,7 +12,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20140123020808.493718.40" name="KPOC.2011.237.N220" response="ResponsePAZ#20140123020808.494265.41">
+    <sensor publicID="Sensor#20140205033941.695556.40" name="KPOC.2011.237.N220" response="ResponsePAZ#20140205033941.695664.41">
       <description>CUSP3D</description>
       <model>CUSP3D</model>
       <manufacturer>CSI</manufacturer>
@@ -23,7 +23,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20140123020808.496163.44" name="KPOC.2011.237.NZ20" response="ResponsePAZ#20140123020808.496718.45">
+    <sensor publicID="Sensor#20140205033941.697335.44" name="KPOC.2011.237.NZ20" response="ResponsePAZ#20140205033941.697437.45">
       <description>CUSP3D</description>
       <model>CUSP3D</model>
       <manufacturer>CSI</manufacturer>
@@ -34,7 +34,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20140123020808.497734.47" name="KPOC.2004.330.N120" response="ResponsePAZ#20140123020808.497978.48">
+    <sensor publicID="Sensor#20140205033941.697923.47" name="KPOC.2004.330.N120" response="ResponsePAZ#20140205033941.697999.48">
       <description>CUSP3A</description>
       <model>CUSP3A</model>
       <manufacturer>CSI</manufacturer>
@@ -46,7 +46,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20140123020808.498941.49" name="KPOC.2004.330.N220" response="ResponsePAZ#20140123020808.499099.50">
+    <sensor publicID="Sensor#20140205033941.698956.49" name="KPOC.2004.330.N220" response="ResponsePAZ#20140205033941.699043.50">
       <description>CUSP3A</description>
       <model>CUSP3A</model>
       <manufacturer>CSI</manufacturer>
@@ -58,7 +58,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20140123020808.499982.51" name="KPOC.2004.330.NZ20" response="ResponsePAZ#20140123020808.500133.52">
+    <sensor publicID="Sensor#20140205033941.699919.51" name="KPOC.2004.330.NZ20" response="ResponsePAZ#20140205033941.700002.52">
       <description>CUSP3A</description>
       <model>CUSP3A</model>
       <manufacturer>CSI</manufacturer>
@@ -70,7 +70,7 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
     </sensor>
-    <datalogger publicID="Datalogger#20140123020808.487439.33" name="KPOC.2011.237.N20">
+    <datalogger publicID="Datalogger#20140205033941.691084.33" name="KPOC.2011.237.N20">
       <description>KPOC.2011.237.N20</description>
       <gain>1</gain>
       <maxClockDrift>0.02</maxClockDrift>
@@ -90,11 +90,11 @@
         <gainFrequency>1</gainFrequency>
       </calibration>
       <decimation sampleRateNumerator="50" sampleRateDenominator="1">
-        <digitalFilterChain>ResponseFIR#20140123020808.49526.42 ResponseFIR#20140123020808.495692.43</digitalFilterChain>
+        <digitalFilterChain>ResponseFIR#20140205033941.696149.42 ResponseFIR#20140205033941.696738.43</digitalFilterChain>
       </decimation>
       <decimation sampleRateNumerator="200" sampleRateDenominator="1"/>
     </datalogger>
-    <datalogger publicID="Datalogger#20140123020808.497235.46" name="KPOC.2004.330.N20">
+    <datalogger publicID="Datalogger#20140205033941.697822.46" name="KPOC.2004.330.N20">
       <description>KPOC.2004.330.N20</description>
       <gain>1</gain>
       <maxClockDrift>0.02</maxClockDrift>
@@ -118,7 +118,7 @@
       </calibration>
       <decimation sampleRateNumerator="200" sampleRateDenominator="1"/>
     </datalogger>
-    <responsePAZ publicID="ResponsePAZ#20140123020808.491287.37" name="KPOC.2011.237.N120">
+    <responsePAZ publicID="ResponsePAZ#20140205033941.693672.37" name="KPOC.2011.237.N120">
       <type>A</type>
       <gain>101972</gain>
       <gainFrequency>1</gainFrequency>
@@ -129,7 +129,7 @@
       <zeros/>
       <poles/>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20140123020808.494265.41" name="KPOC.2011.237.N220">
+    <responsePAZ publicID="ResponsePAZ#20140205033941.695664.41" name="KPOC.2011.237.N220">
       <type>A</type>
       <gain>101972</gain>
       <gainFrequency>1</gainFrequency>
@@ -140,7 +140,7 @@
       <zeros/>
       <poles/>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20140123020808.496718.45" name="KPOC.2011.237.NZ20">
+    <responsePAZ publicID="ResponsePAZ#20140205033941.697437.45" name="KPOC.2011.237.NZ20">
       <type>A</type>
       <gain>101972</gain>
       <gainFrequency>1</gainFrequency>
@@ -151,7 +151,7 @@
       <zeros/>
       <poles/>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20140123020808.497978.48" name="KPOC.2004.330.N120">
+    <responsePAZ publicID="ResponsePAZ#20140205033941.697999.48" name="KPOC.2004.330.N120">
       <type>A</type>
       <gain>101972</gain>
       <gainFrequency>1</gainFrequency>
@@ -162,7 +162,7 @@
       <zeros/>
       <poles/>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20140123020808.499099.50" name="KPOC.2004.330.N220">
+    <responsePAZ publicID="ResponsePAZ#20140205033941.699043.50" name="KPOC.2004.330.N220">
       <type>A</type>
       <gain>101972</gain>
       <gainFrequency>1</gainFrequency>
@@ -173,7 +173,7 @@
       <zeros/>
       <poles/>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20140123020808.500133.52" name="KPOC.2004.330.NZ20">
+    <responsePAZ publicID="ResponsePAZ#20140205033941.700002.52" name="KPOC.2004.330.NZ20">
       <type>A</type>
       <gain>101972</gain>
       <gainFrequency>1</gainFrequency>
@@ -184,7 +184,7 @@
       <zeros/>
       <poles/>
     </responsePAZ>
-    <responseFIR publicID="ResponseFIR#20140123020808.488085.34" name="KPOC.20.BN1.2011.237.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033941.691577.34" name="KPOC.20.BN1.2011.237.stage_3">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -193,7 +193,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20140123020808.488603.35" name="KPOC.20.BN1.2011.237.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205033941.692469.35" name="KPOC.20.BN1.2011.237.stage_4">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -202,7 +202,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20140123020808.49282.38" name="KPOC.20.BN2.2011.237.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033941.694341.38" name="KPOC.20.BN2.2011.237.stage_3">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -211,7 +211,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20140123020808.493248.39" name="KPOC.20.BN2.2011.237.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205033941.694978.39" name="KPOC.20.BN2.2011.237.stage_4">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -220,7 +220,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20140123020808.49526.42" name="KPOC.20.BNZ.2011.237.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033941.696149.42" name="KPOC.20.BNZ.2011.237.stage_3">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -229,7 +229,7 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20140123020808.495692.43" name="KPOC.20.BNZ.2011.237.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205033941.696738.43" name="KPOC.20.BNZ.2011.237.stage_4">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>47.5</delay>
@@ -238,14 +238,14 @@
       <symmetry>A</symmetry>
       <coefficients>0.00158748 0.0125059 0.0499939 0.131099 0.245179 0.332017 0.307634 0.143493 -0.0721612 -0.182592 -0.108383 0.0573389 0.134413 0.0507088 -0.0787399 -0.0953076 0.00798777 0.0875963 0.0437628 -0.0524285 -0.0668836 0.0113016 0.0650235 0.0222038 -0.0470865 -0.0420307 0.0224986 0.0476652 0.0011739 -0.0419493 -0.0191002 0.0292177 0.0291722 -0.0139009 -0.0314879 -0.000359995 0.0276296 0.0111628 -0.0199142 -0.0174256 0.0107445 0.0192093 -0.00213721 -0.0173854 -0.00454401 0.0132485 0.00866123 -0.00817185 -0.0102821 0.00313511 0.00949588 0.000388783 -0.00804331 -0.0032968 0.00537866 0.00452224 -0.00275848 -0.00448416 0.000726857 0.00373429 0.000587488 -0.0027126 -0.00126149 0.00170907 0.00145636 -0.000881505 -0.00134665 0.000287937 0.0010829 7.88575e-05 -0.00077594 -0.000261277 0.000494951 0.000314315 -0.000274088 -0.000289878 0.000121231 0.000229791 -2.90765e-05 -0.000162258 -1.70402e-05 0.000103105 3.31562e-05 -5.89496e-05 -3.25909e-05 2.9931e-05 2.50748e-05 -1.31724e-05 -1.64432e-05 4.85992e-06 9.38671e-06 -1.23377e-06 -5.63954e-06 2.18465e-06 5.27728e-07 3.76714e-09</coefficients>
     </responseFIR>
-    <network publicID="Network#20140123020808.485048.2" code="NZ">
+    <network publicID="Network#20140205033941.686819.2" code="NZ">
       <start>1980-01-01T00:00:00.0000Z</start>
       <description> </description>
       <netClass>p</netClass>
       <archive> </archive>
       <restricted>false</restricted>
       <shared>true</shared>
-      <station publicID="Station#20140123020808.485317.3" code="KPOC">
+      <station publicID="Station#20140205033941.687084.3" code="KPOC">
         <start>2004-11-25T00:00:00.0000Z</start>
         <description>Kaiapoi North School</description>
         <latitude>-43.376463</latitude>
@@ -256,12 +256,12 @@
         <archive> </archive>
         <restricted>false</restricted>
         <shared>true</shared>
-        <sensorLocation publicID="SensorLocation#20140123020808.487017.32" code="20">
+        <sensorLocation publicID="SensorLocation#20140205033941.690585.32" code="20">
           <start>2004-11-25T00:00:00.0000Z</start>
           <latitude>-43.376463</latitude>
           <longitude>172.663768</longitude>
           <elevation>2</elevation>
-          <stream code="BN1" datalogger="Datalogger#20140123020808.487439.33" sensor="Sensor#20140123020808.490556.36">
+          <stream code="BN1" datalogger="Datalogger#20140205033941.691084.33" sensor="Sensor#20140205033941.693146.36">
             <start>2011-08-25T23:20:00.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>1</dataloggerChannel>
@@ -280,7 +280,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="BN2" datalogger="Datalogger#20140123020808.487439.33" sensor="Sensor#20140123020808.493718.40">
+          <stream code="BN2" datalogger="Datalogger#20140205033941.691084.33" sensor="Sensor#20140205033941.695556.40">
             <start>2011-08-25T23:20:00.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>2</dataloggerChannel>
@@ -299,7 +299,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="BNZ" datalogger="Datalogger#20140123020808.487439.33" sensor="Sensor#20140123020808.496163.44">
+          <stream code="BNZ" datalogger="Datalogger#20140205033941.691084.33" sensor="Sensor#20140205033941.697335.44">
             <start>2011-08-25T23:20:00.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>0</dataloggerChannel>
@@ -318,7 +318,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HN1" datalogger="Datalogger#20140123020808.497235.46" sensor="Sensor#20140123020808.497734.47">
+          <stream code="HN1" datalogger="Datalogger#20140205033941.697822.46" sensor="Sensor#20140205033941.697923.47">
             <start>2004-11-25T00:00:00.0000Z</start>
             <end>2011-08-25T23:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -338,7 +338,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HN1" datalogger="Datalogger#20140123020808.487439.33" sensor="Sensor#20140123020808.490556.36">
+          <stream code="HN1" datalogger="Datalogger#20140205033941.691084.33" sensor="Sensor#20140205033941.693146.36">
             <start>2011-08-25T23:20:00.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>1</dataloggerChannel>
@@ -357,7 +357,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HN2" datalogger="Datalogger#20140123020808.497235.46" sensor="Sensor#20140123020808.498941.49">
+          <stream code="HN2" datalogger="Datalogger#20140205033941.697822.46" sensor="Sensor#20140205033941.698956.49">
             <start>2004-11-25T00:00:00.0000Z</start>
             <end>2011-08-25T23:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -377,7 +377,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HN2" datalogger="Datalogger#20140123020808.487439.33" sensor="Sensor#20140123020808.493718.40">
+          <stream code="HN2" datalogger="Datalogger#20140205033941.691084.33" sensor="Sensor#20140205033941.695556.40">
             <start>2011-08-25T23:20:00.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>2</dataloggerChannel>
@@ -396,7 +396,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HNZ" datalogger="Datalogger#20140123020808.497235.46" sensor="Sensor#20140123020808.499982.51">
+          <stream code="HNZ" datalogger="Datalogger#20140205033941.697822.46" sensor="Sensor#20140205033941.699919.51">
             <start>2004-11-25T00:00:00.0000Z</start>
             <end>2011-08-25T23:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -416,7 +416,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="HNZ" datalogger="Datalogger#20140123020808.487439.33" sensor="Sensor#20140123020808.496163.44">
+          <stream code="HNZ" datalogger="Datalogger#20140205033941.691084.33" sensor="Sensor#20140205033941.697335.44">
             <start>2011-08-25T23:20:00.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>0</dataloggerChannel>

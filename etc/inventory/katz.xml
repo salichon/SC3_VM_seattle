@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <seiscomp xmlns="http://geofon.gfz-potsdam.de/ns/seiscomp3-schema/0.7" version="0.7">
   <Inventory>
-    <sensor publicID="Sensor#20131203214009.976439.50" name="KATZ.2003.119.HE10" response="ResponsePAZ#20131203214009.976576.51">
+    <sensor publicID="Sensor#20140205033938.5106.50" name="KATZ.2003.119.HE10" response="ResponsePAZ#20140205033938.510754.51">
       <description>L4C-3D</description>
       <model>L4C-3D</model>
       <unit>M/S</unit>
@@ -12,7 +12,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214009.977135.54" name="KATZ.2006.059.HE10" response="ResponsePAZ#20131203214009.977173.55">
+    <sensor publicID="Sensor#20140205033938.511372.54" name="KATZ.2006.059.HE10" response="ResponsePAZ#20140205033938.511412.55">
       <description>L4C-3D</description>
       <model>L4C-3D</model>
       <unit>M/S</unit>
@@ -23,7 +23,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214009.977623.58" name="KATZ.2006.137.HE10" response="ResponsePAZ#20131203214009.977656.59">
+    <sensor publicID="Sensor#20140205033938.511867.58" name="KATZ.2006.137.HE10" response="ResponsePAZ#20140205033938.511902.59">
       <description>L4C-3D</description>
       <model>L4C-3D</model>
       <unit>M/S</unit>
@@ -34,7 +34,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214009.978102.62" name="KATZ.2011.264.HE10" response="ResponsePAZ#20131203214009.978141.63">
+    <sensor publicID="Sensor#20140205033938.512413.62" name="KATZ.2011.264.HE10" response="ResponsePAZ#20140205033938.512456.63">
       <description>L4C-3D</description>
       <model>L4C-3D</model>
       <unit>M/S</unit>
@@ -44,7 +44,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214009.978632.65" name="KATZ.2003.119.HN10" response="ResponsePAZ#20131203214009.978719.66">
+    <sensor publicID="Sensor#20140205033938.512911.65" name="KATZ.2003.119.HN10" response="ResponsePAZ#20140205033938.512947.66">
       <description>L4C-3D</description>
       <model>L4C-3D</model>
       <unit>M/S</unit>
@@ -55,7 +55,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214009.979141.68" name="KATZ.2006.059.HN10" response="ResponsePAZ#20131203214009.979172.69">
+    <sensor publicID="Sensor#20140205033938.513461.68" name="KATZ.2006.059.HN10" response="ResponsePAZ#20140205033938.5135.69">
       <description>L4C-3D</description>
       <model>L4C-3D</model>
       <unit>M/S</unit>
@@ -66,7 +66,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214009.979586.71" name="KATZ.2006.137.HN10" response="ResponsePAZ#20131203214009.979617.72">
+    <sensor publicID="Sensor#20140205033938.513926.71" name="KATZ.2006.137.HN10" response="ResponsePAZ#20140205033938.51396.72">
       <description>L4C-3D</description>
       <model>L4C-3D</model>
       <unit>M/S</unit>
@@ -77,7 +77,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214009.98003.74" name="KATZ.2011.264.HN10" response="ResponsePAZ#20131203214009.980066.75">
+    <sensor publicID="Sensor#20140205033938.514384.74" name="KATZ.2011.264.HN10" response="ResponsePAZ#20140205033938.514424.75">
       <description>L4C-3D</description>
       <model>L4C-3D</model>
       <unit>M/S</unit>
@@ -87,7 +87,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214009.980482.77" name="KATZ.2003.119.HZ10" response="ResponsePAZ#20131203214009.980515.78">
+    <sensor publicID="Sensor#20140205033938.514885.77" name="KATZ.2003.119.HZ10" response="ResponsePAZ#20140205033938.514921.78">
       <description>L4C-3D</description>
       <model>L4C-3D</model>
       <unit>M/S</unit>
@@ -98,7 +98,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214009.980953.80" name="KATZ.2006.059.HZ10" response="ResponsePAZ#20131203214009.980987.81">
+    <sensor publicID="Sensor#20140205033938.515344.80" name="KATZ.2006.059.HZ10" response="ResponsePAZ#20140205033938.515377.81">
       <description>L4C-3D</description>
       <model>L4C-3D</model>
       <unit>M/S</unit>
@@ -109,7 +109,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214009.98142.83" name="KATZ.2006.137.HZ10" response="ResponsePAZ#20131203214009.98145.84">
+    <sensor publicID="Sensor#20140205033938.515793.83" name="KATZ.2006.137.HZ10" response="ResponsePAZ#20140205033938.515826.84">
       <description>L4C-3D</description>
       <model>L4C-3D</model>
       <unit>M/S</unit>
@@ -120,7 +120,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214009.981853.86" name="KATZ.2011.264.HZ10" response="ResponsePAZ#20131203214009.981889.87">
+    <sensor publicID="Sensor#20140205033938.516292.86" name="KATZ.2011.264.HZ10" response="ResponsePAZ#20140205033938.516332.87">
       <description>L4C-3D</description>
       <model>L4C-3D</model>
       <unit>M/S</unit>
@@ -130,7 +130,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214009.982205.90" name="KATZ.1998.084.HZ10" response="ResponsePAZ#20131203214009.982235.91">
+    <sensor publicID="Sensor#20140205033938.516664.90" name="KATZ.1998.084.HZ10" response="ResponsePAZ#20140205033938.516697.91">
       <description>L4C</description>
       <model>L4C</model>
       <unit>M/S</unit>
@@ -141,7 +141,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214009.98256.95" name="KATZ.1996.238.HZ12" response="ResponsePAZ#20131203214009.98259.96">
+    <sensor publicID="Sensor#20140205033938.517041.95" name="KATZ.1996.238.HZ12" response="ResponsePAZ#20140205033938.517073.96">
       <description>L4C</description>
       <model>L4C</model>
       <unit>M/S</unit>
@@ -152,7 +152,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <datalogger publicID="Datalogger#20131203214009.975839.48" name="KATZ.2003.119.H10">
+    <datalogger publicID="Datalogger#20140205033938.51004.48" name="KATZ.2003.119.H10">
       <description>KATZ.2003.119.H10</description>
       <gain>419430</gain>
       <maxClockDrift>0.01</maxClockDrift>
@@ -175,10 +175,10 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
       <decimation sampleRateNumerator="100" sampleRateDenominator="1">
-        <digitalFilterChain>ResponseFIR#20131203214009.980282.76</digitalFilterChain>
+        <digitalFilterChain>ResponseFIR#20140205033938.514667.76</digitalFilterChain>
       </decimation>
     </datalogger>
-    <datalogger publicID="Datalogger#20131203214009.976875.52" name="KATZ.2006.059.H10">
+    <datalogger publicID="Datalogger#20140205033938.511096.52" name="KATZ.2006.059.H10">
       <description>KATZ.2006.059.H10</description>
       <gain>419430</gain>
       <maxClockDrift>0.01</maxClockDrift>
@@ -201,10 +201,10 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
       <decimation sampleRateNumerator="100" sampleRateDenominator="1">
-        <digitalFilterChain>ResponseFIR#20131203214009.980737.79</digitalFilterChain>
+        <digitalFilterChain>ResponseFIR#20140205033938.51514.79</digitalFilterChain>
       </decimation>
     </datalogger>
-    <datalogger publicID="Datalogger#20131203214009.977385.56" name="KATZ.2006.137.H10">
+    <datalogger publicID="Datalogger#20140205033938.511624.56" name="KATZ.2006.137.H10">
       <description>KATZ.2006.137.H10</description>
       <gain>419430</gain>
       <maxClockDrift>0.01</maxClockDrift>
@@ -227,10 +227,10 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
       <decimation sampleRateNumerator="100" sampleRateDenominator="1">
-        <digitalFilterChain>ResponseFIR#20131203214009.981226.82</digitalFilterChain>
+        <digitalFilterChain>ResponseFIR#20140205033938.515594.82</digitalFilterChain>
       </decimation>
     </datalogger>
-    <datalogger publicID="Datalogger#20131203214009.977854.60" name="KATZ.2011.264.H10">
+    <datalogger publicID="Datalogger#20140205033938.512099.60" name="KATZ.2011.264.H10">
       <description>KATZ.2011.264.H10</description>
       <gain>419430</gain>
       <maxClockDrift>0.01</maxClockDrift>
@@ -250,10 +250,10 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
       <decimation sampleRateNumerator="100" sampleRateDenominator="1">
-        <digitalFilterChain>ResponseFIR#20131203214009.98166.85</digitalFilterChain>
+        <digitalFilterChain>ResponseFIR#20140205033938.516089.85</digitalFilterChain>
       </decimation>
     </datalogger>
-    <datalogger publicID="Datalogger#20131203214009.982086.88" name="KATZ.1998.084.H10">
+    <datalogger publicID="Datalogger#20140205033938.516536.88" name="KATZ.1998.084.H10">
       <description>KATZ.1998.084.H10</description>
       <gain>4096</gain>
       <maxClockDrift>0.005</maxClockDrift>
@@ -264,10 +264,10 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
       <decimation sampleRateNumerator="50" sampleRateDenominator="1">
-        <analogueFilterChain>ResponsePAZ#20131203214009.982122.89</analogueFilterChain>
+        <analogueFilterChain>ResponsePAZ#20140205033938.516574.89</analogueFilterChain>
       </decimation>
     </datalogger>
-    <datalogger publicID="Datalogger#20131203214009.982458.93" name="KATZ.1996.238.H12">
+    <datalogger publicID="Datalogger#20140205033938.516931.93" name="KATZ.1996.238.H12">
       <description>KATZ.1996.238.H12</description>
       <gain>4096</gain>
       <maxClockDrift>0.005</maxClockDrift>
@@ -278,10 +278,10 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
       <decimation sampleRateNumerator="50" sampleRateDenominator="1">
-        <analogueFilterChain>ResponsePAZ#20131203214009.982491.94</analogueFilterChain>
+        <analogueFilterChain>ResponsePAZ#20140205033938.516965.94</analogueFilterChain>
       </decimation>
     </datalogger>
-    <responsePAZ publicID="ResponsePAZ#20131203214009.976576.51" name="KATZ.2003.119.HE10">
+    <responsePAZ publicID="ResponsePAZ#20140205033938.510754.51" name="KATZ.2003.119.HE10">
       <type>A</type>
       <gain>177.8</gain>
       <gainFrequency>15</gainFrequency>
@@ -292,7 +292,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214009.977173.55" name="KATZ.2006.059.HE10">
+    <responsePAZ publicID="ResponsePAZ#20140205033938.511412.55" name="KATZ.2006.059.HE10">
       <type>A</type>
       <gain>177.8</gain>
       <gainFrequency>15</gainFrequency>
@@ -303,7 +303,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214009.977656.59" name="KATZ.2006.137.HE10">
+    <responsePAZ publicID="ResponsePAZ#20140205033938.511902.59" name="KATZ.2006.137.HE10">
       <type>A</type>
       <gain>177.8</gain>
       <gainFrequency>15</gainFrequency>
@@ -314,7 +314,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214009.978141.63" name="KATZ.2011.264.HE10">
+    <responsePAZ publicID="ResponsePAZ#20140205033938.512456.63" name="KATZ.2011.264.HE10">
       <type>A</type>
       <gain>177.8</gain>
       <gainFrequency>15</gainFrequency>
@@ -325,7 +325,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214009.978719.66" name="KATZ.2003.119.HN10">
+    <responsePAZ publicID="ResponsePAZ#20140205033938.512947.66" name="KATZ.2003.119.HN10">
       <type>A</type>
       <gain>177.8</gain>
       <gainFrequency>15</gainFrequency>
@@ -336,7 +336,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214009.979172.69" name="KATZ.2006.059.HN10">
+    <responsePAZ publicID="ResponsePAZ#20140205033938.5135.69" name="KATZ.2006.059.HN10">
       <type>A</type>
       <gain>177.8</gain>
       <gainFrequency>15</gainFrequency>
@@ -347,7 +347,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214009.979617.72" name="KATZ.2006.137.HN10">
+    <responsePAZ publicID="ResponsePAZ#20140205033938.51396.72" name="KATZ.2006.137.HN10">
       <type>A</type>
       <gain>177.8</gain>
       <gainFrequency>15</gainFrequency>
@@ -358,7 +358,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214009.980066.75" name="KATZ.2011.264.HN10">
+    <responsePAZ publicID="ResponsePAZ#20140205033938.514424.75" name="KATZ.2011.264.HN10">
       <type>A</type>
       <gain>177.8</gain>
       <gainFrequency>15</gainFrequency>
@@ -369,7 +369,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214009.980515.78" name="KATZ.2003.119.HZ10">
+    <responsePAZ publicID="ResponsePAZ#20140205033938.514921.78" name="KATZ.2003.119.HZ10">
       <type>A</type>
       <gain>177.8</gain>
       <gainFrequency>15</gainFrequency>
@@ -380,7 +380,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214009.980987.81" name="KATZ.2006.059.HZ10">
+    <responsePAZ publicID="ResponsePAZ#20140205033938.515377.81" name="KATZ.2006.059.HZ10">
       <type>A</type>
       <gain>177.8</gain>
       <gainFrequency>15</gainFrequency>
@@ -391,7 +391,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214009.98145.84" name="KATZ.2006.137.HZ10">
+    <responsePAZ publicID="ResponsePAZ#20140205033938.515826.84" name="KATZ.2006.137.HZ10">
       <type>A</type>
       <gain>177.8</gain>
       <gainFrequency>15</gainFrequency>
@@ -402,7 +402,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214009.981889.87" name="KATZ.2011.264.HZ10">
+    <responsePAZ publicID="ResponsePAZ#20140205033938.516332.87" name="KATZ.2011.264.HZ10">
       <type>A</type>
       <gain>177.8</gain>
       <gainFrequency>15</gainFrequency>
@@ -413,7 +413,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214009.982122.89" name="KATZ.10.SHZ.1998.084.stage_2">
+    <responsePAZ publicID="ResponsePAZ#20140205033938.516574.89" name="KATZ.10.SHZ.1998.084.stage_2">
       <type>A</type>
       <gain>1</gain>
       <gainFrequency>15</gainFrequency>
@@ -424,7 +424,7 @@
       <zeros/>
       <poles>(-66.6432,66.6432) (-66.6432,-66.6432) (-66.6432,66.6432) (-66.6432,-66.6432)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214009.982235.91" name="KATZ.1998.084.HZ10">
+    <responsePAZ publicID="ResponsePAZ#20140205033938.516697.91" name="KATZ.1998.084.HZ10">
       <type>A</type>
       <gain>177.8</gain>
       <gainFrequency>15</gainFrequency>
@@ -435,7 +435,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214009.982491.94" name="KATZ.12.SHZ.1996.238.stage_2">
+    <responsePAZ publicID="ResponsePAZ#20140205033938.516965.94" name="KATZ.12.SHZ.1996.238.stage_2">
       <type>A</type>
       <gain>1</gain>
       <gainFrequency>15</gainFrequency>
@@ -446,7 +446,7 @@
       <zeros/>
       <poles>(-66.6432,66.6432) (-66.6432,-66.6432) (-66.6432,66.6432) (-66.6432,-66.6432)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214009.98259.96" name="KATZ.1996.238.HZ12">
+    <responsePAZ publicID="ResponsePAZ#20140205033938.517073.96" name="KATZ.1996.238.HZ12">
       <type>A</type>
       <gain>177.8</gain>
       <gainFrequency>15</gainFrequency>
@@ -457,7 +457,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
     </responsePAZ>
-    <responseFIR publicID="ResponseFIR#20131203214009.976098.49" name="KATZ.10.EHE.2003.119.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033938.510239.49" name="KATZ.10.EHE.2003.119.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.167</delay>
@@ -466,7 +466,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214009.976918.53" name="KATZ.10.EHE.2006.059.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033938.511142.53" name="KATZ.10.EHE.2006.059.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.167</delay>
@@ -475,7 +475,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214009.97742.57" name="KATZ.10.EHE.2006.137.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033938.51166.57" name="KATZ.10.EHE.2006.137.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.167</delay>
@@ -484,7 +484,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214009.977901.61" name="KATZ.10.EHE.2011.264.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033938.512188.61" name="KATZ.10.EHE.2011.264.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.167</delay>
@@ -493,7 +493,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214009.978381.64" name="KATZ.10.EHN.2003.119.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033938.5127.64" name="KATZ.10.EHN.2003.119.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.167</delay>
@@ -502,7 +502,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214009.97894.67" name="KATZ.10.EHN.2006.059.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033938.513167.67" name="KATZ.10.EHN.2006.059.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.167</delay>
@@ -511,7 +511,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214009.979387.70" name="KATZ.10.EHN.2006.137.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033938.513719.70" name="KATZ.10.EHN.2006.137.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.167</delay>
@@ -520,7 +520,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214009.979831.73" name="KATZ.10.EHN.2011.264.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033938.514178.73" name="KATZ.10.EHN.2011.264.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.167</delay>
@@ -529,7 +529,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214009.980282.76" name="KATZ.10.EHZ.2003.119.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033938.514667.76" name="KATZ.10.EHZ.2003.119.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.167</delay>
@@ -538,7 +538,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214009.980737.79" name="KATZ.10.EHZ.2006.059.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033938.51514.79" name="KATZ.10.EHZ.2006.059.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.167</delay>
@@ -547,7 +547,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214009.981226.82" name="KATZ.10.EHZ.2006.137.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033938.515594.82" name="KATZ.10.EHZ.2006.137.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.167</delay>
@@ -556,7 +556,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214009.98166.85" name="KATZ.10.EHZ.2011.264.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033938.516089.85" name="KATZ.10.EHZ.2011.264.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.167</delay>
@@ -565,14 +565,14 @@
       <symmetry>A</symmetry>
       <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
     </responseFIR>
-    <network publicID="Network#20131203214009.973171.2" code="NZ">
+    <network publicID="Network#20140205033938.507296.2" code="NZ">
       <start>1980-01-01T00:00:00.0000Z</start>
       <description> </description>
       <netClass>p</netClass>
       <archive> </archive>
       <restricted>false</restricted>
       <shared>true</shared>
-      <station publicID="Station#20131203214009.973351.3" code="KATZ">
+      <station publicID="Station#20140205033938.507481.3" code="KATZ">
         <start>1996-08-25T00:00:00.0000Z</start>
         <description>Kakaramea</description>
         <latitude>-38.9749</latitude>
@@ -583,12 +583,12 @@
         <archive> </archive>
         <restricted>false</restricted>
         <shared>true</shared>
-        <sensorLocation publicID="SensorLocation#20131203214009.975636.47" code="10">
+        <sensorLocation publicID="SensorLocation#20140205033938.509819.47" code="10">
           <start>1998-03-25T22:00:00.0000Z</start>
           <latitude>-38.9749</latitude>
           <longitude>175.694835</longitude>
           <elevation>1327</elevation>
-          <stream code="EHE" datalogger="Datalogger#20131203214009.975839.48" sensor="Sensor#20131203214009.976439.50">
+          <stream code="EHE" datalogger="Datalogger#20140205033938.51004.48" sensor="Sensor#20140205033938.5106.50">
             <start>2003-04-29T04:00:00.0000Z</start>
             <end>2006-02-28T00:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -608,7 +608,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHE" datalogger="Datalogger#20131203214009.976875.52" sensor="Sensor#20131203214009.977135.54">
+          <stream code="EHE" datalogger="Datalogger#20140205033938.511096.52" sensor="Sensor#20140205033938.511372.54">
             <start>2006-02-28T00:00:01.0000Z</start>
             <end>2006-05-17T01:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -628,7 +628,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHE" datalogger="Datalogger#20131203214009.977385.56" sensor="Sensor#20131203214009.977623.58">
+          <stream code="EHE" datalogger="Datalogger#20140205033938.511624.56" sensor="Sensor#20140205033938.511867.58">
             <start>2006-05-17T02:50:00.0000Z</start>
             <end>2011-09-21T00:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -648,7 +648,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHE" datalogger="Datalogger#20131203214009.977854.60" sensor="Sensor#20131203214009.978102.62">
+          <stream code="EHE" datalogger="Datalogger#20140205033938.512099.60" sensor="Sensor#20140205033938.512413.62">
             <start>2011-09-21T00:01:00.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>2</dataloggerChannel>
@@ -667,7 +667,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHN" datalogger="Datalogger#20131203214009.975839.48" sensor="Sensor#20131203214009.978632.65">
+          <stream code="EHN" datalogger="Datalogger#20140205033938.51004.48" sensor="Sensor#20140205033938.512911.65">
             <start>2003-04-29T04:00:00.0000Z</start>
             <end>2006-02-28T00:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -687,7 +687,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHN" datalogger="Datalogger#20131203214009.976875.52" sensor="Sensor#20131203214009.979141.68">
+          <stream code="EHN" datalogger="Datalogger#20140205033938.511096.52" sensor="Sensor#20140205033938.513461.68">
             <start>2006-02-28T00:00:01.0000Z</start>
             <end>2006-05-17T01:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -707,7 +707,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHN" datalogger="Datalogger#20131203214009.977385.56" sensor="Sensor#20131203214009.979586.71">
+          <stream code="EHN" datalogger="Datalogger#20140205033938.511624.56" sensor="Sensor#20140205033938.513926.71">
             <start>2006-05-17T02:50:00.0000Z</start>
             <end>2011-09-21T00:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -727,7 +727,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHN" datalogger="Datalogger#20131203214009.977854.60" sensor="Sensor#20131203214009.98003.74">
+          <stream code="EHN" datalogger="Datalogger#20140205033938.512099.60" sensor="Sensor#20140205033938.514384.74">
             <start>2011-09-21T00:01:00.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>1</dataloggerChannel>
@@ -746,7 +746,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHZ" datalogger="Datalogger#20131203214009.975839.48" sensor="Sensor#20131203214009.980482.77">
+          <stream code="EHZ" datalogger="Datalogger#20140205033938.51004.48" sensor="Sensor#20140205033938.514885.77">
             <start>2003-04-29T04:00:00.0000Z</start>
             <end>2006-02-28T00:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -766,7 +766,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHZ" datalogger="Datalogger#20131203214009.976875.52" sensor="Sensor#20131203214009.980953.80">
+          <stream code="EHZ" datalogger="Datalogger#20140205033938.511096.52" sensor="Sensor#20140205033938.515344.80">
             <start>2006-02-28T00:00:01.0000Z</start>
             <end>2006-05-17T01:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -786,7 +786,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHZ" datalogger="Datalogger#20131203214009.977385.56" sensor="Sensor#20131203214009.98142.83">
+          <stream code="EHZ" datalogger="Datalogger#20140205033938.511624.56" sensor="Sensor#20140205033938.515793.83">
             <start>2006-05-17T02:50:00.0000Z</start>
             <end>2011-09-21T00:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -806,7 +806,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHZ" datalogger="Datalogger#20131203214009.977854.60" sensor="Sensor#20131203214009.981853.86">
+          <stream code="EHZ" datalogger="Datalogger#20140205033938.512099.60" sensor="Sensor#20140205033938.516292.86">
             <start>2011-09-21T00:01:00.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>0</dataloggerChannel>
@@ -825,7 +825,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="SHZ" datalogger="Datalogger#20131203214009.982086.88" sensor="Sensor#20131203214009.982205.90">
+          <stream code="SHZ" datalogger="Datalogger#20140205033938.516536.88" sensor="Sensor#20140205033938.516664.90">
             <start>1998-03-25T22:00:00.0000Z</start>
             <end>2000-12-03T19:12:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -846,13 +846,13 @@
             <shared>true</shared>
           </stream>
         </sensorLocation>
-        <sensorLocation publicID="SensorLocation#20131203214009.982377.92" code="12">
+        <sensorLocation publicID="SensorLocation#20140205033938.516849.92" code="12">
           <start>1996-08-25T12:37:00.0000Z</start>
           <end>1996-08-27T05:28:00.0000Z</end>
           <latitude>-38.9749</latitude>
           <longitude>175.694835</longitude>
           <elevation>1327</elevation>
-          <stream code="SHZ" datalogger="Datalogger#20131203214009.982458.93" sensor="Sensor#20131203214009.98256.95">
+          <stream code="SHZ" datalogger="Datalogger#20140205033938.516931.93" sensor="Sensor#20140205033938.517041.95">
             <start>1996-08-25T12:37:00.0000Z</start>
             <end>1996-08-27T05:28:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>

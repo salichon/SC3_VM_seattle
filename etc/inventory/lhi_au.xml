@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seiscomp xmlns="http://geofon.gfz-potsdam.de/ns/seiscomp3-schema/0.7" version="0.7">
+  <Inventory>
+    <sensor publicID="Sensor#20140205040207.506938.7" name="LHI.2007.189.HE" response="ResponsePAZ#20140205040207.507088.8">
+      <description>STS-2/Quanterra</description>
+      <model>STS-2/Quanterra</model>
+      <manufacturer>Streckeisen</manufacturer>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="2">
+        <start>2007-07-08T00:00:00.0000Z</start>
+        <gain>1494.04</gain>
+        <gainFrequency>5</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20140205040207.507622.10" name="LHI.2007.189.HN" response="ResponsePAZ#20140205040207.507669.11">
+      <description>STS-2/Quanterra</description>
+      <model>STS-2/Quanterra</model>
+      <manufacturer>Streckeisen</manufacturer>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="1">
+        <start>2007-07-08T00:00:00.0000Z</start>
+        <gain>1494.04</gain>
+        <gainFrequency>5</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20140205040207.508033.13" name="LHI.2007.189.HZ" response="ResponsePAZ#20140205040207.508074.14">
+      <description>STS-2/Quanterra</description>
+      <model>STS-2/Quanterra</model>
+      <manufacturer>Streckeisen</manufacturer>
+      <unit>M/S</unit>
+      <calibration serialNumber="yyyy" channel="0">
+        <start>2007-07-08T00:00:00.0000Z</start>
+        <gain>1494.04</gain>
+        <gainFrequency>5</gainFrequency>
+      </calibration>
+    </sensor>
+    <datalogger publicID="Datalogger#20140205040207.506469.5" name="LHI.2007.189.H">
+      <description>LHI.2007.189.H</description>
+      <gain>1677700</gain>
+      <maxClockDrift>0.01</maxClockDrift>
+      <calibration serialNumber="xxxx" channel="2">
+        <start>2007-07-08T00:00:00.0000Z</start>
+        <gain>1677700</gain>
+        <gainFrequency>5</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="1">
+        <start>2007-07-08T00:00:00.0000Z</start>
+        <gain>1677700</gain>
+        <gainFrequency>5</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="0">
+        <start>2007-07-08T00:00:00.0000Z</start>
+        <gain>1677700</gain>
+        <gainFrequency>5</gainFrequency>
+      </calibration>
+      <decimation sampleRateNumerator="40" sampleRateDenominator="1">
+        <digitalFilterChain>ResponseFIR#20140205040207.507895.12</digitalFilterChain>
+      </decimation>
+    </datalogger>
+    <responsePAZ publicID="ResponsePAZ#20140205040207.507088.8" name="LHI.2007.189.HE">
+      <type>A</type>
+      <gain>1494.04</gain>
+      <gainFrequency>5</gainFrequency>
+      <normalizationFactor>59436100</normalizationFactor>
+      <normalizationFrequency>5</normalizationFrequency>
+      <numberOfZeros>2</numberOfZeros>
+      <numberOfPoles>5</numberOfPoles>
+      <zeros>(0,0) (0,0)</zeros>
+      <poles>(-0.03701,0.03701) (-0.03701,-0.03701) (-251.3,0) (-131,467.3) (-131,-467.3)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20140205040207.507669.11" name="LHI.2007.189.HN">
+      <type>A</type>
+      <gain>1494.04</gain>
+      <gainFrequency>5</gainFrequency>
+      <normalizationFactor>59436100</normalizationFactor>
+      <normalizationFrequency>5</normalizationFrequency>
+      <numberOfZeros>2</numberOfZeros>
+      <numberOfPoles>5</numberOfPoles>
+      <zeros>(0,0) (0,0)</zeros>
+      <poles>(-0.03701,0.03701) (-0.03701,-0.03701) (-251.3,0) (-131,467.3) (-131,-467.3)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20140205040207.508074.14" name="LHI.2007.189.HZ">
+      <type>A</type>
+      <gain>1494.04</gain>
+      <gainFrequency>5</gainFrequency>
+      <normalizationFactor>59436100</normalizationFactor>
+      <normalizationFrequency>5</normalizationFrequency>
+      <numberOfZeros>2</numberOfZeros>
+      <numberOfPoles>5</numberOfPoles>
+      <zeros>(0,0) (0,0)</zeros>
+      <poles>(-0.03701,0.03701) (-0.03701,-0.03701) (-251.3,0) (-131,467.3) (-131,-467.3)</poles>
+    </responsePAZ>
+    <responseFIR publicID="ResponseFIR#20140205040207.506682.6" name="LHI..BHE.2007.189.stage_4">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>17.2184</delay>
+      <correction>17.2184</correction>
+      <numberOfCoefficients>39</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>-5.09997e-08 -2.63324e-08 3.21041e-07 -1.2548e-05 -1.56874e-06 0.000633072 0.000467293 -0.00375769 0.00242649 -0.00181103 -0.00255789 0.00852735 -0.0154895 0.0199414 -0.0183877 0.00706362 0.0161458 -0.0509218 0.095284 -0.166693 0.266723 0.837233 0.0500619 -0.0891913 0.0853716 -0.0651036 0.0395074 -0.0158729 -0.00144455 0.0107821 -0.0131202 0.0104801 -0.00623193 0.00152521 0.000205709 -0.00314123 0.00102921 0.000330318 4.18952e-13</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140205040207.507471.9" name="LHI..BHN.2007.189.stage_4">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>17.2184</delay>
+      <correction>17.2184</correction>
+      <numberOfCoefficients>39</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>-5.09997e-08 -2.63324e-08 3.21041e-07 -1.2548e-05 -1.56874e-06 0.000633072 0.000467293 -0.00375769 0.00242649 -0.00181103 -0.00255789 0.00852735 -0.0154895 0.0199414 -0.0183877 0.00706362 0.0161458 -0.0509218 0.095284 -0.166693 0.266723 0.837233 0.0500619 -0.0891913 0.0853716 -0.0651036 0.0395074 -0.0158729 -0.00144455 0.0107821 -0.0131202 0.0104801 -0.00623193 0.00152521 0.000205709 -0.00314123 0.00102921 0.000330318 4.18952e-13</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140205040207.507895.12" name="LHI..BHZ.2007.189.stage_4">
+      <gain>1</gain>
+      <decimationFactor>1</decimationFactor>
+      <delay>17.2184</delay>
+      <correction>17.2184</correction>
+      <numberOfCoefficients>39</numberOfCoefficients>
+      <symmetry>A</symmetry>
+      <coefficients>-5.09997e-08 -2.63324e-08 3.21041e-07 -1.2548e-05 -1.56874e-06 0.000633072 0.000467293 -0.00375769 0.00242649 -0.00181103 -0.00255789 0.00852735 -0.0154895 0.0199414 -0.0183877 0.00706362 0.0161458 -0.0509218 0.095284 -0.166693 0.266723 0.837233 0.0500619 -0.0891913 0.0853716 -0.0651036 0.0395074 -0.0158729 -0.00144455 0.0107821 -0.0131202 0.0104801 -0.00623193 0.00152521 0.000205709 -0.00314123 0.00102921 0.000330318 4.18952e-13</coefficients>
+    </responseFIR>
+    <network publicID="Network#20140205040207.505765.2" code="AU">
+      <start>1980-01-01T00:00:00.0000Z</start>
+      <description> </description>
+      <netClass>p</netClass>
+      <archive> </archive>
+      <restricted>false</restricted>
+      <shared>true</shared>
+      <station publicID="Station#20140205040207.505939.3" code="LHI">
+        <start>2007-07-08T00:00:00.0000Z</start>
+        <description>Lord Howe Island, Australia</description>
+        <latitude>-31.52</latitude>
+        <longitude>159.0613</longitude>
+        <elevation>73.7</elevation>
+        <place>Lord Howe Island</place>
+        <country> Australia</country>
+        <affiliation>Australian National Seismograph Network</affiliation>
+        <archive> </archive>
+        <restricted>false</restricted>
+        <shared>true</shared>
+        <sensorLocation publicID="SensorLocation#20140205040207.506268.4" code="">
+          <start>2007-07-08T00:00:00.0000Z</start>
+          <latitude>-31.52</latitude>
+          <longitude>159.0613</longitude>
+          <elevation>73.7</elevation>
+          <stream code="BHE" datalogger="Datalogger#20140205040207.506469.5" sensor="Sensor#20140205040207.506938.7">
+            <start>2007-07-08T00:00:00.0000Z</start>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>2</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>2</sensorChannel>
+            <sampleRateNumerator>40</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>3</depth>
+            <azimuth>90</azimuth>
+            <dip>0</dip>
+            <gain>2506580000</gain>
+            <gainFrequency>5</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>G</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="BHN" datalogger="Datalogger#20140205040207.506469.5" sensor="Sensor#20140205040207.507622.10">
+            <start>2007-07-08T00:00:00.0000Z</start>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>1</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>1</sensorChannel>
+            <sampleRateNumerator>40</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>3</depth>
+            <azimuth>0</azimuth>
+            <dip>0</dip>
+            <gain>2506580000</gain>
+            <gainFrequency>5</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>G</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="BHZ" datalogger="Datalogger#20140205040207.506469.5" sensor="Sensor#20140205040207.508033.13">
+            <start>2007-07-08T00:00:00.0000Z</start>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>0</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>0</sensorChannel>
+            <sampleRateNumerator>40</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>3</depth>
+            <azimuth>0</azimuth>
+            <dip>-90</dip>
+            <gain>2506580000</gain>
+            <gainFrequency>5</gainFrequency>
+            <gainUnit>M/S</gainUnit>
+            <format>Steim2</format>
+            <flags>G</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+        </sensorLocation>
+      </station>
+    </network>
+  </Inventory>
+</seiscomp>

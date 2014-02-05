@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <seiscomp xmlns="http://geofon.gfz-potsdam.de/ns/seiscomp3-schema/0.7" version="0.7">
   <Inventory>
-    <sensor publicID="Sensor#20131203214048.037351.17" name="PRWZ.2008.308.HE10" response="ResponsePAZ#20131203214048.037497.18">
+    <sensor publicID="Sensor#20140205034003.346907.17" name="PRWZ.2008.308.HE10" response="ResponsePAZ#20140205034003.347074.18">
       <description>L4C-3D</description>
       <model>L4C-3D</model>
       <unit>M/S</unit>
@@ -11,7 +11,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214048.03805.20" name="PRWZ.2008.308.HN10" response="ResponsePAZ#20131203214048.038092.21">
+    <sensor publicID="Sensor#20140205034003.347717.20" name="PRWZ.2008.308.HN10" response="ResponsePAZ#20140205034003.347766.21">
       <description>L4C-3D</description>
       <model>L4C-3D</model>
       <unit>M/S</unit>
@@ -21,7 +21,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214048.038577.23" name="PRWZ.2008.308.HZ10" response="ResponsePAZ#20131203214048.038614.24">
+    <sensor publicID="Sensor#20140205034003.348209.23" name="PRWZ.2008.308.HZ10" response="ResponsePAZ#20140205034003.348251.24">
       <description>L4C-3D</description>
       <model>L4C-3D</model>
       <unit>M/S</unit>
@@ -31,7 +31,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <datalogger publicID="Datalogger#20131203214048.036832.15" name="PRWZ.2008.308.H10">
+    <datalogger publicID="Datalogger#20140205034003.346246.15" name="PRWZ.2008.308.H10">
       <description>PRWZ.2008.308.H10</description>
       <gain>419430</gain>
       <maxClockDrift>0.01</maxClockDrift>
@@ -51,10 +51,10 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
       <decimation sampleRateNumerator="100" sampleRateDenominator="1">
-        <digitalFilterChain>ResponseFIR#20131203214048.038375.22</digitalFilterChain>
+        <digitalFilterChain>ResponseFIR#20140205034003.347999.22</digitalFilterChain>
       </decimation>
     </datalogger>
-    <responsePAZ publicID="ResponsePAZ#20131203214048.037497.18" name="PRWZ.2008.308.HE10">
+    <responsePAZ publicID="ResponsePAZ#20140205034003.347074.18" name="PRWZ.2008.308.HE10">
       <type>A</type>
       <gain>177.8</gain>
       <gainFrequency>15</gainFrequency>
@@ -65,7 +65,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214048.038092.21" name="PRWZ.2008.308.HN10">
+    <responsePAZ publicID="ResponsePAZ#20140205034003.347766.21" name="PRWZ.2008.308.HN10">
       <type>A</type>
       <gain>177.8</gain>
       <gainFrequency>15</gainFrequency>
@@ -76,7 +76,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214048.038614.24" name="PRWZ.2008.308.HZ10">
+    <responsePAZ publicID="ResponsePAZ#20140205034003.348251.24" name="PRWZ.2008.308.HZ10">
       <type>A</type>
       <gain>177.8</gain>
       <gainFrequency>15</gainFrequency>
@@ -87,7 +87,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
     </responsePAZ>
-    <responseFIR publicID="ResponseFIR#20131203214048.037038.16" name="PRWZ.10.EHE.2008.308.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034003.346526.16" name="PRWZ.10.EHE.2008.308.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.167</delay>
@@ -96,7 +96,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214048.037829.19" name="PRWZ.10.EHN.2008.308.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034003.347442.19" name="PRWZ.10.EHN.2008.308.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.167</delay>
@@ -105,7 +105,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214048.038375.22" name="PRWZ.10.EHZ.2008.308.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034003.347999.22" name="PRWZ.10.EHZ.2008.308.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.167</delay>
@@ -114,14 +114,14 @@
       <symmetry>A</symmetry>
       <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
     </responseFIR>
-    <network publicID="Network#20131203214048.035768.2" code="NZ">
+    <network publicID="Network#20140205034003.344965.2" code="NZ">
       <start>1980-01-01T00:00:00.0000Z</start>
       <description> </description>
       <netClass>p</netClass>
       <archive> </archive>
       <restricted>false</restricted>
       <shared>true</shared>
-      <station publicID="Station#20131203214048.035972.3" code="PRWZ">
+      <station publicID="Station#20140205034003.345253.3" code="PRWZ">
         <start>2008-11-03T00:00:00.0000Z</start>
         <description>Pori Road</description>
         <latitude>-40.554704</latitude>
@@ -132,12 +132,12 @@
         <archive> </archive>
         <restricted>false</restricted>
         <shared>true</shared>
-        <sensorLocation publicID="SensorLocation#20131203214048.036638.14" code="10">
+        <sensorLocation publicID="SensorLocation#20140205034003.346015.14" code="10">
           <start>2008-11-03T01:10:00.0000Z</start>
           <latitude>-40.554704</latitude>
           <longitude>175.971012</longitude>
           <elevation>303</elevation>
-          <stream code="EHE" datalogger="Datalogger#20131203214048.036832.15" sensor="Sensor#20131203214048.037351.17">
+          <stream code="EHE" datalogger="Datalogger#20140205034003.346246.15" sensor="Sensor#20140205034003.346907.17">
             <start>2008-11-03T01:10:00.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>2</dataloggerChannel>
@@ -156,7 +156,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHN" datalogger="Datalogger#20131203214048.036832.15" sensor="Sensor#20131203214048.03805.20">
+          <stream code="EHN" datalogger="Datalogger#20140205034003.346246.15" sensor="Sensor#20140205034003.347717.20">
             <start>2008-11-03T01:10:00.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>1</dataloggerChannel>
@@ -175,7 +175,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHZ" datalogger="Datalogger#20131203214048.036832.15" sensor="Sensor#20131203214048.038577.23">
+          <stream code="EHZ" datalogger="Datalogger#20140205034003.346246.15" sensor="Sensor#20140205034003.348209.23">
             <start>2008-11-03T01:10:00.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>0</dataloggerChannel>

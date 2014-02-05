@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <seiscomp xmlns="http://geofon.gfz-potsdam.de/ns/seiscomp3-schema/0.7" version="0.7">
   <Inventory>
-    <sensor publicID="Sensor#20131203214023.373928.55" name="MHGZ.2006.124.HE10" response="ResponsePAZ#20131203214023.374155.56">
+    <sensor publicID="Sensor#20140205033946.504389.55" name="MHGZ.2006.124.HE10" response="ResponsePAZ#20140205033946.504559.56">
       <description>LE-3Dlite</description>
       <model>LE-3Dlite</model>
       <unit>M/S</unit>
@@ -12,7 +12,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214023.375351.61" name="MHGZ.2006.202.HE10" response="ResponsePAZ#20131203214023.375391.62">
+    <sensor publicID="Sensor#20140205033946.505916.61" name="MHGZ.2006.202.HE10" response="ResponsePAZ#20140205033946.505955.62">
       <description>LE-3Dlite</description>
       <model>LE-3Dlite</model>
       <unit>M/S</unit>
@@ -23,7 +23,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214023.376514.67" name="MHGZ.2006.229.HE10" response="ResponsePAZ#20131203214023.376549.68">
+    <sensor publicID="Sensor#20140205033946.50697.67" name="MHGZ.2006.229.HE10" response="ResponsePAZ#20140205033946.507003.68">
       <description>LE-3Dlite</description>
       <model>LE-3Dlite</model>
       <unit>M/S</unit>
@@ -34,7 +34,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214023.377628.73" name="MHGZ.2006.320.HE10" response="ResponsePAZ#20131203214023.377661.74">
+    <sensor publicID="Sensor#20140205033946.508094.73" name="MHGZ.2006.320.HE10" response="ResponsePAZ#20140205033946.508125.74">
       <description>LE-3Dlite</description>
       <model>LE-3Dlite</model>
       <unit>M/S</unit>
@@ -45,7 +45,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214023.378201.77" name="MHGZ.2007.215.HE10" response="ResponsePAZ#20131203214023.378247.78">
+    <sensor publicID="Sensor#20140205033946.50859.77" name="MHGZ.2007.215.HE10" response="ResponsePAZ#20140205033946.508633.78">
       <description>L4C-3D</description>
       <model>L4C-3D</model>
       <unit>M/S</unit>
@@ -55,7 +55,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214023.379335.82" name="MHGZ.2006.124.HN10" response="ResponsePAZ#20131203214023.379368.83">
+    <sensor publicID="Sensor#20140205033946.509643.82" name="MHGZ.2006.124.HN10" response="ResponsePAZ#20140205033946.509674.83">
       <description>LE-3Dlite</description>
       <model>LE-3Dlite</model>
       <unit>M/S</unit>
@@ -66,7 +66,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214023.380438.87" name="MHGZ.2006.202.HN10" response="ResponsePAZ#20131203214023.380472.88">
+    <sensor publicID="Sensor#20140205033946.511002.87" name="MHGZ.2006.202.HN10" response="ResponsePAZ#20140205033946.511035.88">
       <description>LE-3Dlite</description>
       <model>LE-3Dlite</model>
       <unit>M/S</unit>
@@ -77,7 +77,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214023.381545.92" name="MHGZ.2006.229.HN10" response="ResponsePAZ#20131203214023.381579.93">
+    <sensor publicID="Sensor#20140205033946.512081.92" name="MHGZ.2006.229.HN10" response="ResponsePAZ#20140205033946.512114.93">
       <description>LE-3Dlite</description>
       <model>LE-3Dlite</model>
       <unit>M/S</unit>
@@ -88,7 +88,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214023.382643.97" name="MHGZ.2006.320.HN10" response="ResponsePAZ#20131203214023.38268.98">
+    <sensor publicID="Sensor#20140205033946.51322.97" name="MHGZ.2006.320.HN10" response="ResponsePAZ#20140205033946.513258.98">
       <description>LE-3Dlite</description>
       <model>LE-3Dlite</model>
       <unit>M/S</unit>
@@ -99,7 +99,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214023.383123.100" name="MHGZ.2007.215.HN10" response="ResponsePAZ#20131203214023.383161.101">
+    <sensor publicID="Sensor#20140205033946.513717.100" name="MHGZ.2007.215.HN10" response="ResponsePAZ#20140205033946.51376.101">
       <description>L4C-3D</description>
       <model>L4C-3D</model>
       <unit>M/S</unit>
@@ -109,7 +109,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214023.384234.105" name="MHGZ.2006.124.HZ10" response="ResponsePAZ#20131203214023.384266.106">
+    <sensor publicID="Sensor#20140205033946.514824.105" name="MHGZ.2006.124.HZ10" response="ResponsePAZ#20140205033946.51486.106">
       <description>LE-3Dlite</description>
       <model>LE-3Dlite</model>
       <unit>M/S</unit>
@@ -120,7 +120,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214023.385243.110" name="MHGZ.2006.202.HZ10" response="ResponsePAZ#20131203214023.385274.111">
+    <sensor publicID="Sensor#20140205033946.515881.110" name="MHGZ.2006.202.HZ10" response="ResponsePAZ#20140205033946.515913.111">
       <description>LE-3Dlite</description>
       <model>LE-3Dlite</model>
       <unit>M/S</unit>
@@ -131,7 +131,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214023.386331.115" name="MHGZ.2006.229.HZ10" response="ResponsePAZ#20131203214023.386363.116">
+    <sensor publicID="Sensor#20140205033946.516914.115" name="MHGZ.2006.229.HZ10" response="ResponsePAZ#20140205033946.516947.116">
       <description>LE-3Dlite</description>
       <model>LE-3Dlite</model>
       <unit>M/S</unit>
@@ -142,7 +142,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214023.387348.120" name="MHGZ.2006.320.HZ10" response="ResponsePAZ#20131203214023.387379.121">
+    <sensor publicID="Sensor#20140205033946.518149.120" name="MHGZ.2006.320.HZ10" response="ResponsePAZ#20140205033946.518185.121">
       <description>LE-3Dlite</description>
       <model>LE-3Dlite</model>
       <unit>M/S</unit>
@@ -153,7 +153,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214023.387808.123" name="MHGZ.2007.215.HZ10" response="ResponsePAZ#20131203214023.387847.124">
+    <sensor publicID="Sensor#20140205033946.518691.123" name="MHGZ.2007.215.HZ10" response="ResponsePAZ#20140205033946.518737.124">
       <description>L4C-3D</description>
       <model>L4C-3D</model>
       <unit>M/S</unit>
@@ -163,7 +163,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <datalogger publicID="Datalogger#20131203214023.372626.51" name="MHGZ.2006.124.H10">
+    <datalogger publicID="Datalogger#20140205033946.503204.51" name="MHGZ.2006.124.H10">
       <description>MHGZ.2006.124.H10</description>
       <gain>400000</gain>
       <maxClockDrift>0.01</maxClockDrift>
@@ -186,10 +186,10 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
       <decimation sampleRateNumerator="100" sampleRateDenominator="1">
-        <digitalFilterChain>ResponseFIR#20131203214023.383458.102 ResponseFIR#20131203214023.383718.103 ResponseFIR#20131203214023.383955.104</digitalFilterChain>
+        <digitalFilterChain>ResponseFIR#20140205033946.513993.102 ResponseFIR#20140205033946.514244.103 ResponseFIR#20140205033946.514504.104</digitalFilterChain>
       </decimation>
     </datalogger>
-    <datalogger publicID="Datalogger#20131203214023.374521.57" name="MHGZ.2006.202.H10">
+    <datalogger publicID="Datalogger#20140205033946.505056.57" name="MHGZ.2006.202.H10">
       <description>MHGZ.2006.202.H10</description>
       <gain>400000</gain>
       <maxClockDrift>0.01</maxClockDrift>
@@ -212,10 +212,10 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
       <decimation sampleRateNumerator="100" sampleRateDenominator="1">
-        <digitalFilterChain>ResponseFIR#20131203214023.384498.107 ResponseFIR#20131203214023.384726.108 ResponseFIR#20131203214023.384967.109</digitalFilterChain>
+        <digitalFilterChain>ResponseFIR#20140205033946.515111.107 ResponseFIR#20140205033946.515343.108 ResponseFIR#20140205033946.515592.109</digitalFilterChain>
       </decimation>
     </datalogger>
-    <datalogger publicID="Datalogger#20131203214023.37563.63" name="MHGZ.2006.229.H10">
+    <datalogger publicID="Datalogger#20140205033946.506172.63" name="MHGZ.2006.229.H10">
       <description>MHGZ.2006.229.H10</description>
       <gain>400000</gain>
       <maxClockDrift>0.01</maxClockDrift>
@@ -238,10 +238,10 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
       <decimation sampleRateNumerator="100" sampleRateDenominator="1">
-        <digitalFilterChain>ResponseFIR#20131203214023.385507.112 ResponseFIR#20131203214023.385743.113 ResponseFIR#20131203214023.386048.114</digitalFilterChain>
+        <digitalFilterChain>ResponseFIR#20140205033946.516141.112 ResponseFIR#20140205033946.516381.113 ResponseFIR#20140205033946.51663.114</digitalFilterChain>
       </decimation>
     </datalogger>
-    <datalogger publicID="Datalogger#20131203214023.376781.69" name="MHGZ.2006.320.H10">
+    <datalogger publicID="Datalogger#20140205033946.507214.69" name="MHGZ.2006.320.H10">
       <description>MHGZ.2006.320.H10</description>
       <gain>400000</gain>
       <maxClockDrift>0.01</maxClockDrift>
@@ -264,10 +264,10 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
       <decimation sampleRateNumerator="100" sampleRateDenominator="1">
-        <digitalFilterChain>ResponseFIR#20131203214023.386596.117 ResponseFIR#20131203214023.386825.118 ResponseFIR#20131203214023.387069.119</digitalFilterChain>
+        <digitalFilterChain>ResponseFIR#20140205033946.517179.117 ResponseFIR#20140205033946.517534.118 ResponseFIR#20140205033946.517801.119</digitalFilterChain>
       </decimation>
     </datalogger>
-    <datalogger publicID="Datalogger#20131203214023.377927.75" name="MHGZ.2007.215.H10">
+    <datalogger publicID="Datalogger#20140205033946.508329.75" name="MHGZ.2007.215.H10">
       <description>MHGZ.2007.215.H10</description>
       <gain>419430</gain>
       <maxClockDrift>0.01</maxClockDrift>
@@ -287,10 +287,10 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
       <decimation sampleRateNumerator="100" sampleRateDenominator="1">
-        <digitalFilterChain>ResponseFIR#20131203214023.387611.122</digitalFilterChain>
+        <digitalFilterChain>ResponseFIR#20140205033946.518448.122</digitalFilterChain>
       </decimation>
     </datalogger>
-    <responsePAZ publicID="ResponsePAZ#20131203214023.374155.56" name="MHGZ.2006.124.HE10">
+    <responsePAZ publicID="ResponsePAZ#20140205033946.504559.56" name="MHGZ.2006.124.HE10">
       <type>A</type>
       <gain>400</gain>
       <gainFrequency>15</gainFrequency>
@@ -301,7 +301,7 @@
       <zeros>(0,0) (0,0) (0,0)</zeros>
       <poles>(-4.444,4.444) (-4.444,-4.444) (-1.083,0)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214023.375391.62" name="MHGZ.2006.202.HE10">
+    <responsePAZ publicID="ResponsePAZ#20140205033946.505955.62" name="MHGZ.2006.202.HE10">
       <type>A</type>
       <gain>400</gain>
       <gainFrequency>15</gainFrequency>
@@ -312,7 +312,7 @@
       <zeros>(0,0) (0,0) (0,0)</zeros>
       <poles>(-4.444,4.444) (-4.444,-4.444) (-1.083,0)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214023.376549.68" name="MHGZ.2006.229.HE10">
+    <responsePAZ publicID="ResponsePAZ#20140205033946.507003.68" name="MHGZ.2006.229.HE10">
       <type>A</type>
       <gain>400</gain>
       <gainFrequency>15</gainFrequency>
@@ -323,7 +323,7 @@
       <zeros>(0,0) (0,0) (0,0)</zeros>
       <poles>(-4.444,4.444) (-4.444,-4.444) (-1.083,0)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214023.377661.74" name="MHGZ.2006.320.HE10">
+    <responsePAZ publicID="ResponsePAZ#20140205033946.508125.74" name="MHGZ.2006.320.HE10">
       <type>A</type>
       <gain>400</gain>
       <gainFrequency>15</gainFrequency>
@@ -334,7 +334,7 @@
       <zeros>(0,0) (0,0) (0,0)</zeros>
       <poles>(-4.444,4.444) (-4.444,-4.444) (-1.083,0)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214023.378247.78" name="MHGZ.2007.215.HE10">
+    <responsePAZ publicID="ResponsePAZ#20140205033946.508633.78" name="MHGZ.2007.215.HE10">
       <type>A</type>
       <gain>177.8</gain>
       <gainFrequency>15</gainFrequency>
@@ -345,7 +345,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214023.379368.83" name="MHGZ.2006.124.HN10">
+    <responsePAZ publicID="ResponsePAZ#20140205033946.509674.83" name="MHGZ.2006.124.HN10">
       <type>A</type>
       <gain>400</gain>
       <gainFrequency>15</gainFrequency>
@@ -356,7 +356,7 @@
       <zeros>(0,0) (0,0) (0,0)</zeros>
       <poles>(-4.444,4.444) (-4.444,-4.444) (-1.083,0)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214023.380472.88" name="MHGZ.2006.202.HN10">
+    <responsePAZ publicID="ResponsePAZ#20140205033946.511035.88" name="MHGZ.2006.202.HN10">
       <type>A</type>
       <gain>400</gain>
       <gainFrequency>15</gainFrequency>
@@ -367,7 +367,7 @@
       <zeros>(0,0) (0,0) (0,0)</zeros>
       <poles>(-4.444,4.444) (-4.444,-4.444) (-1.083,0)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214023.381579.93" name="MHGZ.2006.229.HN10">
+    <responsePAZ publicID="ResponsePAZ#20140205033946.512114.93" name="MHGZ.2006.229.HN10">
       <type>A</type>
       <gain>400</gain>
       <gainFrequency>15</gainFrequency>
@@ -378,7 +378,7 @@
       <zeros>(0,0) (0,0) (0,0)</zeros>
       <poles>(-4.444,4.444) (-4.444,-4.444) (-1.083,0)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214023.38268.98" name="MHGZ.2006.320.HN10">
+    <responsePAZ publicID="ResponsePAZ#20140205033946.513258.98" name="MHGZ.2006.320.HN10">
       <type>A</type>
       <gain>400</gain>
       <gainFrequency>15</gainFrequency>
@@ -389,7 +389,7 @@
       <zeros>(0,0) (0,0) (0,0)</zeros>
       <poles>(-4.444,4.444) (-4.444,-4.444) (-1.083,0)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214023.383161.101" name="MHGZ.2007.215.HN10">
+    <responsePAZ publicID="ResponsePAZ#20140205033946.51376.101" name="MHGZ.2007.215.HN10">
       <type>A</type>
       <gain>177.8</gain>
       <gainFrequency>15</gainFrequency>
@@ -400,7 +400,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214023.384266.106" name="MHGZ.2006.124.HZ10">
+    <responsePAZ publicID="ResponsePAZ#20140205033946.51486.106" name="MHGZ.2006.124.HZ10">
       <type>A</type>
       <gain>400</gain>
       <gainFrequency>15</gainFrequency>
@@ -411,7 +411,7 @@
       <zeros>(0,0) (0,0) (0,0)</zeros>
       <poles>(-4.444,4.444) (-4.444,-4.444) (-1.083,0)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214023.385274.111" name="MHGZ.2006.202.HZ10">
+    <responsePAZ publicID="ResponsePAZ#20140205033946.515913.111" name="MHGZ.2006.202.HZ10">
       <type>A</type>
       <gain>400</gain>
       <gainFrequency>15</gainFrequency>
@@ -422,7 +422,7 @@
       <zeros>(0,0) (0,0) (0,0)</zeros>
       <poles>(-4.444,4.444) (-4.444,-4.444) (-1.083,0)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214023.386363.116" name="MHGZ.2006.229.HZ10">
+    <responsePAZ publicID="ResponsePAZ#20140205033946.516947.116" name="MHGZ.2006.229.HZ10">
       <type>A</type>
       <gain>400</gain>
       <gainFrequency>15</gainFrequency>
@@ -433,7 +433,7 @@
       <zeros>(0,0) (0,0) (0,0)</zeros>
       <poles>(-4.444,4.444) (-4.444,-4.444) (-1.083,0)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214023.387379.121" name="MHGZ.2006.320.HZ10">
+    <responsePAZ publicID="ResponsePAZ#20140205033946.518185.121" name="MHGZ.2006.320.HZ10">
       <type>A</type>
       <gain>400</gain>
       <gainFrequency>15</gainFrequency>
@@ -444,7 +444,7 @@
       <zeros>(0,0) (0,0) (0,0)</zeros>
       <poles>(-4.444,4.444) (-4.444,-4.444) (-1.083,0)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214023.387847.124" name="MHGZ.2007.215.HZ10">
+    <responsePAZ publicID="ResponsePAZ#20140205033946.518737.124" name="MHGZ.2007.215.HZ10">
       <type>A</type>
       <gain>177.8</gain>
       <gainFrequency>15</gainFrequency>
@@ -455,7 +455,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
     </responsePAZ>
-    <responseFIR publicID="ResponseFIR#20131203214023.372805.52" name="MHGZ.10.EHE.2006.124.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033946.503416.52" name="MHGZ.10.EHE.2006.124.stage_3">
       <gain>1</gain>
       <decimationFactor>15</decimationFactor>
       <delay>81.999</delay>
@@ -464,7 +464,7 @@
       <symmetry>B</symmetry>
       <coefficients>-4.04791e-10 -1.39029e-10 6.728e-10 2.75797e-09 7.54651e-09 1.76668e-08 3.76936e-08 7.52313e-08 1.42425e-07 2.57999e-07 4.49904e-07 7.58655e-07 1.24139e-06 1.97658e-06 3.06939e-06 4.65728e-06 6.91569e-06 1.00631e-05 1.43649e-05 2.0135e-05 2.77346e-05 3.75661e-05 5.00617e-05 6.56652e-05 8.48049e-05 0.000107859 0.000135108 0.000166685 0.000202505 0.0002422 0.000285038 0.00032985 0.000374956 0.000418099 0.0004564 0.000486339 0.000503757 0.000503913 0.00048158 0.000431195 0.000347068 0.000223655 5.58818e-05 -0.000160475 -0.000428365 -0.000749008 -0.00112143 -0.00154201 -0.00200406 -0.00249746 -0.00300841 -0.00351925 -0.00400852 -0.00445107 -0.00481847 -0.00507953 -0.00520107 -0.00514889 -0.00488884 -0.00438813 -0.00361664 -0.0025484 -0.00116293 0.00055335 0.00260595 0.00499129 0.00769592 0.0106961 0.0139576 0.0174363 0.0210783 0.0248217 0.0285976 0.0323318 0.0359474 0.0393664 0.0425127 0.0453141 0.0477047 0.0496275 0.0510356 0.0518947 0.0521834</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.373138.53" name="MHGZ.10.EHE.2006.124.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205033946.503785.53" name="MHGZ.10.EHE.2006.124.stage_4">
       <gain>1</gain>
       <decimationFactor>10</decimationFactor>
       <delay>93</delay>
@@ -473,7 +473,7 @@
       <symmetry>B</symmetry>
       <coefficients>8.46923e-10 2.27422e-09 4.53895e-09 6.87379e-09 7.10904e-09 7.62784e-10 -1.98301e-08 -6.60994e-08 -1.53114e-07 -2.98249e-07 -5.18152e-07 -8.23636e-07 -1.21248e-06 -1.66055e-06 -2.11247e-06 -2.47353e-06 -2.60562e-06 -2.33013e-06 -1.44098e-06 2.69804e-07 2.97271e-06 6.74886e-06 1.15296e-05 1.70354e-05 2.27248e-05 2.7767e-05 3.10537e-05 3.1263e-05 2.69861e-05 1.69189e-05 1.11176e-07 -2.37456e-05 -5.40267e-05 -8.89227e-05 -0.000125282 -0.000158604 -0.000183236 -0.000192798 -0.000180864 -0.00014185 -7.2067e-05 2.91938e-05 0.000158665 0.000308386 0.000465422 0.000612198 0.000727547 0.000788512 0.000772858 0.000662123 0.000444926 0.000120161 -0.000300369 -0.000790361 -0.00130887 -0.00180202 -0.00220662 -0.00245579 -0.00248619 -0.00224631 -0.00170503 -0.000859463 0.000259011 0.00158157 0.0030025 0.00438414 0.00556632 0.00638 0.0066644 0.00628604 0.00515814 0.0032582 0.000641682 -0.00255018 -0.00609006 -0.0096727 -0.0129317 -0.0154642 -0.0168626 -0.016749 -0.0148125 -0.0108426 -0.00475778 0.00337489 0.0133318 0.0247374 0.0370816 0.0497507 0.062067 0.0733368 0.0829015 0.0901866 0.0947464 0.0962985</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.373437.54" name="MHGZ.10.EHE.2006.124.stage_5">
+    <responseFIR publicID="ResponseFIR#20140205033946.504046.54" name="MHGZ.10.EHE.2006.124.stage_5">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>111</delay>
@@ -482,7 +482,7 @@
       <symmetry>B</symmetry>
       <coefficients>-2.4877e-10 4.73744e-09 1.24032e-08 2.18423e-09 -2.9735e-08 -2.7741e-08 4.8235e-08 9.04852e-08 -4.3772e-08 -2.02925e-07 -2.93251e-08 3.57677e-07 2.38076e-07 -5.05054e-07 -6.56661e-07 5.29514e-07 1.33303e-06 -2.35391e-07 -2.23456e-06 -6.43189e-07 3.17885e-06 2.39189e-06 -3.76643e-06 -5.21313e-06 3.34388e-06 9.06984e-06 -1.0342e-06 -1.34948e-05 -4.1282e-06 1.74081e-05 1.29325e-05 -1.90112e-05 -2.55982e-05 1.58385e-05 4.12985e-05 -5.05136e-06 -5.76943e-05 -1.59734e-05 7.06232e-05 4.87621e-05 -7.41183e-05 -9.2656e-05 6.09281e-05 0.000143704 -2.36571e-05 -0.000193818 -4.34607e-05 0.000230529 0.0001423 -0.000237697 -0.00026842 0.00019742 0.000408986 -9.32264e-05 -0.000541667 -8.56506e-05 0.000635146 0.000339424 -0.000651794 -0.000653162 0.000552734 0.000993533 -0.000305133 -0.00130802 -0.000108987 0.00152764 0.000683646 -0.00157381 -0.00138119 0.00136932 0.00212784 -0.000852739 -0.00281433 -5.43598e-06 0.00330293 0.00118724 -0.00344149 -0.00261502 0.00308386 0.00414554 -0.00211493 -0.00557267 0.000477543 0.00664017 0.00180254 -0.00706464 -0.00459738 0.00656694 0.0076669 -0.00490895 -0.0106603 0.00193106 0.0131289 0.00241487 -0.0145476 -0.00804248 0.0143373 0.0147221 -0.0118736 -0.0220889 0.00645106 0.0296694 0.00287172 -0.0369222 -0.0177763 0.0432915 0.0424836 -0.0482648 -0.0928087 0.0514286 0.313777 0.447486</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.37456.58" name="MHGZ.10.EHE.2006.202.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033946.505113.58" name="MHGZ.10.EHE.2006.202.stage_3">
       <gain>1</gain>
       <decimationFactor>15</decimationFactor>
       <delay>81.999</delay>
@@ -491,7 +491,7 @@
       <symmetry>B</symmetry>
       <coefficients>-4.04791e-10 -1.39029e-10 6.728e-10 2.75797e-09 7.54651e-09 1.76668e-08 3.76936e-08 7.52313e-08 1.42425e-07 2.57999e-07 4.49904e-07 7.58655e-07 1.24139e-06 1.97658e-06 3.06939e-06 4.65728e-06 6.91569e-06 1.00631e-05 1.43649e-05 2.0135e-05 2.77346e-05 3.75661e-05 5.00617e-05 6.56652e-05 8.48049e-05 0.000107859 0.000135108 0.000166685 0.000202505 0.0002422 0.000285038 0.00032985 0.000374956 0.000418099 0.0004564 0.000486339 0.000503757 0.000503913 0.00048158 0.000431195 0.000347068 0.000223655 5.58818e-05 -0.000160475 -0.000428365 -0.000749008 -0.00112143 -0.00154201 -0.00200406 -0.00249746 -0.00300841 -0.00351925 -0.00400852 -0.00445107 -0.00481847 -0.00507953 -0.00520107 -0.00514889 -0.00488884 -0.00438813 -0.00361664 -0.0025484 -0.00116293 0.00055335 0.00260595 0.00499129 0.00769592 0.0106961 0.0139576 0.0174363 0.0210783 0.0248217 0.0285976 0.0323318 0.0359474 0.0393664 0.0425127 0.0453141 0.0477047 0.0496275 0.0510356 0.0518947 0.0521834</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.374795.59" name="MHGZ.10.EHE.2006.202.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205033946.505359.59" name="MHGZ.10.EHE.2006.202.stage_4">
       <gain>1</gain>
       <decimationFactor>10</decimationFactor>
       <delay>93</delay>
@@ -500,7 +500,7 @@
       <symmetry>B</symmetry>
       <coefficients>8.46923e-10 2.27422e-09 4.53895e-09 6.87379e-09 7.10904e-09 7.62784e-10 -1.98301e-08 -6.60994e-08 -1.53114e-07 -2.98249e-07 -5.18152e-07 -8.23636e-07 -1.21248e-06 -1.66055e-06 -2.11247e-06 -2.47353e-06 -2.60562e-06 -2.33013e-06 -1.44098e-06 2.69804e-07 2.97271e-06 6.74886e-06 1.15296e-05 1.70354e-05 2.27248e-05 2.7767e-05 3.10537e-05 3.1263e-05 2.69861e-05 1.69189e-05 1.11176e-07 -2.37456e-05 -5.40267e-05 -8.89227e-05 -0.000125282 -0.000158604 -0.000183236 -0.000192798 -0.000180864 -0.00014185 -7.2067e-05 2.91938e-05 0.000158665 0.000308386 0.000465422 0.000612198 0.000727547 0.000788512 0.000772858 0.000662123 0.000444926 0.000120161 -0.000300369 -0.000790361 -0.00130887 -0.00180202 -0.00220662 -0.00245579 -0.00248619 -0.00224631 -0.00170503 -0.000859463 0.000259011 0.00158157 0.0030025 0.00438414 0.00556632 0.00638 0.0066644 0.00628604 0.00515814 0.0032582 0.000641682 -0.00255018 -0.00609006 -0.0096727 -0.0129317 -0.0154642 -0.0168626 -0.016749 -0.0148125 -0.0108426 -0.00475778 0.00337489 0.0133318 0.0247374 0.0370816 0.0497507 0.062067 0.0733368 0.0829015 0.0901866 0.0947464 0.0962985</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.375044.60" name="MHGZ.10.EHE.2006.202.stage_5">
+    <responseFIR publicID="ResponseFIR#20140205033946.505611.60" name="MHGZ.10.EHE.2006.202.stage_5">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>111</delay>
@@ -509,7 +509,7 @@
       <symmetry>B</symmetry>
       <coefficients>-2.4877e-10 4.73744e-09 1.24032e-08 2.18423e-09 -2.9735e-08 -2.7741e-08 4.8235e-08 9.04852e-08 -4.3772e-08 -2.02925e-07 -2.93251e-08 3.57677e-07 2.38076e-07 -5.05054e-07 -6.56661e-07 5.29514e-07 1.33303e-06 -2.35391e-07 -2.23456e-06 -6.43189e-07 3.17885e-06 2.39189e-06 -3.76643e-06 -5.21313e-06 3.34388e-06 9.06984e-06 -1.0342e-06 -1.34948e-05 -4.1282e-06 1.74081e-05 1.29325e-05 -1.90112e-05 -2.55982e-05 1.58385e-05 4.12985e-05 -5.05136e-06 -5.76943e-05 -1.59734e-05 7.06232e-05 4.87621e-05 -7.41183e-05 -9.2656e-05 6.09281e-05 0.000143704 -2.36571e-05 -0.000193818 -4.34607e-05 0.000230529 0.0001423 -0.000237697 -0.00026842 0.00019742 0.000408986 -9.32264e-05 -0.000541667 -8.56506e-05 0.000635146 0.000339424 -0.000651794 -0.000653162 0.000552734 0.000993533 -0.000305133 -0.00130802 -0.000108987 0.00152764 0.000683646 -0.00157381 -0.00138119 0.00136932 0.00212784 -0.000852739 -0.00281433 -5.43598e-06 0.00330293 0.00118724 -0.00344149 -0.00261502 0.00308386 0.00414554 -0.00211493 -0.00557267 0.000477543 0.00664017 0.00180254 -0.00706464 -0.00459738 0.00656694 0.0076669 -0.00490895 -0.0106603 0.00193106 0.0131289 0.00241487 -0.0145476 -0.00804248 0.0143373 0.0147221 -0.0118736 -0.0220889 0.00645106 0.0296694 0.00287172 -0.0369222 -0.0177763 0.0432915 0.0424836 -0.0482648 -0.0928087 0.0514286 0.313777 0.447486</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.375667.64" name="MHGZ.10.EHE.2006.229.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033946.506207.64" name="MHGZ.10.EHE.2006.229.stage_3">
       <gain>1</gain>
       <decimationFactor>15</decimationFactor>
       <delay>81.999</delay>
@@ -518,7 +518,7 @@
       <symmetry>B</symmetry>
       <coefficients>-4.04791e-10 -1.39029e-10 6.728e-10 2.75797e-09 7.54651e-09 1.76668e-08 3.76936e-08 7.52313e-08 1.42425e-07 2.57999e-07 4.49904e-07 7.58655e-07 1.24139e-06 1.97658e-06 3.06939e-06 4.65728e-06 6.91569e-06 1.00631e-05 1.43649e-05 2.0135e-05 2.77346e-05 3.75661e-05 5.00617e-05 6.56652e-05 8.48049e-05 0.000107859 0.000135108 0.000166685 0.000202505 0.0002422 0.000285038 0.00032985 0.000374956 0.000418099 0.0004564 0.000486339 0.000503757 0.000503913 0.00048158 0.000431195 0.000347068 0.000223655 5.58818e-05 -0.000160475 -0.000428365 -0.000749008 -0.00112143 -0.00154201 -0.00200406 -0.00249746 -0.00300841 -0.00351925 -0.00400852 -0.00445107 -0.00481847 -0.00507953 -0.00520107 -0.00514889 -0.00488884 -0.00438813 -0.00361664 -0.0025484 -0.00116293 0.00055335 0.00260595 0.00499129 0.00769592 0.0106961 0.0139576 0.0174363 0.0210783 0.0248217 0.0285976 0.0323318 0.0359474 0.0393664 0.0425127 0.0453141 0.0477047 0.0496275 0.0510356 0.0518947 0.0521834</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.375948.65" name="MHGZ.10.EHE.2006.229.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205033946.506438.65" name="MHGZ.10.EHE.2006.229.stage_4">
       <gain>1</gain>
       <decimationFactor>10</decimationFactor>
       <delay>93</delay>
@@ -527,7 +527,7 @@
       <symmetry>B</symmetry>
       <coefficients>8.46923e-10 2.27422e-09 4.53895e-09 6.87379e-09 7.10904e-09 7.62784e-10 -1.98301e-08 -6.60994e-08 -1.53114e-07 -2.98249e-07 -5.18152e-07 -8.23636e-07 -1.21248e-06 -1.66055e-06 -2.11247e-06 -2.47353e-06 -2.60562e-06 -2.33013e-06 -1.44098e-06 2.69804e-07 2.97271e-06 6.74886e-06 1.15296e-05 1.70354e-05 2.27248e-05 2.7767e-05 3.10537e-05 3.1263e-05 2.69861e-05 1.69189e-05 1.11176e-07 -2.37456e-05 -5.40267e-05 -8.89227e-05 -0.000125282 -0.000158604 -0.000183236 -0.000192798 -0.000180864 -0.00014185 -7.2067e-05 2.91938e-05 0.000158665 0.000308386 0.000465422 0.000612198 0.000727547 0.000788512 0.000772858 0.000662123 0.000444926 0.000120161 -0.000300369 -0.000790361 -0.00130887 -0.00180202 -0.00220662 -0.00245579 -0.00248619 -0.00224631 -0.00170503 -0.000859463 0.000259011 0.00158157 0.0030025 0.00438414 0.00556632 0.00638 0.0066644 0.00628604 0.00515814 0.0032582 0.000641682 -0.00255018 -0.00609006 -0.0096727 -0.0129317 -0.0154642 -0.0168626 -0.016749 -0.0148125 -0.0108426 -0.00475778 0.00337489 0.0133318 0.0247374 0.0370816 0.0497507 0.062067 0.0733368 0.0829015 0.0901866 0.0947464 0.0962985</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.376208.66" name="MHGZ.10.EHE.2006.229.stage_5">
+    <responseFIR publicID="ResponseFIR#20140205033946.506682.66" name="MHGZ.10.EHE.2006.229.stage_5">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>111</delay>
@@ -536,7 +536,7 @@
       <symmetry>B</symmetry>
       <coefficients>-2.4877e-10 4.73744e-09 1.24032e-08 2.18423e-09 -2.9735e-08 -2.7741e-08 4.8235e-08 9.04852e-08 -4.3772e-08 -2.02925e-07 -2.93251e-08 3.57677e-07 2.38076e-07 -5.05054e-07 -6.56661e-07 5.29514e-07 1.33303e-06 -2.35391e-07 -2.23456e-06 -6.43189e-07 3.17885e-06 2.39189e-06 -3.76643e-06 -5.21313e-06 3.34388e-06 9.06984e-06 -1.0342e-06 -1.34948e-05 -4.1282e-06 1.74081e-05 1.29325e-05 -1.90112e-05 -2.55982e-05 1.58385e-05 4.12985e-05 -5.05136e-06 -5.76943e-05 -1.59734e-05 7.06232e-05 4.87621e-05 -7.41183e-05 -9.2656e-05 6.09281e-05 0.000143704 -2.36571e-05 -0.000193818 -4.34607e-05 0.000230529 0.0001423 -0.000237697 -0.00026842 0.00019742 0.000408986 -9.32264e-05 -0.000541667 -8.56506e-05 0.000635146 0.000339424 -0.000651794 -0.000653162 0.000552734 0.000993533 -0.000305133 -0.00130802 -0.000108987 0.00152764 0.000683646 -0.00157381 -0.00138119 0.00136932 0.00212784 -0.000852739 -0.00281433 -5.43598e-06 0.00330293 0.00118724 -0.00344149 -0.00261502 0.00308386 0.00414554 -0.00211493 -0.00557267 0.000477543 0.00664017 0.00180254 -0.00706464 -0.00459738 0.00656694 0.0076669 -0.00490895 -0.0106603 0.00193106 0.0131289 0.00241487 -0.0145476 -0.00804248 0.0143373 0.0147221 -0.0118736 -0.0220889 0.00645106 0.0296694 0.00287172 -0.0369222 -0.0177763 0.0432915 0.0424836 -0.0482648 -0.0928087 0.0514286 0.313777 0.447486</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.376816.70" name="MHGZ.10.EHE.2006.320.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033946.507246.70" name="MHGZ.10.EHE.2006.320.stage_3">
       <gain>1</gain>
       <decimationFactor>15</decimationFactor>
       <delay>81.999</delay>
@@ -545,7 +545,7 @@
       <symmetry>B</symmetry>
       <coefficients>-4.04791e-10 -1.39029e-10 6.728e-10 2.75797e-09 7.54651e-09 1.76668e-08 3.76936e-08 7.52313e-08 1.42425e-07 2.57999e-07 4.49904e-07 7.58655e-07 1.24139e-06 1.97658e-06 3.06939e-06 4.65728e-06 6.91569e-06 1.00631e-05 1.43649e-05 2.0135e-05 2.77346e-05 3.75661e-05 5.00617e-05 6.56652e-05 8.48049e-05 0.000107859 0.000135108 0.000166685 0.000202505 0.0002422 0.000285038 0.00032985 0.000374956 0.000418099 0.0004564 0.000486339 0.000503757 0.000503913 0.00048158 0.000431195 0.000347068 0.000223655 5.58818e-05 -0.000160475 -0.000428365 -0.000749008 -0.00112143 -0.00154201 -0.00200406 -0.00249746 -0.00300841 -0.00351925 -0.00400852 -0.00445107 -0.00481847 -0.00507953 -0.00520107 -0.00514889 -0.00488884 -0.00438813 -0.00361664 -0.0025484 -0.00116293 0.00055335 0.00260595 0.00499129 0.00769592 0.0106961 0.0139576 0.0174363 0.0210783 0.0248217 0.0285976 0.0323318 0.0359474 0.0393664 0.0425127 0.0453141 0.0477047 0.0496275 0.0510356 0.0518947 0.0521834</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.377056.71" name="MHGZ.10.EHE.2006.320.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205033946.507549.71" name="MHGZ.10.EHE.2006.320.stage_4">
       <gain>1</gain>
       <decimationFactor>10</decimationFactor>
       <delay>93</delay>
@@ -554,7 +554,7 @@
       <symmetry>B</symmetry>
       <coefficients>8.46923e-10 2.27422e-09 4.53895e-09 6.87379e-09 7.10904e-09 7.62784e-10 -1.98301e-08 -6.60994e-08 -1.53114e-07 -2.98249e-07 -5.18152e-07 -8.23636e-07 -1.21248e-06 -1.66055e-06 -2.11247e-06 -2.47353e-06 -2.60562e-06 -2.33013e-06 -1.44098e-06 2.69804e-07 2.97271e-06 6.74886e-06 1.15296e-05 1.70354e-05 2.27248e-05 2.7767e-05 3.10537e-05 3.1263e-05 2.69861e-05 1.69189e-05 1.11176e-07 -2.37456e-05 -5.40267e-05 -8.89227e-05 -0.000125282 -0.000158604 -0.000183236 -0.000192798 -0.000180864 -0.00014185 -7.2067e-05 2.91938e-05 0.000158665 0.000308386 0.000465422 0.000612198 0.000727547 0.000788512 0.000772858 0.000662123 0.000444926 0.000120161 -0.000300369 -0.000790361 -0.00130887 -0.00180202 -0.00220662 -0.00245579 -0.00248619 -0.00224631 -0.00170503 -0.000859463 0.000259011 0.00158157 0.0030025 0.00438414 0.00556632 0.00638 0.0066644 0.00628604 0.00515814 0.0032582 0.000641682 -0.00255018 -0.00609006 -0.0096727 -0.0129317 -0.0154642 -0.0168626 -0.016749 -0.0148125 -0.0108426 -0.00475778 0.00337489 0.0133318 0.0247374 0.0370816 0.0497507 0.062067 0.0733368 0.0829015 0.0901866 0.0947464 0.0962985</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.377323.72" name="MHGZ.10.EHE.2006.320.stage_5">
+    <responseFIR publicID="ResponseFIR#20140205033946.50781.72" name="MHGZ.10.EHE.2006.320.stage_5">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>111</delay>
@@ -563,7 +563,7 @@
       <symmetry>B</symmetry>
       <coefficients>-2.4877e-10 4.73744e-09 1.24032e-08 2.18423e-09 -2.9735e-08 -2.7741e-08 4.8235e-08 9.04852e-08 -4.3772e-08 -2.02925e-07 -2.93251e-08 3.57677e-07 2.38076e-07 -5.05054e-07 -6.56661e-07 5.29514e-07 1.33303e-06 -2.35391e-07 -2.23456e-06 -6.43189e-07 3.17885e-06 2.39189e-06 -3.76643e-06 -5.21313e-06 3.34388e-06 9.06984e-06 -1.0342e-06 -1.34948e-05 -4.1282e-06 1.74081e-05 1.29325e-05 -1.90112e-05 -2.55982e-05 1.58385e-05 4.12985e-05 -5.05136e-06 -5.76943e-05 -1.59734e-05 7.06232e-05 4.87621e-05 -7.41183e-05 -9.2656e-05 6.09281e-05 0.000143704 -2.36571e-05 -0.000193818 -4.34607e-05 0.000230529 0.0001423 -0.000237697 -0.00026842 0.00019742 0.000408986 -9.32264e-05 -0.000541667 -8.56506e-05 0.000635146 0.000339424 -0.000651794 -0.000653162 0.000552734 0.000993533 -0.000305133 -0.00130802 -0.000108987 0.00152764 0.000683646 -0.00157381 -0.00138119 0.00136932 0.00212784 -0.000852739 -0.00281433 -5.43598e-06 0.00330293 0.00118724 -0.00344149 -0.00261502 0.00308386 0.00414554 -0.00211493 -0.00557267 0.000477543 0.00664017 0.00180254 -0.00706464 -0.00459738 0.00656694 0.0076669 -0.00490895 -0.0106603 0.00193106 0.0131289 0.00241487 -0.0145476 -0.00804248 0.0143373 0.0147221 -0.0118736 -0.0220889 0.00645106 0.0296694 0.00287172 -0.0369222 -0.0177763 0.0432915 0.0424836 -0.0482648 -0.0928087 0.0514286 0.313777 0.447486</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.377981.76" name="MHGZ.10.EHE.2007.215.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033946.508381.76" name="MHGZ.10.EHE.2007.215.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.167</delay>
@@ -572,7 +572,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.378543.79" name="MHGZ.10.EHN.2006.124.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033946.508878.79" name="MHGZ.10.EHN.2006.124.stage_3">
       <gain>1</gain>
       <decimationFactor>15</decimationFactor>
       <delay>81.999</delay>
@@ -581,7 +581,7 @@
       <symmetry>B</symmetry>
       <coefficients>-4.04791e-10 -1.39029e-10 6.728e-10 2.75797e-09 7.54651e-09 1.76668e-08 3.76936e-08 7.52313e-08 1.42425e-07 2.57999e-07 4.49904e-07 7.58655e-07 1.24139e-06 1.97658e-06 3.06939e-06 4.65728e-06 6.91569e-06 1.00631e-05 1.43649e-05 2.0135e-05 2.77346e-05 3.75661e-05 5.00617e-05 6.56652e-05 8.48049e-05 0.000107859 0.000135108 0.000166685 0.000202505 0.0002422 0.000285038 0.00032985 0.000374956 0.000418099 0.0004564 0.000486339 0.000503757 0.000503913 0.00048158 0.000431195 0.000347068 0.000223655 5.58818e-05 -0.000160475 -0.000428365 -0.000749008 -0.00112143 -0.00154201 -0.00200406 -0.00249746 -0.00300841 -0.00351925 -0.00400852 -0.00445107 -0.00481847 -0.00507953 -0.00520107 -0.00514889 -0.00488884 -0.00438813 -0.00361664 -0.0025484 -0.00116293 0.00055335 0.00260595 0.00499129 0.00769592 0.0106961 0.0139576 0.0174363 0.0210783 0.0248217 0.0285976 0.0323318 0.0359474 0.0393664 0.0425127 0.0453141 0.0477047 0.0496275 0.0510356 0.0518947 0.0521834</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.378798.80" name="MHGZ.10.EHN.2006.124.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205033946.509113.80" name="MHGZ.10.EHN.2006.124.stage_4">
       <gain>1</gain>
       <decimationFactor>10</decimationFactor>
       <delay>93</delay>
@@ -590,7 +590,7 @@
       <symmetry>B</symmetry>
       <coefficients>8.46923e-10 2.27422e-09 4.53895e-09 6.87379e-09 7.10904e-09 7.62784e-10 -1.98301e-08 -6.60994e-08 -1.53114e-07 -2.98249e-07 -5.18152e-07 -8.23636e-07 -1.21248e-06 -1.66055e-06 -2.11247e-06 -2.47353e-06 -2.60562e-06 -2.33013e-06 -1.44098e-06 2.69804e-07 2.97271e-06 6.74886e-06 1.15296e-05 1.70354e-05 2.27248e-05 2.7767e-05 3.10537e-05 3.1263e-05 2.69861e-05 1.69189e-05 1.11176e-07 -2.37456e-05 -5.40267e-05 -8.89227e-05 -0.000125282 -0.000158604 -0.000183236 -0.000192798 -0.000180864 -0.00014185 -7.2067e-05 2.91938e-05 0.000158665 0.000308386 0.000465422 0.000612198 0.000727547 0.000788512 0.000772858 0.000662123 0.000444926 0.000120161 -0.000300369 -0.000790361 -0.00130887 -0.00180202 -0.00220662 -0.00245579 -0.00248619 -0.00224631 -0.00170503 -0.000859463 0.000259011 0.00158157 0.0030025 0.00438414 0.00556632 0.00638 0.0066644 0.00628604 0.00515814 0.0032582 0.000641682 -0.00255018 -0.00609006 -0.0096727 -0.0129317 -0.0154642 -0.0168626 -0.016749 -0.0148125 -0.0108426 -0.00475778 0.00337489 0.0133318 0.0247374 0.0370816 0.0497507 0.062067 0.0733368 0.0829015 0.0901866 0.0947464 0.0962985</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.379036.81" name="MHGZ.10.EHN.2006.124.stage_5">
+    <responseFIR publicID="ResponseFIR#20140205033946.50936.81" name="MHGZ.10.EHN.2006.124.stage_5">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>111</delay>
@@ -599,7 +599,7 @@
       <symmetry>B</symmetry>
       <coefficients>-2.4877e-10 4.73744e-09 1.24032e-08 2.18423e-09 -2.9735e-08 -2.7741e-08 4.8235e-08 9.04852e-08 -4.3772e-08 -2.02925e-07 -2.93251e-08 3.57677e-07 2.38076e-07 -5.05054e-07 -6.56661e-07 5.29514e-07 1.33303e-06 -2.35391e-07 -2.23456e-06 -6.43189e-07 3.17885e-06 2.39189e-06 -3.76643e-06 -5.21313e-06 3.34388e-06 9.06984e-06 -1.0342e-06 -1.34948e-05 -4.1282e-06 1.74081e-05 1.29325e-05 -1.90112e-05 -2.55982e-05 1.58385e-05 4.12985e-05 -5.05136e-06 -5.76943e-05 -1.59734e-05 7.06232e-05 4.87621e-05 -7.41183e-05 -9.2656e-05 6.09281e-05 0.000143704 -2.36571e-05 -0.000193818 -4.34607e-05 0.000230529 0.0001423 -0.000237697 -0.00026842 0.00019742 0.000408986 -9.32264e-05 -0.000541667 -8.56506e-05 0.000635146 0.000339424 -0.000651794 -0.000653162 0.000552734 0.000993533 -0.000305133 -0.00130802 -0.000108987 0.00152764 0.000683646 -0.00157381 -0.00138119 0.00136932 0.00212784 -0.000852739 -0.00281433 -5.43598e-06 0.00330293 0.00118724 -0.00344149 -0.00261502 0.00308386 0.00414554 -0.00211493 -0.00557267 0.000477543 0.00664017 0.00180254 -0.00706464 -0.00459738 0.00656694 0.0076669 -0.00490895 -0.0106603 0.00193106 0.0131289 0.00241487 -0.0145476 -0.00804248 0.0143373 0.0147221 -0.0118736 -0.0220889 0.00645106 0.0296694 0.00287172 -0.0369222 -0.0177763 0.0432915 0.0424836 -0.0482648 -0.0928087 0.0514286 0.313777 0.447486</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.379613.84" name="MHGZ.10.EHN.2006.202.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033946.510192.84" name="MHGZ.10.EHN.2006.202.stage_3">
       <gain>1</gain>
       <decimationFactor>15</decimationFactor>
       <delay>81.999</delay>
@@ -608,7 +608,7 @@
       <symmetry>B</symmetry>
       <coefficients>-4.04791e-10 -1.39029e-10 6.728e-10 2.75797e-09 7.54651e-09 1.76668e-08 3.76936e-08 7.52313e-08 1.42425e-07 2.57999e-07 4.49904e-07 7.58655e-07 1.24139e-06 1.97658e-06 3.06939e-06 4.65728e-06 6.91569e-06 1.00631e-05 1.43649e-05 2.0135e-05 2.77346e-05 3.75661e-05 5.00617e-05 6.56652e-05 8.48049e-05 0.000107859 0.000135108 0.000166685 0.000202505 0.0002422 0.000285038 0.00032985 0.000374956 0.000418099 0.0004564 0.000486339 0.000503757 0.000503913 0.00048158 0.000431195 0.000347068 0.000223655 5.58818e-05 -0.000160475 -0.000428365 -0.000749008 -0.00112143 -0.00154201 -0.00200406 -0.00249746 -0.00300841 -0.00351925 -0.00400852 -0.00445107 -0.00481847 -0.00507953 -0.00520107 -0.00514889 -0.00488884 -0.00438813 -0.00361664 -0.0025484 -0.00116293 0.00055335 0.00260595 0.00499129 0.00769592 0.0106961 0.0139576 0.0174363 0.0210783 0.0248217 0.0285976 0.0323318 0.0359474 0.0393664 0.0425127 0.0453141 0.0477047 0.0496275 0.0510356 0.0518947 0.0521834</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.379862.85" name="MHGZ.10.EHN.2006.202.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205033946.510463.85" name="MHGZ.10.EHN.2006.202.stage_4">
       <gain>1</gain>
       <decimationFactor>10</decimationFactor>
       <delay>93</delay>
@@ -617,7 +617,7 @@
       <symmetry>B</symmetry>
       <coefficients>8.46923e-10 2.27422e-09 4.53895e-09 6.87379e-09 7.10904e-09 7.62784e-10 -1.98301e-08 -6.60994e-08 -1.53114e-07 -2.98249e-07 -5.18152e-07 -8.23636e-07 -1.21248e-06 -1.66055e-06 -2.11247e-06 -2.47353e-06 -2.60562e-06 -2.33013e-06 -1.44098e-06 2.69804e-07 2.97271e-06 6.74886e-06 1.15296e-05 1.70354e-05 2.27248e-05 2.7767e-05 3.10537e-05 3.1263e-05 2.69861e-05 1.69189e-05 1.11176e-07 -2.37456e-05 -5.40267e-05 -8.89227e-05 -0.000125282 -0.000158604 -0.000183236 -0.000192798 -0.000180864 -0.00014185 -7.2067e-05 2.91938e-05 0.000158665 0.000308386 0.000465422 0.000612198 0.000727547 0.000788512 0.000772858 0.000662123 0.000444926 0.000120161 -0.000300369 -0.000790361 -0.00130887 -0.00180202 -0.00220662 -0.00245579 -0.00248619 -0.00224631 -0.00170503 -0.000859463 0.000259011 0.00158157 0.0030025 0.00438414 0.00556632 0.00638 0.0066644 0.00628604 0.00515814 0.0032582 0.000641682 -0.00255018 -0.00609006 -0.0096727 -0.0129317 -0.0154642 -0.0168626 -0.016749 -0.0148125 -0.0108426 -0.00475778 0.00337489 0.0133318 0.0247374 0.0370816 0.0497507 0.062067 0.0733368 0.0829015 0.0901866 0.0947464 0.0962985</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.380126.86" name="MHGZ.10.EHN.2006.202.stage_5">
+    <responseFIR publicID="ResponseFIR#20140205033946.510715.86" name="MHGZ.10.EHN.2006.202.stage_5">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>111</delay>
@@ -626,7 +626,7 @@
       <symmetry>B</symmetry>
       <coefficients>-2.4877e-10 4.73744e-09 1.24032e-08 2.18423e-09 -2.9735e-08 -2.7741e-08 4.8235e-08 9.04852e-08 -4.3772e-08 -2.02925e-07 -2.93251e-08 3.57677e-07 2.38076e-07 -5.05054e-07 -6.56661e-07 5.29514e-07 1.33303e-06 -2.35391e-07 -2.23456e-06 -6.43189e-07 3.17885e-06 2.39189e-06 -3.76643e-06 -5.21313e-06 3.34388e-06 9.06984e-06 -1.0342e-06 -1.34948e-05 -4.1282e-06 1.74081e-05 1.29325e-05 -1.90112e-05 -2.55982e-05 1.58385e-05 4.12985e-05 -5.05136e-06 -5.76943e-05 -1.59734e-05 7.06232e-05 4.87621e-05 -7.41183e-05 -9.2656e-05 6.09281e-05 0.000143704 -2.36571e-05 -0.000193818 -4.34607e-05 0.000230529 0.0001423 -0.000237697 -0.00026842 0.00019742 0.000408986 -9.32264e-05 -0.000541667 -8.56506e-05 0.000635146 0.000339424 -0.000651794 -0.000653162 0.000552734 0.000993533 -0.000305133 -0.00130802 -0.000108987 0.00152764 0.000683646 -0.00157381 -0.00138119 0.00136932 0.00212784 -0.000852739 -0.00281433 -5.43598e-06 0.00330293 0.00118724 -0.00344149 -0.00261502 0.00308386 0.00414554 -0.00211493 -0.00557267 0.000477543 0.00664017 0.00180254 -0.00706464 -0.00459738 0.00656694 0.0076669 -0.00490895 -0.0106603 0.00193106 0.0131289 0.00241487 -0.0145476 -0.00804248 0.0143373 0.0147221 -0.0118736 -0.0220889 0.00645106 0.0296694 0.00287172 -0.0369222 -0.0177763 0.0432915 0.0424836 -0.0482648 -0.0928087 0.0514286 0.313777 0.447486</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.380717.89" name="MHGZ.10.EHN.2006.229.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033946.511266.89" name="MHGZ.10.EHN.2006.229.stage_3">
       <gain>1</gain>
       <decimationFactor>15</decimationFactor>
       <delay>81.999</delay>
@@ -635,7 +635,7 @@
       <symmetry>B</symmetry>
       <coefficients>-4.04791e-10 -1.39029e-10 6.728e-10 2.75797e-09 7.54651e-09 1.76668e-08 3.76936e-08 7.52313e-08 1.42425e-07 2.57999e-07 4.49904e-07 7.58655e-07 1.24139e-06 1.97658e-06 3.06939e-06 4.65728e-06 6.91569e-06 1.00631e-05 1.43649e-05 2.0135e-05 2.77346e-05 3.75661e-05 5.00617e-05 6.56652e-05 8.48049e-05 0.000107859 0.000135108 0.000166685 0.000202505 0.0002422 0.000285038 0.00032985 0.000374956 0.000418099 0.0004564 0.000486339 0.000503757 0.000503913 0.00048158 0.000431195 0.000347068 0.000223655 5.58818e-05 -0.000160475 -0.000428365 -0.000749008 -0.00112143 -0.00154201 -0.00200406 -0.00249746 -0.00300841 -0.00351925 -0.00400852 -0.00445107 -0.00481847 -0.00507953 -0.00520107 -0.00514889 -0.00488884 -0.00438813 -0.00361664 -0.0025484 -0.00116293 0.00055335 0.00260595 0.00499129 0.00769592 0.0106961 0.0139576 0.0174363 0.0210783 0.0248217 0.0285976 0.0323318 0.0359474 0.0393664 0.0425127 0.0453141 0.0477047 0.0496275 0.0510356 0.0518947 0.0521834</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.380982.90" name="MHGZ.10.EHN.2006.229.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205033946.511513.90" name="MHGZ.10.EHN.2006.229.stage_4">
       <gain>1</gain>
       <decimationFactor>10</decimationFactor>
       <delay>93</delay>
@@ -644,7 +644,7 @@
       <symmetry>B</symmetry>
       <coefficients>8.46923e-10 2.27422e-09 4.53895e-09 6.87379e-09 7.10904e-09 7.62784e-10 -1.98301e-08 -6.60994e-08 -1.53114e-07 -2.98249e-07 -5.18152e-07 -8.23636e-07 -1.21248e-06 -1.66055e-06 -2.11247e-06 -2.47353e-06 -2.60562e-06 -2.33013e-06 -1.44098e-06 2.69804e-07 2.97271e-06 6.74886e-06 1.15296e-05 1.70354e-05 2.27248e-05 2.7767e-05 3.10537e-05 3.1263e-05 2.69861e-05 1.69189e-05 1.11176e-07 -2.37456e-05 -5.40267e-05 -8.89227e-05 -0.000125282 -0.000158604 -0.000183236 -0.000192798 -0.000180864 -0.00014185 -7.2067e-05 2.91938e-05 0.000158665 0.000308386 0.000465422 0.000612198 0.000727547 0.000788512 0.000772858 0.000662123 0.000444926 0.000120161 -0.000300369 -0.000790361 -0.00130887 -0.00180202 -0.00220662 -0.00245579 -0.00248619 -0.00224631 -0.00170503 -0.000859463 0.000259011 0.00158157 0.0030025 0.00438414 0.00556632 0.00638 0.0066644 0.00628604 0.00515814 0.0032582 0.000641682 -0.00255018 -0.00609006 -0.0096727 -0.0129317 -0.0154642 -0.0168626 -0.016749 -0.0148125 -0.0108426 -0.00475778 0.00337489 0.0133318 0.0247374 0.0370816 0.0497507 0.062067 0.0733368 0.0829015 0.0901866 0.0947464 0.0962985</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.381242.91" name="MHGZ.10.EHN.2006.229.stage_5">
+    <responseFIR publicID="ResponseFIR#20140205033946.511779.91" name="MHGZ.10.EHN.2006.229.stage_5">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>111</delay>
@@ -653,7 +653,7 @@
       <symmetry>B</symmetry>
       <coefficients>-2.4877e-10 4.73744e-09 1.24032e-08 2.18423e-09 -2.9735e-08 -2.7741e-08 4.8235e-08 9.04852e-08 -4.3772e-08 -2.02925e-07 -2.93251e-08 3.57677e-07 2.38076e-07 -5.05054e-07 -6.56661e-07 5.29514e-07 1.33303e-06 -2.35391e-07 -2.23456e-06 -6.43189e-07 3.17885e-06 2.39189e-06 -3.76643e-06 -5.21313e-06 3.34388e-06 9.06984e-06 -1.0342e-06 -1.34948e-05 -4.1282e-06 1.74081e-05 1.29325e-05 -1.90112e-05 -2.55982e-05 1.58385e-05 4.12985e-05 -5.05136e-06 -5.76943e-05 -1.59734e-05 7.06232e-05 4.87621e-05 -7.41183e-05 -9.2656e-05 6.09281e-05 0.000143704 -2.36571e-05 -0.000193818 -4.34607e-05 0.000230529 0.0001423 -0.000237697 -0.00026842 0.00019742 0.000408986 -9.32264e-05 -0.000541667 -8.56506e-05 0.000635146 0.000339424 -0.000651794 -0.000653162 0.000552734 0.000993533 -0.000305133 -0.00130802 -0.000108987 0.00152764 0.000683646 -0.00157381 -0.00138119 0.00136932 0.00212784 -0.000852739 -0.00281433 -5.43598e-06 0.00330293 0.00118724 -0.00344149 -0.00261502 0.00308386 0.00414554 -0.00211493 -0.00557267 0.000477543 0.00664017 0.00180254 -0.00706464 -0.00459738 0.00656694 0.0076669 -0.00490895 -0.0106603 0.00193106 0.0131289 0.00241487 -0.0145476 -0.00804248 0.0143373 0.0147221 -0.0118736 -0.0220889 0.00645106 0.0296694 0.00287172 -0.0369222 -0.0177763 0.0432915 0.0424836 -0.0482648 -0.0928087 0.0514286 0.313777 0.447486</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.38183.94" name="MHGZ.10.EHN.2006.320.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033946.512391.94" name="MHGZ.10.EHN.2006.320.stage_3">
       <gain>1</gain>
       <decimationFactor>15</decimationFactor>
       <delay>81.999</delay>
@@ -662,7 +662,7 @@
       <symmetry>B</symmetry>
       <coefficients>-4.04791e-10 -1.39029e-10 6.728e-10 2.75797e-09 7.54651e-09 1.76668e-08 3.76936e-08 7.52313e-08 1.42425e-07 2.57999e-07 4.49904e-07 7.58655e-07 1.24139e-06 1.97658e-06 3.06939e-06 4.65728e-06 6.91569e-06 1.00631e-05 1.43649e-05 2.0135e-05 2.77346e-05 3.75661e-05 5.00617e-05 6.56652e-05 8.48049e-05 0.000107859 0.000135108 0.000166685 0.000202505 0.0002422 0.000285038 0.00032985 0.000374956 0.000418099 0.0004564 0.000486339 0.000503757 0.000503913 0.00048158 0.000431195 0.000347068 0.000223655 5.58818e-05 -0.000160475 -0.000428365 -0.000749008 -0.00112143 -0.00154201 -0.00200406 -0.00249746 -0.00300841 -0.00351925 -0.00400852 -0.00445107 -0.00481847 -0.00507953 -0.00520107 -0.00514889 -0.00488884 -0.00438813 -0.00361664 -0.0025484 -0.00116293 0.00055335 0.00260595 0.00499129 0.00769592 0.0106961 0.0139576 0.0174363 0.0210783 0.0248217 0.0285976 0.0323318 0.0359474 0.0393664 0.0425127 0.0453141 0.0477047 0.0496275 0.0510356 0.0518947 0.0521834</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.382077.95" name="MHGZ.10.EHN.2006.320.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205033946.512642.95" name="MHGZ.10.EHN.2006.320.stage_4">
       <gain>1</gain>
       <decimationFactor>10</decimationFactor>
       <delay>93</delay>
@@ -671,7 +671,7 @@
       <symmetry>B</symmetry>
       <coefficients>8.46923e-10 2.27422e-09 4.53895e-09 6.87379e-09 7.10904e-09 7.62784e-10 -1.98301e-08 -6.60994e-08 -1.53114e-07 -2.98249e-07 -5.18152e-07 -8.23636e-07 -1.21248e-06 -1.66055e-06 -2.11247e-06 -2.47353e-06 -2.60562e-06 -2.33013e-06 -1.44098e-06 2.69804e-07 2.97271e-06 6.74886e-06 1.15296e-05 1.70354e-05 2.27248e-05 2.7767e-05 3.10537e-05 3.1263e-05 2.69861e-05 1.69189e-05 1.11176e-07 -2.37456e-05 -5.40267e-05 -8.89227e-05 -0.000125282 -0.000158604 -0.000183236 -0.000192798 -0.000180864 -0.00014185 -7.2067e-05 2.91938e-05 0.000158665 0.000308386 0.000465422 0.000612198 0.000727547 0.000788512 0.000772858 0.000662123 0.000444926 0.000120161 -0.000300369 -0.000790361 -0.00130887 -0.00180202 -0.00220662 -0.00245579 -0.00248619 -0.00224631 -0.00170503 -0.000859463 0.000259011 0.00158157 0.0030025 0.00438414 0.00556632 0.00638 0.0066644 0.00628604 0.00515814 0.0032582 0.000641682 -0.00255018 -0.00609006 -0.0096727 -0.0129317 -0.0154642 -0.0168626 -0.016749 -0.0148125 -0.0108426 -0.00475778 0.00337489 0.0133318 0.0247374 0.0370816 0.0497507 0.062067 0.0733368 0.0829015 0.0901866 0.0947464 0.0962985</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.382342.96" name="MHGZ.10.EHN.2006.320.stage_5">
+    <responseFIR publicID="ResponseFIR#20140205033946.512901.96" name="MHGZ.10.EHN.2006.320.stage_5">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>111</delay>
@@ -680,7 +680,7 @@
       <symmetry>B</symmetry>
       <coefficients>-2.4877e-10 4.73744e-09 1.24032e-08 2.18423e-09 -2.9735e-08 -2.7741e-08 4.8235e-08 9.04852e-08 -4.3772e-08 -2.02925e-07 -2.93251e-08 3.57677e-07 2.38076e-07 -5.05054e-07 -6.56661e-07 5.29514e-07 1.33303e-06 -2.35391e-07 -2.23456e-06 -6.43189e-07 3.17885e-06 2.39189e-06 -3.76643e-06 -5.21313e-06 3.34388e-06 9.06984e-06 -1.0342e-06 -1.34948e-05 -4.1282e-06 1.74081e-05 1.29325e-05 -1.90112e-05 -2.55982e-05 1.58385e-05 4.12985e-05 -5.05136e-06 -5.76943e-05 -1.59734e-05 7.06232e-05 4.87621e-05 -7.41183e-05 -9.2656e-05 6.09281e-05 0.000143704 -2.36571e-05 -0.000193818 -4.34607e-05 0.000230529 0.0001423 -0.000237697 -0.00026842 0.00019742 0.000408986 -9.32264e-05 -0.000541667 -8.56506e-05 0.000635146 0.000339424 -0.000651794 -0.000653162 0.000552734 0.000993533 -0.000305133 -0.00130802 -0.000108987 0.00152764 0.000683646 -0.00157381 -0.00138119 0.00136932 0.00212784 -0.000852739 -0.00281433 -5.43598e-06 0.00330293 0.00118724 -0.00344149 -0.00261502 0.00308386 0.00414554 -0.00211493 -0.00557267 0.000477543 0.00664017 0.00180254 -0.00706464 -0.00459738 0.00656694 0.0076669 -0.00490895 -0.0106603 0.00193106 0.0131289 0.00241487 -0.0145476 -0.00804248 0.0143373 0.0147221 -0.0118736 -0.0220889 0.00645106 0.0296694 0.00287172 -0.0369222 -0.0177763 0.0432915 0.0424836 -0.0482648 -0.0928087 0.0514286 0.313777 0.447486</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.382924.99" name="MHGZ.10.EHN.2007.215.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033946.513504.99" name="MHGZ.10.EHN.2007.215.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.167</delay>
@@ -689,7 +689,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.383458.102" name="MHGZ.10.EHZ.2006.124.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033946.513993.102" name="MHGZ.10.EHZ.2006.124.stage_3">
       <gain>1</gain>
       <decimationFactor>15</decimationFactor>
       <delay>81.999</delay>
@@ -698,7 +698,7 @@
       <symmetry>B</symmetry>
       <coefficients>-4.04791e-10 -1.39029e-10 6.728e-10 2.75797e-09 7.54651e-09 1.76668e-08 3.76936e-08 7.52313e-08 1.42425e-07 2.57999e-07 4.49904e-07 7.58655e-07 1.24139e-06 1.97658e-06 3.06939e-06 4.65728e-06 6.91569e-06 1.00631e-05 1.43649e-05 2.0135e-05 2.77346e-05 3.75661e-05 5.00617e-05 6.56652e-05 8.48049e-05 0.000107859 0.000135108 0.000166685 0.000202505 0.0002422 0.000285038 0.00032985 0.000374956 0.000418099 0.0004564 0.000486339 0.000503757 0.000503913 0.00048158 0.000431195 0.000347068 0.000223655 5.58818e-05 -0.000160475 -0.000428365 -0.000749008 -0.00112143 -0.00154201 -0.00200406 -0.00249746 -0.00300841 -0.00351925 -0.00400852 -0.00445107 -0.00481847 -0.00507953 -0.00520107 -0.00514889 -0.00488884 -0.00438813 -0.00361664 -0.0025484 -0.00116293 0.00055335 0.00260595 0.00499129 0.00769592 0.0106961 0.0139576 0.0174363 0.0210783 0.0248217 0.0285976 0.0323318 0.0359474 0.0393664 0.0425127 0.0453141 0.0477047 0.0496275 0.0510356 0.0518947 0.0521834</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.383718.103" name="MHGZ.10.EHZ.2006.124.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205033946.514244.103" name="MHGZ.10.EHZ.2006.124.stage_4">
       <gain>1</gain>
       <decimationFactor>10</decimationFactor>
       <delay>93</delay>
@@ -707,7 +707,7 @@
       <symmetry>B</symmetry>
       <coefficients>8.46923e-10 2.27422e-09 4.53895e-09 6.87379e-09 7.10904e-09 7.62784e-10 -1.98301e-08 -6.60994e-08 -1.53114e-07 -2.98249e-07 -5.18152e-07 -8.23636e-07 -1.21248e-06 -1.66055e-06 -2.11247e-06 -2.47353e-06 -2.60562e-06 -2.33013e-06 -1.44098e-06 2.69804e-07 2.97271e-06 6.74886e-06 1.15296e-05 1.70354e-05 2.27248e-05 2.7767e-05 3.10537e-05 3.1263e-05 2.69861e-05 1.69189e-05 1.11176e-07 -2.37456e-05 -5.40267e-05 -8.89227e-05 -0.000125282 -0.000158604 -0.000183236 -0.000192798 -0.000180864 -0.00014185 -7.2067e-05 2.91938e-05 0.000158665 0.000308386 0.000465422 0.000612198 0.000727547 0.000788512 0.000772858 0.000662123 0.000444926 0.000120161 -0.000300369 -0.000790361 -0.00130887 -0.00180202 -0.00220662 -0.00245579 -0.00248619 -0.00224631 -0.00170503 -0.000859463 0.000259011 0.00158157 0.0030025 0.00438414 0.00556632 0.00638 0.0066644 0.00628604 0.00515814 0.0032582 0.000641682 -0.00255018 -0.00609006 -0.0096727 -0.0129317 -0.0154642 -0.0168626 -0.016749 -0.0148125 -0.0108426 -0.00475778 0.00337489 0.0133318 0.0247374 0.0370816 0.0497507 0.062067 0.0733368 0.0829015 0.0901866 0.0947464 0.0962985</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.383955.104" name="MHGZ.10.EHZ.2006.124.stage_5">
+    <responseFIR publicID="ResponseFIR#20140205033946.514504.104" name="MHGZ.10.EHZ.2006.124.stage_5">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>111</delay>
@@ -716,7 +716,7 @@
       <symmetry>B</symmetry>
       <coefficients>-2.4877e-10 4.73744e-09 1.24032e-08 2.18423e-09 -2.9735e-08 -2.7741e-08 4.8235e-08 9.04852e-08 -4.3772e-08 -2.02925e-07 -2.93251e-08 3.57677e-07 2.38076e-07 -5.05054e-07 -6.56661e-07 5.29514e-07 1.33303e-06 -2.35391e-07 -2.23456e-06 -6.43189e-07 3.17885e-06 2.39189e-06 -3.76643e-06 -5.21313e-06 3.34388e-06 9.06984e-06 -1.0342e-06 -1.34948e-05 -4.1282e-06 1.74081e-05 1.29325e-05 -1.90112e-05 -2.55982e-05 1.58385e-05 4.12985e-05 -5.05136e-06 -5.76943e-05 -1.59734e-05 7.06232e-05 4.87621e-05 -7.41183e-05 -9.2656e-05 6.09281e-05 0.000143704 -2.36571e-05 -0.000193818 -4.34607e-05 0.000230529 0.0001423 -0.000237697 -0.00026842 0.00019742 0.000408986 -9.32264e-05 -0.000541667 -8.56506e-05 0.000635146 0.000339424 -0.000651794 -0.000653162 0.000552734 0.000993533 -0.000305133 -0.00130802 -0.000108987 0.00152764 0.000683646 -0.00157381 -0.00138119 0.00136932 0.00212784 -0.000852739 -0.00281433 -5.43598e-06 0.00330293 0.00118724 -0.00344149 -0.00261502 0.00308386 0.00414554 -0.00211493 -0.00557267 0.000477543 0.00664017 0.00180254 -0.00706464 -0.00459738 0.00656694 0.0076669 -0.00490895 -0.0106603 0.00193106 0.0131289 0.00241487 -0.0145476 -0.00804248 0.0143373 0.0147221 -0.0118736 -0.0220889 0.00645106 0.0296694 0.00287172 -0.0369222 -0.0177763 0.0432915 0.0424836 -0.0482648 -0.0928087 0.0514286 0.313777 0.447486</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.384498.107" name="MHGZ.10.EHZ.2006.202.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033946.515111.107" name="MHGZ.10.EHZ.2006.202.stage_3">
       <gain>1</gain>
       <decimationFactor>15</decimationFactor>
       <delay>81.999</delay>
@@ -725,7 +725,7 @@
       <symmetry>B</symmetry>
       <coefficients>-4.04791e-10 -1.39029e-10 6.728e-10 2.75797e-09 7.54651e-09 1.76668e-08 3.76936e-08 7.52313e-08 1.42425e-07 2.57999e-07 4.49904e-07 7.58655e-07 1.24139e-06 1.97658e-06 3.06939e-06 4.65728e-06 6.91569e-06 1.00631e-05 1.43649e-05 2.0135e-05 2.77346e-05 3.75661e-05 5.00617e-05 6.56652e-05 8.48049e-05 0.000107859 0.000135108 0.000166685 0.000202505 0.0002422 0.000285038 0.00032985 0.000374956 0.000418099 0.0004564 0.000486339 0.000503757 0.000503913 0.00048158 0.000431195 0.000347068 0.000223655 5.58818e-05 -0.000160475 -0.000428365 -0.000749008 -0.00112143 -0.00154201 -0.00200406 -0.00249746 -0.00300841 -0.00351925 -0.00400852 -0.00445107 -0.00481847 -0.00507953 -0.00520107 -0.00514889 -0.00488884 -0.00438813 -0.00361664 -0.0025484 -0.00116293 0.00055335 0.00260595 0.00499129 0.00769592 0.0106961 0.0139576 0.0174363 0.0210783 0.0248217 0.0285976 0.0323318 0.0359474 0.0393664 0.0425127 0.0453141 0.0477047 0.0496275 0.0510356 0.0518947 0.0521834</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.384726.108" name="MHGZ.10.EHZ.2006.202.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205033946.515343.108" name="MHGZ.10.EHZ.2006.202.stage_4">
       <gain>1</gain>
       <decimationFactor>10</decimationFactor>
       <delay>93</delay>
@@ -734,7 +734,7 @@
       <symmetry>B</symmetry>
       <coefficients>8.46923e-10 2.27422e-09 4.53895e-09 6.87379e-09 7.10904e-09 7.62784e-10 -1.98301e-08 -6.60994e-08 -1.53114e-07 -2.98249e-07 -5.18152e-07 -8.23636e-07 -1.21248e-06 -1.66055e-06 -2.11247e-06 -2.47353e-06 -2.60562e-06 -2.33013e-06 -1.44098e-06 2.69804e-07 2.97271e-06 6.74886e-06 1.15296e-05 1.70354e-05 2.27248e-05 2.7767e-05 3.10537e-05 3.1263e-05 2.69861e-05 1.69189e-05 1.11176e-07 -2.37456e-05 -5.40267e-05 -8.89227e-05 -0.000125282 -0.000158604 -0.000183236 -0.000192798 -0.000180864 -0.00014185 -7.2067e-05 2.91938e-05 0.000158665 0.000308386 0.000465422 0.000612198 0.000727547 0.000788512 0.000772858 0.000662123 0.000444926 0.000120161 -0.000300369 -0.000790361 -0.00130887 -0.00180202 -0.00220662 -0.00245579 -0.00248619 -0.00224631 -0.00170503 -0.000859463 0.000259011 0.00158157 0.0030025 0.00438414 0.00556632 0.00638 0.0066644 0.00628604 0.00515814 0.0032582 0.000641682 -0.00255018 -0.00609006 -0.0096727 -0.0129317 -0.0154642 -0.0168626 -0.016749 -0.0148125 -0.0108426 -0.00475778 0.00337489 0.0133318 0.0247374 0.0370816 0.0497507 0.062067 0.0733368 0.0829015 0.0901866 0.0947464 0.0962985</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.384967.109" name="MHGZ.10.EHZ.2006.202.stage_5">
+    <responseFIR publicID="ResponseFIR#20140205033946.515592.109" name="MHGZ.10.EHZ.2006.202.stage_5">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>111</delay>
@@ -743,7 +743,7 @@
       <symmetry>B</symmetry>
       <coefficients>-2.4877e-10 4.73744e-09 1.24032e-08 2.18423e-09 -2.9735e-08 -2.7741e-08 4.8235e-08 9.04852e-08 -4.3772e-08 -2.02925e-07 -2.93251e-08 3.57677e-07 2.38076e-07 -5.05054e-07 -6.56661e-07 5.29514e-07 1.33303e-06 -2.35391e-07 -2.23456e-06 -6.43189e-07 3.17885e-06 2.39189e-06 -3.76643e-06 -5.21313e-06 3.34388e-06 9.06984e-06 -1.0342e-06 -1.34948e-05 -4.1282e-06 1.74081e-05 1.29325e-05 -1.90112e-05 -2.55982e-05 1.58385e-05 4.12985e-05 -5.05136e-06 -5.76943e-05 -1.59734e-05 7.06232e-05 4.87621e-05 -7.41183e-05 -9.2656e-05 6.09281e-05 0.000143704 -2.36571e-05 -0.000193818 -4.34607e-05 0.000230529 0.0001423 -0.000237697 -0.00026842 0.00019742 0.000408986 -9.32264e-05 -0.000541667 -8.56506e-05 0.000635146 0.000339424 -0.000651794 -0.000653162 0.000552734 0.000993533 -0.000305133 -0.00130802 -0.000108987 0.00152764 0.000683646 -0.00157381 -0.00138119 0.00136932 0.00212784 -0.000852739 -0.00281433 -5.43598e-06 0.00330293 0.00118724 -0.00344149 -0.00261502 0.00308386 0.00414554 -0.00211493 -0.00557267 0.000477543 0.00664017 0.00180254 -0.00706464 -0.00459738 0.00656694 0.0076669 -0.00490895 -0.0106603 0.00193106 0.0131289 0.00241487 -0.0145476 -0.00804248 0.0143373 0.0147221 -0.0118736 -0.0220889 0.00645106 0.0296694 0.00287172 -0.0369222 -0.0177763 0.0432915 0.0424836 -0.0482648 -0.0928087 0.0514286 0.313777 0.447486</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.385507.112" name="MHGZ.10.EHZ.2006.229.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033946.516141.112" name="MHGZ.10.EHZ.2006.229.stage_3">
       <gain>1</gain>
       <decimationFactor>15</decimationFactor>
       <delay>81.999</delay>
@@ -752,7 +752,7 @@
       <symmetry>B</symmetry>
       <coefficients>-4.04791e-10 -1.39029e-10 6.728e-10 2.75797e-09 7.54651e-09 1.76668e-08 3.76936e-08 7.52313e-08 1.42425e-07 2.57999e-07 4.49904e-07 7.58655e-07 1.24139e-06 1.97658e-06 3.06939e-06 4.65728e-06 6.91569e-06 1.00631e-05 1.43649e-05 2.0135e-05 2.77346e-05 3.75661e-05 5.00617e-05 6.56652e-05 8.48049e-05 0.000107859 0.000135108 0.000166685 0.000202505 0.0002422 0.000285038 0.00032985 0.000374956 0.000418099 0.0004564 0.000486339 0.000503757 0.000503913 0.00048158 0.000431195 0.000347068 0.000223655 5.58818e-05 -0.000160475 -0.000428365 -0.000749008 -0.00112143 -0.00154201 -0.00200406 -0.00249746 -0.00300841 -0.00351925 -0.00400852 -0.00445107 -0.00481847 -0.00507953 -0.00520107 -0.00514889 -0.00488884 -0.00438813 -0.00361664 -0.0025484 -0.00116293 0.00055335 0.00260595 0.00499129 0.00769592 0.0106961 0.0139576 0.0174363 0.0210783 0.0248217 0.0285976 0.0323318 0.0359474 0.0393664 0.0425127 0.0453141 0.0477047 0.0496275 0.0510356 0.0518947 0.0521834</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.385743.113" name="MHGZ.10.EHZ.2006.229.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205033946.516381.113" name="MHGZ.10.EHZ.2006.229.stage_4">
       <gain>1</gain>
       <decimationFactor>10</decimationFactor>
       <delay>93</delay>
@@ -761,7 +761,7 @@
       <symmetry>B</symmetry>
       <coefficients>8.46923e-10 2.27422e-09 4.53895e-09 6.87379e-09 7.10904e-09 7.62784e-10 -1.98301e-08 -6.60994e-08 -1.53114e-07 -2.98249e-07 -5.18152e-07 -8.23636e-07 -1.21248e-06 -1.66055e-06 -2.11247e-06 -2.47353e-06 -2.60562e-06 -2.33013e-06 -1.44098e-06 2.69804e-07 2.97271e-06 6.74886e-06 1.15296e-05 1.70354e-05 2.27248e-05 2.7767e-05 3.10537e-05 3.1263e-05 2.69861e-05 1.69189e-05 1.11176e-07 -2.37456e-05 -5.40267e-05 -8.89227e-05 -0.000125282 -0.000158604 -0.000183236 -0.000192798 -0.000180864 -0.00014185 -7.2067e-05 2.91938e-05 0.000158665 0.000308386 0.000465422 0.000612198 0.000727547 0.000788512 0.000772858 0.000662123 0.000444926 0.000120161 -0.000300369 -0.000790361 -0.00130887 -0.00180202 -0.00220662 -0.00245579 -0.00248619 -0.00224631 -0.00170503 -0.000859463 0.000259011 0.00158157 0.0030025 0.00438414 0.00556632 0.00638 0.0066644 0.00628604 0.00515814 0.0032582 0.000641682 -0.00255018 -0.00609006 -0.0096727 -0.0129317 -0.0154642 -0.0168626 -0.016749 -0.0148125 -0.0108426 -0.00475778 0.00337489 0.0133318 0.0247374 0.0370816 0.0497507 0.062067 0.0733368 0.0829015 0.0901866 0.0947464 0.0962985</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.386048.114" name="MHGZ.10.EHZ.2006.229.stage_5">
+    <responseFIR publicID="ResponseFIR#20140205033946.51663.114" name="MHGZ.10.EHZ.2006.229.stage_5">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>111</delay>
@@ -770,7 +770,7 @@
       <symmetry>B</symmetry>
       <coefficients>-2.4877e-10 4.73744e-09 1.24032e-08 2.18423e-09 -2.9735e-08 -2.7741e-08 4.8235e-08 9.04852e-08 -4.3772e-08 -2.02925e-07 -2.93251e-08 3.57677e-07 2.38076e-07 -5.05054e-07 -6.56661e-07 5.29514e-07 1.33303e-06 -2.35391e-07 -2.23456e-06 -6.43189e-07 3.17885e-06 2.39189e-06 -3.76643e-06 -5.21313e-06 3.34388e-06 9.06984e-06 -1.0342e-06 -1.34948e-05 -4.1282e-06 1.74081e-05 1.29325e-05 -1.90112e-05 -2.55982e-05 1.58385e-05 4.12985e-05 -5.05136e-06 -5.76943e-05 -1.59734e-05 7.06232e-05 4.87621e-05 -7.41183e-05 -9.2656e-05 6.09281e-05 0.000143704 -2.36571e-05 -0.000193818 -4.34607e-05 0.000230529 0.0001423 -0.000237697 -0.00026842 0.00019742 0.000408986 -9.32264e-05 -0.000541667 -8.56506e-05 0.000635146 0.000339424 -0.000651794 -0.000653162 0.000552734 0.000993533 -0.000305133 -0.00130802 -0.000108987 0.00152764 0.000683646 -0.00157381 -0.00138119 0.00136932 0.00212784 -0.000852739 -0.00281433 -5.43598e-06 0.00330293 0.00118724 -0.00344149 -0.00261502 0.00308386 0.00414554 -0.00211493 -0.00557267 0.000477543 0.00664017 0.00180254 -0.00706464 -0.00459738 0.00656694 0.0076669 -0.00490895 -0.0106603 0.00193106 0.0131289 0.00241487 -0.0145476 -0.00804248 0.0143373 0.0147221 -0.0118736 -0.0220889 0.00645106 0.0296694 0.00287172 -0.0369222 -0.0177763 0.0432915 0.0424836 -0.0482648 -0.0928087 0.0514286 0.313777 0.447486</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.386596.117" name="MHGZ.10.EHZ.2006.320.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033946.517179.117" name="MHGZ.10.EHZ.2006.320.stage_3">
       <gain>1</gain>
       <decimationFactor>15</decimationFactor>
       <delay>81.999</delay>
@@ -779,7 +779,7 @@
       <symmetry>B</symmetry>
       <coefficients>-4.04791e-10 -1.39029e-10 6.728e-10 2.75797e-09 7.54651e-09 1.76668e-08 3.76936e-08 7.52313e-08 1.42425e-07 2.57999e-07 4.49904e-07 7.58655e-07 1.24139e-06 1.97658e-06 3.06939e-06 4.65728e-06 6.91569e-06 1.00631e-05 1.43649e-05 2.0135e-05 2.77346e-05 3.75661e-05 5.00617e-05 6.56652e-05 8.48049e-05 0.000107859 0.000135108 0.000166685 0.000202505 0.0002422 0.000285038 0.00032985 0.000374956 0.000418099 0.0004564 0.000486339 0.000503757 0.000503913 0.00048158 0.000431195 0.000347068 0.000223655 5.58818e-05 -0.000160475 -0.000428365 -0.000749008 -0.00112143 -0.00154201 -0.00200406 -0.00249746 -0.00300841 -0.00351925 -0.00400852 -0.00445107 -0.00481847 -0.00507953 -0.00520107 -0.00514889 -0.00488884 -0.00438813 -0.00361664 -0.0025484 -0.00116293 0.00055335 0.00260595 0.00499129 0.00769592 0.0106961 0.0139576 0.0174363 0.0210783 0.0248217 0.0285976 0.0323318 0.0359474 0.0393664 0.0425127 0.0453141 0.0477047 0.0496275 0.0510356 0.0518947 0.0521834</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.386825.118" name="MHGZ.10.EHZ.2006.320.stage_4">
+    <responseFIR publicID="ResponseFIR#20140205033946.517534.118" name="MHGZ.10.EHZ.2006.320.stage_4">
       <gain>1</gain>
       <decimationFactor>10</decimationFactor>
       <delay>93</delay>
@@ -788,7 +788,7 @@
       <symmetry>B</symmetry>
       <coefficients>8.46923e-10 2.27422e-09 4.53895e-09 6.87379e-09 7.10904e-09 7.62784e-10 -1.98301e-08 -6.60994e-08 -1.53114e-07 -2.98249e-07 -5.18152e-07 -8.23636e-07 -1.21248e-06 -1.66055e-06 -2.11247e-06 -2.47353e-06 -2.60562e-06 -2.33013e-06 -1.44098e-06 2.69804e-07 2.97271e-06 6.74886e-06 1.15296e-05 1.70354e-05 2.27248e-05 2.7767e-05 3.10537e-05 3.1263e-05 2.69861e-05 1.69189e-05 1.11176e-07 -2.37456e-05 -5.40267e-05 -8.89227e-05 -0.000125282 -0.000158604 -0.000183236 -0.000192798 -0.000180864 -0.00014185 -7.2067e-05 2.91938e-05 0.000158665 0.000308386 0.000465422 0.000612198 0.000727547 0.000788512 0.000772858 0.000662123 0.000444926 0.000120161 -0.000300369 -0.000790361 -0.00130887 -0.00180202 -0.00220662 -0.00245579 -0.00248619 -0.00224631 -0.00170503 -0.000859463 0.000259011 0.00158157 0.0030025 0.00438414 0.00556632 0.00638 0.0066644 0.00628604 0.00515814 0.0032582 0.000641682 -0.00255018 -0.00609006 -0.0096727 -0.0129317 -0.0154642 -0.0168626 -0.016749 -0.0148125 -0.0108426 -0.00475778 0.00337489 0.0133318 0.0247374 0.0370816 0.0497507 0.062067 0.0733368 0.0829015 0.0901866 0.0947464 0.0962985</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.387069.119" name="MHGZ.10.EHZ.2006.320.stage_5">
+    <responseFIR publicID="ResponseFIR#20140205033946.517801.119" name="MHGZ.10.EHZ.2006.320.stage_5">
       <gain>1</gain>
       <decimationFactor>2</decimationFactor>
       <delay>111</delay>
@@ -797,7 +797,7 @@
       <symmetry>B</symmetry>
       <coefficients>-2.4877e-10 4.73744e-09 1.24032e-08 2.18423e-09 -2.9735e-08 -2.7741e-08 4.8235e-08 9.04852e-08 -4.3772e-08 -2.02925e-07 -2.93251e-08 3.57677e-07 2.38076e-07 -5.05054e-07 -6.56661e-07 5.29514e-07 1.33303e-06 -2.35391e-07 -2.23456e-06 -6.43189e-07 3.17885e-06 2.39189e-06 -3.76643e-06 -5.21313e-06 3.34388e-06 9.06984e-06 -1.0342e-06 -1.34948e-05 -4.1282e-06 1.74081e-05 1.29325e-05 -1.90112e-05 -2.55982e-05 1.58385e-05 4.12985e-05 -5.05136e-06 -5.76943e-05 -1.59734e-05 7.06232e-05 4.87621e-05 -7.41183e-05 -9.2656e-05 6.09281e-05 0.000143704 -2.36571e-05 -0.000193818 -4.34607e-05 0.000230529 0.0001423 -0.000237697 -0.00026842 0.00019742 0.000408986 -9.32264e-05 -0.000541667 -8.56506e-05 0.000635146 0.000339424 -0.000651794 -0.000653162 0.000552734 0.000993533 -0.000305133 -0.00130802 -0.000108987 0.00152764 0.000683646 -0.00157381 -0.00138119 0.00136932 0.00212784 -0.000852739 -0.00281433 -5.43598e-06 0.00330293 0.00118724 -0.00344149 -0.00261502 0.00308386 0.00414554 -0.00211493 -0.00557267 0.000477543 0.00664017 0.00180254 -0.00706464 -0.00459738 0.00656694 0.0076669 -0.00490895 -0.0106603 0.00193106 0.0131289 0.00241487 -0.0145476 -0.00804248 0.0143373 0.0147221 -0.0118736 -0.0220889 0.00645106 0.0296694 0.00287172 -0.0369222 -0.0177763 0.0432915 0.0424836 -0.0482648 -0.0928087 0.0514286 0.313777 0.447486</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214023.387611.122" name="MHGZ.10.EHZ.2007.215.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205033946.518448.122" name="MHGZ.10.EHZ.2007.215.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.167</delay>
@@ -806,14 +806,14 @@
       <symmetry>A</symmetry>
       <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
     </responseFIR>
-    <network publicID="Network#20131203214023.369698.2" code="NZ">
+    <network publicID="Network#20140205033946.5002.2" code="NZ">
       <start>1980-01-01T00:00:00.0000Z</start>
       <description> </description>
       <netClass>p</netClass>
       <archive> </archive>
       <restricted>false</restricted>
       <shared>true</shared>
-      <station publicID="Station#20131203214023.369868.3" code="MHGZ">
+      <station publicID="Station#20140205033946.500451.3" code="MHGZ">
         <start>2006-05-04T00:00:00.0000Z</start>
         <description>Mahia Peninsula</description>
         <latitude>-39.152558</latitude>
@@ -824,12 +824,12 @@
         <archive> </archive>
         <restricted>false</restricted>
         <shared>true</shared>
-        <sensorLocation publicID="SensorLocation#20131203214023.37242.50" code="10">
+        <sensorLocation publicID="SensorLocation#20140205033946.502957.50" code="10">
           <start>2006-05-04T05:00:01.0000Z</start>
           <latitude>-39.152558</latitude>
           <longitude>177.907001</longitude>
           <elevation>302</elevation>
-          <stream code="EHE" datalogger="Datalogger#20131203214023.372626.51" sensor="Sensor#20131203214023.373928.55">
+          <stream code="EHE" datalogger="Datalogger#20140205033946.503204.51" sensor="Sensor#20140205033946.504389.55">
             <start>2006-05-04T05:00:01.0000Z</start>
             <end>2006-05-28T11:45:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -849,7 +849,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHE" datalogger="Datalogger#20131203214023.374521.57" sensor="Sensor#20131203214023.375351.61">
+          <stream code="EHE" datalogger="Datalogger#20140205033946.505056.57" sensor="Sensor#20140205033946.505916.61">
             <start>2006-07-21T02:00:01.0000Z</start>
             <end>2006-08-17T05:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -869,7 +869,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHE" datalogger="Datalogger#20131203214023.37563.63" sensor="Sensor#20131203214023.376514.67">
+          <stream code="EHE" datalogger="Datalogger#20140205033946.506172.63" sensor="Sensor#20140205033946.50697.67">
             <start>2006-08-17T05:00:01.0000Z</start>
             <end>2006-11-16T00:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -889,7 +889,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHE" datalogger="Datalogger#20131203214023.376781.69" sensor="Sensor#20131203214023.377628.73">
+          <stream code="EHE" datalogger="Datalogger#20140205033946.507214.69" sensor="Sensor#20140205033946.508094.73">
             <start>2006-11-16T00:00:01.0000Z</start>
             <end>2007-02-01T00:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -909,7 +909,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHE" datalogger="Datalogger#20131203214023.377927.75" sensor="Sensor#20131203214023.378201.77">
+          <stream code="EHE" datalogger="Datalogger#20140205033946.508329.75" sensor="Sensor#20140205033946.50859.77">
             <start>2007-08-03T00:01:00.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>2</dataloggerChannel>
@@ -928,7 +928,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHN" datalogger="Datalogger#20131203214023.372626.51" sensor="Sensor#20131203214023.379335.82">
+          <stream code="EHN" datalogger="Datalogger#20140205033946.503204.51" sensor="Sensor#20140205033946.509643.82">
             <start>2006-05-04T05:00:01.0000Z</start>
             <end>2006-05-28T11:45:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -948,7 +948,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHN" datalogger="Datalogger#20131203214023.374521.57" sensor="Sensor#20131203214023.380438.87">
+          <stream code="EHN" datalogger="Datalogger#20140205033946.505056.57" sensor="Sensor#20140205033946.511002.87">
             <start>2006-07-21T02:00:01.0000Z</start>
             <end>2006-08-17T05:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -968,7 +968,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHN" datalogger="Datalogger#20131203214023.37563.63" sensor="Sensor#20131203214023.381545.92">
+          <stream code="EHN" datalogger="Datalogger#20140205033946.506172.63" sensor="Sensor#20140205033946.512081.92">
             <start>2006-08-17T05:00:01.0000Z</start>
             <end>2006-11-16T00:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -988,7 +988,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHN" datalogger="Datalogger#20131203214023.376781.69" sensor="Sensor#20131203214023.382643.97">
+          <stream code="EHN" datalogger="Datalogger#20140205033946.507214.69" sensor="Sensor#20140205033946.51322.97">
             <start>2006-11-16T00:00:01.0000Z</start>
             <end>2007-02-01T00:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -1008,7 +1008,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHN" datalogger="Datalogger#20131203214023.377927.75" sensor="Sensor#20131203214023.383123.100">
+          <stream code="EHN" datalogger="Datalogger#20140205033946.508329.75" sensor="Sensor#20140205033946.513717.100">
             <start>2007-08-03T00:01:00.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>1</dataloggerChannel>
@@ -1027,7 +1027,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHZ" datalogger="Datalogger#20131203214023.372626.51" sensor="Sensor#20131203214023.384234.105">
+          <stream code="EHZ" datalogger="Datalogger#20140205033946.503204.51" sensor="Sensor#20140205033946.514824.105">
             <start>2006-05-04T05:00:01.0000Z</start>
             <end>2006-05-28T11:45:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -1047,7 +1047,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHZ" datalogger="Datalogger#20131203214023.374521.57" sensor="Sensor#20131203214023.385243.110">
+          <stream code="EHZ" datalogger="Datalogger#20140205033946.505056.57" sensor="Sensor#20140205033946.515881.110">
             <start>2006-07-21T02:00:01.0000Z</start>
             <end>2006-08-17T05:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -1067,7 +1067,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHZ" datalogger="Datalogger#20131203214023.37563.63" sensor="Sensor#20131203214023.386331.115">
+          <stream code="EHZ" datalogger="Datalogger#20140205033946.506172.63" sensor="Sensor#20140205033946.516914.115">
             <start>2006-08-17T05:00:01.0000Z</start>
             <end>2006-11-16T00:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -1087,7 +1087,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHZ" datalogger="Datalogger#20131203214023.376781.69" sensor="Sensor#20131203214023.387348.120">
+          <stream code="EHZ" datalogger="Datalogger#20140205033946.507214.69" sensor="Sensor#20140205033946.518149.120">
             <start>2006-11-16T00:00:01.0000Z</start>
             <end>2007-02-01T00:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -1107,7 +1107,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHZ" datalogger="Datalogger#20131203214023.377927.75" sensor="Sensor#20131203214023.387808.123">
+          <stream code="EHZ" datalogger="Datalogger#20140205033946.508329.75" sensor="Sensor#20140205033946.518691.123">
             <start>2007-08-03T00:01:00.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>0</dataloggerChannel>

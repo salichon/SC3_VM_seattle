@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <seiscomp xmlns="http://geofon.gfz-potsdam.de/ns/seiscomp3-schema/0.7" version="0.7">
   <Inventory>
-    <sensor publicID="Sensor#20131203214122.937191.29" name="UTU.2006.042.HE10" response="ResponsePAZ#20131203214122.937338.30">
+    <sensor publicID="Sensor#20140205034023.535642.29" name="UTU.2006.042.HE10" response="ResponsePAZ#20140205034023.535808.30">
       <description>L4C-3D</description>
       <model>L4C-3D</model>
       <unit>M/S</unit>
@@ -11,7 +11,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214122.937892.32" name="UTU.2006.042.HN10" response="ResponsePAZ#20131203214122.937935.33">
+    <sensor publicID="Sensor#20140205034023.536412.32" name="UTU.2006.042.HN10" response="ResponsePAZ#20140205034023.536459.33">
       <description>L4C-3D</description>
       <model>L4C-3D</model>
       <unit>M/S</unit>
@@ -21,7 +21,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214122.938436.35" name="UTU.2006.042.HZ10" response="ResponsePAZ#20131203214122.93847.36">
+    <sensor publicID="Sensor#20140205034023.537035.35" name="UTU.2006.042.HZ10" response="ResponsePAZ#20140205034023.537071.36">
       <description>L4C-3D</description>
       <model>L4C-3D</model>
       <unit>M/S</unit>
@@ -37,7 +37,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214122.939241.39" name="UTU.1992.168.HZ10" response="ResponsePAZ#20131203214122.939273.40">
+    <sensor publicID="Sensor#20140205034023.537878.39" name="UTU.1992.168.HZ10" response="ResponsePAZ#20140205034023.537911.40">
       <description>L4C</description>
       <model>L4C</model>
       <unit>M/S</unit>
@@ -48,7 +48,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214122.939581.43" name="UTU.1988.320.HZ10" response="ResponsePAZ#20131203214122.939614.44">
+    <sensor publicID="Sensor#20140205034023.538232.43" name="UTU.1988.320.HZ10" response="ResponsePAZ#20140205034023.538266.44">
       <description>L4C</description>
       <model>L4C</model>
       <unit>M/S</unit>
@@ -59,7 +59,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <sensor publicID="Sensor#20131203214122.939922.47" name="UTU.1993.188.HZ10" response="ResponsePAZ#20131203214122.939953.48">
+    <sensor publicID="Sensor#20140205034023.538587.47" name="UTU.1993.188.HZ10" response="ResponsePAZ#20140205034023.538619.48">
       <description>L4C</description>
       <model>L4C</model>
       <unit>M/S</unit>
@@ -70,7 +70,7 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
     </sensor>
-    <datalogger publicID="Datalogger#20131203214122.936668.27" name="UTU.2006.042.H10">
+    <datalogger publicID="Datalogger#20140205034023.534965.27" name="UTU.2006.042.H10">
       <description>UTU.2006.042.H10</description>
       <gain>419430</gain>
       <maxClockDrift>0.01</maxClockDrift>
@@ -96,10 +96,10 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
       <decimation sampleRateNumerator="100" sampleRateDenominator="1">
-        <digitalFilterChain>ResponseFIR#20131203214122.938196.34</digitalFilterChain>
+        <digitalFilterChain>ResponseFIR#20140205034023.536817.34</digitalFilterChain>
       </decimation>
     </datalogger>
-    <datalogger publicID="Datalogger#20131203214122.939125.37" name="UTU.1992.168.H10">
+    <datalogger publicID="Datalogger#20140205034023.537753.37" name="UTU.1992.168.H10">
       <description>UTU.1992.168.H10</description>
       <gain>4096</gain>
       <maxClockDrift>0.005</maxClockDrift>
@@ -110,10 +110,10 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
       <decimation sampleRateNumerator="50" sampleRateDenominator="1">
-        <analogueFilterChain>ResponsePAZ#20131203214122.939165.38</analogueFilterChain>
+        <analogueFilterChain>ResponsePAZ#20140205034023.537797.38</analogueFilterChain>
       </decimation>
     </datalogger>
-    <datalogger publicID="Datalogger#20131203214122.939473.41" name="UTU.1988.320.H10">
+    <datalogger publicID="Datalogger#20140205034023.538118.41" name="UTU.1988.320.H10">
       <description>UTU.1988.320.H10</description>
       <gain>4096</gain>
       <maxClockDrift>0.005</maxClockDrift>
@@ -124,10 +124,10 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
       <decimation sampleRateNumerator="50" sampleRateDenominator="1">
-        <analogueFilterChain>ResponsePAZ#20131203214122.939508.42</analogueFilterChain>
+        <analogueFilterChain>ResponsePAZ#20140205034023.538156.42</analogueFilterChain>
       </decimation>
     </datalogger>
-    <datalogger publicID="Datalogger#20131203214122.939813.45" name="UTU.1993.188.H10">
+    <datalogger publicID="Datalogger#20140205034023.538471.45" name="UTU.1993.188.H10">
       <description>UTU.1993.188.H10</description>
       <gain>4096</gain>
       <maxClockDrift>0.005</maxClockDrift>
@@ -138,10 +138,10 @@
         <gainFrequency>15</gainFrequency>
       </calibration>
       <decimation sampleRateNumerator="50" sampleRateDenominator="1">
-        <analogueFilterChain>ResponsePAZ#20131203214122.939851.46</analogueFilterChain>
+        <analogueFilterChain>ResponsePAZ#20140205034023.538511.46</analogueFilterChain>
       </decimation>
     </datalogger>
-    <responsePAZ publicID="ResponsePAZ#20131203214122.937338.30" name="UTU.2006.042.HE10">
+    <responsePAZ publicID="ResponsePAZ#20140205034023.535808.30" name="UTU.2006.042.HE10">
       <type>A</type>
       <gain>177.8</gain>
       <gainFrequency>15</gainFrequency>
@@ -152,7 +152,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214122.937935.33" name="UTU.2006.042.HN10">
+    <responsePAZ publicID="ResponsePAZ#20140205034023.536459.33" name="UTU.2006.042.HN10">
       <type>A</type>
       <gain>177.8</gain>
       <gainFrequency>15</gainFrequency>
@@ -163,7 +163,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214122.93847.36" name="UTU.2006.042.HZ10">
+    <responsePAZ publicID="ResponsePAZ#20140205034023.537071.36" name="UTU.2006.042.HZ10">
       <type>A</type>
       <gain>177.8</gain>
       <gainFrequency>15</gainFrequency>
@@ -174,7 +174,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214122.939165.38" name="UTU.10.SHZ.1992.168.stage_2">
+    <responsePAZ publicID="ResponsePAZ#20140205034023.537797.38" name="UTU.10.SHZ.1992.168.stage_2">
       <type>A</type>
       <gain>1</gain>
       <gainFrequency>15</gainFrequency>
@@ -185,7 +185,7 @@
       <zeros/>
       <poles>(-66.6432,66.6432) (-66.6432,-66.6432) (-66.6432,66.6432) (-66.6432,-66.6432)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214122.939273.40" name="UTU.1992.168.HZ10">
+    <responsePAZ publicID="ResponsePAZ#20140205034023.537911.40" name="UTU.1992.168.HZ10">
       <type>A</type>
       <gain>177.8</gain>
       <gainFrequency>15</gainFrequency>
@@ -196,7 +196,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214122.939508.42" name="UTU.10.SHZ.1988.320.stage_2">
+    <responsePAZ publicID="ResponsePAZ#20140205034023.538156.42" name="UTU.10.SHZ.1988.320.stage_2">
       <type>A</type>
       <gain>1</gain>
       <gainFrequency>15</gainFrequency>
@@ -207,7 +207,7 @@
       <zeros/>
       <poles>(-66.6432,66.6432) (-66.6432,-66.6432) (-66.6432,66.6432) (-66.6432,-66.6432)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214122.939614.44" name="UTU.1988.320.HZ10">
+    <responsePAZ publicID="ResponsePAZ#20140205034023.538266.44" name="UTU.1988.320.HZ10">
       <type>A</type>
       <gain>177.8</gain>
       <gainFrequency>15</gainFrequency>
@@ -218,7 +218,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214122.939851.46" name="UTU.10.SHZ.1993.188.stage_2">
+    <responsePAZ publicID="ResponsePAZ#20140205034023.538511.46" name="UTU.10.SHZ.1993.188.stage_2">
       <type>A</type>
       <gain>1</gain>
       <gainFrequency>15</gainFrequency>
@@ -229,7 +229,7 @@
       <zeros/>
       <poles>(-66.6432,66.6432) (-66.6432,-66.6432) (-66.6432,66.6432) (-66.6432,-66.6432)</poles>
     </responsePAZ>
-    <responsePAZ publicID="ResponsePAZ#20131203214122.939953.48" name="UTU.1993.188.HZ10">
+    <responsePAZ publicID="ResponsePAZ#20140205034023.538619.48" name="UTU.1993.188.HZ10">
       <type>A</type>
       <gain>177.8</gain>
       <gainFrequency>15</gainFrequency>
@@ -240,7 +240,7 @@
       <zeros>(0,0) (0,0)</zeros>
       <poles>(-4.2097,4.6644) (-4.2097,-4.6644)</poles>
     </responsePAZ>
-    <responseFIR publicID="ResponseFIR#20131203214122.936875.28" name="UTU.10.EHE.2006.042.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034023.535251.28" name="UTU.10.EHE.2006.042.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.167</delay>
@@ -249,7 +249,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214122.93767.31" name="UTU.10.EHN.2006.042.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034023.536179.31" name="UTU.10.EHN.2006.042.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.167</delay>
@@ -258,7 +258,7 @@
       <symmetry>A</symmetry>
       <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
     </responseFIR>
-    <responseFIR publicID="ResponseFIR#20131203214122.938196.34" name="UTU.10.EHZ.2006.042.stage_3">
+    <responseFIR publicID="ResponseFIR#20140205034023.536817.34" name="UTU.10.EHZ.2006.042.stage_3">
       <gain>1</gain>
       <decimationFactor>1</decimationFactor>
       <delay>4.167</delay>
@@ -267,14 +267,14 @@
       <symmetry>A</symmetry>
       <coefficients>1.31549e-11 0.000150107 0.0133968 0.164429 0.568809 0.517383 -0.260836 -0.122033 0.257181 -0.202903 0.0707588 0.0387967 -0.114313 0.13548 -0.111447 0.0670548 -0.0192712 -0.0209313 0.0476806 -0.0593383 0.0575793 -0.0462333 0.0297771 -0.0124829 -0.00236608 0.0127882 -0.0184698 0.0187973 -0.0171387 0.012782 -0.00767579 0.00325516 -8.94756e-05 -0.00177876 0.00259604 -0.00266617 0.0023074 -0.00177052 0.00121864 -0.000746049 0.000392175 -0.000158366 2.4378e-05 3.80757e-05 -5.61805e-05 5.15277e-05 -3.85647e-05 2.53029e-05 -1.51246e-05 8.7398e-06 -4.64812e-06 1.37628e-06 7.04206e-07 2.24187e-07 -1.25103e-06 1.06677e-07 2.64288e-07 3.22664e-07 -8.07416e-08 -1.09905e-07 -3.3252e-08 1.38851e-08 1.05627e-08 2.57791e-09 -7.01862e-10</coefficients>
     </responseFIR>
-    <network publicID="Network#20131203214122.935016.2" code="NZ">
+    <network publicID="Network#20140205034023.532729.2" code="NZ">
       <start>1980-01-01T00:00:00.0000Z</start>
       <description> </description>
       <netClass>p</netClass>
       <archive> </archive>
       <restricted>false</restricted>
       <shared>true</shared>
-      <station publicID="Station#20131203214122.935177.3" code="UTU">
+      <station publicID="Station#20140205034023.533038.3" code="UTU">
         <start>1986-07-10T00:00:00.0000Z</start>
         <description>Utuhina</description>
         <latitude>-38.17659</latitude>
@@ -285,12 +285,12 @@
         <archive> </archive>
         <restricted>false</restricted>
         <shared>true</shared>
-        <sensorLocation publicID="SensorLocation#20131203214122.936475.26" code="10">
+        <sensorLocation publicID="SensorLocation#20140205034023.534695.26" code="10">
           <start>1988-11-15T05:17:00.0000Z</start>
           <latitude>-38.17659</latitude>
           <longitude>176.1938</longitude>
           <elevation>410</elevation>
-          <stream code="EHE" datalogger="Datalogger#20131203214122.936668.27" sensor="Sensor#20131203214122.937191.29">
+          <stream code="EHE" datalogger="Datalogger#20140205034023.534965.27" sensor="Sensor#20140205034023.535642.29">
             <start>2006-02-11T07:00:00.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>2</dataloggerChannel>
@@ -309,7 +309,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHN" datalogger="Datalogger#20131203214122.936668.27" sensor="Sensor#20131203214122.937892.32">
+          <stream code="EHN" datalogger="Datalogger#20140205034023.534965.27" sensor="Sensor#20140205034023.536412.32">
             <start>2006-02-11T07:00:00.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>1</dataloggerChannel>
@@ -328,7 +328,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHZ" datalogger="Datalogger#20131203214122.936668.27" sensor="Sensor#20131203214122.938436.35">
+          <stream code="EHZ" datalogger="Datalogger#20140205034023.534965.27" sensor="Sensor#20140205034023.537035.35">
             <start>2006-02-11T00:00:01.0000Z</start>
             <end>2006-02-11T07:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -348,7 +348,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="EHZ" datalogger="Datalogger#20131203214122.936668.27" sensor="Sensor#20131203214122.938436.35">
+          <stream code="EHZ" datalogger="Datalogger#20140205034023.534965.27" sensor="Sensor#20140205034023.537035.35">
             <start>2006-02-11T07:00:00.0000Z</start>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
             <dataloggerChannel>0</dataloggerChannel>
@@ -367,7 +367,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="SHZ" datalogger="Datalogger#20131203214122.939125.37" sensor="Sensor#20131203214122.939241.39">
+          <stream code="SHZ" datalogger="Datalogger#20140205034023.537753.37" sensor="Sensor#20140205034023.537878.39">
             <start>1992-06-16T18:00:00.0000Z</start>
             <end>1993-07-05T23:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -387,7 +387,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="SHZ" datalogger="Datalogger#20131203214122.939473.41" sensor="Sensor#20131203214122.939581.43">
+          <stream code="SHZ" datalogger="Datalogger#20140205034023.538118.41" sensor="Sensor#20140205034023.538232.43">
             <start>1988-11-15T05:17:00.0000Z</start>
             <end>1993-07-05T23:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
@@ -407,7 +407,7 @@
             <restricted>false</restricted>
             <shared>true</shared>
           </stream>
-          <stream code="SHZ" datalogger="Datalogger#20131203214122.939813.45" sensor="Sensor#20131203214122.939922.47">
+          <stream code="SHZ" datalogger="Datalogger#20140205034023.538471.45" sensor="Sensor#20140205034023.538587.47">
             <start>1993-07-07T01:16:00.0000Z</start>
             <end>2006-02-11T07:00:00.0000Z</end>
             <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
