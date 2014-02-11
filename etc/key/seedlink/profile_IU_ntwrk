@@ -1,0 +1,4 @@
+sources = chain
+#sources.chain.address = sl-backup1.geonet.org.nz
+sources.chain.address = rtserve.iris.washington.edu
+sources.chain.port = 18000

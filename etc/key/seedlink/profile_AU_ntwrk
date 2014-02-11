@@ -1,0 +1,3 @@
+sources = chain
+sources.chain.address = rtserve.iris.washington.edu 
+sources.chain.port = 18000
