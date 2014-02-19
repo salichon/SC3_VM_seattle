@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seiscomp xmlns="http://geofon.gfz-potsdam.de/ns/seiscomp3-schema/0.7" version="0.7">
+  <Inventory>
+    <sensor publicID="Sensor#20140218031342.952766.36" name="GISS.1999.230.N120" response="ResponsePAZ#20140218031342.95345.37">
+      <description>FBA-23-DECK</description>
+      <model>FBA-23-DECK</model>
+      <unit>M/S**2</unit>
+      <calibration serialNumber="yyyy" channel="1">
+        <start>1999-08-18T01:15:00.0000Z</start>
+        <end>1999-11-23T23:59:00.0000Z</end>
+        <gain>0.127356</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20140218031342.955602.41" name="GISS.1999.328.N120" response="ResponsePAZ#20140218031342.955775.42">
+      <description>FBA-23-DECK</description>
+      <model>FBA-23-DECK</model>
+      <unit>M/S**2</unit>
+      <calibration serialNumber="yyyy" channel="1">
+        <start>1999-11-24T00:00:00.0000Z</start>
+        <end>2003-12-02T03:29:00.0000Z</end>
+        <gain>0.127356</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20140218031342.956648.46" name="GISS.2003.336.N120" response="ResponsePAZ#20140218031342.956841.47">
+      <description>FBA-ES-T-DECK</description>
+      <model>FBA-ES-T-DECK</model>
+      <unit>M/S**2</unit>
+      <calibration serialNumber="yyyy" channel="1">
+        <start>2003-12-02T03:30:00.0000Z</start>
+        <gain>0.127356</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20140218031342.957914.50" name="GISS.1999.230.N220" response="ResponsePAZ#20140218031342.958094.51">
+      <description>FBA-23-DECK</description>
+      <model>FBA-23-DECK</model>
+      <unit>M/S**2</unit>
+      <calibration serialNumber="yyyy" channel="2">
+        <start>1999-08-18T01:15:00.0000Z</start>
+        <end>1999-11-23T23:59:00.0000Z</end>
+        <gain>0.127356</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20140218031342.958975.54" name="GISS.1999.328.N220" response="ResponsePAZ#20140218031342.959143.55">
+      <description>FBA-23-DECK</description>
+      <model>FBA-23-DECK</model>
+      <unit>M/S**2</unit>
+      <calibration serialNumber="yyyy" channel="2">
+        <start>1999-11-24T00:00:00.0000Z</start>
+        <end>2003-12-02T03:29:00.0000Z</end>
+        <gain>0.127356</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20140218031342.960035.58" name="GISS.2003.336.N220" response="ResponsePAZ#20140218031342.960195.59">
+      <description>FBA-ES-T-DECK</description>
+      <model>FBA-ES-T-DECK</model>
+      <unit>M/S**2</unit>
+      <calibration serialNumber="yyyy" channel="2">
+        <start>2003-12-02T03:30:00.0000Z</start>
+        <gain>0.127356</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20140218031342.960955.62" name="GISS.1999.230.NZ20" response="ResponsePAZ#20140218031342.961103.63">
+      <description>FBA-23-DECK</description>
+      <model>FBA-23-DECK</model>
+      <unit>M/S**2</unit>
+      <calibration serialNumber="yyyy" channel="0">
+        <start>1999-08-18T01:15:00.0000Z</start>
+        <end>1999-11-23T23:59:00.0000Z</end>
+        <gain>0.127356</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20140218031342.961862.66" name="GISS.1999.328.NZ20" response="ResponsePAZ#20140218031342.96201.67">
+      <description>FBA-23-DECK</description>
+      <model>FBA-23-DECK</model>
+      <unit>M/S**2</unit>
+      <calibration serialNumber="yyyy" channel="0">
+        <start>1999-11-24T00:00:00.0000Z</start>
+        <end>2003-12-02T03:29:00.0000Z</end>
+        <gain>0.127356</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+    </sensor>
+    <sensor publicID="Sensor#20140218031342.96292.70" name="GISS.2003.336.NZ20" response="ResponsePAZ#20140218031342.963143.71">
+      <description>FBA-ES-T-DECK</description>
+      <model>FBA-ES-T-DECK</model>
+      <unit>M/S**2</unit>
+      <calibration serialNumber="yyyy" channel="0">
+        <start>2003-12-02T03:30:00.0000Z</start>
+        <gain>0.127356</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+    </sensor>
+    <datalogger publicID="Datalogger#20140218031342.95116.33" name="GISS.1999.230.N20">
+      <description>GISS.1999.230.N20</description>
+      <gain>3355440</gain>
+      <maxClockDrift>0.02</maxClockDrift>
+      <calibration serialNumber="xxxx" channel="1">
+        <start>1999-08-18T01:15:00.0000Z</start>
+        <end>1999-11-23T23:59:00.0000Z</end>
+        <gain>3355440</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="2">
+        <start>1999-08-18T01:15:00.0000Z</start>
+        <end>1999-11-23T23:59:00.0000Z</end>
+        <gain>3355440</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="0">
+        <start>1999-08-18T01:15:00.0000Z</start>
+        <end>1999-11-23T23:59:00.0000Z</end>
+        <gain>3355440</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <decimation sampleRateNumerator="200" sampleRateDenominator="1">
+        <digitalFilterChain>ResponseFIR#20140218031342.960571.60 ResponseFIR#20140218031342.960713.61</digitalFilterChain>
+      </decimation>
+    </datalogger>
+    <datalogger publicID="Datalogger#20140218031342.954054.38" name="GISS.1999.328.N20">
+      <description>GISS.1999.328.N20</description>
+      <gain>3355440</gain>
+      <maxClockDrift>0.02</maxClockDrift>
+      <calibration serialNumber="xxxx" channel="1">
+        <start>1999-11-24T00:00:00.0000Z</start>
+        <end>2003-12-02T03:29:00.0000Z</end>
+        <gain>3355440</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="2">
+        <start>1999-11-24T00:00:00.0000Z</start>
+        <end>2003-12-02T03:29:00.0000Z</end>
+        <gain>3355440</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="0">
+        <start>1999-11-24T00:00:00.0000Z</start>
+        <end>2003-12-02T03:29:00.0000Z</end>
+        <gain>3355440</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <decimation sampleRateNumerator="200" sampleRateDenominator="1">
+        <digitalFilterChain>ResponseFIR#20140218031342.961478.64 ResponseFIR#20140218031342.961618.65</digitalFilterChain>
+      </decimation>
+    </datalogger>
+    <datalogger publicID="Datalogger#20140218031342.956069.43" name="GISS.2003.336.N20">
+      <description>GISS.2003.336.N20</description>
+      <gain>3355440</gain>
+      <maxClockDrift>0.02</maxClockDrift>
+      <calibration serialNumber="xxxx" channel="1">
+        <start>2003-12-02T03:30:00.0000Z</start>
+        <gain>3355440</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="2">
+        <start>2003-12-02T03:30:00.0000Z</start>
+        <gain>3355440</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <calibration serialNumber="xxxx" channel="0">
+        <start>2003-12-02T03:30:00.0000Z</start>
+        <gain>3355440</gain>
+        <gainFrequency>1</gainFrequency>
+      </calibration>
+      <decimation sampleRateNumerator="200" sampleRateDenominator="1">
+        <digitalFilterChain>ResponseFIR#20140218031342.962464.68 ResponseFIR#20140218031342.962635.69</digitalFilterChain>
+      </decimation>
+    </datalogger>
+    <responsePAZ publicID="ResponsePAZ#20140218031342.95345.37" name="GISS.1999.230.N120">
+      <type>A</type>
+      <gain>0.127356</gain>
+      <gainFrequency>1</gainFrequency>
+      <normalizationFactor>2.45957e+13</normalizationFactor>
+      <normalizationFrequency>1</normalizationFrequency>
+      <numberOfZeros>0</numberOfZeros>
+      <numberOfPoles>4</numberOfPoles>
+      <zeros/>
+      <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20140218031342.955775.42" name="GISS.1999.328.N120">
+      <type>A</type>
+      <gain>0.127356</gain>
+      <gainFrequency>1</gainFrequency>
+      <normalizationFactor>2.45957e+13</normalizationFactor>
+      <normalizationFrequency>1</normalizationFrequency>
+      <numberOfZeros>0</numberOfZeros>
+      <numberOfPoles>4</numberOfPoles>
+      <zeros/>
+      <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20140218031342.956841.47" name="GISS.2003.336.N120">
+      <type>A</type>
+      <gain>0.127356</gain>
+      <gainFrequency>1</gainFrequency>
+      <normalizationFactor>2.45957e+13</normalizationFactor>
+      <normalizationFrequency>1</normalizationFrequency>
+      <numberOfZeros>0</numberOfZeros>
+      <numberOfPoles>4</numberOfPoles>
+      <zeros/>
+      <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20140218031342.958094.51" name="GISS.1999.230.N220">
+      <type>A</type>
+      <gain>0.127356</gain>
+      <gainFrequency>1</gainFrequency>
+      <normalizationFactor>2.45957e+13</normalizationFactor>
+      <normalizationFrequency>1</normalizationFrequency>
+      <numberOfZeros>0</numberOfZeros>
+      <numberOfPoles>4</numberOfPoles>
+      <zeros/>
+      <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20140218031342.959143.55" name="GISS.1999.328.N220">
+      <type>A</type>
+      <gain>0.127356</gain>
+      <gainFrequency>1</gainFrequency>
+      <normalizationFactor>2.45957e+13</normalizationFactor>
+      <normalizationFrequency>1</normalizationFrequency>
+      <numberOfZeros>0</numberOfZeros>
+      <numberOfPoles>4</numberOfPoles>
+      <zeros/>
+      <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20140218031342.960195.59" name="GISS.2003.336.N220">
+      <type>A</type>
+      <gain>0.127356</gain>
+      <gainFrequency>1</gainFrequency>
+      <normalizationFactor>2.45957e+13</normalizationFactor>
+      <normalizationFrequency>1</normalizationFrequency>
+      <numberOfZeros>0</numberOfZeros>
+      <numberOfPoles>4</numberOfPoles>
+      <zeros/>
+      <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20140218031342.961103.63" name="GISS.1999.230.NZ20">
+      <type>A</type>
+      <gain>0.127356</gain>
+      <gainFrequency>1</gainFrequency>
+      <normalizationFactor>2.45957e+13</normalizationFactor>
+      <normalizationFrequency>1</normalizationFrequency>
+      <numberOfZeros>0</numberOfZeros>
+      <numberOfPoles>4</numberOfPoles>
+      <zeros/>
+      <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20140218031342.96201.67" name="GISS.1999.328.NZ20">
+      <type>A</type>
+      <gain>0.127356</gain>
+      <gainFrequency>1</gainFrequency>
+      <normalizationFactor>2.45957e+13</normalizationFactor>
+      <normalizationFrequency>1</normalizationFrequency>
+      <numberOfZeros>0</numberOfZeros>
+      <numberOfPoles>4</numberOfPoles>
+      <zeros/>
+      <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
+    </responsePAZ>
+    <responsePAZ publicID="ResponsePAZ#20140218031342.963143.71" name="GISS.2003.336.NZ20">
+      <type>A</type>
+      <gain>0.127356</gain>
+      <gainFrequency>1</gainFrequency>
+      <normalizationFactor>2.45957e+13</normalizationFactor>
+      <normalizationFrequency>1</normalizationFrequency>
+      <numberOfZeros>0</numberOfZeros>
+      <numberOfPoles>4</numberOfPoles>
+      <zeros/>
+      <poles>(-981,1009) (-981,-1009) (-3290,1263) (-3290,-1263)</poles>
+    </responsePAZ>
+    <responseFIR publicID="ResponseFIR#20140218031342.95175.34" name="GISS.20.HN1.1999.230.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>28</delay>
+      <correction>28</correction>
+      <numberOfCoefficients>29</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>1.2e-07 -6e-07 -7.27e-06 -3.207e-05 -9.632e-05 -0.00022495 -0.00042784 -0.00066984 -0.00084126 -0.00074971 -0.0001651 0.0010699 0.00288117 0.00481701 0.00601399 0.00536406 0.00191724 -0.0045563 -0.0130409 -0.0210427 -0.0248785 -0.0205514 -0.00504291 0.0223716 0.0592845 0.100205 0.137633 0.163926 0.173391</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140218031342.95226.35" name="GISS.20.HN1.1999.230.stage_4">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>68</delay>
+      <correction>68</correction>
+      <numberOfCoefficients>69</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>6e-07 1.55e-06 -2.26e-06 -1.681e-05 -3.362e-05 -2.73e-05 1.156e-05 4.172e-05 9.78e-06 -5.686e-05 -5.186e-05 5.221e-05 0.00010896 -1.156e-05 -0.00016463 -7.641e-05 0.00019097 0.00021076 -0.00015306 -0.00036979 1.884e-05 0.00050938 0.00022852 -0.00056541 -0.00057662 0.00046456 0.00097203 -0.00014412 -0.00131798 -0.00042439 0.00148249 0.00121105 -0.0013206 -0.00210965 0.00070846 0.00293458 0.00041425 -0.00343633 -0.00200474 0.00333858 0.00388706 -0.00239384 -0.00574386 0.00045073 0.00713658 0.00248027 -0.00755632 -0.00617528 0.00650048 0.0101701 -0.00356448 -0.0137692 -0.00146592 0.0160844 0.00854254 -0.016091 -0.0173173 0.0126604 0.0271523 -0.00448489 -0.0371805 -0.0103546 0.046411 0.0361366 -0.0538626 -0.0885348 0.0587054 0.312242 0.439562</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140218031342.954484.39" name="GISS.20.HN1.1999.328.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>28</delay>
+      <correction>28</correction>
+      <numberOfCoefficients>29</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>1.2e-07 -6e-07 -7.27e-06 -3.207e-05 -9.632e-05 -0.00022495 -0.00042784 -0.00066984 -0.00084126 -0.00074971 -0.0001651 0.0010699 0.00288117 0.00481701 0.00601399 0.00536406 0.00191724 -0.0045563 -0.0130409 -0.0210427 -0.0248785 -0.0205514 -0.00504291 0.0223716 0.0592845 0.100205 0.137633 0.163926 0.173391</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140218031342.954704.40" name="GISS.20.HN1.1999.328.stage_4">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>68</delay>
+      <correction>68</correction>
+      <numberOfCoefficients>69</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>6e-07 1.55e-06 -2.26e-06 -1.681e-05 -3.362e-05 -2.73e-05 1.156e-05 4.172e-05 9.78e-06 -5.686e-05 -5.186e-05 5.221e-05 0.00010896 -1.156e-05 -0.00016463 -7.641e-05 0.00019097 0.00021076 -0.00015306 -0.00036979 1.884e-05 0.00050938 0.00022852 -0.00056541 -0.00057662 0.00046456 0.00097203 -0.00014412 -0.00131798 -0.00042439 0.00148249 0.00121105 -0.0013206 -0.00210965 0.00070846 0.00293458 0.00041425 -0.00343633 -0.00200474 0.00333858 0.00388706 -0.00239384 -0.00574386 0.00045073 0.00713658 0.00248027 -0.00755632 -0.00617528 0.00650048 0.0101701 -0.00356448 -0.0137692 -0.00146592 0.0160844 0.00854254 -0.016091 -0.0173173 0.0126604 0.0271523 -0.00448489 -0.0371805 -0.0103546 0.046411 0.0361366 -0.0538626 -0.0885348 0.0587054 0.312242 0.439562</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140218031342.956225.44" name="GISS.20.HN1.2003.336.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>28</delay>
+      <correction>28</correction>
+      <numberOfCoefficients>29</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>1.2e-07 -6e-07 -7.27e-06 -3.207e-05 -9.632e-05 -0.00022495 -0.00042784 -0.00066984 -0.00084126 -0.00074971 -0.0001651 0.0010699 0.00288117 0.00481701 0.00601399 0.00536406 0.00191724 -0.0045563 -0.0130409 -0.0210427 -0.0248785 -0.0205514 -0.00504291 0.0223716 0.0592845 0.100205 0.137633 0.163926 0.173391</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140218031342.956378.45" name="GISS.20.HN1.2003.336.stage_4">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>68</delay>
+      <correction>68</correction>
+      <numberOfCoefficients>69</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>6e-07 1.55e-06 -2.26e-06 -1.681e-05 -3.362e-05 -2.73e-05 1.156e-05 4.172e-05 9.78e-06 -5.686e-05 -5.186e-05 5.221e-05 0.00010896 -1.156e-05 -0.00016463 -7.641e-05 0.00019097 0.00021076 -0.00015306 -0.00036979 1.884e-05 0.00050938 0.00022852 -0.00056541 -0.00057662 0.00046456 0.00097203 -0.00014412 -0.00131798 -0.00042439 0.00148249 0.00121105 -0.0013206 -0.00210965 0.00070846 0.00293458 0.00041425 -0.00343633 -0.00200474 0.00333858 0.00388706 -0.00239384 -0.00574386 0.00045073 0.00713658 0.00248027 -0.00755632 -0.00617528 0.00650048 0.0101701 -0.00356448 -0.0137692 -0.00146592 0.0160844 0.00854254 -0.016091 -0.0173173 0.0126604 0.0271523 -0.00448489 -0.0371805 -0.0103546 0.046411 0.0361366 -0.0538626 -0.0885348 0.0587054 0.312242 0.439562</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140218031342.957445.48" name="GISS.20.HN2.1999.230.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>28</delay>
+      <correction>28</correction>
+      <numberOfCoefficients>29</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>1.2e-07 -6e-07 -7.27e-06 -3.207e-05 -9.632e-05 -0.00022495 -0.00042784 -0.00066984 -0.00084126 -0.00074971 -0.0001651 0.0010699 0.00288117 0.00481701 0.00601399 0.00536406 0.00191724 -0.0045563 -0.0130409 -0.0210427 -0.0248785 -0.0205514 -0.00504291 0.0223716 0.0592845 0.100205 0.137633 0.163926 0.173391</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140218031342.957632.49" name="GISS.20.HN2.1999.230.stage_4">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>68</delay>
+      <correction>68</correction>
+      <numberOfCoefficients>69</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>6e-07 1.55e-06 -2.26e-06 -1.681e-05 -3.362e-05 -2.73e-05 1.156e-05 4.172e-05 9.78e-06 -5.686e-05 -5.186e-05 5.221e-05 0.00010896 -1.156e-05 -0.00016463 -7.641e-05 0.00019097 0.00021076 -0.00015306 -0.00036979 1.884e-05 0.00050938 0.00022852 -0.00056541 -0.00057662 0.00046456 0.00097203 -0.00014412 -0.00131798 -0.00042439 0.00148249 0.00121105 -0.0013206 -0.00210965 0.00070846 0.00293458 0.00041425 -0.00343633 -0.00200474 0.00333858 0.00388706 -0.00239384 -0.00574386 0.00045073 0.00713658 0.00248027 -0.00755632 -0.00617528 0.00650048 0.0101701 -0.00356448 -0.0137692 -0.00146592 0.0160844 0.00854254 -0.016091 -0.0173173 0.0126604 0.0271523 -0.00448489 -0.0371805 -0.0103546 0.046411 0.0361366 -0.0538626 -0.0885348 0.0587054 0.312242 0.439562</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140218031342.958559.52" name="GISS.20.HN2.1999.328.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>28</delay>
+      <correction>28</correction>
+      <numberOfCoefficients>29</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>1.2e-07 -6e-07 -7.27e-06 -3.207e-05 -9.632e-05 -0.00022495 -0.00042784 -0.00066984 -0.00084126 -0.00074971 -0.0001651 0.0010699 0.00288117 0.00481701 0.00601399 0.00536406 0.00191724 -0.0045563 -0.0130409 -0.0210427 -0.0248785 -0.0205514 -0.00504291 0.0223716 0.0592845 0.100205 0.137633 0.163926 0.173391</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140218031342.958724.53" name="GISS.20.HN2.1999.328.stage_4">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>68</delay>
+      <correction>68</correction>
+      <numberOfCoefficients>69</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>6e-07 1.55e-06 -2.26e-06 -1.681e-05 -3.362e-05 -2.73e-05 1.156e-05 4.172e-05 9.78e-06 -5.686e-05 -5.186e-05 5.221e-05 0.00010896 -1.156e-05 -0.00016463 -7.641e-05 0.00019097 0.00021076 -0.00015306 -0.00036979 1.884e-05 0.00050938 0.00022852 -0.00056541 -0.00057662 0.00046456 0.00097203 -0.00014412 -0.00131798 -0.00042439 0.00148249 0.00121105 -0.0013206 -0.00210965 0.00070846 0.00293458 0.00041425 -0.00343633 -0.00200474 0.00333858 0.00388706 -0.00239384 -0.00574386 0.00045073 0.00713658 0.00248027 -0.00755632 -0.00617528 0.00650048 0.0101701 -0.00356448 -0.0137692 -0.00146592 0.0160844 0.00854254 -0.016091 -0.0173173 0.0126604 0.0271523 -0.00448489 -0.0371805 -0.0103546 0.046411 0.0361366 -0.0538626 -0.0885348 0.0587054 0.312242 0.439562</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140218031342.959623.56" name="GISS.20.HN2.2003.336.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>28</delay>
+      <correction>28</correction>
+      <numberOfCoefficients>29</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>1.2e-07 -6e-07 -7.27e-06 -3.207e-05 -9.632e-05 -0.00022495 -0.00042784 -0.00066984 -0.00084126 -0.00074971 -0.0001651 0.0010699 0.00288117 0.00481701 0.00601399 0.00536406 0.00191724 -0.0045563 -0.0130409 -0.0210427 -0.0248785 -0.0205514 -0.00504291 0.0223716 0.0592845 0.100205 0.137633 0.163926 0.173391</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140218031342.95979.57" name="GISS.20.HN2.2003.336.stage_4">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>68</delay>
+      <correction>68</correction>
+      <numberOfCoefficients>69</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>6e-07 1.55e-06 -2.26e-06 -1.681e-05 -3.362e-05 -2.73e-05 1.156e-05 4.172e-05 9.78e-06 -5.686e-05 -5.186e-05 5.221e-05 0.00010896 -1.156e-05 -0.00016463 -7.641e-05 0.00019097 0.00021076 -0.00015306 -0.00036979 1.884e-05 0.00050938 0.00022852 -0.00056541 -0.00057662 0.00046456 0.00097203 -0.00014412 -0.00131798 -0.00042439 0.00148249 0.00121105 -0.0013206 -0.00210965 0.00070846 0.00293458 0.00041425 -0.00343633 -0.00200474 0.00333858 0.00388706 -0.00239384 -0.00574386 0.00045073 0.00713658 0.00248027 -0.00755632 -0.00617528 0.00650048 0.0101701 -0.00356448 -0.0137692 -0.00146592 0.0160844 0.00854254 -0.016091 -0.0173173 0.0126604 0.0271523 -0.00448489 -0.0371805 -0.0103546 0.046411 0.0361366 -0.0538626 -0.0885348 0.0587054 0.312242 0.439562</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140218031342.960571.60" name="GISS.20.HNZ.1999.230.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>28</delay>
+      <correction>28</correction>
+      <numberOfCoefficients>29</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>1.2e-07 -6e-07 -7.27e-06 -3.207e-05 -9.632e-05 -0.00022495 -0.00042784 -0.00066984 -0.00084126 -0.00074971 -0.0001651 0.0010699 0.00288117 0.00481701 0.00601399 0.00536406 0.00191724 -0.0045563 -0.0130409 -0.0210427 -0.0248785 -0.0205514 -0.00504291 0.0223716 0.0592845 0.100205 0.137633 0.163926 0.173391</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140218031342.960713.61" name="GISS.20.HNZ.1999.230.stage_4">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>68</delay>
+      <correction>68</correction>
+      <numberOfCoefficients>69</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>6e-07 1.55e-06 -2.26e-06 -1.681e-05 -3.362e-05 -2.73e-05 1.156e-05 4.172e-05 9.78e-06 -5.686e-05 -5.186e-05 5.221e-05 0.00010896 -1.156e-05 -0.00016463 -7.641e-05 0.00019097 0.00021076 -0.00015306 -0.00036979 1.884e-05 0.00050938 0.00022852 -0.00056541 -0.00057662 0.00046456 0.00097203 -0.00014412 -0.00131798 -0.00042439 0.00148249 0.00121105 -0.0013206 -0.00210965 0.00070846 0.00293458 0.00041425 -0.00343633 -0.00200474 0.00333858 0.00388706 -0.00239384 -0.00574386 0.00045073 0.00713658 0.00248027 -0.00755632 -0.00617528 0.00650048 0.0101701 -0.00356448 -0.0137692 -0.00146592 0.0160844 0.00854254 -0.016091 -0.0173173 0.0126604 0.0271523 -0.00448489 -0.0371805 -0.0103546 0.046411 0.0361366 -0.0538626 -0.0885348 0.0587054 0.312242 0.439562</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140218031342.961478.64" name="GISS.20.HNZ.1999.328.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>28</delay>
+      <correction>28</correction>
+      <numberOfCoefficients>29</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>1.2e-07 -6e-07 -7.27e-06 -3.207e-05 -9.632e-05 -0.00022495 -0.00042784 -0.00066984 -0.00084126 -0.00074971 -0.0001651 0.0010699 0.00288117 0.00481701 0.00601399 0.00536406 0.00191724 -0.0045563 -0.0130409 -0.0210427 -0.0248785 -0.0205514 -0.00504291 0.0223716 0.0592845 0.100205 0.137633 0.163926 0.173391</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140218031342.961618.65" name="GISS.20.HNZ.1999.328.stage_4">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>68</delay>
+      <correction>68</correction>
+      <numberOfCoefficients>69</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>6e-07 1.55e-06 -2.26e-06 -1.681e-05 -3.362e-05 -2.73e-05 1.156e-05 4.172e-05 9.78e-06 -5.686e-05 -5.186e-05 5.221e-05 0.00010896 -1.156e-05 -0.00016463 -7.641e-05 0.00019097 0.00021076 -0.00015306 -0.00036979 1.884e-05 0.00050938 0.00022852 -0.00056541 -0.00057662 0.00046456 0.00097203 -0.00014412 -0.00131798 -0.00042439 0.00148249 0.00121105 -0.0013206 -0.00210965 0.00070846 0.00293458 0.00041425 -0.00343633 -0.00200474 0.00333858 0.00388706 -0.00239384 -0.00574386 0.00045073 0.00713658 0.00248027 -0.00755632 -0.00617528 0.00650048 0.0101701 -0.00356448 -0.0137692 -0.00146592 0.0160844 0.00854254 -0.016091 -0.0173173 0.0126604 0.0271523 -0.00448489 -0.0371805 -0.0103546 0.046411 0.0361366 -0.0538626 -0.0885348 0.0587054 0.312242 0.439562</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140218031342.962464.68" name="GISS.20.HNZ.2003.336.stage_3">
+      <gain>1</gain>
+      <decimationFactor>5</decimationFactor>
+      <delay>28</delay>
+      <correction>28</correction>
+      <numberOfCoefficients>29</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>1.2e-07 -6e-07 -7.27e-06 -3.207e-05 -9.632e-05 -0.00022495 -0.00042784 -0.00066984 -0.00084126 -0.00074971 -0.0001651 0.0010699 0.00288117 0.00481701 0.00601399 0.00536406 0.00191724 -0.0045563 -0.0130409 -0.0210427 -0.0248785 -0.0205514 -0.00504291 0.0223716 0.0592845 0.100205 0.137633 0.163926 0.173391</coefficients>
+    </responseFIR>
+    <responseFIR publicID="ResponseFIR#20140218031342.962635.69" name="GISS.20.HNZ.2003.336.stage_4">
+      <gain>1</gain>
+      <decimationFactor>2</decimationFactor>
+      <delay>68</delay>
+      <correction>68</correction>
+      <numberOfCoefficients>69</numberOfCoefficients>
+      <symmetry>B</symmetry>
+      <coefficients>6e-07 1.55e-06 -2.26e-06 -1.681e-05 -3.362e-05 -2.73e-05 1.156e-05 4.172e-05 9.78e-06 -5.686e-05 -5.186e-05 5.221e-05 0.00010896 -1.156e-05 -0.00016463 -7.641e-05 0.00019097 0.00021076 -0.00015306 -0.00036979 1.884e-05 0.00050938 0.00022852 -0.00056541 -0.00057662 0.00046456 0.00097203 -0.00014412 -0.00131798 -0.00042439 0.00148249 0.00121105 -0.0013206 -0.00210965 0.00070846 0.00293458 0.00041425 -0.00343633 -0.00200474 0.00333858 0.00388706 -0.00239384 -0.00574386 0.00045073 0.00713658 0.00248027 -0.00755632 -0.00617528 0.00650048 0.0101701 -0.00356448 -0.0137692 -0.00146592 0.0160844 0.00854254 -0.016091 -0.0173173 0.0126604 0.0271523 -0.00448489 -0.0371805 -0.0103546 0.046411 0.0361366 -0.0538626 -0.0885348 0.0587054 0.312242 0.439562</coefficients>
+    </responseFIR>
+    <network publicID="Network#20140218031342.948677.2" code="NZ">
+      <start>1980-01-01T00:00:00.0000Z</start>
+      <description> </description>
+      <netClass>p</netClass>
+      <archive> </archive>
+      <restricted>false</restricted>
+      <shared>true</shared>
+      <station publicID="Station#20140218031342.948945.3" code="GISS">
+        <start>1999-06-17T00:00:00.0000Z</start>
+        <description>Gisborne 2ZG</description>
+        <latitude>-38.666489</latitude>
+        <longitude>178.022674</longitude>
+        <elevation>8</elevation>
+        <place>Gisborne 2ZG</place>
+        <affiliation>National strong motion network</affiliation>
+        <archive> </archive>
+        <restricted>false</restricted>
+        <shared>true</shared>
+        <sensorLocation publicID="SensorLocation#20140218031342.95073.32" code="20">
+          <start>1999-08-18T01:15:00.0000Z</start>
+          <latitude>-38.666489</latitude>
+          <longitude>178.022674</longitude>
+          <elevation>8</elevation>
+          <stream code="HN1" datalogger="Datalogger#20140218031342.95116.33" sensor="Sensor#20140218031342.952766.36">
+            <start>1999-08-18T01:15:00.0000Z</start>
+            <end>1999-11-23T23:59:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>1</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>1</sensorChannel>
+            <sampleRateNumerator>200</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>219</azimuth>
+            <dip>0</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>TG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HN1" datalogger="Datalogger#20140218031342.954054.38" sensor="Sensor#20140218031342.955602.41">
+            <start>1999-11-24T00:00:00.0000Z</start>
+            <end>2003-12-02T03:29:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>1</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>1</sensorChannel>
+            <sampleRateNumerator>200</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>219</azimuth>
+            <dip>0</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>TG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HN1" datalogger="Datalogger#20140218031342.956069.43" sensor="Sensor#20140218031342.956648.46">
+            <start>2003-12-02T03:30:00.0000Z</start>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>1</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>1</sensorChannel>
+            <sampleRateNumerator>200</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>219</azimuth>
+            <dip>0</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>TG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HN2" datalogger="Datalogger#20140218031342.95116.33" sensor="Sensor#20140218031342.957914.50">
+            <start>1999-08-18T01:15:00.0000Z</start>
+            <end>1999-11-23T23:59:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>2</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>2</sensorChannel>
+            <sampleRateNumerator>200</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>309</azimuth>
+            <dip>0</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>TG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HN2" datalogger="Datalogger#20140218031342.954054.38" sensor="Sensor#20140218031342.958975.54">
+            <start>1999-11-24T00:00:00.0000Z</start>
+            <end>2003-12-02T03:29:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>2</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>2</sensorChannel>
+            <sampleRateNumerator>200</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>309</azimuth>
+            <dip>0</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>TG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HN2" datalogger="Datalogger#20140218031342.956069.43" sensor="Sensor#20140218031342.960035.58">
+            <start>2003-12-02T03:30:00.0000Z</start>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>2</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>2</sensorChannel>
+            <sampleRateNumerator>200</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>309</azimuth>
+            <dip>0</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>TG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HNZ" datalogger="Datalogger#20140218031342.95116.33" sensor="Sensor#20140218031342.960955.62">
+            <start>1999-08-18T01:15:00.0000Z</start>
+            <end>1999-11-23T23:59:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>0</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>0</sensorChannel>
+            <sampleRateNumerator>200</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>219</azimuth>
+            <dip>-90</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>TG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HNZ" datalogger="Datalogger#20140218031342.954054.38" sensor="Sensor#20140218031342.961862.66">
+            <start>1999-11-24T00:00:00.0000Z</start>
+            <end>2003-12-02T03:29:00.0000Z</end>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>0</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>0</sensorChannel>
+            <sampleRateNumerator>200</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>219</azimuth>
+            <dip>-90</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>TG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+          <stream code="HNZ" datalogger="Datalogger#20140218031342.956069.43" sensor="Sensor#20140218031342.96292.70">
+            <start>2003-12-02T03:30:00.0000Z</start>
+            <dataloggerSerialNumber>xxxx</dataloggerSerialNumber>
+            <dataloggerChannel>0</dataloggerChannel>
+            <sensorSerialNumber>yyyy</sensorSerialNumber>
+            <sensorChannel>0</sensorChannel>
+            <sampleRateNumerator>200</sampleRateNumerator>
+            <sampleRateDenominator>1</sampleRateDenominator>
+            <depth>0</depth>
+            <azimuth>219</azimuth>
+            <dip>-90</dip>
+            <gain>427336</gain>
+            <gainFrequency>1</gainFrequency>
+            <gainUnit>M/S**2</gainUnit>
+            <format>Steim2</format>
+            <flags>TG</flags>
+            <restricted>false</restricted>
+            <shared>true</shared>
+          </stream>
+        </sensorLocation>
+      </station>
+    </network>
+  </Inventory>
+</seiscomp>
